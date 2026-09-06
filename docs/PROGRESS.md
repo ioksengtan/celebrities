@@ -4,11 +4,12 @@
 
 ---
 
-## 2026-09-06（測驗熟練：連續認識 3 次才移出牌組）
+## 2026-09-06（測驗熟練：僅 Executive English）
 
-- 測驗模式改為連續按「認識了」**3 次**（`MASTERY_STREAK`）才把該卡標成熟練並移出**預設測驗牌組**；「還不熟」會把連勝歸零，若已熟練則取消熟練並回到牌組
-- 每日挑戰／滑卡／整理瀏覽仍顯示全部卡片；本機 key 不變（EE `exec-vocab-known`、Keynote `keynote-lexicon-known`），舊的 boolean `true` 遷移成 `{ streak: 1, mastered: false }`（不視為已熟練）
-- 測驗進度旁顯示「已熟練 x 張」，並有「重置熟練進度」；篩選範圍全熟練時有空狀態＋重置入口
+- **只做 EE**：`products/general-vocab/executive-english.html` 測驗連續按「認識了」**3 次**（`MASTERY_STREAK`）才標成熟練並移出預設測驗牌組；「還不熟」連勝歸零，已熟練則取消並回到牌組
+- **Keynote Lexicon 刻意不做**：那是收藏／瀏覽產品，不是測驗學習，不實作 streak／熟練移出（`keynote-lexicon.html` 維持 main 原測驗行為）
+- EE 本機 key `exec-vocab-known`：舊 boolean `true` 遷移成 `{ streak: 1, mastered: false }`（不視為已熟練）；進度旁「已熟練 x 張」＋「重置熟練進度」；篩選範圍全熟練時有空狀態＋重置入口
+- 每日挑戰／滑卡／整理瀏覽仍顯示全部卡片
 
 ## 2026-09-06（手機卡片加大）
 
