@@ -4,6 +4,12 @@
 
 ---
 
+## 2026-09-06（手機卡片加大）
+
+- Keynote Lexicon 與 Executive English：窄螢幕（≤480px）滑卡／每日挑戰的卡片視覺高度拉到約 **viewport 的 80%**（壓縮 header／分頁列，feed 用 `dvh`/`svh` 算高）
+- 正面詞彙、解釋、原句字級與行高一併加大；長文仍可在卡片內捲動
+- 未改 CARDS、localStorage key、`#card-<id>`、翻面／開卡／稀有度、DAILY_SIZE
+
 ## 2026-09-06（卡池擴充／Pages 上線）
 
 - GitHub Pages 已上線，可直接給社群用這三個網址：
