@@ -418,6 +418,111 @@
     border: none; background: var(--ink); color: var(--bg); cursor: pointer; font-size: 14px;
   }
 
+  /* ---- Mini-games (question UI; not the 80% flashcard layout) ---- */
+  #games-panel{ display: none; flex-direction: column; align-items: center; gap: 16px; }
+  #games-panel.active{ display: flex; }
+  #games-lobby, #games-play, #games-done{
+    display: flex; flex-direction: column; align-items: center; gap: 16px;
+    width: 100%;
+  }
+  #games-lobby[hidden], #games-play[hidden], #games-done[hidden]{ display: none; }
+  .games-lead{
+    color: var(--muted); text-align: center; margin: 0; max-width: 38em;
+    font-size: 14px; line-height: 1.55;
+  }
+  .games-pick{
+    display: grid; grid-template-columns: 1fr 1fr; gap: 12px;
+    width: 100%; max-width: 560px;
+  }
+  .games-pick-card{
+    text-align: left; padding: 18px 16px; border-radius: 14px;
+    border: 1px solid var(--line); background: var(--surface); color: var(--ink);
+    cursor: pointer; box-shadow: var(--card-shadow);
+    font-family: "Public Sans", sans-serif;
+  }
+  .games-pick-card:hover{ border-color: var(--accent); }
+  .games-pick-kicker{
+    font-size: 11px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--accent);
+  }
+  .games-pick-card strong{
+    display: block; font-family: "Fraunces", Georgia, serif; font-size: 22px;
+    font-weight: 600; margin: 6px 0 6px;
+  }
+  .games-pick-card span:last-child{ font-size: 13px; color: var(--muted); line-height: 1.45; }
+  .games-play-meta{
+    display: flex; align-items: center; justify-content: space-between; gap: 10px;
+    width: 100%; max-width: 480px;
+  }
+  .games-kind-label{ font-family: "IBM Plex Mono", monospace; font-size: 12px; color: var(--muted); }
+  .games-back-lobby{
+    font-family: "Public Sans", sans-serif; font-size: 12px; font-weight: 600;
+    padding: 4px 10px; border-radius: 8px; border: 1px solid var(--line);
+    background: transparent; color: var(--muted); cursor: pointer;
+  }
+  .games-back-lobby:hover{ color: var(--ink); border-color: var(--ink); }
+  .games-prompt-card{
+    width: 100%; max-width: 480px; background: var(--surface);
+    border: 1px solid var(--line); border-radius: 16px; padding: 26px 20px;
+    text-align: center; box-shadow: var(--card-shadow);
+  }
+  .games-prompt-tags{
+    display: flex; justify-content: center; gap: 8px; flex-wrap: wrap;
+  }
+  .games-prompt-word{
+    font-family: "Fraunces", Georgia, serif; font-weight: 500;
+    font-size: clamp(26px, 6.4vw, 38px); line-height: 1.2; margin: 14px 0 0;
+    text-wrap: balance;
+  }
+  .games-prompt-word.zh{ font-family: "Public Sans", "Noto Sans TC", sans-serif; font-weight: 600; }
+  .games-choices{
+    display: flex; flex-direction: column; gap: 10px;
+    width: 100%; max-width: 480px;
+  }
+  .games-choice{
+    width: 100%; text-align: left; min-height: 52px; padding: 14px 16px;
+    border-radius: 12px; border: 1px solid var(--line); background: var(--surface);
+    color: var(--ink); font-family: "Public Sans", sans-serif; font-size: 16px;
+    font-weight: 600; cursor: pointer; line-height: 1.35;
+  }
+  .games-choice:hover:not(:disabled){ border-color: var(--accent); }
+  .games-choice:disabled{ cursor: default; }
+  .games-choice.correct{
+    border-color: var(--good);
+    background: color-mix(in srgb, var(--good) 16%, var(--surface));
+    color: var(--good);
+  }
+  .games-choice.wrong{
+    border-color: var(--bad);
+    background: color-mix(in srgb, var(--bad) 16%, var(--surface));
+    color: var(--bad);
+  }
+  .games-feedback{
+    width: 100%; max-width: 480px; border-radius: 12px; padding: 12px 14px;
+    font-size: 14px; line-height: 1.55;
+  }
+  .games-feedback[hidden]{ display: none; }
+  .games-feedback.ok{
+    background: color-mix(in srgb, var(--good) 14%, var(--surface));
+    color: var(--ink); border: 1px solid color-mix(in srgb, var(--good) 45%, var(--line));
+  }
+  .games-feedback.bad{
+    background: color-mix(in srgb, var(--bad) 12%, var(--surface));
+    color: var(--ink); border: 1px solid color-mix(in srgb, var(--bad) 40%, var(--line));
+  }
+  .games-feedback b{ display: block; margin-bottom: 2px; }
+  .games-next, .games-done-actions button{
+    font-family: "Public Sans"; font-weight: 700; padding: 11px 24px; border-radius: 10px;
+    border: none; background: var(--ink); color: var(--bg); cursor: pointer; font-size: 14px;
+  }
+  .games-next[hidden]{ display: none; }
+  .games-done-actions{ display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; }
+  .games-done-actions .games-secondary{
+    background: var(--surface); color: var(--ink); border: 1px solid var(--line);
+  }
+  @media (max-width: 520px){
+    .games-pick{ grid-template-columns: 1fr; }
+  }
+
   footer{ margin-top: 36px; font-size: 12px; color: var(--muted); text-align: center; }
   footer a{ color: var(--muted); }
 
@@ -533,6 +638,7 @@
       <button id="btn-feed">滑卡</button>
       <button id="btn-browse">整理瀏覽</button>
       <button id="btn-quiz">測驗</button>
+      <button id="btn-games">小遊戲</button>
     </div>
     <div id="filters">
       <div class="filter-row">
@@ -599,6 +705,51 @@
       <h2></h2>
       <p></p>
       <button id="quiz-restart">重新測驗</button>
+    </div>
+  </div>
+
+  <div id="games-panel">
+    <div id="games-lobby">
+      <p class="games-lead">用目前篩選的詞彙練選擇題。答對會累積與測驗相同的連勝，答錯則歸零；連續答對 3 次才算熟練。</p>
+      <div class="quiz-meta">
+        <div class="quiz-mastered" id="games-mastered">已熟練 0 張</div>
+        <button type="button" class="quiz-reset-mastery" id="games-reset-mastery">重置熟練進度</button>
+      </div>
+      <div class="games-pick" id="games-pick">
+        <button type="button" class="games-pick-card" id="btn-game-en2zh">
+          <span class="games-pick-kicker mono">EN → 中</span>
+          <strong>看英選中</strong>
+          <span>看到英文詞，選正確中文意思</span>
+        </button>
+        <button type="button" class="games-pick-card" id="btn-game-zh2en">
+          <span class="games-pick-kicker mono">中 → EN</span>
+          <strong>看中選英</strong>
+          <span>看到中文意思，選正確英文詞</span>
+        </button>
+      </div>
+      <p class="mono quiz-empty-msg" id="games-empty" hidden>沒有符合篩選條件的卡片。</p>
+    </div>
+    <div id="games-play" hidden>
+      <div class="quiz-progress"><div id="games-progress-bar" style="width:0%"></div></div>
+      <div class="games-play-meta">
+        <div>
+          <div class="quiz-counter" id="games-counter">0 / 0</div>
+          <div class="games-kind-label" id="games-kind-label"></div>
+        </div>
+        <button type="button" class="games-back-lobby" id="games-back-lobby">回選單</button>
+      </div>
+      <div class="games-prompt-card" id="games-prompt"></div>
+      <div class="games-choices" id="games-choices"></div>
+      <div class="games-feedback" id="games-feedback" hidden></div>
+      <button type="button" class="games-next" id="games-next" hidden>下一題</button>
+    </div>
+    <div id="games-done" hidden class="quiz-done">
+      <h2 id="games-score"></h2>
+      <p id="games-score-sub"></p>
+      <div class="games-done-actions">
+        <button type="button" id="games-again">再玩一輪</button>
+        <button type="button" id="games-to-lobby" class="games-secondary">換一種遊戲</button>
+      </div>
     </div>
   </div>
 
@@ -773,7 +924,7 @@ function buildChips(){
     chip.addEventListener("click", ()=>{
       state.cefrs.has(key) ? state.cefrs.delete(key) : state.cefrs.add(key);
       chip.classList.toggle("active");
-      renderBrowse(); resetQuiz();
+      renderBrowse(); resetQuiz(); onFiltersChanged();
     });
     cefrChips.appendChild(chip);
   });
@@ -785,7 +936,7 @@ function buildChips(){
     chip.addEventListener("click", ()=>{
       state.speakers.has(key) ? state.speakers.delete(key) : state.speakers.add(key);
       chip.classList.toggle("active");
-      renderBrowse(); resetQuiz();
+      renderBrowse(); resetQuiz(); onFiltersChanged();
     });
     spChips.appendChild(chip);
   });
@@ -1044,6 +1195,8 @@ function resetMastery(){
   known = {};
   persistKnown();
   resetQuiz();
+  updateGamesMasteredHud();
+  if (state.mode === "games") showGamesLobby();
   showToast("已重置熟練進度");
 }
 
@@ -1110,6 +1263,10 @@ document.getElementById("quiz-restart").addEventListener("click", resetQuiz);
 document.getElementById("quiz-reset-mastery").addEventListener("click", resetMastery);
 
 document.addEventListener("keydown", (e)=>{
+  if (state.mode === "games"){
+    handleGamesKey(e);
+    return;
+  }
   if (state.mode !== "quiz") return;
   if (e.code === "Space"){
     e.preventDefault();
@@ -1119,6 +1276,232 @@ document.addEventListener("keydown", (e)=>{
   if (e.code === "ArrowRight"){ markQuiz(true); }
   if (e.code === "ArrowLeft"){ markQuiz(false); }
 });
+
+/* ---- Mini-games: 看英選中 / 看中選英 ---- */
+const GAME_ROUND = 10;
+const GAME_LABELS = { en2zh: "看英選中", zh2en: "看中選英" };
+
+let gameSession = null;
+
+function onFiltersChanged(){
+  if (state.mode === "games") showGamesLobby();
+  else updateGamesMasteredHud();
+}
+
+function shuffleInPlace(arr){
+  for (let i = arr.length - 1; i > 0; i--){
+    const j = Math.floor(Math.random() * (i + 1));
+    const tmp = arr[i]; arr[i] = arr[j]; arr[j] = tmp;
+  }
+  return arr;
+}
+
+function shuffledCopy(arr){
+  return shuffleInPlace(arr.slice());
+}
+
+function choiceKey(text){
+  return String(text || "").trim().toLowerCase();
+}
+
+function pickGameDeck(){
+  const filtered = filteredCards();
+  if (filtered.length === 0) return [];
+  const unmastered = [];
+  const mastered = [];
+  filtered.forEach(c => (isMastered(c.id) ? mastered : unmastered).push(c));
+  return shuffledCopy(unmastered).concat(shuffledCopy(mastered)).slice(0, GAME_ROUND);
+}
+
+function pickDistractors(correct, field, n){
+  const used = new Set([choiceKey(correct[field])]);
+  const out = [];
+  const tryFrom = (list)=>{
+    const pool = shuffledCopy(list);
+    for (let i = 0; i < pool.length && out.length < n; i++){
+      const c = pool[i];
+      if (c.id === correct.id) continue;
+      const key = choiceKey(c[field]);
+      if (!key || used.has(key)) continue;
+      used.add(key);
+      out.push(c);
+    }
+  };
+  const filtered = filteredCards();
+  tryFrom(filtered.filter(c => c.cefr === correct.cefr));
+  if (out.length < n) tryFrom(filtered);
+  if (out.length < n) tryFrom(CARDS);
+  return out;
+}
+
+function updateGamesMasteredHud(){
+  const el = document.getElementById("games-mastered");
+  if (el) el.textContent = "已熟練 " + countMasteredInFilter() + " 張";
+}
+
+function showGamesLobby(){
+  gameSession = null;
+  document.getElementById("games-lobby").hidden = false;
+  document.getElementById("games-play").hidden = true;
+  document.getElementById("games-done").hidden = true;
+  updateGamesMasteredHud();
+  const empty = filteredCards().length === 0;
+  document.getElementById("games-pick").hidden = empty;
+  document.getElementById("games-empty").hidden = !empty;
+}
+
+function startGame(kind){
+  const deck = pickGameDeck();
+  if (deck.length === 0){
+    showGamesLobby();
+    return;
+  }
+  gameSession = { kind, deck, index: 0, score: 0, locked: false };
+  document.getElementById("games-lobby").hidden = true;
+  document.getElementById("games-done").hidden = true;
+  document.getElementById("games-play").hidden = false;
+  document.getElementById("games-kind-label").textContent = GAME_LABELS[kind] || "";
+  renderGameQuestion();
+}
+
+function promptText(card, kind){
+  return kind === "zh2en" ? card.zh : card.word;
+}
+
+function optionText(card, kind){
+  return kind === "zh2en" ? card.word : card.zh;
+}
+
+function renderGameQuestion(){
+  if (!gameSession) return;
+  const { kind, deck, index } = gameSession;
+  if (index >= deck.length){
+    showGamesDone();
+    return;
+  }
+  gameSession.locked = false;
+  const correct = deck[index];
+  const field = kind === "zh2en" ? "word" : "zh";
+  const options = shuffledCopy([correct].concat(pickDistractors(correct, field, 3)));
+  gameSession.options = options;
+  gameSession.correct = correct;
+
+  document.getElementById("games-progress-bar").style.width = (index / deck.length * 100) + "%";
+  document.getElementById("games-counter").textContent = (index + 1) + " / " + deck.length;
+  document.getElementById("games-prompt").innerHTML =
+    '<div class="games-prompt-tags">' +
+      '<span class="pos-tag">' + (POS_ZH[correct.pos] || correct.pos) + '</span>' +
+      '<span class="rarity-badge ' + correct.rarity + '">CEFR ' + correct.cefr + '</span>' +
+    '</div>' +
+    '<div class="games-prompt-word' + (kind === "zh2en" ? " zh" : "") + '">' + promptText(correct, kind) + '</div>';
+
+  const box = document.getElementById("games-choices");
+  box.innerHTML = "";
+  options.forEach((card, i)=>{
+    const btn = document.createElement("button");
+    btn.type = "button";
+    btn.className = "games-choice";
+    btn.dataset.index = String(i);
+    btn.textContent = (i + 1) + ". " + optionText(card, kind);
+    btn.addEventListener("click", ()=> answerGame(i));
+    box.appendChild(btn);
+  });
+
+  const fb = document.getElementById("games-feedback");
+  fb.hidden = true;
+  fb.className = "games-feedback";
+  fb.innerHTML = "";
+  const next = document.getElementById("games-next");
+  next.hidden = true;
+  next.textContent = (index + 1 >= deck.length) ? "看結果" : "下一題";
+}
+
+function streakFeedback(ok){
+  const rec = known[gameSession.correct.id] || { streak: 0, mastered: false };
+  if (!ok) return "連勝已歸零，這張要重新累積。";
+  if (rec.mastered) return "這張已熟練（連勝 " + MASTERY_STREAK + "），測驗預設會先跳過。";
+  return "連勝 " + rec.streak + "／" + MASTERY_STREAK + (rec.streak === MASTERY_STREAK - 1 ? "，再對一次就熟練。" : "。");
+}
+
+function answerGame(choiceIndex){
+  if (!gameSession || gameSession.locked) return;
+  const { kind, options, correct } = gameSession;
+  const picked = options[choiceIndex];
+  if (!picked) return;
+  gameSession.locked = true;
+  const ok = picked.id === correct.id;
+  if (ok){
+    applyKnowMark(correct.id);
+    gameSession.score++;
+  } else {
+    applyUnknownMark(correct.id);
+  }
+  updateGamesMasteredHud();
+
+  const buttons = document.querySelectorAll("#games-choices .games-choice");
+  buttons.forEach((btn, i)=>{
+    btn.disabled = true;
+    if (options[i].id === correct.id) btn.classList.add("correct");
+    else if (i === choiceIndex) btn.classList.add("wrong");
+  });
+
+  const fb = document.getElementById("games-feedback");
+  fb.hidden = false;
+  fb.className = "games-feedback " + (ok ? "ok" : "bad");
+  const pair = correct.word + " — " + correct.zh;
+  fb.innerHTML = ok
+    ? "<b>答對了</b>" + pair + "<br>" + streakFeedback(true)
+    : "<b>答錯了</b>正確是「" + optionText(correct, kind) + "」（" + pair + "）<br>" + streakFeedback(false);
+  document.getElementById("games-next").hidden = false;
+  document.getElementById("games-progress-bar").style.width = ((gameSession.index + 1) / gameSession.deck.length * 100) + "%";
+}
+
+function advanceGame(){
+  if (!gameSession || !gameSession.locked) return;
+  gameSession.index++;
+  if (gameSession.index >= gameSession.deck.length) showGamesDone();
+  else renderGameQuestion();
+}
+
+function showGamesDone(){
+  document.getElementById("games-play").hidden = true;
+  document.getElementById("games-lobby").hidden = true;
+  const done = document.getElementById("games-done");
+  done.hidden = false;
+  const total = gameSession ? gameSession.deck.length : 0;
+  const score = gameSession ? gameSession.score : 0;
+  document.getElementById("games-score").textContent = score + " / " + total + " 答對";
+  document.getElementById("games-score-sub").textContent = score === total
+    ? "這一輪全對。答對會累積測驗連勝，連續 " + MASTERY_STREAK + " 次才算熟練。"
+    : "答錯的卡片連勝已歸零。可再玩一輪，或切回測驗用翻卡複習。";
+  updateGamesMasteredHud();
+}
+
+function handleGamesKey(e){
+  if (!gameSession) return;
+  if (!gameSession.locked){
+    const map = { Digit1: 0, Digit2: 1, Digit3: 2, Digit4: 3, Numpad1: 0, Numpad2: 1, Numpad3: 2, Numpad4: 3 };
+    if (e.code in map){
+      e.preventDefault();
+      answerGame(map[e.code]);
+    }
+    return;
+  }
+  if (e.code === "Enter" || e.code === "Space"){
+    e.preventDefault();
+    advanceGame();
+  }
+}
+
+document.getElementById("btn-game-en2zh").addEventListener("click", ()=> startGame("en2zh"));
+document.getElementById("btn-game-zh2en").addEventListener("click", ()=> startGame("zh2en"));
+document.getElementById("games-next").addEventListener("click", advanceGame);
+document.getElementById("games-back-lobby").addEventListener("click", showGamesLobby);
+document.getElementById("games-again").addEventListener("click", ()=>{
+  if (gameSession && gameSession.kind) startGame(gameSession.kind);
+});
+document.getElementById("games-to-lobby").addEventListener("click", showGamesLobby);
+document.getElementById("games-reset-mastery").addEventListener("click", resetMastery);
 
 /* ---- Daily challenge: date-seeded pack of 5 + streak calendar ---- */
 const DAILY_SIZE = 5;
@@ -1303,18 +1686,22 @@ function setMode(mode){
   document.getElementById("btn-feed").classList.toggle("active", mode === "feed");
   document.getElementById("btn-browse").classList.toggle("active", mode === "browse");
   document.getElementById("btn-quiz").classList.toggle("active", mode === "quiz");
+  document.getElementById("btn-games").classList.toggle("active", mode === "games");
   document.getElementById("daily-panel").classList.toggle("active", mode === "daily");
   document.getElementById("feed-panel").classList.toggle("active", mode === "feed");
   document.getElementById("browse-grid").classList.toggle("active", mode === "browse");
   document.getElementById("quiz-panel").classList.toggle("active", mode === "quiz");
-  document.getElementById("filters").style.display = (mode === "browse" || mode === "quiz") ? "flex" : "none";
+  document.getElementById("games-panel").classList.toggle("active", mode === "games");
+  document.getElementById("filters").style.display = (mode === "browse" || mode === "quiz" || mode === "games") ? "flex" : "none";
   if (mode === "quiz") resetQuiz();
+  if (mode === "games") showGamesLobby();
 }
 
 document.getElementById("btn-daily").addEventListener("click", ()=> setMode("daily"));
 document.getElementById("btn-feed").addEventListener("click", ()=> setMode("feed"));
 document.getElementById("btn-browse").addEventListener("click", ()=> setMode("browse"));
 document.getElementById("btn-quiz").addEventListener("click", ()=> setMode("quiz"));
+document.getElementById("btn-games").addEventListener("click", ()=> setMode("games"));
 
 function resetFeedScroll(){
   const scrollEl = document.getElementById("feed-scroll");
