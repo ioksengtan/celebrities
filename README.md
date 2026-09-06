@@ -5,26 +5,39 @@
 ## 目錄結構
 
 ```
+index.html           GitHub Pages 首頁＝語錄牆
 references/          原始資料與規劃文件
+  quotes_index.json              合併後的已核實語錄（牆／單場共用）
+  content_review_flags.json      不上牆的 speech_id
+  healthy_seven_feed.json        7 場優先演講＋quotes_wall
   speeches_database.json         30 場演講的完整 metadata
-  speeches_indexes.json          7 種索引視圖（主題／時間軸／類型...）
-  product_recommendations.json   6 個候選產品（PROD-001~006）與技術棧建議
-  美國大學畢業典禮名人演講專案報告（完整版）.docx   完整專案報告
+  speeches_indexes.json          7 種索引視圖
+  product_recommendations.json   6 個候選產品（PROD-001~006）
 
-products/            各產品的原型與原始碼，一個產品一個資料夾
-  vocabulary-cards/               PROD-002 名人單字卡（已有可運行雛形）
-  general-vocab/                  Executive English：從演講逐字稿萃取的一般英語 CEFR 分級詞彙卡
+products/
+  core/                           語錄牆備援頁＋單場演講
+  vocabulary-cards/               PROD-002 名人單字卡（週邊）
+  general-vocab/                  Executive English CEFR 詞彙卡（週邊）
 
 docs/
   PROGRESS.md        團隊討論與進度紀錄
 ```
 
+## GitHub Pages
+
+- **語錄牆（站首頁）**：https://ioksengtan.github.io/celebrities/
+- **單場演講**：https://ioksengtan.github.io/celebrities/products/core/speech.html
+- 週邊： [Keynote Lexicon](products/vocabulary-cards/keynote-lexicon.html) · [Executive English](products/general-vocab/executive-english.html)
+
+核心產品是語錄／演講正文。牆只顯示 `verified`，並排除 `content_review_flags` 與 hold 場次。詳見 [`products/core/README.md`](products/core/README.md)。
+
 ## 目前狀態
 
 - ✅ 資料庫與產品建議已整理進 `references/`
+- ✅ **語錄牆＋單場演講**薄片已上 Pages 根目錄（見上）
 - ✅ PROD-002「名人單字卡」MVP 已完成，見 [`products/vocabulary-cards`](products/vocabulary-cards)
 - ✅ Executive English（一般英語 CEFR 詞彙卡）第一版已完成，見 [`products/general-vocab`](products/general-vocab)
-- ⬜ 其他候選產品（導讀摘要、時間軸可視化、每日一句、主題深度分析、演講比較）尚未開始
+- ⬜ 其他候選產品（長導讀、時間軸可視化、每日一句、主題深度分析、演講比較）尚未開始
 
 ## 協作方式
 

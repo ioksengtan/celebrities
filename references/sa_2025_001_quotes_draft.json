@@ -1,0 +1,67 @@
+[
+  {
+    "quote_id": "SA-2025-001-Q01",
+    "speech_id": "SA-2025-001",
+    "speaker": "sa",
+    "event": "Bloomberg Interview",
+    "date": "2025-01-05",
+    "quote": "I think we have something on our hands that we do not appreciate here.",
+    "quote_zh": "我覺得我們手上有的東西，我們自己還沒真正意識到它有多大。（draft）",
+    "why_notable_zh": "ChatGPT 上線初期對產品／市場契合的關鍵判斷",
+    "source_url": "https://www.bloomberg.com/features/2025-sam-altman-interview/",
+    "status": "draft",
+    "draft_note": "Bloomberg features 全文可讀（WebFetch 2026-09-06）；避開政治爭議段落；PROD-004 AGI sample"
+  },
+  {
+    "quote_id": "SA-2025-001-Q02",
+    "speech_id": "SA-2025-001",
+    "speaker": "sa",
+    "event": "Bloomberg Interview",
+    "date": "2025-01-05",
+    "quote": "if you could hire an AI as a remote employee to be a great software engineer, I think a lot of people would say, \"OK, that's AGI-ish.\"",
+    "quote_zh": "如果你能雇用一個 AI 當遠端員工、當出色的軟體工程師，我想很多人會說：好，這就有點像 AGI 了。（draft）",
+    "why_notable_zh": "本場對 AGI 門檻的可操作定義",
+    "source_url": "https://www.bloomberg.com/features/2025-sam-altman-interview/",
+    "status": "draft",
+    "draft_note": "Bloomberg 原句；抓取時間 2026-09-06 17:24 Asia/Taipei"
+  },
+  {
+    "quote_id": "SA-2025-001-Q03",
+    "speech_id": "SA-2025-001",
+    "speaker": "sa",
+    "event": "Bloomberg Interview",
+    "date": "2025-01-05",
+    "quote": "when I think about superintelligence, the key thing to me is, can this system rapidly increase the rate of scientific discovery that happens on planet Earth?",
+    "quote_zh": "當我想到超智慧，對我來說關鍵是：這套系統能不能快速提高地球上科學發現的速度？（draft）",
+    "why_notable_zh": "把超智慧錨定在加速科學發現，而非模糊口號",
+    "source_url": "https://www.bloomberg.com/features/2025-sam-altman-interview/",
+    "status": "draft",
+    "draft_note": "Bloomberg 原句；抓取時間 2026-09-06 17:24 Asia/Taipei"
+  },
+  {
+    "quote_id": "SA-2025-001-Q04",
+    "speech_id": "SA-2025-001",
+    "speaker": "sa",
+    "event": "Bloomberg Interview",
+    "date": "2025-01-05",
+    "quote": "I can simultaneously think that these risks are real and also believe that the only way to appropriately address them is to ship product and learn.",
+    "quote_zh": "我可以同時認為這些風險是真實的，也相信妥善處理它們的唯一方式是推出產品並從中學習。（draft）",
+    "why_notable_zh": "安全風險與迭代釋出並存的核心張力表述",
+    "source_url": "https://www.bloomberg.com/features/2025-sam-altman-interview/",
+    "status": "draft",
+    "draft_note": "Bloomberg 原句；避開政治／人物恩怨段落；抓取時間 2026-09-06 17:24 Asia/Taipei"
+  },
+  {
+    "quote_id": "SA-2025-001-Q05",
+    "speech_id": "SA-2025-001",
+    "speaker": "sa",
+    "event": "Bloomberg Interview",
+    "date": "2025-01-05",
+    "quote": "We are here to build AGI and superintelligence and all the things that come beyond that. There are many wonderful things that are going to happen to us along the way, any of which could very reasonably distract us from the grand prize. I think it's really important not to get distracted.",
+    "quote_zh": "我們來這裡是為了打造 AGI、超智慧，以及之後的一切。沿途會有很多美妙的事，任何一件都可能合理地把我們從大獎上分心；我認為真的很重要不要分心。（draft）",
+    "why_notable_zh": "保護研究核心、不被產品成功帶偏的使命表述",
+    "source_url": "https://www.bloomberg.com/features/2025-sam-altman-interview/",
+    "status": "draft",
+    "draft_note": "Bloomberg 原句；抓取時間 2026-09-06 17:24 Asia/Taipei"
+  }
+]
