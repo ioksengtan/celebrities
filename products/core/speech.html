@@ -31,7 +31,7 @@
 
   <footer class="site-footer">
     <div class="wrap">
-      <span>短摘要＋語錄＋一條外連。不貼全文逐字稿。</span>
+      <span>短摘要與金句</span>
       <a href="../../index.html">語錄牆</a>
     </div>
   </footer>
@@ -66,9 +66,7 @@
     function outbound(speech, quotes) {
       const url = speech.transcript_url || speech.video_url || (quotes[0] && quotes[0].source_url);
       if (!url) return "";
-      const label = speech.transcript_url ? "原文／逐字稿" : (speech.video_url ? "影像" : "原文");
-      return '<a class="btn" href="' + CoreUI.escapeHtml(url) + '" target="_blank" rel="noopener noreferrer">' +
-        CoreUI.escapeHtml(label) + "</a>";
+      return '<a class="btn" href="' + CoreUI.escapeHtml(url) + '" target="_blank" rel="noopener noreferrer">原文</a>';
     }
 
     function renderList(featured, others, quotesBySpeech) {
@@ -76,7 +74,7 @@
         '<div class="page-head">' +
           '<p class="kicker">Core · speeches</p>' +
           "<h1>單場演講</h1>" +
-          "<p>先看資料較完整的七場。深連結：<code class=\"mono\">speech.html?id=JH-2026-005#quote-JH-2026-005-kq-1</code></p>" +
+          "<p>點一場看短摘要與金句。</p>" +
         "</div>" +
         "<section class=\"section\">" +
           "<h2>優先場次</h2>" +
@@ -109,7 +107,7 @@
 
       const summary = summaryZh
         ? "<p class=\"summary-zh\">" + CoreUI.escapeHtml(summaryZh) + "</p>"
-        : '<p class="missing">此場尚無中文短摘要，只顯示 metadata 與語錄，不編造導讀或逐字稿。</p>';
+        : '<p class="missing">此場尚無短摘要。</p>';
 
       detailView.innerHTML =
         '<p class="kicker">' + CoreUI.escapeHtml(speech.id) + "</p>" +

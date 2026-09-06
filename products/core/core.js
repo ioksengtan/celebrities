@@ -210,7 +210,7 @@
       ? speechHref(paths, entry.speech_id, qid)
       : "";
     const source = entry.source_url
-      ? '<a class="btn action" href="' + escapeHtml(entry.source_url) + '" target="_blank" rel="noopener noreferrer">原文</a>'
+      ? '<a class="btn action source" href="' + escapeHtml(entry.source_url) + '" target="_blank" rel="noopener noreferrer">原文</a>'
       : "";
     const speechBtn = speechLink && !options.hideSpeech
       ? '<a class="btn action" href="' + escapeHtml(speechLink) + '">單場</a>'
@@ -226,14 +226,14 @@
           (entry.date ? "<span>" + escapeHtml(formatDate(entry.date)) + "</span>" : "") +
         "</div>" +
         (entry.why_notable_zh
-          ? "<details class=\"why\"><summary>為什麼值得看</summary><p>" + escapeHtml(entry.why_notable_zh) + "</p></details>"
+          ? "<details class=\"why\"><summary>備註</summary><p>" + escapeHtml(entry.why_notable_zh) + "</p></details>"
           : "") +
         '<div class="card-actions">' +
+          source +
           '<button type="button" class="btn action" data-copy="' + encodeURIComponent(copyEn) + '">複製英文</button>' +
           (entry.quote_zh
             ? '<button type="button" class="btn action" data-copy="' + encodeURIComponent(copyZh) + '">複製中文</button>'
             : "") +
-          source +
           speechBtn +
         "</div>" +
         '<p class="sr-only">出處：' + escapeHtml(attr) + "</p>" +
