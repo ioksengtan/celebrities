@@ -181,11 +181,20 @@
 
   function highlightQuoteFromHash() {
     const id = getQuoteHashId();
-    if (!id) return;
+    if (!id) return false;
     const el = document.getElementById("quote-" + id);
-    if (!el) return;
+    if (!el) return false;
+    document.querySelectorAll(".quote-card.highlight").forEach((node) => node.classList.remove("highlight"));
     el.classList.add("highlight");
     el.scrollIntoView({ behavior: "smooth", block: "center" });
+    return true;
+  }
+
+  function scheduleHighlight() {
+    const tryHighlight = () => highlightQuoteFromHash();
+    requestAnimationFrame(() => {
+      if (!tryHighlight()) setTimeout(tryHighlight, 60);
+    });
   }
 
   function quoteCardHtml(entry, paths, opts) {
@@ -256,6 +265,7 @@
     copyText,
     bindCopyButtons,
     highlightQuoteFromHash,
+    scheduleHighlight,
     quoteCardHtml
   };
 })(window);

@@ -248,8 +248,9 @@ main {
 }
 
 .btn.action.copied {
+  background: var(--accent);
   border-color: var(--accent);
-  color: var(--accent);
+  color: var(--accent-ink);
 }
 
 .card-actions {
@@ -284,8 +285,10 @@ details.why[open] summary::after { content: " ▴"; }
 details.why p { margin: 8px 0 0; }
 
 .quote-card.highlight {
-  outline: 2px solid var(--accent);
-  background: color-mix(in srgb, var(--accent-soft) 70%, var(--surface));
+  outline: 3px solid var(--accent);
+  outline-offset: 2px;
+  background: var(--accent-soft);
+  box-shadow: 0 0 0 6px color-mix(in srgb, var(--accent) 18%, transparent);
 }
 
 .sr-only {
