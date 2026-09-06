@@ -1,0 +1,2252 @@
+{
+  "metadata": {
+    "created_date": "2026-09-06",
+    "total_speeches": 30,
+    "index_types": [
+      "topic_index",
+      "timeline_index",
+      "type_index",
+      "product_tag_index",
+      "special_speeches",
+      "quotes_index",
+      "length_index"
+    ]
+  },
+  "topic_index": [
+    {
+      "topic": "ai infrastructure",
+      "count": 3,
+      "speeches": [
+        {
+          "id": "JH-2025-001",
+          "speaker": "jensen_huang",
+          "event": "GTC 2025 Keynote",
+          "date": "2025-03-19",
+          "type": "keynote"
+        },
+        {
+          "id": "JH-2025-002",
+          "speaker": "jensen_huang",
+          "event": "GTC 2025 Washington D.C. Keynote",
+          "date": "2025-10-28",
+          "type": "keynote"
+        },
+        {
+          "id": "EM-2026-004",
+          "speaker": "elon_musk",
+          "event": "Moonshots Podcast Part 9",
+          "date": "2026-02-08",
+          "type": "interview"
+        }
+      ]
+    },
+    {
+      "topic": "ai",
+      "count": 2,
+      "speeches": [
+        {
+          "id": "JH-2024-001",
+          "speaker": "jensen_huang",
+          "event": "GTC 2024 Keynote",
+          "date": "2024-03-18",
+          "type": "keynote"
+        },
+        {
+          "id": "MZ-2024-001",
+          "speaker": "mark_zuckerberg",
+          "event": "Acquired Podcast Live at Chase Center",
+          "date": "2024-09-10",
+          "type": "interview"
+        }
+      ]
+    },
+    {
+      "topic": "agentic ai",
+      "count": 2,
+      "speeches": [
+        {
+          "id": "JH-2025-001",
+          "speaker": "jensen_huang",
+          "event": "GTC 2025 Keynote",
+          "date": "2025-03-19",
+          "type": "keynote"
+        },
+        {
+          "id": "JH-2026-005",
+          "speaker": "jensen_huang",
+          "event": "GTC Taipei 2026 Keynote",
+          "date": "2026-06-01",
+          "type": "keynote"
+        }
+      ]
+    },
+    {
+      "topic": "ai factories",
+      "count": 2,
+      "speeches": [
+        {
+          "id": "JH-2026-002",
+          "speaker": "jensen_huang",
+          "event": "Cisco AI Summit 2026",
+          "date": "2026-02-07",
+          "type": "interview"
+        },
+        {
+          "id": "JH-2026-003",
+          "speaker": "jensen_huang",
+          "event": "GTC 2026 Keynote",
+          "date": "2026-03-16",
+          "type": "keynote"
+        }
+      ]
+    },
+    {
+      "topic": "humanoid robots",
+      "count": 2,
+      "speeches": [
+        {
+          "id": "EM-2026-001",
+          "speaker": "elon_musk",
+          "event": "Moonshots Podcast #220",
+          "date": "2026-01-06",
+          "type": "interview"
+        },
+        {
+          "id": "EM-2026-007",
+          "speaker": "elon_musk",
+          "event": "The Transcript Desk - Edited",
+          "date": "2026-08-10",
+          "type": "interview"
+        }
+      ]
+    },
+    {
+      "topic": "ai future",
+      "count": 2,
+      "speeches": [
+        {
+          "id": "EM-2026-002",
+          "speaker": "elon_musk",
+          "event": "WEF 2026 Davos - Conversation with Elon Musk",
+          "date": "2026-01-22",
+          "type": "panel"
+        },
+        {
+          "id": "SP-2025-001",
+          "speaker": "sundar_pichai",
+          "event": "Bloomberg Tech Summit",
+          "date": "2025-06-05",
+          "type": "interview"
+        }
+      ]
+    },
+    {
+      "topic": "accelerated computing",
+      "count": 1,
+      "speeches": [
+        {
+          "id": "JH-2024-001",
+          "speaker": "jensen_huang",
+          "event": "GTC 2024 Keynote",
+          "date": "2024-03-18",
+          "type": "keynote"
+        }
+      ]
+    },
+    {
+      "topic": "digital twins",
+      "count": 1,
+      "speeches": [
+        {
+          "id": "JH-2024-001",
+          "speaker": "jensen_huang",
+          "event": "GTC 2024 Keynote",
+          "date": "2024-03-18",
+          "type": "keynote"
+        }
+      ]
+    },
+    {
+      "topic": "cloud",
+      "count": 1,
+      "speeches": [
+        {
+          "id": "JH-2024-001",
+          "speaker": "jensen_huang",
+          "event": "GTC 2024 Keynote",
+          "date": "2024-03-18",
+          "type": "keynote"
+        }
+      ]
+    },
+    {
+      "topic": "sustainability",
+      "count": 1,
+      "speeches": [
+        {
+          "id": "JH-2024-001",
+          "speaker": "jensen_huang",
+          "event": "GTC 2024 Keynote",
+          "date": "2024-03-18",
+          "type": "keynote"
+        }
+      ]
+    },
+    {
+      "topic": "token factory",
+      "count": 1,
+      "speeches": [
+        {
+          "id": "JH-2025-001",
+          "speaker": "jensen_huang",
+          "event": "GTC 2025 Keynote",
+          "date": "2025-03-19",
+          "type": "keynote"
+        }
+      ]
+    },
+    {
+      "topic": "ecosystem expansion",
+      "count": 1,
+      "speeches": [
+        {
+          "id": "JH-2025-002",
+          "speaker": "jensen_huang",
+          "event": "GTC 2025 Washington D.C. Keynote",
+          "date": "2025-10-28",
+          "type": "keynote"
+        }
+      ]
+    },
+    {
+      "topic": "consumer electronics",
+      "count": 1,
+      "speeches": [
+        {
+          "id": "JH-2026-001",
+          "speaker": "jensen_huang",
+          "event": "CES 2026",
+          "date": "2026-01-06",
+          "type": "keynote"
+        }
+      ]
+    },
+    {
+      "topic": "ai integration",
+      "count": 1,
+      "speeches": [
+        {
+          "id": "JH-2026-001",
+          "speaker": "jensen_huang",
+          "event": "CES 2026",
+          "date": "2026-01-06",
+          "type": "keynote"
+        }
+      ]
+    },
+    {
+      "topic": "gaming",
+      "count": 1,
+      "speeches": [
+        {
+          "id": "JH-2026-001",
+          "speaker": "jensen_huang",
+          "event": "CES 2026",
+          "date": "2026-01-06",
+          "type": "keynote"
+        }
+      ]
+    },
+    {
+      "topic": "automotive",
+      "count": 1,
+      "speeches": [
+        {
+          "id": "JH-2026-001",
+          "speaker": "jensen_huang",
+          "event": "CES 2026",
+          "date": "2026-01-06",
+          "type": "keynote"
+        }
+      ]
+    },
+    {
+      "topic": "implicit computing",
+      "count": 1,
+      "speeches": [
+        {
+          "id": "JH-2026-002",
+          "speaker": "jensen_huang",
+          "event": "Cisco AI Summit 2026",
+          "date": "2026-02-07",
+          "type": "interview"
+        }
+      ]
+    },
+    {
+      "topic": "economics",
+      "count": 1,
+      "speeches": [
+        {
+          "id": "JH-2026-002",
+          "speaker": "jensen_huang",
+          "event": "Cisco AI Summit 2026",
+          "date": "2026-02-07",
+          "type": "interview"
+        }
+      ]
+    },
+    {
+      "topic": "token factory economics",
+      "count": 1,
+      "speeches": [
+        {
+          "id": "JH-2026-003",
+          "speaker": "jensen_huang",
+          "event": "GTC 2026 Keynote",
+          "date": "2026-03-16",
+          "type": "keynote"
+        }
+      ]
+    },
+    {
+      "topic": "inference revenue",
+      "count": 1,
+      "speeches": [
+        {
+          "id": "JH-2026-003",
+          "speaker": "jensen_huang",
+          "event": "GTC 2026 Keynote",
+          "date": "2026-03-16",
+          "type": "keynote"
+        }
+      ]
+    },
+    {
+      "topic": "inference era",
+      "count": 1,
+      "speeches": [
+        {
+          "id": "JH-2026-004",
+          "speaker": "jensen_huang",
+          "event": "GTC 2026 Full Speech",
+          "date": "2026-03-17",
+          "type": "keynote"
+        }
+      ]
+    },
+    {
+      "topic": "ai factory efficiency",
+      "count": 1,
+      "speeches": [
+        {
+          "id": "JH-2026-004",
+          "speaker": "jensen_huang",
+          "event": "GTC 2026 Full Speech",
+          "date": "2026-03-17",
+          "type": "keynote"
+        }
+      ]
+    },
+    {
+      "topic": "saas end",
+      "count": 1,
+      "speeches": [
+        {
+          "id": "JH-2026-004",
+          "speaker": "jensen_huang",
+          "event": "GTC 2026 Full Speech",
+          "date": "2026-03-17",
+          "type": "keynote"
+        }
+      ]
+    },
+    {
+      "topic": "vera rubin",
+      "count": 1,
+      "speeches": [
+        {
+          "id": "JH-2026-005",
+          "speaker": "jensen_huang",
+          "event": "GTC Taipei 2026 Keynote",
+          "date": "2026-06-01",
+          "type": "keynote"
+        }
+      ]
+    },
+    {
+      "topic": "ai next generation",
+      "count": 1,
+      "speeches": [
+        {
+          "id": "JH-2026-005",
+          "speaker": "jensen_huang",
+          "event": "GTC Taipei 2026 Keynote",
+          "date": "2026-06-01",
+          "type": "keynote"
+        }
+      ]
+    },
+    {
+      "topic": "ai demand",
+      "count": 1,
+      "speeches": [
+        {
+          "id": "JH-2026-006",
+          "speaker": "jensen_huang",
+          "event": "CNBC Mad Money Interview",
+          "date": "2026-08-26",
+          "type": "interview"
+        }
+      ]
+    },
+    {
+      "topic": "infrastructure challenges",
+      "count": 1,
+      "speeches": [
+        {
+          "id": "JH-2026-006",
+          "speaker": "jensen_huang",
+          "event": "CNBC Mad Money Interview",
+          "date": "2026-08-26",
+          "type": "interview"
+        }
+      ]
+    },
+    {
+      "topic": "us opportunity",
+      "count": 1,
+      "speeches": [
+        {
+          "id": "JH-2026-006",
+          "speaker": "jensen_huang",
+          "event": "CNBC Mad Money Interview",
+          "date": "2026-08-26",
+          "type": "interview"
+        }
+      ]
+    },
+    {
+      "topic": "gtc 2026",
+      "count": 1,
+      "speeches": [
+        {
+          "id": "JH-2026-007",
+          "speaker": "jensen_huang",
+          "event": "Stratechery Interview",
+          "date": "2026-03-17",
+          "type": "interview"
+        }
+      ]
+    },
+    {
+      "topic": "china strategy",
+      "count": 1,
+      "speeches": [
+        {
+          "id": "JH-2026-007",
+          "speaker": "jensen_huang",
+          "event": "Stratechery Interview",
+          "date": "2026-03-17",
+          "type": "interview"
+        }
+      ]
+    },
+    {
+      "topic": "dc relations",
+      "count": 1,
+      "speeches": [
+        {
+          "id": "JH-2026-007",
+          "speaker": "jensen_huang",
+          "event": "Stratechery Interview",
+          "date": "2026-03-17",
+          "type": "interview"
+        }
+      ]
+    },
+    {
+      "topic": "nvidia nature",
+      "count": 1,
+      "speeches": [
+        {
+          "id": "JH-2026-007",
+          "speaker": "jensen_huang",
+          "event": "Stratechery Interview",
+          "date": "2026-03-17",
+          "type": "interview"
+        }
+      ]
+    },
+    {
+      "topic": "doge",
+      "count": 1,
+      "speeches": [
+        {
+          "id": "EM-2025-001",
+          "speaker": "elon_musk",
+          "event": "All-In Podcast",
+          "date": "2025-09-10",
+          "type": "interview"
+        }
+      ]
+    },
+    {
+      "topic": "optimus",
+      "count": 1,
+      "speeches": [
+        {
+          "id": "EM-2025-001",
+          "speaker": "elon_musk",
+          "event": "All-In Podcast",
+          "date": "2025-09-10",
+          "type": "interview"
+        }
+      ]
+    },
+    {
+      "topic": "starlink",
+      "count": 1,
+      "speeches": [
+        {
+          "id": "EM-2025-001",
+          "speaker": "elon_musk",
+          "event": "All-In Podcast",
+          "date": "2025-09-10",
+          "type": "interview"
+        }
+      ]
+    },
+    {
+      "topic": "ai evolution",
+      "count": 1,
+      "speeches": [
+        {
+          "id": "EM-2025-001",
+          "speaker": "elon_musk",
+          "event": "All-In Podcast",
+          "date": "2025-09-10",
+          "type": "interview"
+        }
+      ]
+    },
+    {
+      "topic": "western decline",
+      "count": 1,
+      "speeches": [
+        {
+          "id": "EM-2025-001",
+          "speaker": "elon_musk",
+          "event": "All-In Podcast",
+          "date": "2025-09-10",
+          "type": "interview"
+        }
+      ]
+    },
+    {
+      "topic": "agi timeline",
+      "count": 1,
+      "speeches": [
+        {
+          "id": "EM-2026-001",
+          "speaker": "elon_musk",
+          "event": "Moonshots Podcast #220",
+          "date": "2026-01-06",
+          "type": "interview"
+        }
+      ]
+    },
+    {
+      "topic": "us vs china",
+      "count": 1,
+      "speeches": [
+        {
+          "id": "EM-2026-001",
+          "speaker": "elon_musk",
+          "event": "Moonshots Podcast #220",
+          "date": "2026-01-06",
+          "type": "interview"
+        }
+      ]
+    },
+    {
+      "topic": "clean energy",
+      "count": 1,
+      "speeches": [
+        {
+          "id": "EM-2026-001",
+          "speaker": "elon_musk",
+          "event": "Moonshots Podcast #220",
+          "date": "2026-01-06",
+          "type": "interview"
+        }
+      ]
+    },
+    {
+      "topic": "compute",
+      "count": 1,
+      "speeches": [
+        {
+          "id": "EM-2026-001",
+          "speaker": "elon_musk",
+          "event": "Moonshots Podcast #220",
+          "date": "2026-01-06",
+          "type": "interview"
+        }
+      ]
+    },
+    {
+      "topic": "space exploration",
+      "count": 1,
+      "speeches": [
+        {
+          "id": "EM-2026-002",
+          "speaker": "elon_musk",
+          "event": "WEF 2026 Davos - Conversation with Elon Musk",
+          "date": "2026-01-22",
+          "type": "panel"
+        }
+      ]
+    },
+    {
+      "topic": "tesla innovation",
+      "count": 1,
+      "speeches": [
+        {
+          "id": "EM-2026-002",
+          "speaker": "elon_musk",
+          "event": "WEF 2026 Davos - Conversation with Elon Musk",
+          "date": "2026-01-22",
+          "type": "panel"
+        }
+      ]
+    },
+    {
+      "topic": "global tech trends",
+      "count": 1,
+      "speeches": [
+        {
+          "id": "EM-2026-002",
+          "speaker": "elon_musk",
+          "event": "WEF 2026 Davos - Conversation with Elon Musk",
+          "date": "2026-01-22",
+          "type": "panel"
+        }
+      ]
+    },
+    {
+      "topic": "ai development",
+      "count": 1,
+      "speeches": [
+        {
+          "id": "EM-2026-003",
+          "speaker": "elon_musk",
+          "event": "WEF 2026 Davos - with Larry Fink",
+          "date": "2026-01-22",
+          "type": "panel"
+        }
+      ]
+    },
+    {
+      "topic": "technology innovation",
+      "count": 1,
+      "speeches": [
+        {
+          "id": "EM-2026-003",
+          "speaker": "elon_musk",
+          "event": "WEF 2026 Davos - with Larry Fink",
+          "date": "2026-01-22",
+          "type": "panel"
+        }
+      ]
+    },
+    {
+      "topic": "global economy",
+      "count": 1,
+      "speeches": [
+        {
+          "id": "EM-2026-003",
+          "speaker": "elon_musk",
+          "event": "WEF 2026 Davos - with Larry Fink",
+          "date": "2026-01-22",
+          "type": "panel"
+        }
+      ]
+    },
+    {
+      "topic": "orbital data centers",
+      "count": 1,
+      "speeches": [
+        {
+          "id": "EM-2026-004",
+          "speaker": "elon_musk",
+          "event": "Moonshots Podcast Part 9",
+          "date": "2026-02-08",
+          "type": "interview"
+        }
+      ]
+    },
+    {
+      "topic": "grok 4.20",
+      "count": 1,
+      "speeches": [
+        {
+          "id": "EM-2026-005",
+          "speaker": "elon_musk",
+          "event": "Visionary Society Interview",
+          "date": "2026-03-24",
+          "type": "interview"
+        }
+      ]
+    },
+    {
+      "topic": "agi",
+      "count": 1,
+      "speeches": [
+        {
+          "id": "EM-2026-005",
+          "speaker": "elon_musk",
+          "event": "Visionary Society Interview",
+          "date": "2026-03-24",
+          "type": "interview"
+        }
+      ]
+    },
+    {
+      "topic": "optimus 3",
+      "count": 1,
+      "speeches": [
+        {
+          "id": "EM-2026-005",
+          "speaker": "elon_musk",
+          "event": "Visionary Society Interview",
+          "date": "2026-03-24",
+          "type": "interview"
+        }
+      ]
+    },
+    {
+      "topic": "10x economy",
+      "count": 1,
+      "speeches": [
+        {
+          "id": "EM-2026-005",
+          "speaker": "elon_musk",
+          "event": "Visionary Society Interview",
+          "date": "2026-03-24",
+          "type": "interview"
+        }
+      ]
+    },
+    {
+      "topic": "ai risks",
+      "count": 1,
+      "speeches": [
+        {
+          "id": "EM-2026-006",
+          "speaker": "elon_musk",
+          "event": "The Economist Interview",
+          "date": "2026-07-23",
+          "type": "interview"
+        }
+      ]
+    },
+    {
+      "topic": "abundance",
+      "count": 1,
+      "speeches": [
+        {
+          "id": "EM-2026-006",
+          "speaker": "elon_musk",
+          "event": "The Economist Interview",
+          "date": "2026-07-23",
+          "type": "interview"
+        }
+      ]
+    },
+    {
+      "topic": "humanity future",
+      "count": 1,
+      "speeches": [
+        {
+          "id": "EM-2026-006",
+          "speaker": "elon_musk",
+          "event": "The Economist Interview",
+          "date": "2026-07-23",
+          "type": "interview"
+        }
+      ]
+    },
+    {
+      "topic": "2036 world",
+      "count": 1,
+      "speeches": [
+        {
+          "id": "EM-2026-006",
+          "speaker": "elon_musk",
+          "event": "The Economist Interview",
+          "date": "2026-07-23",
+          "type": "interview"
+        }
+      ]
+    },
+    {
+      "topic": "ai superintelligence",
+      "count": 1,
+      "speeches": [
+        {
+          "id": "EM-2026-007",
+          "speaker": "elon_musk",
+          "event": "The Transcript Desk - Edited",
+          "date": "2026-08-10",
+          "type": "interview"
+        }
+      ]
+    },
+    {
+      "topic": "optional work",
+      "count": 1,
+      "speeches": [
+        {
+          "id": "EM-2026-007",
+          "speaker": "elon_musk",
+          "event": "The Transcript Desk - Edited",
+          "date": "2026-08-10",
+          "type": "interview"
+        }
+      ]
+    },
+    {
+      "topic": "china",
+      "count": 1,
+      "speeches": [
+        {
+          "id": "EM-2026-007",
+          "speaker": "elon_musk",
+          "event": "The Transcript Desk - Edited",
+          "date": "2026-08-10",
+          "type": "interview"
+        }
+      ]
+    },
+    {
+      "topic": "corporate control",
+      "count": 1,
+      "speeches": [
+        {
+          "id": "EM-2026-007",
+          "speaker": "elon_musk",
+          "event": "The Transcript Desk - Edited",
+          "date": "2026-08-10",
+          "type": "interview"
+        }
+      ]
+    },
+    {
+      "topic": "chatgpt plans",
+      "count": 1,
+      "speeches": [
+        {
+          "id": "SA-2025-001",
+          "speaker": "sam_altman",
+          "event": "Bloomberg Interview",
+          "date": "2025-01-05",
+          "type": "interview"
+        }
+      ]
+    },
+    {
+      "topic": "agi pursuit",
+      "count": 1,
+      "speeches": [
+        {
+          "id": "SA-2025-001",
+          "speaker": "sam_altman",
+          "event": "Bloomberg Interview",
+          "date": "2025-01-05",
+          "type": "interview"
+        }
+      ]
+    },
+    {
+      "topic": "four-day firing incident",
+      "count": 1,
+      "speeches": [
+        {
+          "id": "SA-2025-001",
+          "speaker": "sam_altman",
+          "event": "Bloomberg Interview",
+          "date": "2025-01-05",
+          "type": "interview"
+        }
+      ]
+    },
+    {
+      "topic": "ai impact on software engineers",
+      "count": 1,
+      "speeches": [
+        {
+          "id": "SA-2026-001",
+          "speaker": "sam_altman",
+          "event": "OpenAI Town Hall",
+          "date": "2026-01-27",
+          "type": "town_hall"
+        }
+      ]
+    },
+    {
+      "topic": "agent builders",
+      "count": 1,
+      "speeches": [
+        {
+          "id": "SA-2026-001",
+          "speaker": "sam_altman",
+          "event": "OpenAI Town Hall",
+          "date": "2026-01-27",
+          "type": "town_hall"
+        }
+      ]
+    },
+    {
+      "topic": "economic inequality",
+      "count": 1,
+      "speeches": [
+        {
+          "id": "SA-2026-001",
+          "speaker": "sam_altman",
+          "event": "OpenAI Town Hall",
+          "date": "2026-01-27",
+          "type": "town_hall"
+        }
+      ]
+    },
+    {
+      "topic": "openai models",
+      "count": 1,
+      "speeches": [
+        {
+          "id": "SA-2026-002",
+          "speaker": "sam_altman",
+          "event": "CNBC Power Lunch",
+          "date": "2026-06-01",
+          "type": "interview"
+        }
+      ]
+    },
+    {
+      "topic": "business strategy",
+      "count": 1,
+      "speeches": [
+        {
+          "id": "SA-2026-002",
+          "speaker": "sam_altman",
+          "event": "CNBC Power Lunch",
+          "date": "2026-06-01",
+          "type": "interview"
+        }
+      ]
+    },
+    {
+      "topic": "gpt-5.6 sol",
+      "count": 1,
+      "speeches": [
+        {
+          "id": "SA-2026-003",
+          "speaker": "sam_altman",
+          "event": "CNBC Squawk on the Street",
+          "date": "2026-07-09",
+          "type": "interview"
+        }
+      ]
+    },
+    {
+      "topic": "efficiency",
+      "count": 1,
+      "speeches": [
+        {
+          "id": "SA-2026-003",
+          "speaker": "sam_altman",
+          "event": "CNBC Squawk on the Street",
+          "date": "2026-07-09",
+          "type": "interview"
+        }
+      ]
+    },
+    {
+      "topic": "roi",
+      "count": 1,
+      "speeches": [
+        {
+          "id": "SA-2026-003",
+          "speaker": "sam_altman",
+          "event": "CNBC Squawk on the Street",
+          "date": "2026-07-09",
+          "type": "interview"
+        }
+      ]
+    },
+    {
+      "topic": "openai as platform",
+      "count": 1,
+      "speeches": [
+        {
+          "id": "SA-2026-004",
+          "speaker": "sam_altman",
+          "event": "Dealroom.co Interview",
+          "date": "2026-08-24",
+          "type": "interview"
+        }
+      ]
+    },
+    {
+      "topic": "killing sora/atlas for compute",
+      "count": 1,
+      "speeches": [
+        {
+          "id": "SA-2026-004",
+          "speaker": "sam_altman",
+          "event": "Dealroom.co Interview",
+          "date": "2026-08-24",
+          "type": "interview"
+        }
+      ]
+    },
+    {
+      "topic": "ai adoption for economic growth",
+      "count": 1,
+      "speeches": [
+        {
+          "id": "SA-2026-005",
+          "speaker": "sam_altman",
+          "event": "G20 Innovation Summit",
+          "date": "2026-09-02",
+          "type": "panel"
+        }
+      ]
+    },
+    {
+      "topic": "global innovation",
+      "count": 1,
+      "speeches": [
+        {
+          "id": "SA-2026-005",
+          "speaker": "sam_altman",
+          "event": "G20 Innovation Summit",
+          "date": "2026-09-02",
+          "type": "panel"
+        }
+      ]
+    },
+    {
+      "topic": "next-gen models",
+      "count": 1,
+      "speeches": [
+        {
+          "id": "SA-2026-006",
+          "speaker": "sam_altman",
+          "event": "Axios Interview",
+          "date": "2026-09-03",
+          "type": "interview"
+        }
+      ]
+    },
+    {
+      "topic": "sobering siren",
+      "count": 1,
+      "speeches": [
+        {
+          "id": "SA-2026-006",
+          "speaker": "sam_altman",
+          "event": "Axios Interview",
+          "date": "2026-09-03",
+          "type": "interview"
+        }
+      ]
+    },
+    {
+      "topic": "risks",
+      "count": 1,
+      "speeches": [
+        {
+          "id": "SA-2026-006",
+          "speaker": "sam_altman",
+          "event": "Axios Interview",
+          "date": "2026-09-03",
+          "type": "interview"
+        }
+      ]
+    },
+    {
+      "topic": "responsibility",
+      "count": 1,
+      "speeches": [
+        {
+          "id": "SA-2026-006",
+          "speaker": "sam_altman",
+          "event": "Axios Interview",
+          "date": "2026-09-03",
+          "type": "interview"
+        }
+      ]
+    },
+    {
+      "topic": "antitrust",
+      "count": 1,
+      "speeches": [
+        {
+          "id": "SP-2025-001",
+          "speaker": "sundar_pichai",
+          "event": "Bloomberg Tech Summit",
+          "date": "2025-06-05",
+          "type": "interview"
+        }
+      ]
+    },
+    {
+      "topic": "privacy",
+      "count": 1,
+      "speeches": [
+        {
+          "id": "SP-2025-001",
+          "speaker": "sundar_pichai",
+          "event": "Bloomberg Tech Summit",
+          "date": "2025-06-05",
+          "type": "interview"
+        }
+      ]
+    },
+    {
+      "topic": "ai impact on jobs",
+      "count": 1,
+      "speeches": [
+        {
+          "id": "SP-2025-002",
+          "speaker": "sundar_pichai",
+          "event": "BBC The Interview",
+          "date": "2025-11-23",
+          "type": "interview"
+        }
+      ]
+    },
+    {
+      "topic": "truth",
+      "count": 1,
+      "speeches": [
+        {
+          "id": "SP-2025-002",
+          "speaker": "sundar_pichai",
+          "event": "BBC The Interview",
+          "date": "2025-11-23",
+          "type": "interview"
+        }
+      ]
+    },
+    {
+      "topic": "environment",
+      "count": 1,
+      "speeches": [
+        {
+          "id": "SP-2025-002",
+          "speaker": "sundar_pichai",
+          "event": "BBC The Interview",
+          "date": "2025-11-23",
+          "type": "interview"
+        }
+      ]
+    },
+    {
+      "topic": "responsible ai",
+      "count": 1,
+      "speeches": [
+        {
+          "id": "SP-2026-001",
+          "speaker": "sundar_pichai",
+          "event": "AI Impact Summit 2026 - Opening Ceremony",
+          "date": "2026-02-19",
+          "type": "keynote"
+        }
+      ]
+    },
+    {
+      "topic": "inclusive ai",
+      "count": 1,
+      "speeches": [
+        {
+          "id": "SP-2026-001",
+          "speaker": "sundar_pichai",
+          "event": "AI Impact Summit 2026 - Opening Ceremony",
+          "date": "2026-02-19",
+          "type": "keynote"
+        }
+      ]
+    },
+    {
+      "topic": "meta strategy",
+      "count": 1,
+      "speeches": [
+        {
+          "id": "MZ-2024-001",
+          "speaker": "mark_zuckerberg",
+          "event": "Acquired Podcast Live at Chase Center",
+          "date": "2024-09-10",
+          "type": "interview"
+        }
+      ]
+    },
+    {
+      "topic": "vr/ar future",
+      "count": 1,
+      "speeches": [
+        {
+          "id": "MZ-2024-001",
+          "speaker": "mark_zuckerberg",
+          "event": "Acquired Podcast Live at Chase Center",
+          "date": "2024-09-10",
+          "type": "interview"
+        }
+      ]
+    },
+    {
+      "topic": "ai spending blitz",
+      "count": 1,
+      "speeches": [
+        {
+          "id": "MZ-2025-001",
+          "speaker": "mark_zuckerberg",
+          "event": "CNBC Report",
+          "date": "2025-07-30",
+          "type": "interview"
+        }
+      ]
+    },
+    {
+      "topic": "2026 plans",
+      "count": 1,
+      "speeches": [
+        {
+          "id": "MZ-2025-001",
+          "speaker": "mark_zuckerberg",
+          "event": "CNBC Report",
+          "date": "2025-07-30",
+          "type": "interview"
+        }
+      ]
+    }
+  ],
+  "timeline_index": [
+    {
+      "month": "2024-03",
+      "count": 1,
+      "speeches": [
+        {
+          "id": "JH-2024-001",
+          "speaker": "jensen_huang",
+          "event": "GTC 2024 Keynote",
+          "type": "keynote"
+        }
+      ]
+    },
+    {
+      "month": "2024-09",
+      "count": 1,
+      "speeches": [
+        {
+          "id": "MZ-2024-001",
+          "speaker": "mark_zuckerberg",
+          "event": "Acquired Podcast Live at Chase Center",
+          "type": "interview"
+        }
+      ]
+    },
+    {
+      "month": "2025-01",
+      "count": 1,
+      "speeches": [
+        {
+          "id": "SA-2025-001",
+          "speaker": "sam_altman",
+          "event": "Bloomberg Interview",
+          "type": "interview"
+        }
+      ]
+    },
+    {
+      "month": "2025-03",
+      "count": 1,
+      "speeches": [
+        {
+          "id": "JH-2025-001",
+          "speaker": "jensen_huang",
+          "event": "GTC 2025 Keynote",
+          "type": "keynote"
+        }
+      ]
+    },
+    {
+      "month": "2025-06",
+      "count": 1,
+      "speeches": [
+        {
+          "id": "SP-2025-001",
+          "speaker": "sundar_pichai",
+          "event": "Bloomberg Tech Summit",
+          "type": "interview"
+        }
+      ]
+    },
+    {
+      "month": "2025-07",
+      "count": 1,
+      "speeches": [
+        {
+          "id": "MZ-2025-001",
+          "speaker": "mark_zuckerberg",
+          "event": "CNBC Report",
+          "type": "interview"
+        }
+      ]
+    },
+    {
+      "month": "2025-09",
+      "count": 1,
+      "speeches": [
+        {
+          "id": "EM-2025-001",
+          "speaker": "elon_musk",
+          "event": "All-In Podcast",
+          "type": "interview"
+        }
+      ]
+    },
+    {
+      "month": "2025-10",
+      "count": 1,
+      "speeches": [
+        {
+          "id": "JH-2025-002",
+          "speaker": "jensen_huang",
+          "event": "GTC 2025 Washington D.C. Keynote",
+          "type": "keynote"
+        }
+      ]
+    },
+    {
+      "month": "2025-11",
+      "count": 1,
+      "speeches": [
+        {
+          "id": "SP-2025-002",
+          "speaker": "sundar_pichai",
+          "event": "BBC The Interview",
+          "type": "interview"
+        }
+      ]
+    },
+    {
+      "month": "2026-01",
+      "count": 5,
+      "speeches": [
+        {
+          "id": "JH-2026-001",
+          "speaker": "jensen_huang",
+          "event": "CES 2026",
+          "type": "keynote"
+        },
+        {
+          "id": "EM-2026-001",
+          "speaker": "elon_musk",
+          "event": "Moonshots Podcast #220",
+          "type": "interview"
+        },
+        {
+          "id": "EM-2026-002",
+          "speaker": "elon_musk",
+          "event": "WEF 2026 Davos - Conversation with Elon Musk",
+          "type": "panel"
+        },
+        {
+          "id": "EM-2026-003",
+          "speaker": "elon_musk",
+          "event": "WEF 2026 Davos - with Larry Fink",
+          "type": "panel"
+        },
+        {
+          "id": "SA-2026-001",
+          "speaker": "sam_altman",
+          "event": "OpenAI Town Hall",
+          "type": "town_hall"
+        }
+      ]
+    },
+    {
+      "month": "2026-02",
+      "count": 3,
+      "speeches": [
+        {
+          "id": "JH-2026-002",
+          "speaker": "jensen_huang",
+          "event": "Cisco AI Summit 2026",
+          "type": "interview"
+        },
+        {
+          "id": "EM-2026-004",
+          "speaker": "elon_musk",
+          "event": "Moonshots Podcast Part 9",
+          "type": "interview"
+        },
+        {
+          "id": "SP-2026-001",
+          "speaker": "sundar_pichai",
+          "event": "AI Impact Summit 2026 - Opening Ceremony",
+          "type": "keynote"
+        }
+      ]
+    },
+    {
+      "month": "2026-03",
+      "count": 4,
+      "speeches": [
+        {
+          "id": "JH-2026-003",
+          "speaker": "jensen_huang",
+          "event": "GTC 2026 Keynote",
+          "type": "keynote"
+        },
+        {
+          "id": "JH-2026-004",
+          "speaker": "jensen_huang",
+          "event": "GTC 2026 Full Speech",
+          "type": "keynote"
+        },
+        {
+          "id": "JH-2026-007",
+          "speaker": "jensen_huang",
+          "event": "Stratechery Interview",
+          "type": "interview"
+        },
+        {
+          "id": "EM-2026-005",
+          "speaker": "elon_musk",
+          "event": "Visionary Society Interview",
+          "type": "interview"
+        }
+      ]
+    },
+    {
+      "month": "2026-06",
+      "count": 2,
+      "speeches": [
+        {
+          "id": "JH-2026-005",
+          "speaker": "jensen_huang",
+          "event": "GTC Taipei 2026 Keynote",
+          "type": "keynote"
+        },
+        {
+          "id": "SA-2026-002",
+          "speaker": "sam_altman",
+          "event": "CNBC Power Lunch",
+          "type": "interview"
+        }
+      ]
+    },
+    {
+      "month": "2026-07",
+      "count": 2,
+      "speeches": [
+        {
+          "id": "EM-2026-006",
+          "speaker": "elon_musk",
+          "event": "The Economist Interview",
+          "type": "interview"
+        },
+        {
+          "id": "SA-2026-003",
+          "speaker": "sam_altman",
+          "event": "CNBC Squawk on the Street",
+          "type": "interview"
+        }
+      ]
+    },
+    {
+      "month": "2026-08",
+      "count": 3,
+      "speeches": [
+        {
+          "id": "JH-2026-006",
+          "speaker": "jensen_huang",
+          "event": "CNBC Mad Money Interview",
+          "type": "interview"
+        },
+        {
+          "id": "EM-2026-007",
+          "speaker": "elon_musk",
+          "event": "The Transcript Desk - Edited",
+          "type": "interview"
+        },
+        {
+          "id": "SA-2026-004",
+          "speaker": "sam_altman",
+          "event": "Dealroom.co Interview",
+          "type": "interview"
+        }
+      ]
+    },
+    {
+      "month": "2026-09",
+      "count": 2,
+      "speeches": [
+        {
+          "id": "SA-2026-005",
+          "speaker": "sam_altman",
+          "event": "G20 Innovation Summit",
+          "type": "panel"
+        },
+        {
+          "id": "SA-2026-006",
+          "speaker": "sam_altman",
+          "event": "Axios Interview",
+          "type": "interview"
+        }
+      ]
+    }
+  ],
+  "type_index": {
+    "type": {
+      "keynote": [
+        "JH-2024-001",
+        "JH-2025-001",
+        "JH-2025-002",
+        "JH-2026-001",
+        "JH-2026-003",
+        "JH-2026-004",
+        "JH-2026-005",
+        "SP-2026-001"
+      ],
+      "interview": [
+        "JH-2026-002",
+        "JH-2026-006",
+        "JH-2026-007",
+        "EM-2025-001",
+        "EM-2026-001",
+        "EM-2026-004",
+        "EM-2026-005",
+        "EM-2026-006",
+        "EM-2026-007",
+        "SA-2025-001",
+        "SA-2026-002",
+        "SA-2026-003",
+        "SA-2026-004",
+        "SA-2026-006",
+        "SP-2025-001",
+        "SP-2025-002",
+        "MZ-2024-001",
+        "MZ-2025-001"
+      ],
+      "panel": [
+        "EM-2026-002",
+        "EM-2026-003",
+        "SA-2026-005"
+      ],
+      "town_hall": [
+        "SA-2026-001"
+      ]
+    },
+    "counts": {
+      "keynote": 8,
+      "interview": 18,
+      "panel": 3,
+      "town_hall": 1
+    }
+  },
+  "product_tag_index": {
+    "tag": {
+      "keynote": [
+        "JH-2024-001",
+        "JH-2025-001",
+        "JH-2025-002",
+        "JH-2026-003",
+        "JH-2026-004",
+        "JH-2026-005",
+        "SP-2026-001"
+      ],
+      "technical": [
+        "JH-2024-001"
+      ],
+      "AI infrastructure": [
+        "JH-2024-001"
+      ],
+      "agentic AI": [
+        "JH-2025-001",
+        "JH-2026-005"
+      ],
+      "token economics": [
+        "JH-2025-001"
+      ],
+      "policy": [
+        "JH-2025-002",
+        "SA-2026-005",
+        "SP-2025-001",
+        "SP-2026-001"
+      ],
+      "ecosystem": [
+        "JH-2025-002"
+      ],
+      "consumer": [
+        "JH-2026-001"
+      ],
+      "CES": [
+        "JH-2026-001"
+      ],
+      "product launch": [
+        "JH-2026-001"
+      ],
+      "interview": [
+        "JH-2026-002",
+        "JH-2026-006",
+        "JH-2026-007",
+        "EM-2025-001",
+        "EM-2026-001",
+        "EM-2026-004",
+        "EM-2026-005",
+        "EM-2026-006",
+        "EM-2026-007",
+        "SA-2025-001",
+        "SA-2026-002",
+        "SA-2026-003",
+        "SA-2026-004",
+        "SA-2026-006",
+        "SP-2025-001",
+        "SP-2025-002",
+        "MZ-2024-001",
+        "MZ-2025-001"
+      ],
+      "enterprise": [
+        "JH-2026-002"
+      ],
+      "economics": [
+        "JH-2026-002"
+      ],
+      "GTC": [
+        "JH-2026-003"
+      ],
+      "trillion dollar": [
+        "JH-2026-003"
+      ],
+      "inference": [
+        "JH-2026-003",
+        "JH-2026-004"
+      ],
+      "operating system": [
+        "JH-2026-004"
+      ],
+      "Taiwan": [
+        "JH-2026-005"
+      ],
+      "home": [
+        "JH-2026-005"
+      ],
+      "CNBC": [
+        "JH-2026-006",
+        "SA-2026-002",
+        "SA-2026-003",
+        "MZ-2025-001"
+      ],
+      "market": [
+        "JH-2026-006"
+      ],
+      "demand": [
+        "JH-2026-006"
+      ],
+      "strategy": [
+        "JH-2026-007",
+        "SA-2026-004"
+      ],
+      "geopolitics": [
+        "JH-2026-007",
+        "EM-2026-007"
+      ],
+      "podcast": [
+        "EM-2025-001"
+      ],
+      "politics": [
+        "EM-2025-001"
+      ],
+      "robots": [
+        "EM-2025-001",
+        "EM-2026-005"
+      ],
+      "AGI": [
+        "EM-2026-001"
+      ],
+      "future": [
+        "EM-2026-001",
+        "EM-2026-006"
+      ],
+      "abundance": [
+        "EM-2026-001"
+      ],
+      "WEF": [
+        "EM-2026-002",
+        "EM-2026-003"
+      ],
+      "Davos": [
+        "EM-2026-002",
+        "EM-2026-003"
+      ],
+      "panel": [
+        "EM-2026-002"
+      ],
+      "global": [
+        "EM-2026-002"
+      ],
+      "finance": [
+        "EM-2026-003"
+      ],
+      "BlackRock": [
+        "EM-2026-003"
+      ],
+      "infrastructure": [
+        "EM-2026-004",
+        "MZ-2025-001"
+      ],
+      "space": [
+        "EM-2026-004"
+      ],
+      "Grok": [
+        "EM-2026-005"
+      ],
+      "economy": [
+        "EM-2026-005",
+        "SA-2026-005"
+      ],
+      "Economist": [
+        "EM-2026-006"
+      ],
+      "risks": [
+        "EM-2026-006",
+        "SA-2026-006"
+      ],
+      "superintelligence": [
+        "EM-2026-007"
+      ],
+      "work": [
+        "EM-2026-007"
+      ],
+      "Bloomberg": [
+        "SA-2025-001",
+        "SP-2025-001"
+      ],
+      "OpenAI drama": [
+        "SA-2025-001"
+      ],
+      "town hall": [
+        "SA-2026-001"
+      ],
+      "developers": [
+        "SA-2026-001"
+      ],
+      "inequality": [
+        "SA-2026-001"
+      ],
+      "business": [
+        "SA-2026-002"
+      ],
+      "models": [
+        "SA-2026-003"
+      ],
+      "platform": [
+        "SA-2026-004"
+      ],
+      "G20": [
+        "SA-2026-005"
+      ],
+      "innovation": [
+        "SA-2026-005"
+      ],
+      "Axios": [
+        "SA-2026-006"
+      ],
+      "sobering": [
+        "SA-2026-006"
+      ],
+      "privacy": [
+        "SP-2025-001"
+      ],
+      "BBC": [
+        "SP-2025-002"
+      ],
+      "jobs": [
+        "SP-2025-002"
+      ],
+      "environment": [
+        "SP-2025-002"
+      ],
+      "responsible AI": [
+        "SP-2026-001"
+      ],
+      "summit": [
+        "SP-2026-001"
+      ],
+      "Acquired": [
+        "MZ-2024-001"
+      ],
+      "Meta strategy": [
+        "MZ-2024-001"
+      ],
+      "VR/AR": [
+        "MZ-2024-001"
+      ],
+      "spending": [
+        "MZ-2025-001"
+      ]
+    },
+    "counts": {
+      "keynote": 7,
+      "technical": 1,
+      "AI infrastructure": 1,
+      "agentic AI": 2,
+      "token economics": 1,
+      "policy": 4,
+      "ecosystem": 1,
+      "consumer": 1,
+      "CES": 1,
+      "product launch": 1,
+      "interview": 18,
+      "enterprise": 1,
+      "economics": 1,
+      "GTC": 1,
+      "trillion dollar": 1,
+      "inference": 2,
+      "operating system": 1,
+      "Taiwan": 1,
+      "home": 1,
+      "CNBC": 4,
+      "market": 1,
+      "demand": 1,
+      "strategy": 2,
+      "geopolitics": 2,
+      "podcast": 1,
+      "politics": 1,
+      "robots": 2,
+      "AGI": 1,
+      "future": 2,
+      "abundance": 1,
+      "WEF": 2,
+      "Davos": 2,
+      "panel": 1,
+      "global": 1,
+      "finance": 1,
+      "BlackRock": 1,
+      "infrastructure": 2,
+      "space": 1,
+      "Grok": 1,
+      "economy": 2,
+      "Economist": 1,
+      "risks": 2,
+      "superintelligence": 1,
+      "work": 1,
+      "Bloomberg": 2,
+      "OpenAI drama": 1,
+      "town hall": 1,
+      "developers": 1,
+      "inequality": 1,
+      "business": 1,
+      "models": 1,
+      "platform": 1,
+      "G20": 1,
+      "innovation": 1,
+      "Axios": 1,
+      "sobering": 1,
+      "privacy": 1,
+      "BBC": 1,
+      "jobs": 1,
+      "environment": 1,
+      "responsible AI": 1,
+      "summit": 1,
+      "Acquired": 1,
+      "Meta strategy": 1,
+      "VR/AR": 1,
+      "spending": 1
+    }
+  },
+  "special_speeches": [
+    {
+      "id": "JH-2026-005",
+      "speaker": "jensen_huang",
+      "event": "GTC Taipei 2026 Keynote",
+      "date": "2026-06-01",
+      "special_significance": "homecoming",
+      "viral_status": null
+    },
+    {
+      "id": "EM-2026-006",
+      "speaker": "elon_musk",
+      "event": "The Economist Interview",
+      "date": "2026-07-23",
+      "special_significance": null,
+      "viral_status": "high"
+    }
+  ],
+  "quotes_index": [
+    {
+      "id": "JH-2025-001",
+      "speaker": "jensen_huang",
+      "event": "GTC 2025 Keynote",
+      "date": "2025-03-19",
+      "quote": "This is how intelligence is made, a new kind of factory generator of tokens"
+    },
+    {
+      "id": "JH-2026-001",
+      "speaker": "jensen_huang",
+      "event": "CES 2026",
+      "date": "2026-01-06",
+      "quote": "Hello, Las Vegas"
+    },
+    {
+      "id": "JH-2026-003",
+      "speaker": "jensen_huang",
+      "event": "GTC 2026 Keynote",
+      "date": "2026-03-16",
+      "quote": "by 2027, we will see at least $1 trillion in high-confidence demand"
+    },
+    {
+      "id": "JH-2026-004",
+      "speaker": "jensen_huang",
+      "event": "GTC 2026 Full Speech",
+      "date": "2026-03-17",
+      "quote": "The era of inference has arrived"
+    },
+    {
+      "id": "JH-2026-004",
+      "speaker": "jensen_huang",
+      "event": "GTC 2026 Full Speech",
+      "date": "2026-03-17",
+      "quote": "lobster is the new operating system"
+    },
+    {
+      "id": "JH-2026-005",
+      "speaker": "jensen_huang",
+      "event": "GTC Taipei 2026 Keynote",
+      "date": "2026-06-01",
+      "quote": "Very good to be home"
+    },
+    {
+      "id": "EM-2026-006",
+      "speaker": "elon_musk",
+      "event": "The Economist Interview",
+      "date": "2026-07-23",
+      "quote": "Let's enjoy the ride"
+    }
+  ],
+  "length_index": {
+    "short": {
+      "count": 7,
+      "speeches": [
+        {
+          "id": "JH-2026-006",
+          "speaker": "jensen_huang",
+          "event": "CNBC Mad Money Interview",
+          "word_count": 4000
+        },
+        {
+          "id": "SA-2026-002",
+          "speaker": "sam_altman",
+          "event": "CNBC Power Lunch",
+          "word_count": 4500
+        },
+        {
+          "id": "SA-2026-003",
+          "speaker": "sam_altman",
+          "event": "CNBC Squawk on the Street",
+          "word_count": 4500
+        },
+        {
+          "id": "SA-2026-006",
+          "speaker": "sam_altman",
+          "event": "Axios Interview",
+          "word_count": 4500
+        },
+        {
+          "id": "SP-2025-002",
+          "speaker": "sundar_pichai",
+          "event": "BBC The Interview",
+          "word_count": 4500
+        },
+        {
+          "id": "SP-2026-001",
+          "speaker": "sundar_pichai",
+          "event": "AI Impact Summit 2026 - Opening Ceremony",
+          "word_count": 4500
+        },
+        {
+          "id": "MZ-2025-001",
+          "speaker": "mark_zuckerberg",
+          "event": "CNBC Report",
+          "word_count": 2000
+        }
+      ]
+    },
+    "medium": {
+      "count": 12,
+      "speeches": [
+        {
+          "id": "JH-2026-001",
+          "speaker": "jensen_huang",
+          "event": "CES 2026",
+          "word_count": 8000
+        },
+        {
+          "id": "JH-2026-002",
+          "speaker": "jensen_huang",
+          "event": "Cisco AI Summit 2026",
+          "word_count": 6000
+        },
+        {
+          "id": "JH-2026-007",
+          "speaker": "jensen_huang",
+          "event": "Stratechery Interview",
+          "word_count": 8000
+        },
+        {
+          "id": "EM-2026-002",
+          "speaker": "elon_musk",
+          "event": "WEF 2026 Davos - Conversation with Elon Musk",
+          "word_count": 9000
+        },
+        {
+          "id": "EM-2026-003",
+          "speaker": "elon_musk",
+          "event": "WEF 2026 Davos - with Larry Fink",
+          "word_count": 7000
+        },
+        {
+          "id": "EM-2026-004",
+          "speaker": "elon_musk",
+          "event": "Moonshots Podcast Part 9",
+          "word_count": 5000
+        },
+        {
+          "id": "EM-2026-005",
+          "speaker": "elon_musk",
+          "event": "Visionary Society Interview",
+          "word_count": 9000
+        },
+        {
+          "id": "SA-2025-001",
+          "speaker": "sam_altman",
+          "event": "Bloomberg Interview",
+          "word_count": 9000
+        },
+        {
+          "id": "SA-2026-001",
+          "speaker": "sam_altman",
+          "event": "OpenAI Town Hall",
+          "word_count": 9000
+        },
+        {
+          "id": "SA-2026-004",
+          "speaker": "sam_altman",
+          "event": "Dealroom.co Interview",
+          "word_count": 7000
+        },
+        {
+          "id": "SA-2026-005",
+          "speaker": "sam_altman",
+          "event": "G20 Innovation Summit",
+          "word_count": 7000
+        },
+        {
+          "id": "SP-2025-001",
+          "speaker": "sundar_pichai",
+          "event": "Bloomberg Tech Summit",
+          "word_count": 9000
+        }
+      ]
+    },
+    "long": {
+      "count": 8,
+      "speeches": [
+        {
+          "id": "JH-2024-001",
+          "speaker": "jensen_huang",
+          "event": "GTC 2024 Keynote",
+          "word_count": 12000
+        },
+        {
+          "id": "JH-2025-001",
+          "speaker": "jensen_huang",
+          "event": "GTC 2025 Keynote",
+          "word_count": 13000
+        },
+        {
+          "id": "JH-2025-002",
+          "speaker": "jensen_huang",
+          "event": "GTC 2025 Washington D.C. Keynote",
+          "word_count": 10000
+        },
+        {
+          "id": "JH-2026-003",
+          "speaker": "jensen_huang",
+          "event": "GTC 2026 Keynote",
+          "word_count": 14000
+        },
+        {
+          "id": "JH-2026-004",
+          "speaker": "jensen_huang",
+          "event": "GTC 2026 Full Speech",
+          "word_count": 14000
+        },
+        {
+          "id": "JH-2026-005",
+          "speaker": "jensen_huang",
+          "event": "GTC Taipei 2026 Keynote",
+          "word_count": 11000
+        },
+        {
+          "id": "EM-2026-006",
+          "speaker": "elon_musk",
+          "event": "The Economist Interview",
+          "word_count": 14000
+        },
+        {
+          "id": "EM-2026-007",
+          "speaker": "elon_musk",
+          "event": "The Transcript Desk - Edited",
+          "word_count": 14000
+        }
+      ]
+    },
+    "very_long": {
+      "count": 3,
+      "speeches": [
+        {
+          "id": "EM-2025-001",
+          "speaker": "elon_musk",
+          "event": "All-In Podcast",
+          "word_count": 18000
+        },
+        {
+          "id": "EM-2026-001",
+          "speaker": "elon_musk",
+          "event": "Moonshots Podcast #220",
+          "word_count": 15000
+        },
+        {
+          "id": "MZ-2024-001",
+          "speaker": "mark_zuckerberg",
+          "event": "Acquired Podcast Live at Chase Center",
+          "word_count": 18000
+        }
+      ]
+    }
+  },
+  "speakers_summary": {
+    "jensen_huang": {
+      "name": "Jensen Huang",
+      "title": "CEO & Founder",
+      "company": "NVIDIA",
+      "topics": [
+        "AI",
+        "accelerated computing",
+        "AI factories",
+        "agentic AI",
+        "inference"
+      ],
+      "total_speeches": 10,
+      "entries": [
+        "JH-2024-001",
+        "JH-2025-001",
+        "JH-2025-002",
+        "JH-2026-001",
+        "JH-2026-002",
+        "JH-2026-003",
+        "JH-2026-004",
+        "JH-2026-005",
+        "JH-2026-006",
+        "JH-2026-007"
+      ]
+    },
+    "elon_musk": {
+      "name": "Elon Musk",
+      "title": "CEO",
+      "company": [
+        "Tesla",
+        "SpaceX",
+        "xAI"
+      ],
+      "topics": [
+        "AI",
+        "AGI",
+        "humanoid robots",
+        "space exploration",
+        "economy"
+      ],
+      "total_speeches": 8,
+      "entries": [
+        "EM-2025-001",
+        "EM-2026-001",
+        "EM-2026-002",
+        "EM-2026-003",
+        "EM-2026-004",
+        "EM-2026-005",
+        "EM-2026-006",
+        "EM-2026-007"
+      ]
+    },
+    "sam_altman": {
+      "name": "Sam Altman",
+      "title": "CEO",
+      "company": "OpenAI",
+      "topics": [
+        "AGI",
+        "AI safety",
+        "AI adoption",
+        "economic growth"
+      ],
+      "total_speeches": 7,
+      "entries": [
+        "SA-2025-001",
+        "SA-2026-001",
+        "SA-2026-002",
+        "SA-2026-003",
+        "SA-2026-004",
+        "SA-2026-005",
+        "SA-2026-006"
+      ]
+    },
+    "sundar_pichai": {
+      "name": "Sundar Pichai",
+      "title": "CEO",
+      "company": "Google & Alphabet",
+      "topics": [
+        "AI",
+        "responsible AI",
+        "antitrust",
+        "privacy"
+      ],
+      "total_speeches": 3,
+      "entries": [
+        "SP-2025-001",
+        "SP-2025-002",
+        "SP-2026-001"
+      ]
+    },
+    "mark_zuckerberg": {
+      "name": "Mark Zuckerberg",
+      "title": "CEO",
+      "company": "Meta",
+      "topics": [
+        "AI",
+        "VR/AR",
+        "metaverse",
+        "AI infrastructure"
+      ],
+      "total_speeches": 2,
+      "entries": [
+        "MZ-2024-001",
+        "MZ-2025-001"
+      ]
+    }
+  }
+}

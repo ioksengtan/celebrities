@@ -1,0 +1,375 @@
+{
+  "metadata": {
+    "created_date": "2026-09-06",
+    "database_version": "1.0",
+    "total_speeches": 30,
+    "total_speakers": 5
+  },
+  "product_ideas": [
+    {
+      "id": "PROD-001",
+      "name": "名人演講導讀",
+      "name_en": "CEO Speech Digest",
+      "description": "為每場演講生成 3-5 分鐘的精華導讀，包含核心觀點、重要語錄、與產業影響",
+      "features": [
+        "AI 自動摘要（300 字、500 字、1000 字版本）",
+        "關鍵語錄標註",
+        "時間軸標記（重要段落 timestamp）",
+        "相關演講推薦",
+        "多語言支援（中/英/日）"
+      ],
+      "target_audience": [
+        "投資人和分析師",
+        "科技從業人員",
+        "學生與研究者"
+      ],
+      "data_requirements": {
+        "transcript_text": "需要完整逐字稿",
+        "metadata": "已具備",
+        "audio_video": "可選（用於 timestamp）"
+      },
+      "priority_speeches": [
+        "JH-2026-005",
+        "JH-2026-003",
+        "EM-2026-006",
+        "SA-2026-006"
+      ],
+      "monetization": "訂閱制、單篇購買、企業授權",
+      "difficulty": "中等",
+      "estimated_effort": "2-3 週 MVP"
+    },
+    {
+      "id": "PROD-002",
+      "name": "名人單字卡",
+      "name_en": "CEO Vocabulary Cards",
+      "description": "從演講中提取專業術語、新創詞彙、與名言，製作成學習卡片",
+      "features": [
+        "術語解釋（中英文對照）",
+        "上下文例句（來自演講）",
+        "發音指導（音頻）",
+        "記憶測驗功能",
+        "主題分類（AI、經濟、機器人等）",
+        "講者風格標籤"
+      ],
+      "vocabulary_categories": [
+        {
+          "category": "AI 技術術語",
+          "examples": [
+            "agentic AI",
+            "token factory",
+            "inference",
+            "AGI",
+            "implicit computing"
+          ]
+        },
+        {
+          "category": "商業與經濟",
+          "examples": [
+            "trillion dollar demand",
+            "10x economy",
+            "abundance",
+            "ROI"
+          ]
+        },
+        {
+          "category": "名人名言",
+          "examples": [
+            "Very good to be home - Jensen Huang",
+            "Let's enjoy the ride - Elon Musk",
+            "The era of inference has arrived - Jensen Huang"
+          ]
+        },
+        {
+          "category": "新創詞彙",
+          "examples": [
+            "AI factories",
+            "sobering siren",
+            "optional work"
+          ]
+        }
+      ],
+      "target_audience": [
+        "英語學習者",
+        "科技從業人員",
+        "準備面試的學生"
+      ],
+      "data_requirements": {
+        "transcript_text": "需要完整逐字稿（用於提取上下文）",
+        "metadata": "已具備",
+        "audio_clips": "可選（用於發音）"
+      },
+      "monetization": "免費 + 進階訂閱、企業培訓授權",
+      "difficulty": "低 - 中",
+      "estimated_effort": "1-2 週 MVP"
+    },
+    {
+      "id": "PROD-003",
+      "name": "演講時間軸可視化",
+      "name_en": "Speech Timeline Visualization",
+      "description": "互動式時間軸展示所有演講，支援多維度篩選與探索",
+      "features": [
+        "時間軸瀏覽（2024-2026）",
+        "講者切換（Jensen、Elon、Sam 等）",
+        "主題篩選（AI、經濟、機器人等）",
+        "類型篩選（keynote、interview、panel）",
+        "長度篩選（短、中、長）",
+        "特殊標籤（viral、homecoming）",
+        "點擊查看詳情與導讀"
+      ],
+      "visualization_types": [
+        "水平時間軸（按年月）",
+        "熱力圖（每月演講密度）",
+        "網絡圖（主題 - 講者關聯）",
+        "圓餅圖（類型分佈）",
+        "長條圖（各講者演講數量）"
+      ],
+      "target_audience": [
+        "研究者和記者",
+        "投資分析師",
+        "科技愛好者"
+      ],
+      "data_requirements": {
+        "metadata": "已完全具備",
+        "indexes": "已建立完整索引"
+      },
+      "monetization": "免費工具（引流用）、企業儀表板授權",
+      "difficulty": "中等",
+      "estimated_effort": "2-3 週 MVP"
+    },
+    {
+      "id": "PROD-004",
+      "name": "主題深度分析報告",
+      "name_en": "Topic Deep-Dive Reports",
+      "description": "針對特定主題（如 AGI、AI 安全、人形機器人）跨講者、跨時間的深度分析",
+      "features": [
+        "主題演講聚合（自動從 topic_index 提取）",
+        "觀點比較表格（不同 CEO 對同一主題的看法）",
+        "時間演變分析（觀點如何隨時間改變）",
+        "關鍵數據提取（如「2027 年 1 兆美元需求」）",
+        "AI 生成洞察與趨勢預測",
+        "可下載 PDF 報告"
+      ],
+      "sample_topics": [
+        {
+          "topic": "AGI Timeline",
+          "speeches": [
+            "EM-2026-001",
+            "EM-2026-005",
+            "SA-2025-001",
+            "SA-2026-001"
+          ],
+          "key_questions": [
+            "何時實現 AGI？",
+            "風險有多大？",
+            "對經濟的影響？"
+          ]
+        },
+        {
+          "topic": "AI Infrastructure",
+          "speeches": [
+            "JH-2026-003",
+            "JH-2026-004",
+            "JH-2026-002",
+            "MZ-2025-001"
+          ],
+          "key_questions": [
+            "需要多少算力？",
+            "投資規模？",
+            "技術路線？"
+          ]
+        },
+        {
+          "topic": "Humanoid Robots",
+          "speeches": [
+            "EM-2026-001",
+            "EM-2026-004",
+            "EM-2026-005",
+            "EM-2025-001"
+          ],
+          "key_questions": [
+            "Optimus 時程？",
+            "應用場景？",
+            "對就業的影響？"
+          ]
+        }
+      ],
+      "target_audience": [
+        "投資機構",
+        "企業策略部門",
+        "研究機構"
+      ],
+      "data_requirements": {
+        "transcript_text": "需要完整逐字稿（用於深度分析）",
+        "metadata": "已具備",
+        "indexes": "topic_index 為核心"
+      },
+      "monetization": "高單價報告（$99-$499/份）、企業訂閱",
+      "difficulty": "高",
+      "estimated_effort": "4-6 週 MVP"
+    },
+    {
+      "id": "PROD-005",
+      "name": "每日一句名人語錄",
+      "name_en": "Daily CEO Quote",
+      "description": "每日推送一句來自資料庫的名人名言，搭配背景說明與應用啟示",
+      "features": [
+        "每日推送（Email、LINE、推播）",
+        "語錄卡片（精美設計，可分享）",
+        "背景說明（演講場合、時間、上下文）",
+        "應用啟示（對工作、投資、學習的啟發）",
+        "相關演講連結",
+        "收藏與分享功能"
+      ],
+      "content_calendar": {
+        "total_quotes": 7,
+        "rotation_strategy": "7 條輪流 + 每週新增",
+        "special_dates": [
+          {
+            "date": "2026-06-01",
+            "quote": "Very good to be home",
+            "speaker": "Jensen Huang",
+            "occasion": "GTC Taipei 週年"
+          }
+        ]
+      },
+      "target_audience": [
+        "一般大眾",
+        "職場人士",
+        "科技愛好者"
+      ],
+      "data_requirements": {
+        "quotes_index": "已具備 7 條",
+        "metadata": "已具備"
+      },
+      "monetization": "免費（品牌建立）、進階訂閱（更多語錄庫）",
+      "difficulty": "低",
+      "estimated_effort": "1 週 MVP"
+    },
+    {
+      "id": "PROD-006",
+      "name": "演講比較工具",
+      "name_en": "Speech Comparator",
+      "description": "選擇兩場或多場演講，自動生成比較分析（主題、長度、觀點差異）",
+      "features": [
+        "多演講並排比較",
+        "主題重疊度分析",
+        "詞彙使用頻率比較",
+        "語氣與風格分析",
+        "時間長度對比",
+        "視覺化差異圖表"
+      ],
+      "sample_comparisons": [
+        {
+          "title": "Jensen 的 GTC 2025 vs 2026",
+          "speeches": [
+            "JH-2025-001",
+            "JH-2026-003"
+          ],
+          "comparison_points": [
+            "token factory 概念的演進",
+            "推論 vs 訓練的著重",
+            "營收預測變化"
+          ]
+        },
+        {
+          "title": "Elon 的 AGI 觀點演變",
+          "speeches": [
+            "EM-2026-001",
+            "EM-2026-006"
+          ],
+          "comparison_points": [
+            "時程預測",
+            "風險評估",
+            "經濟影響"
+          ]
+        }
+      ],
+      "target_audience": [
+        "研究者和記者",
+        "投資分析師",
+        "內容創作者"
+      ],
+      "data_requirements": {
+        "transcript_text": "需要完整逐字稿（用於 NLP 分析）",
+        "metadata": "已具備"
+      },
+      "monetization": "免費工具（引流）、高級分析訂閱",
+      "difficulty": "中高",
+      "estimated_effort": "3-4 週 MVP"
+    }
+  ],
+  "data_enrichment_recommendations": [
+    {
+      "priority": "高",
+      "task": "抓取完整逐字稿",
+      "description": "從已提供的 transcript_url 抓取完整文字內容，用於 NLP 分析與產品開發",
+      "estimated_speeches": 15,
+      "effort": "2-3 天"
+    },
+    {
+      "priority": "高",
+      "task": "提取關鍵語錄",
+      "description": "為每場演講標註 3-5 條重要語錄（目前只有 7 條）",
+      "estimated_speeches": 30,
+      "effort": "3-5 天（可部分自動化）"
+    },
+    {
+      "priority": "中",
+      "task": "添加摘要",
+      "description": "為每場演講生成 100-200 字摘要",
+      "estimated_speeches": 30,
+      "effort": "2-3 天（可 AI 輔助）"
+    },
+    {
+      "priority": "中",
+      "task": "添加 timestamp",
+      "description": "為重要段落標註時間戳記（需要影片或音頻）",
+      "estimated_speeches": 10,
+      "effort": "5-7 天"
+    },
+    {
+      "priority": "低",
+      "task": "多語言翻譯",
+      "description": "將摘要與語錄翻譯成中文、日文",
+      "estimated_speeches": 30,
+      "effort": "3-5 天（可 AI 輔助）"
+    }
+  ],
+  "technical_stack_recommendations": {
+    "frontend": [
+      "React",
+      "Vue.js",
+      "Next.js"
+    ],
+    "backend": [
+      "Python (FastAPI)",
+      "Node.js"
+    ],
+    "database": [
+      "PostgreSQL",
+      "MongoDB"
+    ],
+    "nlp": [
+      "spaCy",
+      "NLTK",
+      "Hugging Face Transformers"
+    ],
+    "visualization": [
+      "D3.js",
+      "Chart.js",
+      "Plotly"
+    ],
+    "deployment": [
+      "Vercel",
+      "AWS",
+      "GCP"
+    ]
+  },
+  "next_steps": [
+    "1. 確認優先開發的產品（建議從 PROD-002 名人單字卡或 PROD-005 每日一句開始）",
+    "2. 抓取優先演講的完整逐字稿（約 10-15 場）",
+    "3. 豐富 metadata（摘要、語錄、timestamp）",
+    "4. 開發 MVP 原型",
+    "5. 用戶測試與迭代"
+  ]
+}
