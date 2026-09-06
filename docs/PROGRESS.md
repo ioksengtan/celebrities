@@ -4,6 +4,16 @@
 
 ---
 
+## 2026-09-06（卡池擴充／Pages 上線）
+
+- GitHub Pages 已上線，可直接給社群用這三個網址：
+  - https://ioksengtan.github.io/celebrities/
+  - https://ioksengtan.github.io/celebrities/products/vocabulary-cards/keynote-lexicon.html
+  - https://ioksengtan.github.io/celebrities/products/general-vocab/executive-english.html
+- 卡池擴充：Keynote CARDS 20→45；Executive English 100→130（並同步 `cards_data.json`）
+- 新建 `references/quotes_index.json`（33 則 `status === "verified"` 且尚未入庫的語錄；此檔為新建，repo 原本沒有 `quotes_index`）
+- Executive English 補上 Sam Altman（`sa`）講者色票與 SPEAKERS，與 Keynote Lexicon 的綠色系一致
+
 ## 2026-09-06（晚上）
 
 - 修掉一個 bug：分享出去的連結重新打開時會停在上次滑到的卡片（瀏覽器快取捲動位置），現在強制每次開啟都回到第一張，除非帶著 `#card-<id>` 深連結
@@ -11,13 +21,13 @@
 - 加入卡片稀有度（普通／稀有／傳說），傳說卡（例如黃仁勳「Very good to be home」、馬斯克「Let's enjoy the ride」）有金色鑲邊＋開卡金光特效
 - 卡片從兩面擴充成三面：詞彙 → 解釋＋原句 → 出處與延伸背景（場合、日期、為什麼這段話重要）
 - 加了 `.claude/launch.json`，之後要在本機測試互動功能可以用 Claude Code 內建瀏覽器直接跑（`python -m http.server`），不用只靠 `file://` 打開
-- 待決定：連續天數目前只存在單一裝置本機，換裝置會歸零；GitHub Pages 部署（見上一則）也還沒決定
+- 待決定：連續天數目前只存在單一裝置本機，換裝置會歸零。GitHub Pages 已上線（見上方 2026-09-06 卡池擴充紀錄）
 
 ## 2026-09-06（下午）
 
 - 討論定調：單字卡適合「零碎時間瀏覽」的資訊載體（通勤、排隊等），先以社群引流 + 網頁滑卡為主，暫緩原生 App，之後視使用量再評估做成 PWA
 - 把單字卡預設畫面改成手機版滑卡動態（上滑切下一張、點卡翻面、每張卡可一鍵分享），整理瀏覽/測驗模式移到切換鈕裡
-- 待決定：要不要用 GitHub Pages 把這個產品部署成獨立網址（現在只有 Claude Artifact 連結，適合內部看，但要長期給社群引流的話最好有自己的網域）
+- GitHub Pages 已上線：https://ioksengtan.github.io/celebrities/（含 Keynote Lexicon 與 Executive English；不再只靠 Claude Artifact）
 
 ## 2026-09-06
 
