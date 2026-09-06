@@ -4,6 +4,12 @@
 
 ---
 
+## 2026-09-06（小遊戲加「不熟」）
+
+- 只改 Executive English 小遊戲（看英選中／看中選英）：每題在四個選項旁加「不熟」，不必硬猜錯
+- 按「不熟」不計分、短暫標出正確答案後進下一題，連勝走既有 `applyUnknownMark`（歸 0）；結算分開計 對／錯／不熟
+- 測驗模式「還不熟」未改；CARDS、每日挑戰、深連結、稀有度、80% 卡面未動
+
 ## 2026-09-06（EE 小遊戲 MVP：看英選中／看中選英）
 
 - 只在 `products/general-vocab/executive-english.html` 加模式「小遊戲」；Keynote Lexicon 不動
