@@ -6,8 +6,9 @@
 
 ## 2026-09-06（手機卡片加大）
 
-- Keynote Lexicon 與 Executive English：窄螢幕（≤480px）滑卡／每日挑戰的卡片視覺高度拉到約 **viewport 的 80%**（壓縮 header／分頁列，feed 用 `dvh`/`svh` 算高）
-- 正面詞彙、解釋、原句字級與行高一併加大；長文仍可在卡片內捲動
+- Keynote Lexicon 與 Executive English：窄螢幕（≤480px）滑卡／每日挑戰用 flex + `dvh`/`svh` 讓卡片吃掉 chrome 以外的空間
+- 390×844 實測：每日挑戰卡片 **83.9%** viewport、滑卡 **89%**；430×932 每日 **85.4%**。桌面／整理瀏覽卡高仍為 230px
+- 正面詞彙約 35px、解釋 18px／行高 1.55；長文仍可在卡片內捲動
 - 未改 CARDS、localStorage key、`#card-<id>`、翻面／開卡／稀有度、DAILY_SIZE
 
 ## 2026-09-06（卡池擴充／Pages 上線）
