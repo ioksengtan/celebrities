@@ -497,6 +497,17 @@
     background: color-mix(in srgb, var(--bad) 16%, var(--surface));
     color: var(--bad);
   }
+  .games-unknown{
+    width: 100%; max-width: 480px; min-height: 52px; padding: 14px 16px;
+    border-radius: 12px; border: 1px dashed var(--bad); background: transparent;
+    color: var(--bad); font-family: "Public Sans", sans-serif; font-size: 16px;
+    font-weight: 600; cursor: pointer; line-height: 1.35; -webkit-tap-highlight-color: transparent;
+  }
+  .games-unknown:hover:not(:disabled){
+    background: color-mix(in srgb, var(--bad) 10%, var(--surface));
+  }
+  .games-unknown:disabled{ cursor: default; opacity: 0.5; }
+  .games-unknown[hidden]{ display: none; }
   .games-feedback{
     width: 100%; max-width: 480px; border-radius: 12px; padding: 12px 14px;
     font-size: 14px; line-height: 1.55;
@@ -509,6 +520,10 @@
   .games-feedback.bad{
     background: color-mix(in srgb, var(--bad) 12%, var(--surface));
     color: var(--ink); border: 1px solid color-mix(in srgb, var(--bad) 40%, var(--line));
+  }
+  .games-feedback.skip{
+    background: color-mix(in srgb, var(--muted) 12%, var(--surface));
+    color: var(--ink); border: 1px solid var(--line);
   }
   .games-feedback b{ display: block; margin-bottom: 2px; }
   .games-next, .games-done-actions button{
@@ -711,7 +726,7 @@
 
   <div id="games-panel">
     <div id="games-lobby">
-      <p class="games-lead">用目前篩選的詞彙練選擇題。答對會累積與測驗相同的連勝，答錯則歸零；連續答對 3 次才算熟練。</p>
+      <p class="games-lead">用目前篩選的詞彙練選擇題。答對會累積與測驗相同的連勝，答錯或按「不熟」則歸零；連續答對 3 次才算熟練。不會的題可直接按「不熟」，不必硬猜。</p>
       <div class="quiz-meta">
         <div class="quiz-mastered" id="games-mastered">已熟練 0 張</div>
         <button type="button" class="quiz-reset-mastery" id="games-reset-mastery">重置熟練進度</button>
@@ -741,6 +756,7 @@
       </div>
       <div class="games-prompt-card" id="games-prompt"></div>
       <div class="games-choices" id="games-choices"></div>
+      <button type="button" class="games-unknown" id="games-unknown">不熟</button>
       <div class="games-feedback" id="games-feedback" hidden></div>
       <button type="button" class="games-next" id="games-next" hidden>下一題</button>
     </div>
@@ -1280,9 +1296,37 @@ document.addEventListener("keydown", (e)=>{
 
 /* ---- Mini-games: 看英選中 / 看中選英 ---- */
 const GAME_ROUND = 10;
+const GAME_UNKNOWN_REVEAL_MS = 1600;
+const GAME_UNKNOWN_NEXT_MS = 550;
 const GAME_LABELS = { en2zh: "看英選中", zh2en: "看中選英" };
 
 let gameSession = null;
+let gameAdvanceTimer = null;
+let gameNextRevealTimer = null;
+
+function clearGameAdvanceTimer(){
+  if (gameAdvanceTimer){
+    clearTimeout(gameAdvanceTimer);
+    gameAdvanceTimer = null;
+  }
+  if (gameNextRevealTimer){
+    clearTimeout(gameNextRevealTimer);
+    gameNextRevealTimer = null;
+  }
+}
+
+function scheduleGameAdvance(){
+  clearGameAdvanceTimer();
+  gameNextRevealTimer = setTimeout(()=>{
+    gameNextRevealTimer = null;
+    const next = document.getElementById("games-next");
+    if (gameSession && gameSession.locked && next) next.hidden = false;
+  }, GAME_UNKNOWN_NEXT_MS);
+  gameAdvanceTimer = setTimeout(()=>{
+    gameAdvanceTimer = null;
+    advanceGame();
+  }, GAME_UNKNOWN_REVEAL_MS);
+}
 
 function onFiltersChanged(){
   if (state.mode === "games") showGamesLobby();
@@ -1341,6 +1385,7 @@ function updateGamesMasteredHud(){
 }
 
 function showGamesLobby(){
+  clearGameAdvanceTimer();
   gameSession = null;
   document.getElementById("games-lobby").hidden = false;
   document.getElementById("games-play").hidden = true;
@@ -1357,7 +1402,8 @@ function startGame(kind){
     showGamesLobby();
     return;
   }
-  gameSession = { kind, deck, index: 0, score: 0, locked: false };
+  clearGameAdvanceTimer();
+  gameSession = { kind, deck, index: 0, score: 0, wrong: 0, unknown: 0, locked: false };
   document.getElementById("games-lobby").hidden = true;
   document.getElementById("games-done").hidden = true;
   document.getElementById("games-play").hidden = false;
@@ -1380,6 +1426,7 @@ function renderGameQuestion(){
     showGamesDone();
     return;
   }
+  clearGameAdvanceTimer();
   gameSession.locked = false;
   const correct = deck[index];
   const field = kind === "zh2en" ? "word" : "zh";
@@ -1408,6 +1455,10 @@ function renderGameQuestion(){
     box.appendChild(btn);
   });
 
+  const unknownBtn = document.getElementById("games-unknown");
+  unknownBtn.hidden = false;
+  unknownBtn.disabled = false;
+
   const fb = document.getElementById("games-feedback");
   fb.hidden = true;
   fb.className = "games-feedback";
@@ -1426,16 +1477,26 @@ function streakFeedback(ok){
 
 function answerGame(choiceIndex){
   if (!gameSession || gameSession.locked) return;
-  const { kind, options, correct } = gameSession;
-  const picked = options[choiceIndex];
+  const picked = gameSession.options[choiceIndex];
   if (!picked) return;
+  resolveGame(picked.id === gameSession.correct.id ? "correct" : "wrong", choiceIndex);
+}
+
+function markUnknownGame(){
+  resolveGame("unknown", null);
+}
+
+function resolveGame(result, choiceIndex){
+  if (!gameSession || gameSession.locked) return;
+  const { kind, options, correct } = gameSession;
   gameSession.locked = true;
-  const ok = picked.id === correct.id;
-  if (ok){
+  if (result === "correct"){
     applyKnowMark(correct.id);
     gameSession.score++;
   } else {
     applyUnknownMark(correct.id);
+    if (result === "wrong") gameSession.wrong++;
+    else gameSession.unknown++;
   }
   updateGamesMasteredHud();
 
@@ -1443,38 +1504,56 @@ function answerGame(choiceIndex){
   buttons.forEach((btn, i)=>{
     btn.disabled = true;
     if (options[i].id === correct.id) btn.classList.add("correct");
-    else if (i === choiceIndex) btn.classList.add("wrong");
+    else if (result === "wrong" && i === choiceIndex) btn.classList.add("wrong");
   });
+
+  const unknownBtn = document.getElementById("games-unknown");
+  unknownBtn.disabled = true;
+  unknownBtn.hidden = true;
 
   const fb = document.getElementById("games-feedback");
   fb.hidden = false;
-  fb.className = "games-feedback " + (ok ? "ok" : "bad");
   const pair = correct.word + " — " + correct.zh;
-  fb.innerHTML = ok
-    ? "<b>答對了</b>" + pair + "<br>" + streakFeedback(true)
-    : "<b>答錯了</b>正確是「" + optionText(correct, kind) + "」（" + pair + "）<br>" + streakFeedback(false);
-  document.getElementById("games-next").hidden = false;
+  if (result === "correct"){
+    fb.className = "games-feedback ok";
+    fb.innerHTML = "<b>答對了</b>" + pair + "<br>" + streakFeedback(true);
+  } else if (result === "wrong"){
+    fb.className = "games-feedback bad";
+    fb.innerHTML = "<b>答錯了</b>正確是「" + optionText(correct, kind) + "」（" + pair + "）<br>" + streakFeedback(false);
+  } else {
+    fb.className = "games-feedback skip";
+    fb.innerHTML = "<b>先記答案</b>正確是「" + optionText(correct, kind) + "」（" + pair + "）<br>" + streakFeedback(false);
+  }
   document.getElementById("games-progress-bar").style.width = ((gameSession.index + 1) / gameSession.deck.length * 100) + "%";
+  if (result === "unknown"){
+    document.getElementById("games-next").hidden = true;
+    scheduleGameAdvance();
+  } else {
+    document.getElementById("games-next").hidden = false;
+  }
 }
 
 function advanceGame(){
   if (!gameSession || !gameSession.locked) return;
+  clearGameAdvanceTimer();
   gameSession.index++;
   if (gameSession.index >= gameSession.deck.length) showGamesDone();
   else renderGameQuestion();
 }
 
 function showGamesDone(){
+  clearGameAdvanceTimer();
   document.getElementById("games-play").hidden = true;
   document.getElementById("games-lobby").hidden = true;
   const done = document.getElementById("games-done");
   done.hidden = false;
-  const total = gameSession ? gameSession.deck.length : 0;
   const score = gameSession ? gameSession.score : 0;
-  document.getElementById("games-score").textContent = score + " / " + total + " 答對";
-  document.getElementById("games-score-sub").textContent = score === total
+  const wrong = gameSession ? gameSession.wrong : 0;
+  const unknown = gameSession ? gameSession.unknown : 0;
+  document.getElementById("games-score").textContent = "對 " + score + " · 錯 " + wrong + " · 不熟 " + unknown;
+  document.getElementById("games-score-sub").textContent = (wrong === 0 && unknown === 0)
     ? "這一輪全對。答對會累積測驗連勝，連續 " + MASTERY_STREAK + " 次才算熟練。"
-    : "答錯的卡片連勝已歸零。可再玩一輪，或切回測驗用翻卡複習。";
+    : "答錯或不熟的卡片連勝已歸零。可再玩一輪，或切回測驗用翻卡複習。";
   updateGamesMasteredHud();
 }
 
@@ -1485,6 +1564,11 @@ function handleGamesKey(e){
     if (e.code in map){
       e.preventDefault();
       answerGame(map[e.code]);
+      return;
+    }
+    if (e.code === "Digit0" || e.code === "Numpad0"){
+      e.preventDefault();
+      markUnknownGame();
     }
     return;
   }
@@ -1496,6 +1580,7 @@ function handleGamesKey(e){
 
 document.getElementById("btn-game-en2zh").addEventListener("click", ()=> startGame("en2zh"));
 document.getElementById("btn-game-zh2en").addEventListener("click", ()=> startGame("zh2en"));
+document.getElementById("games-unknown").addEventListener("click", markUnknownGame);
 document.getElementById("games-next").addEventListener("click", advanceGame);
 document.getElementById("games-back-lobby").addEventListener("click", showGamesLobby);
 document.getElementById("games-again").addEventListener("click", ()=>{
