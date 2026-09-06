@@ -1,0 +1,70 @@
+[
+  {
+    "speech_id": "JH-2026-005",
+    "summary_zh": "黃仁勳在台北 GTC 2026 以「很好回家了」開場，宣告 agentic AI／有用 AI 已到來；他以軟體工程產出暴增說明 token 需求與「算力即營收」，並介紹為 agent 設計的 Vera Rubin 全系統、Vera CPU，以及企業 agent 工具組與 PC 重塑等路線。",
+    "based_on": [
+      "metadata",
+      "excerpt",
+      "quotes",
+      "public_page"
+    ],
+    "source_urls": [
+      "https://singjupost.com/nvidia-gtc-taipei-2026-keynote-w-ceo-jensen-huang-transcript/",
+      "https://www.nvidia.com/en-us/on-demand/session/gtctaipei26-stw61044/",
+      "https://raw.githubusercontent.com/ioksengtan/celebrities/main/references/speeches_database.json",
+      "https://raw.githubusercontent.com/ioksengtan/celebrities/main/references/quotes_index.json"
+    ],
+    "draft_note": "summary_zh_by_core",
+    "char_count": 145
+  },
+  {
+    "speech_id": "JH-2026-003",
+    "summary_zh": "聖荷西 GTC 2026 主題圍繞 token／AI 工廠經濟學。黃仁勳提出至 2027 年可見至少約一兆美元需求，並宣告「推論拐點」已至；他把 token 比作新大宗商品，強調工廠營收等於每瓦 token，在電力受限下未用瓦數即損失。",
+    "based_on": [
+      "metadata",
+      "excerpt",
+      "quotes",
+      "public_page"
+    ],
+    "source_urls": [
+      "https://www.investing.com/news/transcripts/nvidia-at-gtc-2026-ai-expansion-and-strategic-partnerships-93CH-4564073",
+      "https://www.nvidia.com/en-us/on-demand/session/gtc26-s81595/",
+      "https://raw.githubusercontent.com/ioksengtan/celebrities/main/references/speeches_database.json"
+    ],
+    "draft_note": "summary_zh_by_core",
+    "char_count": 118
+  },
+  {
+    "speech_id": "EM-2026-006",
+    "summary_zh": "馬斯克接受《經濟學人》長訪，描繪最可能結局是驚人豐裕時代，並稱工作可能變成可選；同時坦言對 AI 一日之間可從振奮到恐懼。他主張安全關鍵在極大求真與好奇，哲學是「一起享受這趟旅程」，並談人形機器人把數位智能落到現實。",
+    "based_on": [
+      "metadata",
+      "excerpt",
+      "quotes",
+      "public_page"
+    ],
+    "source_urls": [
+      "https://sozai.app/transcript/elon-musk-economist-interview-2026/",
+      "https://raw.githubusercontent.com/ioksengtan/celebrities/main/references/speeches_database.json",
+      "https://raw.githubusercontent.com/ioksengtan/celebrities/main/references/quotes_index.json"
+    ],
+    "draft_note": "summary_zh_by_core",
+    "char_count": 108
+  },
+  {
+    "speech_id": "SA-2026-006",
+    "summary_zh": "Altman 在 Chapel Hill 接受 Axios 專訪，預告下一世代模型「會讓所有人感到沉重」，並說模型正具備多項超人類能力、航行於未知水域；他預期往後節奏將由對齊與安全進展決定，同時仍認為迄今應對挑戰大致順利。",
+    "based_on": [
+      "metadata",
+      "quotes",
+      "public_page"
+    ],
+    "source_urls": [
+      "https://www.axios.com/2026/09/03/axios-interview-sam-altmans-sobering-siren",
+      "https://www.ibtimes.com/sam-altman-says-next-ai-models-will-sobering-openai-already-slowing-down-keep-them-under-3807098",
+      "https://raw.githubusercontent.com/ioksengtan/celebrities/main/references/speeches_database.json"
+    ],
+    "draft_note": "summary_zh_by_core",
+    "char_count": 111
+  }
+]
