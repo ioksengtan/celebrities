@@ -1,4 +1,5 @@
 <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Keynote Lexicon</title>
 <meta name="description" content="從科技名人 2024–2026 年演講中萃取的雙語單字卡，滑一滑，一次學一個詞。">
 <meta property="og:title" content="Keynote Lexicon">
@@ -412,6 +413,86 @@
 
   footer{ margin-top: 36px; font-size: 12px; color: var(--muted); text-align: center; }
   footer a{ color: var(--muted); }
+
+  /* Mobile (phones ~390–430 CSS-px, query to 480): card ≈ ≥80% of viewport.
+     Compact chrome + dvh/svh feed height. Browse/quiz keep their desktop sizes.
+     On 390×844: feed chrome ≈6.5rem → card ~86% vh; daily ≈10rem → card ~80% vh. */
+  @media (max-width: 480px){
+    :root{
+      --card-chrome-feed: 6.5rem;
+      --card-chrome-daily: 10rem;
+    }
+    html{ -webkit-text-size-adjust: 100%; }
+    body{
+      padding: 8px 10px;
+      padding-top: max(8px, env(safe-area-inset-top, 0px));
+      padding-bottom: max(8px, env(safe-area-inset-bottom, 0px));
+    }
+    body:has(#feed-panel.active){
+      overflow: hidden;
+      height: 100svh;
+      height: 100dvh;
+    }
+    header{
+      gap: 4px 12px;
+      align-items: center;
+      padding-bottom: 6px;
+      margin-bottom: 8px;
+    }
+    .titleblock h1{ font-size: 18px; margin: 0; line-height: 1.1; }
+    .titleblock p{ display: none; }
+    .stats{ font-size: 11px; gap: 10px; }
+    .toolbar{ gap: 6px; margin-bottom: 8px; }
+    .mode-toggle{ gap: 4px; }
+    .mode-toggle button{ padding: 6px 10px; font-size: 12px; }
+    #feed-panel, #daily-panel{ gap: 6px; width: 100%; }
+    .daily-top, .daily-progress-row, .feed-progress, #calendar-wrap{
+      max-width: none;
+    }
+    .streak{ font-size: 12px; }
+    .streak b{ font-size: 13px; }
+    .cal-toggle{ padding: 3px 8px; font-size: 10px; }
+    .daily-progress-row{ font-size: 11px; }
+    .feed-progress{ height: 3px; }
+    .feed-scroll{
+      width: 100%;
+      max-width: none;
+      height: calc(100svh - var(--card-chrome-daily));
+      height: calc(100dvh - var(--card-chrome-daily));
+      border-radius: 14px;
+    }
+    #feed-panel .feed-scroll{
+      height: calc(100svh - var(--card-chrome-feed));
+      height: calc(100dvh - var(--card-chrome-feed));
+    }
+    #daily-panel:has(#calendar-wrap:not([hidden])) .feed-scroll{
+      height: min(48dvh, calc(100dvh - 22rem));
+    }
+    .feed-slide{ padding: 8px 10px; }
+    .feed-card-wrap{ height: 96%; }
+    .feed-card-wrap .flashcard{ height: 100%; }
+    .feed-card-wrap .face{ padding: 18px 16px; border-radius: 18px; }
+    .feed-card-wrap .face.front .term-en{
+      font-size: clamp(32px, 8.6vw, 42px);
+      line-height: 1.2;
+    }
+    .feed-card-wrap .term-zh{ font-size: 16px; line-height: 1.45; margin-top: 6px; }
+    .feed-card-wrap .face.back .def-en{ font-size: 17px; line-height: 1.55; }
+    .feed-card-wrap .face.back .def-zh{ font-size: 16px; line-height: 1.55; }
+    .feed-card-wrap blockquote.quote{ font-size: 15px; line-height: 1.5; }
+    .feed-card-wrap blockquote.quote cite{ font-size: 12px; }
+    .feed-card-wrap .ext-row,
+    .feed-card-wrap .ext-context{ font-size: 15px; line-height: 1.55; }
+    .feed-card-wrap .speaker-row{ font-size: 12.5px; }
+    .feed-card-wrap .pack-cover,
+    .feed-card-wrap .reveal-burst{ border-radius: 18px; }
+    .pack-cover .pack-mark{ font-size: 32px; }
+    .pack-cover .pack-hint{ font-size: 13px; }
+    .share-btn{ bottom: 14px; right: 12px; }
+    .feed-hint{ bottom: 10px; }
+    body:has(#daily-panel.active) footer,
+    body:has(#feed-panel.active) footer{ display: none; }
+  }
 
   @media (prefers-reduced-motion: reduce){
     .flashcard-inner{ transition: none; }
