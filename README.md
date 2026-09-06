@@ -13,6 +13,7 @@ references/          原始資料與規劃文件
 
 products/            各產品的原型與原始碼，一個產品一個資料夾
   vocabulary-cards/               PROD-002 名人單字卡（已有可運行雛形）
+  general-vocab/                  Executive English：從演講逐字稿萃取的一般英語 CEFR 分級詞彙卡
 
 docs/
   PROGRESS.md        團隊討論與進度紀錄
@@ -22,6 +23,7 @@ docs/
 
 - ✅ 資料庫與產品建議已整理進 `references/`
 - ✅ PROD-002「名人單字卡」MVP 已完成，見 [`products/vocabulary-cards`](products/vocabulary-cards)
+- ✅ Executive English（一般英語 CEFR 詞彙卡）第一版已完成，見 [`products/general-vocab`](products/general-vocab)
 - ⬜ 其他候選產品（導讀摘要、時間軸可視化、每日一句、主題深度分析、演講比較）尚未開始
 
 ## 協作方式
