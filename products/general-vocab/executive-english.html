@@ -2,7 +2,7 @@
 <title>Executive English</title>
 <meta name="description" content="從科技 CEO 演講中萃取的一般英語進階詞彙，依 CEFR 分級，附真實語境例句。">
 <meta property="og:title" content="Executive English">
-<meta property="og:description" content="從 Jensen Huang、Elon Musk、Sundar Pichai 演講中萃取的一般英語詞彙卡，依 CEFR 難度分級。">
+<meta property="og:description" content="從 Jensen Huang、Elon Musk、Sam Altman、Sundar Pichai 演講中萃取的一般英語詞彙卡，依 CEFR 難度分級。">
 <meta property="og:type" content="website">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Executive English">
@@ -24,6 +24,7 @@
     --jh: #B85A22;
     --em: #3B6E8F;
     --sp: #6B5B95;
+    --sa: #5C7A5A;
     --good: #2E6B4F;
     --bad: #B5482F;
     --rare-a: #8FB3D6;
@@ -49,6 +50,7 @@
       --jh: #E8873A;
       --em: #7EB4DC;
       --sp: #A996D8;
+      --sa: #8FBB8A;
       --good: #7FBF83;
       --bad: #E27A5F;
       --rare-a: #4A7396;
@@ -73,6 +75,7 @@
     --jh: #E8873A;
     --em: #7EB4DC;
     --sp: #A996D8;
+    --sa: #8FBB8A;
     --good: #7FBF83;
     --bad: #E27A5F;
     --rare-a: #4A7396;
@@ -492,7 +495,7 @@
   </div>
 
   <footer>
-    資料來源：CEO Speech Database v1.0 · 詞彙萃取自 Jensen Huang、Elon Musk、Sundar Pichai 公開演講/訪談逐字稿，CEFR 難度為估計值
+    資料來源：CEO Speech Database v1.0 · 詞彙萃取自 Jensen Huang、Elon Musk、Sam Altman、Sundar Pichai 公開演講/訪談逐字稿，CEFR 難度為估計值
   </footer>
 </div>
 
@@ -502,6 +505,7 @@
 const SPEAKERS = {
   jh: { name: "Jensen Huang", short: "黃仁勳", color: "var(--jh)" },
   em: { name: "Elon Musk", short: "馬斯克", color: "var(--em)" },
+  sa: { name: "Sam Altman", short: "奧特曼", color: "var(--sa)" },
   sp: { name: "Sundar Pichai", short: "皮查伊", color: "var(--sp)" },
 };
 
@@ -616,7 +620,37 @@ const CARDS = [
   {"id":97,"word":"instinct","pos":"noun","cefr":"B1","rarity":"common","zh":"本能；直覺","def_en":"a natural tendency to act or think in a certain way","example":"His natural instinct was to ask what he should be doing better.","syn":"intuition, gut feeling","speaker":"sp","event":"Bloomberg Tech Summit","date":"2025-06-05"},
   {"id":98,"word":"innovators","pos":"noun","cefr":"B1","rarity":"common","zh":"創新者","def_en":"people who introduce new ideas or methods","example":"As innovators, we are bringing AI to public services that improve lives.","syn":"pioneers, trailblazers","speaker":"sp","event":"AI Impact Summit 2026","date":"2026-02-19"},
   {"id":99,"word":"delightful","pos":"adj","cefr":"A2","rarity":"common","zh":"令人愉悅的","def_en":"very pleasing or charming","example":"You will only succeed if you're building something delightful.","syn":"charming, pleasing","speaker":"sp","event":"Bloomberg Tech Summit","date":"2025-06-05"},
-  {"id":100,"word":"norms","pos":"noun","cefr":"B2","rarity":"rare","zh":"常規","def_en":"standard or expected patterns of behavior","example":"I think we are going to evolve new norms around this.","syn":"conventions, standards","speaker":"sp","event":"Bloomberg Tech Summit","date":"2025-06-05"}
+  {"id":100,"word":"norms","pos":"noun","cefr":"B2","rarity":"rare","zh":"常規","def_en":"standard or expected patterns of behavior","example":"I think we are going to evolve new norms around this.","syn":"conventions, standards","speaker":"sp","event":"Bloomberg Tech Summit","date":"2025-06-05"},
+  {"id":101,"word":"cusp","pos":"noun","cefr":"C1","rarity":"legendary","zh":"臨界點／邊緣","def_en":"the point when something is about to change or begin","example":"We are on the cusp of hyperprogress and new discoveries.","syn":"brink, verge, threshold","speaker":"sp","event":"AI Impact Summit 2026","date":"2026-02-19"},
+  {"id":102,"word":"bedrock","pos":"noun","cefr":"C1","rarity":"legendary","zh":"基石","def_en":"the strong base that something depends on","example":"Finally, trust is the bedrock of adoption.","syn":"foundation, basis, cornerstone","speaker":"sp","event":"AI Impact Summit 2026","date":"2026-02-19"},
+  {"id":103,"word":"audacious","pos":"adj","cefr":"C1","rarity":"legendary","zh":"大膽的／無畏的","def_en":"showing a willingness to take bold risks","example":"Demis Hassabis and his team at Google DeepMind asked an audacious question.","syn":"bold, daring, bold-minded","speaker":"sp","event":"AI Impact Summit 2026","date":"2026-02-19"},
+  {"id":104,"word":"authenticity","pos":"noun","cefr":"B2","rarity":"rare","zh":"真實性","def_en":"the quality of being real or genuine","example":"SynthID... help verify the authenticity of the content you read and see.","syn":"genuineness, legitimacy","speaker":"sp","event":"AI Impact Summit 2026","date":"2026-02-19"},
+  {"id":105,"word":"modest","pos":"adj","cefr":"B1","rarity":"common","zh":"樸實的／不大的","def_en":"not large, showy, or expensive; fairly small","example":"I remember it being a quiet and modest coastal city, brimming with potential.","syn":"humble, unassuming, simple","speaker":"sp","event":"AI Impact Summit 2026","date":"2026-02-19"},
+  {"id":106,"word":"defining","pos":"adj","cefr":"B2","rarity":"rare","zh":"關鍵的／界定性的","def_en":"having a decisive influence on the nature of something","example":"...work through this defining moment together.","syn":"decisive, pivotal, crucial","speaker":"sp","event":"AI Impact Summit 2026","date":"2026-02-19"},
+  {"id":107,"word":"utterly","pos":"adv","cefr":"B2","rarity":"rare","zh":"徹底地／絕對地","def_en":"completely and without qualification","example":"...our tokens per watt is utterly world class.","syn":"completely, totally, absolutely","speaker":"jh","event":"GTC Taipei 2026 Keynote","date":"2026-06-01"},
+  {"id":108,"word":"essence","pos":"noun","cefr":"B2","rarity":"rare","zh":"本質","def_en":"the most important quality or meaning of something","example":"What is the essence of my company? What's the most impactful work that we do in our company?","syn":"core, heart, nature","speaker":"jh","event":"Cisco AI Summit 2026","date":"2026-02-07"},
+  {"id":109,"word":"peril","pos":"noun","cefr":"C1","rarity":"legendary","zh":"危險","def_en":"serious danger","example":"A company that uses AI will not be in peril.","syn":"danger, jeopardy, risk","speaker":"jh","event":"Cisco AI Summit 2026","date":"2026-02-07"},
+  {"id":110,"word":"intent","pos":"noun","cefr":"B2","rarity":"rare","zh":"意圖","def_en":"what you plan or mean to do","example":"You now tell the computer what your intent is and it goes off and it figures out how to solve your problem.","syn":"intention, aim, purpose","speaker":"jh","event":"Cisco AI Summit 2026","date":"2026-02-07"},
+  {"id":111,"word":"opposite","pos":"noun","cefr":"B1","rarity":"common","zh":"相反","def_en":"a person or thing that is completely different","example":"I said it's exactly the opposite.","syn":"reverse, contrary","speaker":"jh","event":"GTC Taipei 2026 Keynote","date":"2026-06-01"},
+  {"id":112,"word":"preposterous","pos":"adj","cefr":"C1","rarity":"legendary","zh":"荒謬的","def_en":"completely unreasonable or ridiculous","example":"This may sound preposterous, but, well, here we are in 2026.","syn":"absurd, ridiculous, ludicrous","speaker":"em","event":"The Economist Interview","date":"2026-07-23"},
+  {"id":113,"word":"inexorable","pos":"adj","cefr":"C1","rarity":"legendary","zh":"不可阻擋的","def_en":"impossible to stop or prevent","example":"...there seems to be just inexorable progress here in AI and in robots...","syn":"unstoppable, relentless, inevitable","speaker":"em","event":"The Economist Interview","date":"2026-07-23"},
+  {"id":114,"word":"exhilaration","pos":"noun","cefr":"C1","rarity":"legendary","zh":"興奮／振奮","def_en":"a feeling of excitement and happiness","example":"I've gone from exhilaration to terror regarding AI.","syn":"excitement, thrill, elation","speaker":"em","event":"The Economist Interview","date":"2026-07-23"},
+  {"id":115,"word":"manifest","pos":"verb","cefr":"C1","rarity":"legendary","zh":"顯現／表現","def_en":"to show a quality or feeling clearly","example":"...go from intelligence manifesting itself only digitally to shaping atoms.","syn":"show, display, exhibit","speaker":"em","event":"The Economist Interview","date":"2026-07-23"},
+  {"id":116,"word":"confined","pos":"adj","cefr":"B2","rarity":"rare","zh":"侷限的","def_en":"limited or restricted to a particular place or group","example":"But it's still somewhat confined to the digital realm.","syn":"limited, restricted, bounded","speaker":"em","event":"The Economist Interview","date":"2026-07-23"},
+  {"id":117,"word":"foster","pos":"verb","cefr":"B2","rarity":"rare","zh":"促進／培養","def_en":"to encourage the development of something","example":"If that's the case, I think it will foster humanity.","syn":"encourage, promote, nurture","speaker":"em","event":"The Economist Interview","date":"2026-07-23"},
+  {"id":118,"word":"headwind","pos":"noun","cefr":"B2","rarity":"rare","zh":"逆風（不利因素）","def_en":"a force or situation that makes progress harder","example":"It's definitely a headwind. There's no way around that.","syn":"obstacle, setback, resistance","speaker":"sa","event":"CNBC Squawk on the Street","date":"2026-07-09"},
+  {"id":119,"word":"declining","pos":"adj","cefr":"B1","rarity":"common","zh":"下降的","def_en":"becoming smaller, fewer, or worse","example":"...still have a declining price to the customer.","syn":"falling, decreasing, dropping","speaker":"sa","event":"CNBC Squawk on the Street","date":"2026-07-09"},
+  {"id":120,"word":"safeguard","pos":"noun","cefr":"B2","rarity":"rare","zh":"防護措施","def_en":"a measure taken to protect someone or something from harm","example":"Did you implement new safeguards as a result of this?","syn":"protection, precaution, defense","speaker":"sa","event":"CNBC Squawk on the Street","date":"2026-07-09"},
+  {"id":121,"word":"confident","pos":"adj","cefr":"B1","rarity":"common","zh":"有把握的","def_en":"feeling sure about your abilities or about something being true","example":"...you really want to be able to be confident in your safety claims...","syn":"sure, certain, assured","speaker":"sa","event":"CNBC Squawk on the Street","date":"2026-07-09"},
+  {"id":122,"word":"uncomfortable","pos":"adj","cefr":"B1","rarity":"common","zh":"不安的","def_en":"feeling worried or embarrassed; not pleasant","example":"...otherwise the world is going to get uncomfortable very fast.","syn":"uneasy, awkward, troubled","speaker":"sa","event":"CNBC Squawk on the Street","date":"2026-07-09"},
+  {"id":123,"word":"impressive","pos":"adj","cefr":"B1","rarity":"common","zh":"令人印象深刻的","def_en":"making you admire something because it is very good or large","example":"But the government's technical capability was impressive to me.","syn":"striking, remarkable, admirable","speaker":"sa","event":"CNBC Squawk on the Street","date":"2026-07-09"},
+  {"id":124,"word":"literally","pos":"adv","cefr":"B2","rarity":"rare","zh":"確實地／照字面","def_en":"used to emphasize that something is actually true","example":"...a TAM that is 100 times larger, literally, mathematically true.","syn":"actually, truly, exactly","speaker":"jh","event":"Cisco AI Summit 2026","date":"2026-02-07"},
+  {"id":125,"word":"brimming","pos":"adj","cefr":"C1","rarity":"legendary","zh":"充滿的","def_en":"full of a liquid or of a feeling or quality","example":"...a quiet and modest coastal city, brimming with potential.","syn":"overflowing, filled, packed","speaker":"sp","event":"AI Impact Summit 2026","date":"2026-02-19"},
+  {"id":126,"word":"combat","pos":"verb","cefr":"B2","rarity":"rare","zh":"對抗","def_en":"to take action to reduce or prevent something bad","example":"...deliver more algorithmic gains to combat the upward infrastructure costs...","syn":"fight, counter, tackle","speaker":"sa","event":"CNBC Squawk on the Street","date":"2026-07-09"},
+  {"id":127,"word":"nutshell","pos":"noun","cefr":"B2","rarity":"rare","zh":"簡言之（in a nutshell）","def_en":"used in the phrase 'in a nutshell' to mean 'in a few words'","example":"In a nutshell, you need lots of bots.","syn":"summary, briefly","speaker":"em","event":"The Economist Interview","date":"2026-07-23"},
+  {"id":128,"word":"bumpy","pos":"adj","cefr":"B1","rarity":"common","zh":"顛簸的／不順的","def_en":"not smooth; with difficulties along the way","example":"I do think it's going to be a bumpy road.","syn":"rough, uneven, rocky","speaker":"em","event":"The Economist Interview","date":"2026-07-23"},
+  {"id":129,"word":"optional","pos":"adj","cefr":"B1","rarity":"common","zh":"可選的","def_en":"available to be chosen but not required","example":"I think work is going to be optional.","syn":"voluntary, elective, noncompulsory","speaker":"em","event":"The Economist Interview","date":"2026-07-23"},
+  {"id":130,"word":"curious","pos":"adj","cefr":"B1","rarity":"common","zh":"好奇的","def_en":"eager to know or learn something","example":"...maximally truth-seeking and curious.","syn":"inquisitive, interested, questioning","speaker":"em","event":"The Economist Interview","date":"2026-07-23"}
 ];
 
 document.getElementById("stat-total").textContent = CARDS.length;
