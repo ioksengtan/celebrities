@@ -1296,21 +1296,32 @@ document.addEventListener("keydown", (e)=>{
 
 /* ---- Mini-games: 看英選中 / 看中選英 ---- */
 const GAME_ROUND = 10;
-const GAME_UNKNOWN_REVEAL_MS = 1400;
+const GAME_UNKNOWN_REVEAL_MS = 1600;
+const GAME_UNKNOWN_NEXT_MS = 550;
 const GAME_LABELS = { en2zh: "看英選中", zh2en: "看中選英" };
 
 let gameSession = null;
 let gameAdvanceTimer = null;
+let gameNextRevealTimer = null;
 
 function clearGameAdvanceTimer(){
   if (gameAdvanceTimer){
     clearTimeout(gameAdvanceTimer);
     gameAdvanceTimer = null;
   }
+  if (gameNextRevealTimer){
+    clearTimeout(gameNextRevealTimer);
+    gameNextRevealTimer = null;
+  }
 }
 
 function scheduleGameAdvance(){
   clearGameAdvanceTimer();
+  gameNextRevealTimer = setTimeout(()=>{
+    gameNextRevealTimer = null;
+    const next = document.getElementById("games-next");
+    if (gameSession && gameSession.locked && next) next.hidden = false;
+  }, GAME_UNKNOWN_NEXT_MS);
   gameAdvanceTimer = setTimeout(()=>{
     gameAdvanceTimer = null;
     advanceGame();
@@ -1513,9 +1524,13 @@ function resolveGame(result, choiceIndex){
     fb.className = "games-feedback skip";
     fb.innerHTML = "<b>先記答案</b>正確是「" + optionText(correct, kind) + "」（" + pair + "）<br>" + streakFeedback(false);
   }
-  document.getElementById("games-next").hidden = false;
   document.getElementById("games-progress-bar").style.width = ((gameSession.index + 1) / gameSession.deck.length * 100) + "%";
-  if (result === "unknown") scheduleGameAdvance();
+  if (result === "unknown"){
+    document.getElementById("games-next").hidden = true;
+    scheduleGameAdvance();
+  } else {
+    document.getElementById("games-next").hidden = false;
+  }
 }
 
 function advanceGame(){
