@@ -1,0 +1,577 @@
+<title>Keynote Lexicon</title>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Public+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<style>
+  :root{
+    --bg: #F5F2EA;
+    --surface: #FFFFFF;
+    --surface-2: #EEE9DC;
+    --ink: #1E1B14;
+    --muted: #706A5B;
+    --line: #DEd6c2;
+    --accent: #B85A22;
+    --accent-ink: #FFF8EF;
+    --accent-soft: #EFD9BC;
+    --card-shadow: 0 1px 2px rgba(30,27,20,0.06), 0 8px 20px -12px rgba(30,27,20,0.18);
+    --jh: #B85A22;
+    --em: #3B6E8F;
+    --sa: #5C7A5A;
+    --sp: #6B5B95;
+    --mz: #4A5D8A;
+    --good: #4A7A4E;
+    --bad: #B5482F;
+    color-scheme: light dark;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --bg: #16140F;
+      --surface: #201C15;
+      --surface-2: #29241B;
+      --ink: #F2EEE2;
+      --muted: #A79C87;
+      --line: #3A3427;
+      --accent: #E8873A;
+      --accent-ink: #1B1204;
+      --accent-soft: #4A3620;
+      --card-shadow: 0 1px 2px rgba(0,0,0,0.3), 0 10px 24px -14px rgba(0,0,0,0.6);
+      --jh: #E8873A;
+      --em: #7EB4DC;
+      --sa: #8FBB8A;
+      --sp: #A996D8;
+      --mz: #8FA6E0;
+      --good: #7FBF83;
+      --bad: #E27A5F;
+    }
+  }
+  :root[data-theme="dark"]{
+    --bg: #16140F;
+    --surface: #201C15;
+    --surface-2: #29241B;
+    --ink: #F2EEE2;
+    --muted: #A79C87;
+    --line: #3A3427;
+    --accent: #E8873A;
+    --accent-ink: #1B1204;
+    --accent-soft: #4A3620;
+    --card-shadow: 0 1px 2px rgba(0,0,0,0.3), 0 10px 24px -14px rgba(0,0,0,0.6);
+    --jh: #E8873A;
+    --em: #7EB4DC;
+    --sa: #8FBB8A;
+    --sp: #A996D8;
+    --mz: #8FA6E0;
+    --good: #7FBF83;
+    --bad: #E27A5F;
+  }
+
+  *{ box-sizing: border-box; }
+  body{
+    background: var(--bg);
+    color: var(--ink);
+    font-family: "Public Sans", -apple-system, "Segoe UI", "Noto Sans TC", sans-serif;
+    padding: 28px 20px 64px;
+  }
+  .wrap{ max-width: 1080px; margin: 0 auto; }
+
+  .mono{ font-family: "IBM Plex Mono", ui-monospace, SFMono-Regular, monospace; }
+
+  header{
+    display: flex; flex-wrap: wrap; gap: 20px 32px;
+    align-items: flex-end; justify-content: space-between;
+    padding-bottom: 20px; margin-bottom: 22px;
+    border-bottom: 1px solid var(--line);
+  }
+  .titleblock h1{
+    font-family: "Fraunces", Georgia, serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-size: clamp(28px, 4vw, 40px);
+    line-height: 1.05;
+    margin: 0 0 8px;
+    text-wrap: balance;
+    letter-spacing: -0.01em;
+  }
+  .titleblock p{
+    margin: 0; color: var(--muted); font-size: 14.5px; max-width: 52ch; line-height: 1.5;
+  }
+  .stats{
+    display: flex; gap: 18px; font-size: 12.5px; color: var(--muted);
+    white-space: nowrap;
+  }
+  .stats b{ color: var(--ink); font-weight: 600; }
+
+  .toolbar{
+    display: flex; flex-direction: column; gap: 12px;
+    margin-bottom: 22px;
+  }
+  .filter-row{ display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+  .filter-row .label{
+    font-family: "IBM Plex Mono", monospace; font-size: 10.5px; text-transform: uppercase;
+    letter-spacing: 0.08em; color: var(--muted); width: 64px; flex: none;
+  }
+  .chip{
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 12.5px; padding: 6px 12px; border-radius: 999px;
+    border: 1px solid var(--line); background: var(--surface); color: var(--muted);
+    cursor: pointer; user-select: none; transition: border-color .15s, color .15s, background .15s;
+    line-height: 1.2;
+  }
+  .chip:hover{ border-color: var(--accent); color: var(--ink); }
+  .chip.active{
+    background: var(--accent); border-color: var(--accent); color: var(--accent-ink); font-weight: 600;
+  }
+  .chip .dot{ display: inline-block; width: 7px; height: 7px; border-radius: 50%; margin-right: 6px; vertical-align: middle; }
+
+  .mode-toggle{ display: flex; gap: 6px; margin-left: auto; }
+  .mode-toggle button{
+    font-family: "Public Sans", sans-serif; font-weight: 600; font-size: 13.5px;
+    padding: 8px 16px; border-radius: 8px; border: 1px solid var(--line);
+    background: var(--surface); color: var(--muted); cursor: pointer;
+  }
+  .mode-toggle button.active{ background: var(--ink); color: var(--bg); border-color: var(--ink); }
+
+  /* ---- Browse grid ---- */
+  #browse-grid{
+    display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 16px;
+  }
+  .flashcard{
+    perspective: 1200px; height: 210px; cursor: pointer;
+  }
+  .flashcard-inner{
+    position: relative; width: 100%; height: 100%; transition: transform .5s cubic-bezier(.4,.2,.2,1);
+    transform-style: preserve-3d;
+  }
+  .flashcard.flipped .flashcard-inner{ transform: rotateY(180deg); }
+  .face{
+    position: absolute; inset: 0; backface-visibility: hidden;
+    border-radius: 14px; border: 1px solid var(--line); background: var(--surface);
+    box-shadow: var(--card-shadow); padding: 16px; display: flex; flex-direction: column;
+    overflow: hidden;
+  }
+  .face.back{ transform: rotateY(180deg); background: var(--surface-2); }
+
+  .cat-tag{
+    font-family: "IBM Plex Mono", monospace; font-size: 10px; text-transform: uppercase;
+    letter-spacing: 0.07em; color: var(--accent); font-weight: 600;
+  }
+  .term-zh{ font-size: 12.5px; color: var(--muted); margin-top: 2px; }
+  .face.front .term-en{
+    font-family: "Fraunces", Georgia, serif; font-size: 25px; font-weight: 500;
+    line-height: 1.12; margin-top: auto; margin-bottom: auto; text-wrap: balance;
+  }
+  .speaker-row{
+    display: flex; align-items: center; gap: 7px; margin-top: auto; padding-top: 8px;
+    font-size: 11.5px; color: var(--muted); font-family: "IBM Plex Mono", monospace;
+  }
+  .speaker-dot{ width: 8px; height: 8px; border-radius: 50%; flex: none; }
+  .hint{ position: absolute; bottom: 10px; right: 14px; font-size: 10px; color: var(--muted); opacity: .55; font-family: "IBM Plex Mono",monospace;}
+
+  .face.back .def-en{ font-size: 13.5px; line-height: 1.45; margin: 2px 0 6px; }
+  .face.back .def-zh{ font-size: 13px; line-height: 1.45; color: var(--muted); margin-bottom: 8px; }
+  blockquote.quote{
+    margin: auto 0 0; padding: 8px 0 0; border-top: 1px dashed var(--line);
+    font-size: 12px; line-height: 1.4; font-style: italic; color: var(--ink);
+  }
+  blockquote.quote cite{
+    display: block; margin-top: 4px; font-style: normal; font-family: "IBM Plex Mono", monospace;
+    font-size: 10.5px; color: var(--muted);
+  }
+  .special-badge{
+    position: absolute; top: 10px; right: 10px; font-family: "IBM Plex Mono", monospace;
+    font-size: 9.5px; text-transform: uppercase; letter-spacing: .06em; color: var(--accent);
+    background: var(--accent-soft); padding: 2px 7px; border-radius: 999px;
+  }
+
+  /* ---- Quiz mode ---- */
+  #quiz-panel{ display: none; }
+  #quiz-panel.active{ display: flex; }
+  #quiz-panel{ flex-direction: column; align-items: center; gap: 18px; }
+  .quiz-progress{
+    width: 100%; max-width: 480px; height: 6px; border-radius: 999px; background: var(--surface-2);
+    overflow: hidden;
+  }
+  .quiz-progress > div{ height: 100%; background: var(--accent); transition: width .3s; }
+  .quiz-counter{ font-family: "IBM Plex Mono", monospace; font-size: 12.5px; color: var(--muted); }
+  .quiz-card-wrap{ perspective: 1400px; width: 100%; max-width: 480px; height: 300px; }
+  .quiz-card-wrap .flashcard{ width: 100%; height: 100%; }
+  .quiz-card-wrap .face{ padding: 26px; border-radius: 18px; }
+  .quiz-card-wrap .face.front .term-en{ font-size: 32px; text-align: center; }
+  .quiz-card-wrap .cat-tag{ text-align: center; }
+  .quiz-card-wrap .term-zh{ text-align: center; }
+  .quiz-card-wrap .speaker-row{ justify-content: center; }
+  .quiz-actions{ display: flex; gap: 10px; }
+  .quiz-actions button{
+    font-family: "Public Sans", sans-serif; font-weight: 600; font-size: 14px;
+    padding: 11px 22px; border-radius: 10px; border: 1px solid var(--line); cursor: pointer;
+    background: var(--surface); color: var(--ink);
+  }
+  .quiz-actions button.know{ border-color: var(--good); color: var(--good); }
+  .quiz-actions button.know:hover{ background: var(--good); color: var(--accent-ink); }
+  .quiz-actions button.dontknow{ border-color: var(--bad); color: var(--bad); }
+  .quiz-actions button.dontknow:hover{ background: var(--bad); color: var(--accent-ink); }
+  .quiz-hint{ font-size: 12px; color: var(--muted); }
+  .quiz-done{ text-align: center; padding: 30px 0; }
+  .quiz-done h2{ font-family: "Fraunces", serif; font-size: 26px; margin: 0 0 8px; }
+  .quiz-done p{ color: var(--muted); margin: 0 0 18px; }
+  .quiz-done button{
+    font-family: "Public Sans"; font-weight: 700; padding: 11px 24px; border-radius: 10px;
+    border: none; background: var(--ink); color: var(--bg); cursor: pointer; font-size: 14px;
+  }
+
+  footer{ margin-top: 40px; font-size: 12px; color: var(--muted); text-align: center; }
+  footer a{ color: var(--muted); }
+
+  @media (prefers-reduced-motion: reduce){
+    .flashcard-inner{ transition: none; }
+  }
+</style>
+
+<div class="wrap">
+  <header>
+    <div class="titleblock">
+      <h1>Keynote Lexicon</h1>
+      <p>從 Jensen Huang、Elon Musk、Sam Altman 等人 2024–2026 年的 30 場演講與訪談中萃取的雙語詞彙卡與語錄，點卡片翻面查看解釋，或切換到測驗模式自我檢測。</p>
+    </div>
+    <div class="stats mono">
+      <div><b id="stat-total">20</b> 張卡</div>
+      <div><b>5</b> 位講者</div>
+      <div><b>4</b> 類詞彙</div>
+    </div>
+  </header>
+
+  <div class="toolbar">
+    <div class="filter-row">
+      <span class="label">類別</span>
+      <div id="cat-chips"></div>
+    </div>
+    <div class="filter-row">
+      <span class="label">講者</span>
+      <div id="speaker-chips" style="display:flex; flex-wrap:wrap; gap:8px;"></div>
+      <div class="mode-toggle">
+        <button id="btn-browse" class="active">瀏覽</button>
+        <button id="btn-quiz">測驗</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="browse-grid"></div>
+
+  <div id="quiz-panel">
+    <div class="quiz-progress"><div id="quiz-progress-bar" style="width:0%"></div></div>
+    <div class="quiz-counter" id="quiz-counter">0 / 0</div>
+    <div class="quiz-card-wrap">
+      <div class="flashcard" id="quiz-card">
+        <div class="flashcard-inner">
+          <div class="face front"></div>
+          <div class="face back"></div>
+        </div>
+      </div>
+    </div>
+    <div class="quiz-hint">點卡片或按空白鍵翻面 · ← 不熟　→ 認識</div>
+    <div class="quiz-actions">
+      <button class="dontknow" id="btn-dontknow">還不熟</button>
+      <button class="know" id="btn-know">認識了</button>
+    </div>
+    <div id="quiz-done" style="display:none" class="quiz-done">
+      <h2></h2>
+      <p></p>
+      <button id="quiz-restart">重新測驗</button>
+    </div>
+  </div>
+
+  <footer>
+    資料來源：CEO Speech Database v1.0（30 場演講・2024-03 至 2026-09） · 語錄與詞彙節錄自公開演講/訪談逐字稿
+  </footer>
+</div>
+
+<script>
+const SPEAKERS = {
+  jh: { name: "Jensen Huang", short: "黃仁勳", color: "var(--jh)" },
+  em: { name: "Elon Musk", short: "馬斯克", color: "var(--em)" },
+  sa: { name: "Sam Altman", short: "奧特曼", color: "var(--sa)" },
+  sp: { name: "Sundar Pichai", short: "皮查伊", color: "var(--sp)" },
+  mz: { name: "Mark Zuckerberg", short: "祖克柏", color: "var(--mz)" },
+};
+
+const CATS = {
+  ai: "AI 技術術語",
+  biz: "商業與經濟",
+  quote: "名人語錄",
+  new: "新創詞彙",
+};
+
+const CARDS = [
+  { id:1, cat:"ai", term:"Agentic AI", zh:"主動式 / 智能體 AI",
+    def_en:"AI systems that can plan, reason, and carry out multi-step tasks on their own, without being told each step.",
+    def_zh:"能夠自主規劃、推理並執行多步驟任務的 AI 系統，不需要人類逐步下指令。",
+    quote:"Agentic AI, token factory, AI infrastructure — this is the shift from answering questions to taking action.",
+    speaker:"jh", event:"GTC 2025 Keynote", date:"2025-03-19" },
+  { id:2, cat:"ai", term:"Token Factory", zh:"代幣工廠",
+    def_en:"A data center reimagined as an industrial plant that mass-produces AI tokens — the basic units of machine intelligence — the way a factory produces goods.",
+    def_zh:"把資料中心比擬為工廠，大量「生產」AI 權杖（token）——機器智慧的基本單位。",
+    quote:"This is how intelligence is made, a new kind of factory generator of tokens.",
+    speaker:"jh", event:"GTC 2025 Keynote", date:"2025-03-19" },
+  { id:3, cat:"ai", term:"Inference", zh:"推論",
+    def_en:"The stage where a trained AI model is actually put to use — generating answers or predictions from new input, as opposed to training.",
+    def_zh:"已訓練好的 AI 模型被實際使用、根據新輸入產生答案或預測的階段，相對於「訓練」。",
+    quote:"The era of inference has arrived.",
+    speaker:"jh", event:"GTC 2026 Full Speech", date:"2026-03-17", tag:"inference era" },
+  { id:4, cat:"ai", term:"AGI", zh:"通用人工智慧",
+    def_en:"Artificial General Intelligence — an AI with human-level (or broader) reasoning across many domains, not limited to one narrow task.",
+    def_zh:"Artificial General Intelligence，指具備跨領域、接近或超越人類水準推理能力的 AI，而非只能做單一任務。",
+    quote:"AGI timeline, US vs China, humanoid robots, clean energy, compute — the abundance conversation starts here.",
+    speaker:"em", event:"Moonshots Podcast #220", date:"2026-01-06" },
+  { id:5, cat:"ai", term:"Implicit Computing", zh:"隱性運算",
+    def_en:"Computing that happens invisibly in the background of AI systems, powering decisions without the user ever seeing the computation itself.",
+    def_zh:"在 AI 系統背後默默運作、使用者感受不到運算過程本身的運算方式。",
+    quote:"Implicit computing, AI factories, economics — the infrastructure layer nobody sees but everyone depends on.",
+    speaker:"jh", event:"Cisco AI Summit 2026", date:"2026-02-07" },
+
+  { id:6, cat:"biz", term:"Trillion-Dollar Demand", zh:"兆美元級需求",
+    def_en:"A market opportunity measured in trillions of dollars — the scale Jensen Huang used to describe near-future AI infrastructure spending.",
+    def_zh:"以「兆美元」為單位計算的市場需求規模，用來形容 AI 基礎建設支出的龐大程度。",
+    quote:"By 2027, we will see at least $1 trillion in high-confidence demand.",
+    speaker:"jh", event:"GTC 2026 Keynote", date:"2026-03-16" },
+  { id:7, cat:"biz", term:"10x Economy", zh:"十倍經濟",
+    def_en:"A future economy made roughly ten times more productive by AI and automation — more output from the same labor and capital.",
+    def_zh:"因 AI 與自動化而生產力提升約十倍的未來經濟型態。",
+    quote:"Grok 4.20, AGI, Optimus 3, 10x economy — Musk's shorthand for what comes after scarcity.",
+    speaker:"em", event:"Visionary Society Interview", date:"2026-03-24" },
+  { id:8, cat:"biz", term:"Abundance", zh:"富足 / 豐裕",
+    def_en:"An economic state where AI-driven productivity makes goods and services radically cheaper and more plentiful for everyone.",
+    def_zh:"因 AI 帶動生產力大增，使商品與服務變得極度充裕、便宜的經濟狀態。",
+    quote:"AI risks, abundance, humanity future, 2036 world — the interview that reframed the whole debate.",
+    speaker:"em", event:"The Economist Interview", date:"2026-07-23", tag:"viral" },
+  { id:9, cat:"biz", term:"Platform, Not a Product", zh:"平台，而非產品",
+    def_en:"A strategic pivot from selling one flagship product to becoming the underlying infrastructure other products and companies build on.",
+    def_zh:"從主打單一產品轉向成為其他產品與公司賴以建構的底層基礎設施的策略轉型。",
+    quote:"OpenAI as a platform, not a product — even if it means killing Sora and Atlas to fund compute.",
+    speaker:"sa", event:"Dealroom.co Interview", date:"2026-08-24" },
+
+  { id:10, cat:"quote", term:"“Very good to be home”", zh:"很高興回到家鄉",
+    def_en:"Jensen Huang's opening line returning to Taiwan — his birthplace — to deliver a keynote, six years after his last visit.",
+    def_zh:"黃仁勳回到出生地台灣演講時的開場白，帶有濃厚的返鄉情感。",
+    quote:"Very good to be home.",
+    speaker:"jh", event:"GTC Taipei 2026 Keynote", date:"2026-06-01", tag:"homecoming" },
+  { id:11, cat:"quote", term:"“Let's enjoy the ride”", zh:"享受這趟旅程吧",
+    def_en:"Musk's closing line in a wide-ranging interview about superintelligence and an uncertain future — choosing optimism over fear.",
+    def_zh:"馬斯克在討論超級智慧與不確定未來的訪談結尾說的話，選擇以樂觀態度面對。",
+    quote:"Let's enjoy the ride.",
+    speaker:"em", event:"The Economist Interview", date:"2026-07-23", tag:"viral" },
+  { id:12, cat:"quote", term:"“Hello, Las Vegas”", zh:"哈囉，拉斯維加斯",
+    def_en:"Jensen Huang's crowd-greeting opener at CES 2026, kicking off a keynote on consumer AI, gaming, and automotive.",
+    def_zh:"黃仁勳在 CES 2026 開場對現場觀眾的問候語，隨後展開消費性電子、遊戲與汽車相關的 AI 演說。",
+    quote:"Hello, Las Vegas.",
+    speaker:"jh", event:"CES 2026", date:"2026-01-06" },
+  { id:13, cat:"quote", term:"“Lobster Is the New Operating System”", zh:"龍蝦就是新的作業系統",
+    def_en:"A deliberately strange metaphor Jensen Huang used to argue that AI itself — not a traditional OS — now sits at the center of computing.",
+    def_zh:"黃仁勳用來比喻 AI 已經取代傳統作業系統、成為運算核心的一句刻意誇張的比喻。",
+    quote:"Lobster is the new operating system.",
+    speaker:"jh", event:"GTC 2026 Full Speech", date:"2026-03-17" },
+
+  { id:14, cat:"new", term:"AI Factories", zh:"AI 工廠",
+    def_en:"Purpose-built data centers that convert electricity and raw data into AI intelligence at industrial scale — the successor to the traditional data center.",
+    def_zh:"專為將電力與資料大規模轉換成 AI 智慧而建造的資料中心，被視為傳統資料中心的下一代型態。",
+    quote:"Token factory economics, AI factories, inference revenue — the vocabulary of a new industrial category.",
+    speaker:"jh", event:"GTC 2026 Keynote", date:"2026-03-16" },
+  { id:15, cat:"new", term:"Sobering Siren", zh:"警世警報",
+    def_en:"Sam Altman's own phrase for a stark warning about the risks and responsibility that come with increasingly powerful AI models.",
+    def_zh:"奧特曼自創的說法，形容伴隨 AI 模型日益強大而來的風險與責任的警世提醒。",
+    quote:"Next-gen models, sobering siren, risks, responsibility — Altman turning cautionary in his own words.",
+    speaker:"sa", event:"Axios Interview", date:"2026-09-03" },
+  { id:16, cat:"new", term:"Optional Work", zh:"可選性工作",
+    def_en:"A proposed future where humanoid robots and AI handle most labor, making traditional human work a choice rather than a necessity.",
+    def_zh:"設想人形機器人與 AI 承擔大部分勞動後，傳統的人類工作將變成一種選擇，而非必需。",
+    quote:"AI superintelligence, humanoid robots, optional work, corporate control — the interview's central thesis.",
+    speaker:"em", event:"The Transcript Desk", date:"2026-08-10" },
+  { id:17, cat:"new", term:"Orbital Data Centers", zh:"軌道資料中心",
+    def_en:"Data centers proposed for deployment in space, taking advantage of constant solar power and the vacuum of space for cooling AI compute.",
+    def_zh:"部署於太空的資料中心構想，利用持續的太陽能與太空的低溫環境為 AI 運算散熱。",
+    quote:"AI infrastructure, orbital data centers — pushing the factory metaphor literally into orbit.",
+    speaker:"em", event:"Moonshots Podcast Part 9", date:"2026-02-08" },
+  { id:18, cat:"biz", term:"ROI", zh:"投資報酬率",
+    def_en:"Return on Investment — the measure of value gained relative to what was spent, a recurring theme when CEOs justify AI infrastructure spending.",
+    def_zh:"投入資金相對於產出價值的衡量指標，CEO 們常用它來為 AI 基礎建設支出辯護。",
+    quote:"GPT-5.6 Sol, efficiency, ROI — Altman making the business case for the next model generation.",
+    speaker:"sa", event:"CNBC Squawk on the Street", date:"2026-07-09" },
+  { id:19, cat:"ai", term:"AI Infrastructure", zh:"AI 基礎建設",
+    def_en:"The combined stack of chips, data centers, networking, and power needed to train and run large-scale AI systems.",
+    def_zh:"訓練與運行大規模 AI 系統所需的晶片、資料中心、網路與電力等整體基礎建設。",
+    quote:"AI spending blitz will continue into 2026 — infrastructure as the year's central investment story.",
+    speaker:"mz", event:"CNBC Report", date:"2025-07-30" },
+  { id:20, cat:"quote", term:"“Responsible AI, Inclusive AI”", zh:"負責任的AI，包容性的AI",
+    def_en:"Sundar Pichai's framing for AI development that accounts for safety and fairness while extending benefits broadly, not just to the already-advantaged.",
+    def_zh:"皮查伊用來描述 AI 發展應兼顧安全與公平，並讓效益普及而非僅限少數群體的說法。",
+    quote:"Responsible AI, inclusive AI — Pichai's opening frame for the summit.",
+    speaker:"sp", event:"AI Impact Summit 2026", date:"2026-02-19" },
+];
+
+document.getElementById("stat-total").textContent = CARDS.length;
+
+const state = { cats: new Set(), speakers: new Set(), mode: "browse" };
+
+function buildChips(){
+  const catChips = document.getElementById("cat-chips");
+  Object.entries(CATS).forEach(([key,label])=>{
+    const chip = document.createElement("span");
+    chip.className = "chip"; chip.textContent = label; chip.dataset.key = key;
+    chip.addEventListener("click", ()=>{
+      state.cats.has(key) ? state.cats.delete(key) : state.cats.add(key);
+      chip.classList.toggle("active");
+      renderBrowse(); resetQuiz();
+    });
+    catChips.appendChild(chip);
+  });
+  const spChips = document.getElementById("speaker-chips");
+  Object.entries(SPEAKERS).forEach(([key,s])=>{
+    const chip = document.createElement("span");
+    chip.className = "chip"; chip.dataset.key = key;
+    chip.innerHTML = '<span class="dot" style="background:'+s.color+'"></span>'+s.short;
+    chip.addEventListener("click", ()=>{
+      state.speakers.has(key) ? state.speakers.delete(key) : state.speakers.add(key);
+      chip.classList.toggle("active");
+      renderBrowse(); resetQuiz();
+    });
+    spChips.appendChild(chip);
+  });
+}
+
+function filteredCards(){
+  return CARDS.filter(c=>{
+    const catOk = state.cats.size === 0 || state.cats.has(c.cat);
+    const spOk = state.speakers.size === 0 || state.speakers.has(c.speaker);
+    return catOk && spOk;
+  });
+}
+
+function cardFaceHTML(c){
+  const s = SPEAKERS[c.speaker];
+  return `
+    ${c.tag ? `<span class="special-badge">${c.tag}</span>` : ""}
+    <div class="face front">
+      <span class="cat-tag">${CATS[c.cat]}</span>
+      <span class="term-zh">${c.zh}</span>
+      <div class="term-en">${c.term}</div>
+      <div class="speaker-row"><span class="speaker-dot" style="background:${s.color}"></span>${s.name} · ${c.event}</div>
+      <span class="hint">點擊翻面</span>
+    </div>
+    <div class="face back">
+      <span class="cat-tag">${CATS[c.cat]}</span>
+      <div class="def-en">${c.def_en}</div>
+      <div class="def-zh">${c.def_zh}</div>
+      <blockquote class="quote">"${c.quote}"<cite>— ${s.name}, ${c.event}, ${c.date}</cite></blockquote>
+    </div>
+  `;
+}
+
+function renderBrowse(){
+  const grid = document.getElementById("browse-grid");
+  grid.innerHTML = "";
+  const cards = filteredCards();
+  if (cards.length === 0){
+    grid.innerHTML = '<p class="mono" style="color:var(--muted); grid-column:1/-1;">沒有符合篩選條件的卡片。</p>';
+    return;
+  }
+  cards.forEach(c=>{
+    const el = document.createElement("div");
+    el.className = "flashcard";
+    el.innerHTML = `<div class="flashcard-inner">${cardFaceHTML(c)}</div>`;
+    el.addEventListener("click", ()=> el.classList.toggle("flipped"));
+    grid.appendChild(el);
+  });
+}
+
+/* ---- Quiz mode ---- */
+let quizDeck = [];
+let quizIndex = 0;
+let quizResults = {};
+let known = {};
+try { known = JSON.parse(localStorage.getItem("keynote-lexicon-known") || "{}"); } catch(e){ known = {}; }
+
+function resetQuiz(){
+  quizDeck = filteredCards().slice().sort(()=>Math.random()-0.5);
+  quizIndex = 0; quizResults = {};
+  document.getElementById("quiz-done").style.display = "none";
+  document.getElementById("quiz-card").parentElement.style.display = "";
+  document.querySelector(".quiz-hint").style.display = "";
+  document.querySelector(".quiz-actions").style.display = "";
+  renderQuizCard();
+}
+
+function renderQuizCard(){
+  const bar = document.getElementById("quiz-progress-bar");
+  const counter = document.getElementById("quiz-counter");
+  if (quizDeck.length === 0){
+    counter.textContent = "0 / 0";
+    bar.style.width = "0%";
+    document.getElementById("quiz-card").innerHTML = '<div class="flashcard-inner"><div class="face front"><span class="cat-tag">—</span><div class="term-en" style="font-size:16px">沒有符合篩選條件的卡片</div></div><div class="face back"></div></div>';
+    return;
+  }
+  if (quizIndex >= quizDeck.length){
+    showQuizDone();
+    return;
+  }
+  bar.style.width = (quizIndex / quizDeck.length * 100) + "%";
+  counter.textContent = (quizIndex+1) + " / " + quizDeck.length;
+  const c = quizDeck[quizIndex];
+  const card = document.getElementById("quiz-card");
+  card.classList.remove("flipped");
+  card.innerHTML = `<div class="flashcard-inner">${cardFaceHTML(c)}</div>`;
+  card.onclick = ()=> card.classList.toggle("flipped");
+}
+
+function showQuizDone(){
+  document.getElementById("quiz-card").parentElement.style.display = "none";
+  document.querySelector(".quiz-hint").style.display = "none";
+  document.querySelector(".quiz-actions").style.display = "none";
+  document.getElementById("quiz-progress-bar").style.width = "100%";
+  document.getElementById("quiz-counter").textContent = quizDeck.length + " / " + quizDeck.length;
+  const knownCount = Object.values(quizResults).filter(Boolean).length;
+  const done = document.getElementById("quiz-done");
+  done.style.display = "block";
+  done.querySelector("h2").textContent = knownCount + " / " + quizDeck.length + " 認識";
+  done.querySelector("p").textContent = knownCount === quizDeck.length
+    ? "全部認識，這批詞彙可以換更多講者或類別繼續挑戰。"
+    : "還不熟的詞彙已標記，下次可以針對它們加強複習。";
+}
+
+function markQuiz(isKnown){
+  if (quizIndex >= quizDeck.length) return;
+  const c = quizDeck[quizIndex];
+  quizResults[c.id] = isKnown;
+  known[c.id] = isKnown;
+  try { localStorage.setItem("keynote-lexicon-known", JSON.stringify(known)); } catch(e){}
+  quizIndex++;
+  renderQuizCard();
+}
+
+document.getElementById("btn-know").addEventListener("click", ()=> markQuiz(true));
+document.getElementById("btn-dontknow").addEventListener("click", ()=> markQuiz(false));
+document.getElementById("quiz-restart").addEventListener("click", resetQuiz);
+
+document.addEventListener("keydown", (e)=>{
+  if (state.mode !== "quiz") return;
+  if (e.code === "Space"){ e.preventDefault(); document.getElementById("quiz-card").classList.toggle("flipped"); }
+  if (e.code === "ArrowRight"){ markQuiz(true); }
+  if (e.code === "ArrowLeft"){ markQuiz(false); }
+});
+
+document.getElementById("btn-browse").addEventListener("click", ()=>{
+  state.mode = "browse";
+  document.getElementById("btn-browse").classList.add("active");
+  document.getElementById("btn-quiz").classList.remove("active");
+  document.getElementById("browse-grid").style.display = "grid";
+  document.getElementById("quiz-panel").classList.remove("active");
+});
+document.getElementById("btn-quiz").addEventListener("click", ()=>{
+  state.mode = "quiz";
+  document.getElementById("btn-quiz").classList.add("active");
+  document.getElementById("btn-browse").classList.remove("active");
+  document.getElementById("browse-grid").style.display = "none";
+  document.getElementById("quiz-panel").classList.add("active");
+  resetQuiz();
+});
+
+buildChips();
+renderBrowse();
+</script>
