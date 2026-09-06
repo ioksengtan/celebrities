@@ -718,13 +718,24 @@ document.getElementById("btn-feed").addEventListener("click", ()=> setMode("feed
 document.getElementById("btn-browse").addEventListener("click", ()=> setMode("browse"));
 document.getElementById("btn-quiz").addEventListener("click", ()=> setMode("quiz"));
 
+function resetFeedScroll(){
+  const scrollEl = document.getElementById("feed-scroll");
+  const hashMatch = location.hash.match(/^#card-(\d+)$/);
+  if (hashMatch){
+    scrollFeedToCard(Number(hashMatch[1]));
+  } else if (scrollEl){
+    scrollEl.scrollTop = 0;
+  }
+}
+
 buildChips();
 renderFeed();
 renderBrowse();
 setMode("feed");
+requestAnimationFrame(resetFeedScroll);
 
-const hashMatch = location.hash.match(/^#card-(\d+)$/);
-if (hashMatch){
-  requestAnimationFrame(()=> scrollFeedToCard(Number(hashMatch[1])));
-}
+/* Browsers can restore a page's previous scroll position (bfcache back/forward,
+   some mobile "recent tabs" restores) — without this, reopening the same link
+   can land on whatever card was last viewed instead of the first one. */
+window.addEventListener("pageshow", ()=> requestAnimationFrame(resetFeedScroll));
 </script>
