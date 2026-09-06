@@ -117,9 +117,12 @@ nav a {
   font-size: 13px;
   font-weight: 600;
   color: var(--muted);
-  padding: 6px 10px;
+  min-height: 40px;
+  padding: 8px 12px;
   border-radius: 999px;
   border: 1px solid transparent;
+  display: inline-flex;
+  align-items: center;
 }
 
 nav a:hover,
@@ -141,10 +144,10 @@ main {
 .page-head h1 {
   font-family: "Fraunces", Georgia, serif;
   font-weight: 600;
-  font-size: clamp(28px, 5vw, 42px);
+  font-size: clamp(24px, 4vw, 34px);
   line-height: 1.12;
   letter-spacing: -0.02em;
-  margin: 0 0 10px;
+  margin: 0 0 6px;
   text-wrap: balance;
 }
 
@@ -253,11 +256,21 @@ main {
   color: var(--accent-ink);
 }
 
+.btn.action.source {
+  background: var(--ink);
+  color: var(--bg);
+  border-color: var(--ink);
+}
+
 .card-actions {
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
-  margin-top: 4px;
+  margin-top: 6px;
+}
+
+.card-actions .btn.action {
+  flex: 1 1 7.2rem;
 }
 
 details.why {
@@ -430,6 +443,7 @@ details.why p { margin: 8px 0 0; }
   text-decoration: none;
   display: block;
   color: inherit;
+  min-height: 88px;
 }
 
 .speech-card:hover { border-color: var(--accent); }
