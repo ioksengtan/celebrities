@@ -1,0 +1,877 @@
+{
+  "metadata": {
+    "created_date": "2026-09-06",
+    "time_range": "2024-09 to 2026-09",
+    "total_entries": 30,
+    "categories": [
+      "keynote",
+      "interview",
+      "panel",
+      "town_hall"
+    ]
+  },
+  "speakers": {
+    "jensen_huang": {
+      "name": "Jensen Huang",
+      "title": "CEO & Founder",
+      "company": "NVIDIA",
+      "topics": [
+        "AI",
+        "accelerated computing",
+        "AI factories",
+        "agentic AI",
+        "inference"
+      ],
+      "entries": [
+        "JH-2024-001",
+        "JH-2025-001",
+        "JH-2025-002",
+        "JH-2026-001",
+        "JH-2026-002",
+        "JH-2026-003",
+        "JH-2026-004",
+        "JH-2026-005",
+        "JH-2026-006",
+        "JH-2026-007"
+      ]
+    },
+    "elon_musk": {
+      "name": "Elon Musk",
+      "title": "CEO",
+      "companies": [
+        "Tesla",
+        "SpaceX",
+        "xAI"
+      ],
+      "topics": [
+        "AI",
+        "AGI",
+        "humanoid robots",
+        "space exploration",
+        "economy"
+      ],
+      "entries": [
+        "EM-2025-001",
+        "EM-2026-001",
+        "EM-2026-002",
+        "EM-2026-003",
+        "EM-2026-004",
+        "EM-2026-005",
+        "EM-2026-006",
+        "EM-2026-007"
+      ]
+    },
+    "sam_altman": {
+      "name": "Sam Altman",
+      "title": "CEO",
+      "company": "OpenAI",
+      "topics": [
+        "AGI",
+        "AI safety",
+        "AI adoption",
+        "economic growth"
+      ],
+      "entries": [
+        "SA-2025-001",
+        "SA-2026-001",
+        "SA-2026-002",
+        "SA-2026-003",
+        "SA-2026-004",
+        "SA-2026-005",
+        "SA-2026-006"
+      ]
+    },
+    "sundar_pichai": {
+      "name": "Sundar Pichai",
+      "title": "CEO",
+      "company": "Google & Alphabet",
+      "topics": [
+        "AI",
+        "responsible AI",
+        "antitrust",
+        "privacy"
+      ],
+      "entries": [
+        "SP-2025-001",
+        "SP-2025-002",
+        "SP-2026-001"
+      ]
+    },
+    "mark_zuckerberg": {
+      "name": "Mark Zuckerberg",
+      "title": "CEO",
+      "company": "Meta",
+      "topics": [
+        "AI",
+        "VR/AR",
+        "metaverse",
+        "AI infrastructure"
+      ],
+      "entries": [
+        "MZ-2024-001",
+        "MZ-2025-001"
+      ]
+    }
+  },
+  "speeches": [
+    {
+      "id": "JH-2024-001",
+      "speaker": "jensen_huang",
+      "date": "2024-03-18",
+      "event": "GTC 2024 Keynote",
+      "location": "San Jose",
+      "type": "keynote",
+      "duration_minutes": 90,
+      "topics": [
+        "accelerated computing",
+        "AI",
+        "digital twins",
+        "cloud",
+        "sustainability"
+      ],
+      "key_quotes": [],
+      "transcript_url": "https://www.nvidia.com/en-us/on-demand/session/gtc24-s62542/",
+      "video_url": "https://www.nvidia.com/en-us/on-demand/session/gtc24-s62542/",
+      "language": "en",
+      "word_count_estimate": 12000,
+      "product_tags": [
+        "keynote",
+        "technical",
+        "AI infrastructure"
+      ]
+    },
+    {
+      "id": "JH-2025-001",
+      "speaker": "jensen_huang",
+      "date": "2025-03-19",
+      "event": "GTC 2025 Keynote",
+      "location": "San Jose",
+      "type": "keynote",
+      "duration_minutes": 90,
+      "topics": [
+        "agentic AI",
+        "token factory",
+        "AI infrastructure"
+      ],
+      "key_quotes": [
+        "This is how intelligence is made, a new kind of factory generator of tokens"
+      ],
+      "transcript_url": "https://www.rev.com/transcripts/gtc-keynote-with-nvidia-ceo-jensen-huang",
+      "video_url": "https://www.nvidia.com/en-us/on-demand/session/gtc25-keynote",
+      "language": "en",
+      "word_count_estimate": 13000,
+      "product_tags": [
+        "keynote",
+        "agentic AI",
+        "token economics"
+      ]
+    },
+    {
+      "id": "JH-2025-002",
+      "speaker": "jensen_huang",
+      "date": "2025-10-28",
+      "event": "GTC 2025 Washington D.C. Keynote",
+      "location": "Washington D.C.",
+      "type": "keynote",
+      "duration_minutes": 75,
+      "topics": [
+        "AI infrastructure",
+        "ecosystem expansion"
+      ],
+      "key_quotes": [],
+      "transcript_url": "https://singjupost.com/transcript-nvidia-ceo-jensen-huangs-keynote-at-gtc-2025/",
+      "video_url": "",
+      "language": "en",
+      "word_count_estimate": 10000,
+      "product_tags": [
+        "keynote",
+        "policy",
+        "ecosystem"
+      ]
+    },
+    {
+      "id": "JH-2026-001",
+      "speaker": "jensen_huang",
+      "date": "2026-01-06",
+      "event": "CES 2026",
+      "location": "Las Vegas",
+      "type": "keynote",
+      "duration_minutes": 60,
+      "topics": [
+        "consumer electronics",
+        "AI integration",
+        "gaming",
+        "automotive"
+      ],
+      "key_quotes": [
+        "Hello, Las Vegas"
+      ],
+      "transcript_url": "https://www.rev.com/transcripts/nvidia-at-ces-2026",
+      "video_url": "",
+      "language": "en",
+      "word_count_estimate": 8000,
+      "product_tags": [
+        "consumer",
+        "CES",
+        "product launch"
+      ]
+    },
+    {
+      "id": "JH-2026-002",
+      "speaker": "jensen_huang",
+      "date": "2026-02-07",
+      "event": "Cisco AI Summit 2026",
+      "location": "",
+      "type": "interview",
+      "duration_minutes": 45,
+      "topics": [
+        "implicit computing",
+        "AI factories",
+        "economics"
+      ],
+      "key_quotes": [],
+      "transcript_url": "https://singjupost.com/transcript-jensen-huangs-interview-cisco-ai-summit-2026/",
+      "video_url": "",
+      "language": "en",
+      "word_count_estimate": 6000,
+      "product_tags": [
+        "interview",
+        "enterprise",
+        "economics"
+      ]
+    },
+    {
+      "id": "JH-2026-003",
+      "speaker": "jensen_huang",
+      "date": "2026-03-16",
+      "event": "GTC 2026 Keynote",
+      "location": "San Jose",
+      "type": "keynote",
+      "duration_minutes": 90,
+      "topics": [
+        "token factory economics",
+        "AI factories",
+        "inference revenue"
+      ],
+      "key_quotes": [
+        "by 2027, we will see at least $1 trillion in high-confidence demand"
+      ],
+      "transcript_url": "https://www.investing.com/news/transcripts/nvidia-at-gtc-2026-ai-expansion-and-strategic-partnerships-93CH-4564073",
+      "video_url": "https://www.nvidia.com/en-us/on-demand/session/gtc26-s81595/",
+      "language": "en",
+      "word_count_estimate": 14000,
+      "product_tags": [
+        "keynote",
+        "GTC",
+        "trillion dollar",
+        "inference"
+      ]
+    },
+    {
+      "id": "JH-2026-004",
+      "speaker": "jensen_huang",
+      "date": "2026-03-17",
+      "event": "GTC 2026 Full Speech",
+      "location": "San Jose",
+      "type": "keynote",
+      "duration_minutes": 90,
+      "topics": [
+        "inference era",
+        "AI factory efficiency",
+        "SaaS end"
+      ],
+      "key_quotes": [
+        "The era of inference has arrived",
+        "lobster is the new operating system"
+      ],
+      "transcript_url": "https://news.futunn.com/en/post/70155792/full-text-of-jensen-huang-s-gtc-speech-the-era",
+      "video_url": "",
+      "language": "en",
+      "word_count_estimate": 14000,
+      "product_tags": [
+        "keynote",
+        "inference",
+        "operating system"
+      ]
+    },
+    {
+      "id": "JH-2026-005",
+      "speaker": "jensen_huang",
+      "date": "2026-06-01",
+      "event": "GTC Taipei 2026 Keynote",
+      "location": "Taipei, Taiwan",
+      "type": "keynote",
+      "duration_minutes": 75,
+      "topics": [
+        "agentic AI",
+        "Vera Rubin",
+        "AI next generation"
+      ],
+      "key_quotes": [
+        "Very good to be home"
+      ],
+      "transcript_url": "https://singjupost.com/nvidia-gtc-taipei-2026-keynote-w-ceo-jensen-huang-transcript/",
+      "video_url": "https://www.nvidia.com/en-us/on-demand/session/gtctaipei26-stw61044/",
+      "language": "en",
+      "word_count_estimate": 11000,
+      "product_tags": [
+        "keynote",
+        "Taiwan",
+        "home",
+        "agentic AI"
+      ],
+      "special_significance": "homecoming"
+    },
+    {
+      "id": "JH-2026-006",
+      "speaker": "jensen_huang",
+      "date": "2026-08-26",
+      "event": "CNBC Mad Money Interview",
+      "location": "",
+      "type": "interview",
+      "duration_minutes": 30,
+      "topics": [
+        "AI demand",
+        "infrastructure challenges",
+        "US opportunity"
+      ],
+      "key_quotes": [],
+      "transcript_url": "https://www.cnbc.com/2026/08/26/cnbc-transcript-nvidia-founder-ceo-jensen-huang-speaks-with-cnbcs-jim-cramer-on-mad-money-today.html",
+      "video_url": "",
+      "language": "en",
+      "word_count_estimate": 4000,
+      "product_tags": [
+        "interview",
+        "CNBC",
+        "market",
+        "demand"
+      ]
+    },
+    {
+      "id": "JH-2026-007",
+      "speaker": "jensen_huang",
+      "date": "2026-03-17",
+      "event": "Stratechery Interview",
+      "location": "",
+      "type": "interview",
+      "duration_minutes": 60,
+      "topics": [
+        "GTC 2026",
+        "China strategy",
+        "DC relations",
+        "NVIDIA nature"
+      ],
+      "key_quotes": [],
+      "transcript_url": "https://stratechery.com/2026/an-interview-with-nvidia-ceo-jensen-huang-about-accelerated-computing/",
+      "video_url": "",
+      "language": "en",
+      "word_count_estimate": 8000,
+      "product_tags": [
+        "interview",
+        "strategy",
+        "geopolitics"
+      ]
+    },
+    {
+      "id": "EM-2025-001",
+      "speaker": "elon_musk",
+      "date": "2025-09-10",
+      "event": "All-In Podcast",
+      "location": "",
+      "type": "interview",
+      "duration_minutes": 120,
+      "topics": [
+        "DOGE",
+        "Optimus",
+        "Starlink",
+        "AI evolution",
+        "Western decline"
+      ],
+      "key_quotes": [],
+      "transcript_url": "https://singjupost.com/transcript-elon-musk-on-doge-optimus-starlink-smartphones-on-all-in-podcast/",
+      "video_url": "",
+      "language": "en",
+      "word_count_estimate": 18000,
+      "product_tags": [
+        "interview",
+        "podcast",
+        "politics",
+        "robots"
+      ]
+    },
+    {
+      "id": "EM-2026-001",
+      "speaker": "elon_musk",
+      "date": "2026-01-06",
+      "event": "Moonshots Podcast #220",
+      "location": "Tesla Gigafactory",
+      "type": "interview",
+      "duration_minutes": 90,
+      "topics": [
+        "AGI timeline",
+        "US vs China",
+        "humanoid robots",
+        "clean energy",
+        "compute"
+      ],
+      "key_quotes": [],
+      "transcript_url": "https://singjupost.com/moonshots-220-w-elon-musk-on-agi-abundance-and-the-future-of-humanity-transcript/",
+      "video_url": "",
+      "language": "en",
+      "word_count_estimate": 15000,
+      "product_tags": [
+        "interview",
+        "AGI",
+        "future",
+        "abundance"
+      ]
+    },
+    {
+      "id": "EM-2026-002",
+      "speaker": "elon_musk",
+      "date": "2026-01-22",
+      "event": "WEF 2026 Davos - Conversation with Elon Musk",
+      "location": "Davos, Switzerland",
+      "type": "panel",
+      "duration_minutes": 60,
+      "topics": [
+        "AI future",
+        "space exploration",
+        "Tesla innovation",
+        "global tech trends"
+      ],
+      "key_quotes": [],
+      "transcript_url": "",
+      "video_url": "https://www.youtube.com/watch?v=10rKMvJFNhA",
+      "language": "en",
+      "word_count_estimate": 9000,
+      "product_tags": [
+        "WEF",
+        "Davos",
+        "panel",
+        "global"
+      ]
+    },
+    {
+      "id": "EM-2026-003",
+      "speaker": "elon_musk",
+      "date": "2026-01-22",
+      "event": "WEF 2026 Davos - with Larry Fink",
+      "location": "Davos, Switzerland",
+      "type": "panel",
+      "duration_minutes": 45,
+      "topics": [
+        "AI development",
+        "technology innovation",
+        "global economy"
+      ],
+      "key_quotes": [],
+      "transcript_url": "",
+      "video_url": "https://archive.org/details/CSPAN3_20260212_052600_Elon_Musk_on_AI_Development_at_2026_World_Economic_Forum",
+      "language": "en",
+      "word_count_estimate": 7000,
+      "product_tags": [
+        "WEF",
+        "Davos",
+        "finance",
+        "BlackRock"
+      ]
+    },
+    {
+      "id": "EM-2026-004",
+      "speaker": "elon_musk",
+      "date": "2026-02-08",
+      "event": "Moonshots Podcast Part 9",
+      "location": "",
+      "type": "interview",
+      "duration_minutes": 30,
+      "topics": [
+        "AI infrastructure",
+        "orbital data centers"
+      ],
+      "key_quotes": [],
+      "transcript_url": "https://whatsuptesla.com/2026/02/08/transcript-elon-musk-interview-part-9/",
+      "video_url": "",
+      "language": "en",
+      "word_count_estimate": 5000,
+      "product_tags": [
+        "interview",
+        "infrastructure",
+        "space"
+      ]
+    },
+    {
+      "id": "EM-2026-005",
+      "speaker": "elon_musk",
+      "date": "2026-03-24",
+      "event": "Visionary Society Interview",
+      "location": "",
+      "type": "interview",
+      "duration_minutes": 60,
+      "topics": [
+        "Grok 4.20",
+        "AGI",
+        "Optimus 3",
+        "10x economy"
+      ],
+      "key_quotes": [],
+      "transcript_url": "",
+      "video_url": "https://www.youtube.com/watch?v=OMDLAbHQa9Q",
+      "language": "en",
+      "word_count_estimate": 9000,
+      "product_tags": [
+        "interview",
+        "Grok",
+        "economy",
+        "robots"
+      ]
+    },
+    {
+      "id": "EM-2026-006",
+      "speaker": "elon_musk",
+      "date": "2026-07-23",
+      "event": "The Economist Interview",
+      "location": "",
+      "type": "interview",
+      "duration_minutes": 90,
+      "topics": [
+        "AI risks",
+        "abundance",
+        "humanity future",
+        "2036 world"
+      ],
+      "key_quotes": [
+        "Let's enjoy the ride"
+      ],
+      "transcript_url": "https://sozai.app/transcript/elon-musk-economist-interview-2026/",
+      "video_url": "",
+      "language": "en",
+      "word_count_estimate": 14000,
+      "product_tags": [
+        "interview",
+        "Economist",
+        "future",
+        "risks"
+      ],
+      "viral_status": "high"
+    },
+    {
+      "id": "EM-2026-007",
+      "speaker": "elon_musk",
+      "date": "2026-08-10",
+      "event": "The Transcript Desk - Edited",
+      "location": "",
+      "type": "interview",
+      "duration_minutes": 90,
+      "topics": [
+        "AI superintelligence",
+        "humanoid robots",
+        "optional work",
+        "China",
+        "corporate control"
+      ],
+      "key_quotes": [],
+      "transcript_url": "https://thetranscriptdesk.substack.com/p/the-full-length-interview-with-elon",
+      "video_url": "",
+      "language": "en",
+      "word_count_estimate": 14000,
+      "product_tags": [
+        "interview",
+        "superintelligence",
+        "work",
+        "geopolitics"
+      ]
+    },
+    {
+      "id": "SA-2025-001",
+      "speaker": "sam_altman",
+      "date": "2025-01-05",
+      "event": "Bloomberg Interview",
+      "location": "",
+      "type": "interview",
+      "duration_minutes": 60,
+      "topics": [
+        "ChatGPT plans",
+        "AGI pursuit",
+        "four-day firing incident"
+      ],
+      "key_quotes": [],
+      "transcript_url": "https://www.bloomberg.com/features/2025-sam-altman-interview/",
+      "video_url": "",
+      "language": "en",
+      "word_count_estimate": 9000,
+      "product_tags": [
+        "interview",
+        "Bloomberg",
+        "OpenAI drama"
+      ]
+    },
+    {
+      "id": "SA-2026-001",
+      "speaker": "sam_altman",
+      "date": "2026-01-27",
+      "event": "OpenAI Town Hall",
+      "location": "",
+      "type": "town_hall",
+      "duration_minutes": 60,
+      "topics": [
+        "AI impact on software engineers",
+        "agent builders",
+        "economic inequality"
+      ],
+      "key_quotes": [],
+      "transcript_url": "",
+      "video_url": "https://www.youtube.com/watch?v=Wpxv-8nG8ec",
+      "language": "en",
+      "word_count_estimate": 9000,
+      "product_tags": [
+        "town hall",
+        "developers",
+        "inequality"
+      ]
+    },
+    {
+      "id": "SA-2026-002",
+      "speaker": "sam_altman",
+      "date": "2026-06-01",
+      "event": "CNBC Power Lunch",
+      "location": "",
+      "type": "interview",
+      "duration_minutes": 30,
+      "topics": [
+        "OpenAI models",
+        "business strategy"
+      ],
+      "key_quotes": [],
+      "transcript_url": "https://www.cnbc.com/2026/06/01/cnbc-exclusive-transcript-openai-ceo-sam-altman-speaks-with-cnbcs-david-faber-on-power-lunch-today.html",
+      "video_url": "",
+      "language": "en",
+      "word_count_estimate": 4500,
+      "product_tags": [
+        "interview",
+        "CNBC",
+        "business"
+      ]
+    },
+    {
+      "id": "SA-2026-003",
+      "speaker": "sam_altman",
+      "date": "2026-07-09",
+      "event": "CNBC Squawk on the Street",
+      "location": "",
+      "type": "interview",
+      "duration_minutes": 30,
+      "topics": [
+        "GPT-5.6 Sol",
+        "efficiency",
+        "ROI"
+      ],
+      "key_quotes": [],
+      "transcript_url": "https://www.cnbc.com/2026/07/09/cnbc-exclusive-transcript-openai-ceo-sam-altman-speaks-with-cnbcs-julia-boorstin-on-squawk-on-the-street-today.html",
+      "video_url": "",
+      "language": "en",
+      "word_count_estimate": 4500,
+      "product_tags": [
+        "interview",
+        "CNBC",
+        "models"
+      ]
+    },
+    {
+      "id": "SA-2026-004",
+      "speaker": "sam_altman",
+      "date": "2026-08-24",
+      "event": "Dealroom.co Interview",
+      "location": "",
+      "type": "interview",
+      "duration_minutes": 45,
+      "topics": [
+        "OpenAI as platform",
+        "killing Sora/Atlas for compute"
+      ],
+      "key_quotes": [],
+      "transcript_url": "https://app.dealroom.co/news/note/sam-altman-on-openai-a-platform-not-a-product-killing-sora-and-atlas-to-fund-compute",
+      "video_url": "",
+      "language": "en",
+      "word_count_estimate": 7000,
+      "product_tags": [
+        "interview",
+        "strategy",
+        "platform"
+      ]
+    },
+    {
+      "id": "SA-2026-005",
+      "speaker": "sam_altman",
+      "date": "2026-09-02",
+      "event": "G20 Innovation Summit",
+      "location": "Chapel Hill, NC",
+      "type": "panel",
+      "duration_minutes": 45,
+      "topics": [
+        "AI adoption for economic growth",
+        "global innovation"
+      ],
+      "key_quotes": [],
+      "transcript_url": "",
+      "video_url": "https://www.youtube.com/watch?v=cRX84IvyVNU",
+      "language": "en",
+      "word_count_estimate": 7000,
+      "product_tags": [
+        "G20",
+        "economy",
+        "innovation",
+        "policy"
+      ]
+    },
+    {
+      "id": "SA-2026-006",
+      "speaker": "sam_altman",
+      "date": "2026-09-03",
+      "event": "Axios Interview",
+      "location": "Chapel Hill, NC",
+      "type": "interview",
+      "duration_minutes": 30,
+      "topics": [
+        "next-gen models",
+        "sobering siren",
+        "risks",
+        "responsibility"
+      ],
+      "key_quotes": [],
+      "transcript_url": "https://www.axios.com/2026/09/03/axios-interview-sam-altmans-sobering-siren",
+      "video_url": "",
+      "language": "en",
+      "word_count_estimate": 4500,
+      "product_tags": [
+        "interview",
+        "Axios",
+        "risks",
+        "sobering"
+      ]
+    },
+    {
+      "id": "SP-2025-001",
+      "speaker": "sundar_pichai",
+      "date": "2025-06-05",
+      "event": "Bloomberg Tech Summit",
+      "location": "",
+      "type": "interview",
+      "duration_minutes": 60,
+      "topics": [
+        "AI future",
+        "antitrust",
+        "privacy"
+      ],
+      "key_quotes": [],
+      "transcript_url": "https://singjupost.com/transcript-of-sundar-pichai-on-future-of-ai-antitrust-and-privacy/",
+      "video_url": "",
+      "language": "en",
+      "word_count_estimate": 9000,
+      "product_tags": [
+        "interview",
+        "Bloomberg",
+        "policy",
+        "privacy"
+      ]
+    },
+    {
+      "id": "SP-2025-002",
+      "speaker": "sundar_pichai",
+      "date": "2025-11-23",
+      "event": "BBC The Interview",
+      "location": "",
+      "type": "interview",
+      "duration_minutes": 30,
+      "topics": [
+        "AI impact on jobs",
+        "truth",
+        "environment"
+      ],
+      "key_quotes": [],
+      "transcript_url": "",
+      "video_url": "https://archive.org/details/BBCNEWS_20251123_003000_The_Interview_-_Sundar_Pichai...",
+      "language": "en",
+      "word_count_estimate": 4500,
+      "product_tags": [
+        "interview",
+        "BBC",
+        "jobs",
+        "environment"
+      ]
+    },
+    {
+      "id": "SP-2026-001",
+      "speaker": "sundar_pichai",
+      "date": "2026-02-19",
+      "event": "AI Impact Summit 2026 - Opening Ceremony",
+      "location": "",
+      "type": "keynote",
+      "duration_minutes": 30,
+      "topics": [
+        "responsible AI",
+        "inclusive AI"
+      ],
+      "key_quotes": [],
+      "transcript_url": "https://blog.google/company-news/inside-google/message-ceo/sundar-pichai-ai-impact-summit-2026/",
+      "video_url": "https://www.youtube.com/watch?v=hUwGHyoEYgY",
+      "language": "en",
+      "word_count_estimate": 4500,
+      "product_tags": [
+        "keynote",
+        "responsible AI",
+        "summit",
+        "policy"
+      ]
+    },
+    {
+      "id": "MZ-2024-001",
+      "speaker": "mark_zuckerberg",
+      "date": "2024-09-10",
+      "event": "Acquired Podcast Live at Chase Center",
+      "location": "San Francisco",
+      "type": "interview",
+      "duration_minutes": 120,
+      "topics": [
+        "Meta strategy",
+        "AI",
+        "VR/AR future"
+      ],
+      "key_quotes": [],
+      "transcript_url": "",
+      "video_url": "https://www.youtube.com/watch?v=QciJ9ubeLQk",
+      "language": "en",
+      "word_count_estimate": 18000,
+      "product_tags": [
+        "interview",
+        "Acquired",
+        "Meta strategy",
+        "VR/AR"
+      ]
+    },
+    {
+      "id": "MZ-2025-001",
+      "speaker": "mark_zuckerberg",
+      "date": "2025-07-30",
+      "event": "CNBC Report",
+      "location": "",
+      "type": "interview",
+      "duration_minutes": 15,
+      "topics": [
+        "AI spending blitz",
+        "2026 plans"
+      ],
+      "key_quotes": [],
+      "transcript_url": "",
+      "video_url": "https://www.cnbc.com/2025/07/30/metas-big-ai-spending-blitz-will-continue-into-2026-.html",
+      "language": "en",
+      "word_count_estimate": 2000,
+      "product_tags": [
+        "interview",
+        "CNBC",
+        "spending",
+        "infrastructure"
+      ]
+    }
+  ]
+}
