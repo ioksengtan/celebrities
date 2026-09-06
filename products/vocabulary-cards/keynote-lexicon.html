@@ -384,22 +384,7 @@
     overflow: hidden;
   }
   .quiz-progress > div{ height: 100%; background: var(--accent); transition: width .3s; }
-  .quiz-meta{
-    display: flex; align-items: center; justify-content: center; gap: 10px 14px; flex-wrap: wrap;
-    width: 100%; max-width: 480px;
-  }
-  .quiz-counter, .quiz-mastered{ font-family: "IBM Plex Mono", monospace; font-size: 12.5px; color: var(--muted); }
-  .quiz-reset-mastery{
-    font-family: "Public Sans", sans-serif; font-size: 12px; font-weight: 600;
-    padding: 4px 10px; border-radius: 8px; border: 1px solid var(--line);
-    background: transparent; color: var(--muted); cursor: pointer;
-  }
-  .quiz-reset-mastery:hover{ color: var(--ink); border-color: var(--ink); }
-  .quiz-empty-msg{ color: var(--muted); text-align: center; margin: 0; line-height: 1.65; max-width: 28em; }
-  #quiz-card-holder:has(.quiz-empty-msg){
-    display: flex; flex-direction: column; align-items: center; justify-content: center;
-    height: 100%; gap: 14px;
-  }
+  .quiz-counter{ font-family: "IBM Plex Mono", monospace; font-size: 12.5px; color: var(--muted); }
   .quiz-card-wrap{ perspective: 1400px; width: 100%; max-width: 480px; height: 300px; }
   .quiz-card-wrap .flashcard{ width: 100%; height: 100%; }
   .quiz-card-wrap .face{ padding: 26px; border-radius: 18px; }
@@ -590,11 +575,7 @@
 
   <div id="quiz-panel">
     <div class="quiz-progress"><div id="quiz-progress-bar" style="width:0%"></div></div>
-    <div class="quiz-meta">
-      <div class="quiz-counter" id="quiz-counter">0 / 0</div>
-      <div class="quiz-mastered" id="quiz-mastered">已熟練 0 張</div>
-      <button type="button" class="quiz-reset-mastery" id="quiz-reset-mastery">重置熟練進度</button>
-    </div>
+    <div class="quiz-counter" id="quiz-counter">0 / 0</div>
     <div class="quiz-card-wrap">
       <div id="quiz-card-holder"></div>
     </div>
@@ -1109,123 +1090,36 @@ function renderBrowse(){
 }
 
 /* ---- Quiz mode ---- */
-const MASTERY_STREAK = 3;
-const KNOWN_KEY = "keynote-lexicon-known";
-
-function migrateKnownMap(raw){
-  const out = {};
-  if (!raw || typeof raw !== "object") return out;
-  Object.keys(raw).forEach(id => {
-    const v = raw[id];
-    if (v === true){
-      out[id] = { streak: 1, mastered: false };
-      return;
-    }
-    if (v && typeof v === "object" && !Array.isArray(v)){
-      let streak = Math.floor(Number(v.streak));
-      if (!Number.isFinite(streak) || streak < 0) streak = 0;
-      let mastered = !!v.mastered;
-      if (streak >= MASTERY_STREAK) mastered = true;
-      if (mastered) streak = MASTERY_STREAK;
-      out[id] = { streak, mastered };
-    }
-  });
-  return out;
-}
-
-function persistKnown(){
-  try { localStorage.setItem(KNOWN_KEY, JSON.stringify(known)); } catch(e){}
-}
-
-function loadKnown(){
-  let raw = {};
-  try { raw = JSON.parse(localStorage.getItem(KNOWN_KEY) || "{}"); } catch(e){ raw = {}; }
-  const migrated = migrateKnownMap(raw);
-  persistKnownMap(migrated);
-  return migrated;
-}
-
-function persistKnownMap(map){
-  try { localStorage.setItem(KNOWN_KEY, JSON.stringify(map)); } catch(e){}
-}
-
-function isMastered(id){
-  return !!(known[id] && known[id].mastered);
-}
-
-function applyKnowMark(id){
-  const prev = known[id] || { streak: 0, mastered: false };
-  const streak = (Number(prev.streak) || 0) + 1;
-  const mastered = streak >= MASTERY_STREAK || !!prev.mastered;
-  known[id] = { streak: mastered ? MASTERY_STREAK : streak, mastered };
-  persistKnown();
-}
-
-function applyUnknownMark(id){
-  known[id] = { streak: 0, mastered: false };
-  persistKnown();
-}
-
-function countMasteredInFilter(){
-  return filteredCards().filter(c => isMastered(c.id)).length;
-}
-
-function updateQuizMasteredHud(){
-  const el = document.getElementById("quiz-mastered");
-  if (el) el.textContent = "已熟練 " + countMasteredInFilter() + " 張";
-}
-
-function quizPool(){
-  return filteredCards().filter(c => !isMastered(c.id));
-}
-
 let quizDeck = [];
 let quizIndex = 0;
 let quizResults = {};
-let known = loadKnown();
+let known = {};
+try { known = JSON.parse(localStorage.getItem("keynote-lexicon-known") || "{}"); } catch(e){ known = {}; }
 
 function resetQuiz(){
-  quizDeck = quizPool().slice().sort(()=>Math.random()-0.5);
+  quizDeck = filteredCards().slice().sort(()=>Math.random()-0.5);
   quizIndex = 0; quizResults = {};
   document.getElementById("quiz-done").style.display = "none";
   document.getElementById("quiz-card-holder").style.display = "";
   document.querySelector(".quiz-hint").style.display = "";
   document.querySelector(".quiz-actions").style.display = "";
-  updateQuizMasteredHud();
   renderQuizCard();
-}
-
-function resetMastery(){
-  known = {};
-  persistKnown();
-  resetQuiz();
-  showToast("已重置熟練進度");
 }
 
 function renderQuizCard(){
   const bar = document.getElementById("quiz-progress-bar");
   const counter = document.getElementById("quiz-counter");
   const holder = document.getElementById("quiz-card-holder");
-  updateQuizMasteredHud();
   if (quizDeck.length === 0){
     counter.textContent = "0 / 0";
     bar.style.width = "0%";
-    document.querySelector(".quiz-hint").style.display = "none";
-    document.querySelector(".quiz-actions").style.display = "none";
-    if (filteredCards().length > 0){
-      holder.innerHTML = '<p class="mono quiz-empty-msg">目前篩選範圍內的卡片都已熟練，已從測驗牌組移出。可重置熟練進度再練一次。</p><button type="button" class="quiz-reset-mastery" id="quiz-reset-mastery-empty">重置熟練進度</button>';
-      document.getElementById("quiz-reset-mastery-empty").addEventListener("click", resetMastery);
-    } else {
-      holder.innerHTML = '<p class="mono quiz-empty-msg">沒有符合篩選條件的卡片。</p>';
-    }
+    holder.innerHTML = '<p class="mono" style="color:var(--muted);">沒有符合篩選條件的卡片。</p>';
     return;
   }
   if (quizIndex >= quizDeck.length){
     showQuizDone();
     return;
   }
-  document.querySelector(".quiz-hint").style.display = "";
-  document.querySelector(".quiz-actions").style.display = "";
   bar.style.width = (quizIndex / quizDeck.length * 100) + "%";
   counter.textContent = (quizIndex+1) + " / " + quizDeck.length;
   const c = quizDeck[quizIndex];
@@ -1239,22 +1133,21 @@ function showQuizDone(){
   document.querySelector(".quiz-actions").style.display = "none";
   document.getElementById("quiz-progress-bar").style.width = "100%";
   document.getElementById("quiz-counter").textContent = quizDeck.length + " / " + quizDeck.length;
-  updateQuizMasteredHud();
   const knownCount = Object.values(quizResults).filter(Boolean).length;
   const done = document.getElementById("quiz-done");
   done.style.display = "block";
   done.querySelector("h2").textContent = knownCount + " / " + quizDeck.length + " 認識";
   done.querySelector("p").textContent = knownCount === quizDeck.length
-    ? "這輪都認識了。連續認識 " + MASTERY_STREAK + " 次後才會從測驗牌組移出；也可以換更多講者或類別繼續挑戰。"
-    : "還不熟的卡片連勝已歸零。連續認識 " + MASTERY_STREAK + " 次才會從測驗牌組移出。";
+    ? "全部認識，這批詞彙可以換更多講者或類別繼續挑戰。"
+    : "還不熟的詞彙已標記，下次可以針對它們加強複習。";
 }
 
 function markQuiz(isKnown){
   if (quizIndex >= quizDeck.length) return;
   const c = quizDeck[quizIndex];
   quizResults[c.id] = isKnown;
-  if (isKnown) applyKnowMark(c.id);
-  else applyUnknownMark(c.id);
+  known[c.id] = isKnown;
+  try { localStorage.setItem("keynote-lexicon-known", JSON.stringify(known)); } catch(e){}
   quizIndex++;
   renderQuizCard();
 }
@@ -1262,7 +1155,6 @@ function markQuiz(isKnown){
 document.getElementById("btn-know").addEventListener("click", ()=> markQuiz(true));
 document.getElementById("btn-dontknow").addEventListener("click", ()=> markQuiz(false));
 document.getElementById("quiz-restart").addEventListener("click", resetQuiz);
-document.getElementById("quiz-reset-mastery").addEventListener("click", resetMastery);
 
 document.addEventListener("keydown", (e)=>{
   if (state.mode !== "quiz") return;
