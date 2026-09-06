@@ -4,6 +4,13 @@
 
 ---
 
+## 2026-09-06（EE 小遊戲 MVP：看英選中／看中選英）
+
+- 只在 `products/general-vocab/executive-english.html` 加模式「小遊戲」；Keynote Lexicon 不動
+- 第一波兩款選擇題：看英選中、看中選英；題庫用 `filteredCards()`（CEFR／講者篩選），優先抽尚未熟練的卡，每輪最多 10 題
+- 干擾項優先同 CEFR，不夠再從篩選池／全卡池補；答對走既有 `applyKnowMark`（連勝＋1，滿 `MASTERY_STREAK` 熟練），答錯 `applyUnknownMark`（連勝歸 0），與測驗共用 `exec-vocab-known`
+- 題目 UI 獨立，不套用滑卡／每日挑戰的 80% 手機卡面佈局；每日挑戰、深連結、稀有度、CARDS 資料未改
+
 ## 2026-09-06（測驗熟練：僅 Executive English）
 
 - **只做 EE**：`products/general-vocab/executive-english.html` 測驗連續按「認識了」**3 次**（`MASTERY_STREAK`）才標成熟練並移出預設測驗牌組；「還不熟」連勝歸零，已熟練則取消並回到牌組
