@@ -1,3 +1,4 @@
+<meta charset="utf-8">
 <title>Keynote Lexicon</title>
 <meta name="description" content="從科技名人 2024–2026 年演講中萃取的雙語單字卡，滑一滑，一次學一個詞。">
 <meta property="og:title" content="Keynote Lexicon">
@@ -27,6 +28,12 @@
     --mz: #4A5D8A;
     --good: #4A7A4E;
     --bad: #B5482F;
+    --rare-a: #8FB3D6;
+    --rare-b: #E4EEF5;
+    --rare-fg: #2E5A7A;
+    --legend-a: #E8B34A;
+    --legend-b: #F7E4B0;
+    --legend-fg: #7A5417;
     color-scheme: light dark;
   }
   @media (prefers-color-scheme: dark){
@@ -48,6 +55,12 @@
       --mz: #8FA6E0;
       --good: #7FBF83;
       --bad: #E27A5F;
+      --rare-a: #4A7396;
+      --rare-b: #25333F;
+      --rare-fg: #BFE0F5;
+      --legend-a: #C98A2E;
+      --legend-b: #4A3620;
+      --legend-fg: #F5DFA6;
     }
   }
   :root[data-theme="dark"]{
@@ -68,6 +81,12 @@
     --mz: #8FA6E0;
     --good: #7FBF83;
     --bad: #E27A5F;
+    --rare-a: #4A7396;
+    --rare-b: #25333F;
+    --rare-fg: #BFE0F5;
+    --legend-a: #C98A2E;
+    --legend-b: #4A3620;
+    --legend-fg: #F5DFA6;
   }
 
   *{ box-sizing: border-box; }
@@ -138,7 +157,7 @@
   .chip .dot{ display: inline-block; width: 7px; height: 7px; border-radius: 50%; margin-right: 6px; vertical-align: middle; }
 
   /* ---- Shared flip-card mechanics ---- */
-  .flashcard{ perspective: 1200px; height: 210px; cursor: pointer; }
+  .flashcard{ perspective: 1200px; height: 230px; cursor: pointer; position: relative; }
   .flashcard-inner{
     position: relative; width: 100%; height: 100%; transition: transform .5s cubic-bezier(.4,.2,.2,1);
     transform-style: preserve-3d;
@@ -148,10 +167,11 @@
     position: absolute; inset: 0; backface-visibility: hidden;
     border-radius: 14px; border: 1px solid var(--line); background: var(--surface);
     box-shadow: var(--card-shadow); padding: 16px; display: flex; flex-direction: column;
-    overflow: hidden;
+    overflow-y: auto; overflow-x: hidden;
   }
   .face.back{ transform: rotateY(180deg); background: var(--surface-2); }
 
+  .face-top{ display: flex; align-items: center; gap: 6px; flex-wrap: wrap; }
   .cat-tag{
     font-family: "IBM Plex Mono", monospace; font-size: 10px; text-transform: uppercase;
     letter-spacing: 0.07em; color: var(--accent); font-weight: 600;
@@ -179,9 +199,81 @@
     font-size: 10.5px; color: var(--muted);
   }
   .special-badge{
-    position: absolute; top: 10px; right: 10px; font-family: "IBM Plex Mono", monospace;
+    position: absolute; top: 10px; right: 10px; z-index: 2; font-family: "IBM Plex Mono", monospace;
     font-size: 9.5px; text-transform: uppercase; letter-spacing: .06em; color: var(--accent);
     background: var(--accent-soft); padding: 2px 7px; border-radius: 999px;
+  }
+
+  /* ---- Extended (3rd) face: source & context ---- */
+  .ext-block{ display: flex; flex-direction: column; gap: 6px; margin-top: 4px; }
+  .ext-row{ font-size: 12.5px; color: var(--ink); display: flex; gap: 8px; }
+  .ext-label{
+    font-size: 9.5px; text-transform: uppercase; letter-spacing: .06em; color: var(--muted);
+    width: 40px; flex: none; padding-top: 2px;
+  }
+  .ext-context{
+    margin: 10px 0 0; padding-top: 8px; border-top: 1px dashed var(--line);
+    font-size: 12.5px; line-height: 1.55; color: var(--ink);
+  }
+
+  /* ---- Rarity: badges + foil borders (Pokemon-pack style) ---- */
+  .rarity-badge{
+    font-family: "IBM Plex Mono", monospace; font-size: 9px; letter-spacing: .06em;
+    text-transform: uppercase; padding: 2px 7px; border-radius: 999px;
+  }
+  .rarity-badge.common{ color: var(--muted); background: var(--surface-2); }
+  .rarity-badge.rare{ color: var(--rare-fg); background: linear-gradient(120deg, var(--rare-a), var(--rare-b)); }
+  .rarity-badge.legendary{ color: var(--legend-fg); background: linear-gradient(120deg, var(--legend-a), var(--legend-b)); }
+
+  .flashcard.rarity-rare .face{
+    border: 1.5px solid transparent;
+    background: linear-gradient(var(--surface), var(--surface)) padding-box,
+                linear-gradient(120deg, var(--rare-a), var(--rare-b), var(--rare-a)) border-box;
+  }
+  .flashcard.rarity-rare .face.back{
+    background: linear-gradient(var(--surface-2), var(--surface-2)) padding-box,
+                linear-gradient(120deg, var(--rare-a), var(--rare-b), var(--rare-a)) border-box;
+  }
+  .flashcard.rarity-legendary .face{
+    border: 1.5px solid transparent;
+    background: linear-gradient(var(--surface), var(--surface)) padding-box,
+                linear-gradient(120deg, var(--legend-a), var(--legend-b), var(--legend-a)) border-box;
+  }
+  .flashcard.rarity-legendary .face.back{
+    background: linear-gradient(var(--surface-2), var(--surface-2)) padding-box,
+                linear-gradient(120deg, var(--legend-a), var(--legend-b), var(--legend-a)) border-box;
+  }
+
+  /* ---- Pack-opening cover (daily challenge only) ---- */
+  .pack-cover{
+    position: absolute; inset: 0; z-index: 5; border-radius: 14px; overflow: hidden;
+    display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px;
+    background: linear-gradient(135deg, #26221A, #050403 140%);
+    color: #F5F1E6; cursor: pointer;
+    transition: transform .5s cubic-bezier(.4,.2,.2,1), opacity .5s ease;
+  }
+  .pack-cover::before{
+    content: ""; position: absolute; inset: -60%;
+    background: repeating-linear-gradient(45deg, rgba(255,255,255,.06) 0 10px, transparent 10px 22px);
+  }
+  .pack-cover .pack-mark{ font-family: "Fraunces", serif; font-size: 24px; letter-spacing: .03em; z-index: 1; }
+  .pack-cover .pack-hint{ font-size: 10.5px; opacity: .7; z-index: 1; }
+  .flashcard.rarity-rare .pack-cover{ box-shadow: inset 0 0 0 2px var(--rare-a); }
+  .flashcard.rarity-legendary .pack-cover{ box-shadow: inset 0 0 0 2px var(--legend-a); }
+  .flashcard.rarity-legendary .pack-cover::after{
+    content: "✦"; position: absolute; top: 10px; right: 14px; color: var(--legend-a); font-size: 13px; z-index: 1;
+  }
+  .pack-cover.opening{ transform: rotateY(180deg) scale(1.05); opacity: 0; pointer-events: none; }
+
+  .reveal-burst{
+    position: absolute; inset: 0; border-radius: 14px; pointer-events: none; z-index: 6;
+    background: radial-gradient(circle at 50% 42%, rgba(232,179,74,0.6), transparent 62%);
+    animation: burst-pop .8s ease-out forwards;
+  }
+  @keyframes burst-pop{
+    0%{ opacity: 0; transform: scale(.6); }
+    30%{ opacity: 1; }
+    100%{ opacity: 0; transform: scale(1.7); }
   }
 
   /* ---- Feed (swipe) mode — the default, social-friendly view ---- */
@@ -230,6 +322,50 @@
     z-index: 50;
   }
   .toast.show{ opacity: 1; transform: translateX(-50%) translateY(0); }
+
+  /* ---- Daily challenge (pack-opening + streak calendar) ---- */
+  #daily-panel{ display: none; flex-direction: column; align-items: center; gap: 10px; }
+  #daily-panel.active{ display: flex; }
+  .daily-top{ width: 100%; max-width: 420px; display: flex; align-items: center; justify-content: space-between; }
+  .streak{ font-size: 13px; color: var(--muted); }
+  .streak b{ color: var(--accent); font-size: 15px; }
+  .cal-toggle{
+    font-family: "IBM Plex Mono", monospace; font-size: 11px; padding: 5px 12px; border-radius: 999px;
+    border: 1px solid var(--line); background: var(--surface); color: var(--muted); cursor: pointer;
+  }
+  .cal-toggle:hover{ border-color: var(--accent); color: var(--accent); }
+  #calendar-wrap{
+    width: 100%; max-width: 420px; background: var(--surface); border: 1px solid var(--line);
+    border-radius: 14px; padding: 12px 14px;
+  }
+  .cal-header{ display: flex; align-items: center; justify-content: space-between; margin-bottom: 8px; }
+  .cal-header button{ background: none; border: none; font-size: 16px; color: var(--muted); cursor: pointer; padding: 2px 10px; }
+  .cal-header button:hover{ color: var(--accent); }
+  #cal-month-label{ font-size: 12.5px; color: var(--ink); }
+  .cal-grid{ display: grid; grid-template-columns: repeat(7, 1fr); gap: 4px; }
+  .cal-dow{ font-size: 10px; text-align: center; color: var(--muted); }
+  .cal-cell{
+    aspect-ratio: 1; display: flex; align-items: center; justify-content: center;
+    border-radius: 8px; font-size: 11px; color: var(--muted); font-family: "IBM Plex Mono", monospace;
+  }
+  .cal-cell.done{ background: var(--accent); color: var(--accent-ink); font-weight: 600; }
+  .cal-cell.today{ box-shadow: inset 0 0 0 1.5px var(--accent); }
+  .cal-cell.empty{ visibility: hidden; }
+  .daily-progress-row{
+    width: 100%; max-width: 420px; display: flex; justify-content: space-between;
+    font-size: 11.5px; color: var(--muted);
+  }
+  .daily-complete{
+    width: 100%; max-width: 420px; text-align: center; background: var(--surface);
+    border: 1px solid var(--line); border-radius: 16px; padding: 26px 20px;
+  }
+  .daily-complete-emoji{ font-size: 30px; margin-bottom: 6px; }
+  .daily-complete h3{ font-family: "Fraunces", serif; font-size: 21px; margin: 0 0 6px; }
+  .daily-complete p{ color: var(--muted); font-size: 13px; margin: 0 0 16px; }
+  .daily-complete button{
+    font-family: "Public Sans"; font-weight: 700; padding: 10px 20px; border-radius: 10px;
+    border: none; background: var(--ink); color: var(--bg); cursor: pointer; font-size: 13.5px;
+  }
 
   /* ---- Browse grid ---- */
   #browse-grid{ display: none; }
@@ -286,7 +422,7 @@
   <header>
     <div class="titleblock">
       <h1>Keynote Lexicon</h1>
-      <p>從 Jensen Huang、Elon Musk、Sam Altman 等人 2024–2026 年的 30 場演講與訪談中萃取的雙語詞彙卡與語錄，上滑瀏覽、點卡片翻面看解釋。</p>
+      <p>從 Jensen Huang、Elon Musk、Sam Altman 等人 2024–2026 年的 30 場演講與訪談中萃取的雙語詞彙卡與語錄，上滑瀏覽、連續點卡片三次看解釋與出處。</p>
     </div>
     <div class="stats mono">
       <div><b id="stat-total">20</b> 張卡</div>
@@ -297,7 +433,8 @@
 
   <div class="toolbar">
     <div class="mode-toggle">
-      <button id="btn-feed" class="active">滑卡</button>
+      <button id="btn-daily" class="active">每日挑戰</button>
+      <button id="btn-feed">滑卡</button>
       <button id="btn-browse">整理瀏覽</button>
       <button id="btn-quiz">測驗</button>
     </div>
@@ -313,7 +450,34 @@
     </div>
   </div>
 
-  <div id="feed-panel" class="active">
+  <div id="daily-panel" class="active">
+    <div class="daily-top">
+      <div class="streak mono">🔥 連續 <b id="streak-count">0</b> 天</div>
+      <button id="btn-toggle-calendar" class="cal-toggle mono">日曆 ▾</button>
+    </div>
+    <div id="calendar-wrap" hidden>
+      <div class="cal-header">
+        <button id="cal-prev" aria-label="上個月">‹</button>
+        <span id="cal-month-label" class="mono"></span>
+        <button id="cal-next" aria-label="下個月">›</button>
+      </div>
+      <div class="cal-grid" id="cal-grid"></div>
+    </div>
+    <div class="daily-progress-row mono">
+      <span>今日挑戰</span>
+      <span id="daily-progress-text">0 / 3</span>
+    </div>
+    <div class="feed-progress"><div id="daily-progress-bar"></div></div>
+    <div class="feed-scroll" id="daily-scroll"></div>
+    <div id="daily-complete" class="daily-complete" hidden>
+      <div class="daily-complete-emoji">🎉</div>
+      <h3>今天完成了！</h3>
+      <p id="daily-complete-sub"></p>
+      <button id="btn-see-all">看全部卡片 →</button>
+    </div>
+  </div>
+
+  <div id="feed-panel">
     <div class="feed-progress"><div id="feed-progress-bar"></div></div>
     <div class="feed-scroll" id="feed-scroll"></div>
   </div>
@@ -324,12 +488,7 @@
     <div class="quiz-progress"><div id="quiz-progress-bar" style="width:0%"></div></div>
     <div class="quiz-counter" id="quiz-counter">0 / 0</div>
     <div class="quiz-card-wrap">
-      <div class="flashcard" id="quiz-card">
-        <div class="flashcard-inner">
-          <div class="face front"></div>
-          <div class="face back"></div>
-        </div>
-      </div>
+      <div id="quiz-card-holder"></div>
     </div>
     <div class="quiz-hint">點卡片或按空白鍵翻面 · ← 不熟　→ 認識</div>
     <div class="quiz-actions">
@@ -366,109 +525,135 @@ const CATS = {
   new: "新創詞彙",
 };
 
+const RARITY = {
+  common: { label: "COMMON", zh: "普通" },
+  rare: { label: "RARE", zh: "稀有" },
+  legendary: { label: "★ LEGENDARY", zh: "傳說" },
+};
+
 const CARDS = [
-  { id:1, cat:"ai", term:"Agentic AI", zh:"主動式 / 智能體 AI",
+  { id:1, cat:"ai", rarity:"common", term:"Agentic AI", zh:"主動式 / 智能體 AI",
     def_en:"AI systems that can plan, reason, and carry out multi-step tasks on their own, without being told each step.",
     def_zh:"能夠自主規劃、推理並執行多步驟任務的 AI 系統，不需要人類逐步下指令。",
     quote:"Agentic AI, token factory, AI infrastructure — this is the shift from answering questions to taking action.",
+    context:"這場演講被視為 NVIDIA 從「賣晶片」轉向「賣智慧」論述的分水嶺，agentic AI 成為黃仁勳往後兩年反覆強調的核心敘事。",
     speaker:"jh", event:"GTC 2025 Keynote", date:"2025-03-19" },
-  { id:2, cat:"ai", term:"Token Factory", zh:"代幣工廠",
+  { id:2, cat:"ai", rarity:"common", term:"Token Factory", zh:"代幣工廠",
     def_en:"A data center reimagined as an industrial plant that mass-produces AI tokens — the basic units of machine intelligence — the way a factory produces goods.",
     def_zh:"把資料中心比擬為工廠，大量「生產」AI 權杖（token）——機器智慧的基本單位。",
     quote:"This is how intelligence is made, a new kind of factory generator of tokens.",
+    context:"黃仁勳用「工廠」取代「資料中心」的說法，把運算基礎建設重新定義成一種製造業，此後也延伸出「AI 工廠」「token 經濟」等一系列詞彙。",
     speaker:"jh", event:"GTC 2025 Keynote", date:"2025-03-19" },
-  { id:3, cat:"ai", term:"Inference", zh:"推論",
+  { id:3, cat:"ai", rarity:"legendary", term:"Inference", zh:"推論",
     def_en:"The stage where a trained AI model is actually put to use — generating answers or predictions from new input, as opposed to training.",
     def_zh:"已訓練好的 AI 模型被實際使用、根據新輸入產生答案或預測的階段，相對於「訓練」。",
     quote:"The era of inference has arrived.",
+    context:"這句話出現在 GTC 2026 全文演說，被視為 NVIDIA 敘事重心從「訓練」正式轉向「推論」的關鍵宣示，牽動整個 AI 晶片產業下一階段的投資邏輯。",
     speaker:"jh", event:"GTC 2026 Full Speech", date:"2026-03-17", tag:"inference era" },
-  { id:4, cat:"ai", term:"AGI", zh:"通用人工智慧",
+  { id:4, cat:"ai", rarity:"rare", term:"AGI", zh:"通用人工智慧",
     def_en:"Artificial General Intelligence — an AI with human-level (or broader) reasoning across many domains, not limited to one narrow task.",
     def_zh:"Artificial General Intelligence，指具備跨領域、接近或超越人類水準推理能力的 AI，而非只能做單一任務。",
     quote:"AGI timeline, US vs China, humanoid robots, clean energy, compute — the abundance conversation starts here.",
+    context:"這集 Moonshots Podcast 訪談長達 90 分鐘，橫跨 AGI 時程、美中科技競賽、人形機器人與潔淨能源，是馬斯克 2026 年初對外闡述世界觀最完整的一次談話。",
     speaker:"em", event:"Moonshots Podcast #220", date:"2026-01-06" },
-  { id:5, cat:"ai", term:"Implicit Computing", zh:"隱性運算",
+  { id:5, cat:"ai", rarity:"common", term:"Implicit Computing", zh:"隱性運算",
     def_en:"Computing that happens invisibly in the background of AI systems, powering decisions without the user ever seeing the computation itself.",
     def_zh:"在 AI 系統背後默默運作、使用者感受不到運算過程本身的運算方式。",
     quote:"Implicit computing, AI factories, economics — the infrastructure layer nobody sees but everyone depends on.",
+    context:"在 Cisco AI Summit 這場企業導向的訪談中，黃仁勳把「隱性運算」定位成 AI 工廠背後不可見、卻決定成本結構的關鍵層。",
     speaker:"jh", event:"Cisco AI Summit 2026", date:"2026-02-07" },
 
-  { id:6, cat:"biz", term:"Trillion-Dollar Demand", zh:"兆美元級需求",
+  { id:6, cat:"biz", rarity:"rare", term:"Trillion-Dollar Demand", zh:"兆美元級需求",
     def_en:"A market opportunity measured in trillions of dollars — the scale Jensen Huang used to describe near-future AI infrastructure spending.",
     def_zh:"以「兆美元」為單位計算的市場需求規模，用來形容 AI 基礎建設支出的龐大程度。",
     quote:"By 2027, we will see at least $1 trillion in high-confidence demand.",
+    context:"這個數字後來被媒體大量引用，成為衡量 AI 基礎建設投資規模的標準參照點之一。",
     speaker:"jh", event:"GTC 2026 Keynote", date:"2026-03-16" },
-  { id:7, cat:"biz", term:"10x Economy", zh:"十倍經濟",
+  { id:7, cat:"biz", rarity:"rare", term:"10x Economy", zh:"十倍經濟",
     def_en:"A future economy made roughly ten times more productive by AI and automation — more output from the same labor and capital.",
     def_zh:"因 AI 與自動化而生產力提升約十倍的未來經濟型態。",
     quote:"Grok 4.20, AGI, Optimus 3, 10x economy — Musk's shorthand for what comes after scarcity.",
+    context:"馬斯克在這場訪談中把 Grok 4.20、Optimus 3 與「十倍經濟」放在一起談，呈現他對 AI 與機器人如何同時撬動生產力與稀缺性的整體想像。",
     speaker:"em", event:"Visionary Society Interview", date:"2026-03-24" },
-  { id:8, cat:"biz", term:"Abundance", zh:"富足 / 豐裕",
+  { id:8, cat:"biz", rarity:"common", term:"Abundance", zh:"富足 / 豐裕",
     def_en:"An economic state where AI-driven productivity makes goods and services radically cheaper and more plentiful for everyone.",
     def_zh:"因 AI 帶動生產力大增，使商品與服務變得極度充裕、便宜的經濟狀態。",
     quote:"AI risks, abundance, humanity future, 2036 world — the interview that reframed the whole debate.",
+    context:"這是 2026 年被引用最廣的科技訪談之一，馬斯克罕見地同時談風險與樂觀，也讓「abundance」成為當年科技圈最常被引用的關鍵字之一。",
     speaker:"em", event:"The Economist Interview", date:"2026-07-23", tag:"viral" },
-  { id:9, cat:"biz", term:"Platform, Not a Product", zh:"平台，而非產品",
+  { id:9, cat:"biz", rarity:"rare", term:"Platform, Not a Product", zh:"平台，而非產品",
     def_en:"A strategic pivot from selling one flagship product to becoming the underlying infrastructure other products and companies build on.",
     def_zh:"從主打單一產品轉向成為其他產品與公司賴以建構的底層基礎設施的策略轉型。",
     quote:"OpenAI as a platform, not a product — even if it means killing Sora and Atlas to fund compute.",
+    context:"奧特曼在這次訪談中證實 OpenAI 為了資助算力，決定收掉 Sora 與 Atlas 兩項產品，凸顯平台化策略背後真實的取捨代價。",
     speaker:"sa", event:"Dealroom.co Interview", date:"2026-08-24" },
 
-  { id:10, cat:"quote", term:"“Very good to be home”", zh:"很高興回到家鄉",
+  { id:10, cat:"quote", rarity:"legendary", term:"“Very good to be home”", zh:"很高興回到家鄉",
     def_en:"Jensen Huang's opening line returning to Taiwan — his birthplace — to deliver a keynote, six years after his last visit.",
     def_zh:"黃仁勳回到出生地台灣演講時的開場白，帶有濃厚的返鄉情感。",
     quote:"Very good to be home.",
+    context:"這是黃仁勳暌違六年再度回到出生地台灣演講，現場反應熱烈，也被視為 NVIDIA 與台灣供應鏈關係的一個象徵性時刻。",
     speaker:"jh", event:"GTC Taipei 2026 Keynote", date:"2026-06-01", tag:"homecoming" },
-  { id:11, cat:"quote", term:"“Let's enjoy the ride”", zh:"享受這趟旅程吧",
+  { id:11, cat:"quote", rarity:"legendary", term:"“Let's enjoy the ride”", zh:"享受這趟旅程吧",
     def_en:"Musk's closing line in a wide-ranging interview about superintelligence and an uncertain future — choosing optimism over fear.",
     def_zh:"馬斯克在討論超級智慧與不確定未來的訪談結尾說的話，選擇以樂觀態度面對。",
     quote:"Let's enjoy the ride.",
+    context:"在同一場訪談中，馬斯克前一刻才談完超級智慧的風險，下一刻就以這句話收尾，強烈的反差讓這段片段在社群上被大量轉傳。",
     speaker:"em", event:"The Economist Interview", date:"2026-07-23", tag:"viral" },
-  { id:12, cat:"quote", term:"“Hello, Las Vegas”", zh:"哈囉，拉斯維加斯",
+  { id:12, cat:"quote", rarity:"common", term:"“Hello, Las Vegas”", zh:"哈囉，拉斯維加斯",
     def_en:"Jensen Huang's crowd-greeting opener at CES 2026, kicking off a keynote on consumer AI, gaming, and automotive.",
     def_zh:"黃仁勳在 CES 2026 開場對現場觀眾的問候語，隨後展開消費性電子、遊戲與汽車相關的 AI 演說。",
     quote:"Hello, Las Vegas.",
+    context:"CES 2026 這場演說聚焦消費性電子、遊戲與汽車產業的 AI 整合，是 NVIDIA 少數面向一般消費者、而非企業客戶的年度發表場合。",
     speaker:"jh", event:"CES 2026", date:"2026-01-06" },
-  { id:13, cat:"quote", term:"“Lobster Is the New Operating System”", zh:"龍蝦就是新的作業系統",
+  { id:13, cat:"quote", rarity:"legendary", term:"“Lobster Is the New Operating System”", zh:"龍蝦就是新的作業系統",
     def_en:"A deliberately strange metaphor Jensen Huang used to argue that AI itself — not a traditional OS — now sits at the center of computing.",
     def_zh:"黃仁勳用來比喻 AI 已經取代傳統作業系統、成為運算核心的一句刻意誇張的比喻。",
     quote:"Lobster is the new operating system.",
+    context:"這句話在社群上被大量二次創作與迷因化，是這場 90 分鐘演說中最出圈的一句話，也常被引用來說明黃仁勳的演講風格。",
     speaker:"jh", event:"GTC 2026 Full Speech", date:"2026-03-17" },
 
-  { id:14, cat:"new", term:"AI Factories", zh:"AI 工廠",
+  { id:14, cat:"new", rarity:"rare", term:"AI Factories", zh:"AI 工廠",
     def_en:"Purpose-built data centers that convert electricity and raw data into AI intelligence at industrial scale — the successor to the traditional data center.",
     def_zh:"專為將電力與資料大規模轉換成 AI 智慧而建造的資料中心，被視為傳統資料中心的下一代型態。",
     quote:"Token factory economics, AI factories, inference revenue — the vocabulary of a new industrial category.",
+    context:"「AI 工廠」一詞在 GTC 2026 主題演說中被系統化地與「token 工廠經濟」「推論營收」並列，構成 NVIDIA 對下一個十年的完整敘事框架。",
     speaker:"jh", event:"GTC 2026 Keynote", date:"2026-03-16" },
-  { id:15, cat:"new", term:"Sobering Siren", zh:"警世警報",
+  { id:15, cat:"new", rarity:"rare", term:"Sobering Siren", zh:"警世警報",
     def_en:"Sam Altman's own phrase for a stark warning about the risks and responsibility that come with increasingly powerful AI models.",
     def_zh:"奧特曼自創的說法，形容伴隨 AI 模型日益強大而來的風險與責任的警世提醒。",
     quote:"Next-gen models, sobering siren, risks, responsibility — Altman turning cautionary in his own words.",
+    context:"奧特曼在 Axios 這場訪談中罕見地轉向謹慎語氣，被媒體解讀為 OpenAI 對外溝通策略從「畫大餅」轉向「管理期待」的訊號。",
     speaker:"sa", event:"Axios Interview", date:"2026-09-03" },
-  { id:16, cat:"new", term:"Optional Work", zh:"可選性工作",
+  { id:16, cat:"new", rarity:"common", term:"Optional Work", zh:"可選性工作",
     def_en:"A proposed future where humanoid robots and AI handle most labor, making traditional human work a choice rather than a necessity.",
     def_zh:"設想人形機器人與 AI 承擔大部分勞動後，傳統的人類工作將變成一種選擇，而非必需。",
     quote:"AI superintelligence, humanoid robots, optional work, corporate control — the interview's central thesis.",
+    context:"這是一段經過整理的長篇訪談，馬斯克在其中描繪了一個由人形機器人與 AI 主導勞動、人類工作變成選擇而非義務的未來圖像。",
     speaker:"em", event:"The Transcript Desk", date:"2026-08-10" },
-  { id:17, cat:"new", term:"Orbital Data Centers", zh:"軌道資料中心",
+  { id:17, cat:"new", rarity:"rare", term:"Orbital Data Centers", zh:"軌道資料中心",
     def_en:"Data centers proposed for deployment in space, taking advantage of constant solar power and the vacuum of space for cooling AI compute.",
     def_zh:"部署於太空的資料中心構想，利用持續的太陽能與太空的低溫環境為 AI 運算散熱。",
     quote:"AI infrastructure, orbital data centers — pushing the factory metaphor literally into orbit.",
+    context:"這個構想把「AI 工廠」的比喻真的延伸到太空，反映馬斯克一貫把 Tesla、SpaceX、xAI 的技術路線互相串接的思考方式。",
     speaker:"em", event:"Moonshots Podcast Part 9", date:"2026-02-08" },
-  { id:18, cat:"biz", term:"ROI", zh:"投資報酬率",
+  { id:18, cat:"biz", rarity:"common", term:"ROI", zh:"投資報酬率",
     def_en:"Return on Investment — the measure of value gained relative to what was spent, a recurring theme when CEOs justify AI infrastructure spending.",
     def_zh:"投入資金相對於產出價值的衡量指標，CEO 們常用它來為 AI 基礎建設支出辯護。",
     quote:"GPT-5.6 Sol, efficiency, ROI — Altman making the business case for the next model generation.",
+    context:"在這場訪談中，奧特曼被問到如何說服企業客戶為新一代模型付費，「效率」與「投資報酬率」成為他反覆強調的關鍵字。",
     speaker:"sa", event:"CNBC Squawk on the Street", date:"2026-07-09" },
-  { id:19, cat:"ai", term:"AI Infrastructure", zh:"AI 基礎建設",
+  { id:19, cat:"ai", rarity:"common", term:"AI Infrastructure", zh:"AI 基礎建設",
     def_en:"The combined stack of chips, data centers, networking, and power needed to train and run large-scale AI systems.",
     def_zh:"訓練與運行大規模 AI 系統所需的晶片、資料中心、網路與電力等整體基礎建設。",
     quote:"AI spending blitz will continue into 2026 — infrastructure as the year's central investment story.",
+    context:"這則 CNBC 報導聚焦 Meta 在 2026 年持續加碼的 AI 基礎建設支出，是本資料庫中少數來自祖克柏、篇幅較短但資訊密度高的片段。",
     speaker:"mz", event:"CNBC Report", date:"2025-07-30" },
-  { id:20, cat:"quote", term:"“Responsible AI, Inclusive AI”", zh:"負責任的AI，包容性的AI",
+  { id:20, cat:"quote", rarity:"common", term:"“Responsible AI, Inclusive AI”", zh:"負責任的AI，包容性的AI",
     def_en:"Sundar Pichai's framing for AI development that accounts for safety and fairness while extending benefits broadly, not just to the already-advantaged.",
     def_zh:"皮查伊用來描述 AI 發展應兼顧安全與公平，並讓效益普及而非僅限少數群體的說法。",
     quote:"Responsible AI, inclusive AI — Pichai's opening frame for the summit.",
+    context:"皮查伊在這場高峰會開幕致詞中，把「負責任」與「包容性」並列為 Google AI 發展的兩大原則，呼應他在其他場合對監管與公平議題的一貫立場。",
     speaker:"sp", event:"AI Impact Summit 2026", date:"2026-02-19" },
 ];
 
@@ -510,24 +695,68 @@ function filteredCards(){
   });
 }
 
-function cardFaceHTML(c){
+/* ---- Card faces: 1) term  2) definition + quote  3) source & context ---- */
+function faceContentFor(c, which){
   const s = SPEAKERS[c.speaker];
-  return `
-    ${c.tag ? `<span class="special-badge">${c.tag}</span>` : ""}
-    <div class="face front">
-      <span class="cat-tag">${CATS[c.cat]}</span>
+  if (which === 0){
+    return `
+      <div class="face-top">
+        <span class="cat-tag">${CATS[c.cat]}</span>
+        <span class="rarity-badge ${c.rarity}" title="${RARITY[c.rarity].zh}">${RARITY[c.rarity].label}</span>
+      </div>
       <span class="term-zh">${c.zh}</span>
       <div class="term-en">${c.term}</div>
       <div class="speaker-row"><span class="speaker-dot" style="background:${s.color}"></span>${s.name} · ${c.event}</div>
-      <span class="hint">點擊翻面</span>
-    </div>
-    <div class="face back">
+      <span class="hint">1 / 3 · 點擊看解釋</span>
+    `;
+  }
+  if (which === 1){
+    return `
       <span class="cat-tag">${CATS[c.cat]}</span>
       <div class="def-en">${c.def_en}</div>
       <div class="def-zh">${c.def_zh}</div>
       <blockquote class="quote">"${c.quote}"<cite>— ${s.name}, ${c.event}, ${c.date}</cite></blockquote>
+      <span class="hint">2 / 3 · 點擊看出處</span>
+    `;
+  }
+  return `
+    <span class="cat-tag">出處與延伸</span>
+    <div class="ext-block">
+      <div class="ext-row"><span class="ext-label mono">講者</span><span>${s.name}（${s.short}）</span></div>
+      <div class="ext-row"><span class="ext-label mono">場合</span><span>${c.event}</span></div>
+      <div class="ext-row"><span class="ext-label mono">日期</span><span>${c.date}</span></div>
+      <p class="ext-context">${c.context}</p>
     </div>
+    <span class="hint">3 / 3 · 點擊回正面</span>
   `;
+}
+
+function initCardFaces(cardEl, c){
+  cardEl.querySelector(".face.front").innerHTML = faceContentFor(c, 0);
+  cardEl.querySelector(".face.back").innerHTML = faceContentFor(c, 1);
+  cardEl.dataset.state = "0";
+  cardEl.classList.remove("flipped");
+}
+
+function advanceCard(cardEl, c){
+  const state = Number(cardEl.dataset.state || "0");
+  const nextState = (state + 1) % 3;
+  const flipped = cardEl.classList.toggle("flipped");
+  const hiddenFace = flipped ? cardEl.querySelector(".face.front") : cardEl.querySelector(".face.back");
+  const followingState = (nextState + 1) % 3;
+  hiddenFace.innerHTML = faceContentFor(c, followingState);
+  cardEl.dataset.state = String(nextState);
+}
+
+function buildFlashcardEl(c){
+  const el = document.createElement("div");
+  el.className = "flashcard rarity-" + c.rarity;
+  el.dataset.id = c.id;
+  el.innerHTML = (c.tag ? `<span class="special-badge">${c.tag}</span>` : "") +
+    '<div class="flashcard-inner"><div class="face front"></div><div class="face back"></div></div>';
+  initCardFaces(el, c);
+  el.addEventListener("click", ()=> advanceCard(el, c));
+  return el;
 }
 
 /* ---- Feed (swipe) mode ---- */
@@ -538,27 +767,26 @@ function renderFeed(){
     const slide = document.createElement("div");
     slide.className = "feed-slide";
     slide.dataset.index = i;
-    slide.innerHTML = `
-      <div class="feed-counter mono">${i+1} / ${CARDS.length}</div>
-      <div class="feed-card-wrap">
-        <div class="flashcard" data-id="${c.id}">
-          <div class="flashcard-inner">${cardFaceHTML(c)}</div>
-        </div>
-      </div>
-      <button class="share-btn mono" data-id="${c.id}">↗ 分享</button>
-      <div class="feed-hint mono">點卡片翻面・上滑看下一張</div>
-    `;
-    scroll.appendChild(slide);
-  });
 
-  scroll.querySelectorAll(".flashcard").forEach(el=>{
-    el.addEventListener("click", ()=> el.classList.toggle("flipped"));
-  });
-  scroll.querySelectorAll(".share-btn").forEach(btn=>{
-    btn.addEventListener("click", (e)=>{
-      e.stopPropagation();
-      shareCard(Number(btn.dataset.id));
-    });
+    const counter = document.createElement("div");
+    counter.className = "feed-counter mono";
+    counter.textContent = (i+1) + " / " + CARDS.length;
+
+    const wrap = document.createElement("div");
+    wrap.className = "feed-card-wrap";
+    wrap.appendChild(buildFlashcardEl(c));
+
+    const shareBtn = document.createElement("button");
+    shareBtn.className = "share-btn mono";
+    shareBtn.textContent = "↗ 分享";
+    shareBtn.addEventListener("click", (e)=>{ e.stopPropagation(); shareCard(c.id); });
+
+    const hint = document.createElement("div");
+    hint.className = "feed-hint mono";
+    hint.textContent = "點卡片翻面・上滑看下一張";
+
+    slide.append(counter, wrap, shareBtn, hint);
+    scroll.appendChild(slide);
   });
 
   setupFeedObserver();
@@ -618,13 +846,7 @@ function renderBrowse(){
     grid.innerHTML = '<p class="mono" style="color:var(--muted); grid-column:1/-1;">沒有符合篩選條件的卡片。</p>';
     return;
   }
-  cards.forEach(c=>{
-    const el = document.createElement("div");
-    el.className = "flashcard";
-    el.innerHTML = `<div class="flashcard-inner">${cardFaceHTML(c)}</div>`;
-    el.addEventListener("click", ()=> el.classList.toggle("flipped"));
-    grid.appendChild(el);
-  });
+  cards.forEach(c=> grid.appendChild(buildFlashcardEl(c)));
 }
 
 /* ---- Quiz mode ---- */
@@ -638,7 +860,7 @@ function resetQuiz(){
   quizDeck = filteredCards().slice().sort(()=>Math.random()-0.5);
   quizIndex = 0; quizResults = {};
   document.getElementById("quiz-done").style.display = "none";
-  document.getElementById("quiz-card").parentElement.style.display = "";
+  document.getElementById("quiz-card-holder").style.display = "";
   document.querySelector(".quiz-hint").style.display = "";
   document.querySelector(".quiz-actions").style.display = "";
   renderQuizCard();
@@ -647,10 +869,11 @@ function resetQuiz(){
 function renderQuizCard(){
   const bar = document.getElementById("quiz-progress-bar");
   const counter = document.getElementById("quiz-counter");
+  const holder = document.getElementById("quiz-card-holder");
   if (quizDeck.length === 0){
     counter.textContent = "0 / 0";
     bar.style.width = "0%";
-    document.getElementById("quiz-card").innerHTML = '<div class="flashcard-inner"><div class="face front"><span class="cat-tag">—</span><div class="term-en" style="font-size:16px">沒有符合篩選條件的卡片</div></div><div class="face back"></div></div>';
+    holder.innerHTML = '<p class="mono" style="color:var(--muted);">沒有符合篩選條件的卡片。</p>';
     return;
   }
   if (quizIndex >= quizDeck.length){
@@ -660,14 +883,12 @@ function renderQuizCard(){
   bar.style.width = (quizIndex / quizDeck.length * 100) + "%";
   counter.textContent = (quizIndex+1) + " / " + quizDeck.length;
   const c = quizDeck[quizIndex];
-  const card = document.getElementById("quiz-card");
-  card.classList.remove("flipped");
-  card.innerHTML = `<div class="flashcard-inner">${cardFaceHTML(c)}</div>`;
-  card.onclick = ()=> card.classList.toggle("flipped");
+  holder.innerHTML = "";
+  holder.appendChild(buildFlashcardEl(c));
 }
 
 function showQuizDone(){
-  document.getElementById("quiz-card").parentElement.style.display = "none";
+  document.getElementById("quiz-card-holder").style.display = "none";
   document.querySelector(".quiz-hint").style.display = "none";
   document.querySelector(".quiz-actions").style.display = "none";
   document.getElementById("quiz-progress-bar").style.width = "100%";
@@ -697,23 +918,207 @@ document.getElementById("quiz-restart").addEventListener("click", resetQuiz);
 
 document.addEventListener("keydown", (e)=>{
   if (state.mode !== "quiz") return;
-  if (e.code === "Space"){ e.preventDefault(); document.getElementById("quiz-card").classList.toggle("flipped"); }
+  if (e.code === "Space"){
+    e.preventDefault();
+    const el = document.querySelector("#quiz-card-holder .flashcard");
+    if (el) el.click();
+  }
   if (e.code === "ArrowRight"){ markQuiz(true); }
   if (e.code === "ArrowLeft"){ markQuiz(false); }
 });
 
+/* ---- Daily challenge: date-seeded pack of 3 + streak calendar ---- */
+const DAILY_SIZE = 3;
+
+function hashStr(str){
+  let h = 0;
+  for (let i = 0; i < str.length; i++){ h = (Math.imul(31, h) + str.charCodeAt(i)) | 0; }
+  return h >>> 0;
+}
+function mulberry32(seed){
+  return function(){
+    seed |= 0; seed = (seed + 0x6D2B79F5) | 0;
+    let t = Math.imul(seed ^ (seed >>> 15), 1 | seed);
+    t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t;
+    return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
+  };
+}
+function todayStr(d){
+  d = d || new Date();
+  const y = d.getFullYear(), m = String(d.getMonth()+1).padStart(2,"0"), day = String(d.getDate()).padStart(2,"0");
+  return y + "-" + m + "-" + day;
+}
+function pickDailyCards(dateStr){
+  const rng = mulberry32(hashStr(dateStr));
+  const idx = CARDS.map((_, i)=> i);
+  for (let i = idx.length - 1; i > 0; i--){
+    const j = Math.floor(rng() * (i+1));
+    [idx[i], idx[j]] = [idx[j], idx[i]];
+  }
+  return idx.slice(0, DAILY_SIZE).map(i=> CARDS[i]);
+}
+
+let dailyRecord = {};
+try { dailyRecord = JSON.parse(localStorage.getItem("keynote-lexicon-daily") || "{}"); } catch(e){ dailyRecord = {}; }
+let dailyOpened = {};
+try { dailyOpened = JSON.parse(localStorage.getItem("keynote-lexicon-daily-opened") || "{}"); } catch(e){ dailyOpened = {}; }
+
+function computeStreak(record){
+  let streak = 0;
+  const d = new Date();
+  if (!record[todayStr(d)]) d.setDate(d.getDate() - 1);
+  while (record[todayStr(d)]){ streak++; d.setDate(d.getDate() - 1); }
+  return streak;
+}
+function updateStreakUI(){
+  document.getElementById("streak-count").textContent = computeStreak(dailyRecord);
+}
+function updateDailyProgressUI(openedCount, total){
+  document.getElementById("daily-progress-text").textContent = openedCount + " / " + total;
+  document.getElementById("daily-progress-bar").style.width = (openedCount / total * 100) + "%";
+}
+function showDailyComplete(dateStr){
+  const panel = document.getElementById("daily-complete");
+  document.getElementById("daily-complete-sub").textContent = "已經連續 " + computeStreak(dailyRecord) + " 天完成挑戰。";
+  panel.hidden = false;
+}
+function hideDailyComplete(){
+  document.getElementById("daily-complete").hidden = true;
+}
+function completeDaily(dateStr){
+  if (dailyRecord[dateStr]) return;
+  dailyRecord[dateStr] = true;
+  try { localStorage.setItem("keynote-lexicon-daily", JSON.stringify(dailyRecord)); } catch(e){}
+  updateStreakUI();
+  renderCalendar();
+  showDailyComplete(dateStr);
+}
+
+function openPack(cover, cardEl, c, dateStr, total, shareBtn){
+  cover.classList.add("opening");
+  setTimeout(()=>{
+    cover.remove();
+    shareBtn.hidden = false;
+    if (c.rarity === "legendary"){
+      const burst = document.createElement("div");
+      burst.className = "reveal-burst";
+      cardEl.appendChild(burst);
+      setTimeout(()=> burst.remove(), 850);
+    }
+    if (!dailyOpened[dateStr]) dailyOpened[dateStr] = [];
+    if (!dailyOpened[dateStr].includes(c.id)) dailyOpened[dateStr].push(c.id);
+    try { localStorage.setItem("keynote-lexicon-daily-opened", JSON.stringify(dailyOpened)); } catch(e){}
+    const openedCount = dailyOpened[dateStr].length;
+    updateDailyProgressUI(openedCount, total);
+    if (openedCount >= total) completeDaily(dateStr);
+  }, 520);
+}
+
+function renderDaily(){
+  const dateStr = todayStr();
+  const cards = pickDailyCards(dateStr);
+  const openedIds = dailyOpened[dateStr] || [];
+  const scroll = document.getElementById("daily-scroll");
+  scroll.innerHTML = "";
+
+  cards.forEach((c, i)=>{
+    const isOpen = openedIds.includes(c.id);
+    const slide = document.createElement("div");
+    slide.className = "feed-slide";
+    slide.dataset.index = i;
+
+    const counter = document.createElement("div");
+    counter.className = "feed-counter mono";
+    counter.textContent = (i+1) + " / " + cards.length;
+
+    const wrap = document.createElement("div");
+    wrap.className = "feed-card-wrap";
+    const cardEl = buildFlashcardEl(c);
+    wrap.appendChild(cardEl);
+
+    const shareBtn = document.createElement("button");
+    shareBtn.className = "share-btn mono";
+    shareBtn.textContent = "↗ 分享";
+    shareBtn.hidden = !isOpen;
+    shareBtn.addEventListener("click", (e)=>{ e.stopPropagation(); shareCard(c.id); });
+
+    const hint = document.createElement("div");
+    hint.className = "feed-hint mono";
+    hint.textContent = "點卡片翻面・上滑看下一張";
+
+    slide.append(counter, wrap, shareBtn, hint);
+    scroll.appendChild(slide);
+
+    if (!isOpen){
+      const cover = document.createElement("div");
+      cover.className = "pack-cover";
+      cover.innerHTML = '<div class="pack-mark">KL</div><div class="pack-hint mono">點擊開卡</div>';
+      cover.addEventListener("click", (e)=>{
+        e.stopPropagation();
+        openPack(cover, cardEl, c, dateStr, cards.length, shareBtn);
+      });
+      cardEl.appendChild(cover);
+    }
+  });
+
+  scroll.scrollTop = 0;
+  updateDailyProgressUI(openedIds.length, cards.length);
+  if (dailyRecord[dateStr]) showDailyComplete(dateStr); else hideDailyComplete();
+  updateStreakUI();
+  renderCalendar();
+}
+
+let calViewDate = new Date();
+function renderCalendar(){
+  const y = calViewDate.getFullYear(), m = calViewDate.getMonth();
+  document.getElementById("cal-month-label").textContent = y + " / " + String(m+1).padStart(2,"0");
+  const grid = document.getElementById("cal-grid");
+  grid.innerHTML = "";
+  ["日","一","二","三","四","五","六"].forEach(d=>{
+    const el = document.createElement("div");
+    el.className = "cal-dow"; el.textContent = d;
+    grid.appendChild(el);
+  });
+  const firstDow = new Date(y, m, 1).getDay();
+  const daysInMonth = new Date(y, m+1, 0).getDate();
+  for (let i = 0; i < firstDow; i++){
+    const el = document.createElement("div");
+    el.className = "cal-cell empty";
+    grid.appendChild(el);
+  }
+  const todayS = todayStr();
+  for (let day = 1; day <= daysInMonth; day++){
+    const dateStr = y + "-" + String(m+1).padStart(2,"0") + "-" + String(day).padStart(2,"0");
+    const el = document.createElement("div");
+    el.className = "cal-cell" + (dailyRecord[dateStr] ? " done" : "") + (dateStr === todayS ? " today" : "");
+    el.textContent = dailyRecord[dateStr] ? "✓" : String(day);
+    grid.appendChild(el);
+  }
+}
+
+document.getElementById("cal-prev").addEventListener("click", ()=>{ calViewDate.setMonth(calViewDate.getMonth()-1); renderCalendar(); });
+document.getElementById("cal-next").addEventListener("click", ()=>{ calViewDate.setMonth(calViewDate.getMonth()+1); renderCalendar(); });
+document.getElementById("btn-toggle-calendar").addEventListener("click", ()=>{
+  const wrap = document.getElementById("calendar-wrap");
+  wrap.hidden = !wrap.hidden;
+});
+document.getElementById("btn-see-all").addEventListener("click", ()=> setMode("feed"));
+
 function setMode(mode){
   state.mode = mode;
+  document.getElementById("btn-daily").classList.toggle("active", mode === "daily");
   document.getElementById("btn-feed").classList.toggle("active", mode === "feed");
   document.getElementById("btn-browse").classList.toggle("active", mode === "browse");
   document.getElementById("btn-quiz").classList.toggle("active", mode === "quiz");
+  document.getElementById("daily-panel").classList.toggle("active", mode === "daily");
   document.getElementById("feed-panel").classList.toggle("active", mode === "feed");
   document.getElementById("browse-grid").classList.toggle("active", mode === "browse");
   document.getElementById("quiz-panel").classList.toggle("active", mode === "quiz");
-  document.getElementById("filters").style.display = (mode === "feed") ? "none" : "flex";
+  document.getElementById("filters").style.display = (mode === "browse" || mode === "quiz") ? "flex" : "none";
   if (mode === "quiz") resetQuiz();
 }
 
+document.getElementById("btn-daily").addEventListener("click", ()=> setMode("daily"));
 document.getElementById("btn-feed").addEventListener("click", ()=> setMode("feed"));
 document.getElementById("btn-browse").addEventListener("click", ()=> setMode("browse"));
 document.getElementById("btn-quiz").addEventListener("click", ()=> setMode("quiz"));
@@ -731,11 +1136,20 @@ function resetFeedScroll(){
 buildChips();
 renderFeed();
 renderBrowse();
-setMode("feed");
-requestAnimationFrame(resetFeedScroll);
+renderDaily();
+
+const hashMatch = location.hash.match(/^#card-(\d+)$/);
+if (hashMatch){
+  setMode("feed");
+  requestAnimationFrame(resetFeedScroll);
+} else {
+  setMode("daily");
+}
 
 /* Browsers can restore a page's previous scroll position (bfcache back/forward,
    some mobile "recent tabs" restores) — without this, reopening the same link
    can land on whatever card was last viewed instead of the first one. */
-window.addEventListener("pageshow", ()=> requestAnimationFrame(resetFeedScroll));
+window.addEventListener("pageshow", ()=>{
+  requestAnimationFrame(()=>{ if (state.mode === "feed") resetFeedScroll(); });
+});
 </script>
