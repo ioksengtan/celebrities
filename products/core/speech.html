@@ -45,6 +45,7 @@
     const detailView = document.getElementById("detail-view");
 
     CoreUI.bindCopyButtons(document);
+    window.addEventListener("hashchange", () => CoreUI.scheduleHighlight());
 
     function speechCard(speech, quoteCount, featured) {
       const meta = CoreUI.speakerMeta(speech.speaker);
@@ -134,7 +135,7 @@
       listView.hidden = true;
       statusEl.hidden = true;
       document.title = (speech.event || speech.id) + " · celebrities";
-      requestAnimationFrame(() => CoreUI.highlightQuoteFromHash());
+      CoreUI.scheduleHighlight();
     }
 
     Promise.all([
