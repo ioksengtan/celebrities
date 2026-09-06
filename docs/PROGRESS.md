@@ -4,6 +4,15 @@
 
 ---
 
+## 2026-09-06（核心薄片：語錄牆＋單場）
+
+- Pages **根目錄就是語錄牆**（`index.html`），單場在 `products/core/speech.html?id=…#quote-<id>`
+- 卡片：英文＋短中文＋講者／場合／日期；「複製英文／複製中文」帶一行出處（speaker · event · year）；「原文」與「單場」分開
+- 牆上篩選：`verified` 且 `speech_id` 不在 `content_review_flags`（避開／需審）也不在 hold（`EM-2026-005`、`SA-2026-001`）。EM-2026-001 可進單場、不上牆
+- 合併：healthy_seven 35 + KQ 7 + P0 16 + SA-2025-001 5（draft→verified）；MZ 以 MZ-2025-001 部分收錄。`w1_continue` 10 則（JH-2025-001×5、EM-2026-004×5）gzip 轉送損毀，**未編造、未入庫**
+- 單場：短中文摘要（有 `prod001_summary_zh_draft` 的四場）＋語錄＋一條外連，不內嵌逐字稿。未改 CARDS／EE／Keynote 邏輯
+- UX：卡片以「原文」為主按鈕，複製英／中次之；頁首／頁尾去掉說明文，方便短掃＋點來源
+
 ## 2026-09-06（EE 小遊戲 MVP：看英選中／看中選英）
 
 - 只在 `products/general-vocab/executive-english.html` 加模式「小遊戲」；Keynote Lexicon 不動

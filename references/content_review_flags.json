@@ -1,0 +1,22 @@
+[
+  {
+    "speech_id": "EM-2025-001",
+    "content_review_flag": "避開",
+    "reason_short": "topics 含 DOGE、Western decline，政治色彩強，不宜語錄牆首發"
+  },
+  {
+    "speech_id": "JH-2026-007",
+    "content_review_flag": "避開",
+    "reason_short": "topics 含 China strategy、DC relations，地緣／政策敏感"
+  },
+  {
+    "speech_id": "EM-2026-007",
+    "content_review_flag": "需審",
+    "reason_short": "topics 含 China、corporate control，地緣與治理敏感需審"
+  },
+  {
+    "speech_id": "EM-2026-001",
+    "content_review_flag": "需審",
+    "reason_short": "topics 含 US vs China，明顯地緣對比，語錄牆首發前需審"
+  }
+]
