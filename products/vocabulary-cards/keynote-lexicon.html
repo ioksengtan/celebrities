@@ -328,6 +328,7 @@
   #daily-panel{ display: none; flex-direction: column; align-items: center; gap: 10px; }
   #daily-panel.active{ display: flex; }
   .daily-top{ width: 100%; max-width: 420px; display: flex; align-items: center; justify-content: space-between; }
+  .daily-top-actions{ display: flex; gap: 6px; }
   .streak{ font-size: 13px; color: var(--muted); }
   .streak b{ color: var(--accent); font-size: 15px; }
   .cal-toggle{
@@ -335,7 +336,7 @@
     border: 1px solid var(--line); background: var(--surface); color: var(--muted); cursor: pointer;
   }
   .cal-toggle:hover{ border-color: var(--accent); color: var(--accent); }
-  #calendar-wrap{
+  #calendar-wrap, #sync-wrap{
     width: 100%; max-width: 420px; background: var(--surface); border: 1px solid var(--line);
     border-radius: 14px; padding: 12px 14px;
   }
@@ -352,6 +353,23 @@
   .cal-cell.done{ background: var(--accent); color: var(--accent-ink); font-weight: 600; }
   .cal-cell.today{ box-shadow: inset 0 0 0 1.5px var(--accent); }
   .cal-cell.empty{ visibility: hidden; }
+  .sync-lead{ font-size: 11.5px; color: var(--muted); line-height: 1.5; margin: 0 0 10px; }
+  .sync-row{ margin-bottom: 12px; }
+  .sync-row:last-child{ margin-bottom: 0; }
+  .sync-row label{ display: block; font-size: 11px; color: var(--muted); margin-bottom: 5px; }
+  .sync-code-box{
+    display: flex; gap: 6px;
+  }
+  .sync-code-box textarea, .sync-code-box input{
+    flex: 1 1 auto; min-width: 0; font-family: "IBM Plex Mono", monospace; font-size: 11px;
+    border: 1px solid var(--line); border-radius: 8px; padding: 8px 9px; background: var(--bg); color: var(--ink);
+    resize: none;
+  }
+  .sync-code-box textarea{ height: 46px; }
+  .sync-code-box button{
+    font-family: "Public Sans"; font-weight: 700; font-size: 12px; padding: 0 14px; border-radius: 8px;
+    border: none; background: var(--ink); color: var(--bg); cursor: pointer; white-space: nowrap;
+  }
   .daily-progress-row{
     width: 100%; max-width: 420px; display: flex; justify-content: space-between;
     font-size: 11.5px; color: var(--muted);
@@ -457,7 +475,7 @@
       gap: 4px;
       width: 100%;
     }
-    .daily-top, .daily-progress-row, .feed-progress, #calendar-wrap{
+    .daily-top, .daily-progress-row, .feed-progress, #calendar-wrap, #sync-wrap{
       flex: none;
       max-width: none;
     }
@@ -542,7 +560,10 @@
   <div id="daily-panel" class="active">
     <div class="daily-top">
       <div class="streak mono">🔥 連續 <b id="streak-count">0</b> 天</div>
-      <button id="btn-toggle-calendar" class="cal-toggle mono">日曆 ▾</button>
+      <div class="daily-top-actions">
+        <button id="btn-toggle-calendar" class="cal-toggle mono">日曆 ▾</button>
+        <button id="btn-toggle-sync" class="cal-toggle mono">同步 ⇄</button>
+      </div>
     </div>
     <div id="calendar-wrap" hidden>
       <div class="cal-header">
@@ -551,6 +572,23 @@
         <button id="cal-next" aria-label="下個月">›</button>
       </div>
       <div class="cal-grid" id="cal-grid"></div>
+    </div>
+    <div id="sync-wrap" hidden>
+      <p class="sync-lead">連續天數存在這台裝置的瀏覽器裡，換裝置不會自動同步。匯出代碼貼到另一台裝置，或反過來貼別台裝置的代碼進來，就能把進度合併。</p>
+      <div class="sync-row">
+        <label>這台裝置的代碼</label>
+        <div class="sync-code-box">
+          <textarea id="sync-export-code" class="mono" readonly></textarea>
+          <button type="button" id="btn-sync-copy" class="mono">複製</button>
+        </div>
+      </div>
+      <div class="sync-row">
+        <label>貼上其他裝置的代碼</label>
+        <div class="sync-code-box">
+          <input type="text" id="sync-import-code" class="mono" placeholder="貼上代碼…">
+          <button type="button" id="btn-sync-import" class="mono">合併</button>
+        </div>
+      </div>
     </div>
     <div class="daily-progress-row mono">
       <span>今日挑戰</span>
@@ -1343,6 +1381,69 @@ document.getElementById("btn-toggle-calendar").addEventListener("click", ()=>{
   wrap.hidden = !wrap.hidden;
 });
 document.getElementById("btn-see-all").addEventListener("click", ()=> setMode("feed"));
+
+/* ---- Cross-device streak sync (manual export/import code) ---- */
+function buildSyncCode(){
+  const doneDates = Object.keys(dailyRecord).filter(d=> dailyRecord[d]).sort();
+  const today = todayStr();
+  const payload = { v: 1, d: doneDates, o: dailyOpened[today] || [] };
+  return btoa(JSON.stringify(payload));
+}
+function applySyncCode(code){
+  let payload;
+  try { payload = JSON.parse(atob(code.trim())); }
+  catch(e){ throw new Error("代碼格式錯誤"); }
+  if (!payload || !Array.isArray(payload.d)) throw new Error("代碼格式錯誤");
+
+  let added = 0;
+  payload.d.forEach(d=>{
+    if (!dailyRecord[d]){ dailyRecord[d] = true; added++; }
+  });
+  try { localStorage.setItem("keynote-lexicon-daily", JSON.stringify(dailyRecord)); } catch(e){}
+
+  if (Array.isArray(payload.o) && payload.o.length){
+    const today = todayStr();
+    const cur = dailyOpened[today] || [];
+    dailyOpened[today] = Array.from(new Set([...cur, ...payload.o]));
+    try { localStorage.setItem("keynote-lexicon-daily-opened", JSON.stringify(dailyOpened)); } catch(e){}
+  }
+  return added;
+}
+document.getElementById("btn-toggle-sync").addEventListener("click", ()=>{
+  const wrap = document.getElementById("sync-wrap");
+  wrap.hidden = !wrap.hidden;
+  if (!wrap.hidden){
+    document.getElementById("sync-export-code").value = buildSyncCode();
+    document.getElementById("sync-import-code").value = "";
+  }
+});
+document.getElementById("btn-sync-copy").addEventListener("click", ()=>{
+  const box = document.getElementById("sync-export-code");
+  if (navigator.clipboard){
+    navigator.clipboard.writeText(box.value).then(
+      ()=> showToast("代碼已複製"),
+      ()=>{ box.select(); showToast("請按 Ctrl/Cmd+C 複製"); }
+    );
+  } else {
+    box.select();
+    showToast("請按 Ctrl/Cmd+C 複製");
+  }
+});
+document.getElementById("btn-sync-import").addEventListener("click", ()=>{
+  const input = document.getElementById("sync-import-code");
+  const code = input.value.trim();
+  if (!code){ showToast("請先貼上代碼"); return; }
+  try {
+    const added = applySyncCode(code);
+    input.value = "";
+    document.getElementById("sync-export-code").value = buildSyncCode();
+    if (state.mode === "daily") renderDaily();
+    else { updateStreakUI(); renderCalendar(); }
+    showToast(added > 0 ? "已合併，新增 " + added + " 天" : "已是最新進度");
+  } catch(e){
+    showToast("代碼格式錯誤，請確認複製完整");
+  }
+});
 
 function setMode(mode){
   state.mode = mode;
