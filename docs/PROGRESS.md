@@ -4,6 +4,12 @@
 
 ---
 
+## 2026-09-12（EE 卡池擴充：G20 爐邊對談 + 分支同步）
+
+- Executive English 卡池 130→145：新增 Jensen Huang 在 2026-09-02 G20 Innovation Ministerial 爐邊對談的 15 個字（逐字稿來源改為 YouTube 新聞英語頻道，因原本慣用的 rev.com/singjupost.com 等站尚未收錄這場）
+- 這批字是在本機分支落後 origin/main 12 個 commit 時累積的離線改動，與同期合併的三個 PR（小遊戲、測驗熟練、手機卡片加大）撞到同一批 id（101–115 重複），rebase 時手動把新字重新編號到 131–145，已確認全卡池 id 連續無重複
+- 同步更新 README 字數統計（115→145，改成合併後的正確值）
+
 ## 2026-09-06（EE 小遊戲 MVP：看英選中／看中選英）
 
 - 只在 `products/general-vocab/executive-english.html` 加模式「小遊戲」；Keynote Lexicon 不動
