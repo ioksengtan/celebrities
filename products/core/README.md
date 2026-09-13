@@ -33,4 +33,4 @@ Keynote Lexicon、Executive English 只在導覽列當週邊產品。
 
 ## MANIFEST
 
-見 [`references/README.md`](../../references/README.md)。`w1_continue_quotes_draft.json`（JH-2025-001×5 + EM-2026-004×5）在本次轉送時 base64 損毀，**未編造、未入庫**。
+見 [`references/README.md`](../../references/README.md)。`w1_continue_quotes_draft.json`（JH-2025-001×5 + EM-2026-004×5）已入庫並標為 `verified`。

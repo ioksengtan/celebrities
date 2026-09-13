@@ -4,6 +4,13 @@
 
 ---
 
+## 2026-09-13（語錄牆 PR #5：rebase + 入庫 w1_continue×10）
+
+- 分支 rebase 到最新 `main`（`4b3669f`，含 G20 卡池與每日挑戰匯出/匯入）
+- `w1_continue_quotes_to_wall` 10 則（JH-2025-001×5、EM-2026-004×5）draft→verified 寫入 `quotes_index.json`；未編造替換句
+- `quotes_index` 61→71；牆 57→67 則／13→14 場。JH-2025-001 另保留既有 KQ×1（共 6）；EM-2026-004 = 5
+- 未改 Executive English／Keynote／PR #6
+
 ## 2026-09-12（每日挑戰連續天數跨裝置同步：匯出/匯入代碼）
 
 - Keynote Lexicon 與 Executive English 都加了「同步」按鈕（在日曆按鈕旁），純前端方案、不加後端／不用註冊帳號
@@ -28,7 +35,7 @@
 - Pages **根目錄就是語錄牆**（`index.html`），單場在 `products/core/speech.html?id=…#quote-<id>`
 - 卡片：英文＋短中文＋講者／場合／日期；「複製英文／複製中文」帶一行出處（speaker · event · year）；「原文」與「單場」分開
 - 牆上篩選：`verified` 且 `speech_id` 不在 `content_review_flags`（避開／需審）也不在 hold（`EM-2026-005`、`SA-2026-001`）。EM-2026-001 可進單場、不上牆
-- 合併：healthy_seven 35 + KQ 7 + P0 16 + SA-2025-001 5（draft→verified）；MZ 以 MZ-2025-001 部分收錄。`w1_continue` 10 則（JH-2025-001×5、EM-2026-004×5）gzip 轉送損毀，**未編造、未入庫**
+- 合併：healthy_seven 35 + KQ 7 + P0 16 + SA-2025-001 5（draft→verified）；MZ 以 MZ-2025-001 部分收錄。`w1_continue` 10 則（JH-2025-001×5、EM-2026-004×5）已於 2026-09-13 入庫（見上）
 - 單場：短中文摘要（有 `prod001_summary_zh_draft` 的四場）＋語錄＋一條外連，不內嵌逐字稿。未改 CARDS／EE／Keynote 邏輯
 - UX：卡片以「原文」為主按鈕，複製英／中次之；頁首／頁尾去掉說明文，方便短掃＋點來源
 
