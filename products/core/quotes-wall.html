@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>語錄牆 · celebrities</title>
+  <meta name="description" content="已核實的科技名人演講金句：掃一眼、複製、點原文。">
+  <link rel="canonical" href="../../index.html">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Public+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+  <link rel="stylesheet" href="site.css">
+</head>
+<body>
+  <a class="skip" href="#main">跳到內容</a>
+  <header class="site-header">
+    <div class="site-header-inner">
+      <a class="brand" href="../../index.html">celebrities <span>語錄牆</span></a>
+      <nav>
+        <a href="../../index.html" aria-current="page">語錄牆</a>
+        <a href="speech.html">單場演講</a>
+        <a class="peripheral" href="../vocabulary-cards/keynote-lexicon.html">Keynote Lexicon</a>
+        <a class="peripheral" href="../general-vocab/executive-english.html">Executive English</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" class="wrap">
+    <div class="page-head">
+      <p class="kicker">Core · quotes wall</p>
+      <h1>語錄牆</h1>
+      <p>掃一句、點原文或複製。</p>
+      <div class="meta">
+        <span><b id="wall-count">—</b></span>
+        <span id="wall-note"></span>
+      </div>
+    </div>
+
+    <div class="filters" id="filters" hidden>
+      <span class="filter-label">講者</span>
+    </div>
+
+    <div id="status" class="status">正在讀取語錄…</div>
+    <div id="quotes" class="quote-list" hidden></div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <span>首頁同一面牆</span>
+      <a href="speech.html">單場演講</a>
+    </div>
+  </footer>
+
+  <script src="core.js"></script>
+  <script src="wall.js"></script>
+</body>
+</html>
