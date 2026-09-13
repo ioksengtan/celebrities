@@ -4,6 +4,13 @@
 
 ---
 
+## 2026-09-13（語錄牆：入庫 week2 ×15，去重 EM-2026-003）
+
+- `week2_quotes_to_merge_verified` 15 則（EM-2026-002×5、MZ-2024-001×5、SP-2025-002×5）寫入 `quotes_index.json`，`status=verified`，可上牆
+- **未**加入 EM-2026-003 複本；`speech_aliases.json` 記同一場達沃斯對談（語錄只掛 EM-2026-002）。單場頁會顯示這則說明
+- Hold 未動：`EM-2026-005`、`SA-2026-001`。牆篩選仍只收 `verified`，並排除 `content_review_flags`／hold
+- `quotes_index` 71→86；牆 67→82 則／14→17 場。本 PR 未改 Keynote Lexicon／Executive English 產品 HTML
+
 ## 2026-09-13（語錄牆 PR #5：rebase + 入庫 w1_continue×10）
 
 - 分支 rebase 到最新 `main`（`9861293`，含已合併的 EE 小遊戲 PR #6）

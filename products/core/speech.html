@@ -96,7 +96,7 @@
       document.title = "單場演講 · celebrities";
     }
 
-    function renderDetail(speech, relatedQuotes, summaryZh) {
+    function renderDetail(speech, relatedQuotes, summaryZh, aliasNote, canonicalId) {
       const speakerName = CoreUI.speakerLabel(speech.speaker);
       const metaLine = [
         speakerName,
@@ -108,11 +108,19 @@
       const summary = summaryZh
         ? "<p class=\"summary-zh\">" + CoreUI.escapeHtml(summaryZh) + "</p>"
         : '<p class="missing">此場尚無短摘要。</p>';
+      const aliasLink = canonicalId && canonicalId !== speech.id
+        ? ' <a class="inline-link" href="' + CoreUI.escapeHtml(CoreUI.speechHref(paths, canonicalId)) + '">' +
+            CoreUI.escapeHtml(canonicalId) + "</a>"
+        : "";
+      const alias = aliasNote
+        ? "<p class=\"missing\">" + CoreUI.escapeHtml(aliasNote) + aliasLink + "</p>"
+        : "";
 
       detailView.innerHTML =
         '<p class="kicker">' + CoreUI.escapeHtml(speech.id) + "</p>" +
         "<h1>" + CoreUI.escapeHtml(speech.event || speech.id) + "</h1>" +
         '<div class="speech-meta"><span class="speaker-name">' + CoreUI.escapeHtml(metaLine) + "</span></div>" +
+        alias +
         summary +
         '<p class="btn-row">' +
           outbound(speech, relatedQuotes) +
@@ -140,8 +148,9 @@
       CoreUI.fetchJson(paths.healthy),
       CoreUI.fetchJson(paths.speechesDb),
       CoreUI.fetchJson(paths.quotes),
-      CoreUI.fetchJson(paths.summaries).catch(() => [])
-    ]).then(([healthy, db, quotes, summaries]) => {
+      CoreUI.fetchJson(paths.summaries).catch(() => []),
+      CoreUI.fetchJson(paths.aliases).catch(() => ({ aliases: CoreUI.SPEECH_ALIASES }))
+    ]).then(([healthy, db, quotes, summaries, aliasData]) => {
       const healthySpeeches = (healthy && healthy.speeches) || [];
       const dbSpeeches = (db && db.speeches) || [];
       const byId = new Map();
@@ -186,7 +195,11 @@
           "</code>。<a class=\"inline-link\" href=\"speech.html\">回到場次列表</a>";
         return;
       }
-      renderDetail(speech, quotesBySpeech.get(speechId) || [], summaryById.get(speechId) || "");
+      const aliasMap = (aliasData && aliasData.aliases) || CoreUI.SPEECH_ALIASES;
+      const quoteSpeechId = CoreUI.canonicalSpeechId(speechId, aliasMap);
+      const related = quotesBySpeech.get(quoteSpeechId) || quotesBySpeech.get(speechId) || [];
+      const note = CoreUI.speechAliasNote(speechId, aliasData);
+      renderDetail(speech, related, summaryById.get(speechId) || summaryById.get(quoteSpeechId) || "", note, quoteSpeechId);
     }).catch((err) => {
       statusEl.className = "error";
       statusEl.textContent = err.message + "。請用本機伺服器或 GitHub Pages 開啟。";
