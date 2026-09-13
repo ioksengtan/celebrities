@@ -6,10 +6,10 @@
 
 ## 2026-09-13（語錄牆 PR #5：rebase + 入庫 w1_continue×10）
 
-- 分支 rebase 到最新 `main`（`4b3669f`，含 G20 卡池與每日挑戰匯出/匯入）
-- `w1_continue_quotes_to_wall` 10 則（JH-2025-001×5、EM-2026-004×5）draft→verified 寫入 `quotes_index.json`；未編造替換句
+- 分支 rebase 到最新 `main`（`9861293`，含已合併的 EE 小遊戲 PR #6）
+- `w1_continue` 10 則（JH-2025-001×5、EM-2026-004×5）draft→verified 寫入 `quotes_index.json` 且可上牆；未拿掉、未編造替換句
 - `quotes_index` 61→71；牆 57→67 則／13→14 場。JH-2025-001 另保留既有 KQ×1（共 6）；EM-2026-004 = 5
-- 未改 Executive English／Keynote／PR #6
+- 本 PR 未改 `executive-english.html`／Keynote
 
 ## 2026-09-12（每日挑戰連續天數跨裝置同步：匯出/匯入代碼）
 
