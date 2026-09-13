@@ -1,0 +1,984 @@
+{
+  "speeches": [
+    {
+      "id": "JH-2026-005",
+      "speaker": "jensen_huang",
+      "event": "GTC Taipei 2026 Keynote",
+      "date": "2026-06-01",
+      "type": "keynote",
+      "duration_minutes": 75,
+      "location": "Taipei, Taiwan",
+      "topics": [
+        "agentic AI",
+        "Vera Rubin",
+        "AI next generation"
+      ],
+      "product_tags": [
+        "keynote",
+        "Taiwan",
+        "home",
+        "agentic AI"
+      ],
+      "transcript_url": "https://singjupost.com/nvidia-gtc-taipei-2026-keynote-w-ceo-jensen-huang-transcript/",
+      "video_url": "https://www.nvidia.com/en-us/on-demand/session/gtctaipei26-stw61044/",
+      "special_significance": "homecoming",
+      "viral_status": null,
+      "word_count_estimate": 11000,
+      "transcript_status": "full",
+      "quotes": [
+        {
+          "speech_id": "JH-2026-005",
+          "speaker": "jh",
+          "event": "GTC Taipei 2026 Keynote",
+          "date": "2026-06-01",
+          "quote": "And today we can say that agentic AI has arrived, that useful AI has arrived.",
+          "quote_zh": "今天我們可以說，agentic AI 已經到來，有用的 AI 已經到來。",
+          "why_notable_zh": "台北場對 agentic 時代的正式宣示",
+          "source_url": "https://singjupost.com/nvidia-gtc-taipei-2026-keynote-w-ceo-jensen-huang-transcript/",
+          "status": "verified"
+        },
+        {
+          "speech_id": "JH-2026-005",
+          "speaker": "jh",
+          "event": "GTC Taipei 2026 Keynote",
+          "date": "2026-06-01",
+          "quote": "I said it's exactly the opposite. Because there are going to be so many agents, the world is no longer limited by the number of people. Therefore, those agents are going to use more tools than ever.",
+          "quote_zh": "我說情況正好相反。因為會有那麼多代理人，世界不再受限於人數，那些代理人會使用比以往更多的工具。",
+          "why_notable_zh": "反駁「軟體公司將消失」的核心論證",
+          "source_url": "https://singjupost.com/nvidia-gtc-taipei-2026-keynote-w-ceo-jensen-huang-transcript/",
+          "status": "verified"
+        },
+        {
+          "speech_id": "JH-2026-005",
+          "speaker": "jh",
+          "event": "GTC Taipei 2026 Keynote",
+          "date": "2026-06-01",
+          "quote": "This is the agent. It is the ultimate disaggregated and distributed computing model.",
+          "quote_zh": "這就是代理人。它是終極的分解式與分散式運算模型。",
+          "why_notable_zh": "把 agent 定義成資料中心級運算型態",
+          "source_url": "https://singjupost.com/nvidia-gtc-taipei-2026-keynote-w-ceo-jensen-huang-transcript/",
+          "status": "verified"
+        },
+        {
+          "speech_id": "JH-2026-005",
+          "speaker": "jh",
+          "event": "GTC Taipei 2026 Keynote",
+          "date": "2026-06-01",
+          "quote": "Second, because our throughput per watt, our tokens per watt is utterly world class.",
+          "quote_zh": "第二，因為我們的每瓦吞吐、每瓦 token 產出絕對是世界級。",
+          "why_notable_zh": "能源效率指標成為產品賣點",
+          "source_url": "https://singjupost.com/nvidia-gtc-taipei-2026-keynote-w-ceo-jensen-huang-transcript/",
+          "status": "verified"
+        },
+        {
+          "speech_id": "JH-2026-005",
+          "speaker": "jh",
+          "event": "GTC Taipei 2026 Keynote",
+          "date": "2026-06-01",
+          "quote": "A round of applause for math. Math is beautiful.",
+          "quote_zh": "為數學鼓個掌。數學很美。",
+          "why_notable_zh": "演講風格標記，銜接 Vera Rubin 段落",
+          "source_url": "https://singjupost.com/nvidia-gtc-taipei-2026-keynote-w-ceo-jensen-huang-transcript/",
+          "status": "verified"
+        },
+        {
+          "quote_id": "JH-2026-005-kq-1",
+          "speech_id": "JH-2026-005",
+          "speaker": "jh",
+          "event": "GTC Taipei 2026 Keynote",
+          "date": "2026-06-01",
+          "quote": "Very good to be home",
+          "quote_zh": "很高興回到家。",
+          "why_notable_zh": "台北場「回家」情感金句，品牌與在地連結。",
+          "source_url": "https://singjupost.com/nvidia-gtc-taipei-2026-keynote-w-ceo-jensen-huang-transcript/",
+          "status": "verified",
+          "migrated_from": "speeches_database.key_quotes",
+          "draft_note": "zh_translated_by_core"
+        }
+      ]
+    },
+    {
+      "id": "JH-2026-002",
+      "speaker": "jensen_huang",
+      "event": "Cisco AI Summit 2026",
+      "date": "2026-02-07",
+      "type": "interview",
+      "duration_minutes": 45,
+      "location": "",
+      "topics": [
+        "implicit computing",
+        "AI factories",
+        "economics"
+      ],
+      "product_tags": [
+        "interview",
+        "enterprise",
+        "economics"
+      ],
+      "transcript_url": "https://singjupost.com/transcript-jensen-huangs-interview-cisco-ai-summit-2026/",
+      "video_url": "",
+      "special_significance": null,
+      "viral_status": null,
+      "word_count_estimate": 6000,
+      "transcript_status": "full",
+      "quotes": [
+        {
+          "speech_id": "JH-2026-002",
+          "speaker": "jh",
+          "event": "Cisco AI Summit 2026",
+          "date": "2026-02-07",
+          "quote": "So first of all, remember, we're reinventing computing for the first time in 60 years.",
+          "quote_zh": "首先請記住，我們正在六十年來首次重造運算。",
+          "why_notable_zh": "Cisco 場開宗明義的時代定位",
+          "source_url": "https://singjupost.com/transcript-jensen-huangs-interview-cisco-ai-summit-2026/",
+          "status": "verified"
+        },
+        {
+          "speech_id": "JH-2026-002",
+          "speaker": "jh",
+          "event": "Cisco AI Summit 2026",
+          "date": "2026-02-07",
+          "quote": "You now tell the computer what your intent is and it goes off and it figures out how to solve your problem.",
+          "quote_zh": "你現在告訴電腦你的意圖，它就會自己去想辦法解決問題。",
+          "why_notable_zh": "隱性編程的白話定義",
+          "source_url": "https://singjupost.com/transcript-jensen-huangs-interview-cisco-ai-summit-2026/",
+          "status": "verified"
+        },
+        {
+          "speech_id": "JH-2026-002",
+          "speaker": "jh",
+          "event": "Cisco AI Summit 2026",
+          "date": "2026-02-07",
+          "quote": "But the most important part of AI is applications.",
+          "quote_zh": "但 AI 最重要的部分是應用。",
+          "why_notable_zh": "五層蛋糕的收束句",
+          "source_url": "https://singjupost.com/transcript-jensen-huangs-interview-cisco-ai-summit-2026/",
+          "status": "verified"
+        },
+        {
+          "speech_id": "JH-2026-002",
+          "speaker": "jh",
+          "event": "Cisco AI Summit 2026",
+          "date": "2026-02-07",
+          "quote": "You're not going to lose your job to AI. You're going to lose your job to someone who uses AI.",
+          "quote_zh": "你不會被 AI 搶走工作。你會被會用 AI 的人搶走工作。",
+          "why_notable_zh": "企業聽眾最常被引用的行動句",
+          "source_url": "https://singjupost.com/transcript-jensen-huangs-interview-cisco-ai-summit-2026/",
+          "status": "verified"
+        },
+        {
+          "speech_id": "JH-2026-002",
+          "speaker": "jh",
+          "event": "Cisco AI Summit 2026",
+          "date": "2026-02-07",
+          "quote": "For the very first time, we are exposed to a TAM that is 100 times larger, literally, mathematically true.",
+          "quote_zh": "我們第一次暴露在大一百倍的 TAM 面前，字面意義上、數學上為真。",
+          "why_notable_zh": "IT 兆級 vs 全球經濟百兆的擴張論",
+          "source_url": "https://singjupost.com/transcript-jensen-huangs-interview-cisco-ai-summit-2026/",
+          "status": "verified"
+        }
+      ]
+    },
+    {
+      "id": "EM-2026-006",
+      "speaker": "elon_musk",
+      "event": "The Economist Interview",
+      "date": "2026-07-23",
+      "type": "interview",
+      "duration_minutes": 90,
+      "location": "",
+      "topics": [
+        "AI risks",
+        "abundance",
+        "humanity future",
+        "2036 world"
+      ],
+      "product_tags": [
+        "interview",
+        "Economist",
+        "future",
+        "risks"
+      ],
+      "transcript_url": "https://sozai.app/transcript/elon-musk-economist-interview-2026/",
+      "video_url": "",
+      "special_significance": null,
+      "viral_status": "high",
+      "word_count_estimate": 14000,
+      "transcript_status": "full",
+      "quotes": [
+        {
+          "speech_id": "EM-2026-006",
+          "speaker": "em",
+          "event": "The Economist Interview",
+          "date": "2026-07-23",
+          "quote": "The most likely outcome is an age of amazing abundance where anyone can have anything they can think of.",
+          "quote_zh": "最可能的結果是一個驚人豐裕的時代，任何人都能擁有他們想得到的一切。",
+          "why_notable_zh": "Abundance 主軸句",
+          "source_url": "https://sozai.app/transcript/elon-musk-economist-interview-2026/",
+          "status": "verified"
+        },
+        {
+          "speech_id": "EM-2026-006",
+          "speaker": "em",
+          "event": "The Economist Interview",
+          "date": "2026-07-23",
+          "quote": "And if you have vast numbers of robots with vast amounts of digital intelligence, you have a sort of a quasi-infinite economy.",
+          "quote_zh": "若你有大量機器人與大量數位智慧，你就有某種準無限經濟。",
+          "why_notable_zh": "準無限經濟命名",
+          "source_url": "https://sozai.app/transcript/elon-musk-economist-interview-2026/",
+          "status": "verified"
+        },
+        {
+          "speech_id": "EM-2026-006",
+          "speaker": "em",
+          "event": "The Economist Interview",
+          "date": "2026-07-23",
+          "quote": "What my biological neural net tells me is that the most important thing for AI safety is to be maximally truth-seeking and curious.",
+          "quote_zh": "我的生物神經網路告訴我，AI 安全最重要的是最大限度求真且保持好奇。",
+          "why_notable_zh": "安全對齊原則",
+          "source_url": "https://sozai.app/transcript/elon-musk-economist-interview-2026/",
+          "status": "verified"
+        },
+        {
+          "speech_id": "EM-2026-006",
+          "speaker": "em",
+          "event": "The Economist Interview",
+          "date": "2026-07-23",
+          "quote": "I think work is going to be optional.",
+          "quote_zh": "我認為工作將會變成可選的。",
+          "why_notable_zh": "Optional Work 原句",
+          "source_url": "https://sozai.app/transcript/elon-musk-economist-interview-2026/",
+          "status": "verified"
+        },
+        {
+          "speech_id": "EM-2026-006",
+          "speaker": "em",
+          "event": "The Economist Interview",
+          "date": "2026-07-23",
+          "quote": "I've gone from exhilaration to terror regarding AI.",
+          "quote_zh": "關於 AI，我從興奮轉到恐懼。",
+          "why_notable_zh": "情緒張力金句（非政治）",
+          "source_url": "https://sozai.app/transcript/elon-musk-economist-interview-2026/",
+          "status": "verified"
+        },
+        {
+          "quote_id": "EM-2026-006-kq-1",
+          "speech_id": "EM-2026-006",
+          "speaker": "em",
+          "event": "The Economist Interview",
+          "date": "2026-07-23",
+          "quote": "Let's enjoy the ride",
+          "quote_zh": "讓我們好好享受這趟旅程。",
+          "why_notable_zh": "Economist 訪談收束語，樂觀而可引用。",
+          "source_url": "https://sozai.app/transcript/elon-musk-economist-interview-2026/",
+          "status": "verified",
+          "migrated_from": "speeches_database.key_quotes",
+          "draft_note": "zh_translated_by_core"
+        }
+      ]
+    },
+    {
+      "id": "EM-2026-001",
+      "speaker": "elon_musk",
+      "event": "Moonshots Podcast #220",
+      "date": "2026-01-06",
+      "type": "interview",
+      "duration_minutes": 90,
+      "location": "Tesla Gigafactory",
+      "topics": [
+        "AGI timeline",
+        "US vs China",
+        "humanoid robots",
+        "clean energy",
+        "compute"
+      ],
+      "product_tags": [
+        "interview",
+        "AGI",
+        "future",
+        "abundance"
+      ],
+      "transcript_url": "https://singjupost.com/moonshots-220-w-elon-musk-on-agi-abundance-and-the-future-of-humanity-transcript/",
+      "video_url": "",
+      "special_significance": null,
+      "viral_status": null,
+      "word_count_estimate": 15000,
+      "transcript_status": "full",
+      "quotes": [
+        {
+          "speech_id": "EM-2026-001",
+          "speaker": "em",
+          "event": "Moonshots Podcast #220",
+          "date": "2026-01-06",
+          "quote": "Yeah. I think the future currency will essentially just be wattage.",
+          "quote_zh": "對。我認為未來的貨幣本質上就是瓦數。",
+          "why_notable_zh": "能源＝貨幣的濃縮句",
+          "source_url": "https://singjupost.com/moonshots-220-w-elon-musk-on-agi-abundance-and-the-future-of-humanity-transcript/",
+          "status": "verified"
+        },
+        {
+          "speech_id": "EM-2026-001",
+          "speaker": "em",
+          "event": "Moonshots Podcast #220",
+          "date": "2026-01-06",
+          "quote": "AI and robots. The limit will saturate all human desire.",
+          "quote_zh": "AI 與機器人。極限將飽和所有人類慾望。",
+          "why_notable_zh": "豐裕論的極端表述",
+          "source_url": "https://singjupost.com/moonshots-220-w-elon-musk-on-agi-abundance-and-the-future-of-humanity-transcript/",
+          "status": "verified"
+        },
+        {
+          "speech_id": "EM-2026-001",
+          "speaker": "em",
+          "event": "Moonshots Podcast #220",
+          "date": "2026-01-06",
+          "quote": "Why not both? Or we don't want—universal high income and social unrest. That's my prediction.",
+          "quote_zh": "何不兩者都要？或者我們不想要——普遍高收入與社會動盪。那是我的預測。",
+          "why_notable_zh": "對樂觀提問的不對稱回答",
+          "source_url": "https://singjupost.com/moonshots-220-w-elon-musk-on-agi-abundance-and-the-future-of-humanity-transcript/",
+          "status": "verified"
+        },
+        {
+          "speech_id": "EM-2026-001",
+          "speaker": "em",
+          "event": "Moonshots Podcast #220",
+          "date": "2026-01-06",
+          "quote": "Cortex 1 was the third largest training cluster in the world. ... Well, we have Cortex 2 that's being built out. That'll be half a gigawatt and operational middle of next year, everybody.",
+          "quote_zh": "Cortex 1 曾是全球第三大訓練集群……我們正在建 Cortex 2，大約半吉瓦，明年中運作。",
+          "why_notable_zh": "訓練集群規模與電力數字",
+          "source_url": "https://singjupost.com/moonshots-220-w-elon-musk-on-agi-abundance-and-the-future-of-humanity-transcript/",
+          "status": "verified"
+        }
+      ]
+    },
+    {
+      "id": "SA-2026-003",
+      "speaker": "sam_altman",
+      "event": "CNBC Squawk on the Street",
+      "date": "2026-07-09",
+      "type": "interview",
+      "duration_minutes": 30,
+      "location": "",
+      "topics": [
+        "GPT-5.6 Sol",
+        "efficiency",
+        "ROI"
+      ],
+      "product_tags": [
+        "interview",
+        "CNBC",
+        "models"
+      ],
+      "transcript_url": "https://www.cnbc.com/2026/07/09/cnbc-exclusive-transcript-openai-ceo-sam-altman-speaks-with-cnbcs-julia-boorstin-on-squawk-on-the-street-today.html",
+      "video_url": "",
+      "special_significance": null,
+      "viral_status": null,
+      "word_count_estimate": 4500,
+      "transcript_status": "full",
+      "quotes": [
+        {
+          "speech_id": "SA-2026-003",
+          "speaker": "sa",
+          "event": "CNBC Squawk on the Street",
+          "date": "2026-07-09",
+          "quote": "So, it's 54 percent more token efficient on agentic coding tasks and also, you know, as good or better as the other best models out there.",
+          "quote_zh": "因此在智能體編程任務上 token 效率高 54%，而且能力也與其他最佳模型一樣好或更好。",
+          "why_notable_zh": "產品效率數字主打",
+          "source_url": "https://www.cnbc.com/2026/07/09/cnbc-exclusive-transcript-openai-ceo-sam-altman-speaks-with-cnbcs-julia-boorstin-on-squawk-on-the-street-today.html",
+          "status": "verified"
+        },
+        {
+          "speech_id": "SA-2026-003",
+          "speaker": "sa",
+          "event": "CNBC Squawk on the Street",
+          "date": "2026-07-09",
+          "quote": "It's definitely a headwind. There's no way around that. It means we have to be even smarter and deliver more algorithmic gains to combat the upward infrastructure costs and still have a declining price to the customer.",
+          "quote_zh": "這絕對是逆風，無法迴避。意味我們必須更聰明，用更多演算法增益對抗上升的基礎設施成本，同時仍讓客戶價格下降。",
+          "why_notable_zh": "成本結構誠實表述",
+          "source_url": "https://www.cnbc.com/2026/07/09/cnbc-exclusive-transcript-openai-ceo-sam-altman-speaks-with-cnbcs-julia-boorstin-on-squawk-on-the-street-today.html",
+          "status": "verified"
+        },
+        {
+          "speech_id": "SA-2026-003",
+          "speaker": "sa",
+          "event": "CNBC Squawk on the Street",
+          "date": "2026-07-09",
+          "quote": "So, I think for broad adoption, getting well-understood safety at the level of when you get on an airplane, it's not going to crash. I think that's important.",
+          "quote_zh": "我認為要大規模普及，安全必須達到你登上飛機時那種被充分理解的程度——它不會墜毀。這很重要。",
+          "why_notable_zh": "民航安全比喻",
+          "source_url": "https://www.cnbc.com/2026/07/09/cnbc-exclusive-transcript-openai-ceo-sam-altman-speaks-with-cnbcs-julia-boorstin-on-squawk-on-the-street-today.html",
+          "status": "verified"
+        },
+        {
+          "speech_id": "SA-2026-003",
+          "speaker": "sa",
+          "event": "CNBC Squawk on the Street",
+          "date": "2026-07-09",
+          "quote": "The Chinese open-source models are getting very good. I think that's fine. But I also think we will continue to have the best models in the world and people really want the best models in the world.",
+          "quote_zh": "中國開源模型愈來愈強。我覺得沒問題。但我也認為我們會繼續擁有全球最佳模型，而人們確實想要最佳模型。",
+          "why_notable_zh": "競爭格局表態（避開黨派）",
+          "source_url": "https://www.cnbc.com/2026/07/09/cnbc-exclusive-transcript-openai-ceo-sam-altman-speaks-with-cnbcs-julia-boorstin-on-squawk-on-the-street-today.html",
+          "status": "verified"
+        },
+        {
+          "speech_id": "SA-2026-003",
+          "speaker": "sa",
+          "event": "CNBC Squawk on the Street",
+          "date": "2026-07-09",
+          "quote": "If you want broad access, which we do, and you have powerful models, you really want to be able to be confident in your safety claims, because otherwise the world is going to get uncomfortable very fast.",
+          "quote_zh": "若你想要廣泛取得（我們也想），又擁有強大模型，你就必須對安全主張有信心，否則世界會很快感到不安。",
+          "why_notable_zh": "安全與普及的連動",
+          "source_url": "https://www.cnbc.com/2026/07/09/cnbc-exclusive-transcript-openai-ceo-sam-altman-speaks-with-cnbcs-julia-boorstin-on-squawk-on-the-street-today.html",
+          "status": "verified"
+        }
+      ]
+    },
+    {
+      "id": "SP-2026-001",
+      "speaker": "sundar_pichai",
+      "event": "AI Impact Summit 2026 - Opening Ceremony",
+      "date": "2026-02-19",
+      "type": "keynote",
+      "duration_minutes": 30,
+      "location": "",
+      "topics": [
+        "responsible AI",
+        "inclusive AI"
+      ],
+      "product_tags": [
+        "keynote",
+        "responsible AI",
+        "summit",
+        "policy"
+      ],
+      "transcript_url": "https://blog.google/company-news/inside-google/message-ceo/sundar-pichai-ai-impact-summit-2026/",
+      "video_url": "https://www.youtube.com/watch?v=hUwGHyoEYgY",
+      "special_significance": null,
+      "viral_status": null,
+      "word_count_estimate": 4500,
+      "transcript_status": "full",
+      "quotes": [
+        {
+          "speech_id": "SP-2026-001",
+          "speaker": "sp",
+          "event": "AI Impact Summit 2026",
+          "date": "2026-02-19",
+          "quote": "And no technology has me dreaming bigger than AI.",
+          "quote_zh": "沒有任何科技比 AI 更讓我夢想遠大。",
+          "why_notable_zh": "官方標題句／演說高潮",
+          "source_url": "https://blog.google/company-news/inside-google/message-ceo/sundar-pichai-ai-impact-summit-2026/",
+          "status": "verified"
+        },
+        {
+          "speech_id": "SP-2026-001",
+          "speaker": "sp",
+          "event": "AI Impact Summit 2026",
+          "date": "2026-02-19",
+          "quote": "It is the biggest platform shift of our lifetimes.",
+          "quote_zh": "這是我們一生中最大的平台轉移。",
+          "why_notable_zh": "世代定位用語",
+          "source_url": "https://blog.google/company-news/inside-google/message-ceo/sundar-pichai-ai-impact-summit-2026/",
+          "status": "verified"
+        },
+        {
+          "speech_id": "SP-2026-001",
+          "speaker": "sp",
+          "event": "AI Impact Summit 2026",
+          "date": "2026-02-19",
+          "quote": "We are on the cusp of hyperprogress and new discoveries that can help emerging economies leapfrog legacy gaps.",
+          "quote_zh": "我們正站在超速進展與新發現的臨界點，可幫助新興經濟體躍過舊有落差。",
+          "why_notable_zh": "Hyperprogress 造詞出處",
+          "source_url": "https://blog.google/company-news/inside-google/message-ceo/sundar-pichai-ai-impact-summit-2026/",
+          "status": "verified"
+        },
+        {
+          "speech_id": "SP-2026-001",
+          "speaker": "sp",
+          "event": "AI Impact Summit 2026",
+          "date": "2026-02-19",
+          "quote": "We cannot allow the digital divide to become an AI divide.",
+          "quote_zh": "我們不能讓數位落差變成 AI 落差。",
+          "why_notable_zh": "公平／基礎建設段落金句",
+          "source_url": "https://blog.google/company-news/inside-google/message-ceo/sundar-pichai-ai-impact-summit-2026/",
+          "status": "verified"
+        },
+        {
+          "speech_id": "SP-2026-001",
+          "speaker": "sp",
+          "event": "AI Impact Summit 2026",
+          "date": "2026-02-19",
+          "quote": "To build AI that is truly helpful for everyone, we must pursue it boldly, approach it responsibly and work through this defining moment together.",
+          "quote_zh": "要打造真正對人人有幫助的 AI，我們必須大膽追求、負責任地推進，並共同走過這個關鍵時刻。",
+          "why_notable_zh": "整場演說三段結構（bold/responsible/together）的總綱",
+          "source_url": "https://blog.google/company-news/inside-google/message-ceo/sundar-pichai-ai-impact-summit-2026/",
+          "status": "verified"
+        }
+      ]
+    },
+    {
+      "id": "SP-2025-001",
+      "speaker": "sundar_pichai",
+      "event": "Bloomberg Tech Summit",
+      "date": "2025-06-05",
+      "type": "interview",
+      "duration_minutes": 60,
+      "location": "",
+      "topics": [
+        "AI future",
+        "antitrust",
+        "privacy"
+      ],
+      "product_tags": [
+        "interview",
+        "Bloomberg",
+        "policy",
+        "privacy"
+      ],
+      "transcript_url": "https://singjupost.com/transcript-of-sundar-pichai-on-future-of-ai-antitrust-and-privacy/",
+      "video_url": "",
+      "special_significance": null,
+      "viral_status": null,
+      "word_count_estimate": 9000,
+      "transcript_status": "full",
+      "quotes": [
+        {
+          "speech_id": "SP-2025-001",
+          "speaker": "sp",
+          "event": "Bloomberg Tech Summit",
+          "date": "2025-06-05",
+          "quote": "I think 2.5 was a real breakthrough in terms of capabilities and it's at the frontier of where the models are.",
+          "quote_zh": "我認為 2.5 在能力上是真正的突破，已處於模型前沿。",
+          "why_notable_zh": "Gemini 產品敘事錨點",
+          "source_url": "https://singjupost.com/transcript-of-sundar-pichai-on-future-of-ai-antitrust-and-privacy/",
+          "status": "verified"
+        },
+        {
+          "speech_id": "SP-2025-001",
+          "speaker": "sp",
+          "event": "Bloomberg Tech Summit",
+          "date": "2025-06-05",
+          "quote": "I do think we are going to evolve new norms around this.",
+          "quote_zh": "我確實認為我們會圍繞這件事演化出新常規。",
+          "why_notable_zh": "深偽／浮水印與社會規範",
+          "source_url": "https://singjupost.com/transcript-of-sundar-pichai-on-future-of-ai-antitrust-and-privacy/",
+          "status": "verified"
+        },
+        {
+          "speech_id": "SP-2025-001",
+          "speaker": "sp",
+          "event": "Bloomberg Tech Summit",
+          "date": "2025-06-05",
+          "quote": "Separating, finding the needle in the haystack, making sure you surface the higher quality content.",
+          "quote_zh": "區分、在大海裡撈針，並確保浮現更高品質的內容。",
+          "why_notable_zh": "搜尋 DNA 對 AI 生成時代的再詮釋",
+          "source_url": "https://singjupost.com/transcript-of-sundar-pichai-on-future-of-ai-antitrust-and-privacy/",
+          "status": "verified"
+        },
+        {
+          "speech_id": "SP-2025-001",
+          "speaker": "sp",
+          "event": "Bloomberg Tech Summit",
+          "date": "2025-06-05",
+          "quote": "Look, I mean, I expect in this moment to be. There'll be a lot of innovation, right?",
+          "quote_zh": "我預期在這個時刻本來就會如此。會有很多創新，對吧？",
+          "why_notable_zh": "面對競爭仍強調創新週期的語氣",
+          "source_url": "https://singjupost.com/transcript-of-sundar-pichai-on-future-of-ai-antitrust-and-privacy/",
+          "status": "verified"
+        }
+      ]
+    }
+  ],
+  "quotes_wall": [
+    {
+      "speech_id": "JH-2026-005",
+      "speaker": "jh",
+      "event": "GTC Taipei 2026 Keynote",
+      "date": "2026-06-01",
+      "quote": "And today we can say that agentic AI has arrived, that useful AI has arrived.",
+      "quote_zh": "今天我們可以說，agentic AI 已經到來，有用的 AI 已經到來。",
+      "why_notable_zh": "台北場對 agentic 時代的正式宣示",
+      "source_url": "https://singjupost.com/nvidia-gtc-taipei-2026-keynote-w-ceo-jensen-huang-transcript/",
+      "status": "verified"
+    },
+    {
+      "speech_id": "JH-2026-005",
+      "speaker": "jh",
+      "event": "GTC Taipei 2026 Keynote",
+      "date": "2026-06-01",
+      "quote": "I said it's exactly the opposite. Because there are going to be so many agents, the world is no longer limited by the number of people. Therefore, those agents are going to use more tools than ever.",
+      "quote_zh": "我說情況正好相反。因為會有那麼多代理人，世界不再受限於人數，那些代理人會使用比以往更多的工具。",
+      "why_notable_zh": "反駁「軟體公司將消失」的核心論證",
+      "source_url": "https://singjupost.com/nvidia-gtc-taipei-2026-keynote-w-ceo-jensen-huang-transcript/",
+      "status": "verified"
+    },
+    {
+      "speech_id": "JH-2026-005",
+      "speaker": "jh",
+      "event": "GTC Taipei 2026 Keynote",
+      "date": "2026-06-01",
+      "quote": "This is the agent. It is the ultimate disaggregated and distributed computing model.",
+      "quote_zh": "這就是代理人。它是終極的分解式與分散式運算模型。",
+      "why_notable_zh": "把 agent 定義成資料中心級運算型態",
+      "source_url": "https://singjupost.com/nvidia-gtc-taipei-2026-keynote-w-ceo-jensen-huang-transcript/",
+      "status": "verified"
+    },
+    {
+      "speech_id": "JH-2026-005",
+      "speaker": "jh",
+      "event": "GTC Taipei 2026 Keynote",
+      "date": "2026-06-01",
+      "quote": "Second, because our throughput per watt, our tokens per watt is utterly world class.",
+      "quote_zh": "第二，因為我們的每瓦吞吐、每瓦 token 產出絕對是世界級。",
+      "why_notable_zh": "能源效率指標成為產品賣點",
+      "source_url": "https://singjupost.com/nvidia-gtc-taipei-2026-keynote-w-ceo-jensen-huang-transcript/",
+      "status": "verified"
+    },
+    {
+      "speech_id": "JH-2026-005",
+      "speaker": "jh",
+      "event": "GTC Taipei 2026 Keynote",
+      "date": "2026-06-01",
+      "quote": "A round of applause for math. Math is beautiful.",
+      "quote_zh": "為數學鼓個掌。數學很美。",
+      "why_notable_zh": "演講風格標記，銜接 Vera Rubin 段落",
+      "source_url": "https://singjupost.com/nvidia-gtc-taipei-2026-keynote-w-ceo-jensen-huang-transcript/",
+      "status": "verified"
+    },
+    {
+      "quote_id": "JH-2026-005-kq-1",
+      "speech_id": "JH-2026-005",
+      "speaker": "jh",
+      "event": "GTC Taipei 2026 Keynote",
+      "date": "2026-06-01",
+      "quote": "Very good to be home",
+      "quote_zh": "很高興回到家。",
+      "why_notable_zh": "台北場「回家」情感金句，品牌與在地連結。",
+      "source_url": "https://singjupost.com/nvidia-gtc-taipei-2026-keynote-w-ceo-jensen-huang-transcript/",
+      "status": "verified",
+      "migrated_from": "speeches_database.key_quotes",
+      "draft_note": "zh_translated_by_core"
+    },
+    {
+      "speech_id": "JH-2026-002",
+      "speaker": "jh",
+      "event": "Cisco AI Summit 2026",
+      "date": "2026-02-07",
+      "quote": "So first of all, remember, we're reinventing computing for the first time in 60 years.",
+      "quote_zh": "首先請記住，我們正在六十年來首次重造運算。",
+      "why_notable_zh": "Cisco 場開宗明義的時代定位",
+      "source_url": "https://singjupost.com/transcript-jensen-huangs-interview-cisco-ai-summit-2026/",
+      "status": "verified"
+    },
+    {
+      "speech_id": "JH-2026-002",
+      "speaker": "jh",
+      "event": "Cisco AI Summit 2026",
+      "date": "2026-02-07",
+      "quote": "You now tell the computer what your intent is and it goes off and it figures out how to solve your problem.",
+      "quote_zh": "你現在告訴電腦你的意圖，它就會自己去想辦法解決問題。",
+      "why_notable_zh": "隱性編程的白話定義",
+      "source_url": "https://singjupost.com/transcript-jensen-huangs-interview-cisco-ai-summit-2026/",
+      "status": "verified"
+    },
+    {
+      "speech_id": "JH-2026-002",
+      "speaker": "jh",
+      "event": "Cisco AI Summit 2026",
+      "date": "2026-02-07",
+      "quote": "But the most important part of AI is applications.",
+      "quote_zh": "但 AI 最重要的部分是應用。",
+      "why_notable_zh": "五層蛋糕的收束句",
+      "source_url": "https://singjupost.com/transcript-jensen-huangs-interview-cisco-ai-summit-2026/",
+      "status": "verified"
+    },
+    {
+      "speech_id": "JH-2026-002",
+      "speaker": "jh",
+      "event": "Cisco AI Summit 2026",
+      "date": "2026-02-07",
+      "quote": "You're not going to lose your job to AI. You're going to lose your job to someone who uses AI.",
+      "quote_zh": "你不會被 AI 搶走工作。你會被會用 AI 的人搶走工作。",
+      "why_notable_zh": "企業聽眾最常被引用的行動句",
+      "source_url": "https://singjupost.com/transcript-jensen-huangs-interview-cisco-ai-summit-2026/",
+      "status": "verified"
+    },
+    {
+      "speech_id": "JH-2026-002",
+      "speaker": "jh",
+      "event": "Cisco AI Summit 2026",
+      "date": "2026-02-07",
+      "quote": "For the very first time, we are exposed to a TAM that is 100 times larger, literally, mathematically true.",
+      "quote_zh": "我們第一次暴露在大一百倍的 TAM 面前，字面意義上、數學上為真。",
+      "why_notable_zh": "IT 兆級 vs 全球經濟百兆的擴張論",
+      "source_url": "https://singjupost.com/transcript-jensen-huangs-interview-cisco-ai-summit-2026/",
+      "status": "verified"
+    },
+    {
+      "speech_id": "EM-2026-006",
+      "speaker": "em",
+      "event": "The Economist Interview",
+      "date": "2026-07-23",
+      "quote": "The most likely outcome is an age of amazing abundance where anyone can have anything they can think of.",
+      "quote_zh": "最可能的結果是一個驚人豐裕的時代，任何人都能擁有他們想得到的一切。",
+      "why_notable_zh": "Abundance 主軸句",
+      "source_url": "https://sozai.app/transcript/elon-musk-economist-interview-2026/",
+      "status": "verified"
+    },
+    {
+      "speech_id": "EM-2026-006",
+      "speaker": "em",
+      "event": "The Economist Interview",
+      "date": "2026-07-23",
+      "quote": "And if you have vast numbers of robots with vast amounts of digital intelligence, you have a sort of a quasi-infinite economy.",
+      "quote_zh": "若你有大量機器人與大量數位智慧，你就有某種準無限經濟。",
+      "why_notable_zh": "準無限經濟命名",
+      "source_url": "https://sozai.app/transcript/elon-musk-economist-interview-2026/",
+      "status": "verified"
+    },
+    {
+      "speech_id": "EM-2026-006",
+      "speaker": "em",
+      "event": "The Economist Interview",
+      "date": "2026-07-23",
+      "quote": "What my biological neural net tells me is that the most important thing for AI safety is to be maximally truth-seeking and curious.",
+      "quote_zh": "我的生物神經網路告訴我，AI 安全最重要的是最大限度求真且保持好奇。",
+      "why_notable_zh": "安全對齊原則",
+      "source_url": "https://sozai.app/transcript/elon-musk-economist-interview-2026/",
+      "status": "verified"
+    },
+    {
+      "speech_id": "EM-2026-006",
+      "speaker": "em",
+      "event": "The Economist Interview",
+      "date": "2026-07-23",
+      "quote": "I think work is going to be optional.",
+      "quote_zh": "我認為工作將會變成可選的。",
+      "why_notable_zh": "Optional Work 原句",
+      "source_url": "https://sozai.app/transcript/elon-musk-economist-interview-2026/",
+      "status": "verified"
+    },
+    {
+      "speech_id": "EM-2026-006",
+      "speaker": "em",
+      "event": "The Economist Interview",
+      "date": "2026-07-23",
+      "quote": "I've gone from exhilaration to terror regarding AI.",
+      "quote_zh": "關於 AI，我從興奮轉到恐懼。",
+      "why_notable_zh": "情緒張力金句（非政治）",
+      "source_url": "https://sozai.app/transcript/elon-musk-economist-interview-2026/",
+      "status": "verified"
+    },
+    {
+      "quote_id": "EM-2026-006-kq-1",
+      "speech_id": "EM-2026-006",
+      "speaker": "em",
+      "event": "The Economist Interview",
+      "date": "2026-07-23",
+      "quote": "Let's enjoy the ride",
+      "quote_zh": "讓我們好好享受這趟旅程。",
+      "why_notable_zh": "Economist 訪談收束語，樂觀而可引用。",
+      "source_url": "https://sozai.app/transcript/elon-musk-economist-interview-2026/",
+      "status": "verified",
+      "migrated_from": "speeches_database.key_quotes",
+      "draft_note": "zh_translated_by_core"
+    },
+    {
+      "speech_id": "EM-2026-001",
+      "speaker": "em",
+      "event": "Moonshots Podcast #220",
+      "date": "2026-01-06",
+      "quote": "Yeah. I think the future currency will essentially just be wattage.",
+      "quote_zh": "對。我認為未來的貨幣本質上就是瓦數。",
+      "why_notable_zh": "能源＝貨幣的濃縮句",
+      "source_url": "https://singjupost.com/moonshots-220-w-elon-musk-on-agi-abundance-and-the-future-of-humanity-transcript/",
+      "status": "verified"
+    },
+    {
+      "speech_id": "EM-2026-001",
+      "speaker": "em",
+      "event": "Moonshots Podcast #220",
+      "date": "2026-01-06",
+      "quote": "AI and robots. The limit will saturate all human desire.",
+      "quote_zh": "AI 與機器人。極限將飽和所有人類慾望。",
+      "why_notable_zh": "豐裕論的極端表述",
+      "source_url": "https://singjupost.com/moonshots-220-w-elon-musk-on-agi-abundance-and-the-future-of-humanity-transcript/",
+      "status": "verified"
+    },
+    {
+      "speech_id": "EM-2026-001",
+      "speaker": "em",
+      "event": "Moonshots Podcast #220",
+      "date": "2026-01-06",
+      "quote": "Why not both? Or we don't want—universal high income and social unrest. That's my prediction.",
+      "quote_zh": "何不兩者都要？或者我們不想要——普遍高收入與社會動盪。那是我的預測。",
+      "why_notable_zh": "對樂觀提問的不對稱回答",
+      "source_url": "https://singjupost.com/moonshots-220-w-elon-musk-on-agi-abundance-and-the-future-of-humanity-transcript/",
+      "status": "verified"
+    },
+    {
+      "speech_id": "EM-2026-001",
+      "speaker": "em",
+      "event": "Moonshots Podcast #220",
+      "date": "2026-01-06",
+      "quote": "Cortex 1 was the third largest training cluster in the world. ... Well, we have Cortex 2 that's being built out. That'll be half a gigawatt and operational middle of next year, everybody.",
+      "quote_zh": "Cortex 1 曾是全球第三大訓練集群……我們正在建 Cortex 2，大約半吉瓦，明年中運作。",
+      "why_notable_zh": "訓練集群規模與電力數字",
+      "source_url": "https://singjupost.com/moonshots-220-w-elon-musk-on-agi-abundance-and-the-future-of-humanity-transcript/",
+      "status": "verified"
+    },
+    {
+      "speech_id": "SA-2026-003",
+      "speaker": "sa",
+      "event": "CNBC Squawk on the Street",
+      "date": "2026-07-09",
+      "quote": "So, it's 54 percent more token efficient on agentic coding tasks and also, you know, as good or better as the other best models out there.",
+      "quote_zh": "因此在智能體編程任務上 token 效率高 54%，而且能力也與其他最佳模型一樣好或更好。",
+      "why_notable_zh": "產品效率數字主打",
+      "source_url": "https://www.cnbc.com/2026/07/09/cnbc-exclusive-transcript-openai-ceo-sam-altman-speaks-with-cnbcs-julia-boorstin-on-squawk-on-the-street-today.html",
+      "status": "verified"
+    },
+    {
+      "speech_id": "SA-2026-003",
+      "speaker": "sa",
+      "event": "CNBC Squawk on the Street",
+      "date": "2026-07-09",
+      "quote": "It's definitely a headwind. There's no way around that. It means we have to be even smarter and deliver more algorithmic gains to combat the upward infrastructure costs and still have a declining price to the customer.",
+      "quote_zh": "這絕對是逆風，無法迴避。意味我們必須更聰明，用更多演算法增益對抗上升的基礎設施成本，同時仍讓客戶價格下降。",
+      "why_notable_zh": "成本結構誠實表述",
+      "source_url": "https://www.cnbc.com/2026/07/09/cnbc-exclusive-transcript-openai-ceo-sam-altman-speaks-with-cnbcs-julia-boorstin-on-squawk-on-the-street-today.html",
+      "status": "verified"
+    },
+    {
+      "speech_id": "SA-2026-003",
+      "speaker": "sa",
+      "event": "CNBC Squawk on the Street",
+      "date": "2026-07-09",
+      "quote": "So, I think for broad adoption, getting well-understood safety at the level of when you get on an airplane, it's not going to crash. I think that's important.",
+      "quote_zh": "我認為要大規模普及，安全必須達到你登上飛機時那種被充分理解的程度——它不會墜毀。這很重要。",
+      "why_notable_zh": "民航安全比喻",
+      "source_url": "https://www.cnbc.com/2026/07/09/cnbc-exclusive-transcript-openai-ceo-sam-altman-speaks-with-cnbcs-julia-boorstin-on-squawk-on-the-street-today.html",
+      "status": "verified"
+    },
+    {
+      "speech_id": "SA-2026-003",
+      "speaker": "sa",
+      "event": "CNBC Squawk on the Street",
+      "date": "2026-07-09",
+      "quote": "The Chinese open-source models are getting very good. I think that's fine. But I also think we will continue to have the best models in the world and people really want the best models in the world.",
+      "quote_zh": "中國開源模型愈來愈強。我覺得沒問題。但我也認為我們會繼續擁有全球最佳模型，而人們確實想要最佳模型。",
+      "why_notable_zh": "競爭格局表態（避開黨派）",
+      "source_url": "https://www.cnbc.com/2026/07/09/cnbc-exclusive-transcript-openai-ceo-sam-altman-speaks-with-cnbcs-julia-boorstin-on-squawk-on-the-street-today.html",
+      "status": "verified"
+    },
+    {
+      "speech_id": "SA-2026-003",
+      "speaker": "sa",
+      "event": "CNBC Squawk on the Street",
+      "date": "2026-07-09",
+      "quote": "If you want broad access, which we do, and you have powerful models, you really want to be able to be confident in your safety claims, because otherwise the world is going to get uncomfortable very fast.",
+      "quote_zh": "若你想要廣泛取得（我們也想），又擁有強大模型，你就必須對安全主張有信心，否則世界會很快感到不安。",
+      "why_notable_zh": "安全與普及的連動",
+      "source_url": "https://www.cnbc.com/2026/07/09/cnbc-exclusive-transcript-openai-ceo-sam-altman-speaks-with-cnbcs-julia-boorstin-on-squawk-on-the-street-today.html",
+      "status": "verified"
+    },
+    {
+      "speech_id": "SP-2026-001",
+      "speaker": "sp",
+      "event": "AI Impact Summit 2026",
+      "date": "2026-02-19",
+      "quote": "And no technology has me dreaming bigger than AI.",
+      "quote_zh": "沒有任何科技比 AI 更讓我夢想遠大。",
+      "why_notable_zh": "官方標題句／演說高潮",
+      "source_url": "https://blog.google/company-news/inside-google/message-ceo/sundar-pichai-ai-impact-summit-2026/",
+      "status": "verified"
+    },
+    {
+      "speech_id": "SP-2026-001",
+      "speaker": "sp",
+      "event": "AI Impact Summit 2026",
+      "date": "2026-02-19",
+      "quote": "It is the biggest platform shift of our lifetimes.",
+      "quote_zh": "這是我們一生中最大的平台轉移。",
+      "why_notable_zh": "世代定位用語",
+      "source_url": "https://blog.google/company-news/inside-google/message-ceo/sundar-pichai-ai-impact-summit-2026/",
+      "status": "verified"
+    },
+    {
+      "speech_id": "SP-2026-001",
+      "speaker": "sp",
+      "event": "AI Impact Summit 2026",
+      "date": "2026-02-19",
+      "quote": "We are on the cusp of hyperprogress and new discoveries that can help emerging economies leapfrog legacy gaps.",
+      "quote_zh": "我們正站在超速進展與新發現的臨界點，可幫助新興經濟體躍過舊有落差。",
+      "why_notable_zh": "Hyperprogress 造詞出處",
+      "source_url": "https://blog.google/company-news/inside-google/message-ceo/sundar-pichai-ai-impact-summit-2026/",
+      "status": "verified"
+    },
+    {
+      "speech_id": "SP-2026-001",
+      "speaker": "sp",
+      "event": "AI Impact Summit 2026",
+      "date": "2026-02-19",
+      "quote": "We cannot allow the digital divide to become an AI divide.",
+      "quote_zh": "我們不能讓數位落差變成 AI 落差。",
+      "why_notable_zh": "公平／基礎建設段落金句",
+      "source_url": "https://blog.google/company-news/inside-google/message-ceo/sundar-pichai-ai-impact-summit-2026/",
+      "status": "verified"
+    },
+    {
+      "speech_id": "SP-2026-001",
+      "speaker": "sp",
+      "event": "AI Impact Summit 2026",
+      "date": "2026-02-19",
+      "quote": "To build AI that is truly helpful for everyone, we must pursue it boldly, approach it responsibly and work through this defining moment together.",
+      "quote_zh": "要打造真正對人人有幫助的 AI，我們必須大膽追求、負責任地推進，並共同走過這個關鍵時刻。",
+      "why_notable_zh": "整場演說三段結構（bold/responsible/together）的總綱",
+      "source_url": "https://blog.google/company-news/inside-google/message-ceo/sundar-pichai-ai-impact-summit-2026/",
+      "status": "verified"
+    },
+    {
+      "speech_id": "SP-2025-001",
+      "speaker": "sp",
+      "event": "Bloomberg Tech Summit",
+      "date": "2025-06-05",
+      "quote": "I think 2.5 was a real breakthrough in terms of capabilities and it's at the frontier of where the models are.",
+      "quote_zh": "我認為 2.5 在能力上是真正的突破，已處於模型前沿。",
+      "why_notable_zh": "Gemini 產品敘事錨點",
+      "source_url": "https://singjupost.com/transcript-of-sundar-pichai-on-future-of-ai-antitrust-and-privacy/",
+      "status": "verified"
+    },
+    {
+      "speech_id": "SP-2025-001",
+      "speaker": "sp",
+      "event": "Bloomberg Tech Summit",
+      "date": "2025-06-05",
+      "quote": "I do think we are going to evolve new norms around this.",
+      "quote_zh": "我確實認為我們會圍繞這件事演化出新常規。",
+      "why_notable_zh": "深偽／浮水印與社會規範",
+      "source_url": "https://singjupost.com/transcript-of-sundar-pichai-on-future-of-ai-antitrust-and-privacy/",
+      "status": "verified"
+    },
+    {
+      "speech_id": "SP-2025-001",
+      "speaker": "sp",
+      "event": "Bloomberg Tech Summit",
+      "date": "2025-06-05",
+      "quote": "Separating, finding the needle in the haystack, making sure you surface the higher quality content.",
+      "quote_zh": "區分、在大海裡撈針，並確保浮現更高品質的內容。",
+      "why_notable_zh": "搜尋 DNA 對 AI 生成時代的再詮釋",
+      "source_url": "https://singjupost.com/transcript-of-sundar-pichai-on-future-of-ai-antitrust-and-privacy/",
+      "status": "verified"
+    },
+    {
+      "speech_id": "SP-2025-001",
+      "speaker": "sp",
+      "event": "Bloomberg Tech Summit",
+      "date": "2025-06-05",
+      "quote": "Look, I mean, I expect in this moment to be. There'll be a lot of innovation, right?",
+      "quote_zh": "我預期在這個時刻本來就會如此。會有很多創新，對吧？",
+      "why_notable_zh": "面對競爭仍強調創新週期的語氣",
+      "source_url": "https://singjupost.com/transcript-of-sundar-pichai-on-future-of-ai-antitrust-and-privacy/",
+      "status": "verified"
+    }
+  ]
+}

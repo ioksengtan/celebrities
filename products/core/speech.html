@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>單場演講 · celebrities</title>
+  <meta name="description" content="單場短摘要與已核實語錄，不內嵌逐字稿。">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Public+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+  <link rel="stylesheet" href="site.css">
+</head>
+<body>
+  <a class="skip" href="#main">跳到內容</a>
+  <header class="site-header">
+    <div class="site-header-inner">
+      <a class="brand" href="../../index.html">celebrities <span>speech</span></a>
+      <nav>
+        <a href="../../index.html">語錄牆</a>
+        <a href="speech.html" aria-current="page">單場演講</a>
+        <a class="peripheral" href="../vocabulary-cards/keynote-lexicon.html">Keynote Lexicon</a>
+        <a class="peripheral" href="../general-vocab/executive-english.html">Executive English</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" class="wrap">
+    <div id="status" class="status">正在讀取演講資料…</div>
+    <div id="list-view" hidden></div>
+    <article id="detail-view" class="speech-detail" hidden></article>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <span>短摘要與金句</span>
+      <a href="../../index.html">語錄牆</a>
+    </div>
+  </footer>
+
+  <script src="core.js"></script>
+  <script>
+    const { CoreUI } = window;
+    const paths = CoreUI.resolvePaths();
+    const statusEl = document.getElementById("status");
+    const listView = document.getElementById("list-view");
+    const detailView = document.getElementById("detail-view");
+
+    CoreUI.bindCopyButtons(document);
+    window.addEventListener("hashchange", () => CoreUI.scheduleHighlight());
+
+    function speechCard(speech, quoteCount, featured) {
+      const meta = CoreUI.speakerMeta(speech.speaker);
+      const href = CoreUI.speechHref(paths, speech.id);
+      return (
+        '<a class="speech-card" href="' + href + '">' +
+          '<div class="id">' + CoreUI.escapeHtml(speech.id) + (featured ? " · 優先場次" : "") + "</div>" +
+          "<h2>" + CoreUI.escapeHtml(speech.event || speech.id) + "</h2>" +
+          '<div class="speech-meta">' +
+            "<span>" + CoreUI.escapeHtml(meta.name) + "</span>" +
+            (speech.date ? "<span>" + CoreUI.escapeHtml(CoreUI.formatDate(speech.date)) + "</span>" : "") +
+            "<span>" + quoteCount + " 則語錄</span>" +
+          "</div>" +
+        "</a>"
+      );
+    }
+
+    function outbound(speech, quotes) {
+      const url = speech.transcript_url || speech.video_url || (quotes[0] && quotes[0].source_url);
+      if (!url) return "";
+      return '<a class="btn" href="' + CoreUI.escapeHtml(url) + '" target="_blank" rel="noopener noreferrer">原文</a>';
+    }
+
+    function renderList(featured, others, quotesBySpeech) {
+      listView.innerHTML =
+        '<div class="page-head">' +
+          '<p class="kicker">Core · speeches</p>' +
+          "<h1>單場演講</h1>" +
+          "<p>點一場看短摘要與金句。</p>" +
+        "</div>" +
+        "<section class=\"section\">" +
+          "<h2>優先場次</h2>" +
+          '<div class="speech-list">' +
+            featured.map((s) => speechCard(s, (quotesBySpeech.get(s.id) || []).length, true)).join("") +
+          "</div>" +
+        "</section>" +
+        (others.length
+          ? "<section class=\"section\">" +
+              "<h2>其他已有語錄的場次</h2>" +
+              '<div class="speech-list">' +
+                others.map((s) => speechCard(s, (quotesBySpeech.get(s.id) || []).length, false)).join("") +
+              "</div>" +
+            "</section>"
+          : "");
+      listView.hidden = false;
+      detailView.hidden = true;
+      statusEl.hidden = true;
+      document.title = "單場演講 · celebrities";
+    }
+
+    function renderDetail(speech, relatedQuotes, summaryZh) {
+      const speakerName = CoreUI.speakerLabel(speech.speaker);
+      const metaLine = [
+        speakerName,
+        speech.date ? CoreUI.formatDate(speech.date) : "",
+        speech.type || "",
+        speech.location || ""
+      ].filter(Boolean).join(" · ");
+
+      const summary = summaryZh
+        ? "<p class=\"summary-zh\">" + CoreUI.escapeHtml(summaryZh) + "</p>"
+        : '<p class="missing">此場尚無短摘要。</p>';
+
+      detailView.innerHTML =
+        '<p class="kicker">' + CoreUI.escapeHtml(speech.id) + "</p>" +
+        "<h1>" + CoreUI.escapeHtml(speech.event || speech.id) + "</h1>" +
+        '<div class="speech-meta"><span class="speaker-name">' + CoreUI.escapeHtml(metaLine) + "</span></div>" +
+        summary +
+        '<p class="btn-row">' +
+          outbound(speech, relatedQuotes) +
+          '<a class="btn secondary" href="speech.html">全部場次</a>' +
+          '<a class="btn secondary" href="' + CoreUI.escapeHtml(paths.wall) + '">語錄牆</a>' +
+        "</p>" +
+        "<section class=\"section\">" +
+          "<h2>語錄（" + relatedQuotes.length + "）</h2>" +
+          (relatedQuotes.length
+            ? '<div class="quote-list">' + relatedQuotes.map((q) => CoreUI.quoteCardHtml(q, paths, { hideSpeech: true })).join("") + "</div>"
+            : '<p class="missing">此場尚無已核實語錄。</p>') +
+          (relatedQuotes.length && relatedQuotes.length < 3
+            ? '<p class="missing">此場核實語錄少於 3 則，只顯示現有資料。</p>'
+            : "") +
+        "</section>";
+
+      detailView.hidden = false;
+      listView.hidden = true;
+      statusEl.hidden = true;
+      document.title = (speech.event || speech.id) + " · celebrities";
+      CoreUI.scheduleHighlight();
+    }
+
+    Promise.all([
+      CoreUI.fetchJson(paths.healthy),
+      CoreUI.fetchJson(paths.speechesDb),
+      CoreUI.fetchJson(paths.quotes),
+      CoreUI.fetchJson(paths.summaries).catch(() => [])
+    ]).then(([healthy, db, quotes, summaries]) => {
+      const healthySpeeches = (healthy && healthy.speeches) || [];
+      const dbSpeeches = (db && db.speeches) || [];
+      const byId = new Map();
+      dbSpeeches.forEach((s) => byId.set(s.id, s));
+      healthySpeeches.forEach((s) => byId.set(s.id, Object.assign({}, byId.get(s.id) || {}, s)));
+
+      const verified = (Array.isArray(quotes) ? quotes : []).filter(CoreUI.isSpeechQuote);
+      const quotesBySpeech = new Map();
+      verified.forEach((q) => {
+        if (!q.speech_id) return;
+        if (!quotesBySpeech.has(q.speech_id)) quotesBySpeech.set(q.speech_id, []);
+        quotesBySpeech.get(q.speech_id).push(q);
+      });
+
+      const summaryById = new Map();
+      (Array.isArray(summaries) ? summaries : []).forEach((row) => {
+        if (row && row.speech_id && row.summary_zh) summaryById.set(row.speech_id, row.summary_zh);
+      });
+
+      let speechId = CoreUI.getSpeechIdFromLocation();
+      const hashQuoteId = CoreUI.getQuoteHashId();
+      if (!speechId && hashQuoteId) {
+        const found = verified.find((q) => q.quote_id === hashQuoteId);
+        if (found) speechId = found.speech_id;
+      }
+
+      if (!speechId) {
+        const featured = CoreUI.FEATURED_SPEECH_IDS.map((id) => byId.get(id)).filter(Boolean);
+        const featuredSet = new Set(CoreUI.FEATURED_SPEECH_IDS);
+        const others = Array.from(quotesBySpeech.keys())
+          .filter((id) => !featuredSet.has(id))
+          .map((id) => byId.get(id) || { id: id, event: id, speaker: (quotesBySpeech.get(id)[0] || {}).speaker })
+          .sort((a, b) => String(b.date || "").localeCompare(String(a.date || "")));
+        renderList(featured, others, quotesBySpeech);
+        return;
+      }
+
+      const speech = byId.get(speechId);
+      if (!speech) {
+        statusEl.className = "error";
+        statusEl.innerHTML = "找不到演講 <code class=\"mono\">" + CoreUI.escapeHtml(speechId) +
+          "</code>。<a class=\"inline-link\" href=\"speech.html\">回到場次列表</a>";
+        return;
+      }
+      renderDetail(speech, quotesBySpeech.get(speechId) || [], summaryById.get(speechId) || "");
+    }).catch((err) => {
+      statusEl.className = "error";
+      statusEl.textContent = err.message + "。請用本機伺服器或 GitHub Pages 開啟。";
+    });
+  </script>
+</body>
+</html>
