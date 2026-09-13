@@ -33,4 +33,4 @@ Keynote Lexicon、Executive English 只在導覽列當週邊產品。
 
 ## MANIFEST
 
-見 [`references/README.md`](../../references/README.md)。`w1_continue_quotes_draft.json`（JH-2025-001×5 + EM-2026-004×5）已入庫並標為 `verified`。
+見 [`references/README.md`](../../references/README.md)。`w1_continue_quotes_draft.json`（JH-2025-001×5 + EM-2026-004×5）與 `week2_quotes_to_merge_verified.json`（EM-2026-002×5 + MZ-2024-001×5 + SP-2025-002×5）已入庫並標為 `verified`。EM-2026-003 與 EM-2026-002 同一場，語錄不重複上架。

@@ -19,6 +19,10 @@
 
   const HOLD_SPEECH_IDS = ["EM-2026-005", "SA-2026-001"];
 
+  const SPEECH_ALIASES = {
+    "EM-2026-003": "EM-2026-002"
+  };
+
   function resolvePaths() {
     const configured = global.CORE_PATHS || {};
     const inCore = /\/products\/core\/[^/]*$/.test(location.pathname);
@@ -30,6 +34,7 @@
       speechesDb: configured.speechesDb || prefix + "references/speeches_database.json",
       healthy: configured.healthy || prefix + "references/healthy_seven_feed.json",
       summaries: configured.summaries || prefix + "references/prod001_summary_zh_draft.json",
+      aliases: configured.aliases || prefix + "references/speech_aliases.json",
       home: configured.home || (inCore ? "../../index.html" : "index.html"),
       speech: configured.speech || corePrefix + "speech.html",
       wall: configured.wall || (inCore ? "../../index.html" : "index.html"),
@@ -111,6 +116,27 @@
     if (!entry || entry.status !== "verified") return false;
     if (entry.content_review_flag) return false;
     return true;
+  }
+
+  function canonicalSpeechId(speechId, aliasMap) {
+    const map = aliasMap || SPEECH_ALIASES;
+    if (!speechId) return "";
+    return map[speechId] || speechId;
+  }
+
+  function speechAliasNote(speechId, aliasData) {
+    if (!speechId) return "";
+    if (aliasData && aliasData.notes_by_id && aliasData.notes_by_id[speechId]) {
+      return aliasData.notes_by_id[speechId];
+    }
+    if (SPEECH_ALIASES[speechId]) {
+      return (aliasData && aliasData.note_zh) || "此場與 " + SPEECH_ALIASES[speechId] + " 同一場；語錄掛在正本。";
+    }
+    const reverse = Object.keys(SPEECH_ALIASES).filter((alias) => SPEECH_ALIASES[alias] === speechId);
+    if (reverse.length) {
+      return reverse.join("、") + " 是同一場；語錄只掛本場。";
+    }
+    return "";
   }
 
   async function fetchJson(url) {
@@ -245,6 +271,7 @@
     SPEAKERS,
     FEATURED_SPEECH_IDS,
     HOLD_SPEECH_IDS,
+    SPEECH_ALIASES,
     resolvePaths,
     escapeHtml,
     normalizeSpeaker,
@@ -257,6 +284,8 @@
     flaggedSpeechIds,
     isWallQuote,
     isSpeechQuote,
+    canonicalSpeechId,
+    speechAliasNote,
     fetchJson,
     quoteAnchor,
     speechHref,
