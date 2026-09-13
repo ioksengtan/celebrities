@@ -10,7 +10,7 @@ Source data and planning docs behind the CEO/celebrity-speech products.
 | `quotes_index_key_quotes_migration.json` | 7 KQ → verified | Y |
 | `content_review_flags.json` | 4 `speech_id` excluded from wall | Y |
 | `p0_quotes_draft.json` | 16 drafts, written as verified | Y |
-| `w1_continue_quotes_draft.json` | 10 drafts (JH-2025-001×5, EM-2026-004×5) | **N — gzip+base64 payload corrupt, not invented** |
+| `w1_continue_quotes_draft.json` | 10 drafts (JH-2025-001×5, EM-2026-004×5) | **Y — draft→verified** |
 | `sa_2025_001_quotes_draft.json` | 5 Bloomberg drafts → verified | Y |
 | `prod001_summary_zh_draft.json` | 4 Chinese speech summaries | Y |
 | `quotes_index.json` | Merged wall/speech feed (upsert by `quote_id` or `speech_id`+quote) | Y |
