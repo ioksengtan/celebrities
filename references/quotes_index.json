@@ -576,6 +576,66 @@
     "status": "verified"
   },
   {
+    "quote_id": "EM-2026-002-q05",
+    "speech_id": "EM-2026-002",
+    "speaker": "em",
+    "event": "世界經濟論壇 2026 達沃斯 — Conversation with Elon Musk（與拉里·芬克）",
+    "date": "2026-01-22",
+    "quote": "And generally, for quality of life, it is actually better to err on the side of being an optimist and wrong rather than a pessimist and right.",
+    "quote_zh": "就生活品質而言，寧可樂觀卻錯，也好過悲觀卻對。",
+    "why_notable_zh": "收場樂觀主義金句，易傳播且非政治爭議。",
+    "source_url": "https://www.weforum.org/podcasts/meet-the-leader/episodes/conversation-with-elon-musk-davos-2026/",
+    "status": "verified"
+  },
+  {
+    "quote_id": "EM-2026-002-q04",
+    "speech_id": "EM-2026-002",
+    "speaker": "em",
+    "event": "世界經濟論壇 2026 達沃斯 — Conversation with Elon Musk（與拉里·芬克）",
+    "date": "2026-01-22",
+    "quote": "People often talk about solving global poverty, or essentially, how do we give everyone a very high standard of living? I think the only way to do this is AI and robotics.",
+    "quote_zh": "人們常談如何解決全球貧窮，或如何讓每個人都有很高的生活水準；我認為唯一的路就是人工智慧與機器人。",
+    "why_notable_zh": "把「永續豐裕」使命與人工智慧／機器人綁在一起的政策／產品敘事。",
+    "source_url": "https://www.weforum.org/podcasts/meet-the-leader/episodes/conversation-with-elon-musk-davos-2026/",
+    "status": "verified"
+  },
+  {
+    "quote_id": "EM-2026-002-q03",
+    "speech_id": "EM-2026-002",
+    "speaker": "em",
+    "event": "世界經濟論壇 2026 達沃斯 — Conversation with Elon Musk（與拉里·芬克）",
+    "date": "2026-01-22",
+    "quote": "We might have AI that is smarter than any human by the end of this year. And I would say no later than next year. And then probably by 2030 or 2031, call it five years from now, AI will be smarter than all of humanity collectively.",
+    "quote_zh": "我們可能在今年年底就有比任何單一人類更聰明的人工智慧；最晚不超過明年。然後大概到 2030 或 2031——也就是約五年後——人工智慧會比全人類加總還聰明。",
+    "why_notable_zh": "官方頁亦單獨標出的時間表預測；需標為預測而非已發生事實。",
+    "source_url": "https://www.weforum.org/podcasts/meet-the-leader/episodes/conversation-with-elon-musk-davos-2026/",
+    "status": "verified"
+  },
+  {
+    "quote_id": "EM-2026-002-q02",
+    "speech_id": "EM-2026-002",
+    "speaker": "em",
+    "event": "世界經濟論壇 2026 達沃斯 — Conversation with Elon Musk（與拉里·芬克）",
+    "date": "2026-01-22",
+    "quote": "Net effect is that the lowest cost place to put AI will be space, and that will be true within two years, maybe three, three at the latest.",
+    "quote_zh": "淨效果是：放置人工智慧成本最低的地方會是太空，而且兩年內就會成真，最晚三年。",
+    "why_notable_zh": "太空太陽能資料中心時間表金句，可對世界經濟論壇官方稿。",
+    "source_url": "https://www.weforum.org/podcasts/meet-the-leader/episodes/conversation-with-elon-musk-davos-2026/",
+    "status": "verified"
+  },
+  {
+    "quote_id": "EM-2026-002-q01",
+    "speech_id": "EM-2026-002",
+    "speaker": "em",
+    "event": "世界經濟論壇 2026 達沃斯 — Conversation with Elon Musk（與拉里·芬克）",
+    "date": "2026-01-22",
+    "quote": "I think the limiting factor for AI deployment is fundamentally electrical power.",
+    "quote_zh": "我認為人工智慧部署的限制因素，根本上是電力。",
+    "why_notable_zh": "把人工智慧瓶頸從晶片轉向電網／電力，達沃斯場次的核心技術敘事。",
+    "source_url": "https://www.weforum.org/podcasts/meet-the-leader/episodes/conversation-with-elon-musk-davos-2026/",
+    "status": "verified"
+  },
+  {
     "quote_id": "JH-2026-001-kq-1",
     "speech_id": "JH-2026-001",
     "speaker": "jh",
@@ -633,6 +693,66 @@
     "quote_zh": "對。我認為未來的貨幣本質上就是瓦數。",
     "why_notable_zh": "能源＝貨幣的濃縮句",
     "source_url": "https://singjupost.com/moonshots-220-w-elon-musk-on-agi-abundance-and-the-future-of-humanity-transcript/",
+    "status": "verified"
+  },
+  {
+    "quote_id": "SP-2025-002-q05",
+    "speech_id": "SP-2025-002",
+    "speaker": "sp",
+    "event": "BBC The Interview",
+    "date": "2025-11-23",
+    "quote": "It doesn't matter whether you want to be a teacher [or] a doctor. All those professions will be around, but the people who will do well in each of those professions are people who learn how to use these tools.",
+    "quote_zh": "不論你想當老師還是醫生，這些職業都會在；但在各行各業做得好的，會是學會使用這些工具的人。",
+    "why_notable_zh": "工作／適應人工智慧的可引用建議句。",
+    "source_url": "https://www.bbc.co.uk/news/articles/cwy7vrd8k4eo",
+    "status": "verified"
+  },
+  {
+    "quote_id": "SP-2025-002-q04",
+    "speech_id": "SP-2025-002",
+    "speaker": "sp",
+    "event": "BBC The Interview",
+    "date": "2025-11-23",
+    "quote": "You don't want to constrain an economy based on energy, and I think that will have consequences.",
+    "quote_zh": "你不會想讓經濟因能源而受縛，我認為那會帶來後果。",
+    "why_notable_zh": "把人工智慧「巨大」用電需求與總體經濟約束連在一起。",
+    "source_url": "https://www.bbc.co.uk/news/articles/cwy7vrd8k4eo",
+    "status": "verified"
+  },
+  {
+    "quote_id": "SP-2025-002-q03",
+    "speech_id": "SP-2025-002",
+    "speaker": "sp",
+    "event": "BBC The Interview",
+    "date": "2025-11-23",
+    "quote": "I expect AI to be the same. So I think it's both rational and there are elements of irrationality through a moment like this.",
+    "quote_zh": "我預期人工智慧也會如此。所以我認為這一刻既理性，也有非理性的成分。",
+    "why_notable_zh": "「理性＋非理性」並陳，成為 BBC 標題焦點。",
+    "source_url": "https://www.bbc.co.uk/news/articles/cwy7vrd8k4eo",
+    "status": "verified"
+  },
+  {
+    "quote_id": "SP-2025-002-q02",
+    "speech_id": "SP-2025-002",
+    "speaker": "sp",
+    "event": "BBC The Interview",
+    "date": "2025-11-23",
+    "quote": "I think no company is going to be immune, including us.",
+    "quote_zh": "我認為沒有任何公司能免疫，包括我們。",
+    "why_notable_zh": "對人工智慧投資泡沫破裂衝擊的直球承認，含 Alphabet 自身。",
+    "source_url": "https://www.bbc.co.uk/news/articles/cwy7vrd8k4eo",
+    "status": "verified"
+  },
+  {
+    "quote_id": "SP-2025-002-q01",
+    "speech_id": "SP-2025-002",
+    "speaker": "sp",
+    "event": "BBC The Interview",
+    "date": "2025-11-23",
+    "quote": "We take pride in the amount of work we put in to give us as accurate information as possible, but the current state-of-the-art AI technology is prone to some errors.",
+    "quote_zh": "我們為盡可能提供準確資訊所投入的努力感到自豪，但當前最先進的人工智慧技術仍容易出錯。",
+    "why_notable_zh": "BBC 官方報導直接引述；節目頁亦以相近句作為標題金句。",
+    "source_url": "https://www.bbc.co.uk/news/articles/c8drzv37z4jo",
     "status": "verified"
   },
   {
@@ -849,6 +969,66 @@
     "quote_zh": "我覺得我們手上有的東西，我們自己還沒真正意識到它有多大。",
     "why_notable_zh": "ChatGPT 上線初期對產品／市場契合的關鍵判斷",
     "source_url": "https://www.bloomberg.com/features/2025-sam-altman-interview/",
+    "status": "verified"
+  },
+  {
+    "quote_id": "MZ-2024-001-Q05",
+    "speech_id": "MZ-2024-001",
+    "speaker": "mz",
+    "event": "Acquired Podcast Live at Chase Center",
+    "date": "2024-09-10",
+    "quote": "There are more smart people outside of your company than inside. If you're not learning from what's going on in the market, then you're missing a lot of opportunities to get valuable signal from people in the community and customers about what they want you to be doing.",
+    "quote_zh": "公司外的聰明人永遠多過公司內。若不向市場學習，就會錯過社群與顧客給你的大量有價值訊號。",
+    "why_notable_zh": "開放學習／不恥師法市場的產品哲學（與開源段落呼應）。",
+    "source_url": "https://podcasts.happyscribe.com/acquired/the-mark-zuckerberg-interview",
+    "status": "verified"
+  },
+  {
+    "quote_id": "MZ-2024-001-Q04",
+    "speech_id": "MZ-2024-001",
+    "speaker": "mz",
+    "event": "Acquired Podcast Live at Chase Center",
+    "date": "2024-09-10",
+    "quote": "But values are not what you write down on the wall. It's like your lived behaviors. You only really learn what you care about when you have to make hard trade offs and face challenges.",
+    "quote_zh": "價值觀不是寫在牆上的字，而是你實際活出來的行為。只有在必須做艱難取捨、面對挑戰時，你才真正知道自己在乎什麼。",
+    "why_notable_zh": "對應襯衫「透過受苦學習」主題，創業與組織文化金句。",
+    "source_url": "https://podcasts.happyscribe.com/acquired/the-mark-zuckerberg-interview",
+    "status": "verified"
+  },
+  {
+    "quote_id": "MZ-2024-001-Q03",
+    "speech_id": "MZ-2024-001",
+    "speaker": "mz",
+    "event": "Acquired Podcast Live at Chase Center",
+    "date": "2024-09-10",
+    "quote": "I define our strategy as we can learn faster than every other company, we're going to win.",
+    "quote_zh": "我把我們的策略定義成：只要我們學得比其他公司快，我們就會贏。",
+    "why_notable_zh": "學習迴圈／迭代速度作為競爭優勢的濃縮表述。",
+    "source_url": "https://podcasts.happyscribe.com/acquired/the-mark-zuckerberg-interview",
+    "status": "verified"
+  },
+  {
+    "quote_id": "MZ-2024-001-Q02",
+    "speech_id": "MZ-2024-001",
+    "speaker": "mz",
+    "event": "Acquired Podcast Live at Chase Center",
+    "date": "2024-09-10",
+    "quote": "In doing so, they can be the perfect AI assistant for you because they have context on what you're doing.",
+    "quote_zh": "如此一來，它們能成為你完美的人工智慧助理，因為它們掌握你正在做什麼的脈絡。",
+    "why_notable_zh": "眼鏡＝下一代人工智慧介面的濃縮金句（上下文感知）。",
+    "source_url": "https://podcasts.happyscribe.com/acquired/the-mark-zuckerberg-interview",
+    "status": "verified"
+  },
+  {
+    "quote_id": "MZ-2024-001-Q01",
+    "speech_id": "MZ-2024-001",
+    "speaker": "mz",
+    "event": "Acquired Podcast Live at Chase Center",
+    "date": "2024-09-10",
+    "quote": "I never thought about us as a social media company. We're not a social app company. We are a social connection company.",
+    "quote_zh": "我從來不把我們想成社群媒體公司。我們不是社群應用公司，我們是人際連結公司。",
+    "why_notable_zh": "定義 Meta 身分的核心框架，貫穿眼鏡／人工智慧敘事。",
+    "source_url": "https://podcasts.happyscribe.com/acquired/the-mark-zuckerberg-interview",
     "status": "verified"
   }
 ]
