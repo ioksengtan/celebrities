@@ -300,8 +300,32 @@
   }
   .feed-counter{ position: absolute; top: 16px; left: 20px; font-size: 11px; color: var(--muted); }
   .feed-hint{ position: absolute; bottom: 16px; left: 0; right: 0; text-align: center; font-size: 11px; color: var(--muted); opacity: .6; }
-  .feed-card-wrap{ perspective: 1400px; width: 100%; height: 76%; }
+  .feed-swipe-track{
+    position: relative; width: 100%; height: 76%; overflow: hidden;
+    border-radius: 18px; touch-action: pan-y; user-select: none; -webkit-user-select: none;
+  }
+  .feed-archive-reveal{
+    position: absolute; inset: 0; display: flex; align-items: center; justify-content: flex-end;
+    padding: 0 22px; background: var(--accent); color: var(--accent-ink);
+    font-weight: 700; font-size: 16px; letter-spacing: 0.04em;
+    opacity: 0; pointer-events: none; z-index: 0;
+  }
+  .feed-swipe-track.swiping .feed-archive-reveal{ opacity: 1; }
+  .feed-card-wrap{ perspective: 1400px; width: 100%; height: 76%; position: relative; z-index: 1; }
+  .feed-swipe-track .feed-card-wrap{ height: 100%; will-change: transform; }
   .feed-card-wrap .flashcard{ width: 100%; height: 100%; }
+  .feed-empty{
+    width: 100%; max-width: 420px; text-align: center; color: var(--muted);
+    background: var(--surface); border: 1px solid var(--line); border-radius: 16px;
+    padding: 36px 20px; font-size: 13.5px; line-height: 1.55;
+  }
+  .browse-cell{ display: flex; flex-direction: column; gap: 8px; min-width: 0; }
+  .restore-btn{
+    font-family: "Public Sans", sans-serif; font-weight: 600; font-size: 13px;
+    padding: 8px 12px; border-radius: 10px; border: 1px solid var(--line);
+    background: var(--surface); color: var(--ink); cursor: pointer;
+  }
+  .restore-btn:hover{ border-color: var(--accent); color: var(--accent); }
   .feed-card-wrap .face{ padding: 26px; border-radius: 18px; }
   .feed-card-wrap .face.front .term-en{ font-size: 28px; text-align: center; }
   .feed-card-wrap .cat-tag{ text-align: center; }
@@ -475,7 +499,7 @@
       gap: 4px;
       width: 100%;
     }
-    .daily-top, .daily-progress-row, .feed-progress, #calendar-wrap, #sync-wrap{
+    .daily-top, .daily-progress-row, .feed-progress, #calendar-wrap, #sync-wrap, #daily-empty, #feed-empty{
       flex: none;
       max-width: none;
     }
@@ -494,7 +518,9 @@
       border-radius: 14px;
     }
     .feed-slide{ padding: 4px 6px; }
+    .feed-swipe-track{ height: 100%; }
     .feed-card-wrap{ width: 100%; height: 100%; }
+    .feed-empty{ max-width: none; padding: 24px 16px; font-size: 13px; }
     .feed-card-wrap .flashcard{ height: 100%; }
     .feed-card-wrap .face{ padding: 16px 14px; border-radius: 18px; }
     .feed-card-wrap .face.front .term-en{
@@ -522,6 +548,7 @@
 
   @media (prefers-reduced-motion: reduce){
     .flashcard-inner{ transition: none; }
+    .feed-card-wrap{ transition: none !important; }
   }
 </style>
 
@@ -554,6 +581,10 @@
         <span class="label">講者</span>
         <div id="speaker-chips" style="display:flex; flex-wrap:wrap; gap:8px;"></div>
       </div>
+      <div class="filter-row" id="archive-filter-row" hidden>
+        <span class="label">狀態</span>
+        <div id="archive-chips" style="display:flex; flex-wrap:wrap; gap:8px;"></div>
+      </div>
     </div>
   </div>
 
@@ -574,7 +605,7 @@
       <div class="cal-grid" id="cal-grid"></div>
     </div>
     <div id="sync-wrap" hidden>
-      <p class="sync-lead">連續天數存在這台裝置的瀏覽器裡，換裝置不會自動同步。匯出代碼貼到另一台裝置，或反過來貼別台裝置的代碼進來，就能把進度合併。</p>
+      <p class="sync-lead">連續天數與封存清單存在這台裝置的瀏覽器裡，換裝置不會自動同步。匯出代碼貼到另一台裝置，或反過來貼別台裝置的代碼進來，就能把進度合併（完成日與封存卡都用聯集，不會蓋掉任一邊）。</p>
       <div class="sync-row">
         <label>這台裝置的代碼</label>
         <div class="sync-code-box">
@@ -596,6 +627,7 @@
     </div>
     <div class="feed-progress"><div id="daily-progress-bar"></div></div>
     <div class="feed-scroll" id="daily-scroll"></div>
+    <div class="feed-empty" id="daily-empty" hidden>進行中沒有可抽的卡片。到「整理瀏覽」→「已封存」還原後，明天會再進入每日挑戰抽卡池。</div>
     <div id="daily-complete" class="daily-complete" hidden>
       <div class="daily-complete-emoji">🎉</div>
       <h3>今天完成了！</h3>
@@ -607,6 +639,7 @@
   <div id="feed-panel">
     <div class="feed-progress"><div id="feed-progress-bar"></div></div>
     <div class="feed-scroll" id="feed-scroll"></div>
+    <div class="feed-empty" id="feed-empty" hidden>進行中的卡片都已封存。到「整理瀏覽」→「已封存」即可還原。</div>
   </div>
 
   <div id="browse-grid"></div>
@@ -937,7 +970,42 @@ const CARDS = [
 
 document.getElementById("stat-total").textContent = CARDS.length;
 
-const state = { cats: new Set(), speakers: new Set(), mode: "feed" };
+const state = { cats: new Set(), speakers: new Set(), mode: "feed", archiveView: "active" };
+const ARCHIVED_KEY = "keynote-lexicon-archived";
+let archivedIds = [];
+try {
+  const raw = JSON.parse(localStorage.getItem(ARCHIVED_KEY) || "[]");
+  archivedIds = Array.isArray(raw) ? raw : [];
+} catch(e){ archivedIds = []; }
+const validCardIds = new Set(CARDS.map(c=> c.id));
+archivedIds = archivedIds.map(Number).filter(id=> validCardIds.has(id));
+let feedNeedsRender = true;
+let dailyPackCache = { date: null, ids: [] };
+
+function persistArchived(){
+  try { localStorage.setItem(ARCHIVED_KEY, JSON.stringify(archivedIds)); } catch(e){}
+}
+function archivedSet(){ return new Set(archivedIds); }
+function isArchived(id){ return archivedIds.includes(Number(id)); }
+function feedDeck(){ return CARDS.filter(c=> !isArchived(c.id)); }
+function archiveCard(id){
+  id = Number(id);
+  if (!validCardIds.has(id) || isArchived(id)) return false;
+  archivedIds.push(id);
+  persistArchived();
+  feedNeedsRender = true;
+  return true;
+}
+function restoreCard(id){
+  id = Number(id);
+  const next = archivedIds.filter(x=> x !== id);
+  if (next.length === archivedIds.length) return false;
+  archivedIds = next;
+  persistArchived();
+  feedNeedsRender = true;
+  if (dailyPackCache.ids.length === 0) dailyPackCache = { date: null, ids: [] };
+  return true;
+}
 
 function buildChips(){
   const catChips = document.getElementById("cat-chips");
@@ -963,6 +1031,21 @@ function buildChips(){
     });
     spChips.appendChild(chip);
   });
+  const archiveChips = document.getElementById("archive-chips");
+  [["active","進行中"],["archived","已封存"]].forEach(([key,label])=>{
+    const chip = document.createElement("span");
+    chip.className = "chip" + (state.archiveView === key ? " active" : "");
+    chip.textContent = label;
+    chip.dataset.key = key;
+    chip.addEventListener("click", ()=> setArchiveView(key));
+    archiveChips.appendChild(chip);
+  });
+}
+
+function setArchiveView(key){
+  state.archiveView = key;
+  document.querySelectorAll("#archive-chips .chip").forEach(el=> el.classList.toggle("active", el.dataset.key === key));
+  if (state.mode === "browse") renderBrowse();
 }
 
 function filteredCards(){
@@ -1040,45 +1123,189 @@ function buildFlashcardEl(c){
 /* ---- Feed (swipe) mode ---- */
 function renderFeed(){
   const scroll = document.getElementById("feed-scroll");
+  const empty = document.getElementById("feed-empty");
+  const progress = document.querySelector("#feed-panel .feed-progress");
   scroll.innerHTML = "";
-  CARDS.forEach((c, i)=>{
-    const slide = document.createElement("div");
-    slide.className = "feed-slide";
-    slide.dataset.index = i;
-
-    const counter = document.createElement("div");
-    counter.className = "feed-counter mono";
-    counter.textContent = (i+1) + " / " + CARDS.length;
-
-    const wrap = document.createElement("div");
-    wrap.className = "feed-card-wrap";
-    wrap.appendChild(buildFlashcardEl(c));
-
-    const shareBtn = document.createElement("button");
-    shareBtn.className = "share-btn mono";
-    shareBtn.textContent = "↗ 分享";
-    shareBtn.addEventListener("click", (e)=>{ e.stopPropagation(); shareCard(c.id); });
-
-    const hint = document.createElement("div");
-    hint.className = "feed-hint mono";
-    hint.textContent = "點卡片翻面・上滑看下一張";
-
-    slide.append(counter, wrap, shareBtn, hint);
-    scroll.appendChild(slide);
+  const deck = feedDeck();
+  if (deck.length === 0){
+    scroll.hidden = true;
+    progress.hidden = true;
+    empty.hidden = false;
+    feedNeedsRender = false;
+    return;
+  }
+  scroll.hidden = false;
+  progress.hidden = false;
+  empty.hidden = true;
+  deck.forEach((c, i)=>{
+    scroll.appendChild(buildFeedSlide(c, i, deck.length));
   });
-
   setupFeedObserver();
+  feedNeedsRender = false;
+}
+
+function buildFeedSlide(c, i, total){
+  const slide = document.createElement("div");
+  slide.className = "feed-slide";
+  slide.dataset.index = i;
+  slide.dataset.cardId = c.id;
+
+  const counter = document.createElement("div");
+  counter.className = "feed-counter mono";
+  counter.textContent = (i+1) + " / " + total;
+
+  const track = document.createElement("div");
+  track.className = "feed-swipe-track";
+
+  const reveal = document.createElement("div");
+  reveal.className = "feed-archive-reveal mono";
+  reveal.textContent = "封存";
+
+  const wrap = document.createElement("div");
+  wrap.className = "feed-card-wrap";
+  wrap.appendChild(buildFlashcardEl(c));
+
+  track.append(reveal, wrap);
+  bindFeedSwipe(track, wrap, c.id);
+
+  const shareBtn = document.createElement("button");
+  shareBtn.className = "share-btn mono";
+  shareBtn.textContent = "↗ 分享";
+  shareBtn.addEventListener("click", (e)=>{ e.stopPropagation(); shareCard(c.id); });
+
+  const hint = document.createElement("div");
+  hint.className = "feed-hint mono";
+  hint.textContent = "點卡片翻面・上滑看下一張・左滑封存";
+
+  slide.append(counter, track, shareBtn, hint);
+  return slide;
+}
+
+function bindFeedSwipe(track, wrap, cardId){
+  const threshold = ()=> Math.max(72, Math.round(track.clientWidth * 0.28));
+  let startX = 0, startY = 0, dx = 0, dy = 0;
+  let axis = null; // "h" | "v"
+  let dragging = false;
+  let ignoreClick = false;
+
+  function setShift(x){
+    wrap.style.transform = x ? "translateX(" + x + "px)" : "";
+    track.classList.toggle("swiping", x < -8);
+    const reveal = track.querySelector(".feed-archive-reveal");
+    if (reveal){
+      const t = Math.min(1, Math.abs(Math.min(0, x)) / threshold());
+      reveal.style.opacity = String(t);
+    }
+  }
+  function resetShift(animate){
+    if (animate) wrap.style.transition = "transform .2s ease";
+    setShift(0);
+    if (animate){
+      const done = ()=>{ wrap.style.transition = ""; wrap.removeEventListener("transitionend", done); };
+      wrap.addEventListener("transitionend", done);
+    }
+  }
+  function commitArchive(){
+    ignoreClick = true;
+    let finished = false;
+    wrap.style.transition = "transform .22s ease";
+    wrap.style.transform = "translateX(" + (-track.clientWidth - 24) + "px)";
+    track.classList.add("swiping");
+    const finish = ()=>{
+      if (finished) return;
+      finished = true;
+      wrap.removeEventListener("transitionend", finish);
+      if (archiveCard(cardId)){
+        removeFeedSlide(cardId);
+        showToast("已封存，可在整理瀏覽還原");
+      } else {
+        resetShift(true);
+      }
+    };
+    wrap.addEventListener("transitionend", finish);
+    setTimeout(finish, 280);
+  }
+
+  track.addEventListener("pointerdown", (e)=>{
+    if (e.pointerType === "mouse" && e.button !== 0) return;
+    if (e.target.closest(".share-btn")) return;
+    dragging = true;
+    axis = null;
+    dx = 0; dy = 0;
+    startX = e.clientX; startY = e.clientY;
+    wrap.style.transition = "none";
+    try { track.setPointerCapture(e.pointerId); } catch(err){}
+  });
+  track.addEventListener("pointermove", (e)=>{
+    if (!dragging) return;
+    dx = e.clientX - startX;
+    dy = e.clientY - startY;
+    if (!axis){
+      if (Math.abs(dx) < 8 && Math.abs(dy) < 8) return;
+      axis = Math.abs(dx) > Math.abs(dy) ? "h" : "v";
+      if (axis === "v") dragging = false;
+      if (axis === "h") track.style.touchAction = "none";
+    }
+    if (axis === "h"){
+      e.preventDefault();
+      setShift(Math.min(12, dx));
+    }
+  }, { passive: false });
+  function endPointer(){
+    if (!dragging && axis !== "h"){ axis = null; track.style.touchAction = ""; return; }
+    dragging = false;
+    track.style.touchAction = "";
+    if (axis === "h"){
+      ignoreClick = true;
+      if (dx <= -threshold()) commitArchive();
+      else resetShift(true);
+    }
+    axis = null;
+  }
+  track.addEventListener("pointerup", endPointer);
+  track.addEventListener("pointercancel", ()=>{
+    dragging = false;
+    track.style.touchAction = "";
+    if (axis === "h") resetShift(true);
+    axis = null;
+  });
+  track.addEventListener("click", (e)=>{
+    if (!ignoreClick) return;
+    e.stopPropagation();
+    e.preventDefault();
+    ignoreClick = false;
+  }, true);
+}
+
+function removeFeedSlide(cardId){
+  const scroll = document.getElementById("feed-scroll");
+  const slide = scroll.querySelector('.feed-slide[data-card-id="'+cardId+'"]');
+  if (slide) slide.remove();
+  const slides = [...scroll.querySelectorAll(".feed-slide")];
+  const total = slides.length;
+  if (total === 0){
+    renderFeed();
+    return;
+  }
+  slides.forEach((el, i)=>{
+    el.dataset.index = i;
+    const counter = el.querySelector(".feed-counter");
+    if (counter) counter.textContent = (i+1) + " / " + total;
+  });
+  setupFeedObserver();
+  document.getElementById("feed-progress-bar").style.width = (1 / total * 100) + "%";
 }
 
 let feedObserver;
 function setupFeedObserver(){
   const scrollEl = document.getElementById("feed-scroll");
   if (feedObserver) feedObserver.disconnect();
+  const deckLen = Math.max(1, scrollEl.querySelectorAll(".feed-slide").length);
   feedObserver = new IntersectionObserver((entries)=>{
     entries.forEach(entry=>{
       if (entry.isIntersecting && entry.intersectionRatio > 0.5){
         const idx = Number(entry.target.dataset.index);
-        document.getElementById("feed-progress-bar").style.width = ((idx+1) / CARDS.length * 100) + "%";
+        document.getElementById("feed-progress-bar").style.width = ((idx+1) / deckLen * 100) + "%";
       }
     });
   }, { root: scrollEl, threshold: [0.5, 0.6, 0.75] });
@@ -1119,12 +1346,37 @@ function shareCard(id){
 function renderBrowse(){
   const grid = document.getElementById("browse-grid");
   grid.innerHTML = "";
-  const cards = filteredCards();
+  const all = filteredCards();
+  const cards = state.archiveView === "archived"
+    ? all.filter(c=> isArchived(c.id))
+    : all.filter(c=> !isArchived(c.id));
   if (cards.length === 0){
-    grid.innerHTML = '<p class="mono" style="color:var(--muted); grid-column:1/-1;">沒有符合篩選條件的卡片。</p>';
+    const msg = state.archiveView === "archived"
+      ? "尚未封存任何卡片。滑卡模式左滑即可封存。"
+      : (all.length === 0 ? "沒有符合篩選條件的卡片。" : "沒有進行中的卡片。可到「已封存」還原。");
+    grid.innerHTML = '<p class="mono" style="color:var(--muted); grid-column:1/-1;">'+msg+"</p>";
     return;
   }
-  cards.forEach(c=> grid.appendChild(buildFlashcardEl(c)));
+  cards.forEach(c=>{
+    const cell = document.createElement("div");
+    cell.className = "browse-cell";
+    cell.appendChild(buildFlashcardEl(c));
+    if (state.archiveView === "archived"){
+      const btn = document.createElement("button");
+      btn.type = "button";
+      btn.className = "restore-btn";
+      btn.textContent = "還原";
+      btn.addEventListener("click", (e)=>{
+        e.stopPropagation();
+        if (restoreCard(c.id)){
+          renderBrowse();
+          showToast("已還原到進行中");
+        }
+      });
+      cell.appendChild(btn);
+    }
+    grid.appendChild(cell);
+  });
 }
 
 /* ---- Quiz mode ---- */
@@ -1227,13 +1479,30 @@ function todayStr(d){
   return y + "-" + m + "-" + day;
 }
 function pickDailyCards(dateStr){
+  if (dailyPackCache.date === dateStr && dailyPackCache.ids.length){
+    return dailyPackCache.ids.map(id=> CARDS.find(c=> c.id === id)).filter(Boolean);
+  }
+  const archived = archivedSet();
+  const openedIds = dailyOpened[dateStr] || [];
+  const result = [];
+  const used = new Set();
+  openedIds.forEach(id=>{
+    const c = CARDS.find(x=> x.id === id);
+    if (c && result.length < DAILY_SIZE){ result.push(c); used.add(c.id); }
+  });
   const rng = mulberry32(hashStr(dateStr));
-  const idx = CARDS.map((_, i)=> i);
+  const rest = CARDS.filter(c=> !archived.has(c.id) && !used.has(c.id));
+  const idx = rest.map((_, i)=> i);
   for (let i = idx.length - 1; i > 0; i--){
     const j = Math.floor(rng() * (i+1));
     [idx[i], idx[j]] = [idx[j], idx[i]];
   }
-  return idx.slice(0, DAILY_SIZE).map(i=> CARDS[i]);
+  for (const i of idx){
+    if (result.length >= DAILY_SIZE) break;
+    result.push(rest[i]);
+  }
+  dailyPackCache = { date: dateStr, ids: result.map(c=> c.id) };
+  return result;
 }
 
 let dailyRecord = {};
@@ -1253,7 +1522,7 @@ function updateStreakUI(){
 }
 function updateDailyProgressUI(openedCount, total){
   document.getElementById("daily-progress-text").textContent = openedCount + " / " + total;
-  document.getElementById("daily-progress-bar").style.width = (openedCount / total * 100) + "%";
+  document.getElementById("daily-progress-bar").style.width = total ? (openedCount / total * 100) + "%" : "0%";
 }
 function showDailyComplete(dateStr){
   const panel = document.getElementById("daily-complete");
@@ -1297,7 +1566,20 @@ function renderDaily(){
   const cards = pickDailyCards(dateStr);
   const openedIds = dailyOpened[dateStr] || [];
   const scroll = document.getElementById("daily-scroll");
+  const empty = document.getElementById("daily-empty");
   scroll.innerHTML = "";
+
+  if (cards.length === 0){
+    scroll.hidden = true;
+    empty.hidden = false;
+    updateDailyProgressUI(0, 0);
+    hideDailyComplete();
+    updateStreakUI();
+    renderCalendar();
+    return;
+  }
+  empty.hidden = true;
+  scroll.hidden = false;
 
   cards.forEach((c, i)=>{
     const isOpen = openedIds.includes(c.id);
@@ -1386,7 +1668,7 @@ document.getElementById("btn-see-all").addEventListener("click", ()=> setMode("f
 function buildSyncCode(){
   const doneDates = Object.keys(dailyRecord).filter(d=> dailyRecord[d]).sort();
   const today = todayStr();
-  const payload = { v: 1, d: doneDates, o: dailyOpened[today] || [] };
+  const payload = { v: 2, d: doneDates, o: dailyOpened[today] || [], a: archivedIds.slice().sort((x,y)=> x-y) };
   return btoa(JSON.stringify(payload));
 }
 function applySyncCode(code){
@@ -1407,7 +1689,19 @@ function applySyncCode(code){
     dailyOpened[today] = Array.from(new Set([...cur, ...payload.o]));
     try { localStorage.setItem("keynote-lexicon-daily-opened", JSON.stringify(dailyOpened)); } catch(e){}
   }
-  return added;
+
+  let addedArchived = 0;
+  if (Array.isArray(payload.a)){
+    const incoming = payload.a.map(Number).filter(id=> validCardIds.has(id));
+    const merged = Array.from(new Set([...archivedIds, ...incoming]));
+    addedArchived = merged.length - archivedIds.length;
+    if (addedArchived > 0){
+      archivedIds = merged;
+      persistArchived();
+      feedNeedsRender = true;
+    }
+  }
+  return { added, addedArchived };
 }
 document.getElementById("btn-toggle-sync").addEventListener("click", ()=>{
   const wrap = document.getElementById("sync-wrap");
@@ -1434,12 +1728,16 @@ document.getElementById("btn-sync-import").addEventListener("click", ()=>{
   const code = input.value.trim();
   if (!code){ showToast("請先貼上代碼"); return; }
   try {
-    const added = applySyncCode(code);
+    const result = applySyncCode(code);
     input.value = "";
     document.getElementById("sync-export-code").value = buildSyncCode();
     if (state.mode === "daily") renderDaily();
     else { updateStreakUI(); renderCalendar(); }
-    showToast(added > 0 ? "已合併，新增 " + added + " 天" : "已是最新進度");
+    if (state.mode === "browse") renderBrowse();
+    const bits = [];
+    if (result.added > 0) bits.push("新增 " + result.added + " 天");
+    if (result.addedArchived > 0) bits.push("封存 +" + result.addedArchived);
+    showToast(bits.length ? "已合併，" + bits.join("、") : "已是最新進度");
   } catch(e){
     showToast("代碼格式錯誤，請確認複製完整");
   }
@@ -1456,6 +1754,10 @@ function setMode(mode){
   document.getElementById("browse-grid").classList.toggle("active", mode === "browse");
   document.getElementById("quiz-panel").classList.toggle("active", mode === "quiz");
   document.getElementById("filters").style.display = (mode === "browse" || mode === "quiz") ? "flex" : "none";
+  document.getElementById("archive-filter-row").hidden = mode !== "browse";
+  if (mode === "feed" && feedNeedsRender) renderFeed();
+  if (mode === "browse") renderBrowse();
+  if (mode === "daily") renderDaily();
   if (mode === "quiz") resetQuiz();
 }
 
@@ -1481,8 +1783,15 @@ renderDaily();
 
 const hashMatch = location.hash.match(/^#card-(\d+)$/);
 if (hashMatch){
-  setMode("feed");
-  requestAnimationFrame(resetFeedScroll);
+  const deepId = Number(hashMatch[1]);
+  if (isArchived(deepId)){
+    setArchiveView("archived");
+    setMode("browse");
+    showToast("此卡已封存，可從這裡還原");
+  } else {
+    setMode("feed");
+    requestAnimationFrame(resetFeedScroll);
+  }
 } else {
   setMode("daily");
 }
