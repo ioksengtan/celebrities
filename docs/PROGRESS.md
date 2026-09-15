@@ -4,6 +4,13 @@
 
 ---
 
+## 2026-09-15（語錄牆：入庫 week3 ×20；SA-2026-001 僅 draft）
+
+- `week3_quotes_verified_for_wall` 20 則寫入 `quotes_index.json`，`status=verified`，可上牆：MZ-2024-001×5（加厚）、MZ-2025-001×5（加厚）、SA-2026-002×5、JH-2026-006×5。依 `quote_id`／英文原句去重，無碰撞
+- `week3_quotes_draft_hold` 的 SA-2026-001×4 **只**放 sidecar（`status=draft`），**未**標 verified、**不上**語錄牆。EM-2026-005 仍排除（0 則）
+- Hold 未動：`EM-2026-005`、`SA-2026-001`。牆篩選仍只收 `verified`，並排除 `content_review_flags`／hold
+- `quotes_index` 86→106；牆 82→102 則／17→19 場。本 PR 未改 Keynote Lexicon／Executive English 產品 HTML
+
 ## 2026-09-13（語錄牆：入庫 week2 ×15，去重 EM-2026-003）
 
 - `week2_quotes_to_merge_verified` 15 則（EM-2026-002×5、MZ-2024-001×5、SP-2025-002×5）寫入 `quotes_index.json`，`status=verified`，可上牆

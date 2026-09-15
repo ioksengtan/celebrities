@@ -1,0 +1,54 @@
+[
+  {
+    "quote_id": "SA-2026-001-Q01",
+    "speech_id": "SA-2026-001",
+    "speaker": "sa",
+    "event": "OpenAI Town Hall",
+    "date": "2026-01-27",
+    "quote": "We're going to keep hiring software developers, but for the first time—and I know every other company and startup is thinking about this too—we are planning to dramatically slow down how quickly we grow because we think we'll be able to do so much more with fewer people.",
+    "quote_zh": "我們還會繼續聘軟體開發者，但這是第一次——我也知道每家公司與新創都在想這件事——我們計畫大幅放慢擴編速度，因為我們認為可以用更少的人做多得多的事。",
+    "why_notable_zh": "對齊本場「工程師／代理人建構者」主題：用人節奏因人工智慧產能改變。",
+    "source_url": "https://excitech.media/p/sam-altman-on-what-could-go-wrong",
+    "status": "draft",
+    "draft_note": "英文引述來自對本場 Town Hall 的英文整理頁；影音主源 https://www.youtube.com/watch?v=Wpxv-8nG8ec 。未採 36氪／Longbridge 譯稿作英原句。建議人工對 YouTube 校聽後改 verified。抓取 2026-09-15 Asia/Taipei。"
+  },
+  {
+    "quote_id": "SA-2026-001-Q02",
+    "speech_id": "SA-2026-001",
+    "speaker": "sa",
+    "event": "OpenAI Town Hall",
+    "date": "2026-01-27",
+    "quote": "Assume we will have a model that is 100 times more capable than the current model with 100 times the context length at 100x the speed of the 100x reduced cost, perfect tool calling, and extreme coherence. We're going to get there.",
+    "quote_zh": "假設我們會有一個比現有模型強一百倍、上下文長度百倍、在成本再降百倍下仍有百倍速度、工具呼叫完美且極度連貫的模型——我們會走到那裡。",
+    "why_notable_zh": "給開發者的能力／成本路線圖壓縮句（100× 敘事）。",
+    "source_url": "https://excitech.media/p/sam-altman-on-what-could-go-wrong",
+    "status": "draft",
+    "draft_note": "同 SA-2026-001-Q01；影音對 YouTube。抓取 2026-09-15 Asia/Taipei。"
+  },
+  {
+    "quote_id": "SA-2026-001-Q03",
+    "speech_id": "SA-2026-001",
+    "speaker": "sa",
+    "event": "OpenAI Town Hall",
+    "date": "2026-01-27",
+    "quote": "There have been many startups that have done things that in a perfect world we would have done sooner, but it was too late and people built up a real durable advantage. That will keep happening.",
+    "quote_zh": "有很多新創做成了——在理想世界裡我們本該更早做——但已經太晚，別人建立了真正耐久的優勢。這種事會繼續發生。",
+    "why_notable_zh": "回「OpenAI 會不會吃掉生態」：承認新創可形成耐久優勢。",
+    "source_url": "https://excitech.media/p/sam-altman-on-what-could-go-wrong",
+    "status": "draft",
+    "draft_note": "同場英文整理；對齊 agent builders／startup 主題。抓取 2026-09-15 Asia/Taipei。"
+  },
+  {
+    "quote_id": "SA-2026-001-Q04",
+    "speech_id": "SA-2026-001",
+    "speaker": "sa",
+    "event": "OpenAI Town Hall",
+    "date": "2026-01-27",
+    "quote": "There seems to be something about creativity, intuition, and judgment that we are not close to with the current generation of models.",
+    "quote_zh": "關於創造力、直覺與判斷力，似乎有些東西是當前這代模型還遠未接近的。",
+    "why_notable_zh": "對模型能力邊界的誠實保留，平衡「百倍更強」敘事。",
+    "source_url": "https://excitech.media/p/sam-altman-on-what-could-go-wrong",
+    "status": "draft",
+    "draft_note": "同場；避開生物安全／病原體細節展開。抓取 2026-09-15 Asia/Taipei。"
+  }
+]
