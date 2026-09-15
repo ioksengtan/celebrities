@@ -4,6 +4,16 @@
 
 ---
 
+## 2026-09-15（Keynote Lexicon：個人封存／左滑退出牌組）
+
+- 只改 `products/vocabulary-cards/keynote-lexicon.html`：單機個人管理薄片，無帳號、無後端。CARDS 資料不刪；Executive English／語錄牆不動
+- **滑卡左滑** = 封存（可還原）。滑動時卡片左移、右側露出「封存」。本機 key：`keynote-lexicon-archived`（id 陣列）。既有 `keynote-lexicon-daily`／`keynote-lexicon-daily-opened`／`keynote-lexicon-known` 不改
+- **整理瀏覽**多「進行中／已封存」；誤滑可在「已封存」按「還原」。封存卡立刻退出預設滑卡牌組
+- **每日挑戰規則**：抽卡池排除已封存。若某張卡**當天已經抽進今日牌組**（本頁 session 快取）或**今天已經開過**，即使隨後封存，今天仍留在每日挑戰讓你開完並計入進度；明天起不再進入抽卡池。預設滑卡則立刻不再出現
+- **同步代碼**升為 `v: 2`，多一個 `a`（封存 id 清單）。舊 `v: 1` 仍可匯入。合併用聯集：完成日、今日已開卡、封存 id 都是 union，不會清掉另一台裝置的封存
+
+---
+
 ## 2026-09-15（語錄牆：入庫 week3 ×20；SA-2026-001 僅 draft）
 
 - `week3_quotes_verified_for_wall` 20 則寫入 `quotes_index.json`，`status=verified`，可上牆：MZ-2024-001×5（加厚）、MZ-2025-001×5（加厚）、SA-2026-002×5、JH-2026-006×5。依 `quote_id`／英文原句去重，無碰撞
