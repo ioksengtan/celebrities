@@ -96,7 +96,7 @@
       document.title = "單場演講 · celebrities";
     }
 
-    function renderDetail(speech, relatedQuotes, summaryZh, aliasNote, canonicalId) {
+    function renderDetail(speech, relatedQuotes, summaryZh, aliasNote, canonicalId, holdNote) {
       const speakerName = CoreUI.speakerLabel(speech.speaker);
       const metaLine = [
         speakerName,
@@ -115,12 +115,16 @@
       const alias = aliasNote
         ? "<p class=\"missing\">" + CoreUI.escapeHtml(aliasNote) + aliasLink + "</p>"
         : "";
+      const hold = holdNote
+        ? "<p class=\"missing\">" + CoreUI.escapeHtml(holdNote) + "</p>"
+        : "";
 
       detailView.innerHTML =
         '<p class="kicker">' + CoreUI.escapeHtml(speech.id) + "</p>" +
         "<h1>" + CoreUI.escapeHtml(speech.event || speech.id) + "</h1>" +
         '<div class="speech-meta"><span class="speaker-name">' + CoreUI.escapeHtml(metaLine) + "</span></div>" +
         alias +
+        hold +
         summary +
         '<p class="btn-row">' +
           outbound(speech, relatedQuotes) +
@@ -199,7 +203,8 @@
       const quoteSpeechId = CoreUI.canonicalSpeechId(speechId, aliasMap);
       const related = quotesBySpeech.get(quoteSpeechId) || quotesBySpeech.get(speechId) || [];
       const note = CoreUI.speechAliasNote(speechId, aliasData);
-      renderDetail(speech, related, summaryById.get(speechId) || summaryById.get(quoteSpeechId) || "", note, quoteSpeechId);
+      const holdNote = CoreUI.speechHoldNote(speechId);
+      renderDetail(speech, related, summaryById.get(speechId) || summaryById.get(quoteSpeechId) || "", note, quoteSpeechId, holdNote);
     }).catch((err) => {
       statusEl.className = "error";
       statusEl.textContent = err.message + "。請用本機伺服器或 GitHub Pages 開啟。";

@@ -124,6 +124,19 @@
     return map[speechId] || speechId;
   }
 
+  function speechHoldNote(speechId) {
+    if (speechId === "SA-2026-001") {
+      return "此場語錄仍為 draft（待對 YouTube 校聽），未核實、不上語錄牆。";
+    }
+    if (speechId === "EM-2026-005") {
+      return "此場仍無公開完整英文逐字稿，不上語錄牆。";
+    }
+    if (HOLD_SPEECH_IDS.indexOf(speechId) !== -1) {
+      return "此場暫緩上語錄牆。";
+    }
+    return "";
+  }
+
   function speechAliasNote(speechId, aliasData) {
     if (!speechId) return "";
     if (aliasData && aliasData.notes_by_id && aliasData.notes_by_id[speechId]) {
@@ -285,6 +298,7 @@
     isWallQuote,
     isSpeechQuote,
     canonicalSpeechId,
+    speechHoldNote,
     speechAliasNote,
     fetchJson,
     quoteAnchor,
