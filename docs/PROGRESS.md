@@ -4,6 +4,15 @@
 
 ---
 
+## 2026-09-16（每日挑戰：點日曆可回看當天牌組）
+
+- Keynote Lexicon 與 Executive English：日曆格子原本只顯示 ✓／今天框、沒有 click handler；`renderDaily()` 也一律畫「今天」。現在可點**今天**，或點有紀錄的過去日期，在每日挑戰 UI 看該日牌組
+- 沿用既有本機 key，沒加新 schema：完成日 `keynote-lexicon-daily` / `exec-vocab-daily`（`{ "YYYY-MM-DD": true }`）；已開卡 `keynote-lexicon-daily-opened` / `exec-vocab-daily-opened`（`{ "YYYY-MM-DD": [id, …] }`）。牌組仍用日期種子（`hashStr(date) + mulberry32`）重建
+- 未來日、從未開過也從未完成的日子：格子維持不可點。點「每日挑戰」會回到今天（今日抽卡、連續天數、同步匯出/匯入不變）
+- **無法還原的日期**：沒有完成旗標、也沒有 `daily-opened` 的日子無法回看。同步代碼的 `o` 只帶「今天已開卡」；從別台合併進來的歷史完成日若沒有開卡 id，會用**當前卡池**的日期種子重建（Keynote 會再排除目前已封存的卡）。卡池之後有增減、或封存集合變了，重建結果可能和當天實際抽到的不一樣；若該日有留下 `daily-opened`，Keynote 會優先用那些 id
+
+---
+
 ## 2026-09-15（Keynote Lexicon：個人封存／左滑退出牌組）
 
 - 只改 `products/vocabulary-cards/keynote-lexicon.html`：單機個人管理薄片，無帳號、無後端。CARDS 資料不刪；Executive English／語錄牆不動
