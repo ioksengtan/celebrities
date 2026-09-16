@@ -312,7 +312,7 @@
     position: fixed; bottom: 26px; left: 50%; transform: translateX(-50%) translateY(14px);
     background: var(--ink); color: var(--bg); padding: 9px 16px; border-radius: 999px;
     font-size: 12.5px; opacity: 0; pointer-events: none; transition: opacity .25s, transform .25s;
-    z-index: 50;
+    z-index: 50; max-width: min(92vw, 420px); text-align: center; line-height: 1.4;
   }
   .toast.show{ opacity: 1; transform: translateX(-50%) translateY(0); }
 
@@ -401,7 +401,14 @@
     display: flex; align-items: center; justify-content: center; gap: 10px 14px; flex-wrap: wrap;
     width: 100%; max-width: 480px;
   }
-  .quiz-counter, .quiz-mastered{ font-family: "IBM Plex Mono", monospace; font-size: 12.5px; color: var(--muted); }
+  .quiz-counter, .quiz-mastered, .quiz-card-streak{ font-family: "IBM Plex Mono", monospace; font-size: 12.5px; color: var(--muted); }
+  .quiz-card-streak[hidden]{ display: none; }
+  @keyframes quiz-mastered-bump {
+    0% { transform: scale(1); color: var(--muted); }
+    40% { transform: scale(1.08); color: var(--good); }
+    100% { transform: scale(1); color: var(--muted); }
+  }
+  .quiz-mastered.quiz-mastered-bump{ animation: quiz-mastered-bump .55s ease; }
   .quiz-reset-mastery{
     font-family: "Public Sans", sans-serif; font-size: 12px; font-weight: 600;
     padding: 4px 10px; border-radius: 8px; border: 1px solid var(--line);
@@ -747,6 +754,7 @@
     <div class="quiz-progress"><div id="quiz-progress-bar" style="width:0%"></div></div>
     <div class="quiz-meta">
       <div class="quiz-counter" id="quiz-counter">0 / 0</div>
+      <div class="quiz-card-streak" id="quiz-card-streak" hidden></div>
       <div class="quiz-mastered" id="quiz-mastered">已熟練 0 張</div>
       <button type="button" class="quiz-reset-mastery" id="quiz-reset-mastery">重置熟練進度</button>
     </div>
@@ -1140,12 +1148,12 @@ function scrollFeedToCard(id){
   if (el) el.closest(".feed-slide").scrollIntoView({ block: "start" });
 }
 
-function showToast(msg){
+function showToast(msg, ms){
   const toast = document.getElementById("toast");
   toast.textContent = msg;
   toast.classList.add("show");
   clearTimeout(showToast._t);
-  showToast._t = setTimeout(()=> toast.classList.remove("show"), 1800);
+  showToast._t = setTimeout(()=> toast.classList.remove("show"), ms || 1800);
 }
 
 function shareCard(id){
@@ -1241,7 +1249,42 @@ function countMasteredInFilter(){
 
 function updateQuizMasteredHud(){
   const el = document.getElementById("quiz-mastered");
-  if (el) el.textContent = "已熟練 " + countMasteredInFilter() + " 張";
+  if (!el) return;
+  const n = countMasteredInFilter();
+  const next = "已熟練 " + n + " 張";
+  const prevN = parseInt(String(el.textContent).replace(/[^0-9]/g, ""), 10);
+  el.textContent = next;
+  if (Number.isFinite(prevN) && n > prevN){
+    el.classList.remove("quiz-mastered-bump");
+    void el.offsetWidth;
+    el.classList.add("quiz-mastered-bump");
+  }
+}
+
+function setQuizCardStreak(id){
+  const el = document.getElementById("quiz-card-streak");
+  if (!el) return;
+  if (!id){
+    el.hidden = true;
+    el.textContent = "";
+    return;
+  }
+  const rec = known[id] || { streak: 0, mastered: false };
+  el.hidden = false;
+  el.textContent = rec.mastered
+    ? "這張已熟練"
+    : "這張連勝 " + (Number(rec.streak) || 0) + "／" + MASTERY_STREAK;
+}
+
+function quizMarkFeedback(word, isKnown, rec, justMastered){
+  const label = word ? word + "：" : "";
+  if (!isKnown) return label + "連勝已歸零";
+  if (justMastered) return label + "已熟練，下一輪測驗會移出";
+  if (rec.mastered) return label + "這張已熟練（連勝 " + MASTERY_STREAK + "）";
+  if (rec.streak === MASTERY_STREAK - 1){
+    return label + "連勝 " + rec.streak + "／" + MASTERY_STREAK + "，再認識一次就熟練。";
+  }
+  return label + "連勝 " + rec.streak + "／" + MASTERY_STREAK;
 }
 
 function quizPool(){
@@ -1281,6 +1324,7 @@ function renderQuizCard(){
   if (quizDeck.length === 0){
     counter.textContent = "0 / 0";
     bar.style.width = "0%";
+    setQuizCardStreak(null);
     document.querySelector(".quiz-hint").style.display = "none";
     document.querySelector(".quiz-actions").style.display = "none";
     if (filteredCards().length > 0){
@@ -1292,6 +1336,7 @@ function renderQuizCard(){
     return;
   }
   if (quizIndex >= quizDeck.length){
+    setQuizCardStreak(null);
     showQuizDone();
     return;
   }
@@ -1300,11 +1345,13 @@ function renderQuizCard(){
   bar.style.width = (quizIndex / quizDeck.length * 100) + "%";
   counter.textContent = (quizIndex+1) + " / " + quizDeck.length;
   const c = quizDeck[quizIndex];
+  setQuizCardStreak(c.id);
   holder.innerHTML = "";
   holder.appendChild(buildFlashcardEl(c));
 }
 
 function showQuizDone(){
+  setQuizCardStreak(null);
   document.getElementById("quiz-card-holder").style.display = "none";
   document.querySelector(".quiz-hint").style.display = "none";
   document.querySelector(".quiz-actions").style.display = "none";
@@ -1324,8 +1371,12 @@ function markQuiz(isKnown){
   if (quizIndex >= quizDeck.length) return;
   const c = quizDeck[quizIndex];
   quizResults[c.id] = isKnown;
+  const wasMastered = isMastered(c.id);
   if (isKnown) applyKnowMark(c.id);
   else applyUnknownMark(c.id);
+  const rec = known[c.id] || { streak: 0, mastered: false };
+  const justMastered = isKnown && rec.mastered && !wasMastered;
+  showToast(quizMarkFeedback(c.word, isKnown, rec, justMastered), 2200);
   quizIndex++;
   renderQuizCard();
 }
