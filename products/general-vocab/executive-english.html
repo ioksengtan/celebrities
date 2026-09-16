@@ -344,6 +344,9 @@
   }
   .cal-cell.done{ background: var(--accent); color: var(--accent-ink); font-weight: 600; }
   .cal-cell.today{ box-shadow: inset 0 0 0 1.5px var(--accent); }
+  .cal-cell.viewing:not(.today){ box-shadow: inset 0 0 0 1.5px var(--ink); }
+  .cal-cell.clickable{ cursor: pointer; }
+  .cal-cell.clickable:hover:not(.done){ color: var(--ink); background: var(--surface-2); }
   .cal-cell.empty{ visibility: hidden; }
   .sync-lead{ font-size: 11.5px; color: var(--muted); line-height: 1.5; margin: 0 0 10px; }
   .sync-row{ margin-bottom: 12px; }
@@ -720,7 +723,7 @@
       </div>
     </div>
     <div class="daily-progress-row mono">
-      <span>今日挑戰</span>
+      <span id="daily-progress-label">今日挑戰</span>
       <span id="daily-progress-text">0 / 5</span>
     </div>
     <div class="feed-progress"><div id="daily-progress-bar"></div></div>
@@ -1693,6 +1696,7 @@ function updateDailyProgressUI(openedCount, total){
   document.getElementById("daily-progress-bar").style.width = (openedCount / total * 100) + "%";
 }
 function showDailyComplete(dateStr){
+  if (dateStr !== todayStr()) return;
   const panel = document.getElementById("daily-complete");
   document.getElementById("daily-complete-sub").textContent = "已經連續 " + computeStreak(dailyRecord) + " 天完成挑戰。";
   panel.hidden = false;
@@ -1729,15 +1733,37 @@ function openPack(cover, cardEl, c, dateStr, total, shareBtn){
   }, 520);
 }
 
-function renderDaily(){
-  const dateStr = todayStr();
+let viewingDate = todayStr();
+
+function hasDailyData(dateStr){
+  return !!dailyRecord[dateStr] || ((dailyOpened[dateStr] || []).length > 0);
+}
+function canViewDailyDate(dateStr){
+  const today = todayStr();
+  if (dateStr > today) return false;
+  if (dateStr === today) return true;
+  return hasDailyData(dateStr);
+}
+function updateDailyProgressLabel(dateStr){
+  const el = document.getElementById("daily-progress-label");
+  if (!el) return;
+  el.textContent = (dateStr === todayStr()) ? "今日挑戰" : (dateStr + " 挑戰");
+}
+
+function renderDaily(dateStr){
+  const today = todayStr();
+  dateStr = dateStr || viewingDate || today;
+  if (!canViewDailyDate(dateStr)) dateStr = today;
+  viewingDate = dateStr;
   const cards = pickDailyCards(dateStr);
   const openedIds = dailyOpened[dateStr] || [];
+  const dayDone = !!dailyRecord[dateStr];
   const scroll = document.getElementById("daily-scroll");
   scroll.innerHTML = "";
+  updateDailyProgressLabel(dateStr);
 
   cards.forEach((c, i)=>{
-    const isOpen = openedIds.includes(c.id);
+    const isOpen = dayDone || openedIds.includes(c.id);
     const slide = document.createElement("div");
     slide.className = "feed-slide";
     slide.dataset.index = i;
@@ -1777,8 +1803,8 @@ function renderDaily(){
   });
 
   scroll.scrollTop = 0;
-  updateDailyProgressUI(openedIds.length, cards.length);
-  if (dailyRecord[dateStr]) showDailyComplete(dateStr); else hideDailyComplete();
+  updateDailyProgressUI(dayDone ? cards.length : openedIds.length, cards.length);
+  if (dateStr === today && dayDone) showDailyComplete(dateStr); else hideDailyComplete();
   updateStreakUI();
   renderCalendar();
 }
@@ -1804,9 +1830,18 @@ function renderCalendar(){
   const todayS = todayStr();
   for (let day = 1; day <= daysInMonth; day++){
     const dateStr = y + "-" + String(m+1).padStart(2,"0") + "-" + String(day).padStart(2,"0");
+    const clickable = canViewDailyDate(dateStr);
     const el = document.createElement("div");
-    el.className = "cal-cell" + (dailyRecord[dateStr] ? " done" : "") + (dateStr === todayS ? " today" : "");
+    el.className = "cal-cell"
+      + (dailyRecord[dateStr] ? " done" : "")
+      + (dateStr === todayS ? " today" : "")
+      + (dateStr === viewingDate ? " viewing" : "")
+      + (clickable ? " clickable" : "");
     el.textContent = dailyRecord[dateStr] ? "✓" : String(day);
+    if (clickable){
+      el.title = dateStr === todayS ? "查看今日挑戰" : "查看這天的挑戰";
+      el.addEventListener("click", ()=> renderDaily(dateStr));
+    }
     grid.appendChild(el);
   }
 }
@@ -1895,6 +1930,7 @@ function setMode(mode){
   document.getElementById("quiz-panel").classList.toggle("active", mode === "quiz");
   document.getElementById("games-panel").classList.toggle("active", mode === "games");
   document.getElementById("filters").style.display = (mode === "browse" || mode === "quiz" || mode === "games") ? "flex" : "none";
+  if (mode === "daily") renderDaily(todayStr());
   if (mode === "quiz") resetQuiz();
   if (mode === "games") showGamesLobby();
 }
