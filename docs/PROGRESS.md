@@ -4,6 +4,14 @@
 
 ---
 
+## 2026-09-16（EE 測驗：認識了／還不熟即時連勝回饋）
+
+- 只改 `products/general-vocab/executive-english.html` 測驗模式。`MASTERY_STREAK=3`、`exec-vocab-known` schema、小遊戲、每日挑戰、篩選、重置熟練、Keynote Lexicon 都不動
+- 按「認識了」／「還不熟」後立刻 toast：連勝 n／3、連勝已歸零、剛熟練則「已熟練，下一輪測驗會移出」。本輪仍留在牌組，下一輪 `resetQuiz` 才依既有 `quizPool()` 移出
+- 剛達熟練時「已熟練 N 張」HUD 會跳一下。測驗 chrome 多「這張連勝 n／3」，方便看到目前這張的進度
+
+---
+
 ## 2026-09-16（每日挑戰：點日曆可回看當天牌組）
 
 - Keynote Lexicon 與 Executive English：日曆格子原本只顯示 ✓／今天框、沒有 click handler；`renderDaily()` 也一律畫「今天」。現在可點**今天**，或點有紀錄的過去日期，在每日挑戰 UI 看該日牌組
