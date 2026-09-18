@@ -37,7 +37,7 @@
       aliases: configured.aliases || prefix + "references/speech_aliases.json",
       home: configured.home || (inCore ? "../../index.html" : "index.html"),
       speech: configured.speech || corePrefix + "speech.html",
-      wall: configured.wall || (inCore ? "../../index.html" : "index.html"),
+      wall: configured.wall || (inCore ? "quotes-wall.html" : "products/core/quotes-wall.html"),
       lexicon: configured.lexicon || (inCore ? "../vocabulary-cards/keynote-lexicon.html" : "products/vocabulary-cards/keynote-lexicon.html"),
       ee: configured.ee || (inCore ? "../general-vocab/executive-english.html" : "products/general-vocab/executive-english.html")
     };
