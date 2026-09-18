@@ -134,6 +134,19 @@ nav a[aria-current="page"] {
 
 nav a.peripheral {
   font-weight: 500;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 1px;
+  line-height: 1.15;
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+
+nav a .nav-en {
+  font-size: 10px;
+  font-weight: 500;
+  color: var(--muted);
 }
 
 main {
@@ -555,8 +568,9 @@ details.why p { margin: 8px 0 0; }
 .product-grid { display: grid; gap: 14px; }
 .product-card { background: var(--surface); border: 1px solid var(--line); border-radius: 18px; padding: 24px; box-shadow: var(--card-shadow); display: flex; flex-direction: column; }
 .product-card-primary { border-top: 5px solid var(--accent); padding-top: 20px; }
-.product-card h3 { font-family: "Fraunces", Georgia, serif; font-size: 27px; line-height: 1.15; margin: 0 0 10px; }
-.product-card > p:not(.card-kicker) { color: var(--muted); margin: 0; font-size: 14.5px; }
+.product-card h3 { font-family: "Fraunces", Georgia, serif; font-size: 27px; line-height: 1.15; margin: 0 0 2px; }
+.product-card .product-en { margin: 0 0 10px; color: var(--muted); font-size: 13px; font-weight: 500; }
+.product-card > p:not(.card-kicker):not(.product-en) { color: var(--muted); margin: 0; font-size: 14.5px; }
 .product-card .btn-row, .product-card > .btn { margin-top: auto; align-self: flex-start; }
 .feature-list { list-style: none; padding: 0; margin: 20px 0 24px; display: grid; gap: 8px; font-size: 13px; }
 .feature-list li::before { content: "✓"; color: var(--accent); font-weight: 700; margin-right: 8px; }
