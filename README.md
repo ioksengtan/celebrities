@@ -16,8 +16,8 @@ references/          原始資料與規劃文件
 
 products/
   core/                           語錄牆備援頁＋單場演講
-  vocabulary-cards/               PROD-002 名人單字卡（週邊）
-  general-vocab/                  Executive English CEFR 詞彙卡（週邊）
+  vocabulary-cards/               金句（Keynote Lexicon）詞彙卡（週邊）
+  general-vocab/                  名人詞彙（Executive English）CEFR 詞彙卡（週邊）
 
 docs/
   PROGRESS.md        團隊討論與進度紀錄
@@ -27,7 +27,7 @@ docs/
 
 - **語錄牆（站首頁）**：https://ioksengtan.github.io/celebrities/
 - **單場演講**：https://ioksengtan.github.io/celebrities/products/core/speech.html
-- 週邊： [Keynote Lexicon](products/vocabulary-cards/keynote-lexicon.html) · [Executive English](products/general-vocab/executive-english.html)
+- 週邊： [金句（Keynote Lexicon）](products/vocabulary-cards/keynote-lexicon.html) · [名人詞彙（Executive English）](products/general-vocab/executive-english.html)
 
 核心產品是語錄／演講正文。牆只顯示 `verified`，並排除 `content_review_flags` 與 hold 場次。詳見 [`products/core/README.md`](products/core/README.md)。
 
@@ -35,8 +35,8 @@ docs/
 
 - ✅ 資料庫與產品建議已整理進 `references/`
 - ✅ **語錄牆＋單場演講**薄片已上 Pages 根目錄（見上）
-- ✅ PROD-002「名人單字卡」MVP 已完成，見 [`products/vocabulary-cards`](products/vocabulary-cards)
-- ✅ Executive English（一般英語 CEFR 詞彙卡）第一版已完成，見 [`products/general-vocab`](products/general-vocab)
+- ✅ 金句（Keynote Lexicon）MVP 已完成，見 [`products/vocabulary-cards`](products/vocabulary-cards)
+- ✅ 名人詞彙（Executive English，一般英語 CEFR 詞彙卡）第一版已完成，見 [`products/general-vocab`](products/general-vocab)
 - ⬜ 其他候選產品（長導讀、時間軸可視化、每日一句、主題深度分析、演講比較）尚未開始
 
 ## 協作方式

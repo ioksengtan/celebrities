@@ -1,4 +1,4 @@
-# Executive English（一般英語進階詞彙）
+# 名人詞彙（Executive English）
 
 從 Jensen Huang、Elon Musk、Sundar Pichai 2025–2026 年演講/訪談逐字稿中萃取的**一般英語**詞彙卡——刻意排除 AI/晶片黑話，只留下他們談話時順口用出來、對一般英語學習者有用的進階字（如 exponential、inflection point、geopolitical、guardrails）。依 CEFR（A2–C1）分級，卡片形式沿用 [`../vocabulary-cards`](../vocabulary-cards) 的機制，但把「類別＋講者」的篩選軸換成「CEFR 難度＋講者」。
 
