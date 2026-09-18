@@ -2,8 +2,8 @@
 
 從 Jensen Huang、Elon Musk、Sundar Pichai 2025–2026 年演講/訪談逐字稿中萃取的**一般英語**詞彙卡——刻意排除 AI/晶片黑話，只留下他們談話時順口用出來、對一般英語學習者有用的進階字（如 exponential、inflection point、geopolitical、guardrails）。依 CEFR（A2–C1）分級，卡片形式沿用 [`../vocabulary-cards`](../vocabulary-cards) 的機制，但把「類別＋講者」的篩選軸換成「CEFR 難度＋講者」。
 
-- 原始碼：[`executive-english.html`](executive-english.html)（單一 HTML 檔，機制同 vocabulary-cards）
-- 詞彙資料：[`cards_data.json`](cards_data.json)（145 字，僅供參考／備份，實際資料內嵌在 html 裡）
+- 原始碼：[`executive-english.html`](executive-english.html)（介面與互動邏輯）
+- 詞彙資料：[`cards_data.json`](cards_data.json)（145 字，唯一資料來源；不要再把卡片複製進 HTML）
 
 ## 資料怎麼來的
 
@@ -16,7 +16,7 @@
 
 - 每日挑戰：每天固定 5 張卡（依日期做種子），開卡包動畫，C1 難度字有金色特效，累積連續天數
 - 三面卡：字 → 定義＋原話例句 → 出處（講者/場合/日期）與同義詞
-- 滑卡模式、整理瀏覽（可依 CEFR／講者篩選）、測驗模式（認識/還不熟，存在瀏覽器本機）
+- 滑卡模式、整理瀏覽（可依 CEFR／講者篩選）、間隔複習模式（記得／忘記，存在瀏覽器本機；依 1、3、7 天與動態延長的間隔再次出現）
 - 「稀有度」直接對應 CEFR 難度：A2/B1＝普通，B2＝稀有，C1＝傳說
 
 ## 待辦 / 可擴充方向
