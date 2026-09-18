@@ -44,8 +44,52 @@
     return result;
   }
 
-  function dailySelection(cards, dateString, size) {
-    return shuffled(cards, seededRandom(hashString(dateString))).slice(0, size);
+  function normalizeCardIds(ids) {
+    if (!Array.isArray(ids)) return [];
+    const seen = new Set();
+    const result = [];
+    ids.forEach(value => {
+      const id = Number(value);
+      if (!Number.isInteger(id) || id <= 0 || seen.has(id)) return;
+      seen.add(id);
+      result.push(id);
+    });
+    return result;
+  }
+
+  function normalizeSchedule(schedule) {
+    const result = {};
+    if (!schedule || typeof schedule !== "object" || Array.isArray(schedule)) return result;
+    Object.keys(schedule).forEach(date => {
+      if (!/^\d{4}-\d{2}-\d{2}$/.test(date)) return;
+      const ids = normalizeCardIds(schedule[date]);
+      if (ids.length) result[date] = ids;
+    });
+    return result;
+  }
+
+  function scheduledIds(schedule, dateString) {
+    return normalizeCardIds(schedule && schedule[dateString]);
+  }
+
+  function scheduledCards(cards, ids) {
+    const byId = new Map();
+    (cards || []).forEach(card => {
+      if (card && Number.isInteger(card.id)) byId.set(card.id, card);
+    });
+    return normalizeCardIds(ids).map(id => byId.get(id)).filter(Boolean);
+  }
+
+  function isViewableDailyDate(dateString, today) {
+    return /^\d{4}-\d{2}-\d{2}$/.test(dateString || "") && dateString <= (today || localDate());
+  }
+
+  function canOpenDailyDate(dateString, today, options) {
+    const now = today || localDate();
+    if (!isViewableDailyDate(dateString, now)) return false;
+    if (dateString === now) return true;
+    options = options || {};
+    return !!(options.scheduled || options.hasProgress);
   }
 
   function streak(record, now) {
@@ -59,9 +103,17 @@
     return count;
   }
 
-  function encodeProgress(record, opened, now) {
+  function encodeProgress(record, opened, now, extras) {
+    extras = extras || {};
     const dates = Object.keys(record).filter(date => record[date]).sort();
-    const payload = { v: 1, d: dates, o: opened[localDate(now)] || [] };
+    const payload = {
+      v: Array.isArray(extras.archived) ? 2 : 1,
+      d: dates,
+      o: opened[localDate(now)] || [],
+    };
+    if (Array.isArray(extras.archived)) {
+      payload.a = normalizeCardIds(extras.archived).slice().sort((left, right) => left - right);
+    }
     return btoa(JSON.stringify(payload));
   }
 
@@ -117,12 +169,10 @@
     return normalizeReview(value, today || localDate()).due <= (today || localDate());
   }
 
-  function isViewableDailyDate(dateString, today) {
-    return /^\d{4}-\d{2}-\d{2}$/.test(dateString || "") && dateString <= (today || localDate());
-  }
-
   global.LearningCore = Object.freeze({
-    localDate, addDays, hashString, seededRandom, shuffled, dailySelection, streak,
-    encodeProgress, decodeProgress, normalizeReview, review, isDue, isViewableDailyDate,
+    localDate, addDays, hashString, seededRandom, shuffled, streak,
+    normalizeCardIds, normalizeSchedule, scheduledIds, scheduledCards,
+    encodeProgress, decodeProgress, normalizeReview, review, isDue,
+    isViewableDailyDate, canOpenDailyDate,
   });
 }(window));
