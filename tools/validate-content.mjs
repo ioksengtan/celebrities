@@ -105,6 +105,9 @@ review = core.review(review, true, "2026-09-22");
 if (review.due !== "2026-09-29" || !review.mastered) errors.push("間隔複習：第三次答對應排在 7 天後並標成熟練");
 review = core.review(review, false, "2026-09-29");
 if (review.due !== "2026-09-30" || review.mastered) errors.push("間隔複習：答錯應在隔天重排並取消熟練");
+if (!core.isViewableDailyDate("2026-09-17", "2026-09-18")) errors.push("每日挑戰：過去日期應可查看");
+if (!core.isViewableDailyDate("2026-09-18", "2026-09-18")) errors.push("每日挑戰：今天應可查看");
+if (core.isViewableDailyDate("2026-09-19", "2026-09-18")) errors.push("每日挑戰：未來日期不應可查看");
 
 if (errors.length) {
   console.error(`內容驗證失敗（${errors.length} 項）：`);
