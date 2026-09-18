@@ -1,4 +1,4 @@
-# Keynote Lexicon（名人單字卡）
+# 金句（Keynote Lexicon）
 
 雙語詞彙卡與語錄，取材自 [`references/speeches_database.json`](../../references/speeches_database.json)（Jensen Huang、Elon Musk、Sam Altman、Sundar Pichai、Mark Zuckerberg 2024–2026 年的 30 場演講/訪談）。對應報告中的 **PROD-002**。
 

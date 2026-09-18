@@ -11,7 +11,7 @@ GitHub Pages 核心薄片：掃語錄、複製、點原文。靜態 HTML，無�
 | 單場列表 | [`speech.html`](speech.html) |
 | 單場＋深連結 | `speech.html?id=JH-2026-005#quote-JH-2026-005-kq-1` |
 
-Keynote Lexicon、Executive English 只在導覽列當週邊產品。
+金句（Keynote Lexicon）、名人詞彙（Executive English）只在導覽列當週邊產品。
 
 ## 語錄怎麼篩（牆）
 
