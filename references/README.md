@@ -23,7 +23,14 @@ Hold this round (never verified on the wall): `EM-2026-005`, `SA-2026-001`.
 
 ## Other
 
-- `speeches_database.json` — 30 speeches/interviews (2024–2026) metadata.
+- `speeches_database.json` — 31 speeches/interviews (including one undated interview) metadata.
 - `speeches_indexes.json` — 7 derived index views.
 - `product_recommendations.json` — candidate product ideas.
 - `美國大學畢業典禮名人演講專案報告（完整版）.docx` — full project report.
+
+## Satya Nadella interview import (2026-09-19)
+
+- `SN-UNDATED-001`: user-provided transcript; event date unknown, not the import date.
+- Full transcript: `transcripts/SN-UNDATED-001.txt`; Traditional Chinese editorial: `editorials/SN-UNDATED-001.md`.
+- Metadata, indexes, Chinese summary, and five timestamped draft quotes imported. Quotes await video verification and are excluded from the verified wall.
+- Direct speech page: `products/core/speech.html?id=SN-UNDATED-001`. The default list includes featured speeches and speeches with verified quotes, so this draft is accessible by direct link.

@@ -4,6 +4,7 @@
     em: { key: "em", db: "elon_musk", name: "Elon Musk", short: "馬斯克", company: "Tesla / xAI" },
     sa: { key: "sa", db: "sam_altman", name: "Sam Altman", short: "奧特曼", company: "OpenAI" },
     sp: { key: "sp", db: "sundar_pichai", name: "Sundar Pichai", short: "皮查伊", company: "Google" },
+    sn: { key: "sn", db: "satya_nadella", name: "Satya Nadella", short: "納德拉", company: "Microsoft" },
     mz: { key: "mz", db: "mark_zuckerberg", name: "Mark Zuckerberg", short: "祖克柏", company: "Meta" }
   };
 

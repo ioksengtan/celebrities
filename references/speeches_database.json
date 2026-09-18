@@ -2,13 +2,14 @@
   "metadata": {
     "created_date": "2026-09-06",
     "time_range": "2024-09 to 2026-09",
-    "total_entries": 30,
+    "total_entries": 31,
     "categories": [
       "keynote",
       "interview",
       "panel",
       "town_hall"
-    ]
+    ],
+    "updated_date": "2026-09-19"
   },
   "speakers": {
     "jensen_huang": {
@@ -110,6 +111,21 @@
       "entries": [
         "MZ-2024-001",
         "MZ-2025-001"
+      ]
+    },
+    "satya_nadella": {
+      "name": "Satya Nadella",
+      "title": "Chairman & CEO (as identified in supplied transcript)",
+      "company": "Microsoft",
+      "topics": [
+        "AI adoption",
+        "AI safety",
+        "enterprise AI",
+        "model interoperability",
+        "AI infrastructure"
+      ],
+      "entries": [
+        "SN-UNDATED-001"
       ]
     }
   },
@@ -441,7 +457,9 @@
         "global tech trends"
       ],
       "key_quotes": [],
-      "also_recorded_as": ["EM-2026-003"],
+      "also_recorded_as": [
+        "EM-2026-003"
+      ],
       "transcript_url": "https://www.weforum.org/podcasts/meet-the-leader/episodes/conversation-with-elon-musk-davos-2026/",
       "video_url": "https://www.youtube.com/watch?v=10rKMvJFNhA",
       "language": "en",
@@ -874,6 +892,40 @@
         "spending",
         "infrastructure"
       ]
+    },
+    {
+      "id": "SN-UNDATED-001",
+      "speaker": "satya_nadella",
+      "date": null,
+      "date_status": "unknown",
+      "event": "Satya Nadella on the AI Doomer Slowdown, Microsoft’s Master Plan & Who Wins AI",
+      "location": null,
+      "type": "interview",
+      "duration_minutes": 37,
+      "topics": [
+        "AI adoption",
+        "AI safety",
+        "enterprise AI",
+        "model interoperability",
+        "AI infrastructure"
+      ],
+      "key_quotes": [],
+      "transcript_url": "https://www.youtube.com/watch?v=hdcsTeCFE0I",
+      "video_url": "https://www.youtube.com/watch?v=hdcsTeCFE0I",
+      "language": "en",
+      "word_count_estimate": 6876,
+      "product_tags": [
+        "interview",
+        "enterprise",
+        "strategy",
+        "AI safety"
+      ],
+      "transcript_path": "references/transcripts/SN-UNDATED-001.txt",
+      "editorial_path": "references/editorials/SN-UNDATED-001.md",
+      "source_type": "user_provided_transcript",
+      "verification_status": "pending",
+      "imported_date": "2026-09-19",
+      "notes_zh": "依使用者提供的逐字稿入庫；訪談日期與地點未確認。逐字稿含轉錄錯誤，尚未對影片校聽；數據與產品表現未獨立核實。UNDATED 表示訪談日期未知，匯入日期不是訪談日期。"
     }
   ]
 }

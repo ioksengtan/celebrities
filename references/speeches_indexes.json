@@ -1,7 +1,7 @@
 {
   "metadata": {
     "created_date": "2026-09-06",
-    "total_speeches": 30,
+    "total_speeches": 31,
     "index_types": [
       "topic_index",
       "timeline_index",
@@ -10,12 +10,13 @@
       "special_speeches",
       "quotes_index",
       "length_index"
-    ]
+    ],
+    "updated_date": "2026-09-19"
   },
   "topic_index": [
     {
       "topic": "ai infrastructure",
-      "count": 3,
+      "count": 4,
       "speeches": [
         {
           "id": "JH-2025-001",
@@ -36,6 +37,13 @@
           "speaker": "elon_musk",
           "event": "Moonshots Podcast Part 9",
           "date": "2026-02-08",
+          "type": "interview"
+        },
+        {
+          "id": "SN-UNDATED-001",
+          "speaker": "satya_nadella",
+          "event": "Satya Nadella on the AI Doomer Slowdown, Microsoft’s Master Plan & Who Wins AI",
+          "date": null,
           "type": "interview"
         }
       ]
@@ -1231,6 +1239,58 @@
           "type": "interview"
         }
       ]
+    },
+    {
+      "topic": "ai adoption",
+      "count": 1,
+      "speeches": [
+        {
+          "id": "SN-UNDATED-001",
+          "speaker": "satya_nadella",
+          "event": "Satya Nadella on the AI Doomer Slowdown, Microsoft’s Master Plan & Who Wins AI",
+          "date": null,
+          "type": "interview"
+        }
+      ]
+    },
+    {
+      "topic": "ai safety",
+      "count": 1,
+      "speeches": [
+        {
+          "id": "SN-UNDATED-001",
+          "speaker": "satya_nadella",
+          "event": "Satya Nadella on the AI Doomer Slowdown, Microsoft’s Master Plan & Who Wins AI",
+          "date": null,
+          "type": "interview"
+        }
+      ]
+    },
+    {
+      "topic": "enterprise ai",
+      "count": 1,
+      "speeches": [
+        {
+          "id": "SN-UNDATED-001",
+          "speaker": "satya_nadella",
+          "event": "Satya Nadella on the AI Doomer Slowdown, Microsoft’s Master Plan & Who Wins AI",
+          "date": null,
+          "type": "interview"
+        }
+      ]
+    },
+    {
+      "topic": "model interoperability",
+      "count": 1,
+      "speeches": [
+        {
+          "id": "SN-UNDATED-001",
+          "speaker": "satya_nadella",
+          "event": "Satya Nadella on the AI Doomer Slowdown, Microsoft’s Master Plan & Who Wins AI",
+          "date": null,
+          "type": "interview"
+        }
+      ]
     }
   ],
   "timeline_index": [
@@ -1509,6 +1569,18 @@
           "type": "interview"
         }
       ]
+    },
+    {
+      "month": "unknown",
+      "count": 1,
+      "speeches": [
+        {
+          "id": "SN-UNDATED-001",
+          "speaker": "satya_nadella",
+          "event": "Satya Nadella on the AI Doomer Slowdown, Microsoft’s Master Plan & Who Wins AI",
+          "type": "interview"
+        }
+      ]
     }
   ],
   "type_index": {
@@ -1541,7 +1613,8 @@
         "SP-2025-001",
         "SP-2025-002",
         "MZ-2024-001",
-        "MZ-2025-001"
+        "MZ-2025-001",
+        "SN-UNDATED-001"
       ],
       "panel": [
         "EM-2026-002",
@@ -1554,7 +1627,7 @@
     },
     "counts": {
       "keynote": 8,
-      "interview": 18,
+      "interview": 19,
       "panel": 3,
       "town_hall": 1
     }
@@ -1619,10 +1692,12 @@
         "SP-2025-001",
         "SP-2025-002",
         "MZ-2024-001",
-        "MZ-2025-001"
+        "MZ-2025-001",
+        "SN-UNDATED-001"
       ],
       "enterprise": [
-        "JH-2026-002"
+        "JH-2026-002",
+        "SN-UNDATED-001"
       ],
       "economics": [
         "JH-2026-002"
@@ -1660,7 +1735,8 @@
       ],
       "strategy": [
         "JH-2026-007",
-        "SA-2026-004"
+        "SA-2026-004",
+        "SN-UNDATED-001"
       ],
       "geopolitics": [
         "JH-2026-007",
@@ -1799,6 +1875,9 @@
       ],
       "spending": [
         "MZ-2025-001"
+      ],
+      "AI safety": [
+        "SN-UNDATED-001"
       ]
     },
     "counts": {
@@ -1812,8 +1891,8 @@
       "consumer": 1,
       "CES": 1,
       "product launch": 1,
-      "interview": 18,
-      "enterprise": 1,
+      "interview": 19,
+      "enterprise": 2,
       "economics": 1,
       "GTC": 1,
       "trillion dollar": 1,
@@ -1824,7 +1903,7 @@
       "CNBC": 4,
       "market": 1,
       "demand": 1,
-      "strategy": 2,
+      "strategy": 3,
       "geopolitics": 2,
       "podcast": 1,
       "politics": 1,
@@ -1867,7 +1946,8 @@
       "Acquired": 1,
       "Meta strategy": 1,
       "VR/AR": 1,
-      "spending": 1
+      "spending": 1,
+      "AI safety": 1
     }
   },
   "special_speeches": [
@@ -1988,7 +2068,7 @@
       ]
     },
     "medium": {
-      "count": 12,
+      "count": 13,
       "speeches": [
         {
           "id": "JH-2026-001",
@@ -2061,6 +2141,12 @@
           "speaker": "sundar_pichai",
           "event": "Bloomberg Tech Summit",
           "word_count": 9000
+        },
+        {
+          "id": "SN-UNDATED-001",
+          "speaker": "satya_nadella",
+          "event": "Satya Nadella on the AI Doomer Slowdown, Microsoft’s Master Plan & Who Wins AI",
+          "word_count": 6876
         }
       ]
     },
@@ -2247,6 +2333,22 @@
         "MZ-2024-001",
         "MZ-2025-001"
       ]
+    },
+    "satya_nadella": {
+      "name": "Satya Nadella",
+      "title": "Chairman & CEO (as identified in supplied transcript)",
+      "company": "Microsoft",
+      "topics": [
+        "AI adoption",
+        "AI safety",
+        "enterprise AI",
+        "model interoperability",
+        "AI infrastructure"
+      ],
+      "entries": [
+        "SN-UNDATED-001"
+      ],
+      "total_speeches": 1
     }
   }
 }
