@@ -10,7 +10,7 @@ references/          原始資料與規劃文件
   quotes_index.json              合併後的已核實語錄（牆／單場共用）
   content_review_flags.json      不上牆的 speech_id
   healthy_seven_feed.json        7 場優先演講＋quotes_wall
-  speeches_database.json         30 場演講的完整 metadata
+  speeches_database.json         31 場演講／訪談的 metadata（含 1 場日期待確認）
   speeches_indexes.json          7 種索引視圖
   product_recommendations.json   6 個候選產品（PROD-001~006）
 

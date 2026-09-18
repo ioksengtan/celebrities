@@ -66,5 +66,17 @@
     ],
     "draft_note": "summary_zh_by_core",
     "char_count": 111
+  },
+  {
+    "speech_id": "SN-UNDATED-001",
+    "summary_zh": "Nadella 認為，AI 模型已有大量能力尚未轉化為實際應用，企業需要重整工作流程、改善工具與系統設計。他主張使用多家模型並保有替換能力，讓企業掌握自身知識與記憶；模型競爭則能替應用產品創造更多經營空間。安全方面，他強調受控測試、權限管理、活動監控與稽核。微軟的布局涵蓋雲端、自有模型與應用，最終仍要以真實生產力成果衡量價值。（依使用者提供逐字稿整理；日期與內容尚未獨立核實。）",
+    "based_on": [
+      "user_provided_transcript"
+    ],
+    "source_urls": [
+      "https://www.youtube.com/watch?v=hdcsTeCFE0I"
+    ],
+    "draft_note": "繁體中文導讀；未對影片校聽，未獨立核實數據。",
+    "char_count": 190
   }
 ]
