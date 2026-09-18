@@ -16,6 +16,14 @@
 
 ---
 
+## 2026-09-18（首頁改為服務入口）
+
+- 首頁不再直接顯示語錄牆，改為說明整體服務定位：「從科技領袖的真實演講學英語與觀點」
+- 第一屏加入明確價值主張、主要 CTA，以及 30 場演講／145 個進階詞彙／45 張科技主題卡的內容規模
+- 新增 Executive English、Keynote Lexicon、已核實語錄三條使用路徑，補充真實語境、來源核實與間隔複習的差異化說明
+- 語錄牆保留為 `products/core/quotes-wall.html` 獨立頁面，並修正導覽與 `CoreUI` 的語錄牆連結
+- 已以桌面與 390×844 手機 viewport 驗收首頁資訊層級與響應式排版
+
 ## 2026-09-16（EE 測驗：認識了／還不熟即時連勝回饋）
 
 - 只改 `products/general-vocab/executive-english.html` 測驗模式。`MASTERY_STREAK=3`、`exec-vocab-known` schema、小遊戲、每日挑戰、篩選、重置熟練、Keynote Lexicon 都不動
