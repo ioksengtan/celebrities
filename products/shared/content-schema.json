@@ -11,5 +11,14 @@
     "required": ["term", "cat", "rarity", "zh", "def_en", "def_zh", "quote", "context"],
     "categories": ["ai", "biz", "quote", "new"],
     "rarities": ["common", "rare", "legendary"]
+  },
+  "progressSync": {
+    "version": 3,
+    "fields": ["v", "d", "o", "p"],
+    "optionalFields": ["a"],
+    "dailyPackStorage": {
+      "keynoteLexicon": "keynote-lexicon-daily-packs",
+      "executiveEnglish": "exec-vocab-daily-packs"
+    }
   }
 }

@@ -1568,23 +1568,31 @@ document.getElementById("games-reset-mastery").addEventListener("click", resetMa
 /* ---- Daily challenge: date-seeded pack of 5 + streak calendar ---- */
 const DAILY_SIZE = 5;
 
-function hashStr(str){
-  return LearningCore.hashString(str);
-}
-function mulberry32(seed){
-  return LearningCore.seededRandom(seed);
-}
 function todayStr(d){
   return LearningCore.localDate(d);
 }
-function pickDailyCards(dateStr){
-  return LearningCore.dailySelection(CARDS, dateStr, DAILY_SIZE);
-}
-
+const DAILY_PACKS_KEY = "exec-vocab-daily-packs";
 let dailyRecord = {};
 try { dailyRecord = JSON.parse(localStorage.getItem("exec-vocab-daily") || "{}"); } catch(e){ dailyRecord = {}; }
 let dailyOpened = {};
 try { dailyOpened = JSON.parse(localStorage.getItem("exec-vocab-daily-opened") || "{}"); } catch(e){ dailyOpened = {}; }
+let dailyPacks = {};
+try { dailyPacks = JSON.parse(localStorage.getItem(DAILY_PACKS_KEY) || "{}"); } catch(e){ dailyPacks = {}; }
+dailyPacks = LearningCore.normalizePacksMap(dailyPacks);
+
+function persistDailyPacks(){
+  try { localStorage.setItem(DAILY_PACKS_KEY, JSON.stringify(dailyPacks)); } catch(e){}
+}
+function pickDailyCards(dateStr){
+  const result = LearningCore.ensureDailyPack(CARDS, dateStr, DAILY_SIZE, dailyPacks, {
+    preferIds: dailyOpened[dateStr] || [],
+  });
+  if (result.persist){
+    dailyPacks[dateStr] = result.ids;
+    persistDailyPacks();
+  }
+  return result.cards;
+}
 
 function computeStreak(record){
   return LearningCore.streak(record);
@@ -1757,7 +1765,7 @@ document.getElementById("btn-see-all").addEventListener("click", ()=> setMode("f
 
 /* ---- Cross-device streak sync (manual export/import code) ---- */
 function buildSyncCode(){
-  return LearningCore.encodeProgress(dailyRecord, dailyOpened);
+  return LearningCore.encodeProgress(dailyRecord, dailyOpened, undefined, { packs: dailyPacks });
 }
 function applySyncCode(code){
   const payload = LearningCore.decodeProgress(code);
@@ -1774,6 +1782,9 @@ function applySyncCode(code){
     dailyOpened[today] = Array.from(new Set([...cur, ...payload.o]));
     try { localStorage.setItem("exec-vocab-daily-opened", JSON.stringify(dailyOpened)); } catch(e){}
   }
+
+  dailyPacks = LearningCore.mergeLockedPacks(dailyPacks, payload.p);
+  persistDailyPacks();
   return added;
 }
 document.getElementById("btn-toggle-sync").addEventListener("click", ()=>{

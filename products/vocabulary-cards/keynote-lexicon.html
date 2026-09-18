@@ -736,12 +736,10 @@ try {
 const validCardIds = new Set(CARDS.map(c=> c.id));
 archivedIds = archivedIds.map(Number).filter(id=> validCardIds.has(id));
 let feedNeedsRender = true;
-let dailyPackCache = { date: null, ids: [] };
 
 function persistArchived(){
   try { localStorage.setItem(ARCHIVED_KEY, JSON.stringify(archivedIds)); } catch(e){}
 }
-function archivedSet(){ return new Set(archivedIds); }
 function isArchived(id){ return archivedIds.includes(Number(id)); }
 function feedDeck(){ return CARDS.filter(c=> !isArchived(c.id)); }
 function archiveCard(id){
@@ -759,7 +757,6 @@ function restoreCard(id){
   archivedIds = next;
   persistArchived();
   feedNeedsRender = true;
-  if (dailyPackCache.ids.length === 0) dailyPackCache = { date: null, ids: [] };
   return true;
 }
 
@@ -1216,49 +1213,33 @@ document.addEventListener("keydown", (e)=>{
 /* ---- Daily challenge: date-seeded pack of 3 + streak calendar ---- */
 const DAILY_SIZE = 3;
 
-function hashStr(str){
-  return LearningCore.hashString(str);
-}
-function mulberry32(seed){
-  return LearningCore.seededRandom(seed);
-}
 function todayStr(d){
   return LearningCore.localDate(d);
 }
-function pickDailyCards(dateStr){
-  if (dailyPackCache.date === dateStr && dailyPackCache.ids.length){
-    return dailyPackCache.ids.map(id=> CARDS.find(c=> c.id === id)).filter(Boolean);
-  }
-  const archived = archivedSet();
-  const openedIds = dailyOpened[dateStr] || [];
-  const result = [];
-  const used = new Set();
-  openedIds.forEach(id=>{
-    const c = CARDS.find(x=> x.id === id);
-    if (c && result.length < DAILY_SIZE){ result.push(c); used.add(c.id); }
-  });
-  const rng = mulberry32(hashStr(dateStr));
-  const rest = CARDS.filter(c=> !archived.has(c.id) && !used.has(c.id));
-  const idx = rest.map((_, i)=> i);
-  for (let i = idx.length - 1; i > 0; i--){
-    const j = Math.floor(rng() * (i+1));
-    [idx[i], idx[j]] = [idx[j], idx[i]];
-  }
-  for (const i of idx){
-    if (result.length >= DAILY_SIZE) break;
-    result.push(rest[i]);
-  }
-  // Only pin today's pack; viewing a past date must not clobber the same-day archive cache.
-  if (dateStr === todayStr()){
-    dailyPackCache = { date: dateStr, ids: result.map(c=> c.id) };
-  }
-  return result;
-}
-
+const DAILY_PACKS_KEY = "keynote-lexicon-daily-packs";
 let dailyRecord = {};
 try { dailyRecord = JSON.parse(localStorage.getItem("keynote-lexicon-daily") || "{}"); } catch(e){ dailyRecord = {}; }
 let dailyOpened = {};
 try { dailyOpened = JSON.parse(localStorage.getItem("keynote-lexicon-daily-opened") || "{}"); } catch(e){ dailyOpened = {}; }
+let dailyPacks = {};
+try { dailyPacks = JSON.parse(localStorage.getItem(DAILY_PACKS_KEY) || "{}"); } catch(e){ dailyPacks = {}; }
+dailyPacks = LearningCore.normalizePacksMap(dailyPacks);
+
+function persistDailyPacks(){
+  try { localStorage.setItem(DAILY_PACKS_KEY, JSON.stringify(dailyPacks)); } catch(e){}
+}
+function pickDailyCards(dateStr){
+  const result = LearningCore.ensureDailyPack(CARDS, dateStr, DAILY_SIZE, dailyPacks, {
+    excludeIds: archivedIds,
+    preferIds: dailyOpened[dateStr] || [],
+    fillExcludeIds: archivedIds,
+  });
+  if (result.persist){
+    dailyPacks[dateStr] = result.ids;
+    persistDailyPacks();
+  }
+  return result.cards;
+}
 
 function computeStreak(record){
   return LearningCore.streak(record);
@@ -1447,10 +1428,10 @@ document.getElementById("btn-see-all").addEventListener("click", ()=> setMode("f
 
 /* ---- Cross-device streak sync (manual export/import code) ---- */
 function buildSyncCode(){
-  const doneDates = Object.keys(dailyRecord).filter(d=> dailyRecord[d]).sort();
-  const today = todayStr();
-  const payload = { v: 2, d: doneDates, o: dailyOpened[today] || [], a: archivedIds.slice().sort((x,y)=> x-y) };
-  return btoa(JSON.stringify(payload));
+  return LearningCore.encodeProgress(dailyRecord, dailyOpened, undefined, {
+    packs: dailyPacks,
+    archived: archivedIds,
+  });
 }
 function applySyncCode(code){
   const payload = LearningCore.decodeProgress(code);
@@ -1467,6 +1448,9 @@ function applySyncCode(code){
     dailyOpened[today] = Array.from(new Set([...cur, ...payload.o]));
     try { localStorage.setItem("keynote-lexicon-daily-opened", JSON.stringify(dailyOpened)); } catch(e){}
   }
+
+  dailyPacks = LearningCore.mergeLockedPacks(dailyPacks, payload.p);
+  persistDailyPacks();
 
   let addedArchived = 0;
   if (Array.isArray(payload.a)){
