@@ -4,6 +4,18 @@
 
 ---
 
+## 2026-09-18（共用核心、內容驗證、間隔複習）
+
+- 新增 `products/shared/learning-core.js`，兩個產品共用日期、每日固定抽卡、洗牌、連續天數、同步代碼與複習排程邏輯；仍維持純前端、免建置部署
+- 新增 `products/shared/content-schema.json` 作為兩套卡片資料的欄位契約，並新增 `npm run validate`：驗證必填欄位、ID、重複詞條、日期、講者、分類、CEFR／稀有度、HTML／JSON 同步及間隔排程
+- Executive English 的測驗改成間隔複習：記得後依 1、3、7 天再逐步拉長；忘記則隔天再出現。沿用 `exec-vocab-known` 並自動遷移舊格式，不清除既有進度
+- 本機瀏覽器驗收兩個產品均能載入，Executive English 答題後今日待複習數會減少，瀏覽器主控台無錯誤
+- 修正 Keynote Lexicon README 的舊卡片數（20→45）
+- 兩個產品的卡片都改由各自的 `cards_data.json` 載入，JSON 成為唯一資料來源；HTML 不再維護重複副本
+- 新增 GitHub Actions，在每次 push／pull request 自動執行 `npm run validate`
+
+---
+
 ## 2026-09-16（EE 測驗：認識了／還不熟即時連勝回饋）
 
 - 只改 `products/general-vocab/executive-english.html` 測驗模式。`MASTERY_STREAK=3`、`exec-vocab-known` schema、小遊戲、每日挑戰、篩選、重置熟練、Keynote Lexicon 都不動

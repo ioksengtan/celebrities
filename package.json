@@ -1,0 +1,7 @@
+{
+  "name": "celebrities-learning-products",
+  "private": true,
+  "scripts": {
+    "validate": "node tools/validate-content.mjs"
+  }
+}

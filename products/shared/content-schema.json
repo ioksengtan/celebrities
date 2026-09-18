@@ -1,0 +1,15 @@
+{
+  "common": {
+    "required": ["id", "speaker", "event", "date"],
+    "dateFormat": "YYYY-MM-DD"
+  },
+  "executiveEnglish": {
+    "required": ["word", "pos", "cefr", "rarity", "zh", "def_en", "example", "syn"],
+    "cefrRarity": { "A2": "common", "B1": "common", "B2": "rare", "C1": "legendary" }
+  },
+  "keynoteLexicon": {
+    "required": ["term", "cat", "rarity", "zh", "def_en", "def_zh", "quote", "context"],
+    "categories": ["ai", "biz", "quote", "new"],
+    "rarities": ["common", "rare", "legendary"]
+  }
+}
