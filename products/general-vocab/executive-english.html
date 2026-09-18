@@ -358,6 +358,11 @@
   .cal-cell.clickable{ cursor: pointer; }
   .cal-cell.clickable:hover:not(.done){ color: var(--ink); background: var(--surface-2); }
   .cal-cell.empty{ visibility: hidden; }
+  .feed-empty{
+    width: 100%; max-width: 420px; text-align: center; color: var(--muted);
+    background: var(--surface); border: 1px solid var(--line); border-radius: 16px;
+    padding: 36px 20px; font-size: 13.5px; line-height: 1.55;
+  }
   .sync-lead{ font-size: 11.5px; color: var(--muted); line-height: 1.5; margin: 0 0 10px; }
   .sync-row{ margin-bottom: 12px; }
   .sync-row:last-child{ margin-bottom: 0; }
@@ -631,7 +636,7 @@
       gap: 4px;
       width: 100%;
     }
-    .daily-top, .daily-progress-row, .feed-progress, #calendar-wrap, #sync-wrap{
+    .daily-top, .daily-progress-row, .feed-progress, #calendar-wrap, #sync-wrap, #daily-empty{
       flex: none;
       max-width: none;
     }
@@ -639,6 +644,7 @@
     .streak b{ font-size: 13px; }
     .cal-toggle{ padding: 3px 8px; font-size: 10px; }
     .daily-progress-row{ font-size: 11px; }
+    .feed-empty{ max-width: none; padding: 24px 16px; font-size: 13px; }
     .feed-progress{ height: 3px; }
     #daily-panel .feed-scroll,
     #feed-panel .feed-scroll{
@@ -753,6 +759,7 @@
     </div>
     <div class="feed-progress"><div id="daily-progress-bar"></div></div>
     <div class="feed-scroll" id="daily-scroll"></div>
+    <div class="feed-empty" id="daily-empty" hidden>尚未公布</div>
     <div id="daily-complete" class="daily-complete" hidden>
       <div class="daily-complete-emoji">🎉</div>
       <h3>今天完成了！</h3>
@@ -874,6 +881,11 @@ const POS_ZH = {
 };
 
 const CARDS = await loadCards("./cards_data.json");
+const DAILY_SCHEDULE = LearningCore.normalizeSchedule(await (async ()=>{
+  const response = await fetch("./daily_schedule.json");
+  if (!response.ok) throw new Error("每日行程載入失敗（HTTP " + response.status + "）");
+  return response.json();
+})());
 
 document.getElementById("stat-total").textContent = CARDS.length;
 
@@ -1565,26 +1577,20 @@ document.getElementById("games-again").addEventListener("click", ()=>{
 document.getElementById("games-to-lobby").addEventListener("click", showGamesLobby);
 document.getElementById("games-reset-mastery").addEventListener("click", resetMastery);
 
-/* ---- Daily challenge: date-seeded pack of 5 + streak calendar ---- */
+/* ---- Daily challenge: scheduled pack of 5 + streak calendar ---- */
 const DAILY_SIZE = 5;
 
-function hashStr(str){
-  return LearningCore.hashString(str);
-}
-function mulberry32(seed){
-  return LearningCore.seededRandom(seed);
-}
 function todayStr(d){
   return LearningCore.localDate(d);
 }
-function pickDailyCards(dateStr){
-  return LearningCore.dailySelection(CARDS, dateStr, DAILY_SIZE);
-}
-
 let dailyRecord = {};
 try { dailyRecord = JSON.parse(localStorage.getItem("exec-vocab-daily") || "{}"); } catch(e){ dailyRecord = {}; }
 let dailyOpened = {};
 try { dailyOpened = JSON.parse(localStorage.getItem("exec-vocab-daily-opened") || "{}"); } catch(e){ dailyOpened = {}; }
+
+function pickDailyCards(dateStr){
+  return LearningCore.scheduledCards(CARDS, LearningCore.scheduledIds(DAILY_SCHEDULE, dateStr).slice(0, DAILY_SIZE));
+}
 
 function computeStreak(record){
   return LearningCore.streak(record);
@@ -1594,7 +1600,7 @@ function updateStreakUI(){
 }
 function updateDailyProgressUI(openedCount, total){
   document.getElementById("daily-progress-text").textContent = openedCount + " / " + total;
-  document.getElementById("daily-progress-bar").style.width = (openedCount / total * 100) + "%";
+  document.getElementById("daily-progress-bar").style.width = total ? (openedCount / total * 100) + "%" : "0%";
 }
 function showDailyComplete(dateStr){
   if (dateStr !== todayStr()) return;
@@ -1639,8 +1645,14 @@ let viewingDate = todayStr();
 function hasDailyData(dateStr){
   return !!dailyRecord[dateStr] || ((dailyOpened[dateStr] || []).length > 0);
 }
+function hasScheduledPack(dateStr){
+  return LearningCore.scheduledIds(DAILY_SCHEDULE, dateStr).length > 0;
+}
 function canViewDailyDate(dateStr){
-  return LearningCore.isViewableDailyDate(dateStr, todayStr());
+  return LearningCore.canOpenDailyDate(dateStr, todayStr(), {
+    scheduled: hasScheduledPack(dateStr),
+    hasProgress: hasDailyData(dateStr),
+  });
 }
 function updateDailyProgressLabel(dateStr){
   const el = document.getElementById("daily-progress-label");
@@ -1658,8 +1670,22 @@ function renderDaily(dateStr){
   const openedIds = dailyOpened[dateStr] || [];
   const dayDone = !!dailyRecord[dateStr];
   const scroll = document.getElementById("daily-scroll");
+  const empty = document.getElementById("daily-empty");
   scroll.innerHTML = "";
   updateDailyProgressLabel(dateStr);
+
+  if (cards.length === 0){
+    scroll.hidden = true;
+    empty.hidden = false;
+    empty.textContent = "尚未公布";
+    updateDailyProgressUI(0, 0);
+    hideDailyComplete();
+    updateStreakUI();
+    renderCalendar();
+    return;
+  }
+  empty.hidden = true;
+  scroll.hidden = false;
 
   cards.forEach((c, i)=>{
     // Historical packs are view-only: reveal them without changing completion
@@ -1742,6 +1768,10 @@ function renderCalendar(){
     if (clickable){
       el.title = dateStr === todayS ? "查看今日挑戰" : "查看這天的挑戰";
       el.addEventListener("click", ()=> renderDaily(dateStr));
+    } else if (dateStr > todayS && hasScheduledPack(dateStr)){
+      el.title = "尚未開放";
+    } else if (!hasScheduledPack(dateStr)){
+      el.title = "尚未公布";
     }
     grid.appendChild(el);
   }

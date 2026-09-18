@@ -11,5 +11,15 @@
     "required": ["term", "cat", "rarity", "zh", "def_en", "def_zh", "quote", "context"],
     "categories": ["ai", "biz", "quote", "new"],
     "rarities": ["common", "rare", "legendary"]
+  },
+  "dailySchedule": {
+    "file": "daily_schedule.json",
+    "minDays": 14,
+    "keynoteLexicon": { "size": 3 },
+    "executiveEnglish": { "size": 5 }
+  },
+  "progressSync": {
+    "fields": ["v", "d", "o"],
+    "optionalFields": ["a"]
   }
 }
