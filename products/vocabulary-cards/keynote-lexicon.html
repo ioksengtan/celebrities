@@ -648,7 +648,7 @@
     </div>
     <div class="feed-progress"><div id="daily-progress-bar"></div></div>
     <div class="feed-scroll" id="daily-scroll"></div>
-    <div class="feed-empty" id="daily-empty" hidden>進行中沒有可抽的卡片。到「整理瀏覽」→「已封存」還原後，明天會再進入每日挑戰抽卡池。</div>
+    <div class="feed-empty" id="daily-empty" hidden>尚未公布</div>
     <div id="daily-complete" class="daily-complete" hidden>
       <div class="daily-complete-emoji">🎉</div>
       <h3>今天完成了！</h3>
@@ -723,6 +723,11 @@ const RARITY = {
 };
 
 const CARDS = await loadCards("./cards_data.json");
+const DAILY_SCHEDULE = LearningCore.normalizeSchedule(await (async ()=>{
+  const response = await fetch("./daily_schedule.json");
+  if (!response.ok) throw new Error("每日行程載入失敗（HTTP " + response.status + "）");
+  return response.json();
+})());
 
 document.getElementById("stat-total").textContent = CARDS.length;
 
@@ -1210,35 +1215,19 @@ document.addEventListener("keydown", (e)=>{
   if (e.code === "ArrowLeft"){ markQuiz(false); }
 });
 
-/* ---- Daily challenge: date-seeded pack of 3 + streak calendar ---- */
+/* ---- Daily challenge: scheduled pack of 3 + streak calendar ---- */
 const DAILY_SIZE = 3;
 
 function todayStr(d){
   return LearningCore.localDate(d);
 }
-const DAILY_PACKS_KEY = "keynote-lexicon-daily-packs";
 let dailyRecord = {};
 try { dailyRecord = JSON.parse(localStorage.getItem("keynote-lexicon-daily") || "{}"); } catch(e){ dailyRecord = {}; }
 let dailyOpened = {};
 try { dailyOpened = JSON.parse(localStorage.getItem("keynote-lexicon-daily-opened") || "{}"); } catch(e){ dailyOpened = {}; }
-let dailyPacks = {};
-try { dailyPacks = JSON.parse(localStorage.getItem(DAILY_PACKS_KEY) || "{}"); } catch(e){ dailyPacks = {}; }
-dailyPacks = LearningCore.normalizePacksMap(dailyPacks);
 
-function persistDailyPacks(){
-  try { localStorage.setItem(DAILY_PACKS_KEY, JSON.stringify(dailyPacks)); } catch(e){}
-}
 function pickDailyCards(dateStr){
-  const result = LearningCore.ensureDailyPack(CARDS, dateStr, DAILY_SIZE, dailyPacks, {
-    excludeIds: archivedIds,
-    preferIds: dailyOpened[dateStr] || [],
-    fillExcludeIds: archivedIds,
-  });
-  if (result.persist){
-    dailyPacks[dateStr] = result.ids;
-    persistDailyPacks();
-  }
-  return result.cards;
+  return LearningCore.scheduledCards(CARDS, LearningCore.scheduledIds(DAILY_SCHEDULE, dateStr).slice(0, DAILY_SIZE));
 }
 
 function computeStreak(record){
@@ -1294,8 +1283,14 @@ let viewingDate = todayStr();
 function hasDailyData(dateStr){
   return !!dailyRecord[dateStr] || ((dailyOpened[dateStr] || []).length > 0);
 }
+function hasScheduledPack(dateStr){
+  return LearningCore.scheduledIds(DAILY_SCHEDULE, dateStr).length > 0;
+}
 function canViewDailyDate(dateStr){
-  return LearningCore.isViewableDailyDate(dateStr, todayStr());
+  return LearningCore.canOpenDailyDate(dateStr, todayStr(), {
+    scheduled: hasScheduledPack(dateStr),
+    hasProgress: hasDailyData(dateStr),
+  });
 }
 function updateDailyProgressLabel(dateStr){
   const el = document.getElementById("daily-progress-label");
@@ -1320,9 +1315,7 @@ function renderDaily(dateStr){
   if (cards.length === 0){
     scroll.hidden = true;
     empty.hidden = false;
-    empty.textContent = dateStr === today
-      ? "進行中沒有可抽的卡片。到「整理瀏覽」→「已封存」還原後，明天會再進入每日挑戰抽卡池。"
-      : "這天沒有可顯示的挑戰卡片。";
+    empty.textContent = "尚未公布";
     updateDailyProgressUI(0, 0);
     hideDailyComplete();
     updateStreakUI();
@@ -1413,6 +1406,10 @@ function renderCalendar(){
     if (clickable){
       el.title = dateStr === todayS ? "查看今日挑戰" : "查看這天的挑戰";
       el.addEventListener("click", ()=> renderDaily(dateStr));
+    } else if (dateStr > todayS && hasScheduledPack(dateStr)){
+      el.title = "尚未開放";
+    } else if (!hasScheduledPack(dateStr)){
+      el.title = "尚未公布";
     }
     grid.appendChild(el);
   }
@@ -1429,7 +1426,6 @@ document.getElementById("btn-see-all").addEventListener("click", ()=> setMode("f
 /* ---- Cross-device streak sync (manual export/import code) ---- */
 function buildSyncCode(){
   return LearningCore.encodeProgress(dailyRecord, dailyOpened, undefined, {
-    packs: dailyPacks,
     archived: archivedIds,
   });
 }
@@ -1448,9 +1444,6 @@ function applySyncCode(code){
     dailyOpened[today] = Array.from(new Set([...cur, ...payload.o]));
     try { localStorage.setItem("keynote-lexicon-daily-opened", JSON.stringify(dailyOpened)); } catch(e){}
   }
-
-  dailyPacks = LearningCore.mergeLockedPacks(dailyPacks, payload.p);
-  persistDailyPacks();
 
   let addedArchived = 0;
   if (Array.isArray(payload.a)){

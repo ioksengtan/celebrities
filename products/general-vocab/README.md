@@ -4,6 +4,7 @@
 
 - 原始碼：[`executive-english.html`](executive-english.html)（介面與互動邏輯）
 - 詞彙資料：[`cards_data.json`](cards_data.json)（145 字，唯一資料來源；不要再把卡片複製進 HTML）
+- 每日挑戰行程：[`daily_schedule.json`](daily_schedule.json)（日期 → 5 個卡片 id）
 
 ## 資料怎麼來的
 
@@ -14,7 +15,7 @@
 
 ## 功能（沿用 vocabulary-cards 的機制）
 
-- 每日挑戰：每天固定 5 張卡（依日期做種子），開卡包動畫，C1 難度字有金色特效，累積連續天數
+- 每日挑戰：每天 5 張卡由編輯排在 `daily_schedule.json`，開卡包動畫，C1 難度字有金色特效，累積連續天數。未來已排程日不能提前開啟；沒排到的日子顯示「尚未公布」
 - 三面卡：字 → 定義＋原話例句 → 出處（講者/場合/日期）與同義詞
 - 滑卡模式、整理瀏覽（可依 CEFR／講者篩選）、間隔複習模式（記得／忘記，存在瀏覽器本機；依 1、3、7 天與動態延長的間隔再次出現）
 - 「稀有度」直接對應 CEFR 難度：A2/B1＝普通，B2＝稀有，C1＝傳說
@@ -26,3 +27,5 @@
 - [ ] 例句是原話輕微清理過的版本，不是逐字稿的機器摘要，但也還沒有人工二次校對
 - [ ] 與 [`../vocabulary-cards`](../vocabulary-cards) 目前各自獨立記錄每日挑戰進度（不同 localStorage key），尚未實作「兩個 app 部署同網域＋共用 streak」
 - [ ] 評估做成可安裝 PWA、跨裝置同步進度
+
+加下一個月的每日挑戰：編輯 [`daily_schedule.json`](daily_schedule.json)，每個日期寫恰好 5 個不重複、且存在於 `cards_data.json` 的 id，存檔後跑 `npm run validate`。

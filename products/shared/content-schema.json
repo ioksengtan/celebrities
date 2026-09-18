@@ -12,13 +12,14 @@
     "categories": ["ai", "biz", "quote", "new"],
     "rarities": ["common", "rare", "legendary"]
   },
+  "dailySchedule": {
+    "file": "daily_schedule.json",
+    "minDays": 14,
+    "keynoteLexicon": { "size": 3 },
+    "executiveEnglish": { "size": 5 }
+  },
   "progressSync": {
-    "version": 3,
-    "fields": ["v", "d", "o", "p"],
-    "optionalFields": ["a"],
-    "dailyPackStorage": {
-      "keynoteLexicon": "keynote-lexicon-daily-packs",
-      "executiveEnglish": "exec-vocab-daily-packs"
-    }
+    "fields": ["v", "d", "o"],
+    "optionalFields": ["a"]
   }
 }
