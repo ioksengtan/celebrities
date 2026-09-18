@@ -33,17 +33,69 @@ function extractLiteral(source, declaration) {
   throw new Error(`${declaration} 結構不完整`);
 }
 
-function readProduct(relativePath, dataPath) {
+function readProduct(relativePath, dataPath, schedulePath) {
   const file = path.join(root, relativePath);
   const source = fs.readFileSync(file, "utf8");
   if (!source.includes(`loadCards("./${path.basename(dataPath)}")`)) {
     errors.push(`${relativePath}: 未載入指定的 JSON 單一資料來源`);
   }
+  if (!source.includes(`"./${path.basename(schedulePath)}"`)) {
+    errors.push(`${relativePath}: 未載入每日挑戰行程 ${path.basename(schedulePath)}`);
+  }
+  if (/dailySelection\(|ensureDailyPack\(/.test(source)) {
+    errors.push(`${relativePath}: 每日挑戰不可再用日期種子抽卡`);
+  }
+  const sizeMatch = source.match(/const DAILY_SIZE = (\d+)/);
   return {
     file: relativePath,
+    source,
     cards: JSON.parse(fs.readFileSync(path.join(root, dataPath), "utf8")),
+    schedule: JSON.parse(fs.readFileSync(path.join(root, schedulePath), "utf8")),
     speakers: vm.runInNewContext(`(${extractLiteral(source, "SPEAKERS")})`),
+    dailySize: sizeMatch ? Number(sizeMatch[1]) : null,
   };
+}
+
+function scheduleIssues(schedule, cards, size, label) {
+  const issues = [];
+  if (!schedule || typeof schedule !== "object" || Array.isArray(schedule)) {
+    issues.push(`${label}: daily_schedule.json 必須是日期對 id 陣列的物件`);
+    return issues;
+  }
+  const cardIds = new Set(cards.map(card => card.id));
+  const dates = Object.keys(schedule).filter(key => !key.startsWith("_")).sort();
+  if (dates.length < schema.dailySchedule.minDays) {
+    issues.push(`${label}: 行程至少應排 ${schema.dailySchedule.minDays} 天（目前 ${dates.length} 天）`);
+  }
+  dates.forEach(date => {
+    if (!/^\d{4}-\d{2}-\d{2}$/.test(date) || Number.isNaN(Date.parse(`${date}T00:00:00Z`))) {
+      issues.push(`${label}: 無效日期鍵 ${date}`);
+      return;
+    }
+    const ids = schedule[date];
+    if (!Array.isArray(ids)) {
+      issues.push(`${label}: ${date} 應為 id 陣列`);
+      return;
+    }
+    if (ids.length !== size) {
+      issues.push(`${label}: ${date} 應有恰好 ${size} 張，實際 ${ids.length}`);
+    }
+    const seen = new Set();
+    ids.forEach(id => {
+      if (!Number.isInteger(id) || id <= 0) issues.push(`${label}: ${date} 無效 id ${id}`);
+      else if (!cardIds.has(id)) issues.push(`${label}: ${date} 找不到卡片 id ${id}`);
+      else if (seen.has(id)) issues.push(`${label}: ${date} 同一天重複 id ${id}`);
+      seen.add(id);
+    });
+  });
+  return issues;
+}
+
+function validateSchedule(product, size, label) {
+  if (product.dailySize !== size) {
+    errors.push(`${product.file}: DAILY_SIZE 應為 ${size}`);
+  }
+  scheduleIssues(product.schedule, product.cards, size, label).forEach(issue => errors.push(issue));
 }
 
 function requireFields(product, fields) {
@@ -76,8 +128,16 @@ function validateCommon(product, labelField) {
   });
 }
 
-const executive = readProduct("products/general-vocab/executive-english.html", "products/general-vocab/cards_data.json");
-const keynote = readProduct("products/vocabulary-cards/keynote-lexicon.html", "products/vocabulary-cards/cards_data.json");
+const executive = readProduct(
+  "products/general-vocab/executive-english.html",
+  "products/general-vocab/cards_data.json",
+  "products/general-vocab/daily_schedule.json"
+);
+const keynote = readProduct(
+  "products/vocabulary-cards/keynote-lexicon.html",
+  "products/vocabulary-cards/cards_data.json",
+  "products/vocabulary-cards/daily_schedule.json"
+);
 
 requireFields(executive, [...schema.common.required, ...schema.executiveEnglish.required]);
 validateCommon(executive, "word");
@@ -105,54 +165,49 @@ review = core.review(review, true, "2026-09-22");
 if (review.due !== "2026-09-29" || !review.mastered) errors.push("間隔複習：第三次答對應排在 7 天後並標成熟練");
 review = core.review(review, false, "2026-09-29");
 if (review.due !== "2026-09-30" || review.mastered) errors.push("間隔複習：答錯應在隔天重排並取消熟練");
-if (!core.isViewableDailyDate("2026-09-17", "2026-09-18")) errors.push("每日挑戰：過去日期應可查看");
-if (!core.isViewableDailyDate("2026-09-18", "2026-09-18")) errors.push("每日挑戰：今天應可查看");
-if (core.isViewableDailyDate("2026-09-19", "2026-09-18")) errors.push("每日挑戰：未來日期不應可查看");
+validateSchedule(executive, schema.dailySchedule.executiveEnglish.size, executive.file);
+validateSchedule(keynote, schema.dailySchedule.keynoteLexicon.size, keynote.file);
+const countIssues = scheduleIssues({ "2026-09-18": [1, 2] }, [{ id: 1 }, { id: 2 }, { id: 3 }], 3, "行程檢查");
+if (!countIssues.some(issue => issue.includes("恰好 3 張"))) {
+  errors.push("行程驗證：張數不符時應回報錯誤");
+}
 
-const packCards = Array.from({ length: 8 }, (_, index) => ({ id: index + 1 }));
-const seeded = core.dailySelection(packCards, "2026-09-18", 3).map(card => card.id);
-const firstLock = core.ensureDailyPack(packCards, "2026-09-18", 3, {}, {});
-if (firstLock.ids.join() !== seeded.join() || !firstLock.persist) {
-  errors.push("每日牌組：首次產生應沿用日期種子且寫入鎖定");
+if (!core.isViewableDailyDate("2026-09-17", "2026-09-18")) errors.push("每日挑戰：過去日期格式應可通過日期檢查");
+if (!core.isViewableDailyDate("2026-09-18", "2026-09-18")) errors.push("每日挑戰：今天應可通過日期檢查");
+if (core.isViewableDailyDate("2026-09-19", "2026-09-18")) errors.push("每日挑戰：未來日期不應可查看");
+if (core.canOpenDailyDate("2026-09-19", "2026-09-18", { scheduled: true })) {
+  errors.push("每日挑戰：已排程的未來日期不應可提前開啟");
+}
+if (!core.canOpenDailyDate("2026-09-18", "2026-09-18", { scheduled: true })) {
+  errors.push("每日挑戰：今天已排程應可開啟");
+}
+if (!core.canOpenDailyDate("2026-09-17", "2026-09-18", { scheduled: true })) {
+  errors.push("每日挑戰：過去已排程日期應可回看");
+}
+if (core.canOpenDailyDate("2026-09-16", "2026-09-18", {})) {
+  errors.push("每日挑戰：未排程且無進度的過去日期不應開啟");
+}
+if (!core.canOpenDailyDate("2026-09-16", "2026-09-18", { hasProgress: true })) {
+  errors.push("每日挑戰：過去已完成日期應可回看");
+}
+
+const packCards = [{ id: 1 }, { id: 2 }, { id: 3 }, { id: 4 }];
+const resolved = core.scheduledCards(packCards, [3, 99, 1, 3]);
+if (resolved.map(card => card.id).join() !== "3,1") {
+  errors.push("每日牌組：應依行程 id 還原，缺卡略過且不重抽");
 }
 const grown = packCards.concat({ id: 99 });
-const lockedAfterGrowth = core.ensureDailyPack(grown, "2026-09-18", 3, { "2026-09-18": firstLock.ids }, {});
-if (lockedAfterGrowth.ids.join() !== firstLock.ids.join() || lockedAfterGrowth.persist) {
-  errors.push("每日牌組：鎖定後卡池變大不應改牌");
+if (core.scheduledCards(grown, [3, 1]).map(card => card.id).join() !== "3,1") {
+  errors.push("每日牌組：卡池變大不應改已排程的 id");
 }
-const shrunk = packCards.filter(card => card.id !== firstLock.ids[1]);
-const lockedAfterShrink = core.ensureDailyPack(shrunk, "2026-09-18", 3, { "2026-09-18": firstLock.ids }, {});
-if (lockedAfterShrink.ids[0] !== firstLock.ids[0] || lockedAfterShrink.ids[1] === firstLock.ids[1]) {
-  errors.push("每日牌組：缺卡時應保留其餘鎖定 id，不得整日重抽");
-}
-if (lockedAfterShrink.ids.length !== 3 || new Set(lockedAfterShrink.ids).size !== 3) {
-  errors.push("每日牌組：缺卡後應補滿原長度且不重複");
-}
-const archivedCreate = core.ensureDailyPack(packCards, "2026-09-18", 3, {}, { excludeIds: [seeded[0]] });
-if (archivedCreate.ids.includes(seeded[0])) errors.push("每日牌組：首次產生應排除封存卡");
-const archivedLock = core.ensureDailyPack(packCards, "2026-09-18", 3, { "2026-09-18": firstLock.ids }, {
-  excludeIds: firstLock.ids,
-  fillExcludeIds: firstLock.ids,
-});
-if (archivedLock.ids.join() !== firstLock.ids.join()) {
-  errors.push("每日牌組：鎖定後不應因封存而抽掉當日牌");
-}
-const preferred = core.generateDailyPackIds(packCards, "2026-09-18", 3, { preferIds: [7] });
-if (preferred[0] !== 7) errors.push("每日牌組：首次產生應優先保留已開卡 id");
-const mergedPacks = core.mergeLockedPacks(
-  { "2026-09-18": [1, 2, 3] },
-  { "2026-09-18": [4, 5, 6], "2026-09-17": [7, 8, 9] }
-);
-if (mergedPacks["2026-09-18"].join() !== "1,2,3") errors.push("每日牌組：合併時本機已鎖定的日期不得被覆蓋");
-if (mergedPacks["2026-09-17"].join() !== "7,8,9") errors.push("每日牌組：合併時應補上本機沒有的歷史鎖定");
+if (core.dailySelection) errors.push("每日牌組：不應再匯出日期種子抽卡 dailySelection");
 
 const encoded = core.encodeProgress({ "2026-09-18": true }, { "2026-09-18": [1, 2] }, new Date(2026, 8, 18), {
-  packs: { "2026-09-18": firstLock.ids, "2026-09-17": [7, 8, 9] },
   archived: [4, 2],
 });
 const decoded = core.decodeProgress(encoded);
-if (decoded.v !== schema.progressSync.version) errors.push("同步代碼：版本應為 " + schema.progressSync.version);
-if (!decoded.p || decoded.p["2026-09-18"].join() !== firstLock.ids.join()) errors.push("同步代碼：應帶鎖定牌組 p");
+if (decoded.v !== 2) errors.push("同步代碼：含封存時版本應為 2");
+if (decoded.p) errors.push("同步代碼：牌組來自 shipped JSON，不應再帶 p");
 if (!Array.isArray(decoded.a) || decoded.a.join() !== "2,4") errors.push("同步代碼：Keynote 封存清單應排序後寫入 a");
 schema.progressSync.fields.forEach(field => {
   if (decoded[field] === undefined) errors.push("同步代碼：缺少欄位 " + field);
@@ -161,12 +216,6 @@ const legacy = core.decodeProgress(Buffer.from(JSON.stringify({ v: 1, d: ["2026-
 if (!legacy.d.includes("2026-09-01")) errors.push("同步代碼：舊版 v1 仍應可匯入");
 const legacyV2 = core.decodeProgress(Buffer.from(JSON.stringify({ v: 2, d: ["2026-09-01"], o: [1], a: [3] })).toString("base64"));
 if (!legacyV2.a || legacyV2.a[0] !== 3) errors.push("同步代碼：舊版 v2 仍應可匯入");
-if (schema.progressSync.dailyPackStorage.keynoteLexicon !== "keynote-lexicon-daily-packs") {
-  errors.push("schema：Keynote 鎖定牌組 key 不符");
-}
-if (schema.progressSync.dailyPackStorage.executiveEnglish !== "exec-vocab-daily-packs") {
-  errors.push("schema：Executive English 鎖定牌組 key 不符");
-}
 
 if (errors.length) {
   console.error(`內容驗證失敗（${errors.length} 項）：`);
