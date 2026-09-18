@@ -1296,10 +1296,7 @@ function hasDailyData(dateStr){
   return !!dailyRecord[dateStr] || ((dailyOpened[dateStr] || []).length > 0);
 }
 function canViewDailyDate(dateStr){
-  const today = todayStr();
-  if (dateStr > today) return false;
-  if (dateStr === today) return true;
-  return hasDailyData(dateStr);
+  return LearningCore.isViewableDailyDate(dateStr, todayStr());
 }
 function updateDailyProgressLabel(dateStr){
   const el = document.getElementById("daily-progress-label");
@@ -1312,6 +1309,7 @@ function renderDaily(dateStr){
   dateStr = dateStr || viewingDate || today;
   if (!canViewDailyDate(dateStr)) dateStr = today;
   viewingDate = dateStr;
+  const isHistorical = dateStr < today;
   const cards = pickDailyCards(dateStr);
   const openedIds = dailyOpened[dateStr] || [];
   const dayDone = !!dailyRecord[dateStr];
@@ -1336,7 +1334,9 @@ function renderDaily(dateStr){
   scroll.hidden = false;
 
   cards.forEach((c, i)=>{
-    const isOpen = dayDone || openedIds.includes(c.id);
+    // Historical packs are view-only: reveal them without changing completion
+    // records or retroactively extending the daily streak.
+    const isOpen = isHistorical || dayDone || openedIds.includes(c.id);
     const slide = document.createElement("div");
     slide.className = "feed-slide";
     slide.dataset.index = i;
@@ -1358,7 +1358,7 @@ function renderDaily(dateStr){
 
     const hint = document.createElement("div");
     hint.className = "feed-hint mono";
-    hint.textContent = "點卡片翻面・上滑看下一張";
+    hint.textContent = isHistorical ? "歷史牌組・點卡片翻面" : "點卡片翻面・上滑看下一張";
 
     slide.append(counter, wrap, shareBtn, hint);
     scroll.appendChild(slide);
@@ -1376,7 +1376,7 @@ function renderDaily(dateStr){
   });
 
   scroll.scrollTop = 0;
-  updateDailyProgressUI(dayDone ? cards.length : openedIds.length, cards.length);
+  updateDailyProgressUI((isHistorical || dayDone) ? cards.length : openedIds.length, cards.length);
   if (dateStr === today && dayDone) showDailyComplete(dateStr); else hideDailyComplete();
   updateStreakUI();
   renderCalendar();
