@@ -48,6 +48,107 @@
     return shuffled(cards, seededRandom(hashString(dateString))).slice(0, size);
   }
 
+  function normalizeCardIds(ids) {
+    if (!Array.isArray(ids)) return [];
+    const seen = new Set();
+    const result = [];
+    ids.forEach(value => {
+      const id = Number(value);
+      if (!Number.isInteger(id) || id <= 0 || seen.has(id)) return;
+      seen.add(id);
+      result.push(id);
+    });
+    return result;
+  }
+
+  function normalizePacksMap(packs) {
+    const result = {};
+    if (!packs || typeof packs !== "object" || Array.isArray(packs)) return result;
+    Object.keys(packs).forEach(date => {
+      if (!/^\d{4}-\d{2}-\d{2}$/.test(date)) return;
+      const ids = normalizeCardIds(packs[date]);
+      if (ids.length) result[date] = ids;
+    });
+    return result;
+  }
+
+  function sameIdList(left, right) {
+    if (left.length !== right.length) return false;
+    for (let i = 0; i < left.length; i += 1) {
+      if (left[i] !== right[i]) return false;
+    }
+    return true;
+  }
+
+  function generateDailyPackIds(cards, dateString, size, options) {
+    options = options || {};
+    const count = Math.max(0, Math.floor(Number(size) || 0));
+    const exclude = new Set(normalizeCardIds(options.excludeIds));
+    const prefer = normalizeCardIds(options.preferIds);
+    const byId = new Map();
+    (cards || []).forEach(card => {
+      if (card && Number.isInteger(card.id)) byId.set(card.id, card);
+    });
+    const result = [];
+    const used = new Set();
+    prefer.forEach(id => {
+      if (result.length >= count) return;
+      if (!byId.has(id) || used.has(id)) return;
+      result.push(id);
+      used.add(id);
+    });
+    const pool = (cards || []).filter(card => card && !exclude.has(card.id) && !used.has(card.id));
+    const rest = shuffled(pool, seededRandom(hashString(dateString)));
+    for (let i = 0; i < rest.length && result.length < count; i += 1) {
+      result.push(rest[i].id);
+      used.add(rest[i].id);
+    }
+    return result;
+  }
+
+  function resolveLockedPackIds(cards, lockedIds, dateString, size, options) {
+    options = options || {};
+    const count = Math.max(0, Math.floor(Number(size) || 0));
+    const byId = new Set((cards || []).map(card => card && card.id));
+    const kept = [];
+    normalizeCardIds(lockedIds).forEach(id => {
+      if (kept.length >= count) return;
+      if (byId.has(id)) kept.push(id);
+    });
+    if (kept.length >= count) return kept.slice(0, count);
+    const fill = generateDailyPackIds(cards, dateString, count - kept.length, {
+      excludeIds: [...normalizeCardIds(options.excludeIds), ...kept],
+    });
+    return kept.concat(fill);
+  }
+
+  function ensureDailyPack(cards, dateString, size, packs, options) {
+    options = options || {};
+    const stored = normalizeCardIds(packs && packs[dateString]);
+    const ids = stored.length
+      ? resolveLockedPackIds(cards, stored, dateString, size, { excludeIds: options.fillExcludeIds })
+      : generateDailyPackIds(cards, dateString, size, {
+        excludeIds: options.excludeIds,
+        preferIds: options.preferIds,
+      });
+    const byId = new Map();
+    (cards || []).forEach(card => {
+      if (card && Number.isInteger(card.id)) byId.set(card.id, card);
+    });
+    const selected = ids.map(id => byId.get(id)).filter(Boolean);
+    const persist = ids.length > 0 && (stored.length === 0 || !sameIdList(stored, ids));
+    return { ids, cards: selected, persist };
+  }
+
+  function mergeLockedPacks(localPacks, incomingPacks) {
+    const merged = normalizePacksMap(localPacks);
+    const incoming = normalizePacksMap(incomingPacks);
+    Object.keys(incoming).forEach(date => {
+      if (!merged[date] || !merged[date].length) merged[date] = incoming[date];
+    });
+    return merged;
+  }
+
   function streak(record, now) {
     let count = 0;
     const date = now ? new Date(now) : new Date();
@@ -59,9 +160,18 @@
     return count;
   }
 
-  function encodeProgress(record, opened, now) {
+  function encodeProgress(record, opened, now, extras) {
+    extras = extras || {};
     const dates = Object.keys(record).filter(date => record[date]).sort();
-    const payload = { v: 1, d: dates, o: opened[localDate(now)] || [] };
+    const payload = {
+      v: 3,
+      d: dates,
+      o: opened[localDate(now)] || [],
+      p: normalizePacksMap(extras.packs),
+    };
+    if (Array.isArray(extras.archived)) {
+      payload.a = normalizeCardIds(extras.archived).slice().sort((left, right) => left - right);
+    }
     return btoa(JSON.stringify(payload));
   }
 
@@ -123,6 +233,8 @@
 
   global.LearningCore = Object.freeze({
     localDate, addDays, hashString, seededRandom, shuffled, dailySelection, streak,
-    encodeProgress, decodeProgress, normalizeReview, review, isDue, isViewableDailyDate,
+    normalizeCardIds, normalizePacksMap, generateDailyPackIds, resolveLockedPackIds,
+    ensureDailyPack, mergeLockedPacks, encodeProgress, decodeProgress, normalizeReview,
+    review, isDue, isViewableDailyDate,
   });
 }(window));
