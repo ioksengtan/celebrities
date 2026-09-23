@@ -925,7 +925,7 @@
       "source_type": "user_provided_transcript",
       "verification_status": "transcript_text_verified",
       "imported_date": "2026-09-19",
-      "notes_zh": "依使用者提供的逐字稿入庫；訪談日期與地點未確認。SN-UNDATED-001-Q01、Q03、Q04 已對庫內逐字稿時間碼核對並升為 verified；Q02、Q05 仍為 draft。尚未對 YouTube 全片校聽，不是 fully verified；數據與產品表現未獨立核實。UNDATED 表示訪談日期未知，匯入日期不是訪談日期。"
+      "notes_zh": "依使用者提供的逐字稿入庫；訪談日期與地點未確認。SN-UNDATED-001-Q01、Q02、Q03、Q04 已對庫內逐字稿時間碼核對並升為 verified（Q02 英句含 capability overhang 連續片段）；Q05 仍為 draft，僅加強 why_notable_zh。尚未對 YouTube 全片校聽，不是 fully verified；數據與產品表現未獨立核實。UNDATED 表示訪談日期未知，匯入日期不是訪談日期。"
     }
   ]
 }
