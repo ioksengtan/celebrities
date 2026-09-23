@@ -923,9 +923,9 @@
       "transcript_path": "references/transcripts/SN-UNDATED-001.txt",
       "editorial_path": "references/editorials/SN-UNDATED-001.md",
       "source_type": "user_provided_transcript",
-      "verification_status": "pending",
+      "verification_status": "transcript_text_verified",
       "imported_date": "2026-09-19",
-      "notes_zh": "依使用者提供的逐字稿入庫；訪談日期與地點未確認。逐字稿含轉錄錯誤，尚未對影片校聽；數據與產品表現未獨立核實。UNDATED 表示訪談日期未知，匯入日期不是訪談日期。"
+      "notes_zh": "依使用者提供的逐字稿入庫；訪談日期與地點未確認。SN-UNDATED-001-Q01、Q03、Q04 已對庫內逐字稿時間碼核對並升為 verified；Q02、Q05 仍為 draft。尚未對 YouTube 全片校聽，不是 fully verified；數據與產品表現未獨立核實。UNDATED 表示訪談日期未知，匯入日期不是訪談日期。"
     }
   ]
 }
