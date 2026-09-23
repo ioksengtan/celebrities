@@ -1284,8 +1284,8 @@
     "timestamp": "26:27",
     "timestamp_precision": "transcript_segment",
     "source_type": "user_provided_transcript",
-    "status": "draft",
-    "verification_note": "摘自使用者逐字稿；時間碼為段落起點，尚未對影片校聽。"
+    "status": "verified",
+    "verification_note": "已對 references/transcripts/SN-UNDATED-001.txt 時間碼 26:27 核對原文（use all but be independent of all）；未對 YouTube 全片校聽。"
   },
   {
     "quote_id": "SN-UNDATED-001-Q02",
@@ -1316,8 +1316,8 @@
     "timestamp": "09:49",
     "timestamp_precision": "transcript_segment",
     "source_type": "user_provided_transcript",
-    "status": "draft",
-    "verification_note": "摘自使用者逐字稿；時間碼為段落起點，尚未對影片校聽。"
+    "status": "verified",
+    "verification_note": "已對 references/transcripts/SN-UNDATED-001.txt 時間碼 09:49 核對原文（everything has got to be auditable）；未對 YouTube 全片校聽。"
   },
   {
     "quote_id": "SN-UNDATED-001-Q04",
@@ -1332,8 +1332,8 @@
     "timestamp": "08:13",
     "timestamp_precision": "transcript_segment",
     "source_type": "user_provided_transcript",
-    "status": "draft",
-    "verification_note": "摘自使用者逐字稿；時間碼為段落起點，尚未對影片校聽。"
+    "status": "verified",
+    "verification_note": "已對 references/transcripts/SN-UNDATED-001.txt 時間碼 08:13 核對原文（if you see a showstopper stop the show）；未對 YouTube 全片校聽。"
   },
   {
     "quote_id": "SN-UNDATED-001-Q05",
