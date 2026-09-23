@@ -422,6 +422,21 @@ details.why p { margin: 8px 0 0; }
   line-height: 1.55;
 }
 
+@media (max-width: 720px) {
+  .quote-list { gap: 10px; }
+  .quote-card {
+    padding: 14px 14px 12px;
+    gap: 6px;
+  }
+  .quote-zh {
+    display: block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    line-height: 1.45;
+  }
+}
+
 .quote-meta,
 .speech-meta {
   display: flex;
