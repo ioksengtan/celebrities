@@ -32,5 +32,5 @@ Hold this round (never verified on the wall): `EM-2026-005`, `SA-2026-001`.
 
 - `SN-UNDATED-001`: user-provided transcript; event date unknown, not the import date. Speech `verification_status` is `transcript_text_verified` (in-repo transcript check only; not fully video-verified).
 - Full transcript: `transcripts/SN-UNDATED-001.txt`; Traditional Chinese editorial: `editorials/SN-UNDATED-001.md`.
-- Five timestamped quotes are in `quotes_index.json`. `SN-UNDATED-001-Q01`, `Q03`, and `Q04` are `verified` after matching the in-repo transcript at timestamps 26:27, 09:49, and 08:13. `Q02` and `Q05` remain `draft` and stay off the verified wall. No full YouTube re-listen.
-- Speech page: `products/core/speech.html?id=SN-UNDATED-001`. The default list includes featured speeches and speeches with verified quotes, so this interview now appears there via Q01 / Q03 / Q04.
+- Five timestamped quotes are in `quotes_index.json`. `SN-UNDATED-001-Q01`, `Q02`, `Q03`, and `Q04` are `verified` after matching the in-repo transcript at timestamps 26:27, 11:31, 09:49, and 08:13. Q02’s English quote now includes the capability-overhang continuation. `Q05` remains `draft` (`why_notable_zh` strengthened; English quote and `quote_zh` unchanged) and stays off the verified wall. No full YouTube re-listen.
+- Speech page: `products/core/speech.html?id=SN-UNDATED-001`. The default list includes featured speeches and speeches with verified quotes, so this interview now appears there via Q01 / Q02 / Q03 / Q04.
