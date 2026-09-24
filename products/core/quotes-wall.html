@@ -10,12 +10,12 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Public+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
   <link rel="stylesheet" href="site.css">
 </head>
-<body>
+<body class="page-wall">
   <a class="skip" href="#main">跳到內容</a>
   <header class="site-header">
     <div class="site-header-inner">
       <a class="brand" href="../../index.html">celebrities <span>演講英語</span></a>
-      <nav>
+      <nav aria-label="主要導覽">
         <a href="../../index.html">首頁</a>
         <a href="quotes-wall.html" aria-current="page">語錄牆</a>
         <a href="speech.html">單場演講</a>
@@ -36,12 +36,38 @@
       </div>
     </div>
 
-    <div class="filters" id="filters" hidden>
+    <div class="filters" id="filters" aria-busy="true">
       <span class="filter-label">講者</span>
+      <div class="filter-row" id="filter-row" role="group" aria-label="講者">
+        <span class="chip skel" aria-hidden="true"></span>
+        <span class="chip skel skel-wide" aria-hidden="true"></span>
+        <span class="chip skel" aria-hidden="true"></span>
+        <span class="chip skel skel-wide" aria-hidden="true"></span>
+      </div>
     </div>
 
-    <div id="status" class="status">正在讀取語錄…</div>
-    <div id="quotes" class="quote-list" hidden></div>
+    <div id="status" class="status is-loading" role="status">正在讀取語錄…</div>
+    <div id="quotes" class="quote-list" aria-busy="true">
+      <article class="quote-card quote-skeleton" aria-hidden="true">
+        <div class="sk sk-title"></div>
+        <div class="sk sk-title sk-short"></div>
+        <div class="sk sk-line"></div>
+        <div class="sk sk-meta"></div>
+        <div class="sk sk-actions"></div>
+      </article>
+      <article class="quote-card quote-skeleton" aria-hidden="true">
+        <div class="sk sk-title"></div>
+        <div class="sk sk-line"></div>
+        <div class="sk sk-meta"></div>
+        <div class="sk sk-actions"></div>
+      </article>
+      <article class="quote-card quote-skeleton" aria-hidden="true">
+        <div class="sk sk-title sk-short"></div>
+        <div class="sk sk-line"></div>
+        <div class="sk sk-meta"></div>
+        <div class="sk sk-actions"></div>
+      </article>
+    </div>
   </main>
 
   <footer class="site-footer">
