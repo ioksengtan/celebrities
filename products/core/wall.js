@@ -4,6 +4,7 @@
   const statusEl = document.getElementById("status");
   const listEl = document.getElementById("quotes");
   const filtersEl = document.getElementById("filters");
+  const filterRow = document.getElementById("filter-row");
   const countEl = document.getElementById("wall-count");
   const noteEl = document.getElementById("wall-note");
 
@@ -25,7 +26,9 @@
     });
 
     if (!visible.length) {
+      listEl.innerHTML = "";
       listEl.hidden = true;
+      listEl.removeAttribute("aria-busy");
       statusEl.hidden = false;
       statusEl.className = "empty";
       statusEl.textContent = "這個講者目前沒有可上牆的已核實語錄。";
@@ -34,7 +37,26 @@
 
     statusEl.hidden = true;
     listEl.hidden = false;
+    listEl.removeAttribute("aria-busy");
     listEl.innerHTML = visible.map((q) => CoreUI.quoteCardHtml(q, paths)).join("");
+  }
+
+  function mountFilters(html) {
+    if (filterRow) filterRow.innerHTML = html;
+    else filtersEl.insertAdjacentHTML("beforeend", html);
+    filtersEl.hidden = false;
+    filtersEl.removeAttribute("aria-busy");
+  }
+
+  function showMessage(className, text) {
+    if (filterRow) filterRow.innerHTML = "";
+    filtersEl.hidden = true;
+    listEl.innerHTML = "";
+    listEl.hidden = true;
+    listEl.removeAttribute("aria-busy");
+    statusEl.hidden = false;
+    statusEl.className = className;
+    statusEl.textContent = text;
   }
 
   function buildFilters() {
@@ -53,11 +75,10 @@
           "</button>"
         );
       }));
-    filtersEl.insertAdjacentHTML("beforeend", chips.join(""));
-    filtersEl.hidden = false;
+    mountFilters(chips.join(""));
     filtersEl.addEventListener("click", (event) => {
       const chip = event.target.closest(".chip");
-      if (!chip) return;
+      if (!chip || !chip.dataset.speaker) return;
       activeSpeaker = chip.dataset.speaker;
       render();
     });
@@ -81,14 +102,12 @@
     wallQuotes = rows.filter((q) => CoreUI.isWallQuote(q, flagged));
     if (noteEl) noteEl.textContent = mzNote(wallQuotes);
     if (!wallQuotes.length) {
-      statusEl.className = "empty";
-      statusEl.textContent = "沒有可上牆語錄（需 verified，且 speech_id 不在 content_review_flags／hold 名單）。";
+      showMessage("empty", "沒有可上牆語錄（需 verified，且 speech_id 不在 content_review_flags／hold 名單）。");
       return;
     }
     buildFilters();
     render();
   }).catch((err) => {
-    statusEl.className = "error";
-    statusEl.textContent = err.message + "。請用本機伺服器或 GitHub Pages 開啟（不要用 file://）。";
+    showMessage("error", err.message + "。請用本機伺服器或 GitHub Pages 開啟（不要用 file://）。");
   });
 })();
