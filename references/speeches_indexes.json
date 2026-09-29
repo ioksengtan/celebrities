@@ -1,7 +1,7 @@
 {
   "metadata": {
     "created_date": "2026-09-06",
-    "total_speeches": 32,
+    "total_speeches": 41,
     "index_types": [
       "topic_index",
       "timeline_index",
@@ -11,7 +11,7 @@
       "quotes_index",
       "length_index"
     ],
-    "updated_date": "2026-09-29"
+    "updated_date": "2026-09-30"
   },
   "topic_index": [
     {
@@ -1307,13 +1307,20 @@
     },
     {
       "topic": "leadership",
-      "count": 1,
+      "count": 2,
       "speeches": [
         {
           "id": "LBT-2026-001",
           "speaker": "lip_bu_tan",
           "event": "Lip-Bu Tan: From Nuclear Engineer to Intel’s CEO（A Bit Personal with Jodi Shelton）",
           "date": "2026-09-24",
+          "type": "interview"
+        },
+        {
+          "id": "JB-2018-001",
+          "speaker": "jeff_bezos",
+          "event": "Forum on Leadership 2018: A Conversation with Jeff Bezos",
+          "date": "2018-04-20",
           "type": "interview"
         }
       ]
@@ -1356,9 +1363,446 @@
           "type": "interview"
         }
       ]
+    },
+    {
+      "topic": "entrepreneurship",
+      "count": 1,
+      "speeches": [
+        {
+          "id": "JB-2001-001",
+          "speaker": "jeff_bezos",
+          "event": "Academy of Achievement Interview (2001 Achievement Summit)",
+          "date": "2001-05-04",
+          "type": "interview"
+        }
+      ]
+    },
+    {
+      "topic": "passion",
+      "count": 2,
+      "speeches": [
+        {
+          "id": "JB-2001-001",
+          "speaker": "jeff_bezos",
+          "event": "Academy of Achievement Interview (2001 Achievement Summit)",
+          "date": "2001-05-04",
+          "type": "interview"
+        },
+        {
+          "id": "JB-2010-001",
+          "speaker": "jeff_bezos",
+          "event": "Princeton University 2010 Baccalaureate Address: We Are What We Choose",
+          "date": "2010-05-30",
+          "type": "keynote"
+        }
+      ]
+    },
+    {
+      "topic": "regret minimization",
+      "count": 2,
+      "speeches": [
+        {
+          "id": "JB-2001-001",
+          "speaker": "jeff_bezos",
+          "event": "Academy of Achievement Interview (2001 Achievement Summit)",
+          "date": "2001-05-04",
+          "type": "interview"
+        },
+        {
+          "id": "JB-2010-001",
+          "speaker": "jeff_bezos",
+          "event": "Princeton University 2010 Baccalaureate Address: We Are What We Choose",
+          "date": "2010-05-30",
+          "type": "keynote"
+        }
+      ]
+    },
+    {
+      "topic": "long-term thinking",
+      "count": 1,
+      "speeches": [
+        {
+          "id": "JB-2001-001",
+          "speaker": "jeff_bezos",
+          "event": "Academy of Achievement Interview (2001 Achievement Summit)",
+          "date": "2001-05-04",
+          "type": "interview"
+        }
+      ]
+    },
+    {
+      "topic": "choices",
+      "count": 3,
+      "speeches": [
+        {
+          "id": "JB-2010-001",
+          "speaker": "jeff_bezos",
+          "event": "Princeton University 2010 Baccalaureate Address: We Are What We Choose",
+          "date": "2010-05-30",
+          "type": "keynote"
+        },
+        {
+          "id": "JB-2017-003",
+          "speaker": "jeff_bezos",
+          "event": "Summit LA17: Jeff Bezos and Mark Bezos in Conversation",
+          "date": "2017-11-04",
+          "type": "interview"
+        },
+        {
+          "id": "JB-2020-001",
+          "speaker": "jeff_bezos",
+          "event": "Fireside Chat with Jeff Bezos, Amazon Prime Video India",
+          "date": "2020-01-16",
+          "type": "interview"
+        }
+      ]
+    },
+    {
+      "topic": "gifts vs. choices",
+      "count": 2,
+      "speeches": [
+        {
+          "id": "JB-2010-001",
+          "speaker": "jeff_bezos",
+          "event": "Princeton University 2010 Baccalaureate Address: We Are What We Choose",
+          "date": "2010-05-30",
+          "type": "keynote"
+        },
+        {
+          "id": "JB-2017-002",
+          "speaker": "jeff_bezos",
+          "event": "Q&A with Students at the Opening of the Apollo Exhibit, The Museum of Flight",
+          "date": "2017-05-20",
+          "type": "town_hall"
+        }
+      ]
+    },
+    {
+      "topic": "innovation",
+      "count": 2,
+      "speeches": [
+        {
+          "id": "JB-2015-001",
+          "speaker": "jeff_bezos",
+          "event": "Liberty Science Center Genius Gala 4.0",
+          "date": "2015-05-01",
+          "type": "interview"
+        },
+        {
+          "id": "JB-2016-001",
+          "speaker": "jeff_bezos",
+          "event": "Vanity Fair New Establishment Summit 2016: The Power of Jeff Bezos",
+          "date": "2016-10-20",
+          "type": "interview"
+        }
+      ]
+    },
+    {
+      "topic": "optimism",
+      "count": 1,
+      "speeches": [
+        {
+          "id": "JB-2015-001",
+          "speaker": "jeff_bezos",
+          "event": "Liberty Science Center Genius Gala 4.0",
+          "date": "2015-05-01",
+          "type": "interview"
+        }
+      ]
+    },
+    {
+      "topic": "customer obsession",
+      "count": 1,
+      "speeches": [
+        {
+          "id": "JB-2015-001",
+          "speaker": "jeff_bezos",
+          "event": "Liberty Science Center Genius Gala 4.0",
+          "date": "2015-05-01",
+          "type": "interview"
+        }
+      ]
+    },
+    {
+      "topic": "platforms",
+      "count": 1,
+      "speeches": [
+        {
+          "id": "JB-2016-001",
+          "speaker": "jeff_bezos",
+          "event": "Vanity Fair New Establishment Summit 2016: The Power of Jeff Bezos",
+          "date": "2016-10-20",
+          "type": "interview"
+        }
+      ]
+    },
+    {
+      "topic": "media",
+      "count": 1,
+      "speeches": [
+        {
+          "id": "JB-2016-001",
+          "speaker": "jeff_bezos",
+          "event": "Vanity Fair New Establishment Summit 2016: The Power of Jeff Bezos",
+          "date": "2016-10-20",
+          "type": "interview"
+        }
+      ]
+    },
+    {
+      "topic": "space",
+      "count": 3,
+      "speeches": [
+        {
+          "id": "JB-2017-001",
+          "speaker": "jeff_bezos",
+          "event": "SATELLITE 2017 Keynote",
+          "date": "2017-03-07",
+          "type": "keynote"
+        },
+        {
+          "id": "JB-2017-002",
+          "speaker": "jeff_bezos",
+          "event": "Q&A with Students at the Opening of the Apollo Exhibit, The Museum of Flight",
+          "date": "2017-05-20",
+          "type": "town_hall"
+        },
+        {
+          "id": "JB-2018-001",
+          "speaker": "jeff_bezos",
+          "event": "Forum on Leadership 2018: A Conversation with Jeff Bezos",
+          "date": "2018-04-20",
+          "type": "interview"
+        }
+      ]
+    },
+    {
+      "topic": "incrementalism",
+      "count": 1,
+      "speeches": [
+        {
+          "id": "JB-2017-001",
+          "speaker": "jeff_bezos",
+          "event": "SATELLITE 2017 Keynote",
+          "date": "2017-03-07",
+          "type": "keynote"
+        }
+      ]
+    },
+    {
+      "topic": "Blue Origin",
+      "count": 1,
+      "speeches": [
+        {
+          "id": "JB-2017-001",
+          "speaker": "jeff_bezos",
+          "event": "SATELLITE 2017 Keynote",
+          "date": "2017-03-07",
+          "type": "keynote"
+        }
+      ]
+    },
+    {
+      "topic": "adversity",
+      "count": 1,
+      "speeches": [
+        {
+          "id": "JB-2017-002",
+          "speaker": "jeff_bezos",
+          "event": "Q&A with Students at the Opening of the Apollo Exhibit, The Museum of Flight",
+          "date": "2017-05-20",
+          "type": "town_hall"
+        }
+      ]
+    },
+    {
+      "topic": "family",
+      "count": 1,
+      "speeches": [
+        {
+          "id": "JB-2017-003",
+          "speaker": "jeff_bezos",
+          "event": "Summit LA17: Jeff Bezos and Mark Bezos in Conversation",
+          "date": "2017-11-04",
+          "type": "interview"
+        }
+      ]
+    },
+    {
+      "topic": "service and adventure",
+      "count": 1,
+      "speeches": [
+        {
+          "id": "JB-2017-003",
+          "speaker": "jeff_bezos",
+          "event": "Summit LA17: Jeff Bezos and Mark Bezos in Conversation",
+          "date": "2017-11-04",
+          "type": "interview"
+        }
+      ]
+    },
+    {
+      "topic": "calling",
+      "count": 1,
+      "speeches": [
+        {
+          "id": "JB-2018-001",
+          "speaker": "jeff_bezos",
+          "event": "Forum on Leadership 2018: A Conversation with Jeff Bezos",
+          "date": "2018-04-20",
+          "type": "interview"
+        }
+      ]
+    },
+    {
+      "topic": "decision making",
+      "count": 1,
+      "speeches": [
+        {
+          "id": "JB-2018-001",
+          "speaker": "jeff_bezos",
+          "event": "Forum on Leadership 2018: A Conversation with Jeff Bezos",
+          "date": "2018-04-20",
+          "type": "interview"
+        }
+      ]
+    },
+    {
+      "topic": "career advice",
+      "count": 1,
+      "speeches": [
+        {
+          "id": "JB-2020-001",
+          "speaker": "jeff_bezos",
+          "event": "Fireside Chat with Jeff Bezos, Amazon Prime Video India",
+          "date": "2020-01-16",
+          "type": "interview"
+        }
+      ]
+    },
+    {
+      "topic": "entertainment",
+      "count": 1,
+      "speeches": [
+        {
+          "id": "JB-2020-001",
+          "speaker": "jeff_bezos",
+          "event": "Fireside Chat with Jeff Bezos, Amazon Prime Video India",
+          "date": "2020-01-16",
+          "type": "interview"
+        }
+      ]
     }
   ],
   "timeline_index": [
+    {
+      "month": "2001-05",
+      "count": 1,
+      "speeches": [
+        {
+          "id": "JB-2001-001",
+          "speaker": "jeff_bezos",
+          "event": "Academy of Achievement Interview (2001 Achievement Summit)",
+          "type": "interview"
+        }
+      ]
+    },
+    {
+      "month": "2010-05",
+      "count": 1,
+      "speeches": [
+        {
+          "id": "JB-2010-001",
+          "speaker": "jeff_bezos",
+          "event": "Princeton University 2010 Baccalaureate Address: We Are What We Choose",
+          "type": "keynote"
+        }
+      ]
+    },
+    {
+      "month": "2015-05",
+      "count": 1,
+      "speeches": [
+        {
+          "id": "JB-2015-001",
+          "speaker": "jeff_bezos",
+          "event": "Liberty Science Center Genius Gala 4.0",
+          "type": "interview"
+        }
+      ]
+    },
+    {
+      "month": "2016-10",
+      "count": 1,
+      "speeches": [
+        {
+          "id": "JB-2016-001",
+          "speaker": "jeff_bezos",
+          "event": "Vanity Fair New Establishment Summit 2016: The Power of Jeff Bezos",
+          "type": "interview"
+        }
+      ]
+    },
+    {
+      "month": "2017-03",
+      "count": 1,
+      "speeches": [
+        {
+          "id": "JB-2017-001",
+          "speaker": "jeff_bezos",
+          "event": "SATELLITE 2017 Keynote",
+          "type": "keynote"
+        }
+      ]
+    },
+    {
+      "month": "2017-05",
+      "count": 1,
+      "speeches": [
+        {
+          "id": "JB-2017-002",
+          "speaker": "jeff_bezos",
+          "event": "Q&A with Students at the Opening of the Apollo Exhibit, The Museum of Flight",
+          "type": "town_hall"
+        }
+      ]
+    },
+    {
+      "month": "2017-11",
+      "count": 1,
+      "speeches": [
+        {
+          "id": "JB-2017-003",
+          "speaker": "jeff_bezos",
+          "event": "Summit LA17: Jeff Bezos and Mark Bezos in Conversation",
+          "type": "interview"
+        }
+      ]
+    },
+    {
+      "month": "2018-04",
+      "count": 1,
+      "speeches": [
+        {
+          "id": "JB-2018-001",
+          "speaker": "jeff_bezos",
+          "event": "Forum on Leadership 2018: A Conversation with Jeff Bezos",
+          "type": "interview"
+        }
+      ]
+    },
+    {
+      "month": "2020-01",
+      "count": 1,
+      "speeches": [
+        {
+          "id": "JB-2020-001",
+          "speaker": "jeff_bezos",
+          "event": "Fireside Chat with Jeff Bezos, Amazon Prime Video India",
+          "type": "interview"
+        }
+      ]
+    },
     {
       "month": "2024-03",
       "count": 1,
@@ -1664,7 +2108,9 @@
         "JH-2026-003",
         "JH-2026-004",
         "JH-2026-005",
-        "SP-2026-001"
+        "SP-2026-001",
+        "JB-2010-001",
+        "JB-2017-001"
       ],
       "interview": [
         "JH-2026-002",
@@ -1686,7 +2132,13 @@
         "MZ-2024-001",
         "MZ-2025-001",
         "SN-UNDATED-001",
-        "LBT-2026-001"
+        "LBT-2026-001",
+        "JB-2001-001",
+        "JB-2015-001",
+        "JB-2016-001",
+        "JB-2017-003",
+        "JB-2018-001",
+        "JB-2020-001"
       ],
       "panel": [
         "EM-2026-002",
@@ -1694,14 +2146,15 @@
         "SA-2026-005"
       ],
       "town_hall": [
-        "SA-2026-001"
+        "SA-2026-001",
+        "JB-2017-002"
       ]
     },
     "counts": {
-      "keynote": 8,
-      "interview": 20,
+      "keynote": 10,
+      "interview": 26,
       "panel": 3,
-      "town_hall": 1
+      "town_hall": 2
     }
   },
   "product_tag_index": {
@@ -1713,7 +2166,9 @@
         "JH-2026-003",
         "JH-2026-004",
         "JH-2026-005",
-        "SP-2026-001"
+        "SP-2026-001",
+        "JB-2010-001",
+        "JB-2017-001"
       ],
       "technical": [
         "JH-2024-001"
@@ -1766,7 +2221,13 @@
         "MZ-2024-001",
         "MZ-2025-001",
         "SN-UNDATED-001",
-        "LBT-2026-001"
+        "LBT-2026-001",
+        "JB-2001-001",
+        "JB-2015-001",
+        "JB-2016-001",
+        "JB-2017-003",
+        "JB-2018-001",
+        "JB-2020-001"
       ],
       "enterprise": [
         "JH-2026-002",
@@ -1959,11 +2420,34 @@
         "LBT-2026-001"
       ],
       "career": [
-        "LBT-2026-001"
+        "LBT-2026-001",
+        "JB-2001-001",
+        "JB-2010-001",
+        "JB-2015-001",
+        "JB-2016-001",
+        "JB-2017-001",
+        "JB-2017-002",
+        "JB-2017-003",
+        "JB-2018-001",
+        "JB-2020-001"
+      ],
+      "life advice": [
+        "JB-2001-001",
+        "JB-2010-001",
+        "JB-2015-001",
+        "JB-2016-001",
+        "JB-2017-001",
+        "JB-2017-002",
+        "JB-2017-003",
+        "JB-2018-001",
+        "JB-2020-001"
+      ],
+      "town_hall": [
+        "JB-2017-002"
       ]
     },
     "counts": {
-      "keynote": 7,
+      "keynote": 9,
       "technical": 1,
       "AI infrastructure": 1,
       "agentic AI": 2,
@@ -1973,7 +2457,7 @@
       "consumer": 1,
       "CES": 1,
       "product launch": 1,
-      "interview": 20,
+      "interview": 26,
       "enterprise": 2,
       "economics": 1,
       "GTC": 1,
@@ -2032,7 +2516,9 @@
       "AI safety": 1,
       "leadership": 1,
       "semiconductors": 1,
-      "career": 1
+      "career": 10,
+      "life advice": 9,
+      "town_hall": 1
     }
   },
   "special_speeches": [
@@ -2106,7 +2592,7 @@
   ],
   "length_index": {
     "short": {
-      "count": 7,
+      "count": 10,
       "speeches": [
         {
           "id": "JH-2026-006",
@@ -2149,11 +2635,29 @@
           "speaker": "mark_zuckerberg",
           "event": "CNBC Report",
           "word_count": 2000
+        },
+        {
+          "id": "JB-2010-001",
+          "speaker": "jeff_bezos",
+          "event": "Princeton University 2010 Baccalaureate Address: We Are What We Choose",
+          "word_count": 2000
+        },
+        {
+          "id": "JB-2015-001",
+          "speaker": "jeff_bezos",
+          "event": "Liberty Science Center Genius Gala 4.0",
+          "word_count": 3300
+        },
+        {
+          "id": "JB-2017-001",
+          "speaker": "jeff_bezos",
+          "event": "SATELLITE 2017 Keynote",
+          "word_count": 3400
         }
       ]
     },
     "medium": {
-      "count": 13,
+      "count": 19,
       "speeches": [
         {
           "id": "JH-2026-001",
@@ -2232,6 +2736,42 @@
           "speaker": "satya_nadella",
           "event": "Satya Nadella on the AI Doomer Slowdown, Microsoft’s Master Plan & Who Wins AI",
           "word_count": 6876
+        },
+        {
+          "id": "JB-2001-001",
+          "speaker": "jeff_bezos",
+          "event": "Academy of Achievement Interview (2001 Achievement Summit)",
+          "word_count": 8000
+        },
+        {
+          "id": "JB-2016-001",
+          "speaker": "jeff_bezos",
+          "event": "Vanity Fair New Establishment Summit 2016: The Power of Jeff Bezos",
+          "word_count": 6500
+        },
+        {
+          "id": "JB-2017-002",
+          "speaker": "jeff_bezos",
+          "event": "Q&A with Students at the Opening of the Apollo Exhibit, The Museum of Flight",
+          "word_count": 6800
+        },
+        {
+          "id": "JB-2017-003",
+          "speaker": "jeff_bezos",
+          "event": "Summit LA17: Jeff Bezos and Mark Bezos in Conversation",
+          "word_count": 9600
+        },
+        {
+          "id": "JB-2018-001",
+          "speaker": "jeff_bezos",
+          "event": "Forum on Leadership 2018: A Conversation with Jeff Bezos",
+          "word_count": 9400
+        },
+        {
+          "id": "JB-2020-001",
+          "speaker": "jeff_bezos",
+          "event": "Fireside Chat with Jeff Bezos, Amazon Prime Video India",
+          "word_count": 7500
         }
       ]
     },
@@ -2455,6 +2995,30 @@
       "total_speeches": 1,
       "entries": [
         "LBT-2026-001"
+      ]
+    },
+    "jeff_bezos": {
+      "name": "Jeff Bezos",
+      "title": "Founder & Executive Chair",
+      "company": "Amazon",
+      "topics": [
+        "entrepreneurship",
+        "long-term thinking",
+        "regret minimization",
+        "customer obsession",
+        "space"
+      ],
+      "total_speeches": 9,
+      "entries": [
+        "JB-2001-001",
+        "JB-2010-001",
+        "JB-2015-001",
+        "JB-2016-001",
+        "JB-2017-001",
+        "JB-2017-002",
+        "JB-2017-003",
+        "JB-2018-001",
+        "JB-2020-001"
       ]
     }
   }

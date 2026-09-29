@@ -16,6 +16,7 @@
   --mz: #4A5D8A;
   --sn: #3F6F62;
   --lbt: #8E4A6A;
+  --jb: #9A7B12;
   color-scheme: light dark;
 }
 
@@ -38,6 +39,7 @@
     --mz: #8FA6E0;
     --sn: #8FCBB4;
     --lbt: #E7A8C4;
+    --jb: #E6C35C;
   }
 }
 
@@ -476,6 +478,7 @@ details.why p { margin: 8px 0 0; }
 .quote-card[data-speaker="mz"] { border-left-color: var(--mz); }
 .quote-card[data-speaker="sn"] { border-left-color: var(--sn); }
 .quote-card[data-speaker="lbt"] { border-left-color: var(--lbt); }
+.quote-card[data-speaker="jb"] { border-left-color: var(--jb); }
 
 .quote-en {
   font-family: "Fraunces", Georgia, serif;

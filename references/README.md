@@ -23,7 +23,7 @@ Hold this round (never verified on the wall): `EM-2026-005`, `SA-2026-001`.
 
 ## Other
 
-- `speeches_database.json` — 32 speeches/interviews (including one undated interview) metadata.
+- `speeches_database.json` — 41 speeches/interviews (including one undated interview) metadata.
 - `speeches_indexes.json` — 7 derived index views.
 - `product_recommendations.json` — candidate product ideas.
 - `美國大學畢業典禮名人演講專案報告（完整版）.docx` — full project report.
@@ -41,3 +41,11 @@ Hold this round (never verified on the wall): `EM-2026-005`, `SA-2026-001`.
 - Full transcript: `transcripts/LBT-2026-001.txt`; Traditional Chinese editorial: `editorials/LBT-2026-001.md`.
 - Six timestamped quotes are in `quotes_index.json`. `LBT-2026-001-Q01`, `Q02`, `Q03`, `Q04`, and `Q06` are `verified` as exact substrings of the in-repo transcript. `Q05` stays `draft` (reported speech from a mentor) and stays off the verified wall. Quote text and status were not edited.
 - Speech page: `products/core/speech.html?id=LBT-2026-001`. Verified quotes appear on the quotes wall under speaker `lbt`.
+
+## Jeff Bezos speeches import (2026-09-30)
+
+- Nine original speeches, `JB-2001-001` through `JB-2020-001`. Excerpt transcripts are in `transcripts/JB-*.txt`. This batch has no editorials and no Chinese summaries; the speech page already shows「此場尚無短摘要」when `summary_zh` is absent.
+- `source_type` `official_transcript` (host or publisher transcript) and `platform_auto_captions` (YouTube auto-captions), plus `timestamp_precision` `caption_word_alignment`, are accepted. The content validator enumerates `source_type` only for Screen English cards (`tv_drama`, `casual_video`), not for speeches or quotes, so the schema was not changed.
+- Seventeen quotes are in `quotes_index.json`. Sixteen are `verified` as exact substrings of the in-repo excerpt. `JB-2017-002-Q03` stays `draft` (filler “um”; sentence boundary not re-listened) and stays off the verified wall. Quote text and status were not edited.
+- Vanity Fair (`JB-2016-001`) uses the event date 2016-10-20.
+- Speech pages: `products/core/speech.html?id=JB-2010-001` (and the other `JB-*` ids). Verified quotes appear on the quotes wall under speaker `jb`.
