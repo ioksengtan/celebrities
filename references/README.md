@@ -23,7 +23,7 @@ Hold this round (never verified on the wall): `EM-2026-005`, `SA-2026-001`.
 
 ## Other
 
-- `speeches_database.json` — 31 speeches/interviews (including one undated interview) metadata.
+- `speeches_database.json` — 32 speeches/interviews (including one undated interview) metadata.
 - `speeches_indexes.json` — 7 derived index views.
 - `product_recommendations.json` — candidate product ideas.
 - `美國大學畢業典禮名人演講專案報告（完整版）.docx` — full project report.
@@ -34,3 +34,10 @@ Hold this round (never verified on the wall): `EM-2026-005`, `SA-2026-001`.
 - Full transcript: `transcripts/SN-UNDATED-001.txt`; Traditional Chinese editorial: `editorials/SN-UNDATED-001.md`.
 - Five timestamped quotes are in `quotes_index.json`. `SN-UNDATED-001-Q01`, `Q02`, `Q03`, and `Q04` are `verified` after matching the in-repo transcript at timestamps 26:27, 11:31, 09:49, and 08:13. Q02’s English quote now includes the capability-overhang continuation. `Q05` remains `draft` (`why_notable_zh` strengthened; English quote and `quote_zh` unchanged) and stays off the verified wall. No full YouTube re-listen.
 - Speech page: `products/core/speech.html?id=SN-UNDATED-001`. The default list includes featured speeches and speeches with verified quotes, so this interview now appears there via Q01 / Q02 / Q03 / Q04.
+
+## Lip-Bu Tan interview import (2026-09-29)
+
+- `LBT-2026-001`: A Bit Personal podcast (Jodi Shelton), published 2026-09-24. `source_type` is `publisher_auto_transcript` (Substack auto-transcript; not fully audio-verified).
+- Full transcript: `transcripts/LBT-2026-001.txt`; Traditional Chinese editorial: `editorials/LBT-2026-001.md`.
+- Six timestamped quotes are in `quotes_index.json`. `LBT-2026-001-Q01`, `Q02`, `Q03`, `Q04`, and `Q06` are `verified` as exact substrings of the in-repo transcript. `Q05` stays `draft` (reported speech from a mentor) and stays off the verified wall. Quote text and status were not edited.
+- Speech page: `products/core/speech.html?id=LBT-2026-001`. Verified quotes appear on the quotes wall under speaker `lbt`.

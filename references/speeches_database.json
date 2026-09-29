@@ -2,14 +2,14 @@
   "metadata": {
     "created_date": "2026-09-06",
     "time_range": "2024-09 to 2026-09",
-    "total_entries": 31,
+    "total_entries": 32,
     "categories": [
       "keynote",
       "interview",
       "panel",
       "town_hall"
     ],
-    "updated_date": "2026-09-19"
+    "updated_date": "2026-09-29"
   },
   "speakers": {
     "jensen_huang": {
@@ -126,6 +126,21 @@
       ],
       "entries": [
         "SN-UNDATED-001"
+      ]
+    },
+    "lip_bu_tan": {
+      "name": "Lip-Bu Tan",
+      "title": "CEO",
+      "company": "Intel",
+      "topics": [
+        "semiconductors",
+        "leadership",
+        "venture capital",
+        "career journey",
+        "partnerships"
+      ],
+      "entries": [
+        "LBT-2026-001"
       ]
     }
   },
@@ -926,6 +941,40 @@
       "verification_status": "transcript_text_verified",
       "imported_date": "2026-09-19",
       "notes_zh": "依使用者提供的逐字稿入庫；訪談日期與地點未確認。SN-UNDATED-001-Q01、Q02、Q03、Q04 已對庫內逐字稿時間碼核對並升為 verified（Q02 英句含 capability overhang 連續片段）；Q05 仍為 draft，僅加強 why_notable_zh。尚未對 YouTube 全片校聽，不是 fully verified；數據與產品表現未獨立核實。UNDATED 表示訪談日期未知，匯入日期不是訪談日期。"
+    },
+    {
+      "id": "LBT-2026-001",
+      "speaker": "lip_bu_tan",
+      "date": "2026-09-24",
+      "event": "Lip-Bu Tan: From Nuclear Engineer to Intel’s CEO（A Bit Personal with Jodi Shelton）",
+      "location": null,
+      "type": "interview",
+      "duration_minutes": 63,
+      "topics": [
+        "semiconductors",
+        "leadership",
+        "venture capital",
+        "career journey",
+        "partnerships"
+      ],
+      "key_quotes": [],
+      "transcript_url": "https://abitpersonalpod.substack.com/p/lip-bu-tan-from-nuclear-engineer?showTranscript=true",
+      "video_url": "",
+      "audio_url": "https://abitpersonalpod.substack.com/p/lip-bu-tan-from-nuclear-engineer",
+      "language": "en",
+      "word_count_estimate": 10100,
+      "product_tags": [
+        "interview",
+        "leadership",
+        "semiconductors",
+        "career"
+      ],
+      "transcript_path": "references/transcripts/LBT-2026-001.txt",
+      "editorial_path": "references/editorials/LBT-2026-001.md",
+      "source_type": "publisher_auto_transcript",
+      "verification_status": "transcript_text_verified",
+      "imported_date": "2026-09-29",
+      "notes_zh": "A Bit Personal 播客（主持人 Jodi Shelton，Global Semiconductor Alliance 共同創辦人暨執行長）第二季首集；Substack 發布時間 2026-09-24 19:01 UTC（台北時間 2026-09-25 03:01），date 採美國當地發布日 2026-09-24，錄製日期未公開。逐字稿取自 Substack 公開的自動轉錄（免費公開，無付費牆），涵蓋 00:00 至 62:40（音檔 62:47），從頭到尾完整；未經人工校對，保留原始錯字。說話人為自動分辨，SPEAKER_00＝Lip-Bu Tan、SPEAKER_01＝Jodi Shelton 係依內容判斷。43:39–50:34 談美國總統要求辭職、美國政府持股與中國投資，屬政治敏感段落，本次不取語錄。LBT-2026-001-Q01、Q02、Q03、Q04、Q06 已用程式核對為逐字稿逐字子字串並標 verified；Q05 為轉述導師之言，標 draft。未對音檔全片校聽，不是 fully verified。"
     }
   ]
 }
