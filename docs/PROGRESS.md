@@ -4,6 +4,14 @@
 
 ---
 
+## 2026-09-30（Jeff Bezos 九場演講入庫）
+
+- 新增講者 Jeff Bezos（`jeff_bezos`／語錄牆代碼 `jb`）與 9 場原始演講 JB-2001-001 至 JB-2020-001，以及 17 則語錄。本批沒有導讀（editorials）也沒有中文短摘要；單場頁在沒有 `summary_zh` 時本來就顯示「此場尚無短摘要」，驗證器也不要求這兩項。
+- 16 則為 verified（節錄檔逐字子字串）；JB-2017-002-Q03 維持 draft（自動字幕含填充詞 um，斷句未校聽），不上已核實語錄牆。語錄原文與狀態未改。
+- 同步主資料庫總數 41、主題／時間／類型／標籤／長度／講者索引；`time_range` 改為 2001-05 to 2026-09。Vanity Fair（JB-2016-001）日期維持活動日 2016-10-20。
+- 新增值 `source_type`：`official_transcript`、`platform_auto_captions`；`timestamp_precision`：`caption_word_alignment`。既有驗證器只列舉追劇英語卡片的 `source_type`，演講與語錄沒有允許值清單，無需改 schema。
+- 核心頁加入講者 `jb` 與獨立講者色（淺色金 `#9A7B12`、深色金 `#E6C35C`）；首頁講者名單加入 Jeff Bezos，公開演講與訪談場次 31→40（總數 41 仍含 1 場日期待確認）。已核實的 16 則可上語錄牆。
+
 ## 2026-09-29（追劇英語補第二類來源：casual_video）
 
 - 補上 `source_type: casual_video` 的第一批 3 字（riddled with、unanimous、charred），來源是 Founders Fund 出品的實境節目 *MAFIA the GAME* 第一集，使用者提供 YouTube 連結，逐字稿由使用者貼上
