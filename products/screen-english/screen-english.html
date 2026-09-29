@@ -1,0 +1,1519 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>追劇英語 · Screen English</title>
+<meta name="description" content="從美劇台詞與 YouTube／Podcast 等休閒影片中萃取的道地口語、俚語詞彙卡，依 CEFR 分級，附真實出處。">
+<meta property="og:title" content="追劇英語 · Screen English">
+<meta property="og:description" content="從美劇台詞與休閒影片萃取的口語詞彙卡，短句引用、標明出處，依 CEFR 難度分級。">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="追劇英語 · Screen English">
+<meta name="twitter:description" content="從美劇台詞與休閒影片學道地口語、俚語，依 CEFR 分級。">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Public+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<style>
+  :root{
+    --bg: #F4F2FA;
+    --surface: #FFFFFF;
+    --surface-2: #EAE6F5;
+    --ink: #1E1A2E;
+    --muted: #6B6480;
+    --line: #DAD3EC;
+    --accent: #5B4FCF;
+    --accent-ink: #FBFAFF;
+    --accent-soft: #DDD6F7;
+    --card-shadow: 0 1px 2px rgba(30,20,50,0.06), 0 8px 20px -12px rgba(30,20,50,0.18);
+    --jd: #C4547E;
+    --good: #2E6B4F;
+    --bad: #B5482F;
+    --rare-a: #8FB3D6;
+    --rare-b: #E4EEF5;
+    --rare-fg: #2E5A7A;
+    --legend-a: #E8B34A;
+    --legend-b: #F7E4B0;
+    --legend-fg: #7A5417;
+    color-scheme: light dark;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --bg: #14111F;
+      --surface: #1E1A2C;
+      --surface-2: #272138;
+      --ink: #EDEAF8;
+      --muted: #A79FC2;
+      --line: #362F4C;
+      --accent: #A79BFF;
+      --accent-ink: #14101F;
+      --accent-soft: #372F55;
+      --card-shadow: 0 1px 2px rgba(0,0,0,0.3), 0 10px 24px -14px rgba(0,0,0,0.6);
+      --jd: #E693AE;
+      --good: #7FBF83;
+      --bad: #E27A5F;
+      --rare-a: #4A7396;
+      --rare-b: #25333F;
+      --rare-fg: #BFE0F5;
+      --legend-a: #C98A2E;
+      --legend-b: #4A3620;
+      --legend-fg: #F5DFA6;
+    }
+  }
+  :root[data-theme="dark"]{
+    --bg: #14111F;
+    --surface: #1E1A2C;
+    --surface-2: #272138;
+    --ink: #EDEAF8;
+    --muted: #A79FC2;
+    --line: #362F4C;
+    --accent: #A79BFF;
+    --accent-ink: #14101F;
+    --accent-soft: #372F55;
+    --card-shadow: 0 1px 2px rgba(0,0,0,0.3), 0 10px 24px -14px rgba(0,0,0,0.6);
+    --jd: #E693AE;
+    --good: #7FBF83;
+    --bad: #E27A5F;
+    --rare-a: #4A7396;
+    --rare-b: #25333F;
+    --rare-fg: #BFE0F5;
+    --legend-a: #C98A2E;
+    --legend-b: #4A3620;
+    --legend-fg: #F5DFA6;
+  }
+
+  *{ box-sizing: border-box; }
+  body{
+    background: var(--bg);
+    color: var(--ink);
+    font-family: "Public Sans", -apple-system, "Segoe UI", "Noto Sans TC", sans-serif;
+    padding: 22px 16px 56px;
+  }
+  .wrap{ max-width: 1080px; margin: 0 auto; }
+
+  .mono{ font-family: "IBM Plex Mono", ui-monospace, SFMono-Regular, monospace; }
+
+  header{
+    display: flex; flex-wrap: wrap; gap: 16px 32px;
+    align-items: flex-end; justify-content: space-between;
+    padding-bottom: 16px; margin-bottom: 18px;
+    border-bottom: 1px solid var(--line);
+  }
+  .titleblock h1{
+    font-family: "Fraunces", Georgia, serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-size: clamp(24px, 4vw, 36px);
+    line-height: 1.05;
+    margin: 0 0 6px;
+    text-wrap: balance;
+    letter-spacing: -0.01em;
+  }
+  .titleblock h1 .product-en{
+    display: block;
+    font-family: "Public Sans", -apple-system, "Segoe UI", "Noto Sans TC", sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--muted);
+    letter-spacing: 0;
+    margin-top: 6px;
+    line-height: 1.3;
+  }
+  .titleblock p{
+    margin: 0; color: var(--muted); font-size: 14px; max-width: 54ch; line-height: 1.5;
+  }
+  .stats{
+    display: flex; gap: 18px; font-size: 12.5px; color: var(--muted);
+    white-space: nowrap;
+  }
+  .stats b{ color: var(--ink); font-weight: 600; }
+
+  .toolbar{
+    display: flex; flex-direction: column; gap: 12px;
+    margin-bottom: 20px;
+  }
+  .mode-toggle{ display: flex; gap: 6px; flex-wrap: wrap; }
+  .mode-toggle button{
+    font-family: "Public Sans", sans-serif; font-weight: 600; font-size: 13.5px;
+    padding: 8px 16px; border-radius: 8px; border: 1px solid var(--line);
+    background: var(--surface); color: var(--muted); cursor: pointer;
+  }
+  .mode-toggle button.active{ background: var(--ink); color: var(--bg); border-color: var(--ink); }
+
+  #filters{ display: flex; flex-direction: column; gap: 10px; min-width: 0; }
+  .filter-row{ display: flex; flex-wrap: wrap; gap: 8px; align-items: center; min-width: 0; }
+  .filter-row .label{
+    font-family: "IBM Plex Mono", monospace; font-size: 10.5px; text-transform: uppercase;
+    letter-spacing: 0.08em; color: var(--muted); width: 64px; flex: none;
+  }
+  #cefr-chips, #speaker-chips{
+    display: flex; flex-wrap: wrap; gap: 8px; flex: 1 1 0; min-width: 0;
+  }
+  .chip{
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 12.5px; padding: 6px 12px; border-radius: 999px;
+    border: 1px solid var(--line); background: var(--surface); color: var(--muted);
+    cursor: pointer; user-select: none; transition: border-color .15s, color .15s, background .15s;
+    line-height: 1.2; display: inline-flex; align-items: center; white-space: nowrap;
+  }
+  .chip:hover{ border-color: var(--accent); color: var(--ink); }
+  .chip.active{
+    background: var(--accent); border-color: var(--accent); color: var(--accent-ink); font-weight: 600;
+  }
+  .chip .dot{ display: inline-block; width: 7px; height: 7px; border-radius: 50%; margin-right: 6px; vertical-align: middle; }
+
+  /* ---- Shared flip-card mechanics ---- */
+  .flashcard{ perspective: 1200px; height: 230px; cursor: pointer; position: relative; }
+  .flashcard-inner{
+    position: relative; width: 100%; height: 100%; transition: transform .5s cubic-bezier(.4,.2,.2,1);
+    transform-style: preserve-3d;
+  }
+  .flashcard.flipped .flashcard-inner{ transform: rotateY(180deg); }
+  .face{
+    position: absolute; inset: 0; backface-visibility: hidden;
+    border-radius: 14px; border: 1px solid var(--line); background: var(--surface);
+    box-shadow: var(--card-shadow); padding: 16px; display: flex; flex-direction: column;
+    overflow-y: auto; overflow-x: hidden;
+  }
+  .face.back{ transform: rotateY(180deg); background: var(--surface-2); }
+
+  .face-top{ display: flex; align-items: center; gap: 6px; flex-wrap: wrap; }
+  .pos-tag{
+    font-family: "IBM Plex Mono", monospace; font-size: 10px; text-transform: uppercase;
+    letter-spacing: 0.07em; color: var(--accent); font-weight: 600;
+  }
+  .src-tag{
+    font-family: "IBM Plex Mono", monospace; font-size: 9px; text-transform: uppercase;
+    letter-spacing: 0.06em; color: var(--muted); border: 1px solid var(--line);
+    border-radius: 999px; padding: 2px 7px;
+  }
+  .term-zh{ font-size: 12.5px; color: var(--muted); margin-top: 2px; }
+  .face.front .term-en{
+    font-family: "Fraunces", Georgia, serif; font-size: 26px; font-weight: 500;
+    line-height: 1.12; margin-top: auto; margin-bottom: auto; text-wrap: balance;
+  }
+  .speaker-row{
+    display: flex; align-items: center; gap: 7px; margin-top: auto; padding-top: 8px;
+    font-size: 11.5px; color: var(--muted); font-family: "IBM Plex Mono", monospace;
+  }
+  .speaker-dot{ width: 8px; height: 8px; border-radius: 50%; flex: none; }
+  .hint{ position: absolute; bottom: 10px; right: 14px; font-size: 10px; color: var(--muted); opacity: .55; font-family: "IBM Plex Mono",monospace;}
+
+  .face.back .def-en{ font-size: 13.5px; line-height: 1.45; margin: 2px 0 6px; }
+  .face.back .def-zh{ font-size: 13px; line-height: 1.45; color: var(--muted); margin-bottom: 8px; }
+  blockquote.quote{
+    margin: auto 0 0; padding: 8px 0 0; border-top: 1px dashed var(--line);
+    font-size: 12px; line-height: 1.4; font-style: italic; color: var(--ink);
+  }
+  blockquote.quote cite{
+    display: block; margin-top: 4px; font-style: normal; font-family: "IBM Plex Mono", monospace;
+    font-size: 10.5px; color: var(--muted);
+  }
+
+  /* ---- Extended (3rd) face: source & synonyms ---- */
+  .ext-block{ display: flex; flex-direction: column; gap: 6px; margin-top: 4px; }
+  .ext-row{ font-size: 12.5px; color: var(--ink); display: flex; gap: 8px; }
+  .ext-row a{ color: var(--accent); }
+  .ext-label{
+    font-size: 9.5px; text-transform: uppercase; letter-spacing: .06em; color: var(--muted);
+    width: 46px; flex: none; padding-top: 2px;
+  }
+  .ext-context{
+    margin: 10px 0 0; padding-top: 8px; border-top: 1px dashed var(--line);
+    font-size: 12.5px; line-height: 1.55; color: var(--ink);
+  }
+
+  /* ---- CEFR badges: reuse rarity foil styling, labeled by real level ---- */
+  .rarity-badge{
+    font-family: "IBM Plex Mono", monospace; font-size: 9px; letter-spacing: .06em;
+    text-transform: uppercase; padding: 2px 7px; border-radius: 999px;
+  }
+  .rarity-badge.common{ color: var(--muted); background: var(--surface-2); }
+  .rarity-badge.rare{ color: var(--rare-fg); background: linear-gradient(120deg, var(--rare-a), var(--rare-b)); }
+  .rarity-badge.legendary{ color: var(--legend-fg); background: linear-gradient(120deg, var(--legend-a), var(--legend-b)); }
+
+  .flashcard.rarity-rare .face{
+    border: 1.5px solid transparent;
+    background: linear-gradient(var(--surface), var(--surface)) padding-box,
+                linear-gradient(120deg, var(--rare-a), var(--rare-b), var(--rare-a)) border-box;
+  }
+  .flashcard.rarity-rare .face.back{
+    background: linear-gradient(var(--surface-2), var(--surface-2)) padding-box,
+                linear-gradient(120deg, var(--rare-a), var(--rare-b), var(--rare-a)) border-box;
+  }
+  .flashcard.rarity-legendary .face{
+    border: 1.5px solid transparent;
+    background: linear-gradient(var(--surface), var(--surface)) padding-box,
+                linear-gradient(120deg, var(--legend-a), var(--legend-b), var(--legend-a)) border-box;
+  }
+  .flashcard.rarity-legendary .face.back{
+    background: linear-gradient(var(--surface-2), var(--surface-2)) padding-box,
+                linear-gradient(120deg, var(--legend-a), var(--legend-b), var(--legend-a)) border-box;
+  }
+
+  /* ---- Pack-opening cover (daily challenge only) ---- */
+  .pack-cover{
+    position: absolute; inset: 0; z-index: 5; border-radius: 14px; overflow: hidden;
+    display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px;
+    background: linear-gradient(135deg, #221C33, #08050F 140%);
+    color: #F1EEFA; cursor: pointer;
+    transition: transform .5s cubic-bezier(.4,.2,.2,1), opacity .5s ease;
+  }
+  .pack-cover::before{
+    content: ""; position: absolute; inset: -60%;
+    background: repeating-linear-gradient(45deg, rgba(255,255,255,.06) 0 10px, transparent 10px 22px);
+  }
+  .pack-cover .pack-mark{ font-family: "Fraunces", serif; font-size: 24px; letter-spacing: .03em; z-index: 1; }
+  .pack-cover .pack-hint{ font-size: 10.5px; opacity: .7; z-index: 1; }
+  .flashcard.rarity-rare .pack-cover{ box-shadow: inset 0 0 0 2px var(--rare-a); }
+  .flashcard.rarity-legendary .pack-cover{ box-shadow: inset 0 0 0 2px var(--legend-a); }
+  .flashcard.rarity-legendary .pack-cover::after{
+    content: "✦"; position: absolute; top: 10px; right: 14px; color: var(--legend-a); font-size: 13px; z-index: 1;
+  }
+  .pack-cover.opening{ transform: rotateY(180deg) scale(1.05); opacity: 0; pointer-events: none; }
+
+  .reveal-burst{
+    position: absolute; inset: 0; border-radius: 14px; pointer-events: none; z-index: 6;
+    background: radial-gradient(circle at 50% 42%, rgba(232,179,74,0.6), transparent 62%);
+    animation: burst-pop .8s ease-out forwards;
+  }
+  @keyframes burst-pop{
+    0%{ opacity: 0; transform: scale(.6); }
+    30%{ opacity: 1; }
+    100%{ opacity: 0; transform: scale(1.7); }
+  }
+
+  /* ---- Feed (swipe) mode — the default, social-friendly view ---- */
+  #feed-panel{ display: none; flex-direction: column; align-items: center; gap: 10px; }
+  #feed-panel.active{ display: flex; }
+  .feed-progress{
+    width: 100%; max-width: 420px; height: 4px; border-radius: 999px; background: var(--surface-2);
+    overflow: hidden;
+  }
+  .feed-progress > div{ height: 100%; background: var(--accent); transition: width .2s; width: 5%; }
+  .feed-scroll{
+    width: 100%; max-width: 420px; height: min(640px, 74vh);
+    overflow-y: auto; scroll-snap-type: y mandatory; -webkit-overflow-scrolling: touch;
+    border-radius: 22px; border: 1px solid var(--line); background: var(--surface-2);
+    scrollbar-width: none;
+  }
+  .feed-scroll::-webkit-scrollbar{ display: none; }
+  .feed-slide{
+    scroll-snap-align: start; scroll-snap-stop: always;
+    height: 100%; min-height: 100%; width: 100%;
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    position: relative; padding: 30px 22px;
+  }
+  .feed-counter{ position: absolute; top: 16px; left: 20px; font-size: 11px; color: var(--muted); }
+  .feed-hint{ position: absolute; bottom: 16px; left: 0; right: 0; text-align: center; font-size: 11px; color: var(--muted); opacity: .6; }
+  .feed-card-wrap{ perspective: 1400px; width: 100%; height: 76%; }
+  .feed-card-wrap .flashcard{ width: 100%; height: 100%; }
+  .feed-card-wrap .face{ padding: 26px; border-radius: 18px; }
+  .feed-card-wrap .face.front .term-en{ font-size: 30px; text-align: center; }
+  .feed-card-wrap .pos-tag{ text-align: center; }
+  .feed-card-wrap .term-zh{ text-align: center; }
+  .feed-card-wrap .speaker-row{ justify-content: center; }
+  .feed-card-wrap .hint{ display: none; }
+  .share-btn{
+    position: absolute; bottom: 46px; right: 20px;
+    font-family: "IBM Plex Mono", monospace; font-size: 11.5px;
+    background: var(--surface); border: 1px solid var(--line); color: var(--ink);
+    padding: 7px 13px; border-radius: 999px; cursor: pointer;
+  }
+  .share-btn:hover{ border-color: var(--accent); color: var(--accent); }
+
+  .toast{
+    position: fixed; bottom: 26px; left: 50%; transform: translateX(-50%) translateY(14px);
+    background: var(--ink); color: var(--bg); padding: 9px 16px; border-radius: 999px;
+    font-size: 12.5px; opacity: 0; pointer-events: none; transition: opacity .25s, transform .25s;
+    z-index: 50; max-width: min(92vw, 420px); text-align: center; line-height: 1.4;
+  }
+  .toast.show{ opacity: 1; transform: translateX(-50%) translateY(0); }
+
+  /* ---- Daily challenge (pack-opening + streak calendar) ---- */
+  #daily-panel{ display: none; flex-direction: column; align-items: center; gap: 10px; }
+  #daily-panel.active{ display: flex; }
+  .daily-top{ width: 100%; max-width: 420px; display: flex; align-items: center; justify-content: space-between; }
+  .daily-top-actions{ display: flex; gap: 6px; }
+  .streak{ font-size: 13px; color: var(--muted); }
+  .streak b{ color: var(--accent); font-size: 15px; }
+  .cal-toggle{
+    font-family: "IBM Plex Mono", monospace; font-size: 11px; padding: 5px 12px; border-radius: 999px;
+    border: 1px solid var(--line); background: var(--surface); color: var(--muted); cursor: pointer;
+  }
+  .cal-toggle:hover{ border-color: var(--accent); color: var(--accent); }
+  #calendar-wrap, #sync-wrap{
+    width: 100%; max-width: 420px; background: var(--surface); border: 1px solid var(--line);
+    border-radius: 14px; padding: 12px 14px;
+  }
+  .cal-header{ display: flex; align-items: center; justify-content: space-between; margin-bottom: 2px; }
+  .cal-header button{
+    background: none; border: none; font-size: 22px; line-height: 1; color: var(--muted);
+    cursor: pointer; min-width: 44px; min-height: 44px; padding: 0 8px; border-radius: 12px;
+    display: inline-flex; align-items: center; justify-content: center;
+  }
+  .cal-header button:hover,
+  .cal-header button:focus-visible{ color: var(--accent); background: var(--surface-2); }
+  #cal-month-label{ font-size: 12.5px; color: var(--ink); }
+  .cal-grid{ display: grid; grid-template-columns: repeat(7, 1fr); gap: 4px; }
+  .cal-dow{ font-size: 10px; text-align: center; color: var(--muted); }
+  .cal-cell{
+    position: relative;
+    aspect-ratio: 1; display: flex; align-items: center; justify-content: center;
+    border-radius: 8px; font-size: 11px; color: var(--muted); font-family: "IBM Plex Mono", monospace;
+  }
+  .cal-cell.done{ background: var(--accent-soft); color: var(--ink); font-weight: 600; }
+  .cal-cell.done::after{
+    content: "";
+    position: absolute;
+    top: 4px;
+    right: 4px;
+    width: 7px;
+    height: 4px;
+    border-left: 1.5px solid var(--good);
+    border-bottom: 1.5px solid var(--good);
+    transform: rotate(-45deg);
+    pointer-events: none;
+  }
+  .cal-cell.today{ box-shadow: inset 0 0 0 1.5px var(--accent); }
+  .cal-cell.locked{ background: var(--surface-2); color: var(--muted); box-shadow: inset 0 0 0 1px var(--line); }
+  .cal-cell.unscheduled{ color: color-mix(in srgb, var(--muted) 42%, transparent); }
+  .cal-cell.viewing:not(.today){ box-shadow: inset 0 0 0 1.5px var(--ink); }
+  .cal-cell.clickable{ cursor: pointer; }
+  .cal-cell.clickable:hover:not(.done){ color: var(--ink); background: var(--surface-2); }
+  .cal-cell.empty{ visibility: hidden; }
+  .cal-legend{
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    gap: 6px;
+    margin: 8px 0 0;
+    font-size: 10.5px;
+    line-height: 1.2;
+    color: var(--muted);
+    white-space: nowrap;
+  }
+  .cal-legend > span{ display: inline-flex; align-items: center; gap: 4px; min-width: 0; }
+  .lg{
+    width: 12px; height: 12px; border-radius: 3px; flex: none; position: relative;
+    box-sizing: border-box;
+  }
+  .lg-done{ background: var(--accent-soft); }
+  .lg-done::after{
+    content: "";
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: 6px;
+    height: 3px;
+    border-left: 1.5px solid var(--good);
+    border-bottom: 1.5px solid var(--good);
+    transform: rotate(-45deg);
+  }
+  .lg-today{ box-shadow: inset 0 0 0 1.5px var(--accent); }
+  .lg-locked{ background: var(--surface-2); box-shadow: inset 0 0 0 1px var(--line); }
+  .lg-unscheduled{ box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--muted) 35%, transparent); }
+  .feed-empty{
+    width: 100%; max-width: 420px; text-align: center; color: var(--muted);
+    background: var(--surface); border: 1px solid var(--line); border-radius: 16px;
+    padding: 36px 20px; font-size: 13.5px; line-height: 1.55;
+  }
+  .sync-lead{ font-size: 11.5px; color: var(--muted); line-height: 1.5; margin: 0 0 10px; }
+  .sync-row{ margin-bottom: 12px; }
+  .sync-row:last-child{ margin-bottom: 0; }
+  .sync-row label{ display: block; font-size: 11px; color: var(--muted); margin-bottom: 5px; }
+  .sync-code-box{
+    display: flex; gap: 6px;
+  }
+  .sync-code-box textarea, .sync-code-box input{
+    flex: 1 1 auto; min-width: 0; font-family: "IBM Plex Mono", monospace; font-size: 11px;
+    border: 1px solid var(--line); border-radius: 8px; padding: 8px 9px; background: var(--bg); color: var(--ink);
+    resize: none;
+  }
+  .sync-code-box textarea{ height: 46px; }
+  .sync-code-box button{
+    font-family: "Public Sans"; font-weight: 700; font-size: 12px; padding: 0 14px; border-radius: 8px;
+    border: none; background: var(--ink); color: var(--bg); cursor: pointer; white-space: nowrap;
+  }
+  .daily-progress-row{
+    width: 100%; max-width: 420px; display: flex; justify-content: space-between;
+    font-size: 11.5px; color: var(--muted);
+  }
+  .daily-complete{
+    width: 100%; max-width: 420px; text-align: center; background: var(--surface);
+    border: 1px solid var(--line); border-radius: 16px; padding: 26px 20px;
+  }
+  .daily-complete-emoji{ font-size: 30px; margin-bottom: 6px; }
+  .daily-complete h3{ font-family: "Fraunces", serif; font-size: 21px; margin: 0 0 6px; }
+  .daily-complete p{ color: var(--muted); font-size: 13px; margin: 0 0 16px; }
+  .daily-complete button{
+    font-family: "Public Sans"; font-weight: 700; padding: 10px 20px; border-radius: 10px;
+    border: none; background: var(--ink); color: var(--bg); cursor: pointer; font-size: 13.5px;
+  }
+
+  /* ---- Browse grid ---- */
+  #browse-grid{ display: none; }
+  #browse-grid.active{
+    display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 16px;
+  }
+
+  /* ---- Quiz mode ---- */
+  #quiz-panel{ display: none; }
+  #quiz-panel.active{ display: flex; }
+  #quiz-panel{ flex-direction: column; align-items: center; gap: 18px; }
+  .quiz-progress{
+    width: 100%; max-width: 480px; height: 6px; border-radius: 999px; background: var(--surface-2);
+    overflow: hidden;
+  }
+  .quiz-progress > div{ height: 100%; background: var(--accent); transition: width .3s; }
+  .quiz-meta{
+    display: flex; align-items: center; justify-content: center; gap: 10px 14px; flex-wrap: wrap;
+    width: 100%; max-width: 480px;
+  }
+  .quiz-counter, .quiz-mastered, .quiz-card-streak{ font-family: "IBM Plex Mono", monospace; font-size: 12.5px; color: var(--muted); }
+  .quiz-card-streak[hidden]{ display: none; }
+  @keyframes quiz-mastered-bump {
+    0% { transform: scale(1); color: var(--muted); }
+    40% { transform: scale(1.08); color: var(--good); }
+    100% { transform: scale(1); color: var(--muted); }
+  }
+  .quiz-mastered.quiz-mastered-bump{ animation: quiz-mastered-bump .55s ease; }
+  .quiz-reset-mastery{
+    font-family: "Public Sans", sans-serif; font-size: 12px; font-weight: 600;
+    padding: 4px 10px; border-radius: 8px; border: 1px solid var(--line);
+    background: transparent; color: var(--muted); cursor: pointer;
+  }
+  .quiz-reset-mastery:hover{ color: var(--ink); border-color: var(--ink); }
+  .quiz-empty-msg{ color: var(--muted); text-align: center; margin: 0; line-height: 1.65; max-width: 28em; }
+  #quiz-card-holder:has(.quiz-empty-msg){
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    height: 100%; gap: 14px;
+  }
+  .quiz-card-wrap{ perspective: 1400px; width: 100%; max-width: 480px; height: 300px; }
+  .quiz-card-wrap .flashcard{ width: 100%; height: 100%; }
+  .quiz-card-wrap .face{ padding: 26px; border-radius: 18px; }
+  .quiz-card-wrap .face.front .term-en{ font-size: 32px; text-align: center; }
+  .quiz-card-wrap .pos-tag{ text-align: center; }
+  .quiz-card-wrap .term-zh{ text-align: center; }
+  .quiz-card-wrap .speaker-row{ justify-content: center; }
+  .quiz-actions{ display: flex; gap: 10px; }
+  .quiz-actions button{
+    font-family: "Public Sans", sans-serif; font-weight: 600; font-size: 14px;
+    padding: 11px 22px; border-radius: 10px; border: 1px solid var(--line); cursor: pointer;
+    background: var(--surface); color: var(--ink);
+  }
+  .quiz-actions button.know{ border-color: var(--good); color: var(--good); }
+  .quiz-actions button.know:hover{ background: var(--good); color: var(--accent-ink); }
+  .quiz-actions button.dontknow{ border-color: var(--bad); color: var(--bad); }
+  .quiz-actions button.dontknow:hover{ background: var(--bad); color: var(--accent-ink); }
+  .quiz-hint{ font-size: 12px; color: var(--muted); }
+  .quiz-done{ text-align: center; padding: 30px 0; }
+  .quiz-done h2{ font-family: "Fraunces", serif; font-size: 26px; margin: 0 0 8px; }
+  .quiz-done p{ color: var(--muted); margin: 0 0 18px; }
+  .quiz-done button{
+    font-family: "Public Sans"; font-weight: 700; padding: 11px 24px; border-radius: 10px;
+    border: none; background: var(--ink); color: var(--bg); cursor: pointer; font-size: 14px;
+  }
+
+  footer{ margin-top: 36px; font-size: 12px; color: var(--muted); text-align: center; }
+  footer a{ color: var(--muted); }
+  footer p{ margin: 4px 0 0; }
+
+  /* Mobile (phones ~390–430 CSS-px, query to 480): card fills leftover
+     viewport after compact chrome (target ≥80% of 390×844). Browse/quiz
+     keep desktop card sizes. Flex + dvh so daily extras (streak/progress)
+     shrink the feed, not the page. */
+  @media (max-width: 480px){
+    html{ -webkit-text-size-adjust: 100%; }
+    body{
+      margin: 0;
+      padding: 6px 8px;
+      padding-top: max(6px, env(safe-area-inset-top, 0px));
+      padding-bottom: max(6px, env(safe-area-inset-bottom, 0px));
+    }
+    body:has(#feed-panel.active),
+    body:has(#daily-panel.active){
+      overflow: hidden;
+      height: 100svh;
+      height: 100dvh;
+    }
+    .wrap{
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      min-height: 0;
+    }
+    header{
+      flex: none;
+      gap: 2px 10px;
+      align-items: center;
+      padding-bottom: 4px;
+      margin-bottom: 6px;
+    }
+    .titleblock h1{
+      display: flex;
+      align-items: baseline;
+      gap: 8px;
+      font-size: 17px;
+      margin: 0;
+      line-height: 1.1;
+    }
+    .titleblock h1 .product-en{ display: inline; font-size: 10px; margin-top: 0; }
+    .titleblock p,
+    .stats{ display: none; }
+    .toolbar{ flex: none; gap: 4px; margin-bottom: 6px; min-width: 0; }
+    .mode-toggle{ gap: 4px; }
+    .mode-toggle button{ padding: 5px 9px; font-size: 12px; }
+    .filter-row{ align-items: center; }
+    .filter-row .label{ width: auto; }
+    #cefr-chips{ flex-basis: 100%; }
+    #cefr-chips .chip, #speaker-chips .chip{ padding: 6px 9px; font-size: 12px; }
+    #feed-panel.active,
+    #daily-panel.active{
+      flex: 1 1 auto;
+      min-height: 0;
+      gap: 4px;
+      width: 100%;
+    }
+    .daily-top, .daily-progress-row, .feed-progress, #calendar-wrap, #sync-wrap, #daily-empty, #daily-complete{
+      flex: none;
+      max-width: none;
+    }
+    .streak{ font-size: 12px; }
+    .streak b{ font-size: 13px; }
+    .cal-toggle{ padding: 3px 8px; font-size: 10px; }
+    .daily-progress-row{ font-size: 11px; }
+    .feed-empty{ max-width: none; padding: 24px 16px; font-size: 13px; }
+    .feed-progress{ height: 3px; }
+    #daily-panel .feed-scroll,
+    #feed-panel .feed-scroll{
+      flex: 1 1 auto;
+      width: 100%;
+      max-width: none;
+      height: auto;
+      min-height: 0;
+      border-radius: 14px;
+    }
+    #daily-panel .feed-card-wrap .face{ padding-bottom: 40px; }
+    #daily-panel .share-btn{ bottom: 8px; right: 8px; }
+    #daily-panel .feed-hint{
+      left: 10px;
+      right: 96px;
+      bottom: 10px;
+      text-align: left;
+    }
+    .feed-slide{ padding: 4px 6px; }
+    .feed-card-wrap{ width: 100%; height: 100%; }
+    .feed-card-wrap .flashcard{ height: 100%; }
+    .feed-card-wrap .face{ padding: 16px 14px; border-radius: 18px; }
+    .feed-card-wrap .face.front .term-en{
+      font-size: clamp(34px, 9vw, 44px);
+      line-height: 1.22;
+    }
+    .feed-card-wrap .term-zh{ font-size: 17px; line-height: 1.45; margin-top: 6px; }
+    .feed-card-wrap .pos-tag{ font-size: 11.5px; }
+    .feed-card-wrap .face.back .def-en{ font-size: 18px; line-height: 1.55; }
+    .feed-card-wrap .face.back .def-zh{ font-size: 17px; line-height: 1.55; }
+    .feed-card-wrap blockquote.quote{ font-size: 16px; line-height: 1.5; }
+    .feed-card-wrap blockquote.quote cite{ font-size: 12.5px; }
+    .feed-card-wrap .ext-row,
+    .feed-card-wrap .ext-context{ font-size: 15.5px; line-height: 1.55; }
+    .feed-card-wrap .speaker-row{ font-size: 13px; }
+    .feed-card-wrap .pack-cover,
+    .feed-card-wrap .reveal-burst{ border-radius: 18px; }
+    .pack-cover .pack-mark{ font-size: 40px; }
+    .pack-cover .pack-hint{ font-size: 14px; }
+    .share-btn{ bottom: 12px; right: 10px; }
+    .feed-hint{ bottom: 8px; }
+    body:has(#daily-panel.active) footer,
+    body:has(#feed-panel.active) footer{ display: none; }
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    .flashcard-inner{ transition: none; }
+  }
+</style>
+
+<div class="wrap">
+  <header>
+    <div class="titleblock">
+      <h1>追劇英語 <span class="product-en">Screen English</span></h1>
+      <p>從美劇台詞與 YouTube／Podcast 等休閒影片中萃取的<b>道地口語</b>詞彙——不是教材腔，而是角色／主持人真正說出來的字，依 CEFR（A2–C1）分級，每個字都附短句引用與出處連結。</p>
+    </div>
+    <div class="stats mono">
+      <div><b id="stat-total">0</b> 個字</div>
+      <div><b id="stat-shows">0</b> 部作品</div>
+      <div><b>4</b> 個 CEFR 級別</div>
+    </div>
+  </header>
+
+  <div class="toolbar">
+    <div class="mode-toggle">
+      <button id="btn-daily" class="active">每日挑戰</button>
+      <button id="btn-feed">滑卡</button>
+      <button id="btn-browse">整理瀏覽</button>
+      <button id="btn-quiz">測驗</button>
+    </div>
+    <div id="filters">
+      <div class="filter-row">
+        <span class="label">CEFR</span>
+        <div id="cefr-chips"></div>
+      </div>
+      <div class="filter-row">
+        <span class="label">角色</span>
+        <div id="speaker-chips"></div>
+      </div>
+    </div>
+  </div>
+
+  <div id="daily-panel" class="active">
+    <div class="daily-top">
+      <div class="streak mono">🔥 連續 <b id="streak-count">0</b> 天</div>
+      <div class="daily-top-actions">
+        <button id="btn-toggle-calendar" class="cal-toggle mono">日曆 ▾</button>
+        <button id="btn-toggle-sync" class="cal-toggle mono">同步 ⇄</button>
+      </div>
+    </div>
+    <div id="calendar-wrap" hidden>
+      <div class="cal-header">
+        <button id="cal-prev" aria-label="上個月">‹</button>
+        <span id="cal-month-label" class="mono"></span>
+        <button id="cal-next" aria-label="下個月">›</button>
+      </div>
+      <div class="cal-grid" id="cal-grid"></div>
+      <div class="cal-legend" aria-label="日曆圖例">
+        <span><span class="lg lg-done" aria-hidden="true"></span>已完成</span>
+        <span><span class="lg lg-today" aria-hidden="true"></span>今日</span>
+        <span><span class="lg lg-locked" aria-hidden="true"></span>尚未開放</span>
+        <span><span class="lg lg-unscheduled" aria-hidden="true"></span>尚未公布</span>
+      </div>
+    </div>
+    <div id="sync-wrap" hidden>
+      <p class="sync-lead">連續天數存在這台裝置的瀏覽器裡，換裝置不會自動同步。匯出代碼貼到另一台裝置，或反過來貼別台裝置的代碼進來，就能把進度合併。</p>
+      <div class="sync-row">
+        <label>這台裝置的代碼</label>
+        <div class="sync-code-box">
+          <textarea id="sync-export-code" class="mono" readonly></textarea>
+          <button type="button" id="btn-sync-copy" class="mono">複製</button>
+        </div>
+      </div>
+      <div class="sync-row">
+        <label>貼上其他裝置的代碼</label>
+        <div class="sync-code-box">
+          <input type="text" id="sync-import-code" class="mono" placeholder="貼上代碼…">
+          <button type="button" id="btn-sync-import" class="mono">合併</button>
+        </div>
+      </div>
+    </div>
+    <div class="daily-progress-row mono">
+      <span id="daily-progress-label">今日挑戰</span>
+      <span id="daily-progress-text">0 / 3</span>
+    </div>
+    <div class="feed-progress"><div id="daily-progress-bar"></div></div>
+    <div class="feed-scroll" id="daily-scroll"></div>
+    <div class="feed-empty" id="daily-empty" hidden>尚未公布</div>
+    <div id="daily-complete" class="daily-complete" hidden>
+      <div class="daily-complete-emoji">🎬</div>
+      <h3>今天完成了！</h3>
+      <p id="daily-complete-sub"></p>
+      <button id="btn-see-all">看全部卡片 →</button>
+    </div>
+  </div>
+
+  <div id="feed-panel">
+    <div class="feed-progress"><div id="feed-progress-bar"></div></div>
+    <div class="feed-scroll" id="feed-scroll"></div>
+  </div>
+
+  <div id="browse-grid"></div>
+
+  <div id="quiz-panel">
+    <div class="quiz-progress"><div id="quiz-progress-bar" style="width:0%"></div></div>
+    <div class="quiz-meta">
+      <div class="quiz-counter" id="quiz-counter">0 / 0</div>
+      <div class="quiz-card-streak" id="quiz-card-streak" hidden></div>
+      <div class="quiz-mastered" id="quiz-mastered">今日待複習 0 張</div>
+      <button type="button" class="quiz-reset-mastery" id="quiz-reset-mastery">重置複習進度</button>
+    </div>
+    <div class="quiz-card-wrap">
+      <div id="quiz-card-holder"></div>
+    </div>
+    <div class="quiz-hint">點卡片或按空白鍵翻面 · ← 忘記了　→ 記得</div>
+    <div class="quiz-actions">
+      <button class="dontknow" id="btn-dontknow">忘記了</button>
+      <button class="know" id="btn-know">記得</button>
+    </div>
+    <div id="quiz-done" style="display:none" class="quiz-done">
+      <h2></h2>
+      <p></p>
+      <button id="quiz-restart">重新測驗</button>
+    </div>
+  </div>
+
+  <footer>
+    <p>資料來源：美劇台詞與休閒影片，僅引用單句對白／短句作教學示例，並標明劇名或影片出處連結；CEFR 難度為估計值。</p>
+    <p>非商業教育用途，不轉載完整劇本或長段對白；如版權方有疑慮，歡迎聯繫移除。</p>
+  </footer>
+</div>
+
+<div class="toast mono" id="toast"></div>
+
+<script src="../shared/learning-core.js"></script>
+<script>
+(async function(){
+async function loadCards(url){
+  const response = await fetch(url);
+  if (!response.ok) throw new Error("卡片資料載入失敗（HTTP " + response.status + "）");
+  const cards = await response.json();
+  if (!Array.isArray(cards)) throw new Error("卡片資料格式錯誤");
+  return cards;
+}
+
+const SPEAKERS = {
+  jd: { name: "Jared Dunn", short: "Jared", color: "var(--jd)" },
+};
+
+const CEFR_INFO = {
+  A2: { zh: "入門", rarity: "common" },
+  B1: { zh: "基礎", rarity: "common" },
+  B2: { zh: "中高階", rarity: "rare" },
+  C1: { zh: "進階", rarity: "legendary" },
+};
+
+const POS_ZH = {
+  noun: "名詞", verb: "動詞", adj: "形容詞", adv: "副詞", phrase: "片語",
+};
+
+const SOURCE_TYPE_ZH = {
+  tv_drama: "影集", casual_video: "影片",
+};
+
+const CARDS = await loadCards("./cards_data.json");
+const DAILY_SCHEDULE = LearningCore.normalizeSchedule(await (async ()=>{
+  const response = await fetch("./daily_schedule.json");
+  if (!response.ok) throw new Error("每日行程載入失敗（HTTP " + response.status + "）");
+  return response.json();
+})());
+
+document.getElementById("stat-total").textContent = CARDS.length;
+document.getElementById("stat-shows").textContent = new Set(CARDS.map(c=> c.show)).size;
+
+const state = { cefrs: new Set(), speakers: new Set(), mode: "feed" };
+
+function buildChips(){
+  const cefrChips = document.getElementById("cefr-chips");
+  Object.entries(CEFR_INFO).forEach(([key, info])=>{
+    const chip = document.createElement("span");
+    chip.className = "chip"; chip.textContent = key + " · " + info.zh; chip.dataset.key = key;
+    chip.addEventListener("click", ()=>{
+      state.cefrs.has(key) ? state.cefrs.delete(key) : state.cefrs.add(key);
+      chip.classList.toggle("active");
+      renderBrowse(); resetQuiz();
+    });
+    cefrChips.appendChild(chip);
+  });
+  const spChips = document.getElementById("speaker-chips");
+  Object.entries(SPEAKERS).forEach(([key,s])=>{
+    const chip = document.createElement("span");
+    chip.className = "chip"; chip.dataset.key = key;
+    chip.innerHTML = '<span class="dot" style="background:'+s.color+'"></span>'+s.short;
+    chip.addEventListener("click", ()=>{
+      state.speakers.has(key) ? state.speakers.delete(key) : state.speakers.add(key);
+      chip.classList.toggle("active");
+      renderBrowse(); resetQuiz();
+    });
+    spChips.appendChild(chip);
+  });
+}
+
+function filteredCards(){
+  return CARDS.filter(c=>{
+    const cefrOk = state.cefrs.size === 0 || state.cefrs.has(c.cefr);
+    const spOk = state.speakers.size === 0 || state.speakers.has(c.speaker);
+    return cefrOk && spOk;
+  });
+}
+
+/* ---- Card faces: 1) word  2) definition + real quote  3) source & synonyms ---- */
+function faceContentFor(c, which){
+  const s = SPEAKERS[c.speaker];
+  if (which === 0){
+    return `
+      <div class="face-top">
+        <span class="pos-tag">${POS_ZH[c.pos] || c.pos}</span>
+        <span class="rarity-badge ${c.rarity}" title="${CEFR_INFO[c.cefr].zh}">CEFR ${c.cefr}</span>
+        <span class="src-tag">${SOURCE_TYPE_ZH[c.source_type] || c.source_type}</span>
+      </div>
+      <span class="term-zh">${c.zh}</span>
+      <div class="term-en">${c.word}</div>
+      <div class="speaker-row"><span class="speaker-dot" style="background:${s.color}"></span>${s.name} · ${c.show}</div>
+      <span class="hint">1 / 3 · 點擊看解釋</span>
+    `;
+  }
+  if (which === 1){
+    return `
+      <span class="pos-tag">${POS_ZH[c.pos] || c.pos}</span>
+      <div class="def-en">${c.def_en}</div>
+      <div class="def-zh">${c.zh}</div>
+      <blockquote class="quote">"${c.example}"<cite>— ${s.name}, ${c.show}</cite></blockquote>
+      <span class="hint">2 / 3 · 點擊看出處</span>
+    `;
+  }
+  return `
+    <span class="pos-tag">出處與同義詞</span>
+    <div class="ext-block">
+      <div class="ext-row"><span class="ext-label mono">角色</span><span>${s.name}（${s.short}）</span></div>
+      <div class="ext-row"><span class="ext-label mono">劇名</span><span>${c.show}</span></div>
+      <div class="ext-row"><span class="ext-label mono">場景</span><span>${c.event}</span></div>
+      <div class="ext-row"><span class="ext-label mono">平台</span><span>${c.platform}${c.timestamp ? "（" + c.timestamp + "）" : ""}</span></div>
+      <div class="ext-row"><span class="ext-label mono">連結</span><span><a href="${c.source_url}" target="_blank" rel="noopener noreferrer">開啟來源 →</a></span></div>
+      <div class="ext-row"><span class="ext-label mono">同義</span><span>${c.syn}</span></div>
+      <p class="ext-context">CEFR ${c.cefr}（${CEFR_INFO[c.cefr].zh}）· 例句為單句引用，非完整劇本或長段對白。</p>
+    </div>
+    <span class="hint">3 / 3 · 點擊回正面</span>
+  `;
+}
+
+function initCardFaces(cardEl, c){
+  cardEl.querySelector(".face.front").innerHTML = faceContentFor(c, 0);
+  cardEl.querySelector(".face.back").innerHTML = faceContentFor(c, 1);
+  cardEl.dataset.state = "0";
+  cardEl.classList.remove("flipped");
+}
+
+function advanceCard(cardEl, c){
+  const state = Number(cardEl.dataset.state || "0");
+  const nextState = (state + 1) % 3;
+  const flipped = cardEl.classList.toggle("flipped");
+  const hiddenFace = flipped ? cardEl.querySelector(".face.front") : cardEl.querySelector(".face.back");
+  const followingState = (nextState + 1) % 3;
+  hiddenFace.innerHTML = faceContentFor(c, followingState);
+  cardEl.dataset.state = String(nextState);
+}
+
+function buildFlashcardEl(c){
+  const el = document.createElement("div");
+  el.className = "flashcard rarity-" + c.rarity;
+  el.dataset.id = c.id;
+  el.innerHTML = '<div class="flashcard-inner"><div class="face front"></div><div class="face back"></div></div>';
+  initCardFaces(el, c);
+  el.addEventListener("click", ()=> advanceCard(el, c));
+  return el;
+}
+
+/* ---- Feed (swipe) mode ---- */
+function renderFeed(){
+  const scroll = document.getElementById("feed-scroll");
+  scroll.innerHTML = "";
+  CARDS.forEach((c, i)=>{
+    const slide = document.createElement("div");
+    slide.className = "feed-slide";
+    slide.dataset.index = i;
+
+    const counter = document.createElement("div");
+    counter.className = "feed-counter mono";
+    counter.textContent = (i+1) + " / " + CARDS.length;
+
+    const wrap = document.createElement("div");
+    wrap.className = "feed-card-wrap";
+    wrap.appendChild(buildFlashcardEl(c));
+
+    const shareBtn = document.createElement("button");
+    shareBtn.className = "share-btn mono";
+    shareBtn.textContent = "↗ 分享";
+    shareBtn.addEventListener("click", (e)=>{ e.stopPropagation(); shareCard(c.id); });
+
+    const hint = document.createElement("div");
+    hint.className = "feed-hint mono";
+    hint.textContent = "點卡片翻面・上滑看下一張";
+
+    slide.append(counter, wrap, shareBtn, hint);
+    scroll.appendChild(slide);
+  });
+
+  setupFeedObserver();
+}
+
+let feedObserver;
+function setupFeedObserver(){
+  const scrollEl = document.getElementById("feed-scroll");
+  if (feedObserver) feedObserver.disconnect();
+  feedObserver = new IntersectionObserver((entries)=>{
+    entries.forEach(entry=>{
+      if (entry.isIntersecting && entry.intersectionRatio > 0.5){
+        const idx = Number(entry.target.dataset.index);
+        document.getElementById("feed-progress-bar").style.width = ((idx+1) / CARDS.length * 100) + "%";
+      }
+    });
+  }, { root: scrollEl, threshold: [0.5, 0.6, 0.75] });
+  scrollEl.querySelectorAll(".feed-slide").forEach(el=> feedObserver.observe(el));
+}
+
+function scrollFeedToCard(id){
+  const el = document.querySelector('.feed-slide .flashcard[data-id="'+id+'"]');
+  if (el) el.closest(".feed-slide").scrollIntoView({ block: "start" });
+}
+
+function showToast(msg, ms){
+  const toast = document.getElementById("toast");
+  toast.textContent = msg;
+  toast.classList.add("show");
+  clearTimeout(showToast._t);
+  showToast._t = setTimeout(()=> toast.classList.remove("show"), ms || 1800);
+}
+
+function shareCard(id){
+  const c = CARDS.find(x=> x.id === id);
+  if (!c) return;
+  const url = location.origin + location.pathname + "#card-" + id;
+  const text = c.word + "（" + c.zh + "） — " + c.def_en;
+  if (navigator.share){
+    navigator.share({ title: "追劇英語 · Screen English", text, url }).catch(()=>{});
+  } else if (navigator.clipboard){
+    navigator.clipboard.writeText(url).then(
+      ()=> showToast("連結已複製"),
+      ()=> showToast("複製失敗，請手動複製網址")
+    );
+  } else {
+    showToast(url);
+  }
+}
+
+/* ---- Browse grid ---- */
+function renderBrowse(){
+  const grid = document.getElementById("browse-grid");
+  grid.innerHTML = "";
+  const cards = filteredCards();
+  if (cards.length === 0){
+    grid.innerHTML = '<p class="mono" style="color:var(--muted); grid-column:1/-1;">沒有符合篩選條件的卡片。</p>';
+    return;
+  }
+  cards.forEach(c=> grid.appendChild(buildFlashcardEl(c)));
+}
+
+/* ---- Quiz mode: spaced review (shared with 名人詞彙) ---- */
+const MASTERY_STREAK = 3;
+const KNOWN_KEY = "screen-vocab-known";
+
+function migrateKnownMap(raw){
+  const out = {};
+  if (!raw || typeof raw !== "object") return out;
+  Object.keys(raw).forEach(id => {
+    out[id] = LearningCore.normalizeReview(raw[id], todayStr());
+  });
+  return out;
+}
+
+function persistKnown(){
+  try { localStorage.setItem(KNOWN_KEY, JSON.stringify(known)); } catch(e){}
+}
+
+function persistKnownMap(map){
+  try { localStorage.setItem(KNOWN_KEY, JSON.stringify(map)); } catch(e){}
+}
+
+function loadKnown(){
+  let raw = {};
+  try { raw = JSON.parse(localStorage.getItem(KNOWN_KEY) || "{}"); } catch(e){ raw = {}; }
+  const migrated = migrateKnownMap(raw);
+  persistKnownMap(migrated);
+  return migrated;
+}
+
+function isMastered(id){
+  return !!(known[id] && known[id].mastered);
+}
+
+function applyKnowMark(id){
+  known[id] = LearningCore.review(known[id], true, todayStr());
+  persistKnown();
+}
+
+function applyUnknownMark(id){
+  known[id] = LearningCore.review(known[id], false, todayStr());
+  persistKnown();
+}
+
+function countMasteredInFilter(){
+  return filteredCards().filter(c => isMastered(c.id)).length;
+}
+
+function updateQuizMasteredHud(){
+  const el = document.getElementById("quiz-mastered");
+  if (!el) return;
+  const n = countMasteredInFilter();
+  const next = "今日待複習 " + quizPool().length + " 張 · 已熟練 " + n + " 張";
+  const previousMatch = String(el.dataset.mastered || "");
+  const prevN = Number(previousMatch);
+  el.textContent = next;
+  if (Number.isFinite(prevN) && n > prevN){
+    el.classList.remove("quiz-mastered-bump");
+    void el.offsetWidth;
+    el.classList.add("quiz-mastered-bump");
+  }
+  el.dataset.mastered = String(n);
+}
+
+function setQuizCardStreak(id){
+  const el = document.getElementById("quiz-card-streak");
+  if (!el) return;
+  if (!id){
+    el.hidden = true;
+    el.textContent = "";
+    return;
+  }
+  const rec = known[id] || { streak: 0, mastered: false };
+  el.hidden = false;
+  el.textContent = rec.mastered
+    ? "這張已熟練"
+    : "這張連勝 " + (Number(rec.streak) || 0) + "／" + MASTERY_STREAK;
+}
+
+function quizMarkFeedback(word, isKnown, rec, justMastered){
+  const label = word ? word + "：" : "";
+  if (!isKnown) return label + "已排在明天再複習";
+  if (justMastered) return label + "已熟練，下次複習在 " + rec.due;
+  if (rec.mastered) return label + "下次複習在 " + rec.due;
+  if (rec.streak === MASTERY_STREAK - 1){
+    return label + "連勝 " + rec.streak + "／" + MASTERY_STREAK + "，下次記得就熟練。";
+  }
+  return label + "下次複習在 " + rec.due + " · 連勝 " + rec.streak + "／" + MASTERY_STREAK;
+}
+
+function quizPool(){
+  return filteredCards().filter(c => LearningCore.isDue(known[c.id], todayStr()));
+}
+
+let quizDeck = [];
+let quizIndex = 0;
+let quizResults = {};
+let known = loadKnown();
+
+function resetQuiz(){
+  quizDeck = quizPool().slice().sort(()=>Math.random()-0.5);
+  quizIndex = 0; quizResults = {};
+  document.getElementById("quiz-done").style.display = "none";
+  document.getElementById("quiz-card-holder").style.display = "";
+  document.querySelector(".quiz-hint").style.display = "";
+  document.querySelector(".quiz-actions").style.display = "";
+  updateQuizMasteredHud();
+  renderQuizCard();
+}
+
+function resetMastery(){
+  known = {};
+  persistKnown();
+  resetQuiz();
+  showToast("已重置複習進度");
+}
+
+function renderQuizCard(){
+  const bar = document.getElementById("quiz-progress-bar");
+  const counter = document.getElementById("quiz-counter");
+  const holder = document.getElementById("quiz-card-holder");
+  updateQuizMasteredHud();
+  if (quizDeck.length === 0){
+    counter.textContent = "0 / 0";
+    bar.style.width = "0%";
+    setQuizCardStreak(null);
+    document.querySelector(".quiz-hint").style.display = "none";
+    document.querySelector(".quiz-actions").style.display = "none";
+    if (filteredCards().length > 0){
+      holder.innerHTML = '<p class="mono quiz-empty-msg">今天的複習已完成。系統會依記憶狀況，在 1、3、7 天後及更長間隔安排下一次複習。</p><button type="button" class="quiz-reset-mastery" id="quiz-reset-mastery-empty">重置複習進度</button>';
+      document.getElementById("quiz-reset-mastery-empty").addEventListener("click", resetMastery);
+    } else {
+      holder.innerHTML = '<p class="mono quiz-empty-msg">沒有符合篩選條件的卡片。</p>';
+    }
+    return;
+  }
+  if (quizIndex >= quizDeck.length){
+    setQuizCardStreak(null);
+    showQuizDone();
+    return;
+  }
+  document.querySelector(".quiz-hint").style.display = "";
+  document.querySelector(".quiz-actions").style.display = "";
+  bar.style.width = (quizIndex / quizDeck.length * 100) + "%";
+  counter.textContent = (quizIndex+1) + " / " + quizDeck.length;
+  const c = quizDeck[quizIndex];
+  setQuizCardStreak(c.id);
+  holder.innerHTML = "";
+  holder.appendChild(buildFlashcardEl(c));
+}
+
+function showQuizDone(){
+  setQuizCardStreak(null);
+  document.getElementById("quiz-card-holder").style.display = "none";
+  document.querySelector(".quiz-hint").style.display = "none";
+  document.querySelector(".quiz-actions").style.display = "none";
+  document.getElementById("quiz-progress-bar").style.width = "100%";
+  document.getElementById("quiz-counter").textContent = quizDeck.length + " / " + quizDeck.length;
+  updateQuizMasteredHud();
+  const knownCount = Object.values(quizResults).filter(Boolean).length;
+  const done = document.getElementById("quiz-done");
+  done.style.display = "block";
+  done.querySelector("h2").textContent = knownCount + " / " + quizDeck.length + " 記得";
+  done.querySelector("p").textContent = knownCount === quizDeck.length
+    ? "這輪都記得。系統已依你的複習紀錄安排下一次出現日期。"
+    : "忘記的卡片會在明天再次出現；記得的卡片會逐步拉長複習間隔。";
+}
+
+function markQuiz(isKnown){
+  if (quizIndex >= quizDeck.length) return;
+  const c = quizDeck[quizIndex];
+  quizResults[c.id] = isKnown;
+  const wasMastered = isMastered(c.id);
+  if (isKnown) applyKnowMark(c.id);
+  else applyUnknownMark(c.id);
+  const rec = known[c.id] || { streak: 0, mastered: false };
+  const justMastered = isKnown && rec.mastered && !wasMastered;
+  showToast(quizMarkFeedback(c.word, isKnown, rec, justMastered), 2200);
+  quizIndex++;
+  renderQuizCard();
+}
+
+document.getElementById("btn-know").addEventListener("click", ()=> markQuiz(true));
+document.getElementById("btn-dontknow").addEventListener("click", ()=> markQuiz(false));
+document.getElementById("quiz-restart").addEventListener("click", resetQuiz);
+document.getElementById("quiz-reset-mastery").addEventListener("click", resetMastery);
+
+document.addEventListener("keydown", (e)=>{
+  if (state.mode !== "quiz") return;
+  if (e.code === "Space"){
+    e.preventDefault();
+    const el = document.querySelector("#quiz-card-holder .flashcard");
+    if (el) el.click();
+  }
+  if (e.code === "ArrowRight"){ markQuiz(true); }
+  if (e.code === "ArrowLeft"){ markQuiz(false); }
+});
+
+/* ---- Daily challenge: scheduled pack of 3 + streak calendar ---- */
+const DAILY_SIZE = 3;
+
+function todayStr(d){
+  return LearningCore.localDate(d);
+}
+let dailyRecord = {};
+try { dailyRecord = JSON.parse(localStorage.getItem("screen-vocab-daily") || "{}"); } catch(e){ dailyRecord = {}; }
+let dailyOpened = {};
+try { dailyOpened = JSON.parse(localStorage.getItem("screen-vocab-daily-opened") || "{}"); } catch(e){ dailyOpened = {}; }
+
+function pickDailyCards(dateStr){
+  return LearningCore.scheduledCards(CARDS, LearningCore.scheduledIds(DAILY_SCHEDULE, dateStr).slice(0, DAILY_SIZE));
+}
+
+function computeStreak(record){
+  return LearningCore.streak(record);
+}
+function updateStreakUI(){
+  document.getElementById("streak-count").textContent = computeStreak(dailyRecord);
+}
+function updateDailyProgressUI(openedCount, total){
+  document.getElementById("daily-progress-text").textContent = openedCount + " / " + total;
+  document.getElementById("daily-progress-bar").style.width = total ? (openedCount / total * 100) + "%" : "0%";
+}
+function showDailyComplete(dateStr){
+  if (dateStr !== todayStr()) return;
+  const panel = document.getElementById("daily-complete");
+  document.getElementById("daily-complete-sub").textContent = "已經連續 " + computeStreak(dailyRecord) + " 天完成挑戰。";
+  panel.hidden = false;
+}
+function hideDailyComplete(){
+  document.getElementById("daily-complete").hidden = true;
+}
+function completeDaily(dateStr){
+  if (dailyRecord[dateStr]) return;
+  dailyRecord[dateStr] = true;
+  try { localStorage.setItem("screen-vocab-daily", JSON.stringify(dailyRecord)); } catch(e){}
+  updateStreakUI();
+  renderCalendar();
+  showDailyComplete(dateStr);
+}
+
+function openPack(cover, cardEl, c, dateStr, total, shareBtn){
+  cover.classList.add("opening");
+  setTimeout(()=>{
+    cover.remove();
+    shareBtn.hidden = false;
+    if (c.rarity === "legendary"){
+      const burst = document.createElement("div");
+      burst.className = "reveal-burst";
+      cardEl.appendChild(burst);
+      setTimeout(()=> burst.remove(), 850);
+    }
+    if (!dailyOpened[dateStr]) dailyOpened[dateStr] = [];
+    if (!dailyOpened[dateStr].includes(c.id)) dailyOpened[dateStr].push(c.id);
+    try { localStorage.setItem("screen-vocab-daily-opened", JSON.stringify(dailyOpened)); } catch(e){}
+    const openedCount = dailyOpened[dateStr].length;
+    updateDailyProgressUI(openedCount, total);
+    if (openedCount >= total) completeDaily(dateStr);
+  }, 520);
+}
+
+let viewingDate = todayStr();
+
+function hasDailyData(dateStr){
+  return !!dailyRecord[dateStr] || ((dailyOpened[dateStr] || []).length > 0);
+}
+function hasScheduledPack(dateStr){
+  return LearningCore.scheduledIds(DAILY_SCHEDULE, dateStr).length > 0;
+}
+function canViewDailyDate(dateStr){
+  return LearningCore.canOpenDailyDate(dateStr, todayStr(), {
+    scheduled: hasScheduledPack(dateStr),
+    hasProgress: hasDailyData(dateStr),
+  });
+}
+function updateDailyProgressLabel(dateStr){
+  const el = document.getElementById("daily-progress-label");
+  if (!el) return;
+  el.textContent = (dateStr === todayStr()) ? "今日挑戰" : (dateStr + " 挑戰");
+}
+
+function renderDaily(dateStr){
+  const today = todayStr();
+  dateStr = dateStr || viewingDate || today;
+  if (!canViewDailyDate(dateStr)) dateStr = today;
+  viewingDate = dateStr;
+  const isHistorical = dateStr < today;
+  const cards = pickDailyCards(dateStr);
+  const openedIds = dailyOpened[dateStr] || [];
+  const dayDone = !!dailyRecord[dateStr];
+  const scroll = document.getElementById("daily-scroll");
+  const empty = document.getElementById("daily-empty");
+  scroll.innerHTML = "";
+  updateDailyProgressLabel(dateStr);
+
+  if (cards.length === 0){
+    scroll.hidden = true;
+    empty.hidden = false;
+    empty.textContent = "尚未公布";
+    updateDailyProgressUI(0, 0);
+    hideDailyComplete();
+    updateStreakUI();
+    renderCalendar();
+    return;
+  }
+  empty.hidden = true;
+  scroll.hidden = false;
+
+  cards.forEach((c, i)=>{
+    // Historical packs are view-only: reveal them without changing completion
+    // records or retroactively extending the daily streak.
+    const isOpen = isHistorical || dayDone || openedIds.includes(c.id);
+    const slide = document.createElement("div");
+    slide.className = "feed-slide";
+    slide.dataset.index = i;
+
+    const counter = document.createElement("div");
+    counter.className = "feed-counter mono";
+    counter.textContent = (i+1) + " / " + cards.length;
+
+    const wrap = document.createElement("div");
+    wrap.className = "feed-card-wrap";
+    const cardEl = buildFlashcardEl(c);
+    wrap.appendChild(cardEl);
+
+    const shareBtn = document.createElement("button");
+    shareBtn.className = "share-btn mono";
+    shareBtn.textContent = "↗ 分享";
+    shareBtn.hidden = !isOpen;
+    shareBtn.addEventListener("click", (e)=>{ e.stopPropagation(); shareCard(c.id); });
+
+    const hint = document.createElement("div");
+    hint.className = "feed-hint mono";
+    hint.textContent = isHistorical ? "歷史牌組・點卡片翻面" : "點卡片翻面・上滑看下一張";
+
+    slide.append(counter, wrap, shareBtn, hint);
+    scroll.appendChild(slide);
+
+    if (!isOpen){
+      const cover = document.createElement("div");
+      cover.className = "pack-cover";
+      cover.innerHTML = '<div class="pack-mark">SE</div><div class="pack-hint mono">點擊開卡</div>';
+      cover.addEventListener("click", (e)=>{
+        e.stopPropagation();
+        openPack(cover, cardEl, c, dateStr, cards.length, shareBtn);
+      });
+      cardEl.appendChild(cover);
+    }
+  });
+
+  scroll.scrollTop = 0;
+  updateDailyProgressUI((isHistorical || dayDone) ? cards.length : openedIds.length, cards.length);
+  if (dateStr === today && dayDone) showDailyComplete(dateStr); else hideDailyComplete();
+  updateStreakUI();
+  renderCalendar();
+}
+
+let calViewDate = new Date();
+function renderCalendar(){
+  const y = calViewDate.getFullYear(), m = calViewDate.getMonth();
+  document.getElementById("cal-month-label").textContent = y + " / " + String(m+1).padStart(2,"0");
+  const grid = document.getElementById("cal-grid");
+  grid.innerHTML = "";
+  ["日","一","二","三","四","五","六"].forEach(d=>{
+    const el = document.createElement("div");
+    el.className = "cal-dow"; el.textContent = d;
+    grid.appendChild(el);
+  });
+  const firstDow = new Date(y, m, 1).getDay();
+  const daysInMonth = new Date(y, m+1, 0).getDate();
+  for (let i = 0; i < firstDow; i++){
+    const el = document.createElement("div");
+    el.className = "cal-cell empty";
+    grid.appendChild(el);
+  }
+  const todayS = todayStr();
+  for (let day = 1; day <= daysInMonth; day++){
+    const dateStr = y + "-" + String(m+1).padStart(2,"0") + "-" + String(day).padStart(2,"0");
+    const done = !!dailyRecord[dateStr];
+    const scheduled = hasScheduledPack(dateStr);
+    const clickable = canViewDailyDate(dateStr);
+    const isToday = dateStr === todayS;
+    const el = document.createElement("div");
+    el.className = "cal-cell"
+      + (done ? " done" : "")
+      + (isToday ? " today" : "")
+      + (dateStr === viewingDate ? " viewing" : "")
+      + (clickable ? " clickable" : "")
+      + (!clickable && dateStr > todayS && scheduled ? " locked" : "")
+      + (!clickable && !scheduled ? " unscheduled" : "");
+    el.textContent = String(day);
+    const labels = [day + "日"];
+    if (done) labels.push("已完成");
+    if (isToday) labels.push("今日");
+    else if (!clickable && dateStr > todayS && scheduled) labels.push("尚未開放");
+    else if (!clickable && !scheduled) labels.push("尚未公布");
+    el.setAttribute("aria-label", labels.join("，"));
+    if (clickable){
+      const viewLabel = isToday ? "查看今日挑戰" : "查看這天的挑戰";
+      el.title = done ? ("已完成・" + viewLabel) : viewLabel;
+      el.addEventListener("click", ()=> renderDaily(dateStr));
+    } else if (dateStr > todayS && scheduled){
+      el.title = "尚未開放";
+    } else if (!scheduled){
+      el.title = "尚未公布";
+    }
+    grid.appendChild(el);
+  }
+}
+
+document.getElementById("cal-prev").addEventListener("click", ()=>{ calViewDate.setMonth(calViewDate.getMonth()-1); renderCalendar(); });
+document.getElementById("cal-next").addEventListener("click", ()=>{ calViewDate.setMonth(calViewDate.getMonth()+1); renderCalendar(); });
+document.getElementById("btn-toggle-calendar").addEventListener("click", ()=>{
+  const wrap = document.getElementById("calendar-wrap");
+  wrap.hidden = !wrap.hidden;
+});
+document.getElementById("btn-see-all").addEventListener("click", ()=> setMode("feed"));
+
+/* ---- Cross-device streak sync (manual export/import code) ---- */
+function buildSyncCode(){
+  return LearningCore.encodeProgress(dailyRecord, dailyOpened);
+}
+function applySyncCode(code){
+  const payload = LearningCore.decodeProgress(code);
+
+  let added = 0;
+  payload.d.forEach(d=>{
+    if (!dailyRecord[d]){ dailyRecord[d] = true; added++; }
+  });
+  try { localStorage.setItem("screen-vocab-daily", JSON.stringify(dailyRecord)); } catch(e){}
+
+  if (Array.isArray(payload.o) && payload.o.length){
+    const today = todayStr();
+    const cur = dailyOpened[today] || [];
+    dailyOpened[today] = Array.from(new Set([...cur, ...payload.o]));
+    try { localStorage.setItem("screen-vocab-daily-opened", JSON.stringify(dailyOpened)); } catch(e){}
+  }
+  return added;
+}
+document.getElementById("btn-toggle-sync").addEventListener("click", ()=>{
+  const wrap = document.getElementById("sync-wrap");
+  wrap.hidden = !wrap.hidden;
+  if (!wrap.hidden){
+    document.getElementById("sync-export-code").value = buildSyncCode();
+    document.getElementById("sync-import-code").value = "";
+  }
+});
+document.getElementById("btn-sync-copy").addEventListener("click", ()=>{
+  const box = document.getElementById("sync-export-code");
+  if (navigator.clipboard){
+    navigator.clipboard.writeText(box.value).then(
+      ()=> showToast("代碼已複製"),
+      ()=>{ box.select(); showToast("請按 Ctrl/Cmd+C 複製"); }
+    );
+  } else {
+    box.select();
+    showToast("請按 Ctrl/Cmd+C 複製");
+  }
+});
+document.getElementById("btn-sync-import").addEventListener("click", ()=>{
+  const input = document.getElementById("sync-import-code");
+  const code = input.value.trim();
+  if (!code){ showToast("請先貼上代碼"); return; }
+  try {
+    const added = applySyncCode(code);
+    input.value = "";
+    document.getElementById("sync-export-code").value = buildSyncCode();
+    if (state.mode === "daily") renderDaily();
+    else { updateStreakUI(); renderCalendar(); }
+    showToast(added > 0 ? "已合併，新增 " + added + " 天" : "已是最新進度");
+  } catch(e){
+    showToast("代碼格式錯誤，請確認複製完整");
+  }
+});
+
+function setMode(mode){
+  state.mode = mode;
+  document.getElementById("btn-daily").classList.toggle("active", mode === "daily");
+  document.getElementById("btn-feed").classList.toggle("active", mode === "feed");
+  document.getElementById("btn-browse").classList.toggle("active", mode === "browse");
+  document.getElementById("btn-quiz").classList.toggle("active", mode === "quiz");
+  document.getElementById("daily-panel").classList.toggle("active", mode === "daily");
+  document.getElementById("feed-panel").classList.toggle("active", mode === "feed");
+  document.getElementById("browse-grid").classList.toggle("active", mode === "browse");
+  document.getElementById("quiz-panel").classList.toggle("active", mode === "quiz");
+  document.getElementById("filters").style.display = (mode === "browse" || mode === "quiz") ? "flex" : "none";
+  if (mode === "daily") renderDaily(todayStr());
+  if (mode === "quiz") resetQuiz();
+}
+
+document.getElementById("btn-daily").addEventListener("click", ()=> setMode("daily"));
+document.getElementById("btn-feed").addEventListener("click", ()=> setMode("feed"));
+document.getElementById("btn-browse").addEventListener("click", ()=> setMode("browse"));
+document.getElementById("btn-quiz").addEventListener("click", ()=> setMode("quiz"));
+
+function resetFeedScroll(){
+  const scrollEl = document.getElementById("feed-scroll");
+  const hashMatch = location.hash.match(/^#card-(\d+)$/);
+  if (hashMatch){
+    scrollFeedToCard(Number(hashMatch[1]));
+  } else if (scrollEl){
+    scrollEl.scrollTop = 0;
+  }
+}
+
+buildChips();
+renderFeed();
+renderBrowse();
+renderDaily();
+
+const hashMatch = location.hash.match(/^#card-(\d+)$/);
+if (hashMatch){
+  setMode("feed");
+  requestAnimationFrame(resetFeedScroll);
+} else {
+  setMode("daily");
+}
+
+/* Browsers can restore a page's previous scroll position (bfcache back/forward,
+   some mobile "recent tabs" restores) — without this, reopening the same link
+   can land on whatever card was last viewed instead of the first one. */
+window.addEventListener("pageshow", ()=>{
+  requestAnimationFrame(()=>{ if (state.mode === "feed") resetFeedScroll(); });
+});
+}()).catch(error=>{
+  console.error(error);
+  const host = document.querySelector(".container") || document.body;
+  host.innerHTML = '<div class="quiz-done"><h2>卡片載入失敗</h2><p>請透過本機 HTTP 伺服器或 GitHub Pages 開啟此頁面。</p></div>';
+});
+</script>

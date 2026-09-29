@@ -12,11 +12,17 @@
     "categories": ["ai", "biz", "quote", "new"],
     "rarities": ["common", "rare", "legendary"]
   },
+  "screenEnglish": {
+    "required": ["word", "pos", "cefr", "rarity", "zh", "def_en", "example", "syn", "show", "source_type", "platform", "source_url"],
+    "cefrRarity": { "A2": "common", "B1": "common", "B2": "rare", "C1": "legendary" },
+    "sourceTypes": ["tv_drama", "casual_video"]
+  },
   "dailySchedule": {
     "file": "daily_schedule.json",
     "minDays": 14,
     "keynoteLexicon": { "size": 3 },
-    "executiveEnglish": { "size": 5 }
+    "executiveEnglish": { "size": 5 },
+    "screenEnglish": { "size": 3 }
   },
   "progressSync": {
     "fields": ["v", "d", "o"],
