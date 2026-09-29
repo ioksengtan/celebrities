@@ -138,6 +138,11 @@ const keynote = readProduct(
   "products/vocabulary-cards/cards_data.json",
   "products/vocabulary-cards/daily_schedule.json"
 );
+const screen = readProduct(
+  "products/screen-english/screen-english.html",
+  "products/screen-english/cards_data.json",
+  "products/screen-english/daily_schedule.json"
+);
 
 requireFields(executive, [...schema.common.required, ...schema.executiveEnglish.required]);
 validateCommon(executive, "word");
@@ -154,6 +159,15 @@ keynote.cards.forEach(card => {
   if (!schema.keynoteLexicon.rarities.includes(card.rarity)) errors.push(`${keynote.file}: id ${card.id} 稀有度無效：${card.rarity}`);
 });
 
+requireFields(screen, [...schema.common.required, ...schema.screenEnglish.required]);
+validateCommon(screen, "word");
+const rarityByCefrScreen = schema.screenEnglish.cefrRarity;
+screen.cards.forEach(card => {
+  if (!rarityByCefrScreen[card.cefr]) errors.push(`${screen.file}: id ${card.id} CEFR 無效：${card.cefr}`);
+  else if (card.rarity !== rarityByCefrScreen[card.cefr]) errors.push(`${screen.file}: id ${card.id} rarity 與 CEFR 不一致`);
+  if (!schema.screenEnglish.sourceTypes.includes(card.source_type)) errors.push(`${screen.file}: id ${card.id} source_type 無效：${card.source_type}`);
+});
+
 const sandbox = { window: {}, btoa: value => Buffer.from(value).toString("base64"), atob: value => Buffer.from(value, "base64").toString() };
 vm.runInNewContext(fs.readFileSync(path.join(root, "products/shared/learning-core.js"), "utf8"), sandbox);
 const core = sandbox.window.LearningCore;
@@ -167,6 +181,7 @@ review = core.review(review, false, "2026-09-29");
 if (review.due !== "2026-09-30" || review.mastered) errors.push("間隔複習：答錯應在隔天重排並取消熟練");
 validateSchedule(executive, schema.dailySchedule.executiveEnglish.size, executive.file);
 validateSchedule(keynote, schema.dailySchedule.keynoteLexicon.size, keynote.file);
+validateSchedule(screen, schema.dailySchedule.screenEnglish.size, screen.file);
 const countIssues = scheduleIssues({ "2026-09-18": [1, 2] }, [{ id: 1 }, { id: 2 }, { id: 3 }], 3, "行程檢查");
 if (!countIssues.some(issue => issue.includes("恰好 3 張"))) {
   errors.push("行程驗證：張數不符時應回報錯誤");
@@ -222,4 +237,4 @@ if (errors.length) {
   errors.forEach(error => console.error(`- ${error}`));
   process.exit(1);
 }
-console.log(`內容驗證通過：Executive English ${executive.cards.length} 張；Keynote Lexicon ${keynote.cards.length} 張；間隔複習規則正常。`);
+console.log(`內容驗證通過：Executive English ${executive.cards.length} 張；Keynote Lexicon ${keynote.cards.length} 張；Screen English ${screen.cards.length} 張；間隔複習規則正常。`);

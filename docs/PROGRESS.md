@@ -4,6 +4,15 @@
 
 ---
 
+## 2026-09-29（新產品：追劇英語 Screen English，種子階段）
+
+- 新增第三個 `LearningCore` 產品 `products/screen-english/`：名人詞彙的姐妹作，素材改成**美劇台詞與休閒影片**（`source_type`：`tv_drama` / `casual_video`），教口語／俚語，跟名人詞彙的正式場合進階字互為對照
+- 版權立場（Yu-Sheng 決定）：短句引用＋標明出處，比照現有語錄牆／名人詞彙的作法；不逐字轉載整段劇本或長對白，非商業教育用途
+- 第一批 3 張種子卡來自 *Silicon Valley*（HBO）第 5 季一段虛構 Bloomberg 訪談橋段（manure、flocking、obliterate），使用者提供 YouTube 剪輯逐字稿；`date` 欄位用該剪輯的 YouTube 發布日期（2018-04-24）而非原劇集播出日——原集數未逐一核對，不冒充已核實事實
+- 機制與名人詞彙共用同一套 `learning-core.js`（每日挑戰排程、連續天數、同步代碼、間隔複習），但**不含小遊戲**（沿用「小遊戲只在名人詞彙」的既有範圍決定）；`content-schema.json` 與 `tools/validate-content.mjs` 已擴充成同時驗證三個產品
+- 目前只是種子／框架驗證：3 張卡、1 個角色、1 部作品，`daily_schedule.json` 每天都排同一組 `[1,2,3]`。**未連首頁導覽**，先確認框架能跑再決定要不要擴充、要不要上線
+- 待辦：擴充到 10–15 張再評估上首頁；補第二類來源（casual_video）驗證 schema 通用；`npm run validate` 已通過（EE 177 張／金句 64 張／追劇英語 3 張）
+
 ## 2026-09-29（Lip-Bu Tan 訪談入庫）
 
 - 新增 LBT-2026-001、Lip-Bu Tan（Intel CEO）講者資料、Substack 自動轉錄逐字稿、繁體中文導讀與摘要，以及 6 則附段落時間碼的語錄。
