@@ -1,15 +1,15 @@
 {
   "metadata": {
     "created_date": "2026-09-06",
-    "time_range": "2024-09 to 2026-09",
-    "total_entries": 32,
+    "time_range": "2001-05 to 2026-09",
+    "total_entries": 41,
     "categories": [
       "keynote",
       "interview",
       "panel",
       "town_hall"
     ],
-    "updated_date": "2026-09-29"
+    "updated_date": "2026-09-30"
   },
   "speakers": {
     "jensen_huang": {
@@ -141,6 +141,29 @@
       ],
       "entries": [
         "LBT-2026-001"
+      ]
+    },
+    "jeff_bezos": {
+      "name": "Jeff Bezos",
+      "title": "Founder & Executive Chair",
+      "company": "Amazon",
+      "topics": [
+        "entrepreneurship",
+        "long-term thinking",
+        "regret minimization",
+        "customer obsession",
+        "space"
+      ],
+      "entries": [
+        "JB-2001-001",
+        "JB-2010-001",
+        "JB-2015-001",
+        "JB-2016-001",
+        "JB-2017-001",
+        "JB-2017-002",
+        "JB-2017-003",
+        "JB-2018-001",
+        "JB-2020-001"
       ]
     }
   },
@@ -975,6 +998,270 @@
       "verification_status": "transcript_text_verified",
       "imported_date": "2026-09-29",
       "notes_zh": "A Bit Personal 播客（主持人 Jodi Shelton，Global Semiconductor Alliance 共同創辦人暨執行長）第二季首集；Substack 發布時間 2026-09-24 19:01 UTC（台北時間 2026-09-25 03:01），date 採美國當地發布日 2026-09-24，錄製日期未公開。逐字稿取自 Substack 公開的自動轉錄（免費公開，無付費牆），涵蓋 00:00 至 62:40（音檔 62:47），從頭到尾完整；未經人工校對，保留原始錯字。說話人為自動分辨，SPEAKER_00＝Lip-Bu Tan、SPEAKER_01＝Jodi Shelton 係依內容判斷。43:39–50:34 談美國總統要求辭職、美國政府持股與中國投資，屬政治敏感段落，本次不取語錄。LBT-2026-001-Q01、Q02、Q03、Q04、Q06 已用程式核對為逐字稿逐字子字串並標 verified；Q05 為轉述導師之言，標 draft。未對音檔全片校聽，不是 fully verified。"
+    },
+    {
+      "id": "JB-2001-001",
+      "speaker": "jeff_bezos",
+      "date": "2001-05-04",
+      "event": "Academy of Achievement Interview (2001 Achievement Summit)",
+      "location": "San Antonio, Texas",
+      "type": "interview",
+      "duration_minutes": 48,
+      "topics": [
+        "entrepreneurship",
+        "passion",
+        "regret minimization",
+        "long-term thinking"
+      ],
+      "key_quotes": [],
+      "transcript_url": "https://achievement.org/achiever/jeffrey-p-bezos/",
+      "video_url": "https://www.youtube.com/watch?v=s7ZvBy1SROE",
+      "language": "en",
+      "word_count_estimate": 8000,
+      "product_tags": [
+        "interview",
+        "career",
+        "life advice"
+      ],
+      "transcript_path": "references/transcripts/JB-2001-001.txt",
+      "source_type": "official_transcript",
+      "verification_status": "transcript_text_verified",
+      "imported_date": "2026-09-30",
+      "notes_zh": "原始場次：Academy of Achievement 訪談（2001 Achievement Summit）；San Antonio, Texas；主持或訪問：American Academy of Achievement（訪問者姓名未載明）。影片來源：Academy of Achievement 官方 YouTube。本場次由第三方剪輯合輯 Business Motiversity〈\"I Got Rich When I Understood This\" | Jeff Bezos〉（https://youtu.be/7TWKKww-F30，2022-05-16 上傳）引用，但出處一律標原始場次，不標合輯。英文語錄以官方逐字稿核對（官方稿可能經編修），時間碼以 YouTube 自動字幕逐詞對齊。Q01 標 verified。本庫內只存語錄附近節錄，不存全文。"
+    },
+    {
+      "id": "JB-2010-001",
+      "speaker": "jeff_bezos",
+      "date": "2010-05-30",
+      "event": "Princeton University 2010 Baccalaureate Address: We Are What We Choose",
+      "location": "Princeton, New Jersey",
+      "type": "keynote",
+      "duration_minutes": 19,
+      "topics": [
+        "choices",
+        "gifts vs. choices",
+        "regret minimization",
+        "passion"
+      ],
+      "key_quotes": [],
+      "transcript_url": "https://www.princeton.edu/news/2010/05/30/2010-baccalaureate-remarks",
+      "video_url": "https://www.youtube.com/watch?v=Duml1SHJqNE",
+      "language": "en",
+      "word_count_estimate": 2000,
+      "product_tags": [
+        "keynote",
+        "career",
+        "life advice"
+      ],
+      "transcript_path": "references/transcripts/JB-2010-001.txt",
+      "source_type": "official_transcript",
+      "verification_status": "transcript_text_verified",
+      "imported_date": "2026-09-30",
+      "notes_zh": "原始場次：Princeton University 2010 Baccalaureate 演講「We Are What We Choose」；Princeton, New Jersey；主持或訪問：（演講；由 Princeton University 校長 Shirley M. Tilghman 介紹）。影片來源：Princeton University 官方 YouTube。本場次由第三方剪輯合輯 Business Motiversity〈\"I Got Rich When I Understood This\" | Jeff Bezos〉（https://youtu.be/7TWKKww-F30，2022-05-16 上傳）引用，但出處一律標原始場次，不標合輯。英文語錄以官方逐字稿核對（官方稿可能經編修），時間碼以 YouTube 自動字幕逐詞對齊。Q01、Q02、Q03、Q04、Q05 標 verified。本庫內只存語錄附近節錄，不存全文。"
+    },
+    {
+      "id": "JB-2015-001",
+      "speaker": "jeff_bezos",
+      "date": "2015-05-01",
+      "event": "Liberty Science Center Genius Gala 4.0",
+      "location": "Jersey City, New Jersey",
+      "type": "interview",
+      "duration_minutes": 20,
+      "topics": [
+        "innovation",
+        "optimism",
+        "customer obsession"
+      ],
+      "key_quotes": [],
+      "transcript_url": "https://www.youtube.com/watch?v=43ebT9qP0Ws",
+      "video_url": "https://www.youtube.com/watch?v=43ebT9qP0Ws",
+      "language": "en",
+      "word_count_estimate": 3300,
+      "product_tags": [
+        "interview",
+        "career",
+        "life advice"
+      ],
+      "transcript_path": "references/transcripts/JB-2015-001.txt",
+      "source_type": "platform_auto_captions",
+      "verification_status": "transcript_text_verified",
+      "imported_date": "2026-09-30",
+      "notes_zh": "原始場次：Liberty Science Center Genius Gala 4.0（Genius Award 頒獎與問答）；Jersey City, New Jersey；主持或訪問：Paul Hoffman（Liberty Science Center 執行長）。影片來源：Liberty Science Center 官方 YouTube。本場次由第三方剪輯合輯 Business Motiversity〈\"I Got Rich When I Understood This\" | Jeff Bezos〉（https://youtu.be/7TWKKww-F30，2022-05-16 上傳）引用，但出處一律標原始場次，不標合輯。無官方逐字稿，英文語錄以 YouTube 平台自動字幕核對（逐字子字串），未對影片全程校聽。Q01 標 verified。本庫內只存語錄附近節錄，不存全文。"
+    },
+    {
+      "id": "JB-2016-001",
+      "speaker": "jeff_bezos",
+      "date": "2016-10-20",
+      "event": "Vanity Fair New Establishment Summit 2016: The Power of Jeff Bezos",
+      "location": "San Francisco, California",
+      "type": "interview",
+      "duration_minutes": 37,
+      "topics": [
+        "platforms",
+        "innovation",
+        "media"
+      ],
+      "key_quotes": [],
+      "transcript_url": "https://www.vanityfair.com/video/watch/the-new-establishment-summit-the-power-of-jeff-bezos",
+      "video_url": "https://www.vanityfair.com/video/watch/the-new-establishment-summit-the-power-of-jeff-bezos",
+      "language": "en",
+      "word_count_estimate": 6500,
+      "product_tags": [
+        "interview",
+        "career",
+        "life advice"
+      ],
+      "transcript_path": "references/transcripts/JB-2016-001.txt",
+      "source_type": "official_transcript",
+      "verification_status": "transcript_text_verified",
+      "imported_date": "2026-09-30",
+      "notes_zh": "原始場次：Vanity Fair New Establishment Summit 2016 對談；San Francisco, California；主持或訪問：Walter Isaacson（Aspen Institute 總裁暨執行長）。影片來源：Vanity Fair 官方影片頁（時間碼取自第三方 YouTube 轉載 5UGwFTdAk3I）。本場次由第三方剪輯合輯 Business Motiversity〈\"I Got Rich When I Understood This\" | Jeff Bezos〉（https://youtu.be/7TWKKww-F30，2022-05-16 上傳）引用，但出處一律標原始場次，不標合輯。英文語錄以官方逐字稿核對（官方稿可能經編修），時間碼以 YouTube 自動字幕逐詞對齊。Q01 標 verified。本庫內只存語錄附近節錄，不存全文。"
+    },
+    {
+      "id": "JB-2017-001",
+      "speaker": "jeff_bezos",
+      "date": "2017-03-07",
+      "event": "SATELLITE 2017 Keynote",
+      "location": "Washington, D.C.",
+      "type": "keynote",
+      "duration_minutes": 24,
+      "topics": [
+        "space",
+        "incrementalism",
+        "Blue Origin"
+      ],
+      "key_quotes": [],
+      "transcript_url": "https://www.youtube.com/watch?v=WNcXhPIwA58",
+      "video_url": "https://www.youtube.com/watch?v=WNcXhPIwA58",
+      "language": "en",
+      "word_count_estimate": 3400,
+      "product_tags": [
+        "keynote",
+        "career",
+        "life advice"
+      ],
+      "transcript_path": "references/transcripts/JB-2017-001.txt",
+      "source_type": "platform_auto_captions",
+      "verification_status": "transcript_text_verified",
+      "imported_date": "2026-09-30",
+      "notes_zh": "原始場次：SATELLITE 2017 大會主題演講；Washington, D.C.；主持或訪問：Jeffrey Hill（SATELLITE 大會主席）。影片來源：Via Satellite 官方 YouTube（2017-10-04 上傳）。本場次由第三方剪輯合輯 Business Motiversity〈\"I Got Rich When I Understood This\" | Jeff Bezos〉（https://youtu.be/7TWKKww-F30，2022-05-16 上傳）引用，但出處一律標原始場次，不標合輯。無官方逐字稿，英文語錄以 YouTube 平台自動字幕核對（逐字子字串），未對影片全程校聽。Q01 標 verified。本庫內只存語錄附近節錄，不存全文。"
+    },
+    {
+      "id": "JB-2017-002",
+      "speaker": "jeff_bezos",
+      "date": "2017-05-20",
+      "event": "Q&A with Students at the Opening of the Apollo Exhibit, The Museum of Flight",
+      "location": "Seattle, Washington",
+      "type": "town_hall",
+      "duration_minutes": 40,
+      "topics": [
+        "space",
+        "gifts vs. choices",
+        "adversity"
+      ],
+      "key_quotes": [],
+      "transcript_url": "https://www.youtube.com/watch?v=7quzqqnz13s",
+      "video_url": "https://www.youtube.com/watch?v=7quzqqnz13s",
+      "language": "en",
+      "word_count_estimate": 6800,
+      "product_tags": [
+        "town_hall",
+        "career",
+        "life advice"
+      ],
+      "transcript_path": "references/transcripts/JB-2017-002.txt",
+      "source_type": "platform_auto_captions",
+      "verification_status": "transcript_text_verified",
+      "imported_date": "2026-09-30",
+      "notes_zh": "原始場次：The Museum of Flight「Apollo」展覽開幕學生問答；Seattle, Washington；主持或訪問：（學生提問）。影片來源：GeekWire YouTube 現場全程錄影（媒體錄影，非主辦單位官方）。本場次由第三方剪輯合輯 Business Motiversity〈\"I Got Rich When I Understood This\" | Jeff Bezos〉（https://youtu.be/7TWKKww-F30，2022-05-16 上傳）引用，但出處一律標原始場次，不標合輯。無官方逐字稿，英文語錄以 YouTube 平台自動字幕核對（逐字子字串），未對影片全程校聽。Q01、Q02 標 verified。Q03 標 draft。本庫內只存語錄附近節錄，不存全文。"
+    },
+    {
+      "id": "JB-2017-003",
+      "speaker": "jeff_bezos",
+      "date": "2017-11-04",
+      "event": "Summit LA17: Jeff Bezos and Mark Bezos in Conversation",
+      "location": "Los Angeles, California",
+      "type": "interview",
+      "duration_minutes": 55,
+      "topics": [
+        "choices",
+        "family",
+        "service and adventure"
+      ],
+      "key_quotes": [],
+      "transcript_url": "https://www.youtube.com/watch?v=Hq89wYzOjfs",
+      "video_url": "https://www.youtube.com/watch?v=Hq89wYzOjfs",
+      "language": "en",
+      "word_count_estimate": 9600,
+      "product_tags": [
+        "interview",
+        "career",
+        "life advice"
+      ],
+      "transcript_path": "references/transcripts/JB-2017-003.txt",
+      "source_type": "platform_auto_captions",
+      "verification_status": "transcript_text_verified",
+      "imported_date": "2026-09-30",
+      "notes_zh": "原始場次：Summit LA17：Jeff Bezos 與 Mark Bezos 兄弟對談；Los Angeles, California；主持或訪問：Jeff Bezos 與胞弟 Mark Bezos 對談（是否另有主持人未核實）。影片來源：Summit 官方 YouTube（2017-11-14 上傳）。本場次由第三方剪輯合輯 Business Motiversity〈\"I Got Rich When I Understood This\" | Jeff Bezos〉（https://youtu.be/7TWKKww-F30，2022-05-16 上傳）引用，但出處一律標原始場次，不標合輯。無官方逐字稿，英文語錄以 YouTube 平台自動字幕核對（逐字子字串），未對影片全程校聽。Q01、Q02 標 verified。本庫內只存語錄附近節錄，不存全文。"
+    },
+    {
+      "id": "JB-2018-001",
+      "speaker": "jeff_bezos",
+      "date": "2018-04-20",
+      "event": "Forum on Leadership 2018: A Conversation with Jeff Bezos",
+      "location": "Dallas, Texas",
+      "type": "interview",
+      "duration_minutes": 56,
+      "topics": [
+        "calling",
+        "space",
+        "decision making",
+        "leadership"
+      ],
+      "key_quotes": [],
+      "transcript_url": "https://www.youtube.com/watch?v=xu6vFIKAUxk",
+      "video_url": "https://www.youtube.com/watch?v=xu6vFIKAUxk",
+      "language": "en",
+      "word_count_estimate": 9400,
+      "product_tags": [
+        "interview",
+        "career",
+        "life advice"
+      ],
+      "transcript_path": "references/transcripts/JB-2018-001.txt",
+      "source_type": "platform_auto_captions",
+      "verification_status": "transcript_text_verified",
+      "imported_date": "2026-09-30",
+      "notes_zh": "原始場次：George W. Bush Presidential Center Forum on Leadership 2018 閉幕對談；Dallas, Texas；主持或訪問：Kenneth Hersh（George W. Bush Presidential Center 總裁暨執行長）。影片來源：George W. Bush Presidential Center 官方 YouTube。本場次由第三方剪輯合輯 Business Motiversity〈\"I Got Rich When I Understood This\" | Jeff Bezos〉（https://youtu.be/7TWKKww-F30，2022-05-16 上傳）引用，但出處一律標原始場次，不標合輯。無官方逐字稿，英文語錄以 YouTube 平台自動字幕核對（逐字子字串），未對影片全程校聽。Q01、Q02 標 verified。本庫內只存語錄附近節錄，不存全文。"
+    },
+    {
+      "id": "JB-2020-001",
+      "speaker": "jeff_bezos",
+      "date": "2020-01-16",
+      "event": "Fireside Chat with Jeff Bezos, Amazon Prime Video India",
+      "location": "Mumbai, India",
+      "type": "interview",
+      "duration_minutes": 45,
+      "topics": [
+        "career advice",
+        "choices",
+        "entertainment"
+      ],
+      "key_quotes": [],
+      "transcript_url": "https://www.youtube.com/watch?v=lJJB7eb-1u0",
+      "video_url": "https://www.youtube.com/watch?v=lJJB7eb-1u0",
+      "language": "en",
+      "word_count_estimate": 7500,
+      "product_tags": [
+        "interview",
+        "career",
+        "life advice"
+      ],
+      "transcript_path": "references/transcripts/JB-2020-001.txt",
+      "source_type": "platform_auto_captions",
+      "verification_status": "transcript_text_verified",
+      "imported_date": "2026-09-30",
+      "notes_zh": "原始場次：Amazon Prime Video India 爐邊對談（Jeff Bezos 首度訪問 Mumbai）；Mumbai, India；主持或訪問：Shah Rukh Khan、Zoya Akhtar。影片來源：Prime Video India 官方 YouTube。本場次由第三方剪輯合輯 Business Motiversity〈\"I Got Rich When I Understood This\" | Jeff Bezos〉（https://youtu.be/7TWKKww-F30，2022-05-16 上傳）引用，但出處一律標原始場次，不標合輯。無官方逐字稿，英文語錄以 YouTube 平台自動字幕核對（逐字子字串），未對影片全程校聽。Q01 標 verified。本庫內只存語錄附近節錄，不存全文。"
     }
   ]
 }

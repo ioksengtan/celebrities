@@ -6,7 +6,8 @@
     sp: { key: "sp", db: "sundar_pichai", name: "Sundar Pichai", short: "皮查伊", company: "Google" },
     sn: { key: "sn", db: "satya_nadella", name: "Satya Nadella", short: "納德拉", company: "Microsoft" },
     mz: { key: "mz", db: "mark_zuckerberg", name: "Mark Zuckerberg", short: "祖克柏", company: "Meta" },
-    lbt: { key: "lbt", db: "lip_bu_tan", name: "Lip-Bu Tan", short: "陳立武", company: "Intel" }
+    lbt: { key: "lbt", db: "lip_bu_tan", name: "Lip-Bu Tan", short: "陳立武", company: "Intel" },
+    jb: { key: "jb", db: "jeff_bezos", name: "Jeff Bezos", short: "貝佐斯", company: "Amazon" }
   };
 
   const FEATURED_SPEECH_IDS = [
