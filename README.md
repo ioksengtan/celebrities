@@ -38,7 +38,7 @@ docs/
 - ✅ **語錄牆＋單場演講**薄片已上 Pages 根目錄（見上）
 - ✅ 金句（Keynote Lexicon）MVP 已完成，見 [`products/vocabulary-cards`](products/vocabulary-cards)
 - ✅ 名人詞彙（Executive English，一般英語 CEFR 詞彙卡）第一版已完成，見 [`products/general-vocab`](products/general-vocab)
-- 🧪 追劇英語（Screen English，美劇／休閒影片口語詞彙卡）種子階段（3 張卡），未連首頁，見 [`products/screen-english`](products/screen-english)
+- 🧪 追劇英語（Screen English，美劇／休閒影片口語詞彙卡）種子階段（6 張卡，2 個來源），未連首頁，見 [`products/screen-english`](products/screen-english)
 - ⬜ 其他候選產品（長導讀、時間軸可視化、每日一句、主題深度分析、演講比較）尚未開始
 
 ## 協作方式

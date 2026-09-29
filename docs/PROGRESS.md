@@ -4,6 +4,14 @@
 
 ---
 
+## 2026-09-29（追劇英語補第二類來源：casual_video）
+
+- 補上 `source_type: casual_video` 的第一批 3 字（riddled with、unanimous、charred），來源是 Founders Fund 出品的實境節目 *MAFIA the GAME* 第一集，使用者提供 YouTube 連結，逐字稿由使用者貼上
+- 核對出處時發現使用者給的連結是中文字幕轉載頻道（fOx Hsiao），追到官方原始頻道 *MAFIA the GAME*（Founders Fund）後改引用原始影片，上片日期 2026-06-04（用瀏覽器讀取 YouTube 頁面 metadata 核實，不是憑印象）
+- 逐字稿裡玩家台詞沒有標記是誰說的，且參與者是真人（Sam Altman、Palmer Luckey、Bryan Johnson）——為了不把台詞誤植到真人名下，這批只取主持人「Mike」的旁白宣布台詞，玩家自己的對話先不做卡；主持人姓氏也未經一手來源證實，卡片只標「Mike」
+- 卡池 3→6 張、角色 1→2 位（Jared Dunn、Mike）、來源類型 tv_drama／casual_video 都驗證跑得通；`daily_schedule.json` 重新洗牌成 6 選 3、一輪內不重複的排程；`npm run validate` 通過（EE 177／金句 64／追劇英語 6）
+- 仍是種子階段，未連首頁
+
 ## 2026-09-29（新產品：追劇英語 Screen English，種子階段）
 
 - 新增第三個 `LearningCore` 產品 `products/screen-english/`：名人詞彙的姐妹作，素材改成**美劇台詞與休閒影片**（`source_type`：`tv_drama` / `casual_video`），教口語／俚語，跟名人詞彙的正式場合進階字互為對照
