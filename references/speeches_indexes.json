@@ -1,7 +1,7 @@
 {
   "metadata": {
     "created_date": "2026-09-06",
-    "total_speeches": 31,
+    "total_speeches": 32,
     "index_types": [
       "topic_index",
       "timeline_index",
@@ -11,7 +11,7 @@
       "quotes_index",
       "length_index"
     ],
-    "updated_date": "2026-09-19"
+    "updated_date": "2026-09-29"
   },
   "topic_index": [
     {
@@ -1291,6 +1291,71 @@
           "type": "interview"
         }
       ]
+    },
+    {
+      "topic": "semiconductors",
+      "count": 1,
+      "speeches": [
+        {
+          "id": "LBT-2026-001",
+          "speaker": "lip_bu_tan",
+          "event": "Lip-Bu Tan: From Nuclear Engineer to Intel’s CEO（A Bit Personal with Jodi Shelton）",
+          "date": "2026-09-24",
+          "type": "interview"
+        }
+      ]
+    },
+    {
+      "topic": "leadership",
+      "count": 1,
+      "speeches": [
+        {
+          "id": "LBT-2026-001",
+          "speaker": "lip_bu_tan",
+          "event": "Lip-Bu Tan: From Nuclear Engineer to Intel’s CEO（A Bit Personal with Jodi Shelton）",
+          "date": "2026-09-24",
+          "type": "interview"
+        }
+      ]
+    },
+    {
+      "topic": "venture capital",
+      "count": 1,
+      "speeches": [
+        {
+          "id": "LBT-2026-001",
+          "speaker": "lip_bu_tan",
+          "event": "Lip-Bu Tan: From Nuclear Engineer to Intel’s CEO（A Bit Personal with Jodi Shelton）",
+          "date": "2026-09-24",
+          "type": "interview"
+        }
+      ]
+    },
+    {
+      "topic": "career journey",
+      "count": 1,
+      "speeches": [
+        {
+          "id": "LBT-2026-001",
+          "speaker": "lip_bu_tan",
+          "event": "Lip-Bu Tan: From Nuclear Engineer to Intel’s CEO（A Bit Personal with Jodi Shelton）",
+          "date": "2026-09-24",
+          "type": "interview"
+        }
+      ]
+    },
+    {
+      "topic": "partnerships",
+      "count": 1,
+      "speeches": [
+        {
+          "id": "LBT-2026-001",
+          "speaker": "lip_bu_tan",
+          "event": "Lip-Bu Tan: From Nuclear Engineer to Intel’s CEO（A Bit Personal with Jodi Shelton）",
+          "date": "2026-09-24",
+          "type": "interview"
+        }
+      ]
     }
   ],
   "timeline_index": [
@@ -1554,7 +1619,7 @@
     },
     {
       "month": "2026-09",
-      "count": 2,
+      "count": 3,
       "speeches": [
         {
           "id": "SA-2026-005",
@@ -1566,6 +1631,12 @@
           "id": "SA-2026-006",
           "speaker": "sam_altman",
           "event": "Axios Interview",
+          "type": "interview"
+        },
+        {
+          "id": "LBT-2026-001",
+          "speaker": "lip_bu_tan",
+          "event": "Lip-Bu Tan: From Nuclear Engineer to Intel’s CEO（A Bit Personal with Jodi Shelton）",
           "type": "interview"
         }
       ]
@@ -1614,7 +1685,8 @@
         "SP-2025-002",
         "MZ-2024-001",
         "MZ-2025-001",
-        "SN-UNDATED-001"
+        "SN-UNDATED-001",
+        "LBT-2026-001"
       ],
       "panel": [
         "EM-2026-002",
@@ -1627,7 +1699,7 @@
     },
     "counts": {
       "keynote": 8,
-      "interview": 19,
+      "interview": 20,
       "panel": 3,
       "town_hall": 1
     }
@@ -1693,7 +1765,8 @@
         "SP-2025-002",
         "MZ-2024-001",
         "MZ-2025-001",
-        "SN-UNDATED-001"
+        "SN-UNDATED-001",
+        "LBT-2026-001"
       ],
       "enterprise": [
         "JH-2026-002",
@@ -1878,6 +1951,15 @@
       ],
       "AI safety": [
         "SN-UNDATED-001"
+      ],
+      "leadership": [
+        "LBT-2026-001"
+      ],
+      "semiconductors": [
+        "LBT-2026-001"
+      ],
+      "career": [
+        "LBT-2026-001"
       ]
     },
     "counts": {
@@ -1891,7 +1973,7 @@
       "consumer": 1,
       "CES": 1,
       "product launch": 1,
-      "interview": 19,
+      "interview": 20,
       "enterprise": 2,
       "economics": 1,
       "GTC": 1,
@@ -1947,7 +2029,10 @@
       "Meta strategy": 1,
       "VR/AR": 1,
       "spending": 1,
-      "AI safety": 1
+      "AI safety": 1,
+      "leadership": 1,
+      "semiconductors": 1,
+      "career": 1
     }
   },
   "special_speeches": [
@@ -2151,7 +2236,7 @@
       ]
     },
     "long": {
-      "count": 8,
+      "count": 9,
       "speeches": [
         {
           "id": "JH-2024-001",
@@ -2200,6 +2285,12 @@
           "speaker": "elon_musk",
           "event": "The Transcript Desk - Edited",
           "word_count": 14000
+        },
+        {
+          "id": "LBT-2026-001",
+          "speaker": "lip_bu_tan",
+          "event": "Lip-Bu Tan: From Nuclear Engineer to Intel’s CEO（A Bit Personal with Jodi Shelton）",
+          "word_count": 10100
         }
       ]
     },
@@ -2349,6 +2440,22 @@
         "SN-UNDATED-001"
       ],
       "total_speeches": 1
+    },
+    "lip_bu_tan": {
+      "name": "Lip-Bu Tan",
+      "title": "CEO",
+      "company": "Intel",
+      "topics": [
+        "semiconductors",
+        "leadership",
+        "venture capital",
+        "career journey",
+        "partnerships"
+      ],
+      "total_speeches": 1,
+      "entries": [
+        "LBT-2026-001"
+      ]
     }
   }
 }
