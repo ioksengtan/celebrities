@@ -78,5 +78,17 @@
     ],
     "draft_note": "繁體中文導讀；未對影片校聽，未獨立核實數據。",
     "char_count": 190
+  },
+  {
+    "speech_id": "LBT-2026-001",
+    "summary_zh": "Intel 執行長 Lip-Bu Tan 在 A Bit Personal 播客中回顧個人歷程：在馬來西亞身為家中老么、在 MIT 念核子工程、進入新創並兼任財務長、自掏腰包創立 Walden International 成為半導體創業投資人，再以毫無執行長經驗之姿接掌 Cadence Design Systems 並完成轉型。他談到評估創業者重視誠實與可教導性、技術要有十倍提升，也分享「做對七成決定就是好執行長」的導師建議，以及把競爭對手視為合作夥伴的產業觀。（依 Substack 自動轉錄整理；未對音檔校聽。）",
+    "based_on": [
+      "publisher_auto_transcript"
+    ],
+    "source_urls": [
+      "https://abitpersonalpod.substack.com/p/lip-bu-tan-from-nuclear-engineer"
+    ],
+    "draft_note": "繁體中文導讀；依 Substack 自動轉錄，未對音檔校聽，未獨立核實數據。",
+    "char_count": 260
   }
 ]
