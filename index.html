@@ -40,8 +40,8 @@
       </div>
       <aside class="home-proof" aria-label="內容規模">
         <div><b>40</b><span>場公開演講與訪談</span></div>
-        <div><b>145</b><span>個進階英語詞彙</span></div>
-        <div><b>45</b><span>張科技主題卡</span></div>
+        <div><b id="stat-ee">183</b><span>個進階英語詞彙</span></div>
+        <div><b id="stat-kl">70</b><span>張科技主題卡</span></div>
         <p>每張內容都保留講者、場合與日期，不用脫離語境死背單字。</p>
       </aside>
     </section>
@@ -54,7 +54,7 @@
 
       <div class="product-grid">
         <article class="product-card product-card-primary">
-          <p class="card-kicker">每日學習 · 145 個詞彙</p>
+          <p class="card-kicker">每日學習 · <span id="kicker-ee">183</span> 個詞彙</p>
           <h3>名人詞彙</h3>
           <p class="product-en">Executive English</p>
           <p>從真實演講學一般進階英語。依 CEFR 分級，系統會在適當時間安排複習，記得的字逐步拉長間隔，忘記的字隔天再來。</p>
@@ -63,7 +63,7 @@
         </article>
 
         <article class="product-card">
-          <p class="card-kicker">輕量探索 · 45 張卡</p>
+          <p class="card-kicker">輕量探索 · <span id="kicker-kl">70</span> 張卡</p>
           <h3>金句</h3>
           <p class="product-en">Keynote Lexicon</p>
           <p>探索 AI、商業與科技演講中的關鍵詞和經典語錄。像開卡包一樣，每天遇見三個新概念。</p>
@@ -101,5 +101,25 @@
   </main>
 
   <footer class="site-footer"><div class="wrap"><span>真實演講 · 雙語內容 · 間隔複習</span><a href="products/core/quotes-wall.html">瀏覽已核實語錄</a></div></footer>
+  <script>
+    // Card totals follow the JSON pools. The numbers in the markup are the fallback if fetch fails.
+    (async () => {
+      const sources = [
+        ["stat-ee", "kicker-ee", "products/general-vocab/cards_data.json"],
+        ["stat-kl", "kicker-kl", "products/vocabulary-cards/cards_data.json"]
+      ];
+      await Promise.all(sources.map(async ([statId, kickerId, url]) => {
+        try {
+          const response = await fetch(url);
+          if (!response.ok) return;
+          const cards = await response.json();
+          if (!Array.isArray(cards)) return;
+          const count = String(cards.length);
+          document.getElementById(statId).textContent = count;
+          document.getElementById(kickerId).textContent = count;
+        } catch (e) {}
+      }));
+    })();
+  </script>
 </body>
 </html>
