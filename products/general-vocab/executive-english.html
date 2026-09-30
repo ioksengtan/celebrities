@@ -521,19 +521,19 @@
   /* ---- Mini-games (question UI; not the 80% flashcard layout) ---- */
   #games-panel{ display: none; flex-direction: column; align-items: center; gap: 16px; }
   #games-panel.active{ display: flex; }
-  #games-lobby, #games-play, #games-done{
+  #games-lobby, #games-play, #games-blocks, #games-done{
     display: flex; flex-direction: column; align-items: center; gap: 16px;
     width: 100%;
   }
-  #games-lobby[hidden], #games-play[hidden], #games-done[hidden],
+  #games-lobby[hidden], #games-play[hidden], #games-blocks[hidden], #games-done[hidden],
   #games-panel [hidden]{ display: none !important; }
   .games-lead{
     color: var(--muted); text-align: center; margin: 0; max-width: 38em;
     font-size: 14px; line-height: 1.55;
   }
   .games-pick{
-    display: grid; grid-template-columns: 1fr 1fr; gap: 12px;
-    width: 100%; max-width: 560px;
+    display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px;
+    width: 100%; max-width: 720px;
   }
   .games-pick-card{
     text-align: left; padding: 18px 16px; border-radius: 14px;
@@ -635,6 +635,72 @@
   .games-done-actions .games-secondary{
     background: var(--surface); color: var(--ink); border: 1px solid var(--line);
   }
+
+  /* ---- Mini-game: 疊字方塊 (falling-block word stack) ---- */
+  .wb-meta{
+    display: flex; align-items: center; justify-content: space-between; gap: 10px;
+    width: 100%; max-width: 480px;
+  }
+  .wb-score{ font-family: "IBM Plex Mono", monospace; font-size: 12.5px; color: var(--muted); }
+  .wb-score b{ color: var(--ink); }
+  .wb-prompt{
+    width: 100%; max-width: 480px; background: var(--surface); border: 1px solid var(--line);
+    border-radius: 16px; padding: 18px 20px; text-align: center; box-shadow: var(--card-shadow);
+  }
+  .wb-prompt-word{
+    font-family: "Fraunces", Georgia, serif; font-weight: 500;
+    font-size: clamp(22px, 5.6vw, 30px); line-height: 1.2; margin: 10px 0 0; text-wrap: balance;
+  }
+  .wb-well{
+    position: relative;
+    width: 248px; height: 332px;
+    background:
+      repeating-linear-gradient(to bottom, transparent 0 41px, var(--line) 41px 42px),
+      repeating-linear-gradient(to right, transparent 0 41px, var(--line) 41px 42px);
+    border: 1px solid var(--line); border-radius: 10px; overflow: hidden;
+    background-color: var(--surface-2);
+  }
+  .wb-piece{
+    position: absolute; left: 0; top: 0;
+    border-radius: 6px; box-sizing: border-box;
+    display: flex; align-items: center; justify-content: center;
+    font-family: "IBM Plex Mono", monospace; font-size: 10.5px; color: var(--muted);
+    border: 1.5px solid transparent;
+  }
+  .wb-piece.rar-common{ background: var(--surface); border-color: var(--line); }
+  .wb-piece.rar-rare{ background: linear-gradient(120deg, var(--rare-a), var(--rare-b)); border-color: var(--rare-a); }
+  .wb-piece.rar-legendary{ background: linear-gradient(120deg, var(--legend-a), var(--legend-b)); border-color: var(--legend-a); }
+  .wb-piece.locked{ opacity: .7; cursor: pointer; }
+  .wb-piece.locked:hover{ opacity: 1; box-shadow: 0 0 0 2px var(--accent) inset; }
+  .wb-piece.targeting{ opacity: 1; box-shadow: 0 0 0 2px var(--accent) inset; animation: wb-pulse 1s ease-in-out infinite; }
+  .wb-piece.shake{ animation: wb-shake .32s ease; }
+  .wb-piece.clearing{ transition: opacity .22s ease, transform .22s ease; opacity: 0; transform: scale(.7); }
+  @keyframes wb-pulse{
+    0%, 100%{ box-shadow: 0 0 0 2px var(--accent) inset; }
+    50%{ box-shadow: 0 0 0 2px var(--accent) inset, 0 0 10px 1px var(--accent); }
+  }
+  @keyframes wb-shake{
+    0%, 100%{ transform: translateX(0); }
+    25%{ transform: translateX(-4px); }
+    75%{ transform: translateX(4px); }
+  }
+  .wb-prompt.rescue{ border-color: var(--accent); box-shadow: 0 0 0 2px var(--accent) inset; }
+  .wb-choices{ display: flex; gap: 10px; width: 100%; margin-top: 16px; }
+  .wb-choice{
+    flex: 1 1 0; min-width: 0; min-height: 56px; padding: 12px 10px;
+    border-radius: 12px; border: 1px solid var(--line); background: var(--surface);
+    color: var(--ink); font-family: "Public Sans", sans-serif; font-size: 15px;
+    font-weight: 600; cursor: pointer; line-height: 1.3; text-align: center;
+  }
+  .wb-choice:hover:not(:disabled){ border-color: var(--accent); }
+  .wb-choice:disabled{ cursor: default; }
+  .wb-choice.correct{
+    border-color: var(--good); background: color-mix(in srgb, var(--good) 16%, var(--surface)); color: var(--good);
+  }
+  .wb-choice.wrong{
+    border-color: var(--bad); background: color-mix(in srgb, var(--bad) 16%, var(--surface)); color: var(--bad);
+  }
+  .wb-hint{ font-size: 11.5px; color: var(--muted); text-align: center; }
   @media (max-width: 520px){
     .games-pick{ grid-template-columns: 1fr; }
   }
@@ -892,6 +958,11 @@
           <strong>看中選英</strong>
           <span>看到中文意思，選正確英文詞</span>
         </button>
+        <button type="button" class="games-pick-card" id="btn-game-blocks">
+          <span class="games-pick-kicker mono">WORD BLOCKS</span>
+          <strong>疊字方塊</strong>
+          <span>方塊不斷落下，選對意思才能消除；CEFR 越難、方塊越大</span>
+        </button>
       </div>
       <p class="mono quiz-empty-msg" id="games-empty" hidden>沒有符合篩選條件的卡片。</p>
     </div>
@@ -909,6 +980,25 @@
       <button type="button" class="games-unknown" id="games-unknown">不熟</button>
       <div class="games-feedback" id="games-feedback" hidden></div>
       <button type="button" class="games-next" id="games-next" hidden>下一題</button>
+    </div>
+    <div id="games-blocks" hidden>
+      <div class="wb-meta">
+        <div class="wb-score mono">分數 <b id="wb-score">0</b> · 最佳 <b id="wb-best">0</b></div>
+        <button type="button" class="games-back-lobby" id="wb-back-lobby">回選單</button>
+      </div>
+      <div class="wb-prompt">
+        <div class="games-prompt-tags">
+          <span class="pos-tag" id="wb-pos"></span>
+          <span class="rarity-badge" id="wb-rarity"></span>
+        </div>
+        <div class="wb-prompt-word" id="wb-word"></div>
+        <div class="wb-choices">
+          <button type="button" class="wb-choice" id="wb-choice-left"></button>
+          <button type="button" class="wb-choice" id="wb-choice-right"></button>
+        </div>
+      </div>
+      <div class="wb-well" id="wb-well"></div>
+      <p class="wb-hint mono">點選或按 ← → 選答案 · 答錯／來不及答會疊進井裡；點一下井裡已疊的方塊可以再搶救一次 · 疊到頂就結束</p>
     </div>
     <div id="games-done" hidden class="quiz-done">
       <h2 id="games-score"></h2>
@@ -1449,11 +1539,16 @@ function updateGamesMasteredHud(){
   if (el) el.textContent = "已熟練 " + countMasteredInFilter() + " 張";
 }
 
+let activeGamesKind = null;
+
 function showGamesLobby(){
   clearGameAdvanceTimer();
   gameSession = null;
+  stopWordBlocks();
+  activeGamesKind = null;
   document.getElementById("games-lobby").hidden = false;
   document.getElementById("games-play").hidden = true;
+  document.getElementById("games-blocks").hidden = true;
   document.getElementById("games-done").hidden = true;
   updateGamesMasteredHud();
   const empty = filteredCards().length === 0;
@@ -1468,9 +1563,11 @@ function startGame(kind){
     return;
   }
   clearGameAdvanceTimer();
+  activeGamesKind = kind;
   gameSession = { kind, deck, index: 0, score: 0, wrong: 0, unknown: 0, locked: false };
   document.getElementById("games-lobby").hidden = true;
   document.getElementById("games-done").hidden = true;
+  document.getElementById("games-blocks").hidden = true;
   document.getElementById("games-play").hidden = false;
   document.getElementById("games-kind-label").textContent = GAME_LABELS[kind] || "";
   renderGameQuestion();
@@ -1623,6 +1720,11 @@ function showGamesDone(){
 }
 
 function handleGamesKey(e){
+  if (activeGamesKind === "blocks"){
+    if (e.code === "ArrowLeft"){ e.preventDefault(); wbAnswer("left"); }
+    else if (e.code === "ArrowRight"){ e.preventDefault(); wbAnswer("right"); }
+    return;
+  }
   if (!gameSession) return;
   if (!gameSession.locked){
     const map = { Digit1: 0, Digit2: 1, Digit3: 2, Digit4: 3, Numpad1: 0, Numpad2: 1, Numpad3: 2, Numpad4: 3 };
@@ -1643,13 +1745,383 @@ function handleGamesKey(e){
   }
 }
 
+/* ---- Mini-game: 疊字方塊 (falling-block word stack, no player movement/rotation) ----
+   Grid model: wb.grid[row][col] holds a locked piece's id (or null). The falling
+   piece isn't in the grid until it locks; its landing row is computed once at
+   spawn from the grid. Locked pieces stay clickable: a correct "rescue" answer
+   clears them and the stack above settles down to fill the gap (like Puyo Puyo
+   chain-resolution, not a Tetris line-clear — there's no player placement, so a
+   full row is not a reliable event to design around). */
+const WB_COLS = 6;
+const WB_ROWS = 8;
+const WB_CELL = 38;
+const WB_GAP = 4;
+const WB_UNIT = WB_CELL + WB_GAP;
+const WB_BEST_KEY = "exec-vocab-blocks-best";
+const WB_POINTS = { common: 1, rare: 2, legendary: 4 };
+
+function wbShapeFor(rarity){
+  if (rarity === "rare") return { w: 1, h: 2 };
+  if (rarity === "legendary") return Math.random() < 0.5 ? { w: 2, h: 2 } : { w: 1, h: 4 };
+  return { w: 1, h: 1 };
+}
+
+let wb = null;
+
+function wbFallDuration(){
+  return Math.max(950, 3200 - (wb ? wb.score : 0) * 70);
+}
+
+function pickWbCard(excludeId){
+  const filtered = filteredCards().filter(c => c.id !== excludeId);
+  if (filtered.length === 0) return null;
+  const unmastered = filtered.filter(c => !isMastered(c.id));
+  const pool = unmastered.length ? unmastered : filtered;
+  return pool[Math.floor(Math.random() * pool.length)];
+}
+
+function pickWbDistractor(card){
+  const sameCefr = shuffledCopy(CARDS.filter(c => c.id !== card.id && c.cefr === card.cefr));
+  if (sameCefr.length) return sameCefr[0];
+  const any = shuffledCopy(CARDS.filter(c => c.id !== card.id));
+  return any.length ? any[0] : card;
+}
+
+function wbMakeOptions(card){
+  const distractor = pickWbDistractor(card);
+  const correctSide = Math.random() < 0.5 ? "left" : "right";
+  const options = correctSide === "left" ? [card, distractor] : [distractor, card];
+  return { correctSide, options };
+}
+
+function updateWbMeta(){
+  if (!wb) return;
+  document.getElementById("wb-score").textContent = String(wb.score);
+  if (wb.score > wb.best){
+    wb.best = wb.score;
+    try { localStorage.setItem(WB_BEST_KEY, String(wb.best)); } catch(e){}
+  }
+  document.getElementById("wb-best").textContent = String(wb.best);
+}
+
+function wbShowQuestion(card, correctSide, options, opts){
+  document.getElementById("wb-word").textContent = card.word;
+  document.getElementById("wb-pos").textContent = POS_ZH[card.pos] || card.pos;
+  const rarityEl = document.getElementById("wb-rarity");
+  rarityEl.textContent = "CEFR " + card.cefr;
+  rarityEl.className = "rarity-badge " + card.rarity;
+  const leftBtn = document.getElementById("wb-choice-left");
+  const rightBtn = document.getElementById("wb-choice-right");
+  leftBtn.textContent = options[0].zh;
+  rightBtn.textContent = options[1].zh;
+  leftBtn.className = "wb-choice"; leftBtn.disabled = false;
+  rightBtn.className = "wb-choice"; rightBtn.disabled = false;
+  const prompt = document.querySelector(".wb-prompt");
+  if (prompt) prompt.classList.toggle("rescue", !!(opts && opts.rescue));
+}
+
+function startWordBlocks(){
+  if (filteredCards().length === 0){
+    showGamesLobby();
+    return;
+  }
+  clearGameAdvanceTimer();
+  gameSession = null;
+  activeGamesKind = "blocks";
+  let best = 0;
+  try { best = Number(localStorage.getItem(WB_BEST_KEY)) || 0; } catch(e){ best = 0; }
+  wb = {
+    grid: Array.from({ length: WB_ROWS }, () => new Array(WB_COLS).fill(null)),
+    pieces: {}, nextId: 1,
+    score: 0, best,
+    piece: null, fallTimer: null,
+    rescue: null,
+    running: true,
+  };
+  document.getElementById("games-lobby").hidden = true;
+  document.getElementById("games-done").hidden = true;
+  document.getElementById("games-play").hidden = true;
+  document.getElementById("games-blocks").hidden = false;
+  document.getElementById("wb-well").innerHTML = "";
+  updateWbMeta();
+  spawnWbPiece();
+}
+
+function stopWordBlocks(){
+  if (wb && wb.fallTimer) clearTimeout(wb.fallTimer);
+  wb = null;
+}
+
+function wbFirstOccupiedRow(col){
+  for (let r = 0; r < WB_ROWS; r++){ if (wb.grid[r][col]) return r; }
+  return WB_ROWS;
+}
+
+/* Landing row for a piece of width/height starting at `col`, or -1 if it can't fit. */
+function wbLandingTopRow(col, w, h){
+  let minBottomExclusive = WB_ROWS;
+  for (let c = col; c < col + w; c++){
+    minBottomExclusive = Math.min(minBottomExclusive, wbFirstOccupiedRow(c));
+  }
+  return minBottomExclusive - h;
+}
+
+function wbGridPlace(piece){
+  for (let r = piece.row; r < piece.row + piece.shape.h; r++){
+    for (let c = piece.col; c < piece.col + piece.shape.w; c++) wb.grid[r][c] = piece.id;
+  }
+}
+function wbGridClear(piece){
+  for (let r = piece.row; r < piece.row + piece.shape.h; r++){
+    for (let c = piece.col; c < piece.col + piece.shape.w; c++){
+      if (wb.grid[r][c] === piece.id) wb.grid[r][c] = null;
+    }
+  }
+}
+
+function wbCanDrop(piece){
+  const newRow = piece.row + 1;
+  if (newRow + piece.shape.h > WB_ROWS) return false;
+  wbGridClear(piece);
+  let ok = true;
+  const checkRow = newRow + piece.shape.h - 1;
+  for (let c = piece.col; c < piece.col + piece.shape.w; c++){
+    if (wb.grid[checkRow][c]){ ok = false; break; }
+  }
+  wbGridPlace(piece);
+  return ok;
+}
+
+/* Puyo-style settle: repeatedly drop any locked piece that has empty space
+   directly beneath it, so clearing a piece never leaves a floating gap. */
+function wbSettle(){
+  let moved = true;
+  while (moved){
+    moved = false;
+    const order = Object.values(wb.pieces).sort((a, b) => b.row - a.row);
+    order.forEach(p => {
+      if (wbCanDrop(p)){
+        wbGridClear(p);
+        p.row += 1;
+        wbGridPlace(p);
+        moved = true;
+      }
+    });
+  }
+  Object.values(wb.pieces).forEach(p => {
+    p.el.style.transition = "top .22s ease";
+    p.el.style.top = (p.row * WB_UNIT) + "px";
+  });
+}
+
+function wbPieceStyle(el, shape, col){
+  el.style.width = (shape.w * WB_CELL + (shape.w - 1) * WB_GAP) + "px";
+  el.style.height = (shape.h * WB_CELL + (shape.h - 1) * WB_GAP) + "px";
+  el.style.left = (col * WB_UNIT) + "px";
+}
+
+function spawnWbPiece(){
+  if (!wb || !wb.running) return;
+  const card = pickWbCard();
+  if (!card){ endWordBlocks(); return; }
+  const shape = wbShapeFor(card.rarity);
+  const maxCol = WB_COLS - shape.w;
+  const candidates = shuffledCopy(Array.from({ length: maxCol + 1 }, (_, i) => i));
+  let col = -1, topRow = -1;
+  for (const c of candidates){
+    const row = wbLandingTopRow(c, shape.w, shape.h);
+    if (row >= 0){ col = c; topRow = row; break; }
+  }
+  if (col < 0){ endWordBlocks(); return; }
+
+  const { correctSide, options } = wbMakeOptions(card);
+
+  const el = document.createElement("div");
+  el.className = "wb-piece rar-" + card.rarity + " falling";
+  wbPieceStyle(el, shape, col);
+  el.style.top = "0px";
+  el.textContent = card.cefr;
+  document.getElementById("wb-well").appendChild(el);
+
+  wb.piece = { card, shape, col, topRowFromTop: topRow, correctSide, options, resolved: false, el };
+  wbShowQuestion(card, correctSide, options, { rescue: false });
+
+  const fallMs = wbFallDuration();
+  requestAnimationFrame(()=>{
+    el.style.transition = "top " + fallMs + "ms linear";
+    el.style.top = (topRow * WB_UNIT) + "px";
+  });
+  wb.fallTimer = setTimeout(()=> resolveWb(null), fallMs);
+}
+
+function flashWbChoice(side, cls){
+  const el = document.getElementById(side === "left" ? "wb-choice-left" : "wb-choice-right");
+  if (el) el.classList.add(cls);
+}
+
+function wbCheckOverflow(){
+  return wb.grid[0].some(cell => cell !== null);
+}
+
+function resolveWb(side){
+  if (!wb || !wb.piece || wb.piece.resolved) return;
+  const piece = wb.piece;
+  piece.resolved = true;
+  clearTimeout(wb.fallTimer);
+  document.getElementById("wb-choice-left").disabled = true;
+  document.getElementById("wb-choice-right").disabled = true;
+
+  const correct = side === piece.correctSide;
+  if (correct){
+    applyKnowMark(piece.card.id);
+    wb.score += WB_POINTS[piece.card.rarity] || 1;
+    flashWbChoice(side, "correct");
+    piece.el.classList.add("clearing");
+    setTimeout(()=> piece.el.remove(), 240);
+    updateWbMeta();
+    wb.piece = null;
+    setTimeout(spawnWbPiece, 260);
+    return;
+  }
+
+  applyUnknownMark(piece.card.id);
+  if (side) flashWbChoice(side, "wrong");
+  const correctSideEl = document.getElementById(piece.correctSide === "left" ? "wb-choice-left" : "wb-choice-right");
+  if (correctSideEl) correctSideEl.classList.add("correct");
+
+  piece.id = wb.nextId++;
+  piece.row = piece.topRowFromTop;
+  piece.locked = true;
+  piece.el.classList.remove("falling");
+  piece.el.classList.add("locked");
+  piece.el.addEventListener("click", ()=> wbClickLocked(piece.id));
+  wb.pieces[piece.id] = piece;
+  wbGridPlace(piece);
+  wb.piece = null;
+  updateWbMeta();
+
+  const overflow = wbCheckOverflow();
+  setTimeout(()=>{
+    if (!wb) return;
+    if (overflow) endWordBlocks();
+    else spawnWbPiece();
+  }, 420);
+}
+
+/* ---- Rescue: click an already-locked piece for one more shot at clearing it.
+   Pauses the falling piece (freezes its CSS transition mid-flight and its
+   auto-lock timer) so answering a rescue never costs you the piece that's
+   still in the air. ---- */
+function wbPauseFalling(){
+  const piece = wb.piece;
+  if (!piece || piece.resolved) return;
+  clearTimeout(wb.fallTimer);
+  const currentTop = piece.el.getBoundingClientRect().top - document.getElementById("wb-well").getBoundingClientRect().top;
+  piece.el.style.transition = "none";
+  piece.el.style.top = Math.max(0, currentTop) + "px";
+  piece.pausedTopPx = Math.max(0, currentTop);
+  piece.pausedAt = performance.now();
+}
+
+function wbResumeFalling(){
+  const piece = wb.piece;
+  if (!piece || piece.resolved || piece.pausedTopPx == null) return;
+  const targetPx = piece.topRowFromTop * WB_UNIT;
+  const totalPx = Math.max(1, targetPx);
+  const remainingRatio = Math.max(0, (targetPx - piece.pausedTopPx) / totalPx);
+  const remainingMs = Math.max(500, wbFallDuration() * remainingRatio);
+  requestAnimationFrame(()=>{
+    piece.el.style.transition = "top " + remainingMs + "ms linear";
+    piece.el.style.top = targetPx + "px";
+  });
+  wb.fallTimer = setTimeout(()=> resolveWb(null), remainingMs);
+  piece.pausedTopPx = null;
+}
+
+function wbClickLocked(pieceId){
+  if (!wb || !wb.running || wb.rescue) return;
+  const piece = wb.pieces[pieceId];
+  if (!piece) return;
+  wbPauseFalling();
+  wb.rescue = wbMakeOptions(piece.card);
+  wb.rescue.pieceId = pieceId;
+  piece.el.classList.add("targeting");
+  wbShowQuestion(piece.card, wb.rescue.correctSide, wb.rescue.options, { rescue: true });
+}
+
+function resolveRescue(side){
+  if (!wb || !wb.rescue) return;
+  const { pieceId, correctSide } = wb.rescue;
+  const piece = wb.pieces[pieceId];
+  document.getElementById("wb-choice-left").disabled = true;
+  document.getElementById("wb-choice-right").disabled = true;
+  const correct = side === correctSide;
+  const finish = ()=>{
+    wb.rescue = null;
+    if (wb.piece && !wb.piece.resolved){
+      wbShowQuestion(wb.piece.card, wb.piece.correctSide, wb.piece.options);
+    }
+    setTimeout(()=>{
+      if (!wb || !wb.piece || wb.piece.resolved) return;
+      wbResumeFalling();
+    }, 260);
+  };
+  if (!piece){ finish(); return; }
+  if (correct){
+    applyKnowMark(piece.card.id);
+    wb.score += WB_POINTS[piece.card.rarity] || 1;
+    flashWbChoice(side, "correct");
+    updateWbMeta();
+    setTimeout(()=>{
+      wbGridClear(piece);
+      delete wb.pieces[pieceId];
+      piece.el.classList.add("clearing");
+      setTimeout(()=> piece.el.remove(), 240);
+      wbSettle();
+      finish();
+    }, 300);
+  } else {
+    applyUnknownMark(piece.card.id);
+    flashWbChoice(side, "wrong");
+    piece.el.classList.remove("targeting");
+    piece.el.classList.add("shake");
+    setTimeout(()=> piece.el.classList.remove("shake"), 320);
+    setTimeout(finish, 500);
+  }
+}
+
+function endWordBlocks(){
+  if (!wb) return;
+  wb.running = false;
+  clearTimeout(wb.fallTimer);
+  const score = wb.score;
+  const best = wb.best;
+  document.getElementById("games-blocks").hidden = true;
+  const done = document.getElementById("games-done");
+  done.hidden = false;
+  document.getElementById("games-score").textContent = "分數 " + score;
+  document.getElementById("games-score-sub").textContent = score >= best
+    ? "新紀錄！疊到頂就結束，答對才能消除方塊；已經落下的方塊也能點一下再搶救一次。"
+    : "最佳紀錄 " + best + " 分。疊到頂就結束；已經落下的方塊也能點一下再搶救一次。";
+}
+
+function wbAnswer(side){
+  if (wb && wb.rescue) resolveRescue(side);
+  else resolveWb(side);
+}
+
 document.getElementById("btn-game-en2zh").addEventListener("click", ()=> startGame("en2zh"));
 document.getElementById("btn-game-zh2en").addEventListener("click", ()=> startGame("zh2en"));
+document.getElementById("btn-game-blocks").addEventListener("click", startWordBlocks);
 document.getElementById("games-unknown").addEventListener("click", markUnknownGame);
 document.getElementById("games-next").addEventListener("click", advanceGame);
 document.getElementById("games-back-lobby").addEventListener("click", showGamesLobby);
+document.getElementById("wb-back-lobby").addEventListener("click", showGamesLobby);
+document.getElementById("wb-choice-left").addEventListener("click", ()=> wbAnswer("left"));
+document.getElementById("wb-choice-right").addEventListener("click", ()=> wbAnswer("right"));
 document.getElementById("games-again").addEventListener("click", ()=>{
-  if (gameSession && gameSession.kind) startGame(gameSession.kind);
+  if (activeGamesKind === "blocks") startWordBlocks();
+  else if (gameSession && gameSession.kind) startGame(gameSession.kind);
 });
 document.getElementById("games-to-lobby").addEventListener("click", showGamesLobby);
 document.getElementById("games-reset-mastery").addEventListener("click", resetMastery);
