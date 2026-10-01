@@ -90,10 +90,10 @@
   }
   .qb-prompt-word.zh{ font-family: "Public Sans", "Noto Sans TC", sans-serif; }
   .qb-board{
-    position: relative; width: 100%; max-width: 352px; aspect-ratio: 8 / 14;
+    position: relative; width: 261px; height: 459px; margin: 0 auto;
     background:
-      repeating-linear-gradient(to bottom, transparent 0 calc(100%/14 - 1px), var(--line) calc(100%/14 - 1px) calc(100%/14)),
-      repeating-linear-gradient(to right, transparent 0 calc(100%/8 - 1px), var(--line) calc(100%/8 - 1px) calc(100%/8));
+      repeating-linear-gradient(to bottom, transparent 0 32px, var(--line) 32px 33px),
+      repeating-linear-gradient(to right, transparent 0 32px, var(--line) 32px 33px);
     background-color: var(--surface-2);
     border: 1px solid var(--line); border-radius: 10px; overflow: hidden;
   }
@@ -262,6 +262,9 @@
 (async function(){
 const COLS = 8;
 const ROWS = 14;
+const CELL = 30;
+const GAP = 3;
+const UNIT = CELL + GAP;
 const LEVEL_UP_EVERY = 10;
 const BASE_FALL_MS = 3400;
 const MIN_FALL_MS = 900;
@@ -397,7 +400,7 @@ function settle(){
   }
   Object.values(qb.pieces).forEach(p => {
     p.el.style.transition = "top .22s ease";
-    p.el.style.top = "calc(" + (p.row * (100 / ROWS)) + "% + 1.5px)";
+    p.el.style.top = (p.row * UNIT) + "px";
   });
 }
 
@@ -414,10 +417,10 @@ function spawnPiece(){
   const q = makeQuestion();
   const el = document.createElement("div");
   el.className = "qb-cell spawning";
-  el.style.width = "calc(" + (100 / COLS) + "% - 3px)";
-  el.style.height = "calc(" + (100 / ROWS) + "% - 3px)";
-  el.style.left = "calc(" + (col * (100 / COLS)) + "% + 1.5px)";
-  el.style.top = "1.5px";
+  el.style.width = CELL + "px";
+  el.style.height = CELL + "px";
+  el.style.left = (col * UNIT) + "px";
+  el.style.top = "0px";
   document.getElementById("qb-board").appendChild(el);
 
   qb.piece = { id: null, entry: q.entry, direction: q.direction, correctSide: q.correctSide,
@@ -432,7 +435,7 @@ function spawnPiece(){
   // into one paint, which skipped the transition entirely.
   void el.offsetHeight;
   el.style.transition = "top " + fallMs + "ms linear";
-  el.style.top = "calc(" + (row * (100 / ROWS)) + "% + 1.5px)";
+  el.style.top = (row * UNIT) + "px";
   qb.fallTimer = setTimeout(()=> resolveFalling(null), fallMs);
 }
 
