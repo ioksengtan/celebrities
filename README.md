@@ -19,6 +19,7 @@ products/
   vocabulary-cards/               金句（Keynote Lexicon）詞彙卡（週邊）
   general-vocab/                  名人詞彙（Executive English）CEFR 詞彙卡（週邊）
   screen-english/                 追劇英語（Screen English）美劇／休閒影片口語詞彙卡（週邊，種子階段）
+  quiz-blocks/                    答題方塊（Quiz Blocks）題庫無關主題的落下方塊問答小遊戲
 
 docs/
   PROGRESS.md        團隊討論與進度紀錄
@@ -39,6 +40,7 @@ docs/
 - ✅ 金句（Keynote Lexicon）MVP 已完成，見 [`products/vocabulary-cards`](products/vocabulary-cards)
 - ✅ 名人詞彙（Executive English，一般英語 CEFR 詞彙卡）第一版已完成，見 [`products/general-vocab`](products/general-vocab)
 - 🧪 追劇英語（Screen English，美劇／休閒影片口語詞彙卡）種子階段（6 張卡，2 個來源），未連首頁，見 [`products/screen-english`](products/screen-english)
+- 🧪 答題方塊（Quiz Blocks，落下方塊問答小遊戲）第一刀完成、題庫無關主題，未連首頁，見 [`products/quiz-blocks`](products/quiz-blocks)
 - ⬜ 其他候選產品（長導讀、時間軸可視化、每日一句、主題深度分析、演講比較）尚未開始
 
 ## 協作方式
