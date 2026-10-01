@@ -97,34 +97,67 @@
     background-color: var(--surface-2);
     border: 1px solid var(--line); border-radius: 10px; overflow: hidden;
   }
+  /* Soft rounded "tofu cube" look instead of a flat tetromino square:
+     diagonal gradient + inset top highlight + a short contact shadow
+     to read as a squishy 3D block, plus a bouncy spawn-in pop. */
   .qb-cell{
-    position: absolute; box-sizing: border-box; border-radius: 4px;
-    background: var(--accent); color: var(--accent-ink);
-    border: 1px solid color-mix(in srgb, var(--accent) 60%, black 10%);
-    display: flex; align-items: center; justify-content: center;
-    font-family: "IBM Plex Mono", monospace; font-weight: 600;
-    font-size: 8.5px; line-height: 1.1; text-align: center; padding: 1px;
-    overflow: hidden; white-space: nowrap; text-overflow: ellipsis;
+    position: absolute; box-sizing: border-box; border-radius: 9px;
+    background: linear-gradient(165deg,
+      color-mix(in srgb, var(--accent) 80%, white 20%) 0%,
+      var(--accent) 55%,
+      color-mix(in srgb, var(--accent) 82%, black 14%) 100%);
+    box-shadow:
+      inset 0 1.5px 0 rgba(255,255,255,.4),
+      inset 0 -2px 3px rgba(0,0,0,.12),
+      0 2px 0 color-mix(in srgb, var(--accent) 70%, black 22%);
+    border: none;
   }
-  .qb-cell.locked{ background: var(--surface); color: var(--muted); border-color: var(--line); cursor: pointer; }
-  .qb-cell.locked:hover{ color: var(--ink); box-shadow: 0 0 0 2px var(--accent) inset; }
-  .qb-cell.targeting{ color: var(--ink); box-shadow: 0 0 0 2px var(--accent) inset; animation: qb-pulse 1s ease-in-out infinite; }
+  .qb-cell.spawning{ animation: qb-spawn-pop .3s cubic-bezier(.34,1.56,.64,1); }
+  .qb-cell.locked{
+    background: linear-gradient(165deg,
+      color-mix(in srgb, var(--surface) 92%, white 8%) 0%,
+      var(--surface-2) 60%,
+      color-mix(in srgb, var(--surface-2) 85%, black 10%) 100%);
+    box-shadow:
+      inset 0 1.5px 0 rgba(255,255,255,.18),
+      inset 0 -2px 3px rgba(0,0,0,.14),
+      0 2px 0 var(--line);
+    cursor: pointer;
+  }
+  .qb-cell.locked:hover{ box-shadow:
+      inset 0 1.5px 0 rgba(255,255,255,.18), inset 0 -2px 3px rgba(0,0,0,.14),
+      0 2px 0 var(--line), 0 0 0 2px var(--accent); }
+  .qb-cell.targeting{ animation: qb-pulse 1s ease-in-out infinite; }
   .qb-cell.wrong-flash{ animation: qb-flash-bad .4s ease; }
   .qb-cell.shake{ animation: qb-shake .3s ease; }
   .qb-cell.clearing{ transition: opacity .2s ease, transform .2s ease; opacity: 0; transform: scale(.6); }
+  @keyframes qb-spawn-pop{
+    0%{ transform: scale(.5); opacity: 0; }
+    65%{ transform: scale(1.1); opacity: 1; }
+    100%{ transform: scale(1); }
+  }
   @keyframes qb-pulse{
-    0%, 100%{ box-shadow: 0 0 0 2px var(--accent) inset; }
-    50%{ box-shadow: 0 0 0 2px var(--accent) inset, 0 0 8px 1px var(--accent); }
+    0%, 100%{ box-shadow: 0 0 0 2px var(--accent); }
+    50%{ box-shadow: 0 0 0 2px var(--accent), 0 0 8px 1px var(--accent); }
   }
   @keyframes qb-flash-bad{
-    0%, 100%{ background: var(--accent); }
-    40%{ background: var(--bad); }
+    0%, 100%{ filter: none; }
+    40%{ filter: saturate(0) sepia(1) hue-rotate(-30deg) saturate(4); }
   }
   @keyframes qb-shake{
     0%, 100%{ transform: translateX(0); }
     25%{ transform: translateX(-3px); }
     75%{ transform: translateX(3px); }
   }
+  .qb-answer-block{
+    width: 100%; display: flex; flex-direction: column; gap: 6px;
+  }
+  .qb-answer-block[hidden]{ display: none; }
+  .qb-answer-label{
+    font-size: 10px; letter-spacing: .06em; text-transform: uppercase; color: var(--muted);
+  }
+  .qb-answer-block.rescue .qb-answer-label{ color: var(--accent); }
+  .qb-answer-block.rescue .qb-prompt{ border-color: var(--accent); box-shadow: 0 0 0 2px var(--accent) inset; }
   .qb-choices{ display: flex; gap: 10px; width: 100%; }
   .qb-choice{
     flex: 1 1 0; min-width: 0; min-height: 58px; padding: 12px 10px;
@@ -178,16 +211,33 @@
       <div>連續對 <b id="qb-combo">0</b></div>
       <div>最佳 <b id="qb-best">0</b></div>
     </div>
-    <div class="qb-prompt">
-      <span class="qb-prompt-dir mono" id="qb-dir"></span>
-      <div class="qb-prompt-word" id="qb-word"></div>
-    </div>
     <div class="qb-board" id="qb-board"></div>
-    <div class="qb-choices">
-      <button type="button" class="qb-choice" id="qb-choice-left"></button>
-      <button type="button" class="qb-choice" id="qb-choice-right"></button>
+
+    <div class="qb-answer-block live">
+      <span class="qb-answer-label mono">下降中・可按 ← →</span>
+      <div class="qb-prompt">
+        <span class="qb-prompt-dir mono" id="qb-dir"></span>
+        <div class="qb-prompt-word" id="qb-word"></div>
+      </div>
+      <div class="qb-choices">
+        <button type="button" class="qb-choice" id="qb-choice-left"></button>
+        <button type="button" class="qb-choice" id="qb-choice-right"></button>
+      </div>
     </div>
-    <p class="qb-hint mono">點選或按 ← → 作答・點井裡已落底的方塊可以補答一次</p>
+
+    <div class="qb-answer-block rescue" id="qb-rescue-block" hidden>
+      <span class="qb-answer-label mono">補答・點井裡的方塊選別的</span>
+      <div class="qb-prompt">
+        <span class="qb-prompt-dir mono" id="qb-rescue-dir"></span>
+        <div class="qb-prompt-word" id="qb-rescue-word"></div>
+      </div>
+      <div class="qb-choices">
+        <button type="button" class="qb-choice" id="qb-rescue-choice-left"></button>
+        <button type="button" class="qb-choice" id="qb-rescue-choice-right"></button>
+      </div>
+    </div>
+
+    <p class="qb-hint mono">點井裡已落底的方塊可以另外補答一次，跟下降中的題目互不影響</p>
   </div>
 
   <div id="qb-done">
@@ -270,18 +320,30 @@ function makeQuestion(){
   return { entry, direction, correctSide, options };
 }
 
-function showQuestion(q, opts){
-  const promptWord = document.getElementById("qb-word");
+function fillQuestionUI(prefix, q){
+  const promptWord = document.getElementById(prefix + "-word");
   promptWord.textContent = q.direction === "en2zh" ? q.entry.word : q.entry.zh;
   promptWord.className = "qb-prompt-word" + (q.direction === "zh2en" ? " zh" : "");
-  document.getElementById("qb-dir").textContent = q.direction === "en2zh" ? "EN → 中" : "中 → EN";
-  const leftBtn = document.getElementById("qb-choice-left");
-  const rightBtn = document.getElementById("qb-choice-right");
+  document.getElementById(prefix + "-dir").textContent = q.direction === "en2zh" ? "EN → 中" : "中 → EN";
+  const leftBtn = document.getElementById(prefix + "-choice-left");
+  const rightBtn = document.getElementById(prefix + "-choice-right");
   leftBtn.textContent = q.options[0];
   rightBtn.textContent = q.options[1];
   leftBtn.className = "qb-choice"; leftBtn.disabled = false;
   rightBtn.className = "qb-choice"; rightBtn.disabled = false;
-  document.querySelector(".qb-prompt").classList.toggle("rescue", !!(opts && opts.rescue));
+}
+
+function showLiveQuestion(q){
+  fillQuestionUI("qb", q);
+}
+
+function showRescueQuestion(q){
+  fillQuestionUI("qb-rescue", q);
+  document.getElementById("qb-rescue-block").hidden = false;
+}
+
+function hideRescueQuestion(){
+  document.getElementById("qb-rescue-block").hidden = true;
 }
 
 function updateMeta(){
@@ -339,10 +401,6 @@ function settle(){
   });
 }
 
-function cellLabel(entry, direction){
-  return direction === "en2zh" ? entry.word : entry.zh;
-}
-
 function spawnPiece(){
   if (!qb || !qb.running) return;
   const candidates = shuffledCopy(Array.from({ length: COLS }, (_, i) => i));
@@ -355,18 +413,17 @@ function spawnPiece(){
 
   const q = makeQuestion();
   const el = document.createElement("div");
-  el.className = "qb-cell";
+  el.className = "qb-cell spawning";
   el.style.width = "calc(" + (100 / COLS) + "% - 3px)";
   el.style.height = "calc(" + (100 / ROWS) + "% - 3px)";
   el.style.left = "calc(" + (col * (100 / COLS)) + "% + 1.5px)";
   el.style.top = "1.5px";
-  el.textContent = cellLabel(q.entry, q.direction);
   document.getElementById("qb-board").appendChild(el);
 
   qb.piece = { id: null, entry: q.entry, direction: q.direction, correctSide: q.correctSide,
     options: q.options, col, row, topRow: row, resolved: false, el };
   qb.totalCount++;
-  showQuestion(q, { rescue: false });
+  showLiveQuestion(q);
 
   const fallMs = fallDurationFor(qb.level);
   requestAnimationFrame(()=>{
@@ -430,38 +487,17 @@ function resolveFalling(side){
   }, 420);
 }
 
-/* ---- rescue: click a locked piece for one more shot. Pauses the
-   currently-falling piece so a rescue attempt never costs it. ---- */
-function pauseFalling(){
-  const piece = qb.piece;
-  if (!piece || piece.resolved) return;
-  clearTimeout(qb.fallTimer);
-  const boardRect = document.getElementById("qb-board").getBoundingClientRect();
-  const pieceRect = piece.el.getBoundingClientRect();
-  const ratio = Math.max(0, (pieceRect.top - boardRect.top) / boardRect.height);
-  piece.el.style.transition = "none";
-  piece.el.style.top = (ratio * 100) + "%";
-  piece.pausedRatio = ratio;
-}
-function resumeFalling(){
-  const piece = qb.piece;
-  if (!piece || piece.resolved || piece.pausedRatio == null) return;
-  const targetRatio = piece.topRow / ROWS;
-  const remainingRatio = Math.max(0, (targetRatio - piece.pausedRatio) / Math.max(targetRatio, 1 / ROWS));
-  const remainingMs = Math.max(500, fallDurationFor(qb.level) * remainingRatio);
-  requestAnimationFrame(()=>{
-    piece.el.style.transition = "top " + remainingMs + "ms linear";
-    piece.el.style.top = (targetRatio * 100) + "%";
-  });
-  qb.fallTimer = setTimeout(()=> resolveFalling(null), remainingMs);
-  piece.pausedRatio = null;
-}
-
+/* ---- rescue: click a locked piece for one more shot. This runs in its own
+   answer area, fully independent of the falling piece — no pausing, since
+   the falling piece keeps its own timer and stays answerable the whole time. ---- */
 function clickLocked(pieceId){
-  if (!qb || !qb.running || qb.rescue) return;
+  if (!qb || !qb.running) return;
   const piece = qb.pieces[pieceId];
   if (!piece) return;
-  pauseFalling();
+  if (qb.rescue && qb.rescue.pieceId !== pieceId){
+    const prev = qb.pieces[qb.rescue.pieceId];
+    if (prev) prev.el.classList.remove("targeting");
+  }
   const distractor = pickDistractor(piece.entry);
   const correctSide = Math.random() < 0.5 ? "left" : "right";
   const correctLabel = piece.direction === "en2zh" ? piece.entry.zh : piece.entry.word;
@@ -470,28 +506,28 @@ function clickLocked(pieceId){
   qb.rescue = { pieceId, correctSide };
   piece.el.classList.remove("wrong-flash");
   piece.el.classList.add("targeting");
-  showQuestion({ entry: piece.entry, direction: piece.direction, correctSide, options }, { rescue: true });
+  showRescueQuestion({ entry: piece.entry, direction: piece.direction, correctSide, options });
 }
 
 function resolveRescue(side){
   if (!qb || !qb.rescue) return;
   const { pieceId, correctSide } = qb.rescue;
   const piece = qb.pieces[pieceId];
-  document.getElementById("qb-choice-left").disabled = true;
-  document.getElementById("qb-choice-right").disabled = true;
+  document.getElementById("qb-rescue-choice-left").disabled = true;
+  document.getElementById("qb-rescue-choice-right").disabled = true;
   const correct = side === correctSide;
+  const flashRescue = (s, cls)=>{
+    const el = document.getElementById(s === "left" ? "qb-rescue-choice-left" : "qb-rescue-choice-right");
+    if (el) el.classList.add(cls);
+  };
   const finish = ()=>{
     qb.rescue = null;
-    if (qb.piece && !qb.piece.resolved){
-      showQuestion({ entry: qb.piece.entry, direction: qb.piece.direction,
-        correctSide: qb.piece.correctSide, options: qb.piece.options });
-    }
-    setTimeout(()=>{ if (qb && qb.piece && !qb.piece.resolved) resumeFalling(); }, 240);
+    hideRescueQuestion();
   };
   if (!piece){ finish(); return; }
   if (correct){
     qb.score += pointsFor(true);
-    flashChoice(side, "correct");
+    flashRescue(side, "correct");
     updateMeta();
     setTimeout(()=>{
       gridClear(piece);
@@ -502,17 +538,12 @@ function resolveRescue(side){
       finish();
     }, 280);
   } else {
-    flashChoice(side, "wrong");
+    flashRescue(side, "wrong");
     piece.el.classList.remove("targeting");
     piece.el.classList.add("shake");
     setTimeout(()=> piece.el.classList.remove("shake"), 300);
     setTimeout(finish, 480);
   }
-}
-
-function answer(side){
-  if (qb && qb.rescue) resolveRescue(side);
-  else resolveFalling(side);
 }
 
 function startGame(){
@@ -565,13 +596,15 @@ document.getElementById("btn-qb-restart").addEventListener("click", ()=>{
   document.getElementById("qb-start").style.display = "flex";
   document.getElementById("qb-start-best").textContent = String(loadBest());
 });
-document.getElementById("qb-choice-left").addEventListener("click", ()=> answer("left"));
-document.getElementById("qb-choice-right").addEventListener("click", ()=> answer("right"));
+document.getElementById("qb-choice-left").addEventListener("click", ()=> resolveFalling("left"));
+document.getElementById("qb-choice-right").addEventListener("click", ()=> resolveFalling("right"));
+document.getElementById("qb-rescue-choice-left").addEventListener("click", ()=> resolveRescue("left"));
+document.getElementById("qb-rescue-choice-right").addEventListener("click", ()=> resolveRescue("right"));
 
 document.addEventListener("keydown", (e)=>{
   if (!qb || !qb.running) return;
-  if (e.code === "ArrowLeft"){ e.preventDefault(); answer("left"); }
-  else if (e.code === "ArrowRight"){ e.preventDefault(); answer("right"); }
+  if (e.code === "ArrowLeft"){ e.preventDefault(); resolveFalling("left"); }
+  else if (e.code === "ArrowRight"){ e.preventDefault(); resolveFalling("right"); }
 });
 }()).catch(error=>{
   console.error(error);
