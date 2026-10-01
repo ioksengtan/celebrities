@@ -426,10 +426,13 @@ function spawnPiece(){
   showLiveQuestion(q);
 
   const fallMs = fallDurationFor(qb.level);
-  requestAnimationFrame(()=>{
-    el.style.transition = "top " + fallMs + "ms linear";
-    el.style.top = "calc(" + (row * (100 / ROWS)) + "% + 1.5px)";
-  });
+  // Force a reflow so the browser commits the starting "top" in its own
+  // frame before we change it — a single requestAnimationFrame isn't a
+  // reliable enough gap and sometimes let the two styles get coalesced
+  // into one paint, which skipped the transition entirely.
+  void el.offsetHeight;
+  el.style.transition = "top " + fallMs + "ms linear";
+  el.style.top = "calc(" + (row * (100 / ROWS)) + "% + 1.5px)";
   qb.fallTimer = setTimeout(()=> resolveFalling(null), fallMs);
 }
 
