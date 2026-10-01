@@ -18,6 +18,7 @@
     --good: #2E6B4F;
     --bad: #B5482F;
     --card-shadow: 0 1px 2px rgba(43,24,16,0.08), 0 8px 20px -12px rgba(43,24,16,0.22);
+    --doodle-ink: #2B1810;
     color-scheme: light dark;
   }
   @media (prefers-color-scheme: dark){
@@ -27,6 +28,7 @@
       --accent: #FF7A52; --accent-ink: #1A0D06; --accent-soft: #5C2F1D;
       --good: #7FBF83; --bad: #E27A5F;
       --card-shadow: 0 1px 2px rgba(0,0,0,0.3), 0 10px 24px -14px rgba(0,0,0,0.6);
+      --doodle-ink: #F3E7DC;
     }
   }
   :root[data-theme="dark"]{
@@ -35,6 +37,7 @@
     --accent: #FF7A52; --accent-ink: #1A0D06; --accent-soft: #5C2F1D;
     --good: #7FBF83; --bad: #E27A5F;
     --card-shadow: 0 1px 2px rgba(0,0,0,0.3), 0 10px 24px -14px rgba(0,0,0,0.6);
+    --doodle-ink: #F3E7DC;
   }
 
   *{ box-sizing: border-box; }
@@ -97,40 +100,23 @@
     background-color: var(--surface-2);
     border: 1px solid var(--line); border-radius: 10px; overflow: hidden;
   }
-  /* Soft rounded "tofu cube" look instead of a flat tetromino square:
-     diagonal gradient + inset top highlight + a short contact shadow
-     to read as a squishy 3D block, plus a bouncy spawn-in pop. */
+  /* Hand-drawn doodle-sticker look: flat pastel fill, thick "marker" ink
+     outline, and a slightly irregular corner radius per piece (set inline
+     in JS, different on each corner) so it reads as sketched rather than
+     machine-perfect. Piece color is also assigned per spawn from a small
+     flat palette — see QB_PALETTE in the script. */
   .qb-cell{
-    position: absolute; box-sizing: border-box; border-radius: 9px;
-    background: linear-gradient(165deg,
-      color-mix(in srgb, var(--accent) 80%, white 20%) 0%,
-      var(--accent) 55%,
-      color-mix(in srgb, var(--accent) 82%, black 14%) 100%);
-    box-shadow:
-      inset 0 1.5px 0 rgba(255,255,255,.4),
-      inset 0 -2px 3px rgba(0,0,0,.12),
-      0 2px 0 color-mix(in srgb, var(--accent) 70%, black 22%);
-    border: none;
+    position: absolute; box-sizing: border-box;
+    border: 2.5px solid var(--doodle-ink);
+    display: flex; align-items: center; justify-content: center;
   }
   .qb-cell.spawning{ animation: qb-spawn-pop .3s cubic-bezier(.34,1.56,.64,1); }
-  .qb-cell.locked{
-    background: linear-gradient(165deg,
-      color-mix(in srgb, var(--surface) 92%, white 8%) 0%,
-      var(--surface-2) 60%,
-      color-mix(in srgb, var(--surface-2) 85%, black 10%) 100%);
-    box-shadow:
-      inset 0 1.5px 0 rgba(255,255,255,.18),
-      inset 0 -2px 3px rgba(0,0,0,.14),
-      0 2px 0 var(--line);
-    cursor: pointer;
-  }
-  .qb-cell.locked:hover{ box-shadow:
-      inset 0 1.5px 0 rgba(255,255,255,.18), inset 0 -2px 3px rgba(0,0,0,.14),
-      0 2px 0 var(--line), 0 0 0 2px var(--accent); }
+  .qb-cell.locked{ filter: saturate(.5) brightness(.92); cursor: pointer; }
+  .qb-cell.locked:hover{ filter: saturate(.7) brightness(1); box-shadow: 0 0 0 2px var(--accent); }
   .qb-cell.targeting{ animation: qb-pulse 1s ease-in-out infinite; }
   .qb-cell.wrong-flash{ animation: qb-flash-bad .4s ease; }
   .qb-cell.shake{ animation: qb-shake .3s ease; }
-  .qb-cell.clearing{ transition: opacity .2s ease, transform .2s ease; opacity: 0; transform: scale(.6); }
+  .qb-cell.clearing{ transition: opacity .2s ease, transform .2s ease; opacity: 0; transform: scale(.6) rotate(8deg); }
   @keyframes qb-spawn-pop{
     0%{ transform: scale(.5); opacity: 0; }
     65%{ transform: scale(1.1); opacity: 1; }
@@ -269,6 +255,13 @@ const LEVEL_UP_EVERY = 10;
 const BASE_FALL_MS = 3400;
 const MIN_FALL_MS = 900;
 const BEST_KEY = "quiz-blocks-best";
+// Flat doodle-sticker palette (original — not matching any particular
+// reference's exact colors), one picked at random per spawned piece.
+const QB_PALETTE = ["#E0825B", "#7C9CBF", "#E0B23E", "#8FA888", "#D98B9D", "#C97B4A"];
+function randomDoodleCorners(){
+  const r = () => 6 + Math.floor(Math.random() * 8);
+  return r() + "px " + r() + "px " + r() + "px " + r() + "px";
+}
 
 const response = await fetch("./word_bank.json");
 if (!response.ok) throw new Error("題庫載入失敗（HTTP " + response.status + "）");
@@ -476,6 +469,8 @@ function spawnPiece(){
 
   const el = document.createElement("div");
   el.className = "qb-cell spawning";
+  el.style.background = QB_PALETTE[Math.floor(Math.random() * QB_PALETTE.length)];
+  el.style.borderRadius = randomDoodleCorners();
   el.style.width = (shape.w * CELL + (shape.w - 1) * GAP) + "px";
   el.style.height = (shape.h * CELL + (shape.h - 1) * GAP) + "px";
   el.style.left = (col * UNIT) + "px";
