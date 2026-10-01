@@ -1,0 +1,580 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>答題方塊 · Quiz Blocks</title>
+<meta name="description" content="問答版俄羅斯方塊：方塊不斷落下，每塊都是一道單字題，答對消除、答錯堆起來，堆到頂就結束。">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Public+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<style>
+  :root{
+    --bg: #FBF1EC;
+    --surface: #FFFFFF;
+    --surface-2: #F3E2D8;
+    --ink: #2B1810;
+    --muted: #8A6F60;
+    --line: #E8D3C5;
+    --accent: #E0502E;
+    --accent-ink: #FFF7F3;
+    --accent-soft: #F6C9B8;
+    --good: #2E6B4F;
+    --bad: #B5482F;
+    --card-shadow: 0 1px 2px rgba(43,24,16,0.08), 0 8px 20px -12px rgba(43,24,16,0.22);
+    color-scheme: light dark;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --bg: #1A100B; --surface: #241711; --surface-2: #2E1D15;
+      --ink: #FBEEE6; --muted: #C2A28D; --line: #4A3326;
+      --accent: #FF7A52; --accent-ink: #1A0D06; --accent-soft: #5C2F1D;
+      --good: #7FBF83; --bad: #E27A5F;
+      --card-shadow: 0 1px 2px rgba(0,0,0,0.3), 0 10px 24px -14px rgba(0,0,0,0.6);
+    }
+  }
+  :root[data-theme="dark"]{
+    --bg: #1A100B; --surface: #241711; --surface-2: #2E1D15;
+    --ink: #FBEEE6; --muted: #C2A28D; --line: #4A3326;
+    --accent: #FF7A52; --accent-ink: #1A0D06; --accent-soft: #5C2F1D;
+    --good: #7FBF83; --bad: #E27A5F;
+    --card-shadow: 0 1px 2px rgba(0,0,0,0.3), 0 10px 24px -14px rgba(0,0,0,0.6);
+  }
+
+  *{ box-sizing: border-box; }
+  body{
+    background: var(--bg); color: var(--ink);
+    font-family: "Public Sans", -apple-system, "Segoe UI", "Noto Sans TC", sans-serif;
+    padding: 18px 16px 40px;
+  }
+  .wrap{ max-width: 460px; margin: 0 auto; }
+  .mono{ font-family: "IBM Plex Mono", ui-monospace, SFMono-Regular, monospace; }
+
+  header{ padding-bottom: 12px; margin-bottom: 14px; border-bottom: 1px solid var(--line); }
+  h1{
+    font-family: "Fraunces", Georgia, serif; font-weight: 600;
+    font-size: clamp(22px, 6vw, 28px); margin: 0 0 4px; letter-spacing: -0.01em;
+  }
+  h1 .en{ display: block; font-family: "Public Sans", sans-serif; font-size: 12px; font-weight: 500; color: var(--muted); margin-top: 3px; }
+  header p{ margin: 8px 0 0; color: var(--muted); font-size: 13px; line-height: 1.5; }
+
+  /* ---- Start screen ---- */
+  #qb-start{
+    display: flex; flex-direction: column; align-items: center; gap: 14px;
+    text-align: center; background: var(--surface); border: 1px solid var(--line);
+    border-radius: 18px; padding: 30px 22px; box-shadow: var(--card-shadow);
+  }
+  #qb-start p{ color: var(--muted); font-size: 13.5px; line-height: 1.6; margin: 0; max-width: 32em; }
+  #qb-start .best{ font-family: "IBM Plex Mono", monospace; font-size: 12.5px; color: var(--muted); }
+  .qb-btn{
+    font-family: "Public Sans"; font-weight: 700; font-size: 15px;
+    padding: 12px 28px; border-radius: 12px; border: none;
+    background: var(--ink); color: var(--bg); cursor: pointer;
+  }
+  .qb-btn.primary{ background: var(--accent); color: var(--accent-ink); }
+  .qb-btn.ghost{ background: var(--surface); color: var(--ink); border: 1px solid var(--line); }
+
+  /* ---- Play screen ---- */
+  #qb-play{ display: none; flex-direction: column; align-items: center; gap: 12px; }
+  #qb-play.active{ display: flex; }
+  .qb-meta{
+    display: flex; justify-content: space-between; align-items: center; gap: 8px;
+    width: 100%; font-family: "IBM Plex Mono", monospace; font-size: 11.5px; color: var(--muted);
+  }
+  .qb-meta b{ color: var(--ink); font-size: 13px; }
+  .qb-prompt{
+    width: 100%; background: var(--surface); border: 1px solid var(--line);
+    border-radius: 14px; padding: 12px 16px; text-align: center; box-shadow: var(--card-shadow);
+    min-height: 56px; display: flex; flex-direction: column; align-items: center; justify-content: center;
+  }
+  .qb-prompt-dir{ font-size: 10px; letter-spacing: .07em; text-transform: uppercase; color: var(--accent); font-family: "IBM Plex Mono", monospace; }
+  .qb-prompt-word{
+    font-family: "Fraunces", Georgia, serif; font-weight: 600; font-size: clamp(20px, 6vw, 26px);
+    line-height: 1.2; margin-top: 4px; text-wrap: balance;
+  }
+  .qb-prompt-word.zh{ font-family: "Public Sans", "Noto Sans TC", sans-serif; }
+  .qb-board{
+    position: relative; width: 100%; max-width: 352px; aspect-ratio: 8 / 14;
+    background:
+      repeating-linear-gradient(to bottom, transparent 0 calc(100%/14 - 1px), var(--line) calc(100%/14 - 1px) calc(100%/14)),
+      repeating-linear-gradient(to right, transparent 0 calc(100%/8 - 1px), var(--line) calc(100%/8 - 1px) calc(100%/8));
+    background-color: var(--surface-2);
+    border: 1px solid var(--line); border-radius: 10px; overflow: hidden;
+  }
+  .qb-cell{
+    position: absolute; box-sizing: border-box; border-radius: 4px;
+    background: var(--accent); color: var(--accent-ink);
+    border: 1px solid color-mix(in srgb, var(--accent) 60%, black 10%);
+    display: flex; align-items: center; justify-content: center;
+    font-family: "IBM Plex Mono", monospace; font-weight: 600;
+    font-size: 8.5px; line-height: 1.1; text-align: center; padding: 1px;
+    overflow: hidden; white-space: nowrap; text-overflow: ellipsis;
+  }
+  .qb-cell.locked{ background: var(--surface); color: var(--muted); border-color: var(--line); cursor: pointer; }
+  .qb-cell.locked:hover{ color: var(--ink); box-shadow: 0 0 0 2px var(--accent) inset; }
+  .qb-cell.targeting{ color: var(--ink); box-shadow: 0 0 0 2px var(--accent) inset; animation: qb-pulse 1s ease-in-out infinite; }
+  .qb-cell.wrong-flash{ animation: qb-flash-bad .4s ease; }
+  .qb-cell.shake{ animation: qb-shake .3s ease; }
+  .qb-cell.clearing{ transition: opacity .2s ease, transform .2s ease; opacity: 0; transform: scale(.6); }
+  @keyframes qb-pulse{
+    0%, 100%{ box-shadow: 0 0 0 2px var(--accent) inset; }
+    50%{ box-shadow: 0 0 0 2px var(--accent) inset, 0 0 8px 1px var(--accent); }
+  }
+  @keyframes qb-flash-bad{
+    0%, 100%{ background: var(--accent); }
+    40%{ background: var(--bad); }
+  }
+  @keyframes qb-shake{
+    0%, 100%{ transform: translateX(0); }
+    25%{ transform: translateX(-3px); }
+    75%{ transform: translateX(3px); }
+  }
+  .qb-choices{ display: flex; gap: 10px; width: 100%; }
+  .qb-choice{
+    flex: 1 1 0; min-width: 0; min-height: 58px; padding: 12px 10px;
+    border-radius: 12px; border: 1px solid var(--line); background: var(--surface);
+    color: var(--ink); font-family: "Public Sans", sans-serif; font-size: 15px;
+    font-weight: 600; cursor: pointer; line-height: 1.3; text-align: center;
+  }
+  .qb-choice:hover:not(:disabled){ border-color: var(--accent); }
+  .qb-choice:disabled{ cursor: default; }
+  .qb-choice.correct{ border-color: var(--good); background: color-mix(in srgb, var(--good) 16%, var(--surface)); color: var(--good); }
+  .qb-choice.wrong{ border-color: var(--bad); background: color-mix(in srgb, var(--bad) 16%, var(--surface)); color: var(--bad); }
+  .qb-hint{ font-size: 11px; color: var(--muted); text-align: center; margin: 0; }
+
+  /* ---- Results screen ---- */
+  #qb-done{ display: none; flex-direction: column; align-items: center; gap: 14px; text-align: center; }
+  #qb-done.active{ display: flex; }
+  #qb-done h2{ font-family: "Fraunces", serif; font-size: 26px; margin: 0; }
+  .qb-stats{
+    display: flex; gap: 18px; font-family: "IBM Plex Mono", monospace; font-size: 12.5px; color: var(--muted);
+  }
+  .qb-stats b{ color: var(--ink); font-size: 15px; display: block; }
+  .qb-wronglist{
+    width: 100%; max-width: 380px; background: var(--surface); border: 1px solid var(--line);
+    border-radius: 14px; padding: 14px 16px; text-align: left;
+  }
+  .qb-wronglist h3{ font-size: 12px; color: var(--muted); margin: 0 0 8px; font-weight: 600; }
+  .qb-wronglist ul{ list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 6px; }
+  .qb-wronglist li{ font-size: 13.5px; display: flex; justify-content: space-between; gap: 10px; }
+  .qb-wronglist li span:first-child{ font-weight: 600; }
+  .qb-wronglist li span:last-child{ color: var(--muted); }
+  .qb-wronglist .empty{ color: var(--muted); font-size: 13px; }
+  .qb-done-actions{ display: flex; gap: 10px; flex-wrap: wrap; justify-content: center; }
+</style>
+
+<div class="wrap">
+  <header>
+    <h1>答題方塊 <span class="en">Quiz Blocks</span></h1>
+    <p>方塊照俄羅斯方塊的節奏不斷往下掉，每一塊都是一道單字題。答對它就消失，答錯或來不及答，它就落底堆起來，堆到頂端就輸了。</p>
+  </header>
+
+  <div id="qb-start">
+    <p>單人模式・不能左右移動或旋轉・點按或方向鍵 ← → 二選一作答。已經落底的方塊也能點一下補答。</p>
+    <div class="best mono">最佳分數 <b id="qb-start-best">0</b></div>
+    <button type="button" class="qb-btn primary" id="btn-qb-start">開始遊戲</button>
+  </div>
+
+  <div id="qb-play">
+    <div class="qb-meta">
+      <div>分數 <b id="qb-score">0</b></div>
+      <div>等級 <b id="qb-level">1</b></div>
+      <div>連續對 <b id="qb-combo">0</b></div>
+      <div>最佳 <b id="qb-best">0</b></div>
+    </div>
+    <div class="qb-prompt">
+      <span class="qb-prompt-dir mono" id="qb-dir"></span>
+      <div class="qb-prompt-word" id="qb-word"></div>
+    </div>
+    <div class="qb-board" id="qb-board"></div>
+    <div class="qb-choices">
+      <button type="button" class="qb-choice" id="qb-choice-left"></button>
+      <button type="button" class="qb-choice" id="qb-choice-right"></button>
+    </div>
+    <p class="qb-hint mono">點選或按 ← → 作答・點井裡已落底的方塊可以補答一次</p>
+  </div>
+
+  <div id="qb-done">
+    <h2 id="qb-done-title"></h2>
+    <div class="qb-stats">
+      <div>分數<b id="qb-final-score"></b></div>
+      <div>答對率<b id="qb-final-acc"></b></div>
+      <div>最高等級<b id="qb-final-level"></b></div>
+    </div>
+    <div class="qb-wronglist">
+      <h3>答錯的單字（複習用）</h3>
+      <ul id="qb-wrong-ul"></ul>
+    </div>
+    <div class="qb-done-actions">
+      <button type="button" class="qb-btn primary" id="btn-qb-again">再玩一次</button>
+      <button type="button" class="qb-btn ghost" id="btn-qb-restart">回開始畫面</button>
+    </div>
+  </div>
+</div>
+
+<script>
+(async function(){
+const COLS = 8;
+const ROWS = 14;
+const LEVEL_UP_EVERY = 10;
+const BASE_FALL_MS = 3400;
+const MIN_FALL_MS = 900;
+const BEST_KEY = "quiz-blocks-best";
+
+const response = await fetch("./word_bank.json");
+if (!response.ok) throw new Error("題庫載入失敗（HTTP " + response.status + "）");
+const BANK = await response.json();
+
+function shuffledCopy(arr){
+  const out = arr.slice();
+  for (let i = out.length - 1; i > 0; i--){
+    const j = Math.floor(Math.random() * (i + 1));
+    [out[i], out[j]] = [out[j], out[i]];
+  }
+  return out;
+}
+
+let qb = null;
+
+function loadBest(){
+  try { return Number(localStorage.getItem(BEST_KEY)) || 0; } catch(e){ return 0; }
+}
+function saveBest(v){
+  try { localStorage.setItem(BEST_KEY, String(v)); } catch(e){}
+}
+document.getElementById("qb-start-best").textContent = String(loadBest());
+document.getElementById("qb-best").textContent = String(loadBest());
+
+function fallDurationFor(level){
+  const ms = BASE_FALL_MS - (level - 1) * 320;
+  return Math.max(MIN_FALL_MS, ms);
+}
+
+function pickWord(excludeWord){
+  const pool = BANK.filter(w => w.word !== excludeWord);
+  return pool[Math.floor(Math.random() * pool.length)];
+}
+
+function pickDistractor(entry){
+  const samePos = shuffledCopy(BANK.filter(w => w.word !== entry.word && w.pos === entry.pos && w.zh !== entry.zh));
+  if (samePos.length) return samePos[0];
+  const any = shuffledCopy(BANK.filter(w => w.word !== entry.word && w.zh !== entry.zh));
+  return any.length ? any[0] : entry;
+}
+
+function makeQuestion(){
+  const entry = pickWord(qb && qb.lastWord);
+  if (qb) qb.lastWord = entry.word;
+  const distractor = pickDistractor(entry);
+  const direction = Math.random() < 0.5 ? "en2zh" : "zh2en";
+  const correctSide = Math.random() < 0.5 ? "left" : "right";
+  const correctLabel = direction === "en2zh" ? entry.zh : entry.word;
+  const distractorLabel = direction === "en2zh" ? distractor.zh : distractor.word;
+  const options = correctSide === "left" ? [correctLabel, distractorLabel] : [distractorLabel, correctLabel];
+  return { entry, direction, correctSide, options };
+}
+
+function showQuestion(q, opts){
+  const promptWord = document.getElementById("qb-word");
+  promptWord.textContent = q.direction === "en2zh" ? q.entry.word : q.entry.zh;
+  promptWord.className = "qb-prompt-word" + (q.direction === "zh2en" ? " zh" : "");
+  document.getElementById("qb-dir").textContent = q.direction === "en2zh" ? "EN → 中" : "中 → EN";
+  const leftBtn = document.getElementById("qb-choice-left");
+  const rightBtn = document.getElementById("qb-choice-right");
+  leftBtn.textContent = q.options[0];
+  rightBtn.textContent = q.options[1];
+  leftBtn.className = "qb-choice"; leftBtn.disabled = false;
+  rightBtn.className = "qb-choice"; rightBtn.disabled = false;
+  document.querySelector(".qb-prompt").classList.toggle("rescue", !!(opts && opts.rescue));
+}
+
+function updateMeta(){
+  document.getElementById("qb-score").textContent = String(qb.score);
+  document.getElementById("qb-level").textContent = String(qb.level);
+  document.getElementById("qb-combo").textContent = String(qb.combo);
+  if (qb.score > qb.best){ qb.best = qb.score; saveBest(qb.best); }
+  document.getElementById("qb-best").textContent = String(qb.best);
+}
+
+function pointsFor(isRescue){
+  const base = 10 * qb.level;
+  const comboBonus = Math.min(qb.combo, 10) * 2;
+  const total = base + comboBonus;
+  return isRescue ? Math.ceil(total / 2) : total;
+}
+
+function maybeLevelUp(){
+  const targetLevel = 1 + Math.floor(qb.correctCount / LEVEL_UP_EVERY);
+  if (targetLevel > qb.level) qb.level = targetLevel;
+}
+
+/* ---- grid + gravity (single-cell pieces only in this first cut) ---- */
+function firstOccupiedRow(col){
+  for (let r = 0; r < ROWS; r++){ if (qb.grid[r][col]) return r; }
+  return ROWS;
+}
+function landingRow(col){ return firstOccupiedRow(col) - 1; }
+
+function gridPlace(piece){ qb.grid[piece.row][piece.col] = piece.id; }
+function gridClear(piece){ if (qb.grid[piece.row][piece.col] === piece.id) qb.grid[piece.row][piece.col] = null; }
+
+function canDrop(piece){
+  const newRow = piece.row + 1;
+  if (newRow >= ROWS) return false;
+  gridClear(piece);
+  const ok = !qb.grid[newRow][piece.col];
+  gridPlace(piece);
+  return ok;
+}
+function settle(){
+  let moved = true;
+  while (moved){
+    moved = false;
+    Object.values(qb.pieces).sort((a, b) => b.row - a.row).forEach(p => {
+      if (canDrop(p)){
+        gridClear(p); p.row += 1; gridPlace(p);
+        moved = true;
+      }
+    });
+  }
+  Object.values(qb.pieces).forEach(p => {
+    p.el.style.transition = "top .22s ease";
+    p.el.style.top = "calc(" + (p.row * (100 / ROWS)) + "% + 1.5px)";
+  });
+}
+
+function cellLabel(entry, direction){
+  return direction === "en2zh" ? entry.word : entry.zh;
+}
+
+function spawnPiece(){
+  if (!qb || !qb.running) return;
+  const candidates = shuffledCopy(Array.from({ length: COLS }, (_, i) => i));
+  let col = -1, row = -1;
+  for (const c of candidates){
+    const r = landingRow(c);
+    if (r >= 0){ col = c; row = r; break; }
+  }
+  if (col < 0){ endGame(); return; }
+
+  const q = makeQuestion();
+  const el = document.createElement("div");
+  el.className = "qb-cell";
+  el.style.width = "calc(" + (100 / COLS) + "% - 3px)";
+  el.style.height = "calc(" + (100 / ROWS) + "% - 3px)";
+  el.style.left = "calc(" + (col * (100 / COLS)) + "% + 1.5px)";
+  el.style.top = "1.5px";
+  el.textContent = cellLabel(q.entry, q.direction);
+  document.getElementById("qb-board").appendChild(el);
+
+  qb.piece = { id: null, entry: q.entry, direction: q.direction, correctSide: q.correctSide,
+    options: q.options, col, row, topRow: row, resolved: false, el };
+  qb.totalCount++;
+  showQuestion(q, { rescue: false });
+
+  const fallMs = fallDurationFor(qb.level);
+  requestAnimationFrame(()=>{
+    el.style.transition = "top " + fallMs + "ms linear";
+    el.style.top = "calc(" + (row * (100 / ROWS)) + "% + 1.5px)";
+  });
+  qb.fallTimer = setTimeout(()=> resolveFalling(null), fallMs);
+}
+
+function flashChoice(side, cls){
+  const el = document.getElementById(side === "left" ? "qb-choice-left" : "qb-choice-right");
+  if (el) el.classList.add(cls);
+}
+
+function checkOverflow(){ return qb.grid[0].some(cell => cell !== null); }
+
+function lockPiece(piece){
+  piece.id = qb.nextId++;
+  piece.el.classList.add("locked", "wrong-flash");
+  piece.el.addEventListener("click", ()=> clickLocked(piece.id));
+  qb.pieces[piece.id] = piece;
+  gridPlace(piece);
+}
+
+function resolveFalling(side){
+  if (!qb || !qb.piece || qb.piece.resolved) return;
+  const piece = qb.piece;
+  piece.resolved = true;
+  clearTimeout(qb.fallTimer);
+  document.getElementById("qb-choice-left").disabled = true;
+  document.getElementById("qb-choice-right").disabled = true;
+
+  const correct = side === piece.correctSide;
+  if (correct){
+    qb.combo++;
+    qb.correctCount++;
+    maybeLevelUp();
+    qb.score += pointsFor(false);
+    flashChoice(side, "correct");
+    piece.el.classList.add("clearing");
+    setTimeout(()=> piece.el.remove(), 220);
+    updateMeta();
+    qb.piece = null;
+    setTimeout(spawnPiece, 240);
+    return;
+  }
+
+  qb.combo = 0;
+  qb.wrongList.push({ word: piece.entry.word, zh: piece.entry.zh });
+  if (side) flashChoice(side, "wrong");
+  const correctEl = document.getElementById(piece.correctSide === "left" ? "qb-choice-left" : "qb-choice-right");
+  if (correctEl) correctEl.classList.add("correct");
+  lockPiece(piece);
+  updateMeta();
+  qb.piece = null;
+  const overflow = checkOverflow();
+  setTimeout(()=>{
+    if (!qb) return;
+    if (overflow) endGame();
+    else spawnPiece();
+  }, 420);
+}
+
+/* ---- rescue: click a locked piece for one more shot. Pauses the
+   currently-falling piece so a rescue attempt never costs it. ---- */
+function pauseFalling(){
+  const piece = qb.piece;
+  if (!piece || piece.resolved) return;
+  clearTimeout(qb.fallTimer);
+  const boardRect = document.getElementById("qb-board").getBoundingClientRect();
+  const pieceRect = piece.el.getBoundingClientRect();
+  const ratio = Math.max(0, (pieceRect.top - boardRect.top) / boardRect.height);
+  piece.el.style.transition = "none";
+  piece.el.style.top = (ratio * 100) + "%";
+  piece.pausedRatio = ratio;
+}
+function resumeFalling(){
+  const piece = qb.piece;
+  if (!piece || piece.resolved || piece.pausedRatio == null) return;
+  const targetRatio = piece.topRow / ROWS;
+  const remainingRatio = Math.max(0, (targetRatio - piece.pausedRatio) / Math.max(targetRatio, 1 / ROWS));
+  const remainingMs = Math.max(500, fallDurationFor(qb.level) * remainingRatio);
+  requestAnimationFrame(()=>{
+    piece.el.style.transition = "top " + remainingMs + "ms linear";
+    piece.el.style.top = (targetRatio * 100) + "%";
+  });
+  qb.fallTimer = setTimeout(()=> resolveFalling(null), remainingMs);
+  piece.pausedRatio = null;
+}
+
+function clickLocked(pieceId){
+  if (!qb || !qb.running || qb.rescue) return;
+  const piece = qb.pieces[pieceId];
+  if (!piece) return;
+  pauseFalling();
+  const distractor = pickDistractor(piece.entry);
+  const correctSide = Math.random() < 0.5 ? "left" : "right";
+  const correctLabel = piece.direction === "en2zh" ? piece.entry.zh : piece.entry.word;
+  const distractorLabel = piece.direction === "en2zh" ? distractor.zh : distractor.word;
+  const options = correctSide === "left" ? [correctLabel, distractorLabel] : [distractorLabel, correctLabel];
+  qb.rescue = { pieceId, correctSide };
+  piece.el.classList.remove("wrong-flash");
+  piece.el.classList.add("targeting");
+  showQuestion({ entry: piece.entry, direction: piece.direction, correctSide, options }, { rescue: true });
+}
+
+function resolveRescue(side){
+  if (!qb || !qb.rescue) return;
+  const { pieceId, correctSide } = qb.rescue;
+  const piece = qb.pieces[pieceId];
+  document.getElementById("qb-choice-left").disabled = true;
+  document.getElementById("qb-choice-right").disabled = true;
+  const correct = side === correctSide;
+  const finish = ()=>{
+    qb.rescue = null;
+    if (qb.piece && !qb.piece.resolved){
+      showQuestion({ entry: qb.piece.entry, direction: qb.piece.direction,
+        correctSide: qb.piece.correctSide, options: qb.piece.options });
+    }
+    setTimeout(()=>{ if (qb && qb.piece && !qb.piece.resolved) resumeFalling(); }, 240);
+  };
+  if (!piece){ finish(); return; }
+  if (correct){
+    qb.score += pointsFor(true);
+    flashChoice(side, "correct");
+    updateMeta();
+    setTimeout(()=>{
+      gridClear(piece);
+      delete qb.pieces[pieceId];
+      piece.el.classList.add("clearing");
+      setTimeout(()=> piece.el.remove(), 220);
+      settle();
+      finish();
+    }, 280);
+  } else {
+    flashChoice(side, "wrong");
+    piece.el.classList.remove("targeting");
+    piece.el.classList.add("shake");
+    setTimeout(()=> piece.el.classList.remove("shake"), 300);
+    setTimeout(finish, 480);
+  }
+}
+
+function answer(side){
+  if (qb && qb.rescue) resolveRescue(side);
+  else resolveFalling(side);
+}
+
+function startGame(){
+  qb = {
+    grid: Array.from({ length: ROWS }, () => new Array(COLS).fill(null)),
+    pieces: {}, nextId: 1,
+    score: 0, best: loadBest(), level: 1, combo: 0,
+    correctCount: 0, totalCount: 0, wrongList: [],
+    piece: null, fallTimer: null, rescue: null, running: true, lastWord: null,
+  };
+  document.getElementById("qb-start").style.display = "none";
+  document.getElementById("qb-done").classList.remove("active");
+  document.getElementById("qb-play").classList.add("active");
+  document.getElementById("qb-board").innerHTML = "";
+  updateMeta();
+  spawnPiece();
+}
+
+function endGame(){
+  if (!qb) return;
+  qb.running = false;
+  clearTimeout(qb.fallTimer);
+  document.getElementById("qb-play").classList.remove("active");
+  const done = document.getElementById("qb-done");
+  done.classList.add("active");
+  const acc = qb.totalCount ? Math.round((qb.correctCount / qb.totalCount) * 100) : 0;
+  document.getElementById("qb-done-title").textContent = qb.score >= qb.best ? "新紀錄！" : "遊戲結束";
+  document.getElementById("qb-final-score").textContent = String(qb.score);
+  document.getElementById("qb-final-acc").textContent = acc + "%（" + qb.correctCount + "/" + qb.totalCount + "）";
+  document.getElementById("qb-final-level").textContent = String(qb.level);
+  const ul = document.getElementById("qb-wrong-ul");
+  ul.innerHTML = "";
+  const seen = new Set();
+  const uniqueWrong = qb.wrongList.filter(w => (seen.has(w.word) ? false : (seen.add(w.word), true)));
+  if (uniqueWrong.length === 0){
+    ul.innerHTML = '<li class="empty">這輪沒有答錯的字！</li>';
+  } else {
+    uniqueWrong.forEach(w=>{
+      const li = document.createElement("li");
+      li.innerHTML = "<span>" + w.word + "</span><span>" + w.zh + "</span>";
+      ul.appendChild(li);
+    });
+  }
+}
+
+document.getElementById("btn-qb-start").addEventListener("click", startGame);
+document.getElementById("btn-qb-again").addEventListener("click", startGame);
+document.getElementById("btn-qb-restart").addEventListener("click", ()=>{
+  document.getElementById("qb-done").classList.remove("active");
+  document.getElementById("qb-start").style.display = "flex";
+  document.getElementById("qb-start-best").textContent = String(loadBest());
+});
+document.getElementById("qb-choice-left").addEventListener("click", ()=> answer("left"));
+document.getElementById("qb-choice-right").addEventListener("click", ()=> answer("right"));
+
+document.addEventListener("keydown", (e)=>{
+  if (!qb || !qb.running) return;
+  if (e.code === "ArrowLeft"){ e.preventDefault(); answer("left"); }
+  else if (e.code === "ArrowRight"){ e.preventDefault(); answer("right"); }
+});
+}()).catch(error=>{
+  console.error(error);
+  document.body.innerHTML = '<div class="wrap"><h1>題庫載入失敗</h1><p>請透過本機 HTTP 伺服器或 GitHub Pages 開啟此頁面。</p></div>';
+});
+</script>

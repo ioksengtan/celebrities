@@ -1,0 +1,1100 @@
+[
+  {
+    "word": "incredibly",
+    "zh": "難以置信地／非常",
+    "pos": "adv",
+    "cefr": "B1"
+  },
+  {
+    "word": "exponential",
+    "zh": "指數性的",
+    "pos": "adj",
+    "cefr": "B2"
+  },
+  {
+    "word": "exponentially",
+    "zh": "以指數方式",
+    "pos": "adv",
+    "cefr": "B2"
+  },
+  {
+    "word": "inflection point",
+    "zh": "轉折點",
+    "pos": "phrase",
+    "cefr": "C1"
+  },
+  {
+    "word": "optimistic",
+    "zh": "樂觀的",
+    "pos": "adj",
+    "cefr": "B1"
+  },
+  {
+    "word": "optimism",
+    "zh": "樂觀",
+    "pos": "noun",
+    "cefr": "B1"
+  },
+  {
+    "word": "pessimistic",
+    "zh": "悲觀的",
+    "pos": "adj",
+    "cefr": "B1"
+  },
+  {
+    "word": "longevity",
+    "zh": "長壽；持久",
+    "pos": "noun",
+    "cefr": "B2"
+  },
+  {
+    "word": "dystopian",
+    "zh": "反烏托邦的",
+    "pos": "adj",
+    "cefr": "C1"
+  },
+  {
+    "word": "revolutionize",
+    "zh": "徹底改變",
+    "pos": "verb",
+    "cefr": "B2"
+  },
+  {
+    "word": "reinvent",
+    "zh": "重新塑造",
+    "pos": "verb",
+    "cefr": "B2"
+  },
+  {
+    "word": "geopolitical",
+    "zh": "地緣政治的",
+    "pos": "adj",
+    "cefr": "C1"
+  },
+  {
+    "word": "virtuous",
+    "zh": "良性的",
+    "pos": "adj",
+    "cefr": "C1"
+  },
+  {
+    "word": "profound",
+    "zh": "深遠的",
+    "pos": "adj",
+    "cefr": "C1"
+  },
+  {
+    "word": "deflation",
+    "zh": "通貨緊縮",
+    "pos": "noun",
+    "cefr": "C1"
+  },
+  {
+    "word": "tipping point",
+    "zh": "臨界點",
+    "pos": "phrase",
+    "cefr": "B2"
+  },
+  {
+    "word": "ecosystem",
+    "zh": "生態系統",
+    "pos": "noun",
+    "cefr": "B2"
+  },
+  {
+    "word": "harness",
+    "zh": "駕馭；利用",
+    "pos": "verb",
+    "cefr": "B2"
+  },
+  {
+    "word": "inevitable",
+    "zh": "不可避免的",
+    "pos": "adj",
+    "cefr": "B2"
+  },
+  {
+    "word": "fundamentally",
+    "zh": "從根本上",
+    "pos": "adv",
+    "cefr": "B2"
+  },
+  {
+    "word": "vastly",
+    "zh": "大大地",
+    "pos": "adv",
+    "cefr": "B2"
+  },
+  {
+    "word": "profitability",
+    "zh": "獲利能力",
+    "pos": "noun",
+    "cefr": "B2"
+  },
+  {
+    "word": "irrelevant",
+    "zh": "不相關的",
+    "pos": "adj",
+    "cefr": "B2"
+  },
+  {
+    "word": "ambitious",
+    "zh": "有雄心的",
+    "pos": "adj",
+    "cefr": "B1"
+  },
+  {
+    "word": "groundbreaking",
+    "zh": "開創性的",
+    "pos": "adj",
+    "cefr": "B2"
+  },
+  {
+    "word": "bottleneck",
+    "zh": "瓶頸",
+    "pos": "noun",
+    "cefr": "B2"
+  },
+  {
+    "word": "coherent",
+    "zh": "條理清楚的",
+    "pos": "adj",
+    "cefr": "C1"
+  },
+  {
+    "word": "prosperity",
+    "zh": "繁榮",
+    "pos": "noun",
+    "cefr": "B2"
+  },
+  {
+    "word": "scarcity",
+    "zh": "稀缺",
+    "pos": "noun",
+    "cefr": "B2"
+  },
+  {
+    "word": "shortage",
+    "zh": "短缺",
+    "pos": "noun",
+    "cefr": "B1"
+  },
+  {
+    "word": "trivial",
+    "zh": "微不足道的",
+    "pos": "adj",
+    "cefr": "B2"
+  },
+  {
+    "word": "trajectory",
+    "zh": "發展軌跡",
+    "pos": "noun",
+    "cefr": "C1"
+  },
+  {
+    "word": "reusable",
+    "zh": "可重複使用的",
+    "pos": "adj",
+    "cefr": "B1"
+  },
+  {
+    "word": "constrained",
+    "zh": "受限制的",
+    "pos": "adj",
+    "cefr": "B2"
+  },
+  {
+    "word": "inertia",
+    "zh": "惰性；慣性",
+    "pos": "noun",
+    "cefr": "C1"
+  },
+  {
+    "word": "presumably",
+    "zh": "據推測",
+    "pos": "adv",
+    "cefr": "B2"
+  },
+  {
+    "word": "hugely",
+    "zh": "極其",
+    "pos": "adv",
+    "cefr": "B1"
+  },
+  {
+    "word": "displaced",
+    "zh": "被取代的",
+    "pos": "adj",
+    "cefr": "B2"
+  },
+  {
+    "word": "consume",
+    "zh": "消耗；消費",
+    "pos": "verb",
+    "cefr": "B1"
+  },
+  {
+    "word": "collectively",
+    "zh": "集體地",
+    "pos": "adv",
+    "cefr": "B2"
+  },
+  {
+    "word": "benign",
+    "zh": "無害的",
+    "pos": "adj",
+    "cefr": "C1"
+  },
+  {
+    "word": "inaccurate",
+    "zh": "不準確的",
+    "pos": "adj",
+    "cefr": "B1"
+  },
+  {
+    "word": "innovate",
+    "zh": "創新",
+    "pos": "verb",
+    "cefr": "B2"
+  },
+  {
+    "word": "maximizing",
+    "zh": "最大化",
+    "pos": "verb",
+    "cefr": "B2"
+  },
+  {
+    "word": "monetize",
+    "zh": "使...獲利",
+    "pos": "verb",
+    "cefr": "B2"
+  },
+  {
+    "word": "recursive",
+    "zh": "遞歸的",
+    "pos": "adj",
+    "cefr": "C1"
+  },
+  {
+    "word": "terrifying",
+    "zh": "令人恐懼的",
+    "pos": "adj",
+    "cefr": "B1"
+  },
+  {
+    "word": "analogy",
+    "zh": "類比",
+    "pos": "noun",
+    "cefr": "B1"
+  },
+  {
+    "word": "abundant",
+    "zh": "豐富的",
+    "pos": "adj",
+    "cefr": "B2"
+  },
+  {
+    "word": "abundance",
+    "zh": "豐富；富足",
+    "pos": "noun",
+    "cefr": "B2"
+  },
+  {
+    "word": "shortcomings",
+    "zh": "缺點",
+    "pos": "noun",
+    "cefr": "B2"
+  },
+  {
+    "word": "evolve",
+    "zh": "演變",
+    "pos": "verb",
+    "cefr": "B1"
+  },
+  {
+    "word": "bankrupt",
+    "zh": "破產的",
+    "pos": "adj",
+    "cefr": "B1"
+  },
+  {
+    "word": "unifying",
+    "zh": "統合的",
+    "pos": "adj",
+    "cefr": "B2"
+  },
+  {
+    "word": "verifiable",
+    "zh": "可驗證的",
+    "pos": "adj",
+    "cefr": "B2"
+  },
+  {
+    "word": "curiosity",
+    "zh": "好奇心",
+    "pos": "noun",
+    "cefr": "A2"
+  },
+  {
+    "word": "vigilant",
+    "zh": "警惕的",
+    "pos": "adj",
+    "cefr": "B2"
+  },
+  {
+    "word": "sustaining",
+    "zh": "自給自足的",
+    "pos": "adj",
+    "cefr": "B2"
+  },
+  {
+    "word": "principled",
+    "zh": "有原則的",
+    "pos": "adj",
+    "cefr": "B2"
+  },
+  {
+    "word": "civilizational",
+    "zh": "文明層面的",
+    "pos": "adj",
+    "cefr": "C1"
+  },
+  {
+    "word": "monopoly",
+    "zh": "壟斷",
+    "pos": "noun",
+    "cefr": "B2"
+  },
+  {
+    "word": "disruption",
+    "zh": "顛覆性變革",
+    "pos": "noun",
+    "cefr": "B2"
+  },
+  {
+    "word": "breakthrough",
+    "zh": "突破",
+    "pos": "noun",
+    "cefr": "B2"
+  },
+  {
+    "word": "tremendously",
+    "zh": "極大地",
+    "pos": "adv",
+    "cefr": "B2"
+  },
+  {
+    "word": "staggering",
+    "zh": "驚人的",
+    "pos": "adj",
+    "cefr": "C1"
+  },
+  {
+    "word": "societal",
+    "zh": "社會的",
+    "pos": "adj",
+    "cefr": "B2"
+  },
+  {
+    "word": "reshape",
+    "zh": "重塑",
+    "pos": "verb",
+    "cefr": "B2"
+  },
+  {
+    "word": "regulate",
+    "zh": "監管",
+    "pos": "verb",
+    "cefr": "B2"
+  },
+  {
+    "word": "plateau",
+    "zh": "停滯期",
+    "pos": "noun",
+    "cefr": "B2"
+  },
+  {
+    "word": "nimble",
+    "zh": "敏捷靈活的",
+    "pos": "adj",
+    "cefr": "C1"
+  },
+  {
+    "word": "mundane",
+    "zh": "平凡乏味的",
+    "pos": "adj",
+    "cefr": "B2"
+  },
+  {
+    "word": "liberating",
+    "zh": "帶來解放感的",
+    "pos": "adj",
+    "cefr": "C1"
+  },
+  {
+    "word": "leapfrog",
+    "zh": "跳躍式超越",
+    "pos": "verb",
+    "cefr": "C1"
+  },
+  {
+    "word": "generational",
+    "zh": "世代性的",
+    "pos": "adj",
+    "cefr": "B2"
+  },
+  {
+    "word": "fortunate",
+    "zh": "幸運的",
+    "pos": "adj",
+    "cefr": "B1"
+  },
+  {
+    "word": "forefront",
+    "zh": "最前線",
+    "pos": "noun",
+    "cefr": "C1"
+  },
+  {
+    "word": "extinction",
+    "zh": "滅絕",
+    "pos": "noun",
+    "cefr": "B2"
+  },
+  {
+    "word": "extinct",
+    "zh": "滅絕的",
+    "pos": "adj",
+    "cefr": "B1"
+  },
+  {
+    "word": "externalities",
+    "zh": "外部性",
+    "pos": "noun",
+    "cefr": "C1"
+  },
+  {
+    "word": "empower",
+    "zh": "賦予能力",
+    "pos": "verb",
+    "cefr": "B1"
+  },
+  {
+    "word": "empathy",
+    "zh": "同理心",
+    "pos": "noun",
+    "cefr": "B1"
+  },
+  {
+    "word": "elevate",
+    "zh": "提升",
+    "pos": "verb",
+    "cefr": "B2"
+  },
+  {
+    "word": "undermine",
+    "zh": "削弱",
+    "pos": "verb",
+    "cefr": "B2"
+  },
+  {
+    "word": "undeniably",
+    "zh": "不可否認地",
+    "pos": "adv",
+    "cefr": "B2"
+  },
+  {
+    "word": "underestimate",
+    "zh": "低估",
+    "pos": "verb",
+    "cefr": "B2"
+  },
+  {
+    "word": "tackle",
+    "zh": "處理；應對",
+    "pos": "verb",
+    "cefr": "B1"
+  },
+  {
+    "word": "reskill",
+    "zh": "重新培訓技能",
+    "pos": "verb",
+    "cefr": "C1"
+  },
+  {
+    "word": "prioritize",
+    "zh": "優先考慮",
+    "pos": "verb",
+    "cefr": "B1"
+  },
+  {
+    "word": "pointless",
+    "zh": "無意義的",
+    "pos": "adj",
+    "cefr": "B1"
+  },
+  {
+    "word": "overreaching",
+    "zh": "過度擴張的",
+    "pos": "adj",
+    "cefr": "C1"
+  },
+  {
+    "word": "empirically",
+    "zh": "以實證方式",
+    "pos": "adv",
+    "cefr": "C1"
+  },
+  {
+    "word": "guardrails",
+    "zh": "防護措施",
+    "pos": "noun",
+    "cefr": "B2"
+  },
+  {
+    "word": "generalized",
+    "zh": "泛化的",
+    "pos": "adj",
+    "cefr": "B2"
+  },
+  {
+    "word": "influential",
+    "zh": "有影響力的",
+    "pos": "adj",
+    "cefr": "B1"
+  },
+  {
+    "word": "illusion",
+    "zh": "錯覺",
+    "pos": "noun",
+    "cefr": "B1"
+  },
+  {
+    "word": "livelihoods",
+    "zh": "生計",
+    "pos": "noun",
+    "cefr": "B2"
+  },
+  {
+    "word": "instinct",
+    "zh": "本能；直覺",
+    "pos": "noun",
+    "cefr": "B1"
+  },
+  {
+    "word": "innovators",
+    "zh": "創新者",
+    "pos": "noun",
+    "cefr": "B1"
+  },
+  {
+    "word": "delightful",
+    "zh": "令人愉悅的",
+    "pos": "adj",
+    "cefr": "A2"
+  },
+  {
+    "word": "norms",
+    "zh": "常規",
+    "pos": "noun",
+    "cefr": "B2"
+  },
+  {
+    "word": "cusp",
+    "zh": "臨界點／邊緣",
+    "pos": "noun",
+    "cefr": "C1"
+  },
+  {
+    "word": "bedrock",
+    "zh": "基石",
+    "pos": "noun",
+    "cefr": "C1"
+  },
+  {
+    "word": "audacious",
+    "zh": "大膽的／無畏的",
+    "pos": "adj",
+    "cefr": "C1"
+  },
+  {
+    "word": "authenticity",
+    "zh": "真實性",
+    "pos": "noun",
+    "cefr": "B2"
+  },
+  {
+    "word": "modest",
+    "zh": "樸實的／不大的",
+    "pos": "adj",
+    "cefr": "B1"
+  },
+  {
+    "word": "defining",
+    "zh": "關鍵的／界定性的",
+    "pos": "adj",
+    "cefr": "B2"
+  },
+  {
+    "word": "utterly",
+    "zh": "徹底地／絕對地",
+    "pos": "adv",
+    "cefr": "B2"
+  },
+  {
+    "word": "essence",
+    "zh": "本質",
+    "pos": "noun",
+    "cefr": "B2"
+  },
+  {
+    "word": "peril",
+    "zh": "危險",
+    "pos": "noun",
+    "cefr": "C1"
+  },
+  {
+    "word": "intent",
+    "zh": "意圖",
+    "pos": "noun",
+    "cefr": "B2"
+  },
+  {
+    "word": "opposite",
+    "zh": "相反",
+    "pos": "noun",
+    "cefr": "B1"
+  },
+  {
+    "word": "preposterous",
+    "zh": "荒謬的",
+    "pos": "adj",
+    "cefr": "C1"
+  },
+  {
+    "word": "inexorable",
+    "zh": "不可阻擋的",
+    "pos": "adj",
+    "cefr": "C1"
+  },
+  {
+    "word": "exhilaration",
+    "zh": "興奮／振奮",
+    "pos": "noun",
+    "cefr": "C1"
+  },
+  {
+    "word": "manifest",
+    "zh": "顯現／表現",
+    "pos": "verb",
+    "cefr": "C1"
+  },
+  {
+    "word": "confined",
+    "zh": "侷限的",
+    "pos": "adj",
+    "cefr": "B2"
+  },
+  {
+    "word": "foster",
+    "zh": "促進／培養",
+    "pos": "verb",
+    "cefr": "B2"
+  },
+  {
+    "word": "headwind",
+    "zh": "逆風（不利因素）",
+    "pos": "noun",
+    "cefr": "B2"
+  },
+  {
+    "word": "declining",
+    "zh": "下降的",
+    "pos": "adj",
+    "cefr": "B1"
+  },
+  {
+    "word": "safeguard",
+    "zh": "防護措施",
+    "pos": "noun",
+    "cefr": "B2"
+  },
+  {
+    "word": "confident",
+    "zh": "有把握的",
+    "pos": "adj",
+    "cefr": "B1"
+  },
+  {
+    "word": "uncomfortable",
+    "zh": "不安的",
+    "pos": "adj",
+    "cefr": "B1"
+  },
+  {
+    "word": "impressive",
+    "zh": "令人印象深刻的",
+    "pos": "adj",
+    "cefr": "B1"
+  },
+  {
+    "word": "literally",
+    "zh": "確實地／照字面",
+    "pos": "adv",
+    "cefr": "B2"
+  },
+  {
+    "word": "brimming",
+    "zh": "充滿的",
+    "pos": "adj",
+    "cefr": "C1"
+  },
+  {
+    "word": "combat",
+    "zh": "對抗",
+    "pos": "verb",
+    "cefr": "B2"
+  },
+  {
+    "word": "nutshell",
+    "zh": "簡言之（in a nutshell）",
+    "pos": "noun",
+    "cefr": "B2"
+  },
+  {
+    "word": "bumpy",
+    "zh": "顛簸的／不順的",
+    "pos": "adj",
+    "cefr": "B1"
+  },
+  {
+    "word": "optional",
+    "zh": "可選的",
+    "pos": "adj",
+    "cefr": "B1"
+  },
+  {
+    "word": "curious",
+    "zh": "好奇的",
+    "pos": "adj",
+    "cefr": "B1"
+  },
+  {
+    "word": "infrastructure",
+    "zh": "基礎建設",
+    "pos": "noun",
+    "cefr": "B1"
+  },
+  {
+    "word": "democratize",
+    "zh": "讓大眾都能取得；普及化",
+    "pos": "verb",
+    "cefr": "C1"
+  },
+  {
+    "word": "equalizer",
+    "zh": "拉平差距的力量",
+    "pos": "noun",
+    "cefr": "B2"
+  },
+  {
+    "word": "intangible",
+    "zh": "無形的",
+    "pos": "adj",
+    "cefr": "C1"
+  },
+  {
+    "word": "fungible",
+    "zh": "可替代的；通用的",
+    "pos": "adj",
+    "cefr": "C1"
+  },
+  {
+    "word": "durable",
+    "zh": "耐用的；能長久使用的",
+    "pos": "adj",
+    "cefr": "B2"
+  },
+  {
+    "word": "pragmatic",
+    "zh": "務實的",
+    "pos": "adj",
+    "cefr": "C1"
+  },
+  {
+    "word": "hypothetical",
+    "zh": "假設性的",
+    "pos": "adj",
+    "cefr": "B2"
+  },
+  {
+    "word": "juxtapose",
+    "zh": "並列對照",
+    "pos": "verb",
+    "cefr": "C1"
+  },
+  {
+    "word": "thought experiment",
+    "zh": "思想實驗",
+    "pos": "phrase",
+    "cefr": "B2"
+  },
+  {
+    "word": "onboarding",
+    "zh": "(新人)導入訓練",
+    "pos": "noun",
+    "cefr": "B2"
+  },
+  {
+    "word": "supercharged",
+    "zh": "大幅增強的",
+    "pos": "adj",
+    "cefr": "B1"
+  },
+  {
+    "word": "advocate",
+    "zh": "倡導；主張",
+    "pos": "verb",
+    "cefr": "B2"
+  },
+  {
+    "word": "ambition",
+    "zh": "雄心；抱負",
+    "pos": "noun",
+    "cefr": "B1"
+  },
+  {
+    "word": "nonsense",
+    "zh": "無稽之談；胡扯",
+    "pos": "noun",
+    "cefr": "B1"
+  },
+  {
+    "word": "overwhelming",
+    "zh": "壓倒性的；勢不可擋的",
+    "pos": "adj",
+    "cefr": "B2"
+  },
+  {
+    "word": "mitigate",
+    "zh": "減輕；緩和（風險或傷害）",
+    "pos": "verb",
+    "cefr": "B2"
+  },
+  {
+    "word": "immense",
+    "zh": "巨大的；極大量的",
+    "pos": "adj",
+    "cefr": "B2"
+  },
+  {
+    "word": "incremental",
+    "zh": "漸進的；增量的",
+    "pos": "adj",
+    "cefr": "B2"
+  },
+  {
+    "word": "outperform",
+    "zh": "表現優於；勝過",
+    "pos": "verb",
+    "cefr": "B2"
+  },
+  {
+    "word": "resilience",
+    "zh": "韌性；恢復力",
+    "pos": "noun",
+    "cefr": "B2"
+  },
+  {
+    "word": "extraordinary",
+    "zh": "非凡的；驚人的",
+    "pos": "adj",
+    "cefr": "B1"
+  },
+  {
+    "word": "convergence",
+    "zh": "匯聚；合流",
+    "pos": "noun",
+    "cefr": "C1"
+  },
+  {
+    "word": "commodity",
+    "zh": "大宗商品；普通化的東西",
+    "pos": "noun",
+    "cefr": "B2"
+  },
+  {
+    "word": "codify",
+    "zh": "編纂；系統化記錄",
+    "pos": "verb",
+    "cefr": "C1"
+  },
+  {
+    "word": "sovereignty",
+    "zh": "主權；自主掌控權",
+    "pos": "noun",
+    "cefr": "C1"
+  },
+  {
+    "word": "vital",
+    "zh": "至關重要的；不可或缺的",
+    "pos": "adj",
+    "cefr": "B2"
+  },
+  {
+    "word": "breadth",
+    "zh": "廣度；涵蓋範圍",
+    "pos": "noun",
+    "cefr": "B2"
+  },
+  {
+    "word": "accelerate",
+    "zh": "加速；加快推進",
+    "pos": "verb",
+    "cefr": "B2"
+  },
+  {
+    "word": "adoption",
+    "zh": "採用；普及",
+    "pos": "noun",
+    "cefr": "B2"
+  },
+  {
+    "word": "substantial",
+    "zh": "可觀的；相當大的",
+    "pos": "adj",
+    "cefr": "B2"
+  },
+  {
+    "word": "ubiquitous",
+    "zh": "無所不在的；普遍存在的",
+    "pos": "adj",
+    "cefr": "C1"
+  },
+  {
+    "word": "incentive",
+    "zh": "誘因；激勵",
+    "pos": "noun",
+    "cefr": "B2"
+  },
+  {
+    "word": "constraint",
+    "zh": "限制；制約因素",
+    "pos": "noun",
+    "cefr": "B2"
+  },
+  {
+    "word": "curate",
+    "zh": "精選整理；策展篩選",
+    "pos": "verb",
+    "cefr": "B2"
+  },
+  {
+    "word": "mature",
+    "zh": "成熟的；已發展完備的",
+    "pos": "adj",
+    "cefr": "B2"
+  },
+  {
+    "word": "frontier",
+    "zh": "前沿；最前線",
+    "pos": "noun",
+    "cefr": "B2"
+  },
+  {
+    "word": "adapt",
+    "zh": "適應；調整以配合",
+    "pos": "verb",
+    "cefr": "B1"
+  },
+  {
+    "word": "legacy",
+    "zh": "遺留問題；既有落差／遺產",
+    "pos": "noun",
+    "cefr": "B2"
+  },
+  {
+    "word": "regulatory",
+    "zh": "監管的；法規相關的",
+    "pos": "adj",
+    "cefr": "B2"
+  },
+  {
+    "word": "conventional",
+    "zh": "傳統的；常規的",
+    "pos": "adj",
+    "cefr": "B2"
+  },
+  {
+    "word": "outcome",
+    "zh": "結果；結局",
+    "pos": "noun",
+    "cefr": "B1"
+  },
+  {
+    "word": "transform",
+    "zh": "徹底改變；轉型",
+    "pos": "verb",
+    "cefr": "B2"
+  },
+  {
+    "word": "flexible",
+    "zh": "有彈性的；可靈活調整的",
+    "pos": "adj",
+    "cefr": "B1"
+  },
+  {
+    "word": "diverse",
+    "zh": "多樣的；多元的",
+    "pos": "adj",
+    "cefr": "B2"
+  },
+  {
+    "word": "enormous",
+    "zh": "巨大的；極大的",
+    "pos": "adj",
+    "cefr": "B1"
+  },
+  {
+    "word": "enterprise",
+    "zh": "企業；大型組織／企業端",
+    "pos": "noun",
+    "cefr": "B2"
+  },
+  {
+    "word": "swashbuckling",
+    "zh": "敢衝敢闖的；帶點冒險豪氣的",
+    "pos": "adj",
+    "cefr": "C1"
+  },
+  {
+    "word": "take pride in",
+    "zh": "以……為傲",
+    "pos": "phrase",
+    "cefr": "B1"
+  },
+  {
+    "word": "calling",
+    "zh": "天職；使命感所在的志業",
+    "pos": "noun",
+    "cefr": "B2"
+  },
+  {
+    "word": "hit the jackpot",
+    "zh": "中大獎；交上好運",
+    "pos": "phrase",
+    "cefr": "B2"
+  },
+  {
+    "word": "endeavor",
+    "zh": "（需要努力的）事業；嘗試",
+    "pos": "noun",
+    "cefr": "C1"
+  },
+  {
+    "word": "adversity",
+    "zh": "逆境；困境",
+    "pos": "noun",
+    "cefr": "C1"
+  }
+]
