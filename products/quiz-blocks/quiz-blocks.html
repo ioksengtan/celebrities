@@ -369,21 +369,50 @@ function maybeLevelUp(){
   if (targetLevel > qb.level) qb.level = targetLevel;
 }
 
-/* ---- grid + gravity (single-cell pieces only in this first cut) ---- */
+/* ---- shapes: block size signals difficulty, same idea as the Executive
+   English falling-block game, but with both 1x2 and 2x1 since there's more
+   width to spare here (8 columns, not 6). ---- */
+function shapeFor(cefr){
+  if (cefr === "B2") return Math.random() < 0.5 ? { w: 1, h: 2 } : { w: 2, h: 1 };
+  if (cefr === "C1") return { w: 2, h: 2 };
+  return { w: 1, h: 1 }; // A2 / B1
+}
+
+/* ---- grid + gravity (width/height-aware so shapes can span multiple cells) ---- */
 function firstOccupiedRow(col){
   for (let r = 0; r < ROWS; r++){ if (qb.grid[r][col]) return r; }
   return ROWS;
 }
-function landingRow(col){ return firstOccupiedRow(col) - 1; }
+function landingRow(col, w, h){
+  let minBottomExclusive = ROWS;
+  for (let c = col; c < col + w; c++){
+    minBottomExclusive = Math.min(minBottomExclusive, firstOccupiedRow(c));
+  }
+  return minBottomExclusive - h;
+}
 
-function gridPlace(piece){ qb.grid[piece.row][piece.col] = piece.id; }
-function gridClear(piece){ if (qb.grid[piece.row][piece.col] === piece.id) qb.grid[piece.row][piece.col] = null; }
+function gridPlace(piece){
+  for (let r = piece.row; r < piece.row + piece.shape.h; r++){
+    for (let c = piece.col; c < piece.col + piece.shape.w; c++) qb.grid[r][c] = piece.id;
+  }
+}
+function gridClear(piece){
+  for (let r = piece.row; r < piece.row + piece.shape.h; r++){
+    for (let c = piece.col; c < piece.col + piece.shape.w; c++){
+      if (qb.grid[r][c] === piece.id) qb.grid[r][c] = null;
+    }
+  }
+}
 
 function canDrop(piece){
   const newRow = piece.row + 1;
-  if (newRow >= ROWS) return false;
+  if (newRow + piece.shape.h > ROWS) return false;
   gridClear(piece);
-  const ok = !qb.grid[newRow][piece.col];
+  let ok = true;
+  const checkRow = newRow + piece.shape.h - 1;
+  for (let c = piece.col; c < piece.col + piece.shape.w; c++){
+    if (qb.grid[checkRow][c]){ ok = false; break; }
+  }
   gridPlace(piece);
   return ok;
 }
@@ -404,27 +433,57 @@ function settle(){
   });
 }
 
+/* A rescue-clear can open up room under the piece that's still falling (its
+   landing target was fixed back when that space was occupied). Recompute
+   its target against the current grid and, if there's more room now,
+   re-animate the remaining distance at the same speed instead of leaving
+   it stranded above a gap. */
+function retargetFallingPiece(){
+  if (!qb || !qb.piece || qb.piece.resolved) return;
+  const piece = qb.piece;
+  const newRow = landingRow(piece.col, piece.shape.w, piece.shape.h);
+  if (newRow <= piece.topRow) return;
+
+  clearTimeout(qb.fallTimer);
+  const boardRect = document.getElementById("qb-board").getBoundingClientRect();
+  const curTop = piece.el.getBoundingClientRect().top - boardRect.top;
+  piece.el.style.transition = "none";
+  piece.el.style.top = curTop + "px";
+  void piece.el.offsetHeight;
+
+  const newTargetTop = newRow * UNIT;
+  const remainingPx = Math.max(0, newTargetTop - curTop);
+  const pxPerMs = (ROWS * UNIT) / fallDurationFor(qb.level);
+  const remainingMs = Math.max(300, remainingPx / pxPerMs);
+  piece.topRow = newRow;
+  piece.el.style.transition = "top " + remainingMs + "ms linear";
+  piece.el.style.top = newTargetTop + "px";
+  qb.fallTimer = setTimeout(()=> resolveFalling(null), remainingMs);
+}
+
 function spawnPiece(){
   if (!qb || !qb.running) return;
-  const candidates = shuffledCopy(Array.from({ length: COLS }, (_, i) => i));
+  const q = makeQuestion();
+  const shape = shapeFor(q.entry.cefr);
+  const maxCol = COLS - shape.w;
+  const candidates = shuffledCopy(Array.from({ length: Math.max(1, maxCol + 1) }, (_, i) => i));
   let col = -1, row = -1;
   for (const c of candidates){
-    const r = landingRow(c);
+    const r = landingRow(c, shape.w, shape.h);
     if (r >= 0){ col = c; row = r; break; }
   }
   if (col < 0){ endGame(); return; }
 
-  const q = makeQuestion();
   const el = document.createElement("div");
   el.className = "qb-cell spawning";
-  el.style.width = CELL + "px";
-  el.style.height = CELL + "px";
+  el.style.width = (shape.w * CELL + (shape.w - 1) * GAP) + "px";
+  el.style.height = (shape.h * CELL + (shape.h - 1) * GAP) + "px";
   el.style.left = (col * UNIT) + "px";
   el.style.top = "0px";
   document.getElementById("qb-board").appendChild(el);
 
   qb.piece = { id: null, entry: q.entry, direction: q.direction, correctSide: q.correctSide,
-    options: q.options, col, row, topRow: row, resolved: false, el };
+    options: q.options, shape, col, row, topRow: row, resolved: false, el };
   qb.totalCount++;
   showLiveQuestion(q);
 
@@ -541,6 +600,7 @@ function resolveRescue(side){
       piece.el.classList.add("clearing");
       setTimeout(()=> piece.el.remove(), 220);
       settle();
+      retargetFallingPiece();
       finish();
     }, 280);
   } else {
