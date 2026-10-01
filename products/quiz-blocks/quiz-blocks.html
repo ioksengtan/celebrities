@@ -111,6 +111,12 @@
     display: flex; align-items: center; justify-content: center;
   }
   .qb-cell.spawning{ animation: qb-spawn-pop .3s cubic-bezier(.34,1.56,.64,1); }
+  /* The still-falling piece needs to read as unmistakably "in motion" so
+     it's never mistaken for a stranded locked block mid-flight. */
+  .qb-cell.falling{
+    box-shadow: 0 0 0 3px var(--accent), 0 5px 10px rgba(0,0,0,.3);
+    z-index: 2;
+  }
   .qb-cell.locked{ filter: saturate(.5) brightness(.92); cursor: pointer; }
   .qb-cell.locked:hover{ filter: saturate(.7) brightness(1); box-shadow: 0 0 0 2px var(--accent); }
   .qb-cell.targeting{ animation: qb-pulse 1s ease-in-out infinite; }
@@ -468,7 +474,7 @@ function spawnPiece(){
   if (col < 0){ endGame(); return; }
 
   const el = document.createElement("div");
-  el.className = "qb-cell spawning";
+  el.className = "qb-cell spawning falling";
   el.style.background = QB_PALETTE[Math.floor(Math.random() * QB_PALETTE.length)];
   el.style.borderRadius = randomDoodleCorners();
   el.style.width = (shape.w * CELL + (shape.w - 1) * GAP) + "px";
@@ -502,6 +508,7 @@ function checkOverflow(){ return qb.grid[0].some(cell => cell !== null); }
 
 function lockPiece(piece){
   piece.id = qb.nextId++;
+  piece.el.classList.remove("falling");
   piece.el.classList.add("locked", "wrong-flash");
   piece.el.addEventListener("click", ()=> clickLocked(piece.id));
   qb.pieces[piece.id] = piece;
