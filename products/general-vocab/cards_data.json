@@ -2560,5 +2560,61 @@
     "speaker": "jb",
     "event": "Museum of Flight Student Q&A",
     "date": "2017-05-20"
+  },
+{
+    "id": 184,
+    "word": "diffusion rate",
+    "pos": "phrase",
+    "cefr": "C1",
+    "rarity": "legendary",
+    "zh": "擴散速度（新技術被社會普遍採用的速度）",
+    "def_en": "how quickly a new technology or idea spreads and is widely adopted, as opposed to how quickly it is invented",
+    "example": "So, the diffusion rate is different from the invention rate.",
+    "syn": "rate of adoption, uptake",
+    "speaker": "es",
+    "event": "Inside Blackstone Podcast",
+    "date": "2026-09-29"
+  },
+  {
+    "id": 185,
+    "word": "picks and shovels",
+    "pos": "phrase",
+    "cefr": "C1",
+    "rarity": "legendary",
+    "zh": "賣鏟子的生意（不直接淘金，而是供應工具與基礎設施）",
+    "def_en": "businesses that supply the tools and infrastructure for a boom rather than chasing the boom itself, from the gold rush idea of selling equipment to miners",
+    "example": "And this picks and shovels thing is real.",
+    "syn": "infrastructure play, suppliers",
+    "speaker": "es",
+    "event": "Inside Blackstone Podcast",
+    "date": "2026-09-29"
+  },
+  {
+    "id": 186,
+    "word": "AI-native",
+    "pos": "adj",
+    "cefr": "B2",
+    "rarity": "rare",
+    "zh": "人工智慧原生的（從一開始就以人工智慧為核心來設計或經營）",
+    "def_en": "built or run with artificial intelligence at the core from the start, rather than added on later",
+    "example": "The term that I've been using is being an AI-native CEO.",
+    "syn": "AI-first",
+    "speaker": "es",
+    "event": "Inside Blackstone Podcast",
+    "date": "2026-09-29"
+  },
+  {
+    "id": 187,
+    "word": "cost of entry",
+    "pos": "phrase",
+    "cefr": "B2",
+    "rarity": "rare",
+    "zh": "進入門檻成本（開始做某事所需的代價）",
+    "def_en": "the money, effort or resources needed to start doing something or to enter a market",
+    "example": "I've never seen the cost of entry to be so low and the availability of these ideas so great.",
+    "syn": "barrier to entry, entry cost",
+    "speaker": "es",
+    "event": "Inside Blackstone Podcast",
+    "date": "2026-09-29"
   }
 ]
