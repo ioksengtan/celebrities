@@ -1,7 +1,7 @@
 {
   "metadata": {
     "created_date": "2026-09-06",
-    "total_speeches": 41,
+    "total_speeches": 43,
     "index_types": [
       "topic_index",
       "timeline_index",
@@ -11,12 +11,12 @@
       "quotes_index",
       "length_index"
     ],
-    "updated_date": "2026-09-30"
+    "updated_date": "2026-10-04"
   },
   "topic_index": [
     {
       "topic": "ai infrastructure",
-      "count": 4,
+      "count": 5,
       "speeches": [
         {
           "id": "JH-2025-001",
@@ -44,6 +44,13 @@
           "speaker": "satya_nadella",
           "event": "Satya Nadella on the AI Doomer Slowdown, Microsoft’s Master Plan & Who Wins AI",
           "date": null,
+          "type": "interview"
+        },
+        {
+          "id": "ES-2026-001",
+          "speaker": "eric_schmidt",
+          "event": "Inside Blackstone: Former Google CEO Eric Schmidt: The Road to Superintelligence",
+          "date": "2026-09-29",
           "type": "interview"
         }
       ]
@@ -1692,6 +1699,117 @@
           "type": "interview"
         }
       ]
+    },
+    {
+      "topic": "artificial intelligence",
+      "count": 2,
+      "speeches": [
+        {
+          "id": "ES-2026-001",
+          "speaker": "eric_schmidt",
+          "event": "Inside Blackstone: Former Google CEO Eric Schmidt: The Road to Superintelligence",
+          "date": "2026-09-29",
+          "type": "interview"
+        },
+        {
+          "id": "YL-2026-001",
+          "speaker": "yann_lecun",
+          "event": "Sciences Po Grande Conférence: Yann Le Cun — Où va l’intelligence artificielle ?",
+          "date": "2026-09-16",
+          "type": "interview"
+        }
+      ]
+    },
+    {
+      "topic": "superintelligence",
+      "count": 1,
+      "speeches": [
+        {
+          "id": "ES-2026-001",
+          "speaker": "eric_schmidt",
+          "event": "Inside Blackstone: Former Google CEO Eric Schmidt: The Road to Superintelligence",
+          "date": "2026-09-29",
+          "type": "interview"
+        }
+      ]
+    },
+    {
+      "topic": "deep reasoning",
+      "count": 1,
+      "speeches": [
+        {
+          "id": "ES-2026-001",
+          "speaker": "eric_schmidt",
+          "event": "Inside Blackstone: Former Google CEO Eric Schmidt: The Road to Superintelligence",
+          "date": "2026-09-29",
+          "type": "interview"
+        }
+      ]
+    },
+    {
+      "topic": "career risk-taking",
+      "count": 1,
+      "speeches": [
+        {
+          "id": "ES-2026-001",
+          "speaker": "eric_schmidt",
+          "event": "Inside Blackstone: Former Google CEO Eric Schmidt: The Road to Superintelligence",
+          "date": "2026-09-29",
+          "type": "interview"
+        }
+      ]
+    },
+    {
+      "topic": "world models",
+      "count": 1,
+      "speeches": [
+        {
+          "id": "YL-2026-001",
+          "speaker": "yann_lecun",
+          "event": "Sciences Po Grande Conférence: Yann Le Cun — Où va l’intelligence artificielle ?",
+          "date": "2026-09-16",
+          "type": "interview"
+        }
+      ]
+    },
+    {
+      "topic": "large language model limits",
+      "count": 1,
+      "speeches": [
+        {
+          "id": "YL-2026-001",
+          "speaker": "yann_lecun",
+          "event": "Sciences Po Grande Conférence: Yann Le Cun — Où va l’intelligence artificielle ?",
+          "date": "2026-09-16",
+          "type": "interview"
+        }
+      ]
+    },
+    {
+      "topic": "machine learning history",
+      "count": 1,
+      "speeches": [
+        {
+          "id": "YL-2026-001",
+          "speaker": "yann_lecun",
+          "event": "Sciences Po Grande Conférence: Yann Le Cun — Où va l’intelligence artificielle ?",
+          "date": "2026-09-16",
+          "type": "interview"
+        }
+      ]
+    },
+    {
+      "topic": "human intelligence",
+      "count": 1,
+      "speeches": [
+        {
+          "id": "YL-2026-001",
+          "speaker": "yann_lecun",
+          "event": "Sciences Po Grande Conférence: Yann Le Cun — Où va l’intelligence artificielle ?",
+          "date": "2026-09-16",
+          "type": "interview"
+        }
+      ]
     }
   ],
   "timeline_index": [
@@ -2063,7 +2181,7 @@
     },
     {
       "month": "2026-09",
-      "count": 3,
+      "count": 5,
       "speeches": [
         {
           "id": "SA-2026-005",
@@ -2081,6 +2199,18 @@
           "id": "LBT-2026-001",
           "speaker": "lip_bu_tan",
           "event": "Lip-Bu Tan: From Nuclear Engineer to Intel’s CEO（A Bit Personal with Jodi Shelton）",
+          "type": "interview"
+        },
+        {
+          "id": "ES-2026-001",
+          "speaker": "eric_schmidt",
+          "event": "Inside Blackstone: Former Google CEO Eric Schmidt: The Road to Superintelligence",
+          "type": "interview"
+        },
+        {
+          "id": "YL-2026-001",
+          "speaker": "yann_lecun",
+          "event": "Sciences Po Grande Conférence: Yann Le Cun — Où va l’intelligence artificielle ?",
           "type": "interview"
         }
       ]
@@ -2138,7 +2268,9 @@
         "JB-2016-001",
         "JB-2017-003",
         "JB-2018-001",
-        "JB-2020-001"
+        "JB-2020-001",
+        "ES-2026-001",
+        "YL-2026-001"
       ],
       "panel": [
         "EM-2026-002",
@@ -2152,7 +2284,7 @@
     },
     "counts": {
       "keynote": 10,
-      "interview": 26,
+      "interview": 28,
       "panel": 3,
       "town_hall": 2
     }
@@ -2227,7 +2359,9 @@
         "JB-2016-001",
         "JB-2017-003",
         "JB-2018-001",
-        "JB-2020-001"
+        "JB-2020-001",
+        "ES-2026-001",
+        "YL-2026-001"
       ],
       "enterprise": [
         "JH-2026-002",
@@ -2429,7 +2563,8 @@
         "JB-2017-002",
         "JB-2017-003",
         "JB-2018-001",
-        "JB-2020-001"
+        "JB-2020-001",
+        "ES-2026-001"
       ],
       "life advice": [
         "JB-2001-001",
@@ -2444,6 +2579,13 @@
       ],
       "town_hall": [
         "JB-2017-002"
+      ],
+      "AI": [
+        "ES-2026-001",
+        "YL-2026-001"
+      ],
+      "research": [
+        "YL-2026-001"
       ]
     },
     "counts": {
@@ -2457,7 +2599,7 @@
       "consumer": 1,
       "CES": 1,
       "product launch": 1,
-      "interview": 26,
+      "interview": 28,
       "enterprise": 2,
       "economics": 1,
       "GTC": 1,
@@ -2516,9 +2658,11 @@
       "AI safety": 1,
       "leadership": 1,
       "semiconductors": 1,
-      "career": 10,
+      "career": 11,
       "life advice": 9,
-      "town_hall": 1
+      "town_hall": 1,
+      "AI": 2,
+      "research": 1
     }
   },
   "special_speeches": [
@@ -2592,7 +2736,7 @@
   ],
   "length_index": {
     "short": {
-      "count": 10,
+      "count": 11,
       "speeches": [
         {
           "id": "JH-2026-006",
@@ -2653,6 +2797,12 @@
           "speaker": "jeff_bezos",
           "event": "SATELLITE 2017 Keynote",
           "word_count": 3400
+        },
+        {
+          "id": "ES-2026-001",
+          "speaker": "eric_schmidt",
+          "event": "Inside Blackstone: Former Google CEO Eric Schmidt: The Road to Superintelligence",
+          "word_count": 4500
         }
       ]
     },
@@ -2776,7 +2926,7 @@
       ]
     },
     "long": {
-      "count": 9,
+      "count": 10,
       "speeches": [
         {
           "id": "JH-2024-001",
@@ -2831,6 +2981,12 @@
           "speaker": "lip_bu_tan",
           "event": "Lip-Bu Tan: From Nuclear Engineer to Intel’s CEO（A Bit Personal with Jodi Shelton）",
           "word_count": 10100
+        },
+        {
+          "id": "YL-2026-001",
+          "speaker": "yann_lecun",
+          "event": "Sciences Po Grande Conférence: Yann Le Cun — Où va l’intelligence artificielle ?",
+          "word_count": 14000
         }
       ]
     },
@@ -3019,6 +3175,38 @@
         "JB-2017-003",
         "JB-2018-001",
         "JB-2020-001"
+      ]
+    },
+    "eric_schmidt": {
+      "name": "Eric Schmidt",
+      "title": "CEO & Chair",
+      "company": "Relativity Space",
+      "topics": [
+        "artificial intelligence",
+        "superintelligence",
+        "deep reasoning",
+        "AI infrastructure",
+        "technology history"
+      ],
+      "total_speeches": 1,
+      "entries": [
+        "ES-2026-001"
+      ]
+    },
+    "yann_lecun": {
+      "name": "Yann LeCun",
+      "title": "Executive Chairman",
+      "company": "Advanced Machine Intelligence",
+      "topics": [
+        "artificial intelligence",
+        "world models",
+        "machine learning",
+        "large language model limits",
+        "human intelligence"
+      ],
+      "total_speeches": 1,
+      "entries": [
+        "YL-2026-001"
       ]
     }
   }

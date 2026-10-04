@@ -23,7 +23,7 @@ Hold this round (never verified on the wall): `EM-2026-005`, `SA-2026-001`.
 
 ## Other
 
-- `speeches_database.json` — 41 speeches/interviews (including one undated interview) metadata.
+- `speeches_database.json` — 43 speeches/interviews (including one undated interview) metadata.
 - `speeches_indexes.json` — 7 derived index views.
 - `product_recommendations.json` — candidate product ideas.
 - `美國大學畢業典禮名人演講專案報告（完整版）.docx` — full project report.
@@ -49,3 +49,11 @@ Hold this round (never verified on the wall): `EM-2026-005`, `SA-2026-001`.
 - Seventeen quotes are in `quotes_index.json`. Sixteen are `verified` as exact substrings of the in-repo excerpt. `JB-2017-002-Q03` stays `draft` (filler “um”; sentence boundary not re-listened) and stays off the verified wall. Quote text and status were not edited.
 - Vanity Fair (`JB-2016-001`) uses the event date 2016-10-20.
 - Speech pages: `products/core/speech.html?id=JB-2010-001` (and the other `JB-*` ids). Verified quotes appear on the quotes wall under speaker `jb`.
+
+## Eric Schmidt and Yann LeCun import (2026-10-04)
+
+- Two original speeches: `ES-2026-001` (Inside Blackstone, 2026-09-29, `duration_minutes` 33) and `YL-2026-001` (Sciences Po Grande Conférence, 2026-09-16, French). Excerpt transcripts are in `transcripts/ES-2026-001.txt` and `transcripts/YL-2026-001.txt`. This batch has no editorials and no Chinese summaries.
+- Twelve quotes are in `quotes_index.json`, all `verified`, and each quote is a verbatim substring of its in-repo excerpt. Quote text, translations, and status were not edited.
+- Eric Schmidt quotes use `source_type` `official_transcript`. Yann LeCun quotes use `source_type` `platform_auto_captions` (French auto-captions cross-checked with a transcription). No new `source_type` value was added.
+- Non-English quotes may set `quote_lang` (BCP 47; absent means `en`) and `quote_en` (required when `quote_lang` is not `en`, and absent when it is `en`). The six Yann LeCun quotes are `quote_lang: "fr"`; `quote` is the French original, and `quote_en` / `quote_zh` are translations. `tools/validate-content.mjs` checks that pair of rules.
+- Speech pages: `products/core/speech.html?id=ES-2026-001` and `products/core/speech.html?id=YL-2026-001`. Verified quotes appear on the quotes wall under speakers `es` and `yl`.

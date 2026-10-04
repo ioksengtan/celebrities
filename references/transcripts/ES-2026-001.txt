@@ -1,0 +1,48 @@
+Inside Blackstone: Former Google CEO Eric Schmidt: The Road to Superintelligence
+場次日期：2026-09-29；主辦：Blackstone（Inside Blackstone 播客）；主持：Christine Anderson（Blackstone Global Head of Corporate Affairs）
+原始影片：https://www.youtube.com/watch?v=PSbUom-p1hU（Blackstone 官方 YouTube）
+官方逐字稿：https://www.blackstone.com/insights/article/former-google-ceo-eric-schmidt-the-road-to-superintelligence/
+著作權說明：本檔只存語錄所在段落及前後各一段的官方逐字稿節錄，不存全文；全文請見上列來源網址。官方稿說話人標示如 Christine Anderson:、Eric Schmidt: 之排版斷行已正規化。
+
+【官方逐字稿節錄】
+-- ES-2026-001-Q01（原始影片時間碼 06:34）
+Christine Anderson: You're not dead yet by any means. And I guess that's my question is, you're 71. When most people achieve the kind of success you have, or not even close, they spend the rest of their life sort of talking about it and what they accomplished. You keep reinventing yourself.
+Eric Schmidt: I can't seem to stop. My own view is as you get older, you should take on more risk because you have less to lose, right?
+Christine Anderson: Right.
+
+-- ES-2026-001-Q02（原始影片時間碼 10:21）
+Christine Anderson: Let's go back to the internet, because I think it's so interesting. You've been around the rise of the internet and other platform, you know, shifts, the rise at enterprise software, search, cloud computing, mobile, all of these major technological innovations. Why does this moment feel different to you?
+Eric Schmidt: It's not different, it's just bigger.
+Christine Anderson: Bigger.
+
+-- ES-2026-001-Q03（原始影片時間碼 11:27）
+Christine Anderson: It'll come.
+Eric Schmidt: But it's coming in the different cities, including obviously Waymo and other competitors. But why do I mention self-driving cars? They were largely, they were designed in the 90s. The first real test of self-driving cars was 2004. So that's 22 years and going. So, the diffusion rate is different from the invention rate. So, the faster the diffusion rate, the sort of broad adoption, the quicker the societal change. Why does it occur in what I do first? It's because we're already connected, right? It's essentially a softer problem. It's just connectivity. The marginal cost of connectivity, given we're so connected, is very low. The incremental cost of connecting you and me is essentially zero. Boom, it just happens. It's straightforward economics. Whereas getting self-driving cars is a great deal of capital. It's hard, and so forth. People are working on it. Why 20 years versus zero years, and that's the answer. You see the same, by the way, in AI. All of the gains right now are occurring in what is called, essentially, scale-free. And scale-free means that you can just keep doing it and get smarter. So, in math, I'm not a mathematician, but as best I can understand, they can just invent stuff, and they just keep inventing things, and they keep inventing things, and they're so clever. Well, now a computer can take all of those ideas, and if you just give it enough juice, it can do the same thing. Because it doesn't need data, it's self-contained.
+Christine Anderson: Unlocking all these solutions.
+
+-- ES-2026-001-Q04（原始影片時間碼 16:49）
+Christine Anderson: I would guess that your social network might be a little bit different than mine. What's the buzziest thing that you were hearing about this summer in the AI circles?
+Eric Schmidt: The biggest and most important thing that has occurred in the last year is the arrival of long reasoning, deep reasoning. And when I say long reasoning, I mean eight hours of reasoning. So, what would happen is that you would start a year ago or two and it could kind of begin thinking and then it would start thinking about something else.
+Christine Anderson: Get distracted, like I do?
+
+-- ES-2026-001-Q05（原始影片時間碼 18:05）
+Christine Anderson: Right. Right.
+Eric Schmidt: That problem was solved using essentially technical guardrails for what it kept thinking, so they said stay focused, stay focused, stay focused, is the way to understand it and that produced the ability to ask very, they're called chain of thought trains, where you can basically see its thinking how it solved a problem and these chains can be a thousand steps, two thousand steps. Now why am I mentioning this? I don't know about you, I can't think a thousand steps. I just don't, I'm just not that smart, but it can. So, it looks like deep reasoning will allow you to see deeper, as a human, than a human. The best AI is in service of humans doing things that humans are not so good at.
+Christine Anderson: So artificial superintelligence, how will we know we've achieved it and what do you think the timeline is?
+
+-- ES-2026-001-Q06（原始影片時間碼 28:25）
+Christine Anderson: So, I have a bunch of young kids. I have two that are nearing their college years. What would you tell young people to study today?
+Eric Schmidt: I used to say biology, now I say deep reasoning.
+Christine Anderson: Okay.
+Eric Schmidt: If you're a non-technical person, you should figure out how to use these tools to make your dreams and your realities extraordinarily scaled. You want to be a global star, a global influencer, a global impactor, a global discoverer, a global singer, you want to use these tools, whatever it is that you want. Figure out a way to use them to amplify you and what you care about and your innate goodness. If you're a technical person, use the same tools to invent stuff and to invent stuff that changes the world. I've never seen the cost of entry to be so low and the availability of these ideas so great. The only thing that limits you is your curiosity, your willingness to take risks and so forth. So, get over it. And say, I want to dream, I want to use these tools to have this enormous impact, right? And some of you, not everybody, will have a huge impact. And it won't just be coming, being financially successful, you might become famous or important in something that you didn't even know was important, but you'll be so proud of yourself.
+Christine Anderson: I love the optimistic future that you've painted, and all that you taught us today. I really appreciate it. Thank you so, so much.
+
+-- 詞彙候選 picks and shovels（原始影片時間碼 25:35）
+Christine Anderson: Picks and shovels, we have a whole thing on this, Eric.
+Eric Schmidt: And this picks and shovels thing is real. So, from the standpoint of the economy, those are huge, they're real businesses. There's an estimate that 11% of US electricity demand in 2030 will be AI data-center-related. That's an extraordinary transition by any measure. Historically it was 2% or 3%. So, and that build-out is one of the primary drivers of economic growth in America today. So, thank goodness for that.
+Christine Anderson: If you could leave CEOs with one takeaway today, what would it be?
+
+-- 詞彙候選 AI-native（原始影片時間碼 26:07）
+Christine Anderson: If you could leave CEOs with one takeaway today, what would it be?
+Eric Schmidt: The term that I've been using is being an AI-native CEO. So, what I'm trying to do in all my things is I'm tying to fully automate the execution of the businesses. In the factory floor in Relativity, I was walking through it one day and I thought, how many computers are here? So, I said, why don't we connect them all? So, they just connected all the computers. And so, the immediate thing that they can do, using AI, is they can look at, sort of, utilization, cross utilization times in new ways. It occurs as a natural byproduct of getting the digital systems connected. Furthermore, if you take generic data, unstructured data, and you connect it all, these systems are smart enough that they can interpolate between one data normalcy and another. In other words, they can combine disparate datasets and give you business insights. So how do I make more money? How do I increase customer retention? How do make sure I don't lose a customer? You can ask these questions. What I've been struck by is that when you take open-source data, that is public data, plus the proprietary data in your business, and you put it into a system, and you start asking questions, I go crazy over it. You can now talk across all of the data. You can get data fusion. You can actually figure stuff out.
+Christine Anderson: It drives me crazy a little bit, though, when I do have content given to me that is generated by the computer.

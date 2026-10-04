@@ -7,7 +7,13 @@
     sn: { key: "sn", db: "satya_nadella", name: "Satya Nadella", short: "納德拉", company: "Microsoft" },
     mz: { key: "mz", db: "mark_zuckerberg", name: "Mark Zuckerberg", short: "祖克柏", company: "Meta" },
     lbt: { key: "lbt", db: "lip_bu_tan", name: "Lip-Bu Tan", short: "陳立武", company: "Intel" },
-    jb: { key: "jb", db: "jeff_bezos", name: "Jeff Bezos", short: "貝佐斯", company: "Amazon" }
+    jb: { key: "jb", db: "jeff_bezos", name: "Jeff Bezos", short: "貝佐斯", company: "Amazon" },
+    es: { key: "es", db: "eric_schmidt", name: "Eric Schmidt", short: "施密特", company: "Relativity Space" },
+    yl: { key: "yl", db: "yann_lecun", name: "Yann LeCun", short: "楊立昆", company: "Advanced Machine Intelligence" }
+  };
+
+  const QUOTE_LANG_NAMES = {
+    fr: "法文"
   };
 
   const FEATURED_SPEECH_IDS = [
@@ -239,6 +245,14 @@
     });
   }
 
+  function quoteLang(entry) {
+    return entry.quote_lang || "en";
+  }
+
+  function quoteLangName(code) {
+    return QUOTE_LANG_NAMES[code] || code;
+  }
+
   function quoteCardHtml(entry, paths, opts) {
     const options = opts || {};
     const speaker = normalizeSpeaker(entry.speaker);
@@ -246,7 +260,10 @@
     const qid = entry.quote_id || "";
     const anchor = quoteAnchor(entry);
     const attr = attributionLine(entry);
-    const copyEn = copyPayload(entry.quote, entry);
+    const lang = quoteLang(entry);
+    const nonEnglish = lang !== "en";
+    const copyOriginal = copyPayload(entry.quote, entry);
+    const copyEnTranslation = copyPayload(entry.quote_en, entry);
     const copyZh = copyPayload(entry.quote_zh, entry);
     const speechLink = entry.speech_id
       ? speechHref(paths, entry.speech_id, qid)
@@ -257,11 +274,19 @@
     const speechBtn = speechLink && !options.hideSpeech
       ? '<a class="btn action" href="' + escapeHtml(speechLink) + '">單場</a>'
       : "";
+    const originalLabel = nonEnglish ? "複製原文（" + quoteLangName(lang) + "）" : "複製英文";
+    const quoteClass = nonEnglish ? "quote-original" : "quote-en";
 
     return (
       '<article class="quote-card" id="' + escapeHtml(anchor) + '" data-speaker="' + escapeHtml(speaker) + '" data-quote-id="' + escapeHtml(qid) + '">' +
-        "<blockquote class=\"quote-en\">" + escapeHtml(entry.quote) + "</blockquote>" +
-        (entry.quote_zh ? "<p class=\"quote-zh\">" + escapeHtml(entry.quote_zh) + "</p>" : "") +
+        "<blockquote class=\"" + quoteClass + "\" lang=\"" + escapeHtml(lang) + "\">" + escapeHtml(entry.quote) + "</blockquote>" +
+        (nonEnglish && entry.quote_en
+          ? "<p class=\"quote-translation\" lang=\"en\">英文譯文：" + escapeHtml(entry.quote_en) + "</p>"
+          : "") +
+        (entry.quote_zh
+          ? "<p class=\"quote-zh" + (nonEnglish ? " is-translation" : "") + "\">" +
+              (nonEnglish ? "中文譯文：" : "") + escapeHtml(entry.quote_zh) + "</p>"
+          : "") +
         '<div class="quote-meta">' +
           '<span class="speaker-name">' + escapeHtml(meta.name) + "</span>" +
           (entry.event ? "<span>" + escapeHtml(entry.event) + "</span>" : "") +
@@ -272,7 +297,10 @@
           : "") +
         '<div class="card-actions">' +
           source +
-          '<button type="button" class="btn action" data-copy="' + encodeURIComponent(copyEn) + '">複製英文</button>' +
+          '<button type="button" class="btn action" data-copy="' + encodeURIComponent(copyOriginal) + '">' + originalLabel + "</button>" +
+          (nonEnglish && entry.quote_en
+            ? '<button type="button" class="btn action" data-copy="' + encodeURIComponent(copyEnTranslation) + '">複製英文譯文</button>'
+            : "") +
           (entry.quote_zh
             ? '<button type="button" class="btn action" data-copy="' + encodeURIComponent(copyZh) + '">複製中文</button>'
             : "") +
