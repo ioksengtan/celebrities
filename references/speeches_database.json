@@ -2,14 +2,14 @@
   "metadata": {
     "created_date": "2026-09-06",
     "time_range": "2001-05 to 2026-09",
-    "total_entries": 41,
+    "total_entries": 43,
     "categories": [
       "keynote",
       "interview",
       "panel",
       "town_hall"
     ],
-    "updated_date": "2026-09-30"
+    "updated_date": "2026-10-04"
   },
   "speakers": {
     "jensen_huang": {
@@ -164,6 +164,36 @@
         "JB-2017-003",
         "JB-2018-001",
         "JB-2020-001"
+      ]
+    },
+    "eric_schmidt": {
+      "name": "Eric Schmidt",
+      "title": "CEO & Chair",
+      "company": "Relativity Space",
+      "topics": [
+        "artificial intelligence",
+        "superintelligence",
+        "deep reasoning",
+        "AI infrastructure",
+        "technology history"
+      ],
+      "entries": [
+        "ES-2026-001"
+      ]
+    },
+    "yann_lecun": {
+      "name": "Yann LeCun",
+      "title": "Executive Chairman",
+      "company": "Advanced Machine Intelligence",
+      "topics": [
+        "artificial intelligence",
+        "world models",
+        "machine learning",
+        "large language model limits",
+        "human intelligence"
+      ],
+      "entries": [
+        "YL-2026-001"
       ]
     }
   },
@@ -1262,6 +1292,68 @@
       "verification_status": "transcript_text_verified",
       "imported_date": "2026-09-30",
       "notes_zh": "原始場次：Amazon Prime Video India 爐邊對談（Jeff Bezos 首度訪問 Mumbai）；Mumbai, India；主持或訪問：Shah Rukh Khan、Zoya Akhtar。影片來源：Prime Video India 官方 YouTube。本場次由第三方剪輯合輯 Business Motiversity〈\"I Got Rich When I Understood This\" | Jeff Bezos〉（https://youtu.be/7TWKKww-F30，2022-05-16 上傳）引用，但出處一律標原始場次，不標合輯。無官方逐字稿，英文語錄以 YouTube 平台自動字幕核對（逐字子字串），未對影片全程校聽。Q01 標 verified。本庫內只存語錄附近節錄，不存全文。"
+    },
+    {
+      "id": "ES-2026-001",
+      "speaker": "eric_schmidt",
+      "date": "2026-09-29",
+      "event": "Inside Blackstone: Former Google CEO Eric Schmidt: The Road to Superintelligence",
+      "location": null,
+      "type": "interview",
+      "duration_minutes": 33,
+      "topics": [
+        "artificial intelligence",
+        "superintelligence",
+        "deep reasoning",
+        "AI infrastructure",
+        "career risk-taking"
+      ],
+      "key_quotes": [],
+      "transcript_url": "https://www.blackstone.com/insights/article/former-google-ceo-eric-schmidt-the-road-to-superintelligence/",
+      "video_url": "https://www.youtube.com/watch?v=PSbUom-p1hU",
+      "language": "en",
+      "word_count_estimate": 4500,
+      "product_tags": [
+        "interview",
+        "AI",
+        "career"
+      ],
+      "transcript_path": "references/transcripts/ES-2026-001.txt",
+      "source_type": "official_transcript",
+      "verification_status": "transcript_text_verified",
+      "imported_date": "2026-10-04",
+      "notes_zh": "原始場次：Blackstone 自家每週播客 Inside Blackstone 當集（影片與官方逐字稿同日 2026-09-29 發布；片中氣象段說 It's Tuesday, September 29th）；主辦 Blackstone；主持 Christine Anderson（Blackstone Global Head of Corporate Affairs）。全集約 33 分鐘，Eric Schmidt 訪談在 05:21–29:49，其餘為 Monday Morning Meeting（Gilles Dellaert）、Economic Weather Report（Winfield Sickles）、Debrief（Jas Khaira），不屬本講者。錄製地點未載明。英文語錄以 Blackstone 官方逐字稿核對，並對上傳者人工英文字幕與自動字幕；時間碼以自動字幕逐詞對齊。本庫只存語錄附近節錄，不存全文。"
+    },
+    {
+      "id": "YL-2026-001",
+      "speaker": "yann_lecun",
+      "date": "2026-09-16",
+      "event": "Sciences Po Grande Conférence: Yann Le Cun — Où va l’intelligence artificielle ?",
+      "location": "Amphithéâtre Émile Boutmy, Sciences Po, 27 rue Saint-Guillaume, Paris",
+      "type": "interview",
+      "duration_minutes": 89,
+      "topics": [
+        "artificial intelligence",
+        "world models",
+        "large language model limits",
+        "machine learning history",
+        "human intelligence"
+      ],
+      "key_quotes": [],
+      "transcript_url": "https://www.youtube.com/watch?v=Y4s8NadbZfU",
+      "video_url": "https://www.youtube.com/watch?v=Y4s8NadbZfU",
+      "language": "fr",
+      "word_count_estimate": 14000,
+      "product_tags": [
+        "interview",
+        "AI",
+        "research"
+      ],
+      "transcript_path": "references/transcripts/YL-2026-001.txt",
+      "source_type": "platform_auto_captions",
+      "verification_status": "transcript_text_verified",
+      "imported_date": "2026-10-04",
+      "notes_zh": "原始場次：Sciences Po「Les Grandes Conférences」2026-2027 學年第一場，2026-09-16（週三）18:30–20:00（巴黎時間），Amphithéâtre Émile Boutmy；主辦 Sciences Po；主持 Éric Hazan（Ardabelle Capital 創辦人、Sciences Po 與 HEC 教授）；開場致詞為 Sciences Po 校長 Luis Vassy。YouTube 為 Sciences Po 官方直播錄影（直播開始 2026-09-16 16:46 UTC），非剪輯或轉載；官方活動頁：https://www.sciencespo.fr/fr/evenements/les-grandes-conferences-yann-le-cun-president-executif-d-advanced-machine-intelligence-et-laureat-du-prix-turing/ 。全程法語，前約 10 分鐘為校方與主持人開場，最後約 35 分鐘為聽眾提問。無官方逐字稿；法文語錄以 YouTube 法文自動字幕核對，並以 faster-whisper 轉錄輔助比對；英文與中文為本庫譯文。官方頁面拼法為 Yann Le Cun。本庫只存語錄附近節錄。"
     }
   ]
 }
