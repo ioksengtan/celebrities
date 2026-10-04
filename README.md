@@ -1,6 +1,6 @@
 # celebrities
 
-以科技名人（Jensen Huang、Elon Musk、Sam Altman、Sundar Pichai、Mark Zuckerberg、Jeff Bezos 等）的演講/訪談為素材，開發一系列產品：導讀摘要、單字學習卡、資料視覺化等。團隊協作與進度都存放在這個 GitHub repo。
+以科技名人（Jensen Huang、Elon Musk、Sam Altman、Sundar Pichai、Mark Zuckerberg、Jeff Bezos、Eric Schmidt、Yann LeCun 等）的演講/訪談為素材，開發一系列產品：導讀摘要、單字學習卡、資料視覺化等。團隊協作與進度都存放在這個 GitHub repo。
 
 ## 目錄結構
 
@@ -10,7 +10,7 @@ references/          原始資料與規劃文件
   quotes_index.json              合併後的已核實語錄（牆／單場共用）
   content_review_flags.json      不上牆的 speech_id
   healthy_seven_feed.json        7 場優先演講＋quotes_wall
-  speeches_database.json         41 場演講／訪談的 metadata（含 1 場日期待確認）
+  speeches_database.json         43 場演講／訪談的 metadata（含 1 場日期待確認）
   speeches_indexes.json          7 種索引視圖
   product_recommendations.json   6 個候選產品（PROD-001~006）
 

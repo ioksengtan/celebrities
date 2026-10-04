@@ -4,12 +4,12 @@
 
 - 線上版本：https://claude.ai/code/artifact/14bb1f0b-4845-4b8f-8006-08415e87639f
 - 原始碼：[`keynote-lexicon.html`](keynote-lexicon.html)（介面與互動邏輯）
-- 卡片資料：[`cards_data.json`](cards_data.json)（45 張，唯一資料來源）
+- 卡片資料：[`cards_data.json`](cards_data.json)（70 張，唯一資料來源）
 - 每日挑戰行程：[`daily_schedule.json`](daily_schedule.json)（日期 → 3 個卡片 id）
 
 ## 功能
 
-- 45 張詞彙卡，分 4 類：AI 技術術語、商業與經濟、名人語錄、新創詞彙
+- 70 張詞彙卡，分 4 類：AI 技術術語、商業與經濟、名人語錄、新創詞彙
 - **每日挑戰模式**（預設）：仿 Pokemon 開卡包的體驗——每天 3 張卡由編輯排在 `daily_schedule.json`，卡片一開始蓋著，點擊「開卡」才翻開；全部開完當天就算完成，累積連續天數，並有月曆檢視已開放的歷史（存在瀏覽器本機）。未來已排程日不能提前開啟；沒排到的日子顯示「尚未公布」
 - **稀有度**：每張卡有普通 / 稀有 / 傳說三種稀有度，傳說卡（例如黃仁勳「Very good to be home」、馬斯克「Let's enjoy the ride」）有金色鑲邊卡框，開卡瞬間還有金色閃光特效
 - **三面卡**：點卡片翻面，依序看到「詞彙 → 解釋＋原句 → 出處與延伸背景」，第三面補充場合、日期與這段話為什麼重要的背景說明

@@ -4,6 +4,15 @@
 
 ---
 
+## 2026-10-04（Eric Schmidt、Yann LeCun 入庫，非英語語錄）
+
+- 新增講者 Eric Schmidt（`eric_schmidt`／語錄牆代碼 `es`，中文短名施密特，Relativity Space，CEO & Chair）與 Yann LeCun（`yann_lecun`／`yl`，中文短名楊立昆，Advanced Machine Intelligence，Executive Chairman），以及 2 場原始演講 ES-2026-001、YL-2026-001。本批沒有導讀也沒有中文短摘要。
+- 12 則語錄全部 verified，原文、譯文與狀態未改。ES 用 `official_transcript`；YL 用法文自動字幕（`platform_auto_captions`，轉錄輔助比對），沒有新增 `source_type`。ES-2026-001 的 `duration_minutes` 維持 33（全集長度）。
+- 非英語語錄欄位定案：`quote_lang`（BCP 47，缺席＝en）、`quote_en`（非 en 時必填，en 時不可出現）。YL 六則 `quote_lang` 為 `fr`，`quote` 存法文原句。語錄牆與單場頁共用的 `quoteCardHtml`：blockquote 帶 `lang`；非英語顯示原句、`英文譯文：`、`中文譯文：`，複製鈕為「複製原文（法文）」與「複製英文譯文」。英文語錄版面與複製鈕維持原樣。`YL-2026-001` 沒有放進 `HOLD_SPEECH_IDS`。
+- 講者色：施密特淺色 `#9E3B3B`、深色 `#EE8A80`；楊立昆淺色 `#5A5F66`、深色 `#B4BAC2`。核心頁、金句與名人詞彙的色票與 SPEAKERS 一併加上。
+- 主資料庫總數 43，`time_range` 仍為 2001-05 to 2026-09。主題／時間／類型／標籤／長度／講者索引已更新。首頁講者名單加入兩人；公開演講與訪談場次 40→42（總數 43 仍含 1 場日期待確認）。已核實語錄牆 127→139 則、30→32 場。
+- 金句 README 的卡片數改為目前卡池 70，名人詞彙 README 改為 183。沒有改 `cards_data.json` 或 `daily_schedule`。
+
 ## 2026-10-01（答題方塊：多格造型＋補洞後下降方塊要接著掉）
 
 - 使用者回饋兩點：①補答把下面的方塊消掉騰出空間後，正在下降的方塊應該要接著往下掉，不能卡在原本算好的位置上方留一塊空；②為什麼全部都是 1×1，應該要有 2×2、1×2、2×1
