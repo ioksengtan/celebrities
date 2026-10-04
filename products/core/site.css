@@ -17,6 +17,8 @@
   --sn: #3F6F62;
   --lbt: #8E4A6A;
   --jb: #9A7B12;
+  --es: #9E3B3B;
+  --yl: #5A5F66;
   color-scheme: light dark;
 }
 
@@ -40,6 +42,8 @@
     --sn: #8FCBB4;
     --lbt: #E7A8C4;
     --jb: #E6C35C;
+    --es: #EE8A80;
+    --yl: #B4BAC2;
   }
 }
 
@@ -479,8 +483,11 @@ details.why p { margin: 8px 0 0; }
 .quote-card[data-speaker="sn"] { border-left-color: var(--sn); }
 .quote-card[data-speaker="lbt"] { border-left-color: var(--lbt); }
 .quote-card[data-speaker="jb"] { border-left-color: var(--jb); }
+.quote-card[data-speaker="es"] { border-left-color: var(--es); }
+.quote-card[data-speaker="yl"] { border-left-color: var(--yl); }
 
-.quote-en {
+.quote-en,
+.quote-original {
   font-family: "Fraunces", Georgia, serif;
   font-size: clamp(17px, 2.4vw, 20px);
   font-weight: 500;
@@ -489,7 +496,8 @@ details.why p { margin: 8px 0 0; }
   text-wrap: pretty;
 }
 
-.quote-zh {
+.quote-zh,
+.quote-translation {
   margin: 0;
   color: var(--muted);
   font-size: 14.5px;
@@ -508,6 +516,12 @@ details.why p { margin: 8px 0 0; }
     overflow: hidden;
     text-overflow: ellipsis;
     line-height: 1.45;
+  }
+  .quote-translation,
+  .quote-zh.is-translation {
+    white-space: normal;
+    overflow: visible;
+    text-overflow: unset;
   }
 }
 

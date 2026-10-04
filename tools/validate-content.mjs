@@ -232,6 +232,28 @@ if (!legacy.d.includes("2026-09-01")) errors.push("同步代碼：舊版 v1 仍�
 const legacyV2 = core.decodeProgress(Buffer.from(JSON.stringify({ v: 2, d: ["2026-09-01"], o: [1], a: [3] })).toString("base64"));
 if (!legacyV2.a || legacyV2.a[0] !== 3) errors.push("同步代碼：舊版 v2 仍應可匯入");
 
+const quotesIndexPath = "references/quotes_index.json";
+const quotesIndex = JSON.parse(fs.readFileSync(path.join(root, quotesIndexPath), "utf8"));
+if (!Array.isArray(quotesIndex)) {
+  errors.push(`${quotesIndexPath}: 必須是語錄陣列`);
+} else {
+  quotesIndex.forEach((entry, index) => {
+    const id = entry && entry.quote_id ? entry.quote_id : `第 ${index + 1} 筆`;
+    const lang = entry ? entry.quote_lang : undefined;
+    const langPresent = lang !== undefined && lang !== null;
+    if (langPresent && lang !== "en") {
+      if (typeof entry.quote_en !== "string" || entry.quote_en.trim() === "") {
+        errors.push(`${quotesIndexPath}: ${id} 的 quote_lang 為 ${lang}，quote_en 必須是非空字串`);
+      }
+      if (typeof entry.quote_zh !== "string" || entry.quote_zh.trim() === "") {
+        errors.push(`${quotesIndexPath}: ${id} 的 quote_lang 為 ${lang}，quote_zh 必須是非空字串`);
+      }
+    } else if (entry && Object.prototype.hasOwnProperty.call(entry, "quote_en")) {
+      errors.push(`${quotesIndexPath}: ${id} 的 quote_lang 缺席或為 en，不可出現 quote_en`);
+    }
+  });
+}
+
 if (errors.length) {
   console.error(`內容驗證失敗（${errors.length} 項）：`);
   errors.forEach(error => console.error(`- ${error}`));
