@@ -982,5 +982,61 @@
     "speaker": "jb",
     "event": "Prime Video India Fireside Chat",
     "date": "2020-01-16"
+  },
+{
+    "id": 71,
+    "cat": "quote",
+    "rarity": "rare",
+    "term": "Less to Lose",
+    "zh": "年紀越大，越該冒險",
+    "def_en": "Schmidt’s answer to why he keeps reinventing himself at 71: the older you get, the more risk you should take, because you have less to lose.",
+    "def_zh": "施密特被問到 71 歲為何還不停轉換跑道時的回答：年紀越大越該多冒險，因為能失去的越少。",
+    "quote": "My own view is as you get older, you should take on more risk because you have less to lose, right?",
+    "context": "把「年紀大要求穩」反過來想：時間有限，保守反而是浪費。",
+    "speaker": "es",
+    "event": "Inside Blackstone Podcast",
+    "date": "2026-09-29"
+  },
+  {
+    "id": 72,
+    "cat": "ai",
+    "rarity": "legendary",
+    "term": "Not Different, Just Bigger",
+    "zh": "不是不同，只是更大",
+    "def_en": "Schmidt’s reply when asked why the AI moment feels different from the internet, search, cloud and mobile shifts he lived through: it isn’t different, only bigger.",
+    "def_zh": "主持人問這波 AI 跟他經歷過的網路、搜尋、雲端、行動浪潮有何不同，施密特答：沒有不同，只是規模更大。",
+    "quote": "It's not different, it's just bigger.",
+    "context": "一句話降溫「這次完全不一樣」的說法：看懂過去的平台轉移，就能看懂這一波。",
+    "speaker": "es",
+    "event": "Inside Blackstone Podcast",
+    "date": "2026-09-29"
+  },
+  {
+    "id": 73,
+    "cat": "ai",
+    "rarity": "rare",
+    "term": "AI in Service of Humans",
+    "zh": "AI 替人做人不擅長的事",
+    "def_en": "Schmidt’s view after describing AI that can follow reasoning chains of thousands of steps: the best AI serves people by doing what humans are not good at.",
+    "def_zh": "施密特談到 AI 能一路推理上千步之後的結論：最好的 AI 是替人類做人類不擅長的事。",
+    "quote": "The best AI is in service of humans doing things that humans are not so good at.",
+    "context": "人想不了一千步，但 AI 可以；重點不是取代人，而是補上人的短處。",
+    "speaker": "es",
+    "event": "Inside Blackstone Podcast",
+    "date": "2026-09-29"
+  },
+  {
+    "id": 74,
+    "cat": "quote",
+    "rarity": "rare",
+    "term": "Now I Say Deep Reasoning",
+    "zh": "以前說生物，現在說深度推理",
+    "def_en": "Schmidt’s updated advice on what young people should study: he used to recommend biology, and now he recommends deep reasoning.",
+    "def_zh": "施密特被問到年輕人該學什麼：以前他會說生物，現在他說深度推理。",
+    "quote": "I used to say biology, now I say deep reasoning.",
+    "context": "他接著說：不管走不走技術路線，都要學會用這些工具放大自己想做的事。",
+    "speaker": "es",
+    "event": "Inside Blackstone Podcast",
+    "date": "2026-09-29"
   }
 ]
