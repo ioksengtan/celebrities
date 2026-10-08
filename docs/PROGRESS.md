@@ -4,6 +4,14 @@
 
 ---
 
+## 2026-10-08（Eric Schmidt 訪談導讀與中文短摘要）
+
+- 新增導讀檔 `references/editorials/ES-2026-001.md`。
+- `references/prod001_summary_zh_draft.json` 在陣列最後加上 ES-2026-001 中文短摘要一列，字數 253。
+- `references/speeches_database.json` 的 ES-2026-001 在 `transcript_path` 後面加上 `"editorial_path": "references/editorials/ES-2026-001.md"`。
+- 依 Blackstone 官方逐字稿整理，時間碼取自 YouTube 自動字幕逐詞對齊；引號只用六則已核實語錄。
+- 沒有改語錄、卡片、排程或程式。
+
 ## 2026-10-04（第八波：Eric Schmidt 金句與名人詞彙）
 
 - Keynote Lexicon 70→74（id 71–74）、Executive English 183→187（id 184–187）。講者一律 `es`（Eric Schmidt／施密特）。色票與講者表在上一批已加上（淺色 `#9E3B3B`、深色 `#EE8A80`），這次沒有改色。原文句子照交付檔原樣寫入，沒有改任何一個字。`provenance.json` 不是 repo 檔，沒有加入。
