@@ -1319,6 +1319,7 @@
         "career"
       ],
       "transcript_path": "references/transcripts/ES-2026-001.txt",
+      "editorial_path": "references/editorials/ES-2026-001.md",
       "source_type": "official_transcript",
       "verification_status": "transcript_text_verified",
       "imported_date": "2026-10-04",
