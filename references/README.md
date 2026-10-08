@@ -52,7 +52,7 @@ Hold this round (never verified on the wall): `EM-2026-005`, `SA-2026-001`.
 
 ## Eric Schmidt and Yann LeCun import (2026-10-04)
 
-- Two original speeches: `ES-2026-001` (Inside Blackstone, 2026-09-29, `duration_minutes` 33) and `YL-2026-001` (Sciences Po Grande Conférence, 2026-09-16, French). Excerpt transcripts are in `transcripts/ES-2026-001.txt` and `transcripts/YL-2026-001.txt`. This batch has no editorials and no Chinese summaries.
+- Two original speeches: `ES-2026-001` (Inside Blackstone, 2026-09-29, `duration_minutes` 33) and `YL-2026-001` (Sciences Po Grande Conférence, 2026-09-16, French). Excerpt transcripts are in `transcripts/ES-2026-001.txt` and `transcripts/YL-2026-001.txt`. `ES-2026-001` now has a Traditional Chinese editorial at `editorials/ES-2026-001.md` and a Chinese short summary (added 2026-10-08). `YL-2026-001` still has no editorial and no Chinese summary.
 - Twelve quotes are in `quotes_index.json`, all `verified`, and each quote is a verbatim substring of its in-repo excerpt. Quote text, translations, and status were not edited.
 - Eric Schmidt quotes use `source_type` `official_transcript`. Yann LeCun quotes use `source_type` `platform_auto_captions` (French auto-captions cross-checked with a transcription). No new `source_type` value was added.
 - Non-English quotes may set `quote_lang` (BCP 47; absent means `en`) and `quote_en` (required when `quote_lang` is not `en`, and absent when it is `en`). The six Yann LeCun quotes are `quote_lang: "fr"`; `quote` is the French original, and `quote_en` / `quote_zh` are translations. `tools/validate-content.mjs` checks that pair of rules.
