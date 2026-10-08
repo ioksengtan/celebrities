@@ -90,5 +90,18 @@
     ],
     "draft_note": "繁體中文導讀；依 Substack 自動轉錄，未對音檔校聽，未獨立核實數據。",
     "char_count": 260
+  },
+  {
+    "speech_id": "ES-2026-001",
+    "summary_zh": "前 Google 執行長、現任 Relativity Space 執行長的施密特在 Blackstone 播客 Inside Blackstone 中說，這一波人工智慧「不是不一樣，只是更大」，並提醒發明的速度不等於普及的速度。他不認同舊金山許多人認為兩年內就會出現真正突破的看法，認為能力與對齊必須一起解決；他最看好可以連續思考數小時的長時間推理，建議執行長做人工智慧原生的經營者，也建議年輕人學深度推理、守住深度閱讀。（依 Blackstone 官方逐字稿整理；時程為講者個人預測，未對影片全程校聽。）",
+    "based_on": [
+      "official_transcript"
+    ],
+    "source_urls": [
+      "https://www.blackstone.com/insights/article/former-google-ceo-eric-schmidt-the-road-to-superintelligence/",
+      "https://www.youtube.com/watch?v=PSbUom-p1hU"
+    ],
+    "draft_note": "繁體中文導讀；依 Blackstone 官方逐字稿，未對影片全程校聽，講者對未來的預測未獨立核實。",
+    "char_count": 253
   }
 ]
