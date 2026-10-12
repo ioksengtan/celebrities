@@ -4,6 +4,14 @@
 
 ---
 
+## 2026-10-12（Jeff Bezos 普林斯頓畢業前演講導讀與中文短摘要）
+
+- 新增導讀檔 `references/editorials/JB-2010-001.md`，並在 `references/prod001_summary_zh_draft.json` 最後加上 JB-2010-001 中文短摘要一列（258 字）；`speeches_database.json` 的 JB-2010-001 加上 `editorial_path`。
+- 出處追溯：原始出處是普林斯頓官方頁面（2010-05-30 Baccalaureate Remarks）與官方 YouTube 影片。官方頁面這次在作業環境回傳 403，無法重新開啟；導讀引號只用 `quotes_index.json` 已核實的 Q01–Q05 與本庫節錄內的原文，開場祖父母故事只依 Rev、James Clear 兩個第三方轉錄頁摘要轉述（不加引號、不加時間碼）。
+- 沒有改語錄、卡片、排程或程式。
+
+---
+
 ## 2026-10-08（Eric Schmidt 訪談導讀與中文短摘要）
 
 - 新增導讀檔 `references/editorials/ES-2026-001.md`。
