@@ -23,7 +23,7 @@ Hold this round (never verified on the wall): `EM-2026-005`, `SA-2026-001`.
 
 ## Other
 
-- `speeches_database.json` — 43 speeches/interviews (including one undated interview) metadata.
+- `speeches_database.json` — 44 speeches/interviews (including one undated interview) metadata.
 - `speeches_indexes.json` — 7 derived index views.
 - `product_recommendations.json` — candidate product ideas.
 - `美國大學畢業典禮名人演講專案報告（完整版）.docx` — full project report.
@@ -57,3 +57,11 @@ Hold this round (never verified on the wall): `EM-2026-005`, `SA-2026-001`.
 - Eric Schmidt quotes use `source_type` `official_transcript`. Yann LeCun quotes use `source_type` `platform_auto_captions` (French auto-captions cross-checked with a transcription). No new `source_type` value was added.
 - Non-English quotes may set `quote_lang` (BCP 47; absent means `en`) and `quote_en` (required when `quote_lang` is not `en`, and absent when it is `en`). The six Yann LeCun quotes are `quote_lang: "fr"`; `quote` is the French original, and `quote_en` / `quote_zh` are translations. `tools/validate-content.mjs` checks that pair of rules.
 - Speech pages: `products/core/speech.html?id=ES-2026-001` and `products/core/speech.html?id=YL-2026-001`. Verified quotes appear on the quotes wall under speakers `es` and `yl`.
+
+## Mark Zuckerberg Cheeky Pint 入庫（2026-10-15）
+
+- `MZ-2026-001`：Cheeky Pint 播客當集，官方標題〈Muse Wonder: Zuckerberg and Wang's $100B AI〉。YouTube 官方頻道於 2026-10-12（美國太平洋時間 14:10）發布，官方 Substack 同日刊出全文逐字稿。主持是 Stripe 共同創辦人 John Collison。來賓是 Mark Zuckerberg 與 Meta 首席人工智慧長 Alexandr Wang（領導 Meta Superintelligence Labs）。錄製日期與地點未載明。分享時流傳的標題「How Zuckerberg is building superintelligence」官方未見，只寫在 `notes_zh`，不是正式名稱。
+- 節錄逐字稿：`transcripts/MZ-2026-001.txt`。本批沒有導讀，也沒有中文短摘要。長度記為 135 分鐘（片長 2:14:31），`word_count_estimate` 27000 是整份逐字稿三人合計。
+- 六則語錄都在 `quotes_index.json`，狀態都是 `verified`，原文照交付檔逐字寫入，沒有改任何一個字。來源類型用既有的 `official_transcript`，時間碼精度用既有的 `caption_word_alignment`。沒有新增 `source_type`。六則都不帶 `quote_lang`，等同英文。
+- Mark Zuckerberg 是既有講者，沒有新增講者、沒有改講者色、沒有做詞彙卡。Alexandr Wang 本批不新增為講者。
+- 單場頁：`products/core/speech.html?id=MZ-2026-001`。已核實語錄出現在語錄牆，講者代碼沿用既有的 `mz`。
