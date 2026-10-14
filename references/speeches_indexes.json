@@ -1,7 +1,7 @@
 {
   "metadata": {
     "created_date": "2026-09-06",
-    "total_speeches": 43,
+    "total_speeches": 44,
     "index_types": [
       "topic_index",
       "timeline_index",
@@ -11,7 +11,7 @@
       "quotes_index",
       "length_index"
     ],
-    "updated_date": "2026-10-04"
+    "updated_date": "2026-10-15"
   },
   "topic_index": [
     {
@@ -1810,6 +1810,71 @@
           "type": "interview"
         }
       ]
+    },
+    {
+      "topic": "personal superintelligence",
+      "count": 1,
+      "speeches": [
+        {
+          "id": "MZ-2026-001",
+          "speaker": "mark_zuckerberg",
+          "event": "Cheeky Pint: Muse Wonder: Zuckerberg and Wang's $100B AI",
+          "date": "2026-10-12",
+          "type": "interview"
+        }
+      ]
+    },
+    {
+      "topic": "ai agents",
+      "count": 1,
+      "speeches": [
+        {
+          "id": "MZ-2026-001",
+          "speaker": "mark_zuckerberg",
+          "event": "Cheeky Pint: Muse Wonder: Zuckerberg and Wang's $100B AI",
+          "date": "2026-10-12",
+          "type": "interview"
+        }
+      ]
+    },
+    {
+      "topic": "muse",
+      "count": 1,
+      "speeches": [
+        {
+          "id": "MZ-2026-001",
+          "speaker": "mark_zuckerberg",
+          "event": "Cheeky Pint: Muse Wonder: Zuckerberg and Wang's $100B AI",
+          "date": "2026-10-12",
+          "type": "interview"
+        }
+      ]
+    },
+    {
+      "topic": "talent density",
+      "count": 1,
+      "speeches": [
+        {
+          "id": "MZ-2026-001",
+          "speaker": "mark_zuckerberg",
+          "event": "Cheeky Pint: Muse Wonder: Zuckerberg and Wang's $100B AI",
+          "date": "2026-10-12",
+          "type": "interview"
+        }
+      ]
+    },
+    {
+      "topic": "compute investment",
+      "count": 1,
+      "speeches": [
+        {
+          "id": "MZ-2026-001",
+          "speaker": "mark_zuckerberg",
+          "event": "Cheeky Pint: Muse Wonder: Zuckerberg and Wang's $100B AI",
+          "date": "2026-10-12",
+          "type": "interview"
+        }
+      ]
     }
   ],
   "timeline_index": [
@@ -2216,6 +2281,18 @@
       ]
     },
     {
+      "month": "2026-10",
+      "count": 1,
+      "speeches": [
+        {
+          "id": "MZ-2026-001",
+          "speaker": "mark_zuckerberg",
+          "event": "Cheeky Pint: Muse Wonder: Zuckerberg and Wang's $100B AI",
+          "type": "interview"
+        }
+      ]
+    },
+    {
       "month": "unknown",
       "count": 1,
       "speeches": [
@@ -2270,7 +2347,8 @@
         "JB-2018-001",
         "JB-2020-001",
         "ES-2026-001",
-        "YL-2026-001"
+        "YL-2026-001",
+        "MZ-2026-001"
       ],
       "panel": [
         "EM-2026-002",
@@ -2284,7 +2362,7 @@
     },
     "counts": {
       "keynote": 10,
-      "interview": 28,
+      "interview": 29,
       "panel": 3,
       "town_hall": 2
     }
@@ -2361,7 +2439,8 @@
         "JB-2018-001",
         "JB-2020-001",
         "ES-2026-001",
-        "YL-2026-001"
+        "YL-2026-001",
+        "MZ-2026-001"
       ],
       "enterprise": [
         "JH-2026-002",
@@ -2548,7 +2627,8 @@
         "SN-UNDATED-001"
       ],
       "leadership": [
-        "LBT-2026-001"
+        "LBT-2026-001",
+        "MZ-2026-001"
       ],
       "semiconductors": [
         "LBT-2026-001"
@@ -2582,7 +2662,8 @@
       ],
       "AI": [
         "ES-2026-001",
-        "YL-2026-001"
+        "YL-2026-001",
+        "MZ-2026-001"
       ],
       "research": [
         "YL-2026-001"
@@ -2599,7 +2680,7 @@
       "consumer": 1,
       "CES": 1,
       "product launch": 1,
-      "interview": 28,
+      "interview": 29,
       "enterprise": 2,
       "economics": 1,
       "GTC": 1,
@@ -2656,12 +2737,12 @@
       "VR/AR": 1,
       "spending": 1,
       "AI safety": 1,
-      "leadership": 1,
+      "leadership": 2,
       "semiconductors": 1,
       "career": 11,
       "life advice": 9,
       "town_hall": 1,
-      "AI": 2,
+      "AI": 3,
       "research": 1
     }
   },
@@ -2991,7 +3072,7 @@
       ]
     },
     "very_long": {
-      "count": 3,
+      "count": 4,
       "speeches": [
         {
           "id": "EM-2025-001",
@@ -3010,6 +3091,12 @@
           "speaker": "mark_zuckerberg",
           "event": "Acquired Podcast Live at Chase Center",
           "word_count": 18000
+        },
+        {
+          "id": "MZ-2026-001",
+          "speaker": "mark_zuckerberg",
+          "event": "Cheeky Pint: Muse Wonder: Zuckerberg and Wang's $100B AI",
+          "word_count": 27000
         }
       ]
     }
@@ -3115,10 +3202,11 @@
         "metaverse",
         "AI infrastructure"
       ],
-      "total_speeches": 2,
+      "total_speeches": 3,
       "entries": [
         "MZ-2024-001",
-        "MZ-2025-001"
+        "MZ-2025-001",
+        "MZ-2026-001"
       ]
     },
     "satya_nadella": {
