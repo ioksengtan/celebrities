@@ -1,0 +1,54 @@
+Cheeky Pint: Muse Wonder: Zuckerberg and Wang's $100B AI
+場次日期：2026-10-12（發布日，美國太平洋時間）；主辦：Cheeky Pint（Stripe 共同創辦人 John Collison 的播客）；主持：John Collison；來賓：Mark Zuckerberg、Alexandr Wang
+原始影片：https://www.youtube.com/watch?v=XfdIhd1g6EI（Cheeky Pint 官方 YouTube）
+官方逐字稿：https://cheekypint.substack.com/p/muse-wonder-zuckerberg-and-wangs
+著作權說明：本檔只存語錄所在段落及前後各一段的官方逐字稿節錄，不存全文。
+
+【官方逐字稿節錄】
+-- MZ-2026-001-Q01（原始影片時間碼 03:04）
+John Collison: Yes.
+Mark Zuckerberg: And I’m constantly telling it like, all right... Like, look you took 30 seconds to give me that feedback. I only have a 60-second break. Like, you gotta go faster. Just optimize yourself, optimize yourself. And it’s, I think, a good example of how stuff is going to go in the future where basically everyone is actually going to be writing tons of code. They’re just not going to know that they’re writing code.
+John Collison: What kind of MMA steers does a model give you?
+
+-- MZ-2026-001-Q02（原始影片時間碼 12:02）
+John Collison: Okay. So you guys think I’m making the classic mistake, which is like, my domain is complex and this domain is, again, from a product point-of-view, it’s simple.
+Mark Zuckerberg: All payment processors seem the same. Yeah, no, I really agree with what you’re saying. One thing that we talked about from early on, is that basically there is this pattern where I think the products are getting thinner and the model is getting to be more of the product, right? So one of the things that we say internally is like, the model is the product.
+John Collison: Yes.
+
+-- MZ-2026-001-Q03（原始影片時間碼 2:07:01）
+John Collison: It’s such a fast-moving domain, especially.
+Mark Zuckerberg: I think that, like, this whole thing of just, like, you have to stay technical, people have to use the agents, people should be writing code. Yeah. I think that that’s— that has been a really important part of this whole thing.
+John Collison: Have you had any very funny disagreements between the two of you guys?
+
+-- MZ-2026-001-Q04（原始影片時間碼 58:17）
+John Collison: Right?
+Mark Zuckerberg: So they’re willing to pay, like, I mean, if like the cost is whatever, $15 billion a gigawatt, we could get like a lot more for that. So I think that you, in order for it not to work out, it’s not just that we have to fail, AI overall has to fail.
+John Collison: Yes.
+
+-- MZ-2026-001-Q05（原始影片時間碼 1:07:04）
+Mark Zuckerberg: And I mean, this is something that I think we kind of bonded on and agreed on, like, very early, is this notion that, like, in every generation of technology companies, there’s, like, no, there’s usually not one company that kind of is the— is, like, wins everything. I don’t think that that’s how this is going to go either. But with the internet, there were, like, okay, 5 or 6 very big companies and then a whole ecosystem of other companies that are great. The companies that did the best kind of had the core technology to be able to serve people the best there. And I think in this next era, there are going to probably be a small handful of companies that have the ability to build frontier superintelligence. And I think that those companies are going to be the ones that effectively drive the agenda and can build most of the interesting, the most interesting experiences for consumers, for enterprises, hardware, these different kinds of things. So, and I just look at it as, okay, like, is it even really a choice, right? It’s like, yeah, okay, Meta could, will probably exist into the future regardless of whether we do this.
+Mark Zuckerberg: But if we want to be kind of an interesting company that is like inventing new things that matter to people in the future, I don’t see how you can do that if you don’t have the ability to build end-to-end your own superintelligence and build them into the products that people use. And I think that this is something that you just like believed from very early on, Is basically, it’s like, all right, there are going to be like a handful of these. Like, it’s like there’s a kind of personal and consumer-oriented version of this. And like, this lane is open because everyone else seems to just be obsessed so much with just automating knowledge work, which, I mean, isn’t even that charismatic version of the future, right? Because it’s like, all right, like, a big part of our belief too is that the kind of highest use of superintelligence is invention and creation, not automation. And so, I don’t know, it just seemed like there’s like a big place in there, but you kind of need to own the stack.
+John Collison: How is the Muse-mediated future going to shake out with businesses need to— okay, businesses variously need to build support for for Muse, where it might try to computer use its way in, but that might be janky in certain ways. So you kind of want everyone to have first-class support for agents talking to things.
+
+-- MZ-2026-001-Q06（原始影片時間碼 1:09:09）
+John Collison: Yeah. So talk to me just through the second-order effects of how the economy works.
+Mark Zuckerberg: Well, I think that it starts off with— I mean, we trained into the models very good browser use, right? So that way we want to make it so that no one No one has to do anything to integrate with Muse. And then, but then of course, for— we’re kind of just going down the list of the most important partners, and for people who want to work with us, we’ll just get direct API access, right? And then it’s like, okay, then it ends up being way more efficient and faster for people to use Muse. It’s more efficient because now you don’t have an agent crawling your website. It’s just going. So anyone who wants to do that, we eventually want to get there. Um, and then I think the fullness of time is that, you know, just like today every business has, um, a website and social media accounts and email addresses and all these things, every business is going to have agents too.
+John Collison: Mm-hmm.
+
+-- 詞彙候選 the ante is high（原始影片時間碼 54:33）
+Mark Zuckerberg: At this scale. I mean, if we, like, back a few years ago, the clusters didn’t have to be this big, but now they do. So I think this is part of the excitement of booting up a frontier lab now, right? Is basically like the ante is extremely high.
+
+-- 詞彙候選 product-market fit（原始影片時間碼 59:41）
+Mark Zuckerberg: And it’s just like extremely well received right off the bat. But the normal case would be you kind of— it’s fine, and you have to like iterate a few times to get product-market fit before you really grow. In some ways, like, I actually think the product, we maybe could have even grown it faster, but we didn’t have all the growth stuff really ready to go when we shipped it because we are like— our median expectation was like, all right, we’re probably going to have to like iterate on this a bit, and like, that’ll be That’ll be fine. But I don’t know, I think like if it takes a few iterations, it’s like not the end of the world. That’s normal.
+
+-- 詞彙候選 home run（原始影片時間碼 59:28）
+Mark Zuckerberg: Yeah, but also like we believed in what we were building. I mean, it’s like, I think, and you can look at the kind of the trajectory where it’s like, all right, first there’s ChatGPT as the text-based assistant. Then, you know, Anthropic got coding agents to work. And no one had built the kind of personal consumer version of that. And it just seemed like this is the thing that Meta should build in the world. And I think that that was just like pretty clear to you and me and Nat, like from the beginning, right? That that’s like, that’s kind of what we’re here to do. And so I don’t know. I mean, there’s always like the real question for me on the Muse launch even was you never know when you launch something how it’s going to be received. Right? So there’s always the case where you get a home run, which in this case it was, right?
+
+-- 詞彙候選 business in a box（原始影片時間碼 1:29:20）
+Mark Zuckerberg: Well, there are already all these sites that I think are interesting where people are like, go look through my emails, find a bunch of subscriptions I don’t actually use, cancel them, whatever. Um, yeah, so yeah, I mean, that, um, I don’t know if that’s the thing that we would monetize, but, but like, but you get, you get, you kind of get the point and where it helps you make money. I mean, one of the ideas that we kind of talk about, I mean, this is, this is something that I think you’ve been kind of obsessed with, is making it like a business in a box for small businesses. So someone can just kind of— it can help them administer all these parts of what they’re doing. And you can imagine that being very valuable and being very profitable, both for the business owner and for Meta. But I think one of the things that’s interesting is, like, OK, if we’re building the models to build the personal agents and the business agent, there is this large surplus of value because now the model, it’s very general, right? So it doesn’t just do those things. We’ll also have the API that’ll be profitable.
+
+-- 詞彙候選 full-stack（原始影片時間碼 50:49）
+Mark Zuckerberg: But if you want to go really end-to-end on undoing this stuff, then, I mean, obviously the kind of full stack, and I mean, Meta is a full-stack tech company. I mean, we build our own data centers, we build our own chips, we build our own low-level infrastructure. And now this is kind of the next component, which, I mean, arguably is probably the most important component in all of this for the next wave of technology is kind of building really good models and then delivering them to people. But I mean, yeah, if you want to go fully end-to-end, I mean, this is a long process.
+
+-- 詞彙候選 discretion（原始影片時間碼 27:46）
+Mark Zuckerberg: I think that there are things that are very different about it. I mean, I think like the personality probably matters more. I mean, one of the things that we talk about is this idea of discretion, right? So if you want to use the model to get something done, it needs to be able to know a lot about you and get things done in the world while disclosing as little as possible. So, you know, if you have an allergy or you’re pregnant or something, you’re trying to get a table at a restaurant and you don’t want to have to tell them your medical condition.
