@@ -4,6 +4,14 @@
 
 ---
 
+## 2026-10-15（Mark Zuckerberg Cheeky Pint 場次 MZ-2026-001 入庫）
+
+- 新增既有講者 Mark Zuckerberg 的場次 MZ-2026-001。場次名稱採官方標題〈Muse Wonder: Zuckerberg and Wang's $100B AI〉。主持是 Stripe 共同創辦人 John Collison，來賓是 Mark Zuckerberg 與 Meta 首席人工智慧長 Alexandr Wang。發布日 2026-10-12。沒有新增講者，沒有改講者色，沒有做詞彙卡，也沒有導讀或中文短摘要。
+- 六則語錄全部為 verified。英文原文照交付檔逐字寫入，沒有改任何一個字。來源類型維持既有的 `official_transcript`，時間碼精度維持既有的 `caption_word_alignment`。節錄檔是 `references/transcripts/MZ-2026-001.txt`。
+- 主資料庫總數 43→44，`time_range` 改為 2001-05 to 2026-10，`updated_date` 改為 2026-10-15。主題、時間、類型、產品標籤、長度、講者摘要索引已更新。這一場的 `key_quotes` 是空的，所以 `speeches_indexes.json` 的 quotes 索引沒有新增列。
+- 語錄索引 146→152。已核實語錄牆增加 6 則。這一場不在內容審核排除名單，也不在暫緩名單。
+- 首頁「場公開演講與訪談」計的是有日期的場次，日期待確認的 SN-UNDATED-001 不計。有日期的場次 42→43（總數 44 仍含 1 場日期待確認）。首頁這個數字目前是寫死的，詞彙與金句張數仍由卡片資料在載入時計算。
+
 ## 2026-10-12（Jeff Bezos 普林斯頓畢業前演講導讀與中文短摘要）
 
 - 新增導讀檔 `references/editorials/JB-2010-001.md`，並在 `references/prod001_summary_zh_draft.json` 最後加上 JB-2010-001 中文短摘要一列（258 字）；`speeches_database.json` 的 JB-2010-001 加上 `editorial_path`。
