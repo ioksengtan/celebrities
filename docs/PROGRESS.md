@@ -4,6 +4,14 @@
 
 ---
 
+## 2026-10-17（Sam Altman 兩場入庫：SA-2026-007、SA-2026-008）
+
+- 新增既有講者 Sam Altman 的兩場。SA-2026-007 是 Vanity Fair「Fair Game」〈Sam Altman Sees the Future. Are We In It? (Part 1 of 2)〉，日期 2026-10-05，片長 49:29，記為 49 分鐘。SA-2026-008 是 CNBC「Halftime Report」記者 Kate Rooney 於 OpenAI DevDay 2026 的專訪，日期 2026-09-29，長度記 10 分鐘。沒有新增講者，沒有改講者色，沒有做詞彙卡，也沒有導讀或中文短摘要。
+- 十則語錄全部為 verified（各五則）。英文原文照交付檔逐字寫入，沒有改任何一個字。SA-2026-007 的來源類型維持既有的 `official_transcript`。SA-2026-008 使用新值 `broadcaster_unofficial_transcript`：廣播媒體自己的逐字稿，並標示為非官方，語錄已對音訊逐字核對。時間碼精度維持既有的 `caption_word_alignment`。節錄檔是 `references/transcripts/SA-2026-007.txt` 與 `references/transcripts/SA-2026-008.txt`。SA-2026-008 影片分兩段，第 1 段放 `video_url`，第 2 段放既有欄位 `audio_url`；每則語錄的 `source_url` 指向所在那一段，`timestamp` 為該段內時間。
+- 主資料庫總數 44→46，`time_range` 維持 2001-05 to 2026-10，`updated_date` 改為 2026-10-17。主題、時間、類型、產品標籤、長度、講者摘要索引已加入兩場。這兩場的 `key_quotes` 是空的，所以 `speeches_indexes.json` 的 quotes 索引沒有新增列。內容驗證器只對追劇英語卡片列舉 `source_type`，這次沒有改驗證器。
+- 語錄索引 152→162。已核實語錄牆 145→155（增加 10 則）。這兩場不在內容審核排除名單，也不在暫緩名單。
+- 首頁「場公開演講與訪談」這次沒有改 `index.html`。拉取請求 #31（首頁有日期場次改由演講庫自動計算）在 2026-10-17 仍是開啟中的草稿、尚未合併。有日期的場次若依演講庫計算是 43→45（總數 46 仍含 1 場日期待確認）。首頁目前寫死的數字仍是 43。
+
 ## 2026-10-15（Mark Zuckerberg Cheeky Pint 場次 MZ-2026-001 入庫）
 
 - 新增既有講者 Mark Zuckerberg 的場次 MZ-2026-001。場次名稱採官方標題〈Muse Wonder: Zuckerberg and Wang's $100B AI〉。主持是 Stripe 共同創辦人 John Collison，來賓是 Mark Zuckerberg 與 Meta 首席人工智慧長 Alexandr Wang。發布日 2026-10-12。沒有新增講者，沒有改講者色，沒有做詞彙卡，也沒有導讀或中文短摘要。
