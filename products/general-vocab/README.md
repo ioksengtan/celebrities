@@ -1,9 +1,9 @@
 # 名人詞彙（Executive English）
 
-從 Jensen Huang、Elon Musk、Sundar Pichai 2025–2026 年演講/訪談逐字稿中萃取的**一般英語**詞彙卡——刻意排除 AI/晶片黑話，只留下他們談話時順口用出來、對一般英語學習者有用的進階字（如 exponential、inflection point、geopolitical、guardrails）。依 CEFR（A2–C1）分級，卡片形式沿用 [`../vocabulary-cards`](../vocabulary-cards) 的機制，但把「類別＋講者」的篩選軸換成「CEFR 難度＋講者」。
+從 Jensen Huang、Elon Musk、Sundar Pichai、Mark Zuckerberg 等人 2025–2026 年演講/訪談逐字稿中萃取的**一般英語**詞彙卡——刻意排除 AI/晶片黑話，只留下他們談話時順口用出來、對一般英語學習者有用的進階字（如 exponential、inflection point、geopolitical、guardrails）。依 CEFR（A2–C1）分級，卡片形式沿用 [`../vocabulary-cards`](../vocabulary-cards) 的機制，但把「類別＋講者」的篩選軸換成「CEFR 難度＋講者」。
 
 - 原始碼：[`executive-english.html`](executive-english.html)（介面與互動邏輯）
-- 詞彙資料：[`cards_data.json`](cards_data.json)（187 字，唯一資料來源；不要再把卡片複製進 HTML）
+- 詞彙資料：[`cards_data.json`](cards_data.json)（193 字，唯一資料來源；不要再把卡片複製進 HTML）
 - 每日挑戰行程：[`daily_schedule.json`](daily_schedule.json)（日期 → 5 個卡片 id）
 
 ## 資料怎麼來的
@@ -23,7 +23,7 @@
 ## 待辦 / 可擴充方向
 
 - [ ] CEFR 分級目前是常識估計，未對照權威詞表（如 English Vocabulary Profile）校正
-- [ ] Sam Altman、Mark Zuckerberg 的逐字稿目前抓不到（CNBC/Bloomberg/Axios/dealroom.co 擋爬蟲），詞庫暫時只有三位講者
+- [ ] Sam Altman 的逐字稿目前抓不到（CNBC/Bloomberg/Axios/dealroom.co 擋爬蟲）。Mark Zuckerberg 已收 Cheeky Pint Podcast（2026-10-12）6 張卡（id 188–193）
 - [ ] 例句是原話輕微清理過的版本，不是逐字稿的機器摘要，但也還沒有人工二次校對
 - [ ] 與 [`../vocabulary-cards`](../vocabulary-cards) 目前各自獨立記錄每日挑戰進度（不同 localStorage key），尚未實作「兩個 app 部署同網域＋共用 streak」
 - [ ] 評估做成可安裝 PWA、跨裝置同步進度
