@@ -1,7 +1,7 @@
 {
   "metadata": {
     "created_date": "2026-09-06",
-    "total_speeches": 44,
+    "total_speeches": 46,
     "index_types": [
       "topic_index",
       "timeline_index",
@@ -11,7 +11,7 @@
       "quotes_index",
       "length_index"
     ],
-    "updated_date": "2026-10-15"
+    "updated_date": "2026-10-17"
   },
   "topic_index": [
     {
@@ -1262,13 +1262,20 @@
     },
     {
       "topic": "ai safety",
-      "count": 1,
+      "count": 2,
       "speeches": [
         {
           "id": "SN-UNDATED-001",
           "speaker": "satya_nadella",
           "event": "Satya Nadella on the AI Doomer Slowdown, Microsoft’s Master Plan & Who Wins AI",
           "date": null,
+          "type": "interview"
+        },
+        {
+          "id": "SA-2026-008",
+          "speaker": "sam_altman",
+          "event": "CNBC Halftime Report: Sam Altman at OpenAI DevDay 2026",
+          "date": "2026-09-29",
           "type": "interview"
         }
       ]
@@ -1875,6 +1882,110 @@
           "type": "interview"
         }
       ]
+    },
+    {
+      "topic": "parenting",
+      "count": 1,
+      "speeches": [
+        {
+          "id": "SA-2026-007",
+          "speaker": "sam_altman",
+          "event": "Vanity Fair Fair Game: Sam Altman Sees the Future. Are We In It? (Part 1 of 2)",
+          "date": "2026-10-05",
+          "type": "interview"
+        }
+      ]
+    },
+    {
+      "topic": "technology and children",
+      "count": 1,
+      "speeches": [
+        {
+          "id": "SA-2026-007",
+          "speaker": "sam_altman",
+          "event": "Vanity Fair Fair Game: Sam Altman Sees the Future. Are We In It? (Part 1 of 2)",
+          "date": "2026-10-05",
+          "type": "interview"
+        }
+      ]
+    },
+    {
+      "topic": "ai for science and health",
+      "count": 1,
+      "speeches": [
+        {
+          "id": "SA-2026-007",
+          "speaker": "sam_altman",
+          "event": "Vanity Fair Fair Game: Sam Altman Sees the Future. Are We In It? (Part 1 of 2)",
+          "date": "2026-10-05",
+          "type": "interview"
+        }
+      ]
+    },
+    {
+      "topic": "technological progress",
+      "count": 1,
+      "speeches": [
+        {
+          "id": "SA-2026-007",
+          "speaker": "sam_altman",
+          "event": "Vanity Fair Fair Game: Sam Altman Sees the Future. Are We In It? (Part 1 of 2)",
+          "date": "2026-10-05",
+          "type": "interview"
+        }
+      ]
+    },
+    {
+      "topic": "human connection",
+      "count": 1,
+      "speeches": [
+        {
+          "id": "SA-2026-007",
+          "speaker": "sam_altman",
+          "event": "Vanity Fair Fair Game: Sam Altman Sees the Future. Are We In It? (Part 1 of 2)",
+          "date": "2026-10-05",
+          "type": "interview"
+        }
+      ]
+    },
+    {
+      "topic": "model pacing",
+      "count": 1,
+      "speeches": [
+        {
+          "id": "SA-2026-008",
+          "speaker": "sam_altman",
+          "event": "CNBC Halftime Report: Sam Altman at OpenAI DevDay 2026",
+          "date": "2026-09-29",
+          "type": "interview"
+        }
+      ]
+    },
+    {
+      "topic": "developers",
+      "count": 1,
+      "speeches": [
+        {
+          "id": "SA-2026-008",
+          "speaker": "sam_altman",
+          "event": "CNBC Halftime Report: Sam Altman at OpenAI DevDay 2026",
+          "date": "2026-09-29",
+          "type": "interview"
+        }
+      ]
+    },
+    {
+      "topic": "hardware",
+      "count": 1,
+      "speeches": [
+        {
+          "id": "SA-2026-008",
+          "speaker": "sam_altman",
+          "event": "CNBC Halftime Report: Sam Altman at OpenAI DevDay 2026",
+          "date": "2026-09-29",
+          "type": "interview"
+        }
+      ]
     }
   ],
   "timeline_index": [
@@ -2246,7 +2357,7 @@
     },
     {
       "month": "2026-09",
-      "count": 5,
+      "count": 6,
       "speeches": [
         {
           "id": "SA-2026-005",
@@ -2277,17 +2388,29 @@
           "speaker": "yann_lecun",
           "event": "Sciences Po Grande Conférence: Yann Le Cun — Où va l’intelligence artificielle ?",
           "type": "interview"
+        },
+        {
+          "id": "SA-2026-008",
+          "speaker": "sam_altman",
+          "event": "CNBC Halftime Report: Sam Altman at OpenAI DevDay 2026",
+          "type": "interview"
         }
       ]
     },
     {
       "month": "2026-10",
-      "count": 1,
+      "count": 2,
       "speeches": [
         {
           "id": "MZ-2026-001",
           "speaker": "mark_zuckerberg",
           "event": "Cheeky Pint: Muse Wonder: Zuckerberg and Wang's $100B AI",
+          "type": "interview"
+        },
+        {
+          "id": "SA-2026-007",
+          "speaker": "sam_altman",
+          "event": "Vanity Fair Fair Game: Sam Altman Sees the Future. Are We In It? (Part 1 of 2)",
           "type": "interview"
         }
       ]
@@ -2348,7 +2471,9 @@
         "JB-2020-001",
         "ES-2026-001",
         "YL-2026-001",
-        "MZ-2026-001"
+        "MZ-2026-001",
+        "SA-2026-007",
+        "SA-2026-008"
       ],
       "panel": [
         "EM-2026-002",
@@ -2362,7 +2487,7 @@
     },
     "counts": {
       "keynote": 10,
-      "interview": 29,
+      "interview": 31,
       "panel": 3,
       "town_hall": 2
     }
@@ -2440,7 +2565,9 @@
         "JB-2020-001",
         "ES-2026-001",
         "YL-2026-001",
-        "MZ-2026-001"
+        "MZ-2026-001",
+        "SA-2026-007",
+        "SA-2026-008"
       ],
       "enterprise": [
         "JH-2026-002",
@@ -2472,7 +2599,8 @@
         "JH-2026-006",
         "SA-2026-002",
         "SA-2026-003",
-        "MZ-2025-001"
+        "MZ-2025-001",
+        "SA-2026-008"
       ],
       "market": [
         "JH-2026-006"
@@ -2628,7 +2756,8 @@
       ],
       "leadership": [
         "LBT-2026-001",
-        "MZ-2026-001"
+        "MZ-2026-001",
+        "SA-2026-007"
       ],
       "semiconductors": [
         "LBT-2026-001"
@@ -2663,7 +2792,9 @@
       "AI": [
         "ES-2026-001",
         "YL-2026-001",
-        "MZ-2026-001"
+        "MZ-2026-001",
+        "SA-2026-007",
+        "SA-2026-008"
       ],
       "research": [
         "YL-2026-001"
@@ -2680,7 +2811,7 @@
       "consumer": 1,
       "CES": 1,
       "product launch": 1,
-      "interview": 29,
+      "interview": 31,
       "enterprise": 2,
       "economics": 1,
       "GTC": 1,
@@ -2689,7 +2820,7 @@
       "operating system": 1,
       "Taiwan": 1,
       "home": 1,
-      "CNBC": 4,
+      "CNBC": 5,
       "market": 1,
       "demand": 1,
       "strategy": 3,
@@ -2737,12 +2868,12 @@
       "VR/AR": 1,
       "spending": 1,
       "AI safety": 1,
-      "leadership": 2,
+      "leadership": 3,
       "semiconductors": 1,
       "career": 11,
       "life advice": 9,
       "town_hall": 1,
-      "AI": 3,
+      "AI": 5,
       "research": 1
     }
   },
@@ -2817,7 +2948,7 @@
   ],
   "length_index": {
     "short": {
-      "count": 11,
+      "count": 12,
       "speeches": [
         {
           "id": "JH-2026-006",
@@ -2884,11 +3015,17 @@
           "speaker": "eric_schmidt",
           "event": "Inside Blackstone: Former Google CEO Eric Schmidt: The Road to Superintelligence",
           "word_count": 4500
+        },
+        {
+          "id": "SA-2026-008",
+          "speaker": "sam_altman",
+          "event": "CNBC Halftime Report: Sam Altman at OpenAI DevDay 2026",
+          "word_count": 1700
         }
       ]
     },
     "medium": {
-      "count": 19,
+      "count": 20,
       "speeches": [
         {
           "id": "JH-2026-001",
@@ -3003,6 +3140,12 @@
           "speaker": "jeff_bezos",
           "event": "Fireside Chat with Jeff Bezos, Amazon Prime Video India",
           "word_count": 7500
+        },
+        {
+          "id": "SA-2026-007",
+          "speaker": "sam_altman",
+          "event": "Vanity Fair Fair Game: Sam Altman Sees the Future. Are We In It? (Part 1 of 2)",
+          "word_count": 8300
         }
       ]
     },
@@ -3164,7 +3307,7 @@
         "AI adoption",
         "economic growth"
       ],
-      "total_speeches": 7,
+      "total_speeches": 9,
       "entries": [
         "SA-2025-001",
         "SA-2026-001",
@@ -3172,7 +3315,9 @@
         "SA-2026-003",
         "SA-2026-004",
         "SA-2026-005",
-        "SA-2026-006"
+        "SA-2026-006",
+        "SA-2026-007",
+        "SA-2026-008"
       ]
     },
     "sundar_pichai": {

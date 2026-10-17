@@ -2,14 +2,14 @@
   "metadata": {
     "created_date": "2026-09-06",
     "time_range": "2001-05 to 2026-10",
-    "total_entries": 44,
+    "total_entries": 46,
     "categories": [
       "keynote",
       "interview",
       "panel",
       "town_hall"
     ],
-    "updated_date": "2026-10-15"
+    "updated_date": "2026-10-17"
   },
   "speakers": {
     "jensen_huang": {
@@ -79,7 +79,9 @@
         "SA-2026-003",
         "SA-2026-004",
         "SA-2026-005",
-        "SA-2026-006"
+        "SA-2026-006",
+        "SA-2026-007",
+        "SA-2026-008"
       ]
     },
     "sundar_pichai": {
@@ -1388,6 +1390,68 @@
       "verification_status": "transcript_text_verified",
       "imported_date": "2026-10-15",
       "notes_zh": "原始場次：Cheeky Pint 播客（Stripe 共同創辦人 John Collison 主持）當集，YouTube 官方頻道 @CheekyPint 於 2026-10-12（美國太平洋時間 14:10）發布，官方 Substack 同日刊出全文逐字稿。來賓 Mark Zuckerberg（Meta 創辦人暨執行長）與 Alexandr Wang（Meta 首席人工智慧長，領導 Meta Superintelligence Labs）。錄製日期與地點未載明。全長約 2 小時 15 分；逐字稿約 27000 詞，含三人發言。英文語錄以 Substack 官方逐字稿核對，並對上傳者英文字幕與自動字幕；時間碼以自動字幕逐詞對齊。本庫只存語錄附近節錄。場次名稱採官方標題〈Muse Wonder: Zuckerberg and Wang's $100B AI〉；分享時流傳的標題「How Zuckerberg is building superintelligence」是分享時用的標題，官方未見，不作正式名稱。片長 2:14:31，記為 135 分鐘（Celebrities PM 已確認）。"
+    },
+    {
+      "id": "SA-2026-007",
+      "speaker": "sam_altman",
+      "date": "2026-10-05",
+      "event": "Vanity Fair Fair Game: Sam Altman Sees the Future. Are We In It? (Part 1 of 2)",
+      "location": "San Francisco, CA",
+      "type": "interview",
+      "duration_minutes": 49,
+      "topics": [
+        "parenting",
+        "technology and children",
+        "AI for science and health",
+        "technological progress",
+        "human connection"
+      ],
+      "key_quotes": [],
+      "transcript_url": "https://www.vanityfair.com/story/sam-altman-exclusive-interview-part-1",
+      "video_url": "https://www.youtube.com/watch?v=iKFqJOSWHTE",
+      "language": "en",
+      "word_count_estimate": 8300,
+      "product_tags": [
+        "interview",
+        "AI",
+        "leadership"
+      ],
+      "transcript_path": "references/transcripts/SA-2026-007.txt",
+      "source_type": "official_transcript",
+      "verification_status": "transcript_text_verified",
+      "imported_date": "2026-10-17",
+      "notes_zh": "Vanity Fair 「Fair Game」節目，總編輯 Mark Guiducci 在舊金山專訪 OpenAI 共同創辦人暨執行長 Sam Altman，分兩集；本場為第一集。Vanity Fair 官方頁面於 2026-10-05（美國日期）刊出影片與全文逐字稿（頁面註明經輕度編輯），官方說明有 9/11 與 10/2 兩次錄製，第一集未註明是哪一次。YouTube 官方頻道 Fair Game by Vanity Fair 上傳日為 2026-10-06（協調世界時），片長 49:29，記為 49 分鐘。逐字稿約 8300 詞。語錄以官方逐字稿核對，並對頻道上傳的人工英文字幕；時間碼以自動字幕逐詞對齊。日期採美國發布日 2026-10-05。本集含 Elon Musk、Donald Trump、自殺案例、薪酬與高階主管離職等段落，依規則不取。"
+    },
+    {
+      "id": "SA-2026-008",
+      "speaker": "sam_altman",
+      "date": "2026-09-29",
+      "event": "CNBC Halftime Report: Sam Altman at OpenAI DevDay 2026",
+      "location": "San Francisco, CA",
+      "type": "interview",
+      "duration_minutes": 10,
+      "topics": [
+        "AI safety",
+        "model pacing",
+        "developers",
+        "hardware"
+      ],
+      "key_quotes": [],
+      "transcript_url": "https://www.cnbc.com/2026/09/29/first-on-cnbc-transcript-openai-ceo-sam-altman-speaks-with-cnbcs-kate-rooney-on-halftime-report-today.html",
+      "video_url": "https://www.cnbc.com/video/2026/09/29/openais-sam-altman-on-new-models-safety-has-to-stay-ahead-of-capabilities.html",
+      "audio_url": "https://www.cnbc.com/video/2026/09/29/sam-altman-on-nvidias-new-ai-guardrails-i-dont-think-its-a-full-solution.html",
+      "language": "en",
+      "word_count_estimate": 1700,
+      "product_tags": [
+        "interview",
+        "CNBC",
+        "AI"
+      ],
+      "transcript_path": "references/transcripts/SA-2026-008.txt",
+      "source_type": "broadcaster_unofficial_transcript",
+      "verification_status": "transcript_text_verified",
+      "imported_date": "2026-10-17",
+      "notes_zh": "CNBC「Halftime Report」記者 Kate Rooney 於 OpenAI DevDay 2026 現場（舊金山）直播專訪 Sam Altman，2026-09-29 美國東部時間中午播出。CNBC 網站同日刊出逐字稿（自稱 unofficial transcript）。影片分兩段：第 1 段 4:17、第 2 段 5:18，合計約 9 分 35 秒，記為 10 分鐘；兩段影片頁面標示發布時間 2026-09-29 16:17 與 16:28（協調世界時）。語錄以逐字稿核對並以兩段影片音訊轉寫逐詞比對；已用音訊逐字核對。影片分兩段：第 1 段（video_url）https://www.cnbc.com/video/2026/09/29/openais-sam-altman-on-new-models-safety-has-to-stay-ahead-of-capabilities.html；第 2 段 https://www.cnbc.com/video/2026/09/29/sam-altman-on-nvidias-new-ai-guardrails-i-dont-think-its-a-full-solution.html（因既有欄位無第二影片網址，暫放 audio_url）。每則語錄的 source_url 指向所在那一段，timestamp 為該段影片內時間。總統、華府、首次公開發行等段落依規則不取。source_type 採新值 broadcaster_unofficial_transcript（廣播媒體自稱非官方的逐字稿，已以音訊逐字核對）。"
     }
   ]
 }
