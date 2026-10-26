@@ -116,5 +116,18 @@
     ],
     "draft_note": "繁體中文導讀；語錄段落已用官方逐字稿核對，開場祖父母故事依第三方轉錄摘要，未對影片全程校聽。",
     "char_count": 258
+  },
+  {
+    "speech_id": "MZ-2026-001",
+    "summary_zh": "祖克柏與 Meta 首席人工智慧長 Alexandr Wang 在 Cheeky Pint 播客談新一代模型 Muse Wonder。祖克柏從用 Muse 在格鬥回合間當教練說起，預言「每個人其實都會寫大量程式碼，只是他們不會知道自己在寫程式」，並說公司內部的想法是「模型就是產品」，個性與主動程度都要訓練進模型。兩人說明 Wonder 的主動記憶、程式能力與先付費的上線方式，也談到為何敢押上一千億美元以上的算力：要讓這件事行不通，整個人工智慧都得失敗。他們認為超級智慧最高的用途是發明與創造，而不是自動化，未來每家企業都會有自己的代理，團隊則要保持技術功底、人人寫程式。（依官方逐字稿整理，未對影片全程校聽。）",
+    "based_on": [
+      "official_transcript"
+    ],
+    "source_urls": [
+      "https://cheekypint.substack.com/p/muse-wonder-zuckerberg-and-wangs",
+      "https://www.youtube.com/watch?v=XfdIhd1g6EI"
+    ],
+    "draft_note": "繁體中文導讀；語錄段落已用官方 Substack 逐字稿核對，未對影片全程校聽。",
+    "char_count": 307
   }
 ]
