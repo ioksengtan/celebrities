@@ -4,6 +4,12 @@
 
 ---
 
+## 2026-10-26（Mark Zuckerberg Cheeky Pint 訪談導讀與中文短摘要）
+
+- 新增導讀檔 `references/editorials/MZ-2026-001.md`（七段），並在 `references/prod001_summary_zh_draft.json` 最後加上 MZ-2026-001 中文短摘要一列（307 字）；`speeches_database.json` 的 MZ-2026-001 加上 `editorial_path`。
+- 出處追溯：原始出處是 Cheeky Pint 官方 Substack 逐字稿與官方 YouTube 影片。官方頁面這次可以開啟，章節標題與時間碼取自頁面上的官方 Timestamps；導讀引號內的英文全部與官方逐字稿程式比對過，且只用已核實的 Q01–Q06 與少數詞彙。頁面下方的讀者留言不是節目內容，沒有採用。
+- 沒有改語錄、卡片、排程或程式。
+
 ## 2026-10-17（Sam Altman 兩場入庫：SA-2026-007、SA-2026-008）
 
 - 新增既有講者 Sam Altman 的兩場。SA-2026-007 是 Vanity Fair「Fair Game」〈Sam Altman Sees the Future. Are We In It? (Part 1 of 2)〉，日期 2026-10-05，片長 49:29，記為 49 分鐘。SA-2026-008 是 CNBC「Halftime Report」記者 Kate Rooney 於 OpenAI DevDay 2026 的專訪，日期 2026-09-29，長度記 10 分鐘。沒有新增講者，沒有改講者色，沒有做詞彙卡，也沒有導讀或中文短摘要。
