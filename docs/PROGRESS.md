@@ -4,6 +4,12 @@
 
 ---
 
+## 2026-10-26（Mark Zuckerberg Cheeky Pint 訪談導讀與中文短摘要）
+
+- 新增導讀檔 `references/editorials/MZ-2026-001.md`（七段），並在 `references/prod001_summary_zh_draft.json` 最後加上 MZ-2026-001 中文短摘要一列（307 字）；`speeches_database.json` 的 MZ-2026-001 加上 `editorial_path`。
+- 出處追溯：原始出處是 Cheeky Pint 官方 Substack 逐字稿與官方 YouTube 影片。官方頁面這次可以開啟，章節標題與時間碼取自頁面上的官方 Timestamps；導讀引號內的英文全部與官方逐字稿程式比對過，且只用已核實的 Q01–Q06 與少數詞彙。頁面下方的讀者留言不是節目內容，沒有採用。
+- 沒有改語錄、卡片、排程或程式。
+
 ## 2026-10-17（Mark Zuckerberg 名人詞彙卡 6 張，id 188–193）
 
 - 名人詞彙（Executive English）187→193。新增 Mark Zuckerberg 6 張卡，id 188–193（ante、product-market fit、home run、business in a box、full-stack、discretion）。每個欄位照交付檔原樣寫入，沒有改任何一個字，也沒有改舊卡。出處檔沒有加入倉庫。

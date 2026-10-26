@@ -39,7 +39,7 @@
         </div>
       </div>
       <aside class="home-proof" aria-label="內容規模">
-        <div><b>43</b><span>場公開演講與訪談</span></div>
+        <div><b id="stat-speeches">43</b><span>場公開演講與訪談</span></div>
         <div><b id="stat-ee">193</b><span>個進階英語詞彙</span></div>
         <div><b id="stat-kl">74</b><span>張科技主題卡</span></div>
         <p>每張內容都保留講者、場合與日期，不用脫離語境死背單字。</p>
@@ -119,6 +119,24 @@
           document.getElementById(kickerId).textContent = count;
         } catch (e) {}
       }));
+    })();
+
+    // Dated speech count follows references/speeches_database.json.
+    // The number in the markup is the fallback when fetch, parse, or the count fails.
+    (async () => {
+      try {
+        const response = await fetch("references/speeches_database.json");
+        if (!response.ok) return;
+        const data = await response.json();
+        if (!data || !Array.isArray(data.speeches)) return;
+        const count = data.speeches.filter((speech) => (
+          speech && typeof speech.date === "string" && /^\d{4}/.test(speech.date)
+        )).length;
+        if (!Number.isInteger(count) || count <= 0) return;
+        const node = document.getElementById("stat-speeches");
+        if (!node) return;
+        node.textContent = String(count);
+      } catch (e) {}
     })();
   </script>
 </body>
