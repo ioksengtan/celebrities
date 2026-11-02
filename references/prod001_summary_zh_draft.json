@@ -129,5 +129,19 @@
     ],
     "draft_note": "繁體中文導讀；語錄段落已用官方 Substack 逐字稿核對，未對影片全程校聽。",
     "char_count": 307
+  },
+  {
+    "speech_id": "YL-2026-001",
+    "summary_zh": "楊立昆在巴黎政治學院的年度首場大型講座上，以法語談人工智慧往哪裡去。他說自己走向機器學習是因為「沒有聰明到能設計出一台智慧機器」，不如讓機器靠經驗自己長出智慧；也強調大腦是一台預測機器，但文字很簡單，真實世界遠比文字複雜，所以只靠文字訓練的大型語言模型到不了人類水準。他估算四歲小孩光靠視覺看到的資訊量就和最大的語言模型相當。談到未來，他把超級智慧助理比作比你聰明、卻聽你指揮的博士生，最後做決定的仍是人，並認為把人類智慧稱為「通用」是錯的，人類智慧高度專門化、但適應力強。（依 YouTube 法文自動字幕節錄整理，未對影片全程校聽；英文與中文為本庫翻譯。）",
+    "based_on": [
+      "platform_auto_captions",
+      "official_event_page"
+    ],
+    "source_urls": [
+      "https://www.sciencespo.fr/fr/evenements/les-grandes-conferences-yann-le-cun-president-executif-d-advanced-machine-intelligence-et-laureat-du-prix-turing/",
+      "https://www.youtube.com/watch?v=Y4s8NadbZfU"
+    ],
+    "draft_note": "繁體中文導讀；法文語錄以 YouTube 法文自動字幕核對，只看語錄附近節錄，未對影片全程校聽。",
+    "char_count": 280
   }
 ]

@@ -4,6 +4,14 @@
 
 ---
 
+## 2026-11-02（Yann LeCun Sciences Po 演講導讀與中文短摘要）
+
+- 新增導讀檔 `references/editorials/YL-2026-001.md`（六段），並在 `references/prod001_summary_zh_draft.json` 最後加上 YL-2026-001 中文短摘要一列；`speeches_database.json` 的 YL-2026-001 加上 `editorial_path`。
+- 出處追溯：原始出處是 Sciences Po 官方活動頁與官方 YouTube 直播錄影（oEmbed 確認頻道為 Sciences Po、標題〈Yann Le Cun : où va l’intelligence artificielle ?〉）。活動時間、地點、主持、全程法語以活動頁為準。無官方逐字稿，法文引句取自自動字幕、只用本庫已核實的 Q01–Q06 與節錄；沒有看過影片全程，導讀只談這些節錄點，已在文中註明。
+- 沒有改語錄、卡片、排程或程式。
+
+---
+
 ## 2026-10-26（Mark Zuckerberg Cheeky Pint 訪談導讀與中文短摘要）
 
 - 新增導讀檔 `references/editorials/MZ-2026-001.md`（七段），並在 `references/prod001_summary_zh_draft.json` 最後加上 MZ-2026-001 中文短摘要一列（307 字）；`speeches_database.json` 的 MZ-2026-001 加上 `editorial_path`。
