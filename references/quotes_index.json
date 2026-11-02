@@ -2018,5 +2018,219 @@
     "source_type": "official_transcript",
     "status": "verified",
     "verification_note": "已用程式核對：英文原句為 Cheeky Pint 官方 Substack 逐字稿的逐字子字串（出現 1 次，說話人標示為 Mark Zuckerberg；來源 https://cheekypint.substack.com/p/muse-wonder-zuckerberg-and-wangs），也與 YouTube 上傳者提供的英文字幕及自動字幕逐詞序列一致（不計大小寫與標點）。原始影片時間碼 1:09:09 由自動字幕逐詞時間對齊取得。官方逐字稿可能經編修；未對影片全程校聽。"
+  },
+  {
+    "quote_id": "SA-2026-007-Q01",
+    "speech_id": "SA-2026-007",
+    "speaker": "sa",
+    "event": "Vanity Fair Fair Game: Sam Altman Sees the Future. Are We In It? (Part 1 of 2)",
+    "date": "2026-10-05",
+    "quote": "I think there are many people that could have done the part of this that I did",
+    "quote_lang": "en",
+    "quote_zh": "我認為有很多人都能做好我在這件事裡負責的那部分。",
+    "why_notable_zh": "被問到身為人工智慧的代表人物、被比作奧本海默有何感受時，他把功勞歸給一小群傑出的科學家與工程師。",
+    "tags": [
+      "團隊",
+      "領導",
+      "謙遜"
+    ],
+    "source_url": "https://www.youtube.com/watch?v=iKFqJOSWHTE&t=301s",
+    "timestamp": "05:01",
+    "timestamp_precision": "caption_word_alignment",
+    "source_type": "official_transcript",
+    "status": "verified",
+    "verification_note": "已用程式核對：英文原句為 Vanity Fair 官方逐字稿的逐字子字串（出現 1 次；來源 https://www.vanityfair.com/story/sam-altman-exclusive-interview-part-1；說話人依問答上下文為 Sam Altman），也與 Fair Game by Vanity Fair 頻道上傳的人工英文字幕逐詞序列一致（不計大小寫與標點，出現 1 次）。時間碼由自動字幕逐詞時間對齊取得（出現 1 次）。官方逐字稿註明「經輕度編輯」；未對影片全程校聽。"
+  },
+  {
+    "quote_id": "SA-2026-007-Q02",
+    "speech_id": "SA-2026-007",
+    "speaker": "sa",
+    "event": "Vanity Fair Fair Game: Sam Altman Sees the Future. Are We In It? (Part 1 of 2)",
+    "date": "2026-10-05",
+    "quote": "Having kids is by far the best thing I’ve ever done.",
+    "quote_lang": "en",
+    "quote_zh": "有孩子是我這輩子做過最好的事，遙遙領先。",
+    "why_notable_zh": "兩個孩子的父親談為人父母如何改變他的工作與時間排序。",
+    "tags": [
+      "家庭",
+      "人生"
+    ],
+    "source_url": "https://www.youtube.com/watch?v=iKFqJOSWHTE&t=473s",
+    "timestamp": "07:53",
+    "timestamp_precision": "caption_word_alignment",
+    "source_type": "official_transcript",
+    "status": "verified",
+    "verification_note": "已用程式核對：英文原句為 Vanity Fair 官方逐字稿的逐字子字串（出現 1 次；來源 https://www.vanityfair.com/story/sam-altman-exclusive-interview-part-1；說話人依問答上下文為 Sam Altman），也與 Fair Game by Vanity Fair 頻道上傳的人工英文字幕逐詞序列一致（不計大小寫與標點，出現 1 次）。時間碼由自動字幕逐詞時間對齊取得（出現 1 次）。官方逐字稿註明「經輕度編輯」；未對影片全程校聽。"
+  },
+  {
+    "quote_id": "SA-2026-007-Q03",
+    "speech_id": "SA-2026-007",
+    "speaker": "sa",
+    "event": "Vanity Fair Fair Game: Sam Altman Sees the Future. Are We In It? (Part 1 of 2)",
+    "date": "2026-10-05",
+    "quote": "I’m a big fan of limiting technology across the board for kids.",
+    "quote_lang": "en",
+    "quote_zh": "我非常贊成全面限制孩子使用科技產品。",
+    "why_notable_zh": "打造 ChatGPT 的人主張幼兒應在戶外玩耍，自己的孩子現在還不會讓他們跟 ChatGPT 對話。",
+    "tags": [
+      "兒童",
+      "科技使用",
+      "教育"
+    ],
+    "source_url": "https://www.youtube.com/watch?v=iKFqJOSWHTE&t=577s",
+    "timestamp": "09:37",
+    "timestamp_precision": "caption_word_alignment",
+    "source_type": "official_transcript",
+    "status": "verified",
+    "verification_note": "已用程式核對：英文原句為 Vanity Fair 官方逐字稿的逐字子字串（出現 1 次；來源 https://www.vanityfair.com/story/sam-altman-exclusive-interview-part-1；說話人依問答上下文為 Sam Altman），也與 Fair Game by Vanity Fair 頻道上傳的人工英文字幕逐詞序列一致（不計大小寫與標點，出現 1 次）。時間碼由自動字幕逐詞時間對齊取得（出現 1 次）。官方逐字稿註明「經輕度編輯」；未對影片全程校聽。自動字幕逐詞序列不完全一致（自動字幕把 limiting 誤辨為 eliminating），人工字幕逐字一致；時間碼取自動字幕中首詞的逐詞時間（人工查看確認）。"
+  },
+  {
+    "quote_id": "SA-2026-007-Q04",
+    "speech_id": "SA-2026-007",
+    "speaker": "sa",
+    "event": "Vanity Fair Fair Game: Sam Altman Sees the Future. Are We In It? (Part 1 of 2)",
+    "date": "2026-10-05",
+    "quote": "The models are finally smart enough to do this stuff. A model that can prove the hardest math problems can do a lot of other new knowledge discovery too.",
+    "quote_lang": "en",
+    "quote_zh": "這些模型終於聰明到能做這類事了。能證明最難數學題的模型，也能做很多其他新知識的發現。",
+    "why_notable_zh": "談 OpenAI 基金會以健康、疾病與科學為重點，認為模型能力已足以推動疾病研究。",
+    "tags": [
+      "人工智慧",
+      "科學",
+      "醫療"
+    ],
+    "source_url": "https://www.youtube.com/watch?v=iKFqJOSWHTE&t=1894s",
+    "timestamp": "31:34",
+    "timestamp_precision": "caption_word_alignment",
+    "source_type": "official_transcript",
+    "status": "verified",
+    "verification_note": "已用程式核對：英文原句為 Vanity Fair 官方逐字稿的逐字子字串（出現 1 次；來源 https://www.vanityfair.com/story/sam-altman-exclusive-interview-part-1；說話人依問答上下文為 Sam Altman），也與 Fair Game by Vanity Fair 頻道上傳的人工英文字幕逐詞序列一致（不計大小寫與標點，出現 1 次）。時間碼由自動字幕逐詞時間對齊取得（出現 1 次）。官方逐字稿註明「經輕度編輯」；未對影片全程校聽。自動字幕逐詞序列不完全一致（自動字幕在 stuff 與 A 之間多出口語贅詞 the），人工字幕逐字一致；時間碼取自動字幕中首詞的逐詞時間（人工查看確認）。"
+  },
+  {
+    "quote_id": "SA-2026-007-Q05",
+    "speech_id": "SA-2026-007",
+    "speaker": "sa",
+    "event": "Vanity Fair Fair Game: Sam Altman Sees the Future. Are We In It? (Part 1 of 2)",
+    "date": "2026-10-05",
+    "quote": "I really hope that hundreds of years from now, people look back at our lives and just can’t believe how bad we had it.",
+    "quote_lang": "en",
+    "quote_zh": "我真心希望幾百年後，人們回顧我們的生活，會不敢相信我們當時過得那麼差。",
+    "why_notable_zh": "他用醫學進步說明為何不想停止科技進步，主張該做的是克服挑戰、取得好處。",
+    "tags": [
+      "科技進步",
+      "未來",
+      "文明"
+    ],
+    "source_url": "https://www.youtube.com/watch?v=iKFqJOSWHTE&t=2024s",
+    "timestamp": "33:44",
+    "timestamp_precision": "caption_word_alignment",
+    "source_type": "official_transcript",
+    "status": "verified",
+    "verification_note": "已用程式核對：英文原句為 Vanity Fair 官方逐字稿的逐字子字串（出現 1 次；來源 https://www.vanityfair.com/story/sam-altman-exclusive-interview-part-1；說話人依問答上下文為 Sam Altman），也與 Fair Game by Vanity Fair 頻道上傳的人工英文字幕逐詞序列一致（不計大小寫與標點，出現 1 次）。時間碼由自動字幕逐詞時間對齊取得（出現 1 次）。官方逐字稿註明「經輕度編輯」；未對影片全程校聽。"
+  },
+  {
+    "quote_id": "SA-2026-008-Q01",
+    "speech_id": "SA-2026-008",
+    "speaker": "sa",
+    "event": "CNBC Halftime Report: Sam Altman at OpenAI DevDay 2026",
+    "date": "2026-09-29",
+    "quote": "AI has to be built for people.",
+    "quote_lang": "en",
+    "quote_zh": "人工智慧必須為人而打造。",
+    "why_notable_zh": "被問到為何因安全考量放棄推出新模型時，他的第一句回答。",
+    "tags": [
+      "人工智慧",
+      "以人為本"
+    ],
+    "source_url": "https://www.cnbc.com/video/2026/09/29/openais-sam-altman-on-new-models-safety-has-to-stay-ahead-of-capabilities.html",
+    "timestamp": "00:37",
+    "timestamp_precision": "caption_word_alignment",
+    "source_type": "broadcaster_unofficial_transcript",
+    "status": "verified",
+    "verification_note": "已用程式核對：英文原句為 CNBC 官方網站刊出的逐字稿（CNBC 自稱 unofficial transcript）的逐字子字串（出現 1 次，說話人標示 ALTMAN；https://www.cnbc.com/2026/09/29/first-on-cnbc-transcript-openai-ceo-sam-altman-speaks-with-cnbcs-kate-rooney-on-halftime-report-today.html），並與 CNBC 第 1 段影片音訊以 faster-whisper（medium，float32）轉寫的逐詞序列一致（不計大小寫與標點，出現 1 次）。已用音訊逐字核對。本則出自第 1 段影片（https://www.cnbc.com/video/2026/09/29/openais-sam-altman-on-new-models-safety-has-to-stay-ahead-of-capabilities.html），時間碼 00:37 為該段影片內時間，取轉寫首詞時間。CNBC 影片無字幕軌。"
+  },
+  {
+    "quote_id": "SA-2026-008-Q02",
+    "speech_id": "SA-2026-008",
+    "speaker": "sa",
+    "event": "CNBC Halftime Report: Sam Altman at OpenAI DevDay 2026",
+    "date": "2026-09-29",
+    "quote": "alignment, safety, monitoring, security have to stay way ahead of capabilities.",
+    "quote_lang": "en",
+    "quote_zh": "對齊、安全、監測與資安，都必須遠遠走在能力前面。",
+    "why_notable_zh": "說明 OpenAI 隨模型變強而提高安全標準的原則。",
+    "tags": [
+      "人工智慧安全",
+      "模型開發"
+    ],
+    "source_url": "https://www.cnbc.com/video/2026/09/29/openais-sam-altman-on-new-models-safety-has-to-stay-ahead-of-capabilities.html",
+    "timestamp": "01:02",
+    "timestamp_precision": "caption_word_alignment",
+    "source_type": "broadcaster_unofficial_transcript",
+    "status": "verified",
+    "verification_note": "已用程式核對：英文原句為 CNBC 官方網站刊出的逐字稿（CNBC 自稱 unofficial transcript）的逐字子字串（出現 1 次，說話人標示 ALTMAN；https://www.cnbc.com/2026/09/29/first-on-cnbc-transcript-openai-ceo-sam-altman-speaks-with-cnbcs-kate-rooney-on-halftime-report-today.html），並與 CNBC 第 1 段影片音訊以 faster-whisper（medium，float32）轉寫的逐詞序列一致（不計大小寫與標點，出現 1 次）。已用音訊逐字核對。本則出自第 1 段影片（https://www.cnbc.com/video/2026/09/29/openais-sam-altman-on-new-models-safety-has-to-stay-ahead-of-capabilities.html），時間碼 01:02 為該段影片內時間，取轉寫首詞時間。CNBC 影片無字幕軌。"
+  },
+  {
+    "quote_id": "SA-2026-008-Q03",
+    "speech_id": "SA-2026-008",
+    "speaker": "sa",
+    "event": "CNBC Halftime Report: Sam Altman at OpenAI DevDay 2026",
+    "date": "2026-09-29",
+    "quote": "And I worry that if we treat AI safety as only an engineering problem, we will miss the very important point that we have a science problem in front of us.",
+    "quote_lang": "en",
+    "quote_zh": "我擔心，如果我們只把人工智慧安全當成工程問題，就會錯過一個很重要的重點：我們面前還有一個科學問題。",
+    "why_notable_zh": "回應人工智慧安全是否只是工程問題，指出如何對齊模型仍有待科學發現。",
+    "tags": [
+      "人工智慧安全",
+      "科學"
+    ],
+    "source_url": "https://www.cnbc.com/video/2026/09/29/sam-altman-on-nvidias-new-ai-guardrails-i-dont-think-its-a-full-solution.html",
+    "timestamp": "00:36",
+    "timestamp_precision": "caption_word_alignment",
+    "source_type": "broadcaster_unofficial_transcript",
+    "status": "verified",
+    "verification_note": "已用程式核對：英文原句為 CNBC 官方網站刊出的逐字稿（CNBC 自稱 unofficial transcript）的逐字子字串（出現 1 次，說話人標示 ALTMAN；https://www.cnbc.com/2026/09/29/first-on-cnbc-transcript-openai-ceo-sam-altman-speaks-with-cnbcs-kate-rooney-on-halftime-report-today.html），並與 CNBC 第 2 段影片音訊以 faster-whisper（medium，float32）轉寫的逐詞序列一致（不計大小寫與標點，出現 1 次）。已用音訊逐字核對。本則出自第 2 段影片（https://www.cnbc.com/video/2026/09/29/sam-altman-on-nvidias-new-ai-guardrails-i-dont-think-its-a-full-solution.html），時間碼 00:36 為該段影片內時間，取轉寫首詞時間。CNBC 影片無字幕軌。"
+  },
+  {
+    "quote_id": "SA-2026-008-Q04",
+    "speech_id": "SA-2026-008",
+    "speaker": "sa",
+    "event": "CNBC Halftime Report: Sam Altman at OpenAI DevDay 2026",
+    "date": "2026-09-29",
+    "quote": "I am not worried about being first with new hardware. New hardware is very hard to do.",
+    "quote_lang": "en",
+    "quote_zh": "我不擔心新硬體能不能搶第一。新硬體非常難做。",
+    "why_notable_zh": "談 OpenAI 硬體計畫，強調新的運算裝置形態很少出現，品質門檻比搶先更重要。",
+    "tags": [
+      "硬體",
+      "產品策略"
+    ],
+    "source_url": "https://www.cnbc.com/video/2026/09/29/sam-altman-on-nvidias-new-ai-guardrails-i-dont-think-its-a-full-solution.html",
+    "timestamp": "03:56",
+    "timestamp_precision": "caption_word_alignment",
+    "source_type": "broadcaster_unofficial_transcript",
+    "status": "verified",
+    "verification_note": "已用程式核對：英文原句為 CNBC 官方網站刊出的逐字稿（CNBC 自稱 unofficial transcript）的逐字子字串（出現 1 次，說話人標示 ALTMAN；https://www.cnbc.com/2026/09/29/first-on-cnbc-transcript-openai-ceo-sam-altman-speaks-with-cnbcs-kate-rooney-on-halftime-report-today.html），並與 CNBC 第 2 段影片音訊以 faster-whisper（medium，float32）轉寫的逐詞序列一致（不計大小寫與標點，出現 1 次）。已用音訊逐字核對。本則出自第 2 段影片（https://www.cnbc.com/video/2026/09/29/sam-altman-on-nvidias-new-ai-guardrails-i-dont-think-its-a-full-solution.html），時間碼 03:56 為該段影片內時間，取轉寫首詞時間。CNBC 影片無字幕軌。"
+  },
+  {
+    "quote_id": "SA-2026-008-Q05",
+    "speech_id": "SA-2026-008",
+    "speaker": "sa",
+    "event": "CNBC Halftime Report: Sam Altman at OpenAI DevDay 2026",
+    "date": "2026-09-29",
+    "quote": "I think everyone doing something this important to society deserves great scrutiny.",
+    "quote_lang": "en",
+    "quote_zh": "我認為每個在做對社會如此重要之事的人，都應該受到嚴格檢視。",
+    "why_notable_zh": "被問到大眾觀感與以他為題材的電影時，他接受外界檢視。",
+    "tags": [
+      "領導",
+      "公眾觀感"
+    ],
+    "source_url": "https://www.cnbc.com/video/2026/09/29/sam-altman-on-nvidias-new-ai-guardrails-i-dont-think-its-a-full-solution.html",
+    "timestamp": "04:34",
+    "timestamp_precision": "caption_word_alignment",
+    "source_type": "broadcaster_unofficial_transcript",
+    "status": "verified",
+    "verification_note": "已用程式核對：英文原句為 CNBC 官方網站刊出的逐字稿（CNBC 自稱 unofficial transcript）的逐字子字串（出現 1 次，說話人標示 ALTMAN；https://www.cnbc.com/2026/09/29/first-on-cnbc-transcript-openai-ceo-sam-altman-speaks-with-cnbcs-kate-rooney-on-halftime-report-today.html），並與 CNBC 第 2 段影片音訊以 faster-whisper（medium，float32）轉寫的逐詞序列一致（不計大小寫與標點，出現 1 次）。已用音訊逐字核對。本則出自第 2 段影片（https://www.cnbc.com/video/2026/09/29/sam-altman-on-nvidias-new-ai-guardrails-i-dont-think-its-a-full-solution.html），時間碼 04:34 為該段影片內時間，取轉寫首詞時間。CNBC 影片無字幕軌。"
   }
 ]
