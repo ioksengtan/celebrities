@@ -1353,6 +1353,7 @@
         "research"
       ],
       "transcript_path": "references/transcripts/YL-2026-001.txt",
+      "editorial_path": "references/editorials/YL-2026-001.md",
       "source_type": "platform_auto_captions",
       "verification_status": "transcript_text_verified",
       "imported_date": "2026-10-04",
