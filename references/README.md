@@ -23,7 +23,7 @@ Hold this round (never verified on the wall): `EM-2026-005`, `SA-2026-001`.
 
 ## Other
 
-- `speeches_database.json` — 44 speeches/interviews (including one undated interview) metadata.
+- `speeches_database.json` — 46 speeches/interviews (including one undated interview) metadata.
 - `speeches_indexes.json` — 7 derived index views.
 - `product_recommendations.json` — candidate product ideas.
 - `美國大學畢業典禮名人演講專案報告（完整版）.docx` — full project report.
@@ -65,3 +65,11 @@ Hold this round (never verified on the wall): `EM-2026-005`, `SA-2026-001`.
 - 六則語錄都在 `quotes_index.json`，狀態都是 `verified`，原文照交付檔逐字寫入，沒有改任何一個字。來源類型用既有的 `official_transcript`，時間碼精度用既有的 `caption_word_alignment`。沒有新增 `source_type`。六則都不帶 `quote_lang`，等同英文。
 - Mark Zuckerberg 是既有講者，沒有新增講者、沒有改講者色、沒有做詞彙卡。Alexandr Wang 本批不新增為講者。
 - 單場頁：`products/core/speech.html?id=MZ-2026-001`。已核實語錄出現在語錄牆，講者代碼沿用既有的 `mz`。
+
+## Sam Altman Vanity Fair 與 CNBC 入庫（2026-10-17）
+
+- `SA-2026-007`：Vanity Fair「Fair Game」〈Sam Altman Sees the Future. Are We In It? (Part 1 of 2)〉。官方頁面於 2026-10-05 刊出影片與全文逐字稿（頁面註明經輕度編輯）。官方說明有 9/11 與 10/2 兩次錄製，第一集未註明是哪一次。YouTube 片長 49:29，記為 49 分鐘。節錄逐字稿：`transcripts/SA-2026-007.txt`。`source_type` 用既有的 `official_transcript`。五則語錄全部 `verified`，原文照交付檔逐字寫入。
+- `SA-2026-008`：CNBC「Halftime Report」記者 Kate Rooney 於 OpenAI DevDay 2026 現場專訪，日期 2026-09-29，長度記 10 分鐘。CNBC 網站同日刊出的逐字稿標示為 unofficial transcript。影片分兩段：第 1 段放 `video_url`，第 2 段放既有欄位 `audio_url`。節錄逐字稿：`transcripts/SA-2026-008.txt`。五則語錄全部 `verified`，原文照交付檔逐字寫入。每則 `source_url` 指向所在那一段，`timestamp` 為該段影片內時間。
+- 新增值 `source_type`：`broadcaster_unofficial_transcript`。意思是廣播媒體自己的逐字稿，並標示為非官方，語錄已對音訊逐字核對（a broadcaster's own transcript labelled unofficial, with quotes verified word for word against the audio）。SA-2026-008 使用這個值。內容驗證器目前只對追劇英語卡片檢查 `source_type` 列舉，演講庫與語錄索引沒有列舉檢查，因此這次沒有改 `tools/validate-content.mjs`。
+- Sam Altman 是既有講者（`sam_altman`／語錄牆代碼 `sa`）。沒有新增講者，沒有改講者色，沒有做詞彙卡。
+- 單場頁：`products/core/speech.html?id=SA-2026-007`、`products/core/speech.html?id=SA-2026-008`。已核實語錄出現在語錄牆，講者代碼沿用既有的 `sa`。
