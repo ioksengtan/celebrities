@@ -7,16 +7,24 @@
     "rarity": "rare",
     "zh": "糞肥；（戲稱）鬼扯的爛攤子",
     "def_en": "animal waste used as fertilizer — here used as a comedic stand-in for a rude word",
-    "example": "It was predicted that by the middle of the next century there would be nine feet of manure covering the streets.",
+    "example": "We fold composted manure into the herb bed a week before planting.",
+    "quote": "It was predicted that by the middle of the next century there would be nine feet of manure covering the streets.",
     "syn": "dung, fertilizer, garbage (口語)",
     "speaker": "jd",
-    "event": "虛構 Bloomberg 訪談橋段，Jared 用「manure」代替髒話講完整套糞肥史類比",
-    "date": "2018-04-24",
+    "event": "第 5 季第 5 集 Facial Recognition，Emily Chang 的虛構 Bloomberg 訪談",
+    "date": "2018-04-22",
     "show": "Silicon Valley",
+    "season": 5,
+    "episode": 5,
+    "episode_title": "Facial Recognition",
+    "episode_sources": [
+      "https://en.wikipedia.org/wiki/Silicon_Valley_(season_5)",
+      "https://www.vulture.com/2018/04/silicon-valley-recap-season-5-episode-5.html"
+    ],
     "source_type": "tv_drama",
-    "platform": "YouTube（lol Valley 剪輯頻道）",
-    "source_url": "https://www.youtube.com/watch?v=w61d-NBqafM",
-    "timestamp": "00:00"
+    "platform": "HBO",
+    "copyright": "台詞著作權屬原影集版權人（《矽谷群瞎傳》屬 HBO），本站與版權人無合作。",
+    "line_verified": false
   },
   {
     "id": 2,
@@ -26,16 +34,24 @@
     "rarity": "rare",
     "zh": "成群湧向；蜂擁而至",
     "def_en": "moving somewhere in large numbers, like a crowd (from \"flock to\")",
-    "example": "The Industrial Revolution had people flocking to the city.",
+    "example": "After the ferry docked, visitors started flocking to the night market.",
+    "quote": "The Industrial Revolution had people flocking to the city.",
     "syn": "swarming, crowding, pouring into",
     "speaker": "jd",
-    "event": "虛構 Bloomberg 訪談橋段，Jared 講 1894 年倫敦馬糞危機類比",
-    "date": "2018-04-24",
+    "event": "第 5 季第 5 集 Facial Recognition，同一段訪談",
+    "date": "2018-04-22",
     "show": "Silicon Valley",
+    "season": 5,
+    "episode": 5,
+    "episode_title": "Facial Recognition",
+    "episode_sources": [
+      "https://en.wikipedia.org/wiki/Silicon_Valley_(season_5)",
+      "https://www.vulture.com/2018/04/silicon-valley-recap-season-5-episode-5.html"
+    ],
     "source_type": "tv_drama",
-    "platform": "YouTube（lol Valley 剪輯頻道）",
-    "source_url": "https://www.youtube.com/watch?v=w61d-NBqafM",
-    "timestamp": "00:20"
+    "platform": "HBO",
+    "copyright": "台詞著作權屬原影集版權人（《矽谷群瞎傳》屬 HBO），本站與版權人無合作。",
+    "line_verified": false
   },
   {
     "id": 3,
@@ -45,16 +61,24 @@
     "rarity": "legendary",
     "zh": "徹底消滅；抹除",
     "def_en": "to destroy something completely, leaving no trace",
-    "example": "No one saw coming was a new technology that would completely obliterate those concerns.",
+    "example": "One careful rewrite can obliterate the confusion in that paragraph.",
+    "quote": "",
     "syn": "destroy, eradicate, annihilate",
     "speaker": "jd",
-    "event": "虛構 Bloomberg 訪談橋段，汽車讓馬糞問題一夜消失的類比收尾",
-    "date": "2018-04-24",
+    "event": "第 5 季第 5 集 Facial Recognition，同一段訪談",
+    "date": "2018-04-22",
     "show": "Silicon Valley",
+    "season": 5,
+    "episode": 5,
+    "episode_title": "Facial Recognition",
+    "episode_sources": [
+      "https://en.wikipedia.org/wiki/Silicon_Valley_(season_5)",
+      "https://www.vulture.com/2018/04/silicon-valley-recap-season-5-episode-5.html"
+    ],
     "source_type": "tv_drama",
-    "platform": "YouTube（lol Valley 剪輯頻道）",
-    "source_url": "https://www.youtube.com/watch?v=w61d-NBqafM",
-    "timestamp": "00:35"
+    "platform": "HBO",
+    "copyright": "台詞著作權屬原影集版權人（《矽谷群瞎傳》屬 HBO），本站與版權人無合作。",
+    "line_verified": false
   },
   {
     "id": 4,
@@ -64,16 +88,18 @@
     "rarity": "rare",
     "zh": "佈滿；充滿（通常指負面的事物）",
     "def_en": "full of a lot of something, usually something bad or unwanted",
-    "example": "Dylan was found in his basement riddled with bullets.",
+    "example": "The rehearsal notes were riddled with timing errors, so the band ran the song again.",
+    "quote": "Dylan was found in his basement riddled with bullets.",
     "syn": "full of, filled with, covered in",
     "speaker": "mk",
     "event": "MAFIA the GAME 第一集，主持人 Mike 宣布夜晚出局結果的旁白台詞",
     "date": "2026-06-04",
     "show": "MAFIA the GAME（Founders Fund 出品）",
-    "source_type": "casual_video",
+    "source_type": "game",
     "platform": "YouTube（MAFIA the GAME 官方頻道）",
     "source_url": "https://www.youtube.com/watch?v=EDCwQe7P8T0",
-    "timestamp": ""
+    "copyright": "台詞著作權屬原遊戲版權人（《MAFIA the GAME》屬 Founders Fund），本站與版權人無合作。",
+    "line_verified": false
   },
   {
     "id": 5,
@@ -83,16 +109,18 @@
     "rarity": "rare",
     "zh": "一致同意的；無異議的",
     "def_en": "agreed by everyone, with no one disagreeing",
-    "example": "It's unanimous.",
+    "example": "The family was unanimous about spending Sunday at the park.",
+    "quote": "It's unanimous.",
     "syn": "united, undisputed, agreed by all",
     "speaker": "mk",
     "event": "MAFIA the GAME 第一集，主持人 Mike 宣布投票結果的旁白台詞",
     "date": "2026-06-04",
     "show": "MAFIA the GAME（Founders Fund 出品）",
-    "source_type": "casual_video",
+    "source_type": "game",
     "platform": "YouTube（MAFIA the GAME 官方頻道）",
     "source_url": "https://www.youtube.com/watch?v=EDCwQe7P8T0",
-    "timestamp": ""
+    "copyright": "台詞著作權屬原遊戲版權人（《MAFIA the GAME》屬 Founders Fund），本站與版權人無合作。",
+    "line_verified": false
   },
   {
     "id": 6,
@@ -102,15 +130,17 @@
     "rarity": "legendary",
     "zh": "燒焦的",
     "def_en": "burned until black on the surface",
-    "example": "Liv's charred remains were discovered at the site of her Burning Man wedding.",
+    "example": "The marshmallow stayed over the fire too long and came back charred.",
+    "quote": "Liv's charred remains were discovered at the site of her Burning Man wedding.",
     "syn": "burnt, scorched, blackened",
     "speaker": "mk",
     "event": "MAFIA the GAME 第一集，主持人 Mike 宣布夜晚出局結果的旁白台詞",
     "date": "2026-06-04",
     "show": "MAFIA the GAME（Founders Fund 出品）",
-    "source_type": "casual_video",
+    "source_type": "game",
     "platform": "YouTube（MAFIA the GAME 官方頻道）",
     "source_url": "https://www.youtube.com/watch?v=EDCwQe7P8T0",
-    "timestamp": ""
+    "copyright": "台詞著作權屬原遊戲版權人（《MAFIA the GAME》屬 Founders Fund），本站與版權人無合作。",
+    "line_verified": false
   }
 ]

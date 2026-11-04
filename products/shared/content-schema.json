@@ -13,9 +13,25 @@
     "rarities": ["common", "rare", "legendary"]
   },
   "screenEnglish": {
-    "required": ["word", "pos", "cefr", "rarity", "zh", "def_en", "example", "syn", "show", "source_type", "platform", "source_url"],
+    "required": ["word", "pos", "cefr", "rarity", "zh", "def_en", "example", "syn", "show", "source_type", "platform", "copyright", "line_verified"],
     "cefrRarity": { "A2": "common", "B1": "common", "B2": "rare", "C1": "legendary" },
-    "sourceTypes": ["tv_drama", "casual_video"]
+    "sourceTypes": ["tv_drama", "casual_video", "game"],
+    "videoLinkSourceTypes": ["casual_video", "game"],
+    "episodeFields": ["season", "episode", "episode_title"],
+    "unverifiedValue": "待查",
+    "maxQuotesPerTvEpisode": 2,
+    "bannedSourceFragments": ["w61d-NBqafM", "lol Valley"],
+    "exampleBannedFragments": [
+      "nine feet of manure",
+      "flocking to the city",
+      "obliterate those concerns",
+      "riddled with bullets",
+      "charred remains"
+    ],
+    "copyrightByShow": {
+      "Silicon Valley": "台詞著作權屬原影集版權人（《矽谷群瞎傳》屬 HBO），本站與版權人無合作。",
+      "MAFIA the GAME（Founders Fund 出品）": "台詞著作權屬原遊戲版權人（《MAFIA the GAME》屬 Founders Fund），本站與版權人無合作。"
+    }
   },
   "dailySchedule": {
     "file": "daily_schedule.json",

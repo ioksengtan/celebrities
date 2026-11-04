@@ -1,13 +1,13 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>追劇英語 · Screen English</title>
-<meta name="description" content="從美劇台詞與 YouTube／Podcast 等休閒影片中萃取的道地口語、俚語詞彙卡，依 CEFR 分級，附真實出處。">
+<meta name="description" content="從影集與遊戲節目整理的口語詞彙卡。例句由本站自編，原句只短摘並標明出處與版權。">
 <meta property="og:title" content="追劇英語 · Screen English">
-<meta property="og:description" content="從美劇台詞與休閒影片萃取的口語詞彙卡，短句引用、標明出處，依 CEFR 難度分級。">
+<meta property="og:description" content="從影集與遊戲節目整理的口語詞彙卡。例句由本站自編，原句只短摘並標明出處與版權。">
 <meta property="og:type" content="website">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="追劇英語 · Screen English">
-<meta name="twitter:description" content="從美劇台詞與休閒影片學道地口語、俚語，依 CEFR 分級。">
+<meta name="twitter:description" content="從影集與遊戲節目學口語。例句由本站自編，原句只短摘並標明出處與版權。">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Public+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
 <style>
@@ -207,6 +207,12 @@
   blockquote.quote cite{
     display: block; margin-top: 4px; font-style: normal; font-family: "IBM Plex Mono", monospace;
     font-size: 10.5px; color: var(--muted);
+  }
+  .example-line{ margin: 0; font-size: 13px; line-height: 1.45; }
+  .example-kicker{
+    display: block; margin-bottom: 2px;
+    font-family: "IBM Plex Mono", monospace; font-size: 9.5px;
+    letter-spacing: .06em; color: var(--muted);
   }
 
   /* ---- Extended (3rd) face: source & synonyms ---- */
@@ -638,7 +644,7 @@
   <header>
     <div class="titleblock">
       <h1>追劇英語 <span class="product-en">Screen English</span></h1>
-      <p>從美劇台詞與 YouTube／Podcast 等休閒影片中萃取的<b>道地口語</b>詞彙——不是教材腔，而是角色／主持人真正說出來的字，依 CEFR（A2–C1）分級，每個字都附短句引用與出處連結。</p>
+      <p>從影集與遊戲節目整理的<b>道地口語</b>詞彙，依 CEFR（A2–C1）分級。例句由本站自編；原句只在必要時短摘，並標明作品、季集或官方連結與版權聲明。</p>
     </div>
     <div class="stats mono">
       <div><b id="stat-total">0</b> 個字</div>
@@ -751,8 +757,8 @@
   </div>
 
   <footer>
-    <p>資料來源：美劇台詞與休閒影片，僅引用單句對白／短句作教學示例，並標明劇名或影片出處連結；CEFR 難度為估計值。</p>
-    <p>非商業教育用途，不轉載完整劇本或長段對白；如版權方有疑慮，歡迎聯繫移除。</p>
+    <p>資料來源：影集與遊戲節目。例句由本站自編；原句只短摘，影集不附影片連結，遊戲保留官方連結。CEFR 難度為估計值。</p>
+    <p>台詞著作權屬原作品版權人，本站與版權人無合作。不轉載完整劇本或長段對白；如版權方有疑慮，歡迎聯繫移除。</p>
   </footer>
 </div>
 
@@ -786,8 +792,14 @@ const POS_ZH = {
 };
 
 const SOURCE_TYPE_ZH = {
-  tv_drama: "影集", casual_video: "影片",
+  tv_drama: "影集", casual_video: "影片", game: "遊戲",
 };
+
+function escapeHtml(value){
+  return String(value ?? "").replace(/[&<>"']/g, char => ({
+    "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;"
+  })[char]);
+}
 
 const CARDS = await loadCards("./cards_data.json");
 const DAILY_SCHEDULE = LearningCore.normalizeSchedule(await (async ()=>{
@@ -852,24 +864,48 @@ function faceContentFor(c, which){
     `;
   }
   if (which === 1){
+    const quote = typeof c.quote === "string" ? c.quote.trim() : "";
+    const quoteBlock = quote
+      ? `<blockquote class="quote">"${escapeHtml(quote)}"<cite>— ${escapeHtml(s.name)}, ${escapeHtml(c.show)}${c.line_verified ? "" : " · 未對照官方字幕"}</cite></blockquote>`
+      : "";
     return `
       <span class="pos-tag">${POS_ZH[c.pos] || c.pos}</span>
-      <div class="def-en">${c.def_en}</div>
-      <div class="def-zh">${c.zh}</div>
-      <blockquote class="quote">"${c.example}"<cite>— ${s.name}, ${c.show}</cite></blockquote>
+      <div class="def-en">${escapeHtml(c.def_en)}</div>
+      <div class="def-zh">${escapeHtml(c.zh)}</div>
+      <p class="example-line"><span class="example-kicker">自編例句</span>${escapeHtml(c.example)}</p>
+      ${quoteBlock}
       <span class="hint">2 / 3 · 點擊看出處</span>
     `;
   }
+  const workLabel = c.source_type === "game" ? "遊戲" : "劇名";
+  const seasonText = c.season === "待查" ? "季數待查" : (c.season !== undefined ? `第 ${c.season} 季` : "");
+  const episodeText = c.episode === "待查" ? "集數待查" : (c.episode !== undefined ? `第 ${c.episode} 集` : "");
+  const episodeRows = (seasonText || episodeText || c.episode_title)
+    ? `<div class="ext-row"><span class="ext-label mono">季集</span><span>${seasonText}${episodeText}</span></div>
+      ${c.episode_title ? `<div class="ext-row"><span class="ext-label mono">集名</span><span>${escapeHtml(c.episode_title)}</span></div>` : ""}`
+    : "";
+  const referenceRows = Array.isArray(c.episode_sources)
+    ? c.episode_sources.map(url => {
+        const label = url.includes("wikipedia.org") ? "維基百科" : "劇評";
+        return `<div class="ext-row"><span class="ext-label mono">出處</span><span><a href="${escapeHtml(url)}" target="_blank" rel="noopener noreferrer">${label}</a></span></div>`;
+      }).join("")
+    : "";
+  const linkRow = c.source_url
+    ? `<div class="ext-row"><span class="ext-label mono">連結</span><span><a href="${escapeHtml(c.source_url)}" target="_blank" rel="noopener noreferrer">開啟來源 →</a></span></div>`
+    : `<div class="ext-row"><span class="ext-label mono">連結</span><span>沒有影片連結</span></div>`;
   return `
     <span class="pos-tag">出處與同義詞</span>
     <div class="ext-block">
-      <div class="ext-row"><span class="ext-label mono">角色</span><span>${s.name}（${s.short}）</span></div>
-      <div class="ext-row"><span class="ext-label mono">劇名</span><span>${c.show}</span></div>
-      <div class="ext-row"><span class="ext-label mono">場景</span><span>${c.event}</span></div>
-      <div class="ext-row"><span class="ext-label mono">平台</span><span>${c.platform}${c.timestamp ? "（" + c.timestamp + "）" : ""}</span></div>
-      <div class="ext-row"><span class="ext-label mono">連結</span><span><a href="${c.source_url}" target="_blank" rel="noopener noreferrer">開啟來源 →</a></span></div>
-      <div class="ext-row"><span class="ext-label mono">同義</span><span>${c.syn}</span></div>
-      <p class="ext-context">CEFR ${c.cefr}（${CEFR_INFO[c.cefr].zh}）· 例句為單句引用，非完整劇本或長段對白。</p>
+      <div class="ext-row"><span class="ext-label mono">角色</span><span>${escapeHtml(s.name)}（${escapeHtml(s.short)}）</span></div>
+      <div class="ext-row"><span class="ext-label mono">${workLabel}</span><span>${escapeHtml(c.show)}</span></div>
+      ${episodeRows}
+      <div class="ext-row"><span class="ext-label mono">場景</span><span>${escapeHtml(c.event)}</span></div>
+      <div class="ext-row"><span class="ext-label mono">平台</span><span>${escapeHtml(c.platform)}${c.timestamp ? "（" + escapeHtml(c.timestamp) + "）" : ""}</span></div>
+      ${linkRow}
+      ${referenceRows}
+      <div class="ext-row"><span class="ext-label mono">字幕</span><span>${c.line_verified ? "已對照官方字幕" : "未對照官方字幕"}</span></div>
+      <div class="ext-row"><span class="ext-label mono">同義</span><span>${escapeHtml(c.syn)}</span></div>
+      <p class="ext-context">${escapeHtml(c.copyright || "")}</p>
     </div>
     <span class="hint">3 / 3 · 點擊回正面</span>
   `;
