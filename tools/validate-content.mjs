@@ -250,7 +250,39 @@ function validateScreenCard(card, rules, file) {
       issues.push(`${where} 此來源類型必須保留 https 連結`);
     }
   }
+  if ((rules.quotesAlwaysEmpty || []).includes(card.word) && String(card.quote || "").trim() !== "") {
+    issues.push(`${where} ${card.word} 即使已核對官方字幕也不可收錄原句`);
+  }
+  if (serialized.includes("Founders Fund")) {
+    issues.push(`${where} 不可寫入尚未核實的 Founders Fund 歸屬`);
+  }
   return issues;
+}
+
+function extractFunction(source, name) {
+  const marker = `function ${name}(`;
+  const start = source.indexOf(marker);
+  if (start < 0) throw new Error(`找不到函式 ${name}`);
+  const bodyStart = source.indexOf("{", start);
+  let depth = 0;
+  let quote = null;
+  let escaped = false;
+  for (let i = bodyStart; i < source.length; i += 1) {
+    const char = source[i];
+    if (quote) {
+      if (escaped) escaped = false;
+      else if (char === "\\") escaped = true;
+      else if (char === quote) quote = null;
+      continue;
+    }
+    if (char === '"' || char === "'" || char === "`") { quote = char; continue; }
+    if (char === "{") depth += 1;
+    if (char === "}") {
+      depth -= 1;
+      if (depth === 0) return source.slice(start, i + 1);
+    }
+  }
+  throw new Error(`${name} 結構不完整`);
 }
 
 requireFields(screen, [...schema.common.required, ...schema.screenEnglish.required]);
@@ -284,6 +316,79 @@ const gameQuotes = tvEpisodeQuoteIssues([
   { id: 6, source_type: "game", show: "Game", quote: "Three." },
 ], screenRules.maxQuotesPerTvEpisode);
 if (gameQuotes.length) errors.push("遊戲來源不適用影集的兩句上限");
+
+const keptAfterVerification = validateScreenCard({
+  id: 99,
+  word: "charred",
+  quote: "The edge of the toast was charred.",
+  line_verified: true,
+  example: "The marshmallow stayed over the fire too long and came back charred.",
+  show: "MAFIA the GAME",
+  copyright: screenRules.copyrightByShow["MAFIA the GAME"],
+  source_type: "game",
+  source_url: "https://www.youtube.com/watch?v=EDCwQe7P8T0",
+  subtitle_source: "https://example.com/official-subtitles",
+}, screenRules, "原句清空檢查");
+if (!keptAfterVerification.some(issue => issue.includes("即使已核對官方字幕也不可收錄原句"))) {
+  errors.push("charred 即使核對通過也不可留下原句");
+}
+const emptiedQuote = validateScreenCard({
+  id: 98,
+  word: "riddled with",
+  quote: "",
+  line_verified: true,
+  example: "The rehearsal notes were riddled with timing errors, so the band ran the song again.",
+  show: "MAFIA the GAME",
+  copyright: screenRules.copyrightByShow["MAFIA the GAME"],
+  source_type: "game",
+  source_url: "https://www.youtube.com/watch?v=EDCwQe7P8T0",
+  subtitle_source: "https://example.com/official-subtitles",
+}, screenRules, "原句清空檢查");
+if (emptiedQuote.some(issue => issue.includes("即使已核對官方字幕也不可收錄原句"))) {
+  errors.push("riddled with 原句留空時應可通過");
+}
+
+let shownOriginalLine = null;
+try {
+  shownOriginalLine = vm.runInNewContext(`(${extractFunction(screen.source, "shownOriginalLine")})`);
+} catch (error) {
+  errors.push(`追劇英語頁面必須提供 shownOriginalLine：${error.message}`);
+}
+if (typeof shownOriginalLine === "function") {
+  const hiddenLine = "It was predicted that by the middle of the next century there would be nine feet of manure covering the streets.";
+  if (shownOriginalLine({ line_verified: false, quote: hiddenLine }) !== "") {
+    errors.push("未核對官方字幕時，頁面不可顯示原句");
+  }
+  if (shownOriginalLine({ line_verified: true, quote: "  It's unanimous.  " }) !== "It's unanimous.") {
+    errors.push("已核對官方字幕時，頁面應顯示去掉空白的原句");
+  }
+  if (shownOriginalLine({ line_verified: true, quote: "" }) !== "") {
+    errors.push("原句為空時不應顯示引用");
+  }
+  if (shownOriginalLine({ line_verified: true, quote: "still empty for charred" }) !== "still empty for charred") {
+    errors.push("已核對且原句非空時，顯示函式應回傳該句");
+  }
+  screen.cards.forEach(card => {
+    if (card.line_verified !== true && shownOriginalLine(card) !== "") {
+      errors.push(`${screen.file}: id ${card.id} 未核對官方字幕卻會顯示原句`);
+    }
+  });
+  const quoteDecision = screen.source.indexOf("const quote = shownOriginalLine(c);");
+  const quoteMarkup = quoteDecision < 0 ? "" : screen.source.slice(quoteDecision, quoteDecision + 500);
+  if (!quoteMarkup.includes("blockquote class=\"quote\"") || quoteMarkup.indexOf("?") > quoteMarkup.indexOf("blockquote class=\"quote\"")) {
+    errors.push("原句引用必須在 shownOriginalLine 有內容時才輸出");
+  }
+  if (!screen.source.includes("${c.word}") || !screen.source.includes("${escapeHtml(c.example)}") || !screen.source.includes("${escapeHtml(c.copyright")) {
+    errors.push("未顯示原句時，頁面仍須顯示單字、自編例句與版權聲明");
+  }
+  if (!screen.source.includes('game: "遊戲節目"') || !screen.source.includes('? "遊戲節目"')) {
+    errors.push("遊戲來源的分類必須顯示為遊戲節目");
+  }
+}
+const screenReadme = fs.readFileSync(path.join(root, "products/screen-english/README.md"), "utf8");
+if (screenReadme.includes("Founders Fund") || screen.source.includes("Founders Fund")) {
+  errors.push("追劇英語說明與頁面不可再寫未核實的 Founders Fund 歸屬");
+}
 
 const sandbox = { window: {}, btoa: value => Buffer.from(value).toString("base64"), atob: value => Buffer.from(value, "base64").toString() };
 vm.runInNewContext(fs.readFileSync(path.join(root, "products/shared/learning-core.js"), "utf8"), sandbox);
