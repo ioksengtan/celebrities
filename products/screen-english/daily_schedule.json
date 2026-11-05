@@ -1,5 +1,5 @@
 {
-  "_comment": "編輯說明：每個 YYYY-MM-DD 對應恰好 3 個不重複的卡片 id（cards_data.json）。目前 6 張種子卡（Silicon Valley manure 片段 3 張、MAFIA the GAME 3 張），洗牌後照組距發，一輪（6/3=2 天）洗完才重洗，保證同一張卡不會連續兩天內重複。擴充卡池後可以排出更多變化。改完請跑 npm run validate。",
+  "_comment": "編輯說明：每個 YYYY-MM-DD 對應恰好 3 個不重複的卡片 id（cards_data.json）。目前 6 張種子卡（Silicon Valley 第五季第五集 3 張、MAFIA the GAME 3 張），洗牌後照組距發，一輪（6/3=2 天）洗完才重洗，保證同一張卡不會連續兩天內重複。擴充卡池後可以排出更多變化。改完請跑 npm run validate。",
   "2026-09-29": [
     1,
     4,

@@ -159,14 +159,236 @@ keynote.cards.forEach(card => {
   if (!schema.keynoteLexicon.rarities.includes(card.rarity)) errors.push(`${keynote.file}: id ${card.id} 稀有度無效：${card.rarity}`);
 });
 
+function tvEpisodeQuoteIssues(cards, max) {
+  const issues = [];
+  const totals = new Map();
+  cards.forEach(card => {
+    if (!card || card.source_type !== "tv_drama") return;
+    const quote = typeof card.quote === "string" ? card.quote.trim() : "";
+    if (!quote) return;
+    const sentences = quote.split(/[.!?]+/).filter(part => part.trim()).length;
+    const key = [card.show, card.season, card.episode].join("|");
+    const bucket = totals.get(key) || { count: 0, ids: [] };
+    bucket.count += sentences;
+    bucket.ids.push(card.id);
+    totals.set(key, bucket);
+  });
+  totals.forEach((bucket, key) => {
+    if (bucket.count > max) {
+      issues.push(`同一集原句超過 ${max} 句（${key}，卡片 ${bucket.ids.join("、")}，共 ${bucket.count} 句）`);
+    }
+  });
+  return issues;
+}
+
+function validateScreenCard(card, rules, file) {
+  const issues = [];
+  const where = `${file}: id ${card.id}`;
+  if (!Object.prototype.hasOwnProperty.call(card, "quote") || typeof card.quote !== "string") {
+    issues.push(`${where} quote 必須是字串，沒有原句時留空字串`);
+  } else if (card.quote.includes("\n")) {
+    issues.push(`${where} quote 只能有一行`);
+  }
+  if (typeof card.line_verified !== "boolean") {
+    issues.push(`${where} line_verified 必須是布林值；未對照官方字幕時為 false`);
+  } else if (card.line_verified === true) {
+    if (typeof card.subtitle_source !== "string" || !/^https:\/\//.test(card.subtitle_source)) {
+      issues.push(`${where} line_verified 為 true 時必須附上官方字幕連結 subtitle_source`);
+    }
+  }
+  if (typeof card.quote === "string" && card.quote.trim() && card.quote.trim() === String(card.example || "").trim()) {
+    issues.push(`${where} example 不可與原句 quote 相同，例句須為自編`);
+  }
+  const exampleText = String(card.example || "");
+  rules.exampleBannedFragments.forEach(fragment => {
+    if (exampleText.toLowerCase().includes(fragment.toLowerCase())) {
+      issues.push(`${where} 自編例句不可沿用原句片段：${fragment}`);
+    }
+  });
+  if (/\b(bullets?|shooting|murder(?:ed)?|killed|corpses?|death|dead)\b|charred remains|burn(?:ed|t) bod(?:y|ies)/i.test(exampleText)) {
+    issues.push(`${where} 自編例句不可寫死亡、槍擊或燒焦遺體`);
+  }
+  const serialized = JSON.stringify(card);
+  rules.bannedSourceFragments.forEach(fragment => {
+    if (serialized.includes(fragment)) issues.push(`${where} 不可再指向非官方剪輯：${fragment}`);
+  });
+  if (serialized.includes("obliterate those concerns")) {
+    issues.push(`${where} 同一場獨白的第三句不應再收錄`);
+  }
+  const expectedCopyright = rules.copyrightByShow[card.show];
+  if (expectedCopyright && card.copyright !== expectedCopyright) {
+    issues.push(`${where} 版權聲明與規定文字不符`);
+  }
+  if (card.source_type === "tv_drama") {
+    if (card.source_url) issues.push(`${where} 影集卡不可附影片連結`);
+    rules.episodeFields.forEach(field => {
+      const value = card[field];
+      if (value === undefined || value === null || value === "") {
+        issues.push(`${where} 缺少 ${field}（未能核對請填 ${rules.unverifiedValue}）`);
+      }
+    });
+    const pendingCount = rules.episodeFields.filter(field => card[field] === rules.unverifiedValue).length;
+    if (pendingCount !== 0 && pendingCount !== rules.episodeFields.length) {
+      issues.push(`${where} 季、集數與集名必須一起核對，否則全部填 ${rules.unverifiedValue}`);
+    }
+    if (pendingCount === 0 && rules.episodeFields.every(field => card[field] !== undefined && card[field] !== "")) {
+      if (!Number.isInteger(card.season) || card.season <= 0) issues.push(`${where} season 必須是正整數`);
+      if (!Number.isInteger(card.episode) || card.episode <= 0) issues.push(`${where} episode 必須是正整數`);
+      if (typeof card.episode_title !== "string" || !card.episode_title.trim()) issues.push(`${where} episode_title 必須是非空字串`);
+      const sources = card.episode_sources;
+      const sourcesOk = Array.isArray(sources)
+        && sources.length > 0
+        && sources.every(url => typeof url === "string" && /^https:\/\//.test(url));
+      if (!sourcesOk) issues.push(`${where} 已核對的季集必須附上 https 的 episode_sources`);
+      else if (!sources.some(url => url.includes("wikipedia.org"))) {
+        issues.push(`${where} 已核對的季集必須包含維基百科來源`);
+      }
+    }
+  }
+  if (rules.videoLinkSourceTypes.includes(card.source_type)) {
+    if (typeof card.source_url !== "string" || !/^https:\/\//.test(card.source_url)) {
+      issues.push(`${where} 此來源類型必須保留 https 連結`);
+    }
+  }
+  if ((rules.quotesAlwaysEmpty || []).includes(card.word) && String(card.quote || "").trim() !== "") {
+    issues.push(`${where} ${card.word} 即使已核對官方字幕也不可收錄原句`);
+  }
+  if (serialized.includes("Founders Fund")) {
+    issues.push(`${where} 不可寫入尚未核實的 Founders Fund 歸屬`);
+  }
+  return issues;
+}
+
+function extractFunction(source, name) {
+  const marker = `function ${name}(`;
+  const start = source.indexOf(marker);
+  if (start < 0) throw new Error(`找不到函式 ${name}`);
+  const bodyStart = source.indexOf("{", start);
+  let depth = 0;
+  let quote = null;
+  let escaped = false;
+  for (let i = bodyStart; i < source.length; i += 1) {
+    const char = source[i];
+    if (quote) {
+      if (escaped) escaped = false;
+      else if (char === "\\") escaped = true;
+      else if (char === quote) quote = null;
+      continue;
+    }
+    if (char === '"' || char === "'" || char === "`") { quote = char; continue; }
+    if (char === "{") depth += 1;
+    if (char === "}") {
+      depth -= 1;
+      if (depth === 0) return source.slice(start, i + 1);
+    }
+  }
+  throw new Error(`${name} 結構不完整`);
+}
+
 requireFields(screen, [...schema.common.required, ...schema.screenEnglish.required]);
 validateCommon(screen, "word");
 const rarityByCefrScreen = schema.screenEnglish.cefrRarity;
+const screenRules = schema.screenEnglish;
 screen.cards.forEach(card => {
   if (!rarityByCefrScreen[card.cefr]) errors.push(`${screen.file}: id ${card.id} CEFR 無效：${card.cefr}`);
   else if (card.rarity !== rarityByCefrScreen[card.cefr]) errors.push(`${screen.file}: id ${card.id} rarity 與 CEFR 不一致`);
-  if (!schema.screenEnglish.sourceTypes.includes(card.source_type)) errors.push(`${screen.file}: id ${card.id} source_type 無效：${card.source_type}`);
+  if (!screenRules.sourceTypes.includes(card.source_type)) errors.push(`${screen.file}: id ${card.id} source_type 無效：${card.source_type}`);
+  validateScreenCard(card, screenRules, screen.file).forEach(issue => errors.push(issue));
 });
+tvEpisodeQuoteIssues(screen.cards, screenRules.maxQuotesPerTvEpisode).forEach(issue => {
+  errors.push(`${screen.file}: ${issue}`);
+});
+const overQuotedEpisode = tvEpisodeQuoteIssues([
+  { id: 1, source_type: "tv_drama", show: "Test", season: 1, episode: 1, quote: "Alpha line." },
+  { id: 2, source_type: "tv_drama", show: "Test", season: 1, episode: 1, quote: "Beta line." },
+  { id: 3, source_type: "tv_drama", show: "Test", season: 1, episode: 1, quote: "Gamma line." },
+], screenRules.maxQuotesPerTvEpisode);
+if (overQuotedEpisode.length !== 1) errors.push("同一集超過兩句原句時應回報錯誤");
+const quotedWithinLimit = tvEpisodeQuoteIssues([
+  { id: 1, source_type: "tv_drama", show: "Test", season: 1, episode: 1, quote: "Alpha line." },
+  { id: 2, source_type: "tv_drama", show: "Test", season: 1, episode: 1, quote: "Beta line." },
+  { id: 3, source_type: "tv_drama", show: "Test", season: 1, episode: 1, quote: "" },
+], screenRules.maxQuotesPerTvEpisode);
+if (quotedWithinLimit.length) errors.push("同一集兩句原句應可通過");
+const gameQuotes = tvEpisodeQuoteIssues([
+  { id: 4, source_type: "game", show: "Game", quote: "One." },
+  { id: 5, source_type: "game", show: "Game", quote: "Two." },
+  { id: 6, source_type: "game", show: "Game", quote: "Three." },
+], screenRules.maxQuotesPerTvEpisode);
+if (gameQuotes.length) errors.push("遊戲來源不適用影集的兩句上限");
+
+const keptAfterVerification = validateScreenCard({
+  id: 99,
+  word: "charred",
+  quote: "The edge of the toast was charred.",
+  line_verified: true,
+  example: "The marshmallow stayed over the fire too long and came back charred.",
+  show: "MAFIA the GAME",
+  copyright: screenRules.copyrightByShow["MAFIA the GAME"],
+  source_type: "game",
+  source_url: "https://www.youtube.com/watch?v=EDCwQe7P8T0",
+  subtitle_source: "https://example.com/official-subtitles",
+}, screenRules, "原句清空檢查");
+if (!keptAfterVerification.some(issue => issue.includes("即使已核對官方字幕也不可收錄原句"))) {
+  errors.push("charred 即使核對通過也不可留下原句");
+}
+const emptiedQuote = validateScreenCard({
+  id: 98,
+  word: "riddled with",
+  quote: "",
+  line_verified: true,
+  example: "The rehearsal notes were riddled with timing errors, so the band ran the song again.",
+  show: "MAFIA the GAME",
+  copyright: screenRules.copyrightByShow["MAFIA the GAME"],
+  source_type: "game",
+  source_url: "https://www.youtube.com/watch?v=EDCwQe7P8T0",
+  subtitle_source: "https://example.com/official-subtitles",
+}, screenRules, "原句清空檢查");
+if (emptiedQuote.some(issue => issue.includes("即使已核對官方字幕也不可收錄原句"))) {
+  errors.push("riddled with 原句留空時應可通過");
+}
+
+let shownOriginalLine = null;
+try {
+  shownOriginalLine = vm.runInNewContext(`(${extractFunction(screen.source, "shownOriginalLine")})`);
+} catch (error) {
+  errors.push(`追劇英語頁面必須提供 shownOriginalLine：${error.message}`);
+}
+if (typeof shownOriginalLine === "function") {
+  const hiddenLine = "It was predicted that by the middle of the next century there would be nine feet of manure covering the streets.";
+  if (shownOriginalLine({ line_verified: false, quote: hiddenLine }) !== "") {
+    errors.push("未核對官方字幕時，頁面不可顯示原句");
+  }
+  if (shownOriginalLine({ line_verified: true, quote: "  It's unanimous.  " }) !== "It's unanimous.") {
+    errors.push("已核對官方字幕時，頁面應顯示去掉空白的原句");
+  }
+  if (shownOriginalLine({ line_verified: true, quote: "" }) !== "") {
+    errors.push("原句為空時不應顯示引用");
+  }
+  if (shownOriginalLine({ line_verified: true, quote: "still empty for charred" }) !== "still empty for charred") {
+    errors.push("已核對且原句非空時，顯示函式應回傳該句");
+  }
+  screen.cards.forEach(card => {
+    if (card.line_verified !== true && shownOriginalLine(card) !== "") {
+      errors.push(`${screen.file}: id ${card.id} 未核對官方字幕卻會顯示原句`);
+    }
+  });
+  const quoteDecision = screen.source.indexOf("const quote = shownOriginalLine(c);");
+  const quoteMarkup = quoteDecision < 0 ? "" : screen.source.slice(quoteDecision, quoteDecision + 500);
+  if (!quoteMarkup.includes("blockquote class=\"quote\"") || quoteMarkup.indexOf("?") > quoteMarkup.indexOf("blockquote class=\"quote\"")) {
+    errors.push("原句引用必須在 shownOriginalLine 有內容時才輸出");
+  }
+  if (!screen.source.includes("${c.word}") || !screen.source.includes("${escapeHtml(c.example)}") || !screen.source.includes("${escapeHtml(c.copyright")) {
+    errors.push("未顯示原句時，頁面仍須顯示單字、自編例句與版權聲明");
+  }
+  if (!screen.source.includes('game: "遊戲節目"') || !screen.source.includes('? "遊戲節目"')) {
+    errors.push("遊戲來源的分類必須顯示為遊戲節目");
+  }
+}
+const screenReadme = fs.readFileSync(path.join(root, "products/screen-english/README.md"), "utf8");
+if (screenReadme.includes("Founders Fund") || screen.source.includes("Founders Fund")) {
+  errors.push("追劇英語說明與頁面不可再寫未核實的 Founders Fund 歸屬");
+}
 
 const sandbox = { window: {}, btoa: value => Buffer.from(value).toString("base64"), atob: value => Buffer.from(value, "base64").toString() };
 vm.runInNewContext(fs.readFileSync(path.join(root, "products/shared/learning-core.js"), "utf8"), sandbox);
