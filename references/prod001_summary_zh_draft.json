@@ -143,5 +143,19 @@
     ],
     "draft_note": "繁體中文導讀；法文語錄以 YouTube 法文自動字幕核對，只看語錄附近節錄，未對影片全程校聽。",
     "char_count": 280
+  },
+  {
+    "speech_id": "SA-2026-007",
+    "summary_zh": "奧特曼在 Vanity Fair「Fair Game」專訪中，被比作人工智慧時代的奧本海默，他說這是一小群傑出科學家與工程師的故事，「有很多人都能做好我在這件事裡負責的那部分」。談到孩子，他說有孩子是做過最好的事，並贊成全面限制孩子使用科技，看到孩子盯著短影音的「腦腐」內容，直覺那是壞事。談到科學，他說模型終於聰明到能做新知識的發現，期待未來幾年有些疾病開始能被治癒。面對「是否該停下科技進步」，他認為答案是處理好挑戰、取得好處，希望幾百年後的人回頭看，會不敢相信我們當時過得那麼差。（依 Vanity Fair 官方逐字稿整理，未對影片全程校聽；中文為本庫翻譯。）",
+    "based_on": [
+      "official_transcript",
+      "quotes"
+    ],
+    "source_urls": [
+      "https://www.vanityfair.com/story/sam-altman-exclusive-interview-part-1",
+      "https://www.youtube.com/watch?v=iKFqJOSWHTE"
+    ],
+    "draft_note": "繁體中文導讀；語錄段落已用 Vanity Fair 官方逐字稿核對，未對影片全程校聽。",
+    "char_count": 284
   }
 ]
