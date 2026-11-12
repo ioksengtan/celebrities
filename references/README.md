@@ -23,7 +23,7 @@ Hold this round (never verified on the wall): `EM-2026-005`, `SA-2026-001`.
 
 ## Other
 
-- `speeches_database.json` — 46 speeches/interviews (including one undated interview) metadata.
+- `speeches_database.json` — 47 speeches/interviews (including one undated interview) metadata.
 - `speeches_indexes.json` — 7 derived index views.
 - `product_recommendations.json` — candidate product ideas.
 - `美國大學畢業典禮名人演講專案報告（完整版）.docx` — full project report.
@@ -73,3 +73,11 @@ Hold this round (never verified on the wall): `EM-2026-005`, `SA-2026-001`.
 - 新增值 `source_type`：`broadcaster_unofficial_transcript`。意思是廣播媒體自己的逐字稿，並標示為非官方，語錄已對音訊逐字核對（a broadcaster's own transcript labelled unofficial, with quotes verified word for word against the audio）。SA-2026-008 使用這個值。內容驗證器目前只對追劇英語卡片檢查 `source_type` 列舉，演講庫與語錄索引沒有列舉檢查，因此這次沒有改 `tools/validate-content.mjs`。
 - Sam Altman 是既有講者（`sam_altman`／語錄牆代碼 `sa`）。沒有新增講者，沒有改講者色，沒有做詞彙卡。
 - 單場頁：`products/core/speech.html?id=SA-2026-007`、`products/core/speech.html?id=SA-2026-008`。已核實語錄出現在語錄牆，講者代碼沿用既有的 `sa`。
+
+## Sam Altman Cheeky Pint 入庫（2026-11-12）
+
+- `SA-2026-009`：Cheeky Pint 播客當集，官方標題〈Why Sam Altman is against a single superintelligence〉。YouTube 官方頻道與官方 Substack 於 2026-10-29（美國發布日）刊出影片與全文逐字稿。主持是 Stripe 共同創辦人 John Collison，來賓是 OpenAI 執行長 Sam Altman。錄製日期與地點未載明。片長 52:45，記為 53 分鐘；逐字稿約 10000 詞。
+- 節錄逐字稿：`transcripts/SA-2026-009.txt`。導讀：`editorials/SA-2026-009.md`（五段，含文末中文短摘要），`prod001_summary_zh_draft.json` 最後加上本場中文短摘要一列。
+- 六則語錄都在 `quotes_index.json`，狀態都是 `verified`，原文照交付檔逐字寫入，沒有改任何一個字。六則都是 `quote_lang: "en"`，不帶 `quote_en`。來源類型用既有的 `official_transcript`，時間碼精度用既有的 `caption_word_alignment`。沒有新增 `source_type`。
+- Sam Altman 是既有講者（`sam_altman`／語錄牆代碼 `sa`）。沒有新增講者，沒有改講者色，沒有做詞彙卡。
+- 單場頁：`products/core/speech.html?id=SA-2026-009`。
