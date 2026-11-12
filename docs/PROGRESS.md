@@ -4,6 +4,15 @@
 
 ---
 
+## 2026-11-12（Sam Altman Cheeky Pint 場次 SA-2026-009 入庫）
+
+- 新增既有講者 Sam Altman 的場次 SA-2026-009，官方標題〈Why Sam Altman is against a single superintelligence〉，Cheeky Pint 播客（主持 John Collison），2026-10-29 發布，片長 52:45，記為 53 分鐘。入庫前已在最新主線重查，SA-2026-009 未被占用。
+- 六則語錄全部為 verified，英文原文是 Cheeky Pint 官方 Substack 逐字稿的逐字子字串，照草案寫入，沒有改任何一個字；六則都是 `quote_lang: "en"`，不帶 `quote_en`。節錄檔 `references/transcripts/SA-2026-009.txt`；導讀 `references/editorials/SA-2026-009.md`，導讀引號內英文已與官方逐字稿比對；`prod001_summary_zh_draft.json` 加上本場中文短摘要一列。
+- 主資料庫總數 46→47，`updated_date` 改為 2026-11-12；主題、時間、類型、產品標籤、長度、講者摘要索引已更新。本場 `key_quotes` 為空，quotes 索引不新增列。語錄索引 162→168。
+- 沒有新增講者、沒有改講者色、沒有做詞彙卡，沒有手改首頁場次數（由演講庫自動計算）。
+
+---
+
 ## 2026-11-09（Sam Altman Vanity Fair 專訪導讀與中文短摘要）
 
 - 新增導讀檔 `references/editorials/SA-2026-007.md`（五段），並在 `references/prod001_summary_zh_draft.json` 最後加上 SA-2026-007 中文短摘要一列（284 字）；`speeches_database.json` 的 SA-2026-007 加上 `editorial_path`。

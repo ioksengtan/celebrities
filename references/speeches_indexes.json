@@ -1,7 +1,7 @@
 {
   "metadata": {
     "created_date": "2026-09-06",
-    "total_speeches": 46,
+    "total_speeches": 47,
     "index_types": [
       "topic_index",
       "timeline_index",
@@ -11,7 +11,7 @@
       "quotes_index",
       "length_index"
     ],
-    "updated_date": "2026-10-17"
+    "updated_date": "2026-11-12"
   },
   "topic_index": [
     {
@@ -599,13 +599,20 @@
     },
     {
       "topic": "compute",
-      "count": 1,
+      "count": 2,
       "speeches": [
         {
           "id": "EM-2026-001",
           "speaker": "elon_musk",
           "event": "Moonshots Podcast #220",
           "date": "2026-01-06",
+          "type": "interview"
+        },
+        {
+          "id": "SA-2026-009",
+          "speaker": "sam_altman",
+          "event": "Cheeky Pint: Why Sam Altman is against a single superintelligence",
+          "date": "2026-10-29",
           "type": "interview"
         }
       ]
@@ -1262,7 +1269,7 @@
     },
     {
       "topic": "ai safety",
-      "count": 2,
+      "count": 3,
       "speeches": [
         {
           "id": "SN-UNDATED-001",
@@ -1276,6 +1283,13 @@
           "speaker": "sam_altman",
           "event": "CNBC Halftime Report: Sam Altman at OpenAI DevDay 2026",
           "date": "2026-09-29",
+          "type": "interview"
+        },
+        {
+          "id": "SA-2026-009",
+          "speaker": "sam_altman",
+          "event": "Cheeky Pint: Why Sam Altman is against a single superintelligence",
+          "date": "2026-10-29",
           "type": "interview"
         }
       ]
@@ -1729,13 +1743,20 @@
     },
     {
       "topic": "superintelligence",
-      "count": 1,
+      "count": 2,
       "speeches": [
         {
           "id": "ES-2026-001",
           "speaker": "eric_schmidt",
           "event": "Inside Blackstone: Former Google CEO Eric Schmidt: The Road to Superintelligence",
           "date": "2026-09-29",
+          "type": "interview"
+        },
+        {
+          "id": "SA-2026-009",
+          "speaker": "sam_altman",
+          "event": "Cheeky Pint: Why Sam Altman is against a single superintelligence",
+          "date": "2026-10-29",
           "type": "interview"
         }
       ]
@@ -1983,6 +2004,45 @@
           "speaker": "sam_altman",
           "event": "CNBC Halftime Report: Sam Altman at OpenAI DevDay 2026",
           "date": "2026-09-29",
+          "type": "interview"
+        }
+      ]
+    },
+    {
+      "topic": "agent teams",
+      "count": 1,
+      "speeches": [
+        {
+          "id": "SA-2026-009",
+          "speaker": "sam_altman",
+          "event": "Cheeky Pint: Why Sam Altman is against a single superintelligence",
+          "date": "2026-10-29",
+          "type": "interview"
+        }
+      ]
+    },
+    {
+      "topic": "sandboxing",
+      "count": 1,
+      "speeches": [
+        {
+          "id": "SA-2026-009",
+          "speaker": "sam_altman",
+          "event": "Cheeky Pint: Why Sam Altman is against a single superintelligence",
+          "date": "2026-10-29",
+          "type": "interview"
+        }
+      ]
+    },
+    {
+      "topic": "scientific discovery",
+      "count": 1,
+      "speeches": [
+        {
+          "id": "SA-2026-009",
+          "speaker": "sam_altman",
+          "event": "Cheeky Pint: Why Sam Altman is against a single superintelligence",
+          "date": "2026-10-29",
           "type": "interview"
         }
       ]
@@ -2399,7 +2459,7 @@
     },
     {
       "month": "2026-10",
-      "count": 2,
+      "count": 3,
       "speeches": [
         {
           "id": "MZ-2026-001",
@@ -2411,6 +2471,12 @@
           "id": "SA-2026-007",
           "speaker": "sam_altman",
           "event": "Vanity Fair Fair Game: Sam Altman Sees the Future. Are We In It? (Part 1 of 2)",
+          "type": "interview"
+        },
+        {
+          "id": "SA-2026-009",
+          "speaker": "sam_altman",
+          "event": "Cheeky Pint: Why Sam Altman is against a single superintelligence",
           "type": "interview"
         }
       ]
@@ -2473,7 +2539,8 @@
         "YL-2026-001",
         "MZ-2026-001",
         "SA-2026-007",
-        "SA-2026-008"
+        "SA-2026-008",
+        "SA-2026-009"
       ],
       "panel": [
         "EM-2026-002",
@@ -2487,7 +2554,7 @@
     },
     "counts": {
       "keynote": 10,
-      "interview": 31,
+      "interview": 32,
       "panel": 3,
       "town_hall": 2
     }
@@ -2567,7 +2634,8 @@
         "YL-2026-001",
         "MZ-2026-001",
         "SA-2026-007",
-        "SA-2026-008"
+        "SA-2026-008",
+        "SA-2026-009"
       ],
       "enterprise": [
         "JH-2026-002",
@@ -2757,7 +2825,8 @@
       "leadership": [
         "LBT-2026-001",
         "MZ-2026-001",
-        "SA-2026-007"
+        "SA-2026-007",
+        "SA-2026-009"
       ],
       "semiconductors": [
         "LBT-2026-001"
@@ -2794,7 +2863,8 @@
         "YL-2026-001",
         "MZ-2026-001",
         "SA-2026-007",
-        "SA-2026-008"
+        "SA-2026-008",
+        "SA-2026-009"
       ],
       "research": [
         "YL-2026-001"
@@ -2811,7 +2881,7 @@
       "consumer": 1,
       "CES": 1,
       "product launch": 1,
-      "interview": 31,
+      "interview": 32,
       "enterprise": 2,
       "economics": 1,
       "GTC": 1,
@@ -2868,12 +2938,12 @@
       "VR/AR": 1,
       "spending": 1,
       "AI safety": 1,
-      "leadership": 3,
+      "leadership": 4,
       "semiconductors": 1,
       "career": 11,
       "life advice": 9,
       "town_hall": 1,
-      "AI": 5,
+      "AI": 6,
       "research": 1
     }
   },
@@ -3150,7 +3220,7 @@
       ]
     },
     "long": {
-      "count": 10,
+      "count": 11,
       "speeches": [
         {
           "id": "JH-2024-001",
@@ -3211,6 +3281,12 @@
           "speaker": "yann_lecun",
           "event": "Sciences Po Grande Conférence: Yann Le Cun — Où va l’intelligence artificielle ?",
           "word_count": 14000
+        },
+        {
+          "id": "SA-2026-009",
+          "speaker": "sam_altman",
+          "event": "Cheeky Pint: Why Sam Altman is against a single superintelligence",
+          "word_count": 10000
         }
       ]
     },
@@ -3307,7 +3383,7 @@
         "AI adoption",
         "economic growth"
       ],
-      "total_speeches": 9,
+      "total_speeches": 10,
       "entries": [
         "SA-2025-001",
         "SA-2026-001",
@@ -3317,7 +3393,8 @@
         "SA-2026-005",
         "SA-2026-006",
         "SA-2026-007",
-        "SA-2026-008"
+        "SA-2026-008",
+        "SA-2026-009"
       ]
     },
     "sundar_pichai": {
