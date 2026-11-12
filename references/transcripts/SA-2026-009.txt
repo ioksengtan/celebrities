@@ -1,0 +1,15 @@
+# SA-2026-009 語錄附近節錄
+# 來源：https://cheekypint.substack.com/p/why-sam-altman-is-against-a-single（Cheeky Pint 官方 Substack 逐字稿）
+# 影片：https://www.youtube.com/watch?v=iMsUcCYNKqY
+
+[SA-2026-009-Q01 03:06] Sam Altman: And again, maybe this is just because I remember what it was like when I first got a computer with internet and I could do all these things that adults just couldn’t even think to ask for. And watching an 8- or 10-year-old make a complete video game, with some crazy ideas they have that no adult would really have.
+
+[SA-2026-009-Q02 10:08] Sam Altman: I think you can... Well, so this gets... Let me come back to that. I think sandboxing works to a point. Then I think monitoring works to a further point. Where we can look at what the models are doing, not only in their chain of thought, but we can do activation monitoring and try to really understand: are the models... Are we happy that the models are not deceiving us? And then, eventually, I think you need to believe with huge confidence that the models are truly aligned. And are going to value and try faithfully to follow their actual... The intent of the people operating them. And that they’re going to value people being in control of the future, forever. And, if you had a model that you could fully trust the alignment—that you were absolutely certain of the alignment of. Then yes, I think you can have that to help you build better and better sandboxes. But, if you really let yourself project forward into the: “What does it mean to have something a million times smarter than we are?” I don’t know. I think that just gets... Strange.
+
+[SA-2026-009-Q03 11:31] Sam Altman: I think this is a promising direction. I suspect that this idea—I hate the word ‘agent swarms’. Let’s call them ‘agent teams’.
+
+[SA-2026-009-Q04 24:13] Sam Altman: I would much rather intuitively have a trillion AIs of slightly superhuman intelligence join society than one AI of 1 trillion IQ join society.
+
+[SA-2026-009-Q05 47:40] Sam Altman: Maybe there are two things we should really care about models being good at. One is, scientific discovery and doing things that people cannot do. And the other is being enjoyable to work with. And, I don’t think we have great benchmarks for being enjoyable to work with. I’m actually not sure we have great benchmarks for the smartest, scientific scientist either. But, we endeavor not to benchmaxx. I keep thinking that benchmaxxing is over as a phenomenon, and people keep doing it.
+
+[SA-2026-009-Q06 48:53] Sam Altman: Emmett Shear said to me years ago that what he wanted was a really thoughtful and challenging, but still respectful, senior coworker. And I have still not heard a better, brief encapsulation than that.

@@ -157,5 +157,19 @@
     ],
     "draft_note": "繁體中文導讀；語錄段落已用 Vanity Fair 官方逐字稿核對，未對影片全程校聽。",
     "char_count": 284
+  },
+  {
+    "speech_id": "SA-2026-009",
+    "summary_zh": "OpenAI 執行長 Sam Altman 上 Cheeky Pint，主張不要打造單一超級智慧，寧願大量「略超人類」的系統加入社會並互相制衡。他談沙箱有上限、再往上靠監測與對齊；把「代理蜂群」改稱「代理團隊」；並說模型真正該擅長的是科學發現與讓人樂於共事。（依 Cheeky Pint 官方逐字稿整理，未對影片全程校聽；中文為本庫翻譯。）",
+    "based_on": [
+      "official_transcript",
+      "quotes"
+    ],
+    "source_urls": [
+      "https://cheekypint.substack.com/p/why-sam-altman-is-against-a-single",
+      "https://www.youtube.com/watch?v=iMsUcCYNKqY"
+    ],
+    "draft_note": "繁體中文導讀；語錄段落已用 Cheeky Pint 官方 Substack 逐字稿核對，未對影片全程校聽。",
+    "char_count": 170
   }
 ]

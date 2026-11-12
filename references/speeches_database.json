@@ -2,14 +2,14 @@
   "metadata": {
     "created_date": "2026-09-06",
     "time_range": "2001-05 to 2026-10",
-    "total_entries": 46,
+    "total_entries": 47,
     "categories": [
       "keynote",
       "interview",
       "panel",
       "town_hall"
     ],
-    "updated_date": "2026-10-17"
+    "updated_date": "2026-11-12"
   },
   "speakers": {
     "jensen_huang": {
@@ -81,7 +81,8 @@
         "SA-2026-005",
         "SA-2026-006",
         "SA-2026-007",
-        "SA-2026-008"
+        "SA-2026-008",
+        "SA-2026-009"
       ]
     },
     "sundar_pichai": {
@@ -1455,6 +1456,39 @@
       "verification_status": "transcript_text_verified",
       "imported_date": "2026-10-17",
       "notes_zh": "CNBC「Halftime Report」記者 Kate Rooney 於 OpenAI DevDay 2026 現場（舊金山）直播專訪 Sam Altman，2026-09-29 美國東部時間中午播出。CNBC 網站同日刊出逐字稿（自稱 unofficial transcript）。影片分兩段：第 1 段 4:17、第 2 段 5:18，合計約 9 分 35 秒，記為 10 分鐘；兩段影片頁面標示發布時間 2026-09-29 16:17 與 16:28（協調世界時）。語錄以逐字稿核對並以兩段影片音訊轉寫逐詞比對；已用音訊逐字核對。影片分兩段：第 1 段（video_url）https://www.cnbc.com/video/2026/09/29/openais-sam-altman-on-new-models-safety-has-to-stay-ahead-of-capabilities.html；第 2 段 https://www.cnbc.com/video/2026/09/29/sam-altman-on-nvidias-new-ai-guardrails-i-dont-think-its-a-full-solution.html（因既有欄位無第二影片網址，暫放 audio_url）。每則語錄的 source_url 指向所在那一段，timestamp 為該段影片內時間。總統、華府、首次公開發行等段落依規則不取。source_type 採新值 broadcaster_unofficial_transcript（廣播媒體自稱非官方的逐字稿，已以音訊逐字核對）。"
+    },
+    {
+      "id": "SA-2026-009",
+      "speaker": "sam_altman",
+      "date": "2026-10-29",
+      "event": "Cheeky Pint: Why Sam Altman is against a single superintelligence",
+      "location": null,
+      "type": "interview",
+      "duration_minutes": 53,
+      "topics": [
+        "superintelligence",
+        "agent teams",
+        "AI safety",
+        "sandboxing",
+        "scientific discovery",
+        "compute"
+      ],
+      "key_quotes": [],
+      "transcript_url": "https://cheekypint.substack.com/p/why-sam-altman-is-against-a-single",
+      "video_url": "https://www.youtube.com/watch?v=iMsUcCYNKqY",
+      "language": "en",
+      "word_count_estimate": 10000,
+      "product_tags": [
+        "interview",
+        "AI",
+        "leadership"
+      ],
+      "transcript_path": "references/transcripts/SA-2026-009.txt",
+      "source_type": "official_transcript",
+      "verification_status": "transcript_text_verified",
+      "imported_date": "2026-11-12",
+      "editorial_path": "references/editorials/SA-2026-009.md",
+      "notes_zh": "原始場次：Cheeky Pint 播客（Stripe 共同創辦人 John Collison 主持）當集，官方標題〈Why Sam Altman is against a single superintelligence〉。YouTube 官方頻道 Cheeky Pint 於 2026-10-29 發布（上傳日 20261029），官方 Substack 同日刊出全文逐字稿（https://cheekypint.substack.com/p/why-sam-altman-is-against-a-single）。來賓 Sam Altman（OpenAI 執行長）。錄製日期與地點未載明。片長 52:45，記為 53 分鐘；逐字稿約 10000 詞。英文語錄以 Substack 官方逐字稿核對，並對頻道人工英文字幕與自動字幕；時間碼以自動字幕逐詞對齊。本庫只存語錄附近節錄。政治／爭議段落（監視國家、社會資源分配等）不取。"
     }
   ]
 }
