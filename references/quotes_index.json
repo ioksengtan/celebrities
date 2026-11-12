@@ -2232,5 +2232,137 @@
     "source_type": "broadcaster_unofficial_transcript",
     "status": "verified",
     "verification_note": "已用程式核對：英文原句為 CNBC 官方網站刊出的逐字稿（CNBC 自稱 unofficial transcript）的逐字子字串（出現 1 次，說話人標示 ALTMAN；https://www.cnbc.com/2026/09/29/first-on-cnbc-transcript-openai-ceo-sam-altman-speaks-with-cnbcs-kate-rooney-on-halftime-report-today.html），並與 CNBC 第 2 段影片音訊以 faster-whisper（medium，float32）轉寫的逐詞序列一致（不計大小寫與標點，出現 1 次）。已用音訊逐字核對。本則出自第 2 段影片（https://www.cnbc.com/video/2026/09/29/sam-altman-on-nvidias-new-ai-guardrails-i-dont-think-its-a-full-solution.html），時間碼 04:34 為該段影片內時間，取轉寫首詞時間。CNBC 影片無字幕軌。"
+  },
+  {
+    "quote_id": "SA-2026-009-Q01",
+    "speech_id": "SA-2026-009",
+    "speaker": "sa",
+    "event": "Cheeky Pint: Why Sam Altman is against a single superintelligence",
+    "date": "2026-10-29",
+    "quote": "watching an 8- or 10-year-old make a complete video game, with some crazy ideas they have that no adult would really have.",
+    "quote_lang": "en",
+    "quote_zh": "看一個八歲或十歲的孩子做出一整款電玩遊戲，裡面有些瘋狂點子，大人根本不會想到。",
+    "why_notable_zh": "被問到這波人工智慧像不像早期網際網路時，他用孩子用工具做完整電玩來說明創造力被釋放的感覺。",
+    "tags": [
+      "兒童",
+      "創造力",
+      "人工智慧工具"
+    ],
+    "source_url": "https://www.youtube.com/watch?v=iMsUcCYNKqY&t=186s",
+    "timestamp": "03:06",
+    "timestamp_precision": "caption_word_alignment",
+    "source_type": "official_transcript",
+    "status": "verified",
+    "verification_note": "已用程式核對：英文原句為 Cheeky Pint 官方 Substack 逐字稿的逐字子字串（出現 1 次；來源 https://cheekypint.substack.com/p/why-sam-altman-is-against-a-single；說話人標示為 Sam Altman），也與 YouTube 頻道上傳的人工英文字幕逐詞序列一致（出現 1 次）。時間碼 03:06 由自動字幕逐詞時間對齊取得（方式：auto_prefix）。官方逐字稿可能經編修；未對影片全程校聽。自動字幕把「watching an」聽成「watching a」，並夾入口語贅詞；官方逐字稿與頻道人工英文字幕一致。時間碼取人工字幕首詞時間，並以自動字幕「complete video game」交叉確認約 03:06。"
+  },
+  {
+    "quote_id": "SA-2026-009-Q02",
+    "speech_id": "SA-2026-009",
+    "speaker": "sa",
+    "event": "Cheeky Pint: Why Sam Altman is against a single superintelligence",
+    "date": "2026-10-29",
+    "quote": "I think sandboxing works to a point. Then I think monitoring works to a further point.",
+    "quote_lang": "en",
+    "quote_zh": "我認為沙箱防護有效到某個程度，再往上則要靠監測。",
+    "why_notable_zh": "談超人類模型的安全時，他分層說明：先沙箱、再監測、最後才是對齊信心。",
+    "tags": [
+      "人工智慧安全",
+      "沙箱",
+      "監測"
+    ],
+    "source_url": "https://www.youtube.com/watch?v=iMsUcCYNKqY&t=608s",
+    "timestamp": "10:08",
+    "timestamp_precision": "caption_word_alignment",
+    "source_type": "official_transcript",
+    "status": "verified",
+    "verification_note": "已用程式核對：英文原句為 Cheeky Pint 官方 Substack 逐字稿的逐字子字串（出現 1 次；來源 https://cheekypint.substack.com/p/why-sam-altman-is-against-a-single；說話人標示為 Sam Altman），也與 YouTube 頻道上傳的人工英文字幕逐詞序列一致（出現 1 次）。時間碼 10:08 由自動字幕逐詞時間對齊取得（方式：auto_prefix）。官方逐字稿可能經編修；未對影片全程校聽。"
+  },
+  {
+    "quote_id": "SA-2026-009-Q03",
+    "speech_id": "SA-2026-009",
+    "speaker": "sa",
+    "event": "Cheeky Pint: Why Sam Altman is against a single superintelligence",
+    "date": "2026-10-29",
+    "quote": "I hate the word ‘agent swarms’. Let’s call them ‘agent teams’.",
+    "quote_lang": "en",
+    "quote_zh": "我討厭「代理蜂群」這個詞。我們改叫「代理團隊」吧。",
+    "why_notable_zh": "他把流行的「agent swarms」改口為「agent teams」，後面還談團隊在能力與對齊上的縮放特性。",
+    "tags": [
+      "人工智慧代理",
+      "用語",
+      "團隊"
+    ],
+    "source_url": "https://www.youtube.com/watch?v=iMsUcCYNKqY&t=691s",
+    "timestamp": "11:31",
+    "timestamp_precision": "caption_word_alignment",
+    "source_type": "official_transcript",
+    "status": "verified",
+    "verification_note": "已用程式核對：英文原句為 Cheeky Pint 官方 Substack 逐字稿的逐字子字串（出現 1 次；來源 https://cheekypint.substack.com/p/why-sam-altman-is-against-a-single；說話人標示為 Sam Altman），頻道人工英文字幕因斷句／連寫未能整句命中，但官方逐字稿與自動字幕首段可對上。時間碼 11:31 由自動字幕逐詞時間對齊取得（方式：auto_full）。官方逐字稿可能經編修；未對影片全程校聽。"
+  },
+  {
+    "quote_id": "SA-2026-009-Q04",
+    "speech_id": "SA-2026-009",
+    "speaker": "sa",
+    "event": "Cheeky Pint: Why Sam Altman is against a single superintelligence",
+    "date": "2026-10-29",
+    "quote": "I would much rather intuitively have a trillion AIs of slightly superhuman intelligence join society than one AI of 1 trillion IQ join society.",
+    "quote_lang": "en",
+    "quote_zh": "憑直覺，我寧願有一兆個略超人類智慧的人工智慧加入社會，也不要一個智商一兆的人工智慧加入社會。",
+    "why_notable_zh": "本集標題論點：反對單一超級智慧，傾向大量略超人類的系統互相制衡。",
+    "tags": [
+      "超級智慧",
+      "社會結構",
+      "人工智慧治理"
+    ],
+    "source_url": "https://www.youtube.com/watch?v=iMsUcCYNKqY&t=1453s",
+    "timestamp": "24:13",
+    "timestamp_precision": "caption_word_alignment",
+    "source_type": "official_transcript",
+    "status": "verified",
+    "verification_note": "已用程式核對：英文原句為 Cheeky Pint 官方 Substack 逐字稿的逐字子字串（出現 1 次；來源 https://cheekypint.substack.com/p/why-sam-altman-is-against-a-single；說話人標示為 Sam Altman），也與 YouTube 頻道上傳的人工英文字幕逐詞序列一致（出現 1 次）。時間碼 24:13 由自動字幕逐詞時間對齊取得（方式：auto_prefix）。官方逐字稿可能經編修；未對影片全程校聽。自動字幕在「slightly」前多出口語「like」，並把「1」念成「one」；時間碼以自動字幕「I would much rather」首詞對齊，人工字幕可對上官方逐字稿全文。"
+  },
+  {
+    "quote_id": "SA-2026-009-Q05",
+    "speech_id": "SA-2026-009",
+    "speaker": "sa",
+    "event": "Cheeky Pint: Why Sam Altman is against a single superintelligence",
+    "date": "2026-10-29",
+    "quote": "Maybe there are two things we should really care about models being good at. One is, scientific discovery and doing things that people cannot do. And the other is being enjoyable to work with.",
+    "quote_lang": "en",
+    "quote_zh": "也許我們真正該在乎模型擅長的只有兩件事：一是科學發現、做出人做不到的事；二是讓人樂於共事。",
+    "why_notable_zh": "談模型評測時，他把「好用／好共事」與科學發現並列，並說兩者都還沒有很好的基準。",
+    "tags": [
+      "模型評測",
+      "科學發現",
+      "產品體驗"
+    ],
+    "source_url": "https://www.youtube.com/watch?v=iMsUcCYNKqY&t=2860s",
+    "timestamp": "47:40",
+    "timestamp_precision": "caption_word_alignment",
+    "source_type": "official_transcript",
+    "status": "verified",
+    "verification_note": "已用程式核對：英文原句為 Cheeky Pint 官方 Substack 逐字稿的逐字子字串（出現 1 次；來源 https://cheekypint.substack.com/p/why-sam-altman-is-against-a-single；說話人標示為 Sam Altman），也與 YouTube 頻道上傳的人工英文字幕逐詞序列一致（出現 1 次）。時間碼 47:40 由自動字幕逐詞時間對齊取得（方式：auto_prefix）。官方逐字稿可能經編修；未對影片全程校聽。"
+  },
+  {
+    "quote_id": "SA-2026-009-Q06",
+    "speech_id": "SA-2026-009",
+    "speaker": "sa",
+    "event": "Cheeky Pint: Why Sam Altman is against a single superintelligence",
+    "date": "2026-10-29",
+    "quote": "Emmett Shear said to me years ago that what he wanted was a really thoughtful and challenging, but still respectful, senior coworker. And I have still not heard a better, brief encapsulation than that.",
+    "quote_lang": "en",
+    "quote_zh": "Emmett Shear 多年前跟我說，他想要的是一個真正有思考、能挑戰你，但仍保持尊重的資深同事。到現在我還沒聽過比這更精簡的概括。",
+    "why_notable_zh": "用一句話描述理想的人工智慧共事者：有想法、能質疑、仍尊重人。",
+    "tags": [
+      "產品願景",
+      "人工智慧代理",
+      "共事"
+    ],
+    "source_url": "https://www.youtube.com/watch?v=iMsUcCYNKqY&t=2933s",
+    "timestamp": "48:53",
+    "timestamp_precision": "caption_word_alignment",
+    "source_type": "official_transcript",
+    "status": "verified",
+    "verification_note": "已用程式核對：英文原句為 Cheeky Pint 官方 Substack 逐字稿的逐字子字串（出現 1 次；來源 https://cheekypint.substack.com/p/why-sam-altman-is-against-a-single；說話人標示為 Sam Altman），也與 YouTube 頻道上傳的人工英文字幕逐詞序列一致（出現 1 次）。時間碼 48:53 由自動字幕逐詞時間對齊取得（方式：auto_prefix）。官方逐字稿可能經編修；未對影片全程校聽。"
   }
 ]
