@@ -450,16 +450,22 @@
     width: 100%; max-width: 420px; display: flex; justify-content: space-between;
     font-size: 11.5px; color: var(--muted);
   }
+  /* Completion banner stays one compact row under the card so it never
+     shrinks the card viewport on phones. */
   .daily-complete{
-    width: 100%; max-width: 420px; text-align: center; background: var(--surface);
-    border: 1px solid var(--line); border-radius: 16px; padding: 26px 20px;
+    width: 100%; max-width: 420px; display: flex; align-items: center; gap: 12px;
+    text-align: left; background: var(--surface);
+    border: 1px solid var(--line); border-radius: 14px; padding: 10px 14px;
   }
-  .daily-complete-emoji{ font-size: 30px; margin-bottom: 6px; }
-  .daily-complete h3{ font-family: "Fraunces", serif; font-size: 21px; margin: 0 0 6px; }
-  .daily-complete p{ color: var(--muted); font-size: 13px; margin: 0 0 16px; }
+  .daily-complete[hidden]{ display: none; }
+  .daily-complete-emoji{ font-size: 22px; flex: none; }
+  .daily-complete-text{ flex: 1 1 auto; min-width: 0; }
+  .daily-complete h3{ font-family: "Fraunces", serif; font-size: 15px; margin: 0; }
+  .daily-complete p{ color: var(--muted); font-size: 12px; margin: 2px 0 0; }
   .daily-complete button{
-    font-family: "Public Sans"; font-weight: 700; padding: 10px 20px; border-radius: 10px;
-    border: none; background: var(--ink); color: var(--bg); cursor: pointer; font-size: 13.5px;
+    font-family: "Public Sans"; font-weight: 700; padding: 8px 13px; border-radius: 9px;
+    border: none; background: var(--ink); color: var(--bg); cursor: pointer; font-size: 12.5px;
+    flex: none; white-space: nowrap;
   }
 
   /* ---- Browse grid ---- */
@@ -912,9 +918,11 @@
     <div class="feed-scroll" id="daily-scroll"></div>
     <div class="feed-empty" id="daily-empty" hidden>尚未公布</div>
     <div id="daily-complete" class="daily-complete" hidden>
-      <div class="daily-complete-emoji">🎉</div>
-      <h3>今天完成了！</h3>
-      <p id="daily-complete-sub"></p>
+      <div class="daily-complete-emoji" aria-hidden="true">🎉</div>
+      <div class="daily-complete-text">
+        <h3>今天完成了！</h3>
+        <p id="daily-complete-sub"></p>
+      </div>
       <button id="btn-see-all">看全部卡片 →</button>
     </div>
   </div>
