@@ -4,6 +4,14 @@
 
 ---
 
+## 2026-11-16（Sam Altman CNBC DevDay 專訪導讀與中文短摘要）
+
+- 新增導讀檔 `references/editorials/SA-2026-008.md`（五段，含文末中文短摘要），並在 `references/prod001_summary_zh_draft.json` 最後加上 SA-2026-008 中文短摘要一列（200 字）；`speeches_database.json` 的 SA-2026-008 加上 `editorial_path`。
+- 出處追溯：原始出處是 CNBC 官網逐字稿頁（2026-09-29 美東 13:25 刊出，自稱 unofficial transcript）與兩段 CNBC 官方影片頁（第 1 段 4:17、美東 12:17 上線；第 2 段 5:18、美東 12:28 上線）。命令列直接下載被 CNBC 擋（403），改用網頁擷取工具開啟頁面，確認標題、時長、上線時間，以及 Q01–Q05 原句都在逐字稿內。導讀引號內英文只取已核實的 Q01–Q05 與本庫節錄，已用程式比對節錄逐字一致；另引的「abundance of caution」已確認出現在逐字稿。第 03 段（責任分層、開發者訴求、競爭）沒有核實語錄，只做轉述、不加引號與時間碼。總統、華府、IPO 段落依資料庫備註不採用。
+- 沒有改語錄、卡片、排程或程式。
+
+---
+
 ## 2026-11-12（Sam Altman Cheeky Pint 場次 SA-2026-009 入庫）
 
 - 新增既有講者 Sam Altman 的場次 SA-2026-009，官方標題〈Why Sam Altman is against a single superintelligence〉，Cheeky Pint 播客（主持 John Collison），2026-10-29 發布，片長 52:45，記為 53 分鐘。入庫前已在最新主線重查，SA-2026-009 未被占用。
