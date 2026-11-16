@@ -171,5 +171,20 @@
     ],
     "draft_note": "繁體中文導讀；語錄段落已用 Cheeky Pint 官方 Substack 逐字稿核對，未對影片全程校聽。",
     "char_count": 170
+  },
+  {
+    "speech_id": "SA-2026-008",
+    "summary_zh": "OpenAI 執行長 Sam Altman 在 DevDay 2026 現場接受 CNBC「Halftime Report」專訪。談到收回一個新模型，他說人工智慧必須為人而打造，對齊、安全、監測與資安都要遠遠走在能力前面。被問輝達的安全防護軟體，他說那不是完整解法，安全不只是工程問題，還是待解的科學問題。談硬體，他不擔心搶第一，重點是品質門檻；談外界觀感，他說做對社會這麼重要的事，就該被嚴格檢視。（依 CNBC 官網逐字稿（自稱非官方）與兩段影片整理；語錄已對音訊逐字核對，其餘未全程校聽；中文為本庫翻譯。）",
+    "based_on": [
+      "broadcaster_unofficial_transcript",
+      "quotes"
+    ],
+    "source_urls": [
+      "https://www.cnbc.com/2026/09/29/first-on-cnbc-transcript-openai-ceo-sam-altman-speaks-with-cnbcs-kate-rooney-on-halftime-report-today.html",
+      "https://www.cnbc.com/video/2026/09/29/openais-sam-altman-on-new-models-safety-has-to-stay-ahead-of-capabilities.html",
+      "https://www.cnbc.com/video/2026/09/29/sam-altman-on-nvidias-new-ai-guardrails-i-dont-think-its-a-full-solution.html"
+    ],
+    "draft_note": "繁體中文導讀；語錄段落已用 CNBC 官網逐字稿與兩段影片音訊核對，未對影片全程校聽。",
+    "char_count": 200
   }
 ]
