@@ -2700,5 +2700,33 @@
     "speaker": "mz",
     "event": "Cheeky Pint Podcast",
     "date": "2026-10-12"
+  },
+  {
+    "id": 194,
+    "word": "petition",
+    "pos": "noun",
+    "cefr": "B2",
+    "rarity": "rare",
+    "zh": "請願（書）；連署（書）",
+    "def_en": "a signed request from a large group of people urging someone in authority to do or change something",
+    "example": "A petition is underway to reinstate Jensen and I’m signing it too",
+    "syn": "appeal, plea",
+    "speaker": "em",
+    "event": "X post",
+    "date": "2026-11-13"
+  },
+  {
+    "id": 195,
+    "word": "reinstate",
+    "pos": "verb",
+    "cefr": "C1",
+    "rarity": "legendary",
+    "zh": "使復職；回復（原職或原狀）",
+    "def_en": "to put someone back into a position or job they had lost, or to bring back something that had been removed",
+    "example": "A petition is underway to reinstate Jensen and I’m signing it too",
+    "syn": "restore, bring back",
+    "speaker": "em",
+    "event": "X post",
+    "date": "2026-11-13"
   }
 ]
