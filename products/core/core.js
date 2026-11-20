@@ -102,7 +102,8 @@
   }
 
   function copyPayload(body, entry) {
-    const line = attributionLine(entry);
+    const sourceLabel = entry && entry.source_label_zh ? String(entry.source_label_zh).trim() : "";
+    const line = [attributionLine(entry), sourceLabel].filter(Boolean).join(" · ");
     return String(body || "").trim() + (line ? "\n\n" + line : "");
   }
 
