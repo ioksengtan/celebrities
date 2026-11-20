@@ -3,9 +3,5 @@
 # 官方節目頁：https://newsletter.pragmaticengineer.com/p/software-engineering-after-code-becomes
 # 官方影片：https://www.youtube.com/watch?v=0NE89Nzfk20
 # 本檔只列語錄編號、時間碼與官方章節；原話請到官方節目頁或官方影片收看。
-SN-2026-001-Q01	07:09	https://www.youtube.com/watch?v=0NE89Nzfk20&t=429s	官方章節 05:55 Copilot, Cursor, and Claude Code
 SN-2026-001-Q02	10:20	https://www.youtube.com/watch?v=0NE89Nzfk20&t=620s	官方章節 09:52 Decision engines
-SN-2026-001-Q03	11:50	https://www.youtube.com/watch?v=0NE89Nzfk20&t=710s	官方章節 09:52 Decision engines
-SN-2026-001-Q04	24:20	https://www.youtube.com/watch?v=0NE89Nzfk20&t=1460s	官方章節 24:06 Why adopting AI is different to adopting React
-SN-2026-001-Q05	49:59	https://www.youtube.com/watch?v=0NE89Nzfk20&t=2999s	官方章節 45:39 Owning your AI infrastructure
 SN-2026-001-Q06	59:43	https://www.youtube.com/watch?v=0NE89Nzfk20&t=3583s	官方章節 59:26 Advice for engineers
