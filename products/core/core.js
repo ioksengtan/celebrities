@@ -114,15 +114,22 @@
     return ids;
   }
 
+  function isShowableQuote(entry) {
+    if (!entry) return false;
+    // 節目頁筆記（host_page_note）已標示來源為主持人節目頁整理句，即使狀態尚未升級也可呈現
+    if (entry.source_type === "host_page_note") return true;
+    return entry.status === "verified";
+  }
+
   function isWallQuote(entry, flaggedIds) {
-    if (!entry || entry.status !== "verified") return false;
+    if (!isShowableQuote(entry)) return false;
     if (entry.content_review_flag) return false;
     if (flaggedIds && flaggedIds.has(entry.speech_id)) return false;
     return true;
   }
 
   function isSpeechQuote(entry) {
-    if (!entry || entry.status !== "verified") return false;
+    if (!isShowableQuote(entry)) return false;
     if (entry.content_review_flag) return false;
     return true;
   }
@@ -292,6 +299,9 @@
           (entry.event ? "<span>" + escapeHtml(entry.event) + "</span>" : "") +
           (entry.date ? "<span>" + escapeHtml(formatDate(entry.date)) + "</span>" : "") +
         "</div>" +
+        (entry.source_label_zh
+          ? "<p class=\"quote-source-note\">" + escapeHtml(entry.source_label_zh) + "</p>"
+          : "") +
         (entry.why_notable_zh
           ? "<details class=\"why\"><summary>備註</summary><p>" + escapeHtml(entry.why_notable_zh) + "</p></details>"
           : "") +

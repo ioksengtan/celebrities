@@ -2364,5 +2364,49 @@
     "source_type": "official_transcript",
     "status": "verified",
     "verification_note": "已用程式核對：英文原句為 Cheeky Pint 官方 Substack 逐字稿的逐字子字串（出現 1 次；來源 https://cheekypint.substack.com/p/why-sam-altman-is-against-a-single；說話人標示為 Sam Altman），也與 YouTube 頻道上傳的人工英文字幕逐詞序列一致（出現 1 次）。時間碼 48:53 由自動字幕逐詞時間對齊取得（方式：auto_prefix）。官方逐字稿可能經編修；未對影片全程校聽。"
+  },
+  {
+    "quote_id": "SN-2026-001-Q02",
+    "speech_id": "SN-2026-001",
+    "speaker": "sn",
+    "event": "The Pragmatic Engineer（Gergely Orosz 主持）: Software engineering after code becomes cheap with Satya Nadella",
+    "date": "2026-11-16",
+    "quote": "I think that this is one of those places where software engineering remains very much alive.",
+    "quote_lang": "en",
+    "quote_zh": "我認為，這正是軟體工程依然非常有生命力的地方之一。",
+    "why_notable_zh": "談 decision engines 時，他把可嵌入、可重複呼叫、節省 token 的做法，視為軟體工程在智慧時代仍然活著的理由之一；前文他把 decision engines 比成這個時代的 stored procedure。",
+    "tags": [
+      "decision engines",
+      "軟體工程",
+      "primitive"
+    ],
+    "source_url": "https://newsletter.pragmaticengineer.com/p/software-engineering-after-code-becomes",
+    "timestamp": "10:20",
+    "source_type": "host_page_note",
+    "source_label_zh": "據 The Pragmatic Engineer 節目頁筆記",
+    "status": "pending_human_check",
+    "verification_note": "出處列：Satya Nadella · The Pragmatic Engineer〈Software engineering after code becomes cheap with Satya Nadella〉（Gergely Orosz 主持）· 2026-11-16 · 官方節目頁 https://newsletter.pragmaticengineer.com/p/software-engineering-after-code-becomes。本則英文文字取自官方節目頁 takeaways 第 11 點中、主持人 Gergely Orosz 以引號整理呈現的句子（source_type：host_page_note，標示「據 The Pragmatic Engineer 節目頁筆記」），屬節目頁筆記而非講者逐字口語；2026-11-19 重讀官方節目頁對照文字一致（無開頭的「And so」）。影片定位連結 https://www.youtube.com/watch?v=0NE89Nzfk20&t=620s 僅供定位對應段落之用。status 為 pending_human_check。"
+  },
+  {
+    "quote_id": "SN-2026-001-Q06",
+    "speech_id": "SN-2026-001",
+    "speaker": "sn",
+    "event": "The Pragmatic Engineer（Gergely Orosz 主持）: Software engineering after code becomes cheap with Satya Nadella",
+    "date": "2026-11-16",
+    "quote": "If I could change the ratio of my “talk” to “do,” I would. This is the time.",
+    "quote_lang": "en",
+    "quote_zh": "如果我能改變自己「說」與「做」的比例，我會。就是現在這個時候。",
+    "why_notable_zh": "給工程師的收束建議：少停留在談論、少追熱潮，多親手去做。連執行長都說，若能提高自己「做」相對於「說」的比重，他會這麼做，而且就是現在。",
+    "tags": [
+      "建議",
+      "動手做",
+      "職業發展"
+    ],
+    "source_url": "https://newsletter.pragmaticengineer.com/p/software-engineering-after-code-becomes",
+    "timestamp": "59:43",
+    "source_type": "host_page_note",
+    "source_label_zh": "據 The Pragmatic Engineer 節目頁筆記",
+    "status": "pending_human_check",
+    "verification_note": "出處列：Satya Nadella · The Pragmatic Engineer〈Software engineering after code becomes cheap with Satya Nadella〉（Gergely Orosz 主持）· 2026-11-16 · 官方節目頁 https://newsletter.pragmaticengineer.com/p/software-engineering-after-code-becomes。本則英文文字取自官方節目頁 takeaways 第 12 點中、主持人 Gergely Orosz 以引號整理呈現的句子（source_type：host_page_note，標示「據 The Pragmatic Engineer 節目頁筆記」），屬節目頁筆記而非講者逐字口語；2026-11-19 重讀官方節目頁對照文字一致，句尾為「I would.」（非「I would do it」），talk 與 do 依官方頁用 curly 引號。影片定位連結 https://www.youtube.com/watch?v=0NE89Nzfk20&t=3583s 僅供定位對應段落之用。status 為 pending_human_check。"
   }
 ]
