@@ -31,7 +31,7 @@
       listEl.removeAttribute("aria-busy");
       statusEl.hidden = false;
       statusEl.className = "empty";
-      statusEl.textContent = "這個講者目前沒有可上牆的已核實語錄。";
+      statusEl.textContent = "這個講者目前沒有可上牆的語錄。";
       return;
     }
 

@@ -1,7 +1,7 @@
 {
   "metadata": {
     "created_date": "2026-09-06",
-    "total_speeches": 47,
+    "total_speeches": 48,
     "index_types": [
       "topic_index",
       "timeline_index",
@@ -11,7 +11,7 @@
       "quotes_index",
       "length_index"
     ],
-    "updated_date": "2026-11-12"
+    "updated_date": "2026-11-19"
   },
   "topic_index": [
     {
@@ -2046,6 +2046,84 @@
           "type": "interview"
         }
       ]
+    },
+    {
+      "topic": "software engineering",
+      "count": 1,
+      "speeches": [
+        {
+          "id": "SN-2026-001",
+          "speaker": "satya_nadella",
+          "event": "The Pragmatic Engineer（Gergely Orosz 主持）: Software engineering after code becomes cheap with Satya Nadella",
+          "date": "2026-11-16",
+          "type": "interview"
+        }
+      ]
+    },
+    {
+      "topic": "code verification",
+      "count": 1,
+      "speeches": [
+        {
+          "id": "SN-2026-001",
+          "speaker": "satya_nadella",
+          "event": "The Pragmatic Engineer（Gergely Orosz 主持）: Software engineering after code becomes cheap with Satya Nadella",
+          "date": "2026-11-16",
+          "type": "interview"
+        }
+      ]
+    },
+    {
+      "topic": "software factory",
+      "count": 1,
+      "speeches": [
+        {
+          "id": "SN-2026-001",
+          "speaker": "satya_nadella",
+          "event": "The Pragmatic Engineer（Gergely Orosz 主持）: Software engineering after code becomes cheap with Satya Nadella",
+          "date": "2026-11-16",
+          "type": "interview"
+        }
+      ]
+    },
+    {
+      "topic": "decision engines",
+      "count": 1,
+      "speeches": [
+        {
+          "id": "SN-2026-001",
+          "speaker": "satya_nadella",
+          "event": "The Pragmatic Engineer（Gergely Orosz 主持）: Software engineering after code becomes cheap with Satya Nadella",
+          "date": "2026-11-16",
+          "type": "interview"
+        }
+      ]
+    },
+    {
+      "topic": "hybrid intelligence",
+      "count": 1,
+      "speeches": [
+        {
+          "id": "SN-2026-001",
+          "speaker": "satya_nadella",
+          "event": "The Pragmatic Engineer（Gergely Orosz 主持）: Software engineering after code becomes cheap with Satya Nadella",
+          "date": "2026-11-16",
+          "type": "interview"
+        }
+      ]
+    },
+    {
+      "topic": "engineering careers",
+      "count": 1,
+      "speeches": [
+        {
+          "id": "SN-2026-001",
+          "speaker": "satya_nadella",
+          "event": "The Pragmatic Engineer（Gergely Orosz 主持）: Software engineering after code becomes cheap with Satya Nadella",
+          "date": "2026-11-16",
+          "type": "interview"
+        }
+      ]
     }
   ],
   "timeline_index": [
@@ -2482,6 +2560,18 @@
       ]
     },
     {
+      "month": "2026-11",
+      "count": 1,
+      "speeches": [
+        {
+          "id": "SN-2026-001",
+          "speaker": "satya_nadella",
+          "event": "The Pragmatic Engineer（Gergely Orosz 主持）: Software engineering after code becomes cheap with Satya Nadella",
+          "type": "interview"
+        }
+      ]
+    },
+    {
       "month": "unknown",
       "count": 1,
       "speeches": [
@@ -2540,7 +2630,8 @@
         "MZ-2026-001",
         "SA-2026-007",
         "SA-2026-008",
-        "SA-2026-009"
+        "SA-2026-009",
+        "SN-2026-001"
       ],
       "panel": [
         "EM-2026-002",
@@ -2554,7 +2645,7 @@
     },
     "counts": {
       "keynote": 10,
-      "interview": 32,
+      "interview": 33,
       "panel": 3,
       "town_hall": 2
     }
@@ -2635,7 +2726,8 @@
         "MZ-2026-001",
         "SA-2026-007",
         "SA-2026-008",
-        "SA-2026-009"
+        "SA-2026-009",
+        "SN-2026-001"
       ],
       "enterprise": [
         "JH-2026-002",
@@ -2826,7 +2918,8 @@
         "LBT-2026-001",
         "MZ-2026-001",
         "SA-2026-007",
-        "SA-2026-009"
+        "SA-2026-009",
+        "SN-2026-001"
       ],
       "semiconductors": [
         "LBT-2026-001"
@@ -2864,7 +2957,8 @@
         "MZ-2026-001",
         "SA-2026-007",
         "SA-2026-008",
-        "SA-2026-009"
+        "SA-2026-009",
+        "SN-2026-001"
       ],
       "research": [
         "YL-2026-001"
@@ -2881,7 +2975,7 @@
       "consumer": 1,
       "CES": 1,
       "product launch": 1,
-      "interview": 32,
+      "interview": 33,
       "enterprise": 2,
       "economics": 1,
       "GTC": 1,
@@ -2938,12 +3032,12 @@
       "VR/AR": 1,
       "spending": 1,
       "AI safety": 1,
-      "leadership": 4,
+      "leadership": 5,
       "semiconductors": 1,
       "career": 11,
       "life advice": 9,
       "town_hall": 1,
-      "AI": 6,
+      "AI": 7,
       "research": 1
     }
   },
@@ -3220,7 +3314,7 @@
       ]
     },
     "long": {
-      "count": 11,
+      "count": 12,
       "speeches": [
         {
           "id": "JH-2024-001",
@@ -3287,6 +3381,12 @@
           "speaker": "sam_altman",
           "event": "Cheeky Pint: Why Sam Altman is against a single superintelligence",
           "word_count": 10000
+        },
+        {
+          "id": "SN-2026-001",
+          "speaker": "satya_nadella",
+          "event": "The Pragmatic Engineer（Gergely Orosz 主持）: Software engineering after code becomes cheap with Satya Nadella",
+          "word_count": 11540
         }
       ]
     },
@@ -3433,7 +3533,7 @@
     },
     "satya_nadella": {
       "name": "Satya Nadella",
-      "title": "Chairman & CEO (as identified in supplied transcript)",
+      "title": "Chairman & CEO",
       "company": "Microsoft",
       "topics": [
         "AI adoption",
@@ -3443,9 +3543,10 @@
         "AI infrastructure"
       ],
       "entries": [
-        "SN-UNDATED-001"
+        "SN-UNDATED-001",
+        "SN-2026-001"
       ],
-      "total_speeches": 1
+      "total_speeches": 2
     },
     "lip_bu_tan": {
       "name": "Lip-Bu Tan",
