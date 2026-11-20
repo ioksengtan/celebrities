@@ -1285,7 +1285,7 @@
     "timestamp_precision": "transcript_segment",
     "source_type": "user_provided_transcript",
     "status": "verified",
-    "verification_note": "已對 references/transcripts/SN-UNDATED-001.txt 時間碼 26:27 核對原文（use all but be independent of all）；未對 YouTube 全片校聽。"
+    "verification_note": "已對照 All-In Podcast 官方影片（https://www.youtube.com/watch?v=hdcsTeCFE0I）時間碼 26:27 核對原文（use all but be independent of all）；未對 YouTube 全片校聽。"
   },
   {
     "quote_id": "SN-UNDATED-001-Q02",
@@ -1301,7 +1301,7 @@
     "timestamp_precision": "transcript_segment",
     "source_type": "user_provided_transcript",
     "status": "verified",
-    "verification_note": "已對 references/transcripts/SN-UNDATED-001.txt 時間碼 11:31 核對原文（含 model overhang 與 capability overhang 連續片段）；未對 YouTube 全片校聽。"
+    "verification_note": "已對照 All-In Podcast 官方影片（https://www.youtube.com/watch?v=hdcsTeCFE0I）時間碼 11:31 核對原文（含 model overhang 與 capability overhang 連續片段）；未對 YouTube 全片校聽。"
   },
   {
     "quote_id": "SN-UNDATED-001-Q03",
@@ -1317,7 +1317,7 @@
     "timestamp_precision": "transcript_segment",
     "source_type": "user_provided_transcript",
     "status": "verified",
-    "verification_note": "已對 references/transcripts/SN-UNDATED-001.txt 時間碼 09:49 核對原文（everything has got to be auditable）；未對 YouTube 全片校聽。"
+    "verification_note": "已對照 All-In Podcast 官方影片（https://www.youtube.com/watch?v=hdcsTeCFE0I）時間碼 09:49 核對原文（everything has got to be auditable）；未對 YouTube 全片校聽。"
   },
   {
     "quote_id": "SN-UNDATED-001-Q04",
@@ -1333,7 +1333,7 @@
     "timestamp_precision": "transcript_segment",
     "source_type": "user_provided_transcript",
     "status": "verified",
-    "verification_note": "已對 references/transcripts/SN-UNDATED-001.txt 時間碼 08:13 核對原文（if you see a showstopper stop the show）；未對 YouTube 全片校聽。"
+    "verification_note": "已對照 All-In Podcast 官方影片（https://www.youtube.com/watch?v=hdcsTeCFE0I）時間碼 08:13 核對原文（if you see a showstopper stop the show）；未對 YouTube 全片校聽。"
   },
   {
     "quote_id": "SN-UNDATED-001-Q05",
@@ -1365,7 +1365,7 @@
     "timestamp_precision": "transcript_segment",
     "source_type": "publisher_auto_transcript",
     "status": "verified",
-    "verification_note": "已用程式核對：英文原句為 references/transcripts/LBT-2026-001.txt 的逐字子字串（出現 1 次），說話人標籤 SPEAKER_00（Lip-Bu Tan），時間碼 12:13 為 Substack 自動轉錄所在段落起點（詞級起點 12:13）；未對音檔全片校聽。"
+    "verification_note": "已用程式核對：英文原句已對照 A Bit Personal 官方節目頁所附 Substack 自動轉錄（https://abitpersonalpod.substack.com/p/lip-bu-tan-from-nuclear-engineer?showTranscript=true）核對（說話人標籤 SPEAKER_00＝Lip-Bu Tan），時間碼 12:13 為 Substack 自動轉錄所在段落起點（詞級起點 12:13）；未對音檔全片校聽。"
   },
   {
     "quote_id": "LBT-2026-001-Q02",
@@ -1381,7 +1381,7 @@
     "timestamp_precision": "transcript_segment",
     "source_type": "publisher_auto_transcript",
     "status": "verified",
-    "verification_note": "已用程式核對：英文原句為 references/transcripts/LBT-2026-001.txt 的逐字子字串（出現 1 次），說話人標籤 SPEAKER_00（Lip-Bu Tan），時間碼 31:45 為 Substack 自動轉錄所在段落起點（詞級起點 31:45）；未對音檔全片校聽。"
+    "verification_note": "已用程式核對：英文原句已對照 A Bit Personal 官方節目頁所附 Substack 自動轉錄（https://abitpersonalpod.substack.com/p/lip-bu-tan-from-nuclear-engineer?showTranscript=true）核對（說話人標籤 SPEAKER_00＝Lip-Bu Tan），時間碼 31:45 為 Substack 自動轉錄所在段落起點（詞級起點 31:45）；未對音檔全片校聽。"
   },
   {
     "quote_id": "LBT-2026-001-Q03",
@@ -1397,7 +1397,7 @@
     "timestamp_precision": "transcript_segment",
     "source_type": "publisher_auto_transcript",
     "status": "verified",
-    "verification_note": "已用程式核對：英文原句為 references/transcripts/LBT-2026-001.txt 的逐字子字串（出現 1 次），說話人標籤 SPEAKER_00（Lip-Bu Tan），時間碼 27:01 為 Substack 自動轉錄所在段落起點（詞級起點 27:01）；未對音檔全片校聽。"
+    "verification_note": "已用程式核對：英文原句已對照 A Bit Personal 官方節目頁所附 Substack 自動轉錄（https://abitpersonalpod.substack.com/p/lip-bu-tan-from-nuclear-engineer?showTranscript=true）核對（說話人標籤 SPEAKER_00＝Lip-Bu Tan），時間碼 27:01 為 Substack 自動轉錄所在段落起點（詞級起點 27:01）；未對音檔全片校聽。"
   },
   {
     "quote_id": "LBT-2026-001-Q04",
@@ -1413,7 +1413,7 @@
     "timestamp_precision": "transcript_segment",
     "source_type": "publisher_auto_transcript",
     "status": "verified",
-    "verification_note": "已用程式核對：英文原句為 references/transcripts/LBT-2026-001.txt 的逐字子字串（出現 1 次），說話人標籤 SPEAKER_00（Lip-Bu Tan），時間碼 36:44 為 Substack 自動轉錄所在段落起點（詞級起點 36:44）；未對音檔全片校聽。"
+    "verification_note": "已用程式核對：英文原句已對照 A Bit Personal 官方節目頁所附 Substack 自動轉錄（https://abitpersonalpod.substack.com/p/lip-bu-tan-from-nuclear-engineer?showTranscript=true）核對（說話人標籤 SPEAKER_00＝Lip-Bu Tan），時間碼 36:44 為 Substack 自動轉錄所在段落起點（詞級起點 36:44）；未對音檔全片校聽。"
   },
   {
     "quote_id": "LBT-2026-001-Q05",
@@ -1429,7 +1429,7 @@
     "timestamp_precision": "transcript_segment",
     "source_type": "publisher_auto_transcript",
     "status": "draft",
-    "verification_note": "已用程式核對：英文原句為 references/transcripts/LBT-2026-001.txt 的逐字子字串（出現 1 次），說話人標籤 SPEAKER_00（Lip-Bu Tan），時間碼 36:01 為 Substack 自動轉錄所在段落起點（詞級起點 36:02）；未對音檔全片校聽。原話出自 Lip-Bu Tan 轉述導師之言，說話人歸屬需上下文，依規則標 draft；上牆時需標明為轉述，而非 Lip-Bu Tan 本人主張。"
+    "verification_note": "已用程式核對：英文原句已對照 A Bit Personal 官方節目頁所附 Substack 自動轉錄（https://abitpersonalpod.substack.com/p/lip-bu-tan-from-nuclear-engineer?showTranscript=true）核對（說話人標籤 SPEAKER_00＝Lip-Bu Tan），時間碼 36:01 為 Substack 自動轉錄所在段落起點（詞級起點 36:02）；未對音檔全片校聽。原話出自 Lip-Bu Tan 轉述導師之言，說話人歸屬需上下文，依規則標 draft；上牆時需標明為轉述，而非 Lip-Bu Tan 本人主張。"
   },
   {
     "quote_id": "LBT-2026-001-Q06",
@@ -1445,7 +1445,7 @@
     "timestamp_precision": "transcript_segment",
     "source_type": "publisher_auto_transcript",
     "status": "verified",
-    "verification_note": "已用程式核對：英文原句為 references/transcripts/LBT-2026-001.txt 的逐字子字串（出現 1 次），說話人標籤 SPEAKER_00（Lip-Bu Tan），時間碼 51:20 為 Substack 自動轉錄所在段落起點（詞級起點 51:20）；未對音檔全片校聽。"
+    "verification_note": "已用程式核對：英文原句已對照 A Bit Personal 官方節目頁所附 Substack 自動轉錄（https://abitpersonalpod.substack.com/p/lip-bu-tan-from-nuclear-engineer?showTranscript=true）核對（說話人標籤 SPEAKER_00＝Lip-Bu Tan），時間碼 51:20 為 Substack 自動轉錄所在段落起點（詞級起點 51:20）；未對音檔全片校聽。"
   },
   {
     "quote_id": "JB-2001-001-Q01",

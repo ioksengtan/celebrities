@@ -997,7 +997,7 @@
       "source_type": "user_provided_transcript",
       "verification_status": "transcript_text_verified",
       "imported_date": "2026-09-19",
-      "notes_zh": "依使用者提供的逐字稿入庫；訪談日期與地點未確認。SN-UNDATED-001-Q01、Q02、Q03、Q04 已對庫內逐字稿時間碼核對並升為 verified（Q02 英句含 capability overhang 連續片段）；Q05 仍為 draft，僅加強 why_notable_zh。尚未對 YouTube 全片校聽，不是 fully verified；數據與產品表現未獨立核實。UNDATED 表示訪談日期未知，匯入日期不是訪談日期。"
+      "notes_zh": "依使用者提供的逐字稿入庫；訪談日期與地點未確認。SN-UNDATED-001-Q01、Q02、Q03、Q04 已對照官方影片時間碼核對並升為 verified（Q02 英句含 capability overhang 連續片段）；Q05 仍為 draft，僅加強 why_notable_zh。尚未對 YouTube 全片校聽，不是 fully verified；數據與產品表現未獨立核實。UNDATED 表示訪談日期未知，匯入日期不是訪談日期。本庫只存時間戳記索引，不存逐字稿文字。"
     },
     {
       "id": "LBT-2026-001",
@@ -1031,7 +1031,7 @@
       "source_type": "publisher_auto_transcript",
       "verification_status": "transcript_text_verified",
       "imported_date": "2026-09-29",
-      "notes_zh": "A Bit Personal 播客（主持人 Jodi Shelton，Global Semiconductor Alliance 共同創辦人暨執行長）第二季首集；Substack 發布時間 2026-09-24 19:01 UTC（台北時間 2026-09-25 03:01），date 採美國當地發布日 2026-09-24，錄製日期未公開。逐字稿取自 Substack 公開的自動轉錄（免費公開，無付費牆），涵蓋 00:00 至 62:40（音檔 62:47），從頭到尾完整；未經人工校對，保留原始錯字。說話人為自動分辨，SPEAKER_00＝Lip-Bu Tan、SPEAKER_01＝Jodi Shelton 係依內容判斷。43:39–50:34 談美國總統要求辭職、美國政府持股與中國投資，屬政治敏感段落，本次不取語錄。LBT-2026-001-Q01、Q02、Q03、Q04、Q06 已用程式核對為逐字稿逐字子字串並標 verified；Q05 為轉述導師之言，標 draft。未對音檔全片校聽，不是 fully verified。"
+      "notes_zh": "A Bit Personal 播客（主持人 Jodi Shelton，Global Semiconductor Alliance 共同創辦人暨執行長）第二季首集；Substack 發布時間 2026-09-24 19:01 UTC（台北時間 2026-09-25 03:01），date 採美國當地發布日 2026-09-24，錄製日期未公開。語錄核對時參考 Substack 頁面所附的自動轉錄（免費公開，無付費牆）；本庫只存時間戳記索引，不存逐字稿文字。說話人為自動分辨，SPEAKER_00＝Lip-Bu Tan、SPEAKER_01＝Jodi Shelton 係依內容判斷。43:39–50:34 談美國總統要求辭職、美國政府持股與中國投資，屬政治敏感段落，本次不取語錄。LBT-2026-001-Q01、Q02、Q03、Q04、Q06 已對照官方自動轉錄核對並標 verified；Q05 為轉述導師之言，標 draft。未對音檔全片校聽，不是 fully verified。"
     },
     {
       "id": "JB-2001-001",
@@ -1061,7 +1061,7 @@
       "source_type": "official_transcript",
       "verification_status": "transcript_text_verified",
       "imported_date": "2026-09-30",
-      "notes_zh": "原始場次：Academy of Achievement 訪談（2001 Achievement Summit）；San Antonio, Texas；主持或訪問：American Academy of Achievement（訪問者姓名未載明）。影片來源：Academy of Achievement 官方 YouTube。本場次由第三方剪輯合輯 Business Motiversity〈\"I Got Rich When I Understood This\" | Jeff Bezos〉（https://youtu.be/7TWKKww-F30，2022-05-16 上傳）引用，但出處一律標原始場次，不標合輯。英文語錄以官方逐字稿核對（官方稿可能經編修），時間碼以 YouTube 自動字幕逐詞對齊。Q01 標 verified。本庫內只存語錄附近節錄，不存全文。"
+      "notes_zh": "原始場次：Academy of Achievement 訪談（2001 Achievement Summit）；San Antonio, Texas；主持或訪問：American Academy of Achievement（訪問者姓名未載明）。影片來源：Academy of Achievement 官方 YouTube。本場次由第三方剪輯合輯 Business Motiversity〈\"I Got Rich When I Understood This\" | Jeff Bezos〉（https://youtu.be/7TWKKww-F30，2022-05-16 上傳）引用，但出處一律標原始場次，不標合輯。英文語錄以官方逐字稿核對（官方稿可能經編修），時間碼以 YouTube 自動字幕逐詞對齊。Q01 標 verified。本庫只存時間戳記索引，不存全文。"
     },
     {
       "id": "JB-2010-001",
@@ -1092,7 +1092,7 @@
       "source_type": "official_transcript",
       "verification_status": "transcript_text_verified",
       "imported_date": "2026-09-30",
-      "notes_zh": "原始場次：Princeton University 2010 Baccalaureate 演講「We Are What We Choose」；Princeton, New Jersey；主持或訪問：（演講；由 Princeton University 校長 Shirley M. Tilghman 介紹）。影片來源：Princeton University 官方 YouTube。本場次由第三方剪輯合輯 Business Motiversity〈\"I Got Rich When I Understood This\" | Jeff Bezos〉（https://youtu.be/7TWKKww-F30，2022-05-16 上傳）引用，但出處一律標原始場次，不標合輯。英文語錄以官方逐字稿核對（官方稿可能經編修），時間碼以 YouTube 自動字幕逐詞對齊。Q01、Q02、Q03、Q04、Q05 標 verified。本庫內只存語錄附近節錄，不存全文。"
+      "notes_zh": "原始場次：Princeton University 2010 Baccalaureate 演講「We Are What We Choose」；Princeton, New Jersey；主持或訪問：（演講；由 Princeton University 校長 Shirley M. Tilghman 介紹）。影片來源：Princeton University 官方 YouTube。本場次由第三方剪輯合輯 Business Motiversity〈\"I Got Rich When I Understood This\" | Jeff Bezos〉（https://youtu.be/7TWKKww-F30，2022-05-16 上傳）引用，但出處一律標原始場次，不標合輯。英文語錄以官方逐字稿核對（官方稿可能經編修），時間碼以 YouTube 自動字幕逐詞對齊。Q01、Q02、Q03、Q04、Q05 標 verified。本庫只存時間戳記索引，不存全文。"
     },
     {
       "id": "JB-2015-001",
@@ -1121,7 +1121,7 @@
       "source_type": "platform_auto_captions",
       "verification_status": "transcript_text_verified",
       "imported_date": "2026-09-30",
-      "notes_zh": "原始場次：Liberty Science Center Genius Gala 4.0（Genius Award 頒獎與問答）；Jersey City, New Jersey；主持或訪問：Paul Hoffman（Liberty Science Center 執行長）。影片來源：Liberty Science Center 官方 YouTube。本場次由第三方剪輯合輯 Business Motiversity〈\"I Got Rich When I Understood This\" | Jeff Bezos〉（https://youtu.be/7TWKKww-F30，2022-05-16 上傳）引用，但出處一律標原始場次，不標合輯。無官方逐字稿，英文語錄以 YouTube 平台自動字幕核對（逐字子字串），未對影片全程校聽。Q01 標 verified。本庫內只存語錄附近節錄，不存全文。"
+      "notes_zh": "原始場次：Liberty Science Center Genius Gala 4.0（Genius Award 頒獎與問答）；Jersey City, New Jersey；主持或訪問：Paul Hoffman（Liberty Science Center 執行長）。影片來源：Liberty Science Center 官方 YouTube。本場次由第三方剪輯合輯 Business Motiversity〈\"I Got Rich When I Understood This\" | Jeff Bezos〉（https://youtu.be/7TWKKww-F30，2022-05-16 上傳）引用，但出處一律標原始場次，不標合輯。無官方逐字稿，英文語錄以 YouTube 平台自動字幕核對（逐字子字串），未對影片全程校聽。Q01 標 verified。本庫只存時間戳記索引，不存全文。"
     },
     {
       "id": "JB-2016-001",
@@ -1150,7 +1150,7 @@
       "source_type": "official_transcript",
       "verification_status": "transcript_text_verified",
       "imported_date": "2026-09-30",
-      "notes_zh": "原始場次：Vanity Fair New Establishment Summit 2016 對談；San Francisco, California；主持或訪問：Walter Isaacson（Aspen Institute 總裁暨執行長）。影片來源：Vanity Fair 官方影片頁（時間碼取自第三方 YouTube 轉載 5UGwFTdAk3I）。本場次由第三方剪輯合輯 Business Motiversity〈\"I Got Rich When I Understood This\" | Jeff Bezos〉（https://youtu.be/7TWKKww-F30，2022-05-16 上傳）引用，但出處一律標原始場次，不標合輯。英文語錄以官方逐字稿核對（官方稿可能經編修），時間碼以 YouTube 自動字幕逐詞對齊。Q01 標 verified。本庫內只存語錄附近節錄，不存全文。"
+      "notes_zh": "原始場次：Vanity Fair New Establishment Summit 2016 對談；San Francisco, California；主持或訪問：Walter Isaacson（Aspen Institute 總裁暨執行長）。影片來源：Vanity Fair 官方影片頁（時間碼取自第三方 YouTube 轉載 5UGwFTdAk3I）。本場次由第三方剪輯合輯 Business Motiversity〈\"I Got Rich When I Understood This\" | Jeff Bezos〉（https://youtu.be/7TWKKww-F30，2022-05-16 上傳）引用，但出處一律標原始場次，不標合輯。英文語錄以官方逐字稿核對（官方稿可能經編修），時間碼以 YouTube 自動字幕逐詞對齊。Q01 標 verified。本庫只存時間戳記索引，不存全文。"
     },
     {
       "id": "JB-2017-001",
@@ -1179,7 +1179,7 @@
       "source_type": "platform_auto_captions",
       "verification_status": "transcript_text_verified",
       "imported_date": "2026-09-30",
-      "notes_zh": "原始場次：SATELLITE 2017 大會主題演講；Washington, D.C.；主持或訪問：Jeffrey Hill（SATELLITE 大會主席）。影片來源：Via Satellite 官方 YouTube（2017-10-04 上傳）。本場次由第三方剪輯合輯 Business Motiversity〈\"I Got Rich When I Understood This\" | Jeff Bezos〉（https://youtu.be/7TWKKww-F30，2022-05-16 上傳）引用，但出處一律標原始場次，不標合輯。無官方逐字稿，英文語錄以 YouTube 平台自動字幕核對（逐字子字串），未對影片全程校聽。Q01 標 verified。本庫內只存語錄附近節錄，不存全文。"
+      "notes_zh": "原始場次：SATELLITE 2017 大會主題演講；Washington, D.C.；主持或訪問：Jeffrey Hill（SATELLITE 大會主席）。影片來源：Via Satellite 官方 YouTube（2017-10-04 上傳）。本場次由第三方剪輯合輯 Business Motiversity〈\"I Got Rich When I Understood This\" | Jeff Bezos〉（https://youtu.be/7TWKKww-F30，2022-05-16 上傳）引用，但出處一律標原始場次，不標合輯。無官方逐字稿，英文語錄以 YouTube 平台自動字幕核對（逐字子字串），未對影片全程校聽。Q01 標 verified。本庫只存時間戳記索引，不存全文。"
     },
     {
       "id": "JB-2017-002",
@@ -1208,7 +1208,7 @@
       "source_type": "platform_auto_captions",
       "verification_status": "transcript_text_verified",
       "imported_date": "2026-09-30",
-      "notes_zh": "原始場次：The Museum of Flight「Apollo」展覽開幕學生問答；Seattle, Washington；主持或訪問：（學生提問）。影片來源：GeekWire YouTube 現場全程錄影（媒體錄影，非主辦單位官方）。本場次由第三方剪輯合輯 Business Motiversity〈\"I Got Rich When I Understood This\" | Jeff Bezos〉（https://youtu.be/7TWKKww-F30，2022-05-16 上傳）引用，但出處一律標原始場次，不標合輯。無官方逐字稿，英文語錄以 YouTube 平台自動字幕核對（逐字子字串），未對影片全程校聽。Q01、Q02 標 verified。Q03 標 draft。本庫內只存語錄附近節錄，不存全文。"
+      "notes_zh": "原始場次：The Museum of Flight「Apollo」展覽開幕學生問答；Seattle, Washington；主持或訪問：（學生提問）。影片來源：GeekWire YouTube 現場全程錄影（媒體錄影，非主辦單位官方）。本場次由第三方剪輯合輯 Business Motiversity〈\"I Got Rich When I Understood This\" | Jeff Bezos〉（https://youtu.be/7TWKKww-F30，2022-05-16 上傳）引用，但出處一律標原始場次，不標合輯。無官方逐字稿，英文語錄以 YouTube 平台自動字幕核對（逐字子字串），未對影片全程校聽。Q01、Q02 標 verified。Q03 標 draft。本庫只存時間戳記索引，不存全文。"
     },
     {
       "id": "JB-2017-003",
@@ -1237,7 +1237,7 @@
       "source_type": "platform_auto_captions",
       "verification_status": "transcript_text_verified",
       "imported_date": "2026-09-30",
-      "notes_zh": "原始場次：Summit LA17：Jeff Bezos 與 Mark Bezos 兄弟對談；Los Angeles, California；主持或訪問：Jeff Bezos 與胞弟 Mark Bezos 對談（是否另有主持人未核實）。影片來源：Summit 官方 YouTube（2017-11-14 上傳）。本場次由第三方剪輯合輯 Business Motiversity〈\"I Got Rich When I Understood This\" | Jeff Bezos〉（https://youtu.be/7TWKKww-F30，2022-05-16 上傳）引用，但出處一律標原始場次，不標合輯。無官方逐字稿，英文語錄以 YouTube 平台自動字幕核對（逐字子字串），未對影片全程校聽。Q01、Q02 標 verified。本庫內只存語錄附近節錄，不存全文。"
+      "notes_zh": "原始場次：Summit LA17：Jeff Bezos 與 Mark Bezos 兄弟對談；Los Angeles, California；主持或訪問：Jeff Bezos 與胞弟 Mark Bezos 對談（是否另有主持人未核實）。影片來源：Summit 官方 YouTube（2017-11-14 上傳）。本場次由第三方剪輯合輯 Business Motiversity〈\"I Got Rich When I Understood This\" | Jeff Bezos〉（https://youtu.be/7TWKKww-F30，2022-05-16 上傳）引用，但出處一律標原始場次，不標合輯。無官方逐字稿，英文語錄以 YouTube 平台自動字幕核對（逐字子字串），未對影片全程校聽。Q01、Q02 標 verified。本庫只存時間戳記索引，不存全文。"
     },
     {
       "id": "JB-2018-001",
@@ -1267,7 +1267,7 @@
       "source_type": "platform_auto_captions",
       "verification_status": "transcript_text_verified",
       "imported_date": "2026-09-30",
-      "notes_zh": "原始場次：George W. Bush Presidential Center Forum on Leadership 2018 閉幕對談；Dallas, Texas；主持或訪問：Kenneth Hersh（George W. Bush Presidential Center 總裁暨執行長）。影片來源：George W. Bush Presidential Center 官方 YouTube。本場次由第三方剪輯合輯 Business Motiversity〈\"I Got Rich When I Understood This\" | Jeff Bezos〉（https://youtu.be/7TWKKww-F30，2022-05-16 上傳）引用，但出處一律標原始場次，不標合輯。無官方逐字稿，英文語錄以 YouTube 平台自動字幕核對（逐字子字串），未對影片全程校聽。Q01、Q02 標 verified。本庫內只存語錄附近節錄，不存全文。"
+      "notes_zh": "原始場次：George W. Bush Presidential Center Forum on Leadership 2018 閉幕對談；Dallas, Texas；主持或訪問：Kenneth Hersh（George W. Bush Presidential Center 總裁暨執行長）。影片來源：George W. Bush Presidential Center 官方 YouTube。本場次由第三方剪輯合輯 Business Motiversity〈\"I Got Rich When I Understood This\" | Jeff Bezos〉（https://youtu.be/7TWKKww-F30，2022-05-16 上傳）引用，但出處一律標原始場次，不標合輯。無官方逐字稿，英文語錄以 YouTube 平台自動字幕核對（逐字子字串），未對影片全程校聽。Q01、Q02 標 verified。本庫只存時間戳記索引，不存全文。"
     },
     {
       "id": "JB-2020-001",
@@ -1296,7 +1296,7 @@
       "source_type": "platform_auto_captions",
       "verification_status": "transcript_text_verified",
       "imported_date": "2026-09-30",
-      "notes_zh": "原始場次：Amazon Prime Video India 爐邊對談（Jeff Bezos 首度訪問 Mumbai）；Mumbai, India；主持或訪問：Shah Rukh Khan、Zoya Akhtar。影片來源：Prime Video India 官方 YouTube。本場次由第三方剪輯合輯 Business Motiversity〈\"I Got Rich When I Understood This\" | Jeff Bezos〉（https://youtu.be/7TWKKww-F30，2022-05-16 上傳）引用，但出處一律標原始場次，不標合輯。無官方逐字稿，英文語錄以 YouTube 平台自動字幕核對（逐字子字串），未對影片全程校聽。Q01 標 verified。本庫內只存語錄附近節錄，不存全文。"
+      "notes_zh": "原始場次：Amazon Prime Video India 爐邊對談（Jeff Bezos 首度訪問 Mumbai）；Mumbai, India；主持或訪問：Shah Rukh Khan、Zoya Akhtar。影片來源：Prime Video India 官方 YouTube。本場次由第三方剪輯合輯 Business Motiversity〈\"I Got Rich When I Understood This\" | Jeff Bezos〉（https://youtu.be/7TWKKww-F30，2022-05-16 上傳）引用，但出處一律標原始場次，不標合輯。無官方逐字稿，英文語錄以 YouTube 平台自動字幕核對（逐字子字串），未對影片全程校聽。Q01 標 verified。本庫只存時間戳記索引，不存全文。"
     },
     {
       "id": "ES-2026-001",
@@ -1328,7 +1328,7 @@
       "source_type": "official_transcript",
       "verification_status": "transcript_text_verified",
       "imported_date": "2026-10-04",
-      "notes_zh": "原始場次：Blackstone 自家每週播客 Inside Blackstone 當集（影片與官方逐字稿同日 2026-09-29 發布；片中氣象段說 It's Tuesday, September 29th）；主辦 Blackstone；主持 Christine Anderson（Blackstone Global Head of Corporate Affairs）。全集約 33 分鐘，Eric Schmidt 訪談在 05:21–29:49，其餘為 Monday Morning Meeting（Gilles Dellaert）、Economic Weather Report（Winfield Sickles）、Debrief（Jas Khaira），不屬本講者。錄製地點未載明。英文語錄以 Blackstone 官方逐字稿核對，並對上傳者人工英文字幕與自動字幕；時間碼以自動字幕逐詞對齊。本庫只存語錄附近節錄，不存全文。"
+      "notes_zh": "原始場次：Blackstone 自家每週播客 Inside Blackstone 當集（影片與官方逐字稿同日 2026-09-29 發布；片中氣象段說 It's Tuesday, September 29th）；主辦 Blackstone；主持 Christine Anderson（Blackstone Global Head of Corporate Affairs）。全集約 33 分鐘，Eric Schmidt 訪談在 05:21–29:49，其餘為 Monday Morning Meeting（Gilles Dellaert）、Economic Weather Report（Winfield Sickles）、Debrief（Jas Khaira），不屬本講者。錄製地點未載明。英文語錄以 Blackstone 官方逐字稿核對，並對上傳者人工英文字幕與自動字幕；時間碼以自動字幕逐詞對齊。本庫只存時間戳記索引，不存全文。"
     },
     {
       "id": "YL-2026-001",
@@ -1360,7 +1360,7 @@
       "source_type": "platform_auto_captions",
       "verification_status": "transcript_text_verified",
       "imported_date": "2026-10-04",
-      "notes_zh": "原始場次：Sciences Po「Les Grandes Conférences」2026-2027 學年第一場，2026-09-16（週三）18:30–20:00（巴黎時間），Amphithéâtre Émile Boutmy；主辦 Sciences Po；主持 Éric Hazan（Ardabelle Capital 創辦人、Sciences Po 與 HEC 教授）；開場致詞為 Sciences Po 校長 Luis Vassy。YouTube 為 Sciences Po 官方直播錄影（直播開始 2026-09-16 16:46 UTC），非剪輯或轉載；官方活動頁：https://www.sciencespo.fr/fr/evenements/les-grandes-conferences-yann-le-cun-president-executif-d-advanced-machine-intelligence-et-laureat-du-prix-turing/ 。全程法語，前約 10 分鐘為校方與主持人開場，最後約 35 分鐘為聽眾提問。無官方逐字稿；法文語錄以 YouTube 法文自動字幕核對，並以 faster-whisper 轉錄輔助比對；英文與中文為本庫譯文。官方頁面拼法為 Yann Le Cun。本庫只存語錄附近節錄。"
+      "notes_zh": "原始場次：Sciences Po「Les Grandes Conférences」2026-2027 學年第一場，2026-09-16（週三）18:30–20:00（巴黎時間），Amphithéâtre Émile Boutmy；主辦 Sciences Po；主持 Éric Hazan（Ardabelle Capital 創辦人、Sciences Po 與 HEC 教授）；開場致詞為 Sciences Po 校長 Luis Vassy。YouTube 為 Sciences Po 官方直播錄影（直播開始 2026-09-16 16:46 UTC），非剪輯或轉載；官方活動頁：https://www.sciencespo.fr/fr/evenements/les-grandes-conferences-yann-le-cun-president-executif-d-advanced-machine-intelligence-et-laureat-du-prix-turing/ 。全程法語，前約 10 分鐘為校方與主持人開場，最後約 35 分鐘為聽眾提問。無官方逐字稿；法文語錄以 YouTube 法文自動字幕核對，並以 faster-whisper 轉錄輔助比對；英文與中文為本庫譯文。官方頁面拼法為 Yann Le Cun。本庫只存時間戳記索引。"
     },
     {
       "id": "MZ-2026-001",
@@ -1392,7 +1392,7 @@
       "source_type": "official_transcript",
       "verification_status": "transcript_text_verified",
       "imported_date": "2026-10-15",
-      "notes_zh": "原始場次：Cheeky Pint 播客（Stripe 共同創辦人 John Collison 主持）當集，YouTube 官方頻道 @CheekyPint 於 2026-10-12（美國太平洋時間 14:10）發布，官方 Substack 同日刊出全文逐字稿。來賓 Mark Zuckerberg（Meta 創辦人暨執行長）與 Alexandr Wang（Meta 首席人工智慧長，領導 Meta Superintelligence Labs）。錄製日期與地點未載明。全長約 2 小時 15 分；逐字稿約 27000 詞，含三人發言。英文語錄以 Substack 官方逐字稿核對，並對上傳者英文字幕與自動字幕；時間碼以自動字幕逐詞對齊。本庫只存語錄附近節錄。場次名稱採官方標題〈Muse Wonder: Zuckerberg and Wang's $100B AI〉；分享時流傳的標題「How Zuckerberg is building superintelligence」是分享時用的標題，官方未見，不作正式名稱。片長 2:14:31，記為 135 分鐘（Celebrities PM 已確認）。"
+      "notes_zh": "原始場次：Cheeky Pint 播客（Stripe 共同創辦人 John Collison 主持）當集，YouTube 官方頻道 @CheekyPint 於 2026-10-12（美國太平洋時間 14:10）發布，官方 Substack 同日刊出全文逐字稿。來賓 Mark Zuckerberg（Meta 創辦人暨執行長）與 Alexandr Wang（Meta 首席人工智慧長，領導 Meta Superintelligence Labs）。錄製日期與地點未載明。全長約 2 小時 15 分；逐字稿約 27000 詞，含三人發言。英文語錄以 Substack 官方逐字稿核對，並對上傳者英文字幕與自動字幕；時間碼以自動字幕逐詞對齊。本庫只存時間戳記索引。場次名稱採官方標題〈Muse Wonder: Zuckerberg and Wang's $100B AI〉；分享時流傳的標題「How Zuckerberg is building superintelligence」是分享時用的標題，官方未見，不作正式名稱。片長 2:14:31，記為 135 分鐘（Celebrities PM 已確認）。"
     },
     {
       "id": "SA-2026-007",
@@ -1489,7 +1489,7 @@
       "verification_status": "transcript_text_verified",
       "imported_date": "2026-11-12",
       "editorial_path": "references/editorials/SA-2026-009.md",
-      "notes_zh": "原始場次：Cheeky Pint 播客（Stripe 共同創辦人 John Collison 主持）當集，官方標題〈Why Sam Altman is against a single superintelligence〉。YouTube 官方頻道 Cheeky Pint 於 2026-10-29 發布（上傳日 20261029），官方 Substack 同日刊出全文逐字稿（https://cheekypint.substack.com/p/why-sam-altman-is-against-a-single）。來賓 Sam Altman（OpenAI 執行長）。錄製日期與地點未載明。片長 52:45，記為 53 分鐘；逐字稿約 10000 詞。英文語錄以 Substack 官方逐字稿核對，並對頻道人工英文字幕與自動字幕；時間碼以自動字幕逐詞對齊。本庫只存語錄附近節錄。政治／爭議段落（監視國家、社會資源分配等）不取。"
+      "notes_zh": "原始場次：Cheeky Pint 播客（Stripe 共同創辦人 John Collison 主持）當集，官方標題〈Why Sam Altman is against a single superintelligence〉。YouTube 官方頻道 Cheeky Pint 於 2026-10-29 發布（上傳日 20261029），官方 Substack 同日刊出全文逐字稿（https://cheekypint.substack.com/p/why-sam-altman-is-against-a-single）。來賓 Sam Altman（OpenAI 執行長）。錄製日期與地點未載明。片長 52:45，記為 53 分鐘；逐字稿約 10000 詞。英文語錄以 Substack 官方逐字稿核對，並對頻道人工英文字幕與自動字幕；時間碼以自動字幕逐詞對齊。本庫只存時間戳記索引。政治／爭議段落（監視國家、社會資源分配等）不取。"
     }
   ]
 }

@@ -40,4 +40,4 @@
 
 這場訪談留下的問題是：當模型越來越聰明，我們的工作與生活，究竟改善了多少？醫師能否減少行政時間、企業能否做出更好的決策、使用者能否掌握自己的知識累積，都是值得繼續追蹤的故事。
 
-來源：[YouTube 訪談](https://www.youtube.com/watch?v=hdcsTeCFE0I)；[使用者提供的完整逐字稿](../transcripts/SN-UNDATED-001.txt)。
+來源：[YouTube 訪談](https://www.youtube.com/watch?v=hdcsTeCFE0I)；[本庫時間戳記索引](../transcripts/SN-UNDATED-001.txt)。
