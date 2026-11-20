@@ -454,6 +454,26 @@ if (!legacy.d.includes("2026-09-01")) errors.push("同步代碼：舊版 v1 仍�
 const legacyV2 = core.decodeProgress(Buffer.from(JSON.stringify({ v: 2, d: ["2026-09-01"], o: [1], a: [3] })).toString("base64"));
 if (!legacyV2.a || legacyV2.a[0] !== 3) errors.push("同步代碼：舊版 v2 仍應可匯入");
 
+const quoteSourceTypes = schema.quotesIndex.sourceTypes;
+function quoteSourceTypeIssues(entry) {
+  const issues = [];
+  if (entry && Object.prototype.hasOwnProperty.call(entry, "source_type")) {
+    if (!quoteSourceTypes.includes(entry.source_type)) {
+      issues.push(`source_type 無效：${entry.source_type}`);
+    }
+  }
+  return issues;
+}
+if (quoteSourceTypeIssues({ source_type: "host_page_note" }).length) {
+  errors.push("語錄 source_type：host_page_note（主持人節目頁筆記）應為合法值");
+}
+if (!quoteSourceTypeIssues({ source_type: "not_a_real_source_type" }).length) {
+  errors.push("語錄 source_type：未知值應回報錯誤");
+}
+if (quoteSourceTypeIssues({}).length) {
+  errors.push("語錄 source_type：未提供時不應回報錯誤");
+}
+
 const quotesIndexPath = "references/quotes_index.json";
 const quotesIndex = JSON.parse(fs.readFileSync(path.join(root, quotesIndexPath), "utf8"));
 if (!Array.isArray(quotesIndex)) {
@@ -461,6 +481,7 @@ if (!Array.isArray(quotesIndex)) {
 } else {
   quotesIndex.forEach((entry, index) => {
     const id = entry && entry.quote_id ? entry.quote_id : `第 ${index + 1} 筆`;
+    quoteSourceTypeIssues(entry).forEach(issue => errors.push(`${quotesIndexPath}: ${id} ${issue}`));
     const lang = entry ? entry.quote_lang : undefined;
     const langPresent = lang !== undefined && lang !== null;
     if (langPresent && lang !== "en") {

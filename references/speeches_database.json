@@ -2,14 +2,14 @@
   "metadata": {
     "created_date": "2026-09-06",
     "time_range": "2001-05 to 2026-10",
-    "total_entries": 47,
+    "total_entries": 48,
     "categories": [
       "keynote",
       "interview",
       "panel",
       "town_hall"
     ],
-    "updated_date": "2026-11-12"
+    "updated_date": "2026-11-19"
   },
   "speakers": {
     "jensen_huang": {
@@ -119,7 +119,7 @@
     },
     "satya_nadella": {
       "name": "Satya Nadella",
-      "title": "Chairman & CEO (as identified in supplied transcript)",
+      "title": "Chairman & CEO",
       "company": "Microsoft",
       "topics": [
         "AI adoption",
@@ -129,7 +129,8 @@
         "AI infrastructure"
       ],
       "entries": [
-        "SN-UNDATED-001"
+        "SN-UNDATED-001",
+        "SN-2026-001"
       ]
     },
     "lip_bu_tan": {
@@ -1490,6 +1491,39 @@
       "imported_date": "2026-11-12",
       "editorial_path": "references/editorials/SA-2026-009.md",
       "notes_zh": "原始場次：Cheeky Pint 播客（Stripe 共同創辦人 John Collison 主持）當集，官方標題〈Why Sam Altman is against a single superintelligence〉。YouTube 官方頻道 Cheeky Pint 於 2026-10-29 發布（上傳日 20261029），官方 Substack 同日刊出全文逐字稿（https://cheekypint.substack.com/p/why-sam-altman-is-against-a-single）。來賓 Sam Altman（OpenAI 執行長）。錄製日期與地點未載明。片長 52:45，記為 53 分鐘；逐字稿約 10000 詞。英文語錄以 Substack 官方逐字稿核對，並對頻道人工英文字幕與自動字幕；時間碼以自動字幕逐詞對齊。本庫只存時間戳記索引。政治／爭議段落（監視國家、社會資源分配等）不取。"
+    },
+    {
+      "id": "SN-2026-001",
+      "speaker": "satya_nadella",
+      "date": "2026-11-16",
+      "event": "The Pragmatic Engineer（Gergely Orosz 主持）: Software engineering after code becomes cheap with Satya Nadella",
+      "location": "Redmond",
+      "type": "interview",
+      "duration_minutes": 63,
+      "topics": [
+        "software engineering",
+        "code verification",
+        "software factory",
+        "decision engines",
+        "hybrid intelligence",
+        "engineering careers"
+      ],
+      "key_quotes": [],
+      "transcript_url": "https://newsletter.pragmaticengineer.com/p/software-engineering-after-code-becomes",
+      "video_url": "https://www.youtube.com/watch?v=0NE89Nzfk20",
+      "language": "en",
+      "word_count_estimate": 11540,
+      "product_tags": [
+        "interview",
+        "AI",
+        "leadership"
+      ],
+      "transcript_path": "references/transcripts/SN-2026-001.txt",
+      "editorial_path": "references/editorials/SN-2026-001.md",
+      "source_type": "publisher_auto_transcript",
+      "verification_status": "pending_human_check",
+      "imported_date": "2026-11-19",
+      "notes_zh": "原始場次：The Pragmatic Engineer 播客（Gergely Orosz 主持）訪問 Microsoft 執行長 Satya Nadella，官方標題〈Software engineering after code becomes cheap with Satya Nadella〉。官方節目頁 https://newsletter.pragmaticengineer.com/p/software-engineering-after-code-becomes 日期寫 Nov 16, 2026；官方頁註記錄製於 Redmond。官方頁寫可在 YouTube、Apple、Spotify 收聽與觀看，正文與封面確認 YouTube 代號為 0NE89Nzfk20（https://www.youtube.com/watch?v=0NE89Nzfk20）；次要連結為 Apple Podcasts 節目總頁 https://podcasts.apple.com/us/podcast/the-pragmatic-engineer/id1769051199 與 Spotify 節目總頁 https://open.spotify.com/show/2Bho9xCbOQMWMJ7UKmqCzD（皆為節目總頁，非單集網址）。官方片長約 3759.987 秒（約 62 分 40 秒），記為 63 分鐘。官方頁另附平台自動轉寫的 episode transcript，產生於上傳後數分鐘內，可見辨識誤差，故 source_type 用 publisher_auto_transcript，不用 official_transcript。本輪語錄牆只收 Q02、Q06 兩則，文字取自官方節目頁 takeaways 第 11、12 點中、主持人 Gergely Orosz 以引號整理呈現的句子（source_type：host_page_note，標示「據 The Pragmatic Engineer 節目頁筆記」），屬節目頁筆記而非講者逐字口語；status 為 pending_human_check。自願離職方案、初階招聘等章節未取語錄。本庫只存時間戳記索引，不存逐字稿文字。"
     }
   ]
 }

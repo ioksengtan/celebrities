@@ -23,7 +23,7 @@ Hold this round (never verified on the wall): `EM-2026-005`, `SA-2026-001`.
 
 ## Other
 
-- `speeches_database.json` — 47 speeches/interviews (including one undated interview) metadata.
+- `speeches_database.json` — 48 speeches/interviews (including one undated interview) metadata.
 - `speeches_indexes.json` — 7 derived index views.
 - `product_recommendations.json` — candidate product ideas.
 - `美國大學畢業典禮名人演講專案報告（完整版）.docx` — full project report.
@@ -81,3 +81,12 @@ Hold this round (never verified on the wall): `EM-2026-005`, `SA-2026-001`.
 - 六則語錄都在 `quotes_index.json`，狀態都是 `verified`，原文照交付檔逐字寫入，沒有改任何一個字。六則都是 `quote_lang: "en"`，不帶 `quote_en`。來源類型用既有的 `official_transcript`，時間碼精度用既有的 `caption_word_alignment`。沒有新增 `source_type`。
 - Sam Altman 是既有講者（`sam_altman`／語錄牆代碼 `sa`）。沒有新增講者，沒有改講者色，沒有做詞彙卡。
 - 單場頁：`products/core/speech.html?id=SA-2026-009`。
+
+## Satya Nadella The Pragmatic Engineer 入庫（2026-11-19）
+
+- `SN-2026-001`：The Pragmatic Engineer 播客當集，官方標題〈Software engineering after code becomes cheap with Satya Nadella〉，Gergely Orosz 主持，來賓 Microsoft 執行長 Satya Nadella。官方節目頁日期 2026-11-16，註記錄製於 Redmond；片長約 62 分 40 秒，記為 63 分鐘。主要出處為官方節目頁 https://newsletter.pragmaticengineer.com/p/software-engineering-after-code-becomes 與官方影片 https://www.youtube.com/watch?v=0NE89Nzfk20 。合併前已重查主線編號，主線先前只有 `SN-UNDATED-001`，未撞號。
+- 講者 `satya_nadella` 主檔與索引職稱由「Chairman & CEO (as identified in supplied transcript)」改為「Chairman & CEO」，依據官方節目頁。沒有新增講者、沒有改講者色、本場未做詞彙卡。
+- 本輪語錄牆只收兩則：`SN-2026-001-Q02`、`SN-2026-001-Q06`。文字取自官方節目頁 takeaways 第 11、12 點中、由主持人 Gergely Orosz 以引號整理呈現的句子（Q06 的 talk／do 依官方頁用 curly 引號、句尾為「I would.」），屬節目頁筆記而非講者逐字口語，卡片標示「據 The Pragmatic Engineer 節目頁筆記」。`source_url` 指向官方節目頁；`timestamp` 與影片 `&t=` 連結僅供定位對應段落。`status` 為 `pending_human_check`。
+- 新增 `source_type` 值 `host_page_note`（主持人節目頁筆記）。這次更新了內容驗證器：`products/shared/content-schema.json` 新增 `quotesIndex.sourceTypes` 列舉，`tools/validate-content.mjs` 對 `quotes_index.json` 的 `source_type` 逐筆檢查並附自我測試（`host_page_note` 應收、未知值應擋、未填不報錯）。既有五種語錄來源類型維持不變。
+- Q01、Q03、Q04、Q05 本輪不進 `quotes_index.json`；`transcripts/SN-2026-001.txt` 只存時間戳記索引（語錄編號、時間碼、官方章節與連結），不含逐字稿文字；導讀：`editorials/SN-2026-001.md`（六段，含文末中文短摘要）。
+- 單場頁：`products/core/speech.html?id=SN-2026-001`。兩則語錄出現在語錄牆，講者代碼沿用既有的 `sn`。語錄牆與單場頁的呈現條件放寬：`host_page_note` 語錄即使狀態尚未升級，只要已標示來源即可呈現（`products/core/core.js`）。

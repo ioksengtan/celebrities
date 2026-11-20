@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>單場演講 · celebrities</title>
-  <meta name="description" content="單場短摘要與已核實語錄，不內嵌逐字稿。">
+  <meta name="description" content="單場短摘要與語錄，不內嵌逐字稿。來源以各卡標示為準。">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Public+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
   <link rel="stylesheet" href="site.css">
@@ -135,9 +135,9 @@
           "<h2>語錄（" + relatedQuotes.length + "）</h2>" +
           (relatedQuotes.length
             ? '<div class="quote-list">' + relatedQuotes.map((q) => CoreUI.quoteCardHtml(q, paths, { hideSpeech: true })).join("") + "</div>"
-            : '<p class="missing">此場尚無已核實語錄。</p>') +
+            : '<p class="missing">此場尚無語錄。</p>') +
           (relatedQuotes.length && relatedQuotes.length < 3
-            ? '<p class="missing">此場核實語錄少於 3 則，只顯示現有資料。</p>'
+            ? '<p class="missing">此場語錄少於 3 則，只顯示現有資料。</p>'
             : "") +
         "</section>";
 

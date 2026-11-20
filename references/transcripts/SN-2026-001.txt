@@ -1,0 +1,7 @@
+# SN-2026-001 時間戳記索引（不含逐字稿文字）
+# 節目：The Pragmatic Engineer〈Software engineering after code becomes cheap with Satya Nadella〉，Gergely Orosz 主持，2026-11-16
+# 官方節目頁：https://newsletter.pragmaticengineer.com/p/software-engineering-after-code-becomes
+# 官方影片：https://www.youtube.com/watch?v=0NE89Nzfk20
+# 本檔只列語錄編號、時間碼與官方章節；原話請到官方節目頁或官方影片收看。
+SN-2026-001-Q02	10:20	https://www.youtube.com/watch?v=0NE89Nzfk20&t=620s	官方章節 09:52 Decision engines
+SN-2026-001-Q06	59:43	https://www.youtube.com/watch?v=0NE89Nzfk20&t=3583s	官方章節 59:26 Advice for engineers
