@@ -2,4 +2,5 @@
 # 場次：Vanity Fair New Establishment Summit 2016: The Power of Jeff Bezos（2016-10-20）
 # 官方頁：https://www.vanityfair.com/video/watch/the-new-establishment-summit-the-power-of-jeff-bezos
 # 本檔只存時間戳記索引；原話請到官方來源收看。
+# 註：時間碼依第三方轉載估計，官方影片頁可能不同。
 JB-2016-001-Q01	時間碼：27:08	https://www.vanityfair.com/video/watch/the-new-establishment-summit-the-power-of-jeff-bezos

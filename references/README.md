@@ -30,30 +30,30 @@ Hold this round (never verified on the wall): `EM-2026-005`, `SA-2026-001`.
 
 ## Satya Nadella interview import (2026-09-19)
 
-- `SN-UNDATED-001`: user-provided transcript; event date unknown, not the import date. Speech `verification_status` is `transcript_text_verified` (in-repo transcript check only; not fully video-verified).
+- `SN-UNDATED-001`: user-provided transcript; event date unknown, not the import date. Speech `verification_status` is `transcript_text_verified` (checked against a user-provided transcript, no longer stored in this repository; not video-verified).
 - Timestamp index (no transcript text): `transcripts/SN-UNDATED-001.txt`; Traditional Chinese editorial: `editorials/SN-UNDATED-001.md`.
-- Five timestamped quotes are in `quotes_index.json`. `SN-UNDATED-001-Q01`, `Q02`, `Q03`, and `Q04` are `verified` after matching the in-repo transcript at timestamps 26:27, 11:31, 09:49, and 08:13. Q02’s English quote now includes the capability-overhang continuation. `Q05` remains `draft` (`why_notable_zh` strengthened; English quote and `quote_zh` unchanged) and stays off the verified wall. No full YouTube re-listen.
+- Five timestamped quotes are in `quotes_index.json`. `SN-UNDATED-001-Q01`, `Q02`, `Q03`, and `Q04` are `verified` after matching the user-provided transcript (no longer stored in this repository) at timestamps 26:27, 11:31, 09:49, and 08:13. Q02’s English quote now includes the capability-overhang continuation. `Q05` remains `draft` (`why_notable_zh` strengthened; English quote and `quote_zh` unchanged) and stays off the verified wall. No full YouTube re-listen.
 - Speech page: `products/core/speech.html?id=SN-UNDATED-001`. The default list includes featured speeches and speeches with verified quotes, so this interview now appears there via Q01 / Q02 / Q03 / Q04.
 
 ## Lip-Bu Tan interview import (2026-09-29)
 
 - `LBT-2026-001`: A Bit Personal podcast (Jodi Shelton), published 2026-09-24. `source_type` is `publisher_auto_transcript` (Substack auto-transcript; not fully audio-verified).
 - Timestamp index (no transcript text): `transcripts/LBT-2026-001.txt`; Traditional Chinese editorial: `editorials/LBT-2026-001.md`.
-- Six timestamped quotes are in `quotes_index.json`. `LBT-2026-001-Q01`, `Q02`, `Q03`, `Q04`, and `Q06` are `verified` as exact substrings of the in-repo transcript. `Q05` stays `draft` (reported speech from a mentor) and stays off the verified wall. Quote text and status were not edited.
+- Six timestamped quotes are in `quotes_index.json`. `LBT-2026-001-Q01`, `Q02`, `Q03`, `Q04`, and `Q06` are `verified` as exact substrings of the Substack auto-transcript on the episode page. `Q05` stays `draft` (reported speech from a mentor) and stays off the verified wall. Quote text and status were not edited.
 - Speech page: `products/core/speech.html?id=LBT-2026-001`. Verified quotes appear on the quotes wall under speaker `lbt`.
 
 ## Jeff Bezos speeches import (2026-09-30)
 
-- Nine original speeches, `JB-2001-001` through `JB-2020-001`. Excerpt transcripts are in `transcripts/JB-*.txt`. This batch has no editorials and no Chinese summaries; the speech page already shows「此場尚無短摘要」when `summary_zh` is absent.
+- Nine original speeches, `JB-2001-001` through `JB-2020-001`. Timestamp indexes are in `transcripts/JB-*.txt`. This batch has no editorials and no Chinese summaries; the speech page already shows「此場尚無短摘要」when `summary_zh` is absent.
 - `source_type` `official_transcript` (host or publisher transcript) and `platform_auto_captions` (YouTube auto-captions), plus `timestamp_precision` `caption_word_alignment`, are accepted. The content validator enumerates `source_type` only for Screen English cards (`tv_drama`, `casual_video`), not for speeches or quotes, so the schema was not changed.
-- Seventeen quotes are in `quotes_index.json`. Sixteen are `verified` as exact substrings of the in-repo excerpt. `JB-2017-002-Q03` stays `draft` (filler “um”; sentence boundary not re-listened) and stays off the verified wall. Quote text and status were not edited.
+- Seventeen quotes are in `quotes_index.json`. Sixteen are `verified` as exact substrings of the excerpt used at import time (the repository now keeps only timestamp indexes). `JB-2017-002-Q03` stays `draft` (filler “um”; sentence boundary not re-listened) and stays off the verified wall. Quote text and status were not edited.
 - Vanity Fair (`JB-2016-001`) uses the event date 2016-10-20.
 - Speech pages: `products/core/speech.html?id=JB-2010-001` (and the other `JB-*` ids). Verified quotes appear on the quotes wall under speaker `jb`.
 
 ## Eric Schmidt and Yann LeCun import (2026-10-04)
 
-- Two original speeches: `ES-2026-001` (Inside Blackstone, 2026-09-29, `duration_minutes` 33) and `YL-2026-001` (Sciences Po Grande Conférence, 2026-09-16, French). Excerpt transcripts are in `transcripts/ES-2026-001.txt` and `transcripts/YL-2026-001.txt`. `ES-2026-001` now has a Traditional Chinese editorial at `editorials/ES-2026-001.md` and a Chinese short summary (added 2026-10-08). `YL-2026-001` still has no editorial and no Chinese summary.
-- Twelve quotes are in `quotes_index.json`, all `verified`, and each quote is a verbatim substring of its in-repo excerpt. Quote text, translations, and status were not edited.
+- Two original speeches: `ES-2026-001` (Inside Blackstone, 2026-09-29, `duration_minutes` 33) and `YL-2026-001` (Sciences Po Grande Conférence, 2026-09-16, French). Timestamp indexes are in `transcripts/ES-2026-001.txt` and `transcripts/YL-2026-001.txt`. `ES-2026-001` now has a Traditional Chinese editorial at `editorials/ES-2026-001.md` and a Chinese short summary (added 2026-10-08). `YL-2026-001` still has no editorial and no Chinese summary.
+- Twelve quotes are in `quotes_index.json`, all `verified`, and each quote was a verbatim substring of its excerpt at import time (now replaced by a timestamp index). Quote text, translations, and status were not edited.
 - Eric Schmidt quotes use `source_type` `official_transcript`. Yann LeCun quotes use `source_type` `platform_auto_captions` (French auto-captions cross-checked with a transcription). No new `source_type` value was added.
 - Non-English quotes may set `quote_lang` (BCP 47; absent means `en`) and `quote_en` (required when `quote_lang` is not `en`, and absent when it is `en`). The six Yann LeCun quotes are `quote_lang: "fr"`; `quote` is the French original, and `quote_en` / `quote_zh` are translations. `tools/validate-content.mjs` checks that pair of rules.
 - Speech pages: `products/core/speech.html?id=ES-2026-001` and `products/core/speech.html?id=YL-2026-001`. Verified quotes appear on the quotes wall under speakers `es` and `yl`.
@@ -61,7 +61,7 @@ Hold this round (never verified on the wall): `EM-2026-005`, `SA-2026-001`.
 ## Mark Zuckerberg Cheeky Pint 入庫（2026-10-15）
 
 - `MZ-2026-001`：Cheeky Pint 播客當集，官方標題〈Muse Wonder: Zuckerberg and Wang's $100B AI〉。YouTube 官方頻道於 2026-10-12（美國太平洋時間 14:10）發布，官方 Substack 同日刊出全文逐字稿。主持是 Stripe 共同創辦人 John Collison。來賓是 Mark Zuckerberg 與 Meta 首席人工智慧長 Alexandr Wang（領導 Meta Superintelligence Labs）。錄製日期與地點未載明。分享時流傳的標題「How Zuckerberg is building superintelligence」官方未見，只寫在 `notes_zh`，不是正式名稱。
-- 節錄逐字稿：`transcripts/MZ-2026-001.txt`。本批沒有導讀，也沒有中文短摘要。長度記為 135 分鐘（片長 2:14:31），`word_count_estimate` 27000 是整份逐字稿三人合計。
+- 時間戳記索引：`transcripts/MZ-2026-001.txt`。本批沒有導讀，也沒有中文短摘要。長度記為 135 分鐘（片長 2:14:31），`word_count_estimate` 27000 是整份逐字稿三人合計。
 - 六則語錄都在 `quotes_index.json`，狀態都是 `verified`，原文照交付檔逐字寫入，沒有改任何一個字。來源類型用既有的 `official_transcript`，時間碼精度用既有的 `caption_word_alignment`。沒有新增 `source_type`。六則都不帶 `quote_lang`，等同英文。
 - Mark Zuckerberg 是既有講者，沒有新增講者、沒有改講者色、沒有做詞彙卡。Alexandr Wang 本批不新增為講者。
 - 單場頁：`products/core/speech.html?id=MZ-2026-001`。已核實語錄出現在語錄牆，講者代碼沿用既有的 `mz`。
@@ -77,7 +77,7 @@ Hold this round (never verified on the wall): `EM-2026-005`, `SA-2026-001`.
 ## Sam Altman Cheeky Pint 入庫（2026-11-12）
 
 - `SA-2026-009`：Cheeky Pint 播客當集，官方標題〈Why Sam Altman is against a single superintelligence〉。YouTube 官方頻道與官方 Substack 於 2026-10-29（美國發布日）刊出影片與全文逐字稿。主持是 Stripe 共同創辦人 John Collison，來賓是 OpenAI 執行長 Sam Altman。錄製日期與地點未載明。片長 52:45，記為 53 分鐘；逐字稿約 10000 詞。
-- 節錄逐字稿：`transcripts/SA-2026-009.txt`。導讀：`editorials/SA-2026-009.md`（五段，含文末中文短摘要），`prod001_summary_zh_draft.json` 最後加上本場中文短摘要一列。
+- 時間戳記索引：`transcripts/SA-2026-009.txt`。導讀：`editorials/SA-2026-009.md`（五段，含文末中文短摘要），`prod001_summary_zh_draft.json` 最後加上本場中文短摘要一列。
 - 六則語錄都在 `quotes_index.json`，狀態都是 `verified`，原文照交付檔逐字寫入，沒有改任何一個字。六則都是 `quote_lang: "en"`，不帶 `quote_en`。來源類型用既有的 `official_transcript`，時間碼精度用既有的 `caption_word_alignment`。沒有新增 `source_type`。
 - Sam Altman 是既有講者（`sam_altman`／語錄牆代碼 `sa`）。沒有新增講者，沒有改講者色，沒有做詞彙卡。
 - 單場頁：`products/core/speech.html?id=SA-2026-009`。

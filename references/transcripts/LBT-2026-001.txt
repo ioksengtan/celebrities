@@ -1,10 +1,10 @@
 # LBT-2026-001 時間戳記索引（不含逐字稿文字）
 # 場次：Lip-Bu Tan: From Nuclear Engineer to Intel’s CEO（A Bit Personal with Jodi Shelton）（2026-09-24）
-# 官方頁：https://abitpersonalpod.substack.com/p/lip-bu-tan-from-nuclear-engineer?showTranscript=true
+# 官方頁：https://abitpersonalpod.substack.com/p/lip-bu-tan-from-nuclear-engineer
 # 本檔只存時間戳記索引；原話請到官方來源收看。
-LBT-2026-001-Q01	時間碼：12:13	https://abitpersonalpod.substack.com/p/lip-bu-tan-from-nuclear-engineer?showTranscript=true
-LBT-2026-001-Q02	時間碼：31:45	https://abitpersonalpod.substack.com/p/lip-bu-tan-from-nuclear-engineer?showTranscript=true
-LBT-2026-001-Q03	時間碼：27:01	https://abitpersonalpod.substack.com/p/lip-bu-tan-from-nuclear-engineer?showTranscript=true
-LBT-2026-001-Q04	時間碼：36:44	https://abitpersonalpod.substack.com/p/lip-bu-tan-from-nuclear-engineer?showTranscript=true
-LBT-2026-001-Q05	時間碼：36:01	https://abitpersonalpod.substack.com/p/lip-bu-tan-from-nuclear-engineer?showTranscript=true
-LBT-2026-001-Q06	時間碼：51:20	https://abitpersonalpod.substack.com/p/lip-bu-tan-from-nuclear-engineer?showTranscript=true
+LBT-2026-001-Q01	時間碼：12:13	https://abitpersonalpod.substack.com/p/lip-bu-tan-from-nuclear-engineer
+LBT-2026-001-Q02	時間碼：31:45	https://abitpersonalpod.substack.com/p/lip-bu-tan-from-nuclear-engineer
+LBT-2026-001-Q03	時間碼：27:01	https://abitpersonalpod.substack.com/p/lip-bu-tan-from-nuclear-engineer
+LBT-2026-001-Q04	時間碼：36:44	https://abitpersonalpod.substack.com/p/lip-bu-tan-from-nuclear-engineer
+LBT-2026-001-Q05	時間碼：36:01	https://abitpersonalpod.substack.com/p/lip-bu-tan-from-nuclear-engineer
+LBT-2026-001-Q06	時間碼：51:20	https://abitpersonalpod.substack.com/p/lip-bu-tan-from-nuclear-engineer
