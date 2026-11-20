@@ -24,7 +24,7 @@
         "學生與研究者"
       ],
       "data_requirements": {
-        "transcript_text": "需要完整逐字稿",
+        "transcript_text": "需要對照官方逐字稿（不入庫）",
         "metadata": "已具備",
         "audio_video": "可選（用於 timestamp）"
       },
@@ -94,7 +94,7 @@
         "準備面試的學生"
       ],
       "data_requirements": {
-        "transcript_text": "需要完整逐字稿（用於提取上下文）",
+        "transcript_text": "需要對照官方逐字稿（不入庫）（用於提取上下文）",
         "metadata": "已具備",
         "audio_clips": "可選（用於發音）"
       },
@@ -199,7 +199,7 @@
         "研究機構"
       ],
       "data_requirements": {
-        "transcript_text": "需要完整逐字稿（用於深度分析）",
+        "transcript_text": "需要對照官方逐字稿（不入庫）（用於深度分析）",
         "metadata": "已具備",
         "indexes": "topic_index 為核心"
       },
@@ -290,7 +290,7 @@
         "內容創作者"
       ],
       "data_requirements": {
-        "transcript_text": "需要完整逐字稿（用於 NLP 分析）",
+        "transcript_text": "需要對照官方逐字稿（不入庫）（用於 NLP 分析）",
         "metadata": "已具備"
       },
       "monetization": "免費工具（引流）、高級分析訂閱",
@@ -301,7 +301,7 @@
   "data_enrichment_recommendations": [
     {
       "priority": "高",
-      "task": "抓取完整逐字稿",
+      "task": "對照官方逐字稿（不入庫）",
       "description": "從已提供的 transcript_url 抓取完整文字內容，用於 NLP 分析與產品開發",
       "estimated_speeches": 15,
       "effort": "2-3 天"
@@ -367,7 +367,7 @@
   },
   "next_steps": [
     "1. 確認優先開發的產品（建議從 PROD-002 名人單字卡或 PROD-005 每日一句開始）",
-    "2. 抓取優先演講的完整逐字稿（約 10-15 場）",
+    "2. 對照優先演講的官方逐字稿（不入庫）（約 10-15 場）",
     "3. 豐富 metadata（摘要、語錄、timestamp）",
     "4. 開發 MVP 原型",
     "5. 用戶測試與迭代"

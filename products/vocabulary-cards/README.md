@@ -27,7 +27,7 @@
 ## 待辦 / 可擴充方向
 
 - [ ] 持續從資料庫的 30 場演講擴充卡片與語錄，並在 `daily_schedule.json` 排進每日挑戰
-- [ ] 抓取完整逐字稿後補上更多語錄（目前僅 7 條，見 `product_recommendations.json` 的 data_enrichment_recommendations）
+- [ ] 對照官方來源補上更多語錄（本庫不存逐字稿）（目前僅 7 條，見 `product_recommendations.json` 的 data_enrichment_recommendations）
 - [ ] 發音音檔
 - [ ] 與 PROD-005（每日一句）共用語錄資料
 - [ ] 評估做成可安裝的 PWA（加到手機主畫面、離線瀏覽）—— 需要獨立網域部署（例如 GitHub Pages），Artifact 預覽環境本身無法承載 service worker

@@ -15,7 +15,7 @@
 ## 2026-11-12（Sam Altman Cheeky Pint 場次 SA-2026-009 入庫）
 
 - 新增既有講者 Sam Altman 的場次 SA-2026-009，官方標題〈Why Sam Altman is against a single superintelligence〉，Cheeky Pint 播客（主持 John Collison），2026-10-29 發布，片長 52:45，記為 53 分鐘。入庫前已在最新主線重查，SA-2026-009 未被占用。
-- 六則語錄全部為 verified，英文原文是 Cheeky Pint 官方 Substack 逐字稿的逐字子字串，照草案寫入，沒有改任何一個字；六則都是 `quote_lang: "en"`，不帶 `quote_en`。節錄檔 `references/transcripts/SA-2026-009.txt`；導讀 `references/editorials/SA-2026-009.md`，導讀引號內英文已與官方逐字稿比對；`prod001_summary_zh_draft.json` 加上本場中文短摘要一列。
+- 六則語錄全部為 verified，英文原文是 Cheeky Pint 官方 Substack 逐字稿的逐字子字串，照草案寫入，沒有改任何一個字；六則都是 `quote_lang: "en"`，不帶 `quote_en`。節錄檔（2026-11-20 起本庫只存時間戳記索引） `references/transcripts/SA-2026-009.txt`；導讀 `references/editorials/SA-2026-009.md`，導讀引號內英文已與官方逐字稿比對；`prod001_summary_zh_draft.json` 加上本場中文短摘要一列。
 - 主資料庫總數 46→47，`updated_date` 改為 2026-11-12；主題、時間、類型、產品標籤、長度、講者摘要索引已更新。本場 `key_quotes` 為空，quotes 索引不新增列。語錄索引 162→168。
 - 沒有新增講者、沒有改講者色、沒有做詞彙卡，沒有手改首頁場次數（由演講庫自動計算）。
 
@@ -32,7 +32,7 @@
 ## 2026-11-03（更正 SA-2026-007、SA-2026-008 進度紀錄與節錄）
 
 - 更正下方 2026-10-17 那一節。第三十三號拉取請求有改首頁 `index.html`：「場公開演講與訪談」的備用數字由 43 改為 45。
-- `references/transcripts/SA-2026-008.txt` 裡，SA-2026-008-Q01 與 SA-2026-008-Q02 原本各貼同一段。現在只留一份，兩則都指向這一份。各則節錄只留語錄，加上前面一句與後面一句。語錄索引與演講資料庫的原文、時間碼、來源都沒有改。
+- `references/transcripts/SA-2026-008.txt` 裡，SA-2026-008-Q01 與 SA-2026-008-Q02 原本各貼同一段。現在只留一份，兩則都指向這一份。各則節錄只留語錄，加上前面一句與後面一句。語錄索引與演講資料庫的原文、時間碼、來源都沒有改。（2026-11-20 起本庫只存時間戳記索引）
 
 ---
 
@@ -53,7 +53,7 @@
 ## 2026-10-17（Sam Altman 兩場入庫：SA-2026-007、SA-2026-008）
 
 - 新增既有講者 Sam Altman 的兩場。SA-2026-007 是 Vanity Fair「Fair Game」〈Sam Altman Sees the Future. Are We In It? (Part 1 of 2)〉，日期 2026-10-05，片長 49:29，記為 49 分鐘。SA-2026-008 是 CNBC「Halftime Report」記者 Kate Rooney 於 OpenAI DevDay 2026 的專訪，日期 2026-09-29，長度記 10 分鐘。沒有新增講者，沒有改講者色，沒有做詞彙卡，也沒有導讀或中文短摘要。
-- 十則語錄全部為 verified（各五則）。英文原文照交付檔逐字寫入，沒有改任何一個字。SA-2026-007 的來源類型維持既有的 `official_transcript`。SA-2026-008 使用新值 `broadcaster_unofficial_transcript`：廣播媒體自己的逐字稿，並標示為非官方，語錄已對音訊逐字核對。時間碼精度維持既有的 `caption_word_alignment`。節錄檔是 `references/transcripts/SA-2026-007.txt` 與 `references/transcripts/SA-2026-008.txt`。SA-2026-008 影片分兩段，第 1 段放 `video_url`，第 2 段放既有欄位 `audio_url`；每則語錄的 `source_url` 指向所在那一段，`timestamp` 為該段內時間。
+- 十則語錄全部為 verified（各五則）。英文原文照交付檔逐字寫入，沒有改任何一個字。SA-2026-007 的來源類型維持既有的 `official_transcript`。SA-2026-008 使用新值 `broadcaster_unofficial_transcript`：廣播媒體自己的逐字稿，並標示為非官方，語錄已對音訊逐字核對。時間碼精度維持既有的 `caption_word_alignment`。節錄檔（2026-11-20 起本庫只存時間戳記索引）是 `references/transcripts/SA-2026-007.txt` 與 `references/transcripts/SA-2026-008.txt`。SA-2026-008 影片分兩段，第 1 段放 `video_url`，第 2 段放既有欄位 `audio_url`；每則語錄的 `source_url` 指向所在那一段，`timestamp` 為該段內時間。
 - 主資料庫總數 44→46，`time_range` 維持 2001-05 to 2026-10，`updated_date` 改為 2026-10-17。主題、時間、類型、產品標籤、長度、講者摘要索引已加入兩場。這兩場的 `key_quotes` 是空的，所以 `speeches_indexes.json` 的 quotes 索引沒有新增列。內容驗證器只對追劇英語卡片列舉 `source_type`，這次沒有改驗證器。
 - 語錄索引 152→162。已核實語錄牆 145→155（增加 10 則）。這兩場不在內容審核排除名單，也不在暫緩名單。
 - 首頁「場公開演講與訪談」的 `index.html` 備用數字由 43 改為 45。拉取請求 #31 已經合併：頁面載入時依演講庫計算有日期的場次，標記裡的數字是讀取、解析或計算失敗時的備用。有日期的場次是 43→45（總數 46 仍含 1 場日期待確認）。
@@ -69,7 +69,7 @@
 ## 2026-10-15（Mark Zuckerberg Cheeky Pint 場次 MZ-2026-001 入庫）
 
 - 新增既有講者 Mark Zuckerberg 的場次 MZ-2026-001。場次名稱採官方標題〈Muse Wonder: Zuckerberg and Wang's $100B AI〉。主持是 Stripe 共同創辦人 John Collison，來賓是 Mark Zuckerberg 與 Meta 首席人工智慧長 Alexandr Wang。發布日 2026-10-12。沒有新增講者，沒有改講者色，沒有做詞彙卡，也沒有導讀或中文短摘要。
-- 六則語錄全部為 verified。英文原文照交付檔逐字寫入，沒有改任何一個字。來源類型維持既有的 `official_transcript`，時間碼精度維持既有的 `caption_word_alignment`。節錄檔是 `references/transcripts/MZ-2026-001.txt`。
+- 六則語錄全部為 verified。英文原文照交付檔逐字寫入，沒有改任何一個字。來源類型維持既有的 `official_transcript`，時間碼精度維持既有的 `caption_word_alignment`。節錄檔（2026-11-20 起本庫只存時間戳記索引）是 `references/transcripts/MZ-2026-001.txt`。
 - 主資料庫總數 43→44，`time_range` 改為 2001-05 to 2026-10，`updated_date` 改為 2026-10-15。主題、時間、類型、產品標籤、長度、講者摘要索引已更新。這一場的 `key_quotes` 是空的，所以 `speeches_indexes.json` 的 quotes 索引沒有新增列。
 - 語錄索引 146→152。已核實語錄牆增加 6 則。這一場不在內容審核排除名單，也不在暫緩名單。
 - 首頁「場公開演講與訪談」計的是有日期的場次，日期待確認的 SN-UNDATED-001 不計。有日期的場次 42→43（總數 44 仍含 1 場日期待確認）。首頁這個數字目前是寫死的，詞彙與金句張數仍由卡片資料在載入時計算。
@@ -154,7 +154,7 @@
 ## 2026-09-30（Jeff Bezos 九場演講入庫）
 
 - 新增講者 Jeff Bezos（`jeff_bezos`／語錄牆代碼 `jb`）與 9 場原始演講 JB-2001-001 至 JB-2020-001，以及 17 則語錄。本批沒有導讀（editorials）也沒有中文短摘要；單場頁在沒有 `summary_zh` 時本來就顯示「此場尚無短摘要」，驗證器也不要求這兩項。
-- 16 則為 verified（節錄檔逐字子字串）；JB-2017-002-Q03 維持 draft（自動字幕含填充詞 um，斷句未校聽），不上已核實語錄牆。語錄原文與狀態未改。
+- 16 則為 verified（節錄檔逐字子字串）（2026-11-20 起本庫只存時間戳記索引）；JB-2017-002-Q03 維持 draft（自動字幕含填充詞 um，斷句未校聽），不上已核實語錄牆。語錄原文與狀態未改。
 - 同步主資料庫總數 41、主題／時間／類型／標籤／長度／講者索引；`time_range` 改為 2001-05 to 2026-09。Vanity Fair（JB-2016-001）日期維持活動日 2016-10-20。
 - 新增值 `source_type`：`official_transcript`、`platform_auto_captions`；`timestamp_precision`：`caption_word_alignment`。既有驗證器只列舉追劇英語卡片的 `source_type`，演講與語錄沒有允許值清單，無需改 schema。
 - 核心頁加入講者 `jb` 與獨立講者色（淺色金 `#9A7B12`、深色金 `#E6C35C`）；首頁講者名單加入 Jeff Bezos，公開演講與訪談場次 31→40（總數 41 仍含 1 場日期待確認）。已核實的 16 則可上語錄牆。
@@ -179,7 +179,7 @@
 ## 2026-09-29（Lip-Bu Tan 訪談入庫）
 
 - 新增 LBT-2026-001、Lip-Bu Tan（Intel CEO）講者資料、Substack 自動轉錄逐字稿、繁體中文導讀與摘要，以及 6 則附段落時間碼的語錄。
-- Q01、Q02、Q03、Q04、Q06 為 verified（逐字稿逐字子字串）；Q05 維持 draft（轉述導師之言），不上已核實語錄牆。語錄原文與狀態未改。
+- Q01、Q02、Q03、Q04、Q06 為 verified（逐字稿逐字子字串）（2026-11-20 起本庫只存時間戳記索引）；Q05 維持 draft（轉述導師之言），不上已核實語錄牆。語錄原文與狀態未改。
 - 同步主資料庫總數 32、主題／類型／標籤／長度／講者索引；speech date 維持 2026-09-24。`source_type` 使用 `publisher_auto_transcript`（既有驗證器沒有 source_type 列舉，無需改 schema）。
 - 核心頁加入講者 `lbt` 與獨立講者色；首頁講者名單加入 Lip-Bu Tan。已核實的 5 則可上語錄牆。
 
@@ -363,7 +363,7 @@
 - 匯入資料庫：30 場演講/訪談（Jensen Huang ×10、Elon Musk ×8、Sam Altman ×7、Sundar Pichai ×3、Mark Zuckerberg ×2），時間範圍 2024-03 至 2026-09
 - 完成 **PROD-002 名人單字卡** 第一版雛形（20 張卡，4 類詞彙，瀏覽 + 測驗模式），見 [`products/vocabulary-cards`](../products/vocabulary-cards)
 - 討論方向：導讀（PROD-001）、單字卡（PROD-002）、可視化（PROD-003）三個是目前主要想做的產品；報告建議優先做 PROD-002 或 PROD-005（每日一句），因為資料需求最低
-- 待決定：下一個要做哪個產品？資料補齊（完整逐字稿、更多語錄）誰來負責？
+- 待決定：下一個要做哪個產品？資料補齊（更多語錄；本庫不存逐字稿）誰來負責？
 
 ## 2026-09-19（Nadella 訪談入庫）
 
