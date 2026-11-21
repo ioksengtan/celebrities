@@ -147,9 +147,24 @@ const screen = readProduct(
 requireFields(executive, [...schema.common.required, ...schema.executiveEnglish.required]);
 validateCommon(executive, "word");
 const rarityByCefr = schema.executiveEnglish.cefrRarity;
+const eeOptionalStringFields = schema.executiveEnglish.optionalStringFields || [];
 executive.cards.forEach(card => {
   if (!rarityByCefr[card.cefr]) errors.push(`${executive.file}: id ${card.id} CEFR 無效：${card.cefr}`);
   else if (card.rarity !== rarityByCefr[card.cefr]) errors.push(`${executive.file}: id ${card.id} rarity 與 CEFR 不一致`);
+  // kk / kk_source：必須是字串，空字串代表尚未填寫；非空的 kk 不得只有空白，
+  // 且一旦寫入 kk 就必須附上 kk_source（音標來源），避免無來源的音標。
+  eeOptionalStringFields.forEach(field => {
+    if (!Object.prototype.hasOwnProperty.call(card, field) || typeof card[field] !== "string") {
+      errors.push(`${executive.file}: id ${card.id} ${field} 必須是字串（可為空字串）`);
+    }
+  });
+  if (typeof card.kk === "string" && card.kk !== "" && card.kk.trim() === "") {
+    errors.push(`${executive.file}: id ${card.id} kk 不可只有空白`);
+  }
+  if (typeof card.kk === "string" && card.kk.trim() !== "" &&
+      (typeof card.kk_source !== "string" || card.kk_source.trim() === "")) {
+    errors.push(`${executive.file}: id ${card.id} 有 kk 就必須有 kk_source`);
+  }
 });
 
 requireFields(keynote, [...schema.common.required, ...schema.keynoteLexicon.required]);
