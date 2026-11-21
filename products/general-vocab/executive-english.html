@@ -9,7 +9,7 @@
 <meta name="twitter:title" content="名人詞彙 · Executive English">
 <meta name="twitter:description" content="從科技 CEO 演講中萃取的一般英語進階詞彙，依 CEFR 分級。">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Public+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Public+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&family=Noto+Sans:wght@400;500;600&display=swap">
 <style>
   :root{
     --bg: #F3F4EF;
@@ -836,6 +836,58 @@
   @media (prefers-reduced-motion: reduce){
     .flashcard-inner{ transition: none; }
   }
+
+  /* ---- KK phonetic + pronunciation speaker (card front) ---- */
+  .term-main{
+    display: flex; align-items: center; justify-content: center; gap: 8px;
+    margin-top: auto; flex-wrap: wrap;
+  }
+  .term-main .term-en{ margin: 0; }
+  .feed-card-wrap .term-main .term-en,
+  .quiz-card-wrap .term-main .term-en{ margin: 0; }
+  .kk{
+    font-family: "Noto Sans", "Public Sans", "Segoe UI", sans-serif;
+    font-size: 13px; color: var(--muted); text-align: center;
+    margin: 4px 0 auto; line-height: 1.35;
+    overflow-wrap: anywhere; word-break: break-word; max-width: 100%;
+  }
+  .feed-card-wrap .kk{ font-size: 15px; }
+  .speak-btn{
+    display: none; align-items: center; justify-content: center;
+    min-width: 44px; min-height: 44px; padding: 0 8px;
+    border-radius: 999px; border: 1px solid var(--line); background: var(--surface);
+    color: var(--ink); font-size: 18px; line-height: 1; cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+  }
+  :root.has-speech .speak-btn{ display: inline-flex; }
+  .speak-btn:hover{ border-color: var(--accent); color: var(--accent); }
+
+  /* ---- Local marks (star / too-easy) ---- */
+  .card-unit{ display: flex; flex-direction: column; gap: 8px; min-width: 0; }
+  .mark-bar{
+    display: flex; gap: 8px; justify-content: center; flex-wrap: wrap;
+    min-width: 0;
+  }
+  .mark-bar[hidden]{ display: none; }
+  .mark-btn{
+    display: inline-flex; align-items: center; justify-content: center; gap: 4px;
+    min-height: 44px; min-width: 44px; padding: 6px 12px;
+    border-radius: 10px; border: 1px solid var(--line); background: var(--surface);
+    color: var(--muted); font-family: "Public Sans", sans-serif; font-size: 13px;
+    font-weight: 600; cursor: pointer; line-height: 1.2;
+    -webkit-tap-highlight-color: transparent;
+  }
+  .mark-btn:hover{ border-color: var(--accent); color: var(--ink); }
+  .mark-btn.mark-star.on{
+    background: var(--legend-b); border-color: var(--legend-a); color: var(--legend-fg);
+  }
+  .mark-btn.mark-easy.on{
+    background: var(--accent-soft); border-color: var(--accent); color: var(--accent);
+  }
+  /* Feed & daily cards: marks sit below the card in normal flow. */
+  .feed-slide .mark-bar{ margin-top: 10px; z-index: 2; }
+  .feed-card-wrap{ height: 70%; }
+  #browse-grid .mark-bar{ margin-top: 0; }
 </style>
 
 <div class="wrap">
@@ -867,6 +919,10 @@
       <div class="filter-row">
         <span class="label">講者</span>
         <div id="speaker-chips"></div>
+      </div>
+      <div class="filter-row">
+        <span class="label">標記</span>
+        <div id="mark-chips"></div>
       </div>
     </div>
   </div>
@@ -945,6 +1001,7 @@
     <div class="quiz-card-wrap">
       <div id="quiz-card-holder"></div>
     </div>
+    <div id="quiz-mark-slot"></div>
     <div class="quiz-hint">點卡片或按空白鍵翻面 · ← 忘記了　→ 記得</div>
     <div class="quiz-actions">
       <button class="dontknow" id="btn-dontknow">忘記了</button>
@@ -1076,7 +1133,122 @@ const DAILY_SCHEDULE = LearningCore.normalizeSchedule(await (async ()=>{
 
 document.getElementById("stat-total").textContent = CARDS.length;
 
-const state = { cefrs: new Set(), speakers: new Set(), mode: "feed" };
+const state = { cefrs: new Set(), speakers: new Set(), mark: "all", mode: "feed" };
+
+/* ---- Local marks: star / too-easy (device-local, not synced) ---- */
+const MARKS_KEY = "exec-vocab-marks";
+function sanitizeMarks(raw){
+  const out = {};
+  if (raw && typeof raw === "object" && !Array.isArray(raw)){
+    Object.keys(raw).forEach(id=>{
+      const v = raw[id];
+      if (v === "star" || v === "easy") out[id] = v;
+    });
+  }
+  return out;
+}
+function loadMarks(){
+  try { return sanitizeMarks(JSON.parse(localStorage.getItem(MARKS_KEY) || "{}")); }
+  catch(e){ return {}; }
+}
+let marks = loadMarks();
+function persistMarks(){ try { localStorage.setItem(MARKS_KEY, JSON.stringify(marks)); } catch(e){} }
+function getMark(id){ return marks[id] || null; }
+function toggleMark(id, kind){
+  if (marks[id] === kind) delete marks[id];   // 再點已生效的鈕即取消
+  else marks[id] = kind;                       // 星號與太簡單互斥
+  persistMarks();
+  document.querySelectorAll('.mark-bar[data-mark-id="'+id+'"]').forEach(bar=> refreshMarkBar(bar, id));
+  if (state.mode === "browse" && state.mark !== "all") renderBrowse();
+}
+function markMatches(id){
+  if (state.mark === "all") return true;
+  const m = getMark(id);
+  if (state.mark === "none") return !m;
+  return m === state.mark;
+}
+
+function makeMarkBar(id){
+  const bar = document.createElement("div");
+  bar.className = "mark-bar";
+  bar.dataset.markId = id;
+  [["star","mark-star"],["easy","mark-easy"]].forEach(([kind, cls])=>{
+    const btn = document.createElement("button");
+    btn.type = "button";
+    btn.className = "mark-btn " + cls;
+    btn.dataset.kind = kind;
+    btn.addEventListener("click", (e)=>{ e.stopPropagation(); toggleMark(id, kind); });
+    bar.appendChild(btn);
+  });
+  refreshMarkBar(bar, id);
+  return bar;
+}
+function refreshMarkBar(bar, id){
+  const cur = getMark(id);
+  bar.querySelectorAll(".mark-btn").forEach(btn=>{
+    const kind = btn.dataset.kind;
+    const on = cur === kind;
+    btn.classList.toggle("on", on);
+    btn.setAttribute("aria-pressed", on ? "true" : "false");
+    if (kind === "star"){
+      btn.textContent = (on ? "★ " : "☆ ") + "星號";
+      btn.setAttribute("aria-label", on ? "取消星號" : "加上星號");
+    } else {
+      btn.textContent = (on ? "✓ " : "") + "太簡單";
+      btn.setAttribute("aria-label", on ? "取消太簡單" : "標記為太簡單");
+    }
+  });
+}
+
+const MARK_FILTERS = [["all","全部"],["star","星號"],["easy","太簡單"],["none","未標記"]];
+function buildMarkChips(){
+  const box = document.getElementById("mark-chips");
+  MARK_FILTERS.forEach(([key, label])=>{
+    const chip = document.createElement("span");
+    chip.className = "chip" + (key === "all" ? " active" : "");
+    chip.textContent = label; chip.dataset.key = key;
+    chip.addEventListener("click", ()=>{
+      state.mark = key;
+      box.querySelectorAll(".chip").forEach(ch=> ch.classList.toggle("active", ch.dataset.key === key));
+      renderBrowse(); resetQuiz(); onFiltersChanged();
+    });
+    box.appendChild(chip);
+  });
+}
+
+/* ---- Pronunciation via browser speechSynthesis (no audio files) ---- */
+function speechSupported(){
+  return typeof window.speechSynthesis !== "undefined"
+    && typeof window.SpeechSynthesisUtterance === "function";
+}
+let voicesCache = [];
+function englishVoices(){
+  return voicesCache.filter(v=> /^en([-_]|$)/i.test(v.lang || ""));
+}
+function pickEnglishVoice(){
+  const en = englishVoices();
+  return en.find(v=> /en[-_]us/i.test(v.lang || "")) || en[0] || null;
+}
+function updateSpeechAvailability(){
+  if (speechSupported()){
+    try { voicesCache = window.speechSynthesis.getVoices() || []; } catch(e){ voicesCache = []; }
+  } else {
+    voicesCache = [];
+  }
+  const ok = speechSupported() && englishVoices().length > 0;
+  document.documentElement.classList.toggle("has-speech", ok);
+}
+function speakWord(c){
+  if (!speechSupported()) return;
+  try {
+    window.speechSynthesis.cancel();   // 開播前取消上一句
+    const u = new SpeechSynthesisUtterance(c.word);
+    u.lang = "en-US";
+    const v = pickEnglishVoice();
+    if (v) u.voice = v;
+    window.speechSynthesis.speak(u);
+  } catch(e){}
+}
 
 function buildChips(){
   const cefrChips = document.getElementById("cefr-chips");
@@ -1108,7 +1280,7 @@ function filteredCards(){
   return CARDS.filter(c=>{
     const cefrOk = state.cefrs.size === 0 || state.cefrs.has(c.cefr);
     const spOk = state.speakers.size === 0 || state.speakers.has(c.speaker);
-    return cefrOk && spOk;
+    return cefrOk && spOk && markMatches(c.id);
   });
 }
 
@@ -1122,7 +1294,11 @@ function faceContentFor(c, which){
         <span class="rarity-badge ${c.rarity}" title="${CEFR_INFO[c.cefr].zh}">CEFR ${c.cefr}</span>
       </div>
       <span class="term-zh">${c.zh}</span>
-      <div class="term-en">${c.word}</div>
+      <div class="term-main">
+        <div class="term-en">${c.word}</div>
+        <button type="button" class="speak-btn" aria-label="播放發音">🔊</button>
+      </div>
+      ${c.kk ? `<div class="kk">[${c.kk}]</div>` : ""}
       <div class="speaker-row"><span class="speaker-dot" style="background:${s.color}"></span>${s.name} · ${c.event}</div>
       <span class="hint">1 / 3 · 點擊看解釋</span>
     `;
@@ -1172,7 +1348,10 @@ function buildFlashcardEl(c){
   el.dataset.id = c.id;
   el.innerHTML = '<div class="flashcard-inner"><div class="face front"></div><div class="face back"></div></div>';
   initCardFaces(el, c);
-  el.addEventListener("click", ()=> advanceCard(el, c));
+  el.addEventListener("click", (e)=>{
+    if (e.target.closest(".speak-btn")){ e.stopPropagation(); speakWord(c); return; }
+    advanceCard(el, c);
+  });
   return el;
 }
 
@@ -1202,7 +1381,7 @@ function renderFeed(){
     hint.className = "feed-hint mono";
     hint.textContent = "點卡片翻面・上滑看下一張";
 
-    slide.append(counter, wrap, shareBtn, hint);
+    slide.append(counter, wrap, makeMarkBar(c.id), shareBtn, hint);
     scroll.appendChild(slide);
   });
 
@@ -1263,7 +1442,13 @@ function renderBrowse(){
     grid.innerHTML = '<p class="mono" style="color:var(--muted); grid-column:1/-1;">沒有符合篩選條件的卡片。</p>';
     return;
   }
-  cards.forEach(c=> grid.appendChild(buildFlashcardEl(c)));
+  cards.forEach(c=>{
+    const unit = document.createElement("div");
+    unit.className = "card-unit";
+    unit.appendChild(buildFlashcardEl(c));
+    unit.appendChild(makeMarkBar(c.id));
+    grid.appendChild(unit);
+  });
 }
 
 /* ---- Quiz mode ---- */
@@ -1356,7 +1541,9 @@ function quizMarkFeedback(word, isKnown, rec, justMastered){
 }
 
 function quizPool(){
-  return filteredCards().filter(c => LearningCore.isDue(known[c.id], todayStr()));
+  // 排除「太簡單」；到期卡照舊納入；星號卡即使尚未到期也納入（排在牌組前面）
+  return filteredCards().filter(c => getMark(c.id) !== "easy")
+    .filter(c => LearningCore.isDue(known[c.id], todayStr()) || getMark(c.id) === "star");
 }
 
 let quizDeck = [];
@@ -1365,7 +1552,11 @@ let quizResults = {};
 let known = loadKnown();
 
 function resetQuiz(){
-  quizDeck = quizPool().slice().sort(()=>Math.random()-0.5);
+  // 星號卡排在牌組前面，讓它們較常被複習
+  const pool = quizPool();
+  const stars = pool.filter(c => getMark(c.id) === "star");
+  const rest = pool.filter(c => getMark(c.id) !== "star");
+  quizDeck = shuffledCopy(stars).concat(shuffledCopy(rest));
   quizIndex = 0; quizResults = {};
   document.getElementById("quiz-done").style.display = "none";
   document.getElementById("quiz-card-holder").style.display = "";
@@ -1389,14 +1580,21 @@ function renderQuizCard(){
   const counter = document.getElementById("quiz-counter");
   const holder = document.getElementById("quiz-card-holder");
   updateQuizMasteredHud();
+  const markSlot = document.getElementById("quiz-mark-slot");
+  if (markSlot) markSlot.innerHTML = "";
   if (quizDeck.length === 0){
     counter.textContent = "0 / 0";
     bar.style.width = "0%";
     setQuizCardStreak(null);
     document.querySelector(".quiz-hint").style.display = "none";
     document.querySelector(".quiz-actions").style.display = "none";
-    if (filteredCards().length > 0){
-      holder.innerHTML = '<p class="mono quiz-empty-msg">今天的複習已完成。系統會依記憶狀況，在 1、3、7 天後及更長間隔安排下一次複習。</p><button type="button" class="quiz-reset-mastery" id="quiz-reset-mastery-empty">重置複習進度</button>';
+    const filtered = filteredCards();
+    if (filtered.length > 0){
+      const nonEasy = filtered.filter(c => getMark(c.id) !== "easy");
+      const msg = nonEasy.length === 0
+        ? "太簡單的卡片已略過。"
+        : "今天的複習已完成。系統會依記憶狀況，在 1、3、7 天後及更長間隔安排下一次複習。";
+      holder.innerHTML = '<p class="mono quiz-empty-msg">' + msg + '</p><button type="button" class="quiz-reset-mastery" id="quiz-reset-mastery-empty">重置複習進度</button>';
       document.getElementById("quiz-reset-mastery-empty").addEventListener("click", resetMastery);
     } else {
       holder.innerHTML = '<p class="mono quiz-empty-msg">沒有符合篩選條件的卡片。</p>';
@@ -1416,10 +1614,13 @@ function renderQuizCard(){
   setQuizCardStreak(c.id);
   holder.innerHTML = "";
   holder.appendChild(buildFlashcardEl(c));
+  if (markSlot) markSlot.appendChild(makeMarkBar(c.id));
 }
 
 function showQuizDone(){
   setQuizCardStreak(null);
+  const markSlot = document.getElementById("quiz-mark-slot");
+  if (markSlot) markSlot.innerHTML = "";
   document.getElementById("quiz-card-holder").style.display = "none";
   document.querySelector(".quiz-hint").style.display = "none";
   document.querySelector(".quiz-actions").style.display = "none";
@@ -1525,12 +1726,16 @@ function choiceKey(text){
 }
 
 function pickGameDeck(){
-  const filtered = filteredCards();
+  // 排除「太簡單」；星號未熟練優先，其次其他未熟練，再才是已熟練
+  const filtered = filteredCards().filter(c => getMark(c.id) !== "easy");
   if (filtered.length === 0) return [];
-  const unmastered = [];
-  const mastered = [];
-  filtered.forEach(c => (isMastered(c.id) ? mastered : unmastered).push(c));
-  return shuffledCopy(unmastered).concat(shuffledCopy(mastered)).slice(0, GAME_ROUND);
+  const starUn = [], otherUn = [], mastered = [];
+  filtered.forEach(c => {
+    if (isMastered(c.id)) mastered.push(c);
+    else if (getMark(c.id) === "star") starUn.push(c);
+    else otherUn.push(c);
+  });
+  return shuffledCopy(starUn).concat(shuffledCopy(otherUn), shuffledCopy(mastered)).slice(0, GAME_ROUND);
 }
 
 function pickDistractors(correct, field, n){
@@ -1571,9 +1776,15 @@ function showGamesLobby(){
   document.getElementById("games-blocks").hidden = true;
   document.getElementById("games-done").hidden = true;
   updateGamesMasteredHud();
-  const empty = filteredCards().length === 0;
+  const filtered = filteredCards();
+  const playable = filtered.filter(c => getMark(c.id) !== "easy");
+  const empty = playable.length === 0;
   document.getElementById("games-pick").hidden = empty;
-  document.getElementById("games-empty").hidden = !empty;
+  const emptyEl = document.getElementById("games-empty");
+  emptyEl.hidden = !empty;
+  emptyEl.textContent = (empty && filtered.length > 0)
+    ? "太簡單的卡片已略過。"
+    : "沒有符合篩選條件的卡片。";
 }
 
 function startGame(kind){
@@ -1793,10 +2004,12 @@ function wbFallDuration(){
 }
 
 function pickWbCard(excludeId){
-  const filtered = filteredCards().filter(c => c.id !== excludeId);
+  // 排除「太簡單」；星號未熟練優先，其次其他未熟練，再才是已熟練
+  const filtered = filteredCards().filter(c => c.id !== excludeId && getMark(c.id) !== "easy");
   if (filtered.length === 0) return null;
-  const unmastered = filtered.filter(c => !isMastered(c.id));
-  const pool = unmastered.length ? unmastered : filtered;
+  const starUn = filtered.filter(c => getMark(c.id) === "star" && !isMastered(c.id));
+  const otherUn = filtered.filter(c => getMark(c.id) !== "star" && !isMastered(c.id));
+  const pool = starUn.length ? starUn : (otherUn.length ? otherUn : filtered);
   return pool[Math.floor(Math.random() * pool.length)];
 }
 
@@ -1841,7 +2054,7 @@ function wbShowQuestion(card, correctSide, options, opts){
 }
 
 function startWordBlocks(){
-  if (filteredCards().length === 0){
+  if (filteredCards().filter(c => getMark(c.id) !== "easy").length === 0){
     showGamesLobby();
     return;
   }
@@ -2189,11 +2402,12 @@ function completeDaily(dateStr){
   showDailyComplete(dateStr);
 }
 
-function openPack(cover, cardEl, c, dateStr, total, shareBtn){
+function openPack(cover, cardEl, c, dateStr, total, shareBtn, markBar){
   cover.classList.add("opening");
   setTimeout(()=>{
     cover.remove();
     shareBtn.hidden = false;
+    if (markBar) markBar.hidden = false;
     if (c.rarity === "legendary"){
       const burst = document.createElement("div");
       burst.className = "reveal-burst";
@@ -2283,7 +2497,11 @@ function renderDaily(dateStr){
     hint.className = "feed-hint mono";
     hint.textContent = isHistorical ? "歷史牌組・點卡片翻面" : "點卡片翻面・上滑看下一張";
 
-    slide.append(counter, wrap, shareBtn, hint);
+    // 比照分享鈕：未開卡前隱藏標記鈕，開卡後才可點
+    const markBar = makeMarkBar(c.id);
+    markBar.hidden = !isOpen;
+
+    slide.append(counter, wrap, markBar, shareBtn, hint);
     scroll.appendChild(slide);
 
     if (!isOpen){
@@ -2292,7 +2510,7 @@ function renderDaily(dateStr){
       cover.innerHTML = '<div class="pack-mark">EE</div><div class="pack-hint mono">點擊開卡</div>';
       cover.addEventListener("click", (e)=>{
         e.stopPropagation();
-        openPack(cover, cardEl, c, dateStr, cards.length, shareBtn);
+        openPack(cover, cardEl, c, dateStr, cards.length, shareBtn, markBar);
       });
       cardEl.appendChild(cover);
     }
@@ -2458,6 +2676,11 @@ function resetFeedScroll(){
 }
 
 buildChips();
+buildMarkChips();
+updateSpeechAvailability();
+if (speechSupported() && typeof window.speechSynthesis.addEventListener === "function"){
+  window.speechSynthesis.addEventListener("voiceschanged", updateSpeechAvailability);
+}
 renderFeed();
 renderBrowse();
 renderDaily();
