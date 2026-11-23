@@ -4,6 +4,15 @@
 
 ---
 
+## 2026-11-23（Mark Zuckerberg Acquired Live 訪談導讀與中文短摘要）
+
+- 新增導讀檔 `references/editorials/MZ-2024-001.md`（六段，含詞彙與文末中文短摘要），並在 `references/prod001_summary_zh_draft.json` 最後加上 MZ-2024-001 中文短摘要一列（271 字）；`speeches_database.json` 的 MZ-2024-001 加上 `editorial_path`。
+- 出處追溯：原始出處是 Acquired 官網節目頁〈The Mark Zuckerberg Interview〉（附全文逐字稿，2024-09-18 發布；頁面寫明現場錄製於 2024-09-10、Chase Center、約六千名觀眾）與官方 YouTube 影片（oEmbed 確認頻道為 Acquired）。官網逐字稿無時間碼，導讀不標時間碼。導讀引號內英文 16 處全部直接取自官網逐字稿，已用程式比對逐字一致。談 2016 年後政治環境的段落依避開政治議題原則不展開。
+- **待人工處理**：本庫 MZ-2024-001 十則 verified 語錄的 `source_url` 都指向第三方自動轉寫 Happy Scribe，不是原始出處。與官網逐字稿比對，十則內容都找得到，但只有片段逐字一致：Q03 官網作「I define our strategies. We can learn faster than every other company. We're going to win.」；Q05 官網作「…outside of your company than inside your company.」；Q01、Q02、Q04、Q06–Q10 有標點、連字號（trade-offs、full-scale）或口語詞（kind of、like I don't know、right）差異。本次沒有改語錄或 `source_url`，建議對影片校聽後決定改用官網逐字稿文字並把 `source_url` 改指 acquired.fm。另：演講庫 `duration_minutes` 記 120，官網頁面結構化資料標 1 小時 30 分，未改。
+- 沒有改語錄、卡片、排程或程式。
+
+---
+
 ## 2026-11-16（Sam Altman CNBC DevDay 專訪導讀與中文短摘要）
 
 - 新增導讀檔 `references/editorials/SA-2026-008.md`（五段，含文末中文短摘要），並在 `references/prod001_summary_zh_draft.json` 最後加上 SA-2026-008 中文短摘要一列（200 字）；`speeches_database.json` 的 SA-2026-008 加上 `editorial_path`。

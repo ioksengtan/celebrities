@@ -186,5 +186,19 @@
     ],
     "draft_note": "繁體中文導讀；語錄段落已用 CNBC 官網逐字稿與兩段影片音訊核對，未對影片全程校聽。",
     "char_count": 200
+  },
+  {
+    "speech_id": "MZ-2024-001",
+    "summary_zh": "Meta 執行長祖克柏 2024 年 9 月在舊金山 Chase Center 接受 Acquired 播客現場訪問。他說價值觀不是寫在牆上的字，而是艱難取捨時的實際行為；Meta 不是社群媒體公司，而是人際連結公司，眼鏡能看你所看、聽你所聽，會成為理想的人工智慧助理。他把策略定義為學得比所有公司都快，也說公司外的聰明人比公司內多。談開源，他說沒有開源 Meta 建不起來；談未來，他想在「好」之外做出更多「很棒」的東西，並勸創業者做自己在乎的事、走自己的路。（依 Acquired 官網全文逐字稿整理；未對影片全程校聽；中文為本庫翻譯。）",
+    "based_on": [
+      "official_transcript",
+      "quotes"
+    ],
+    "source_urls": [
+      "https://www.acquired.fm/episodes/the-mark-zuckerberg-interview",
+      "https://www.youtube.com/watch?v=QciJ9ubeLQk"
+    ],
+    "draft_note": "繁體中文導讀；導讀引號內英文已與 Acquired 官網逐字稿逐字核對。本庫十則語錄出自第三方自動轉寫（Happy Scribe），與官網逐字稿有字詞差異，待對影片校聽；未對影片全程校聽。",
+    "char_count": 271
   }
 ]
