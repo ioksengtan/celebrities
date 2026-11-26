@@ -1,0 +1,13 @@
+# SN-2026-002 時間戳記索引（不含逐字稿文字）
+# 場次：Satya Nadella and Young Sohn on What AI Makes Possible（XTC AI:360 Summit 開場對談）（2026-11-19）
+# 對談者：Young Sohn（Founding Managing Partner, Walden Catalyst Ventures；XTC 共同創辦人）
+# 影片官方頁（Walden Catalyst 頻道）：https://www.youtube.com/watch?v=K5OtollKubk
+# 活動官方頁（Extreme Tech Challenge）：https://extremetechchallenge.org/news/introducing-the-ai360-summit/
+#
+# 本檔只存時間戳記索引；原話請到官方來源收看。
+#
+# 時間點狀態：無。本場沒有官方逐字稿、沒有 YouTube 官方章節、說明欄亦無章節時間戳記；
+# 字幕僅有 English (auto-generated)（kind: asr）平台自動字幕。在不下載字幕檔、
+# 不請求 YouTube timedtext、不使用第三方轉寫站的前提下，無法取得任何可追溯到秒的時間點，
+# 因此本場不收語錄（key_quotes 為空），本索引沒有任何時間碼列。
+# 擬收而追不到出處的段落，見出處對照表（另存於工作區草稿目錄，不提交進本庫）。

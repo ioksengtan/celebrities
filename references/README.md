@@ -23,7 +23,7 @@ Hold this round (never verified on the wall): `EM-2026-005`, `SA-2026-001`.
 
 ## Other
 
-- `speeches_database.json` — 48 speeches/interviews (including one undated interview) metadata.
+- `speeches_database.json` — 49 speeches/interviews (including one undated interview) metadata.
 - `speeches_indexes.json` — 7 derived index views.
 - `product_recommendations.json` — candidate product ideas.
 - `美國大學畢業典禮名人演講專案報告（完整版）.docx` — full project report.
@@ -90,3 +90,12 @@ Hold this round (never verified on the wall): `EM-2026-005`, `SA-2026-001`.
 - 新增 `source_type` 值 `host_page_note`（主持人節目頁筆記）。這次更新了內容驗證器：`products/shared/content-schema.json` 新增 `quotesIndex.sourceTypes` 列舉，`tools/validate-content.mjs` 對 `quotes_index.json` 的 `source_type` 逐筆檢查並附自我測試（`host_page_note` 應收、未知值應擋、未填不報錯）。既有五種語錄來源類型維持不變。
 - Q01、Q03、Q04、Q05 本輪不進 `quotes_index.json`；`transcripts/SN-2026-001.txt` 只存時間戳記索引（語錄編號、時間碼、官方章節與連結），不含逐字稿文字；導讀：`editorials/SN-2026-001.md`（六段，含文末中文短摘要）。
 - 單場頁：`products/core/speech.html?id=SN-2026-001`。兩則語錄出現在語錄牆，講者代碼沿用既有的 `sn`。語錄牆與單場頁的呈現條件放寬：`host_page_note` 語錄即使狀態尚未升級，只要已標示來源即可呈現（`products/core/core.js`）。
+
+## Satya Nadella × Young Sohn XTC AI:360 Summit 入庫（2026-11-26）
+
+- `SN-2026-002`：Extreme Tech Challenge（官方簡稱 XTC）2026 年 AI:360 Summit 的開場對談（virtual fireside chat），Microsoft 董事長暨執行長 Satya Nadella 與 Walden Catalyst Ventures 創始管理合夥人、XTC 共同創辦人 Young Sohn 對談。官方活動頁 https://extremetechchallenge.org/news/introducing-the-ai360-summit/ 寫日期 Thursday, November 19, 2026、地點 Palo Alto, California、邀請制，Nadella 標 Virtual（遠距）。`date` 採活動日 2026-11-19。紀錄影片由 Walden Catalyst 官方 YouTube 頻道發布（https://www.youtube.com/watch?v=K5OtollKubk ，上傳 2026-11-23 本地時間、台北時間 2026-11-24 03:54，片長 644 秒＝10 分 44 秒，進位 11 分鐘）。開拉取請求前已重查主線編號，主線先前只有 `SN-UNDATED-001`、`SN-2026-001`，`SN-2026-002` 未撞號。
+- 對談者 Young Sohn 以新增的 `interlocutor` 欄位記錄（另有 `interlocutor_title`），並顯示在 `event` 標題與單場頁 meta 行（`products/core/speech.html` 的 metaLine 新增「對談者：…」）。沒有把 Young Sohn 新增為講者，語錄也不收 Young Sohn。
+- **本場不收語錄、不做詞彙卡**：沒有官方逐字稿、沒有 YouTube 官方章節、說明欄亦無章節時間戳記；字幕只有一條 English (auto-generated)（`kind: asr`）平台自動字幕。在不下載字幕檔、不請求 YouTube timedtext、不使用第三方轉寫站的前提下，無法取得任何可核實到秒的時間點，依派工規範不硬收語錄（`key_quotes` 為空），擬收而追不到出處的段落列於出處對照表。
+- `source_type` 誠實標 `platform_auto_captions`（唯一存在的字幕來源），不標 `official_transcript`。`verification_status` 為 `pending_human_check`（未對影片校聽）。
+- 時間戳記索引（無逐字稿文字、無時間碼列）：`transcripts/SN-2026-002.txt`；繁體中文導讀：`editorials/SN-2026-002.md`（只依官方說明欄與官方活動頁，未引用講者原話）；短摘要：`prod001_summary_zh_draft.json` 的 `SN-2026-002`。
+- 單場頁：`products/core/speech.html?id=SN-2026-002`（顯示為「此場尚無語錄」）。出處對照表另存於工作區草稿目錄，不提交進本庫。

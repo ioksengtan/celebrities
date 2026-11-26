@@ -200,5 +200,19 @@
     ],
     "draft_note": "繁體中文導讀；導讀引號內英文已與 Acquired 官網逐字稿逐字核對。本庫十則語錄出自第三方自動轉寫（Happy Scribe），與官網逐字稿有字詞差異，待對影片校聽；未對影片全程校聽。",
     "char_count": 271
+  },
+  {
+    "speech_id": "SN-2026-002",
+    "summary_zh": "Microsoft 董事長暨執行長 Satya Nadella，在 Extreme Tech Challenge（XTC）2026 年 AI:360 Summit 以遠距方式與 Walden Catalyst Ventures 創始管理合夥人、XTC 共同創辦人 Young Sohn 進行開場對談。活動於 2026 年 11 月 19 日在加州 Palo Alto 舉行。依官方影片說明欄，兩人從個人電腦、網際網路到雲端運算的轉變談起，探討人工智慧的興起有哪些地方似曾相識、先前技術浪潮有哪些教訓值得重新思考，並談到人工智慧可能比預期更早協助解決的問題，以及有潛力的解方如何送到醫療、教育與能源領域真正需要的人手上。（本摘要只依官方影片說明欄與官方活動頁整理，未引用講者原話；本場無官方逐字稿、無官方章節，字幕僅平台自動產生，故不收語錄、無可核實時間點。）",
+    "based_on": [
+      "official_video_description",
+      "official_event_page"
+    ],
+    "source_urls": [
+      "https://www.youtube.com/watch?v=K5OtollKubk",
+      "https://extremetechchallenge.org/news/introducing-the-ai360-summit/"
+    ],
+    "draft_note": "繁體中文導讀；只依官方影片說明欄與官方活動頁，未引用講者逐字發言。本場無官方逐字稿、無官方章節、說明欄無時間戳記，字幕僅 English (auto-generated)（kind: asr）；在不下載字幕、不請求 timedtext、不用第三方轉寫站的前提下無法取得可核實時間點，故不收語錄。",
+    "char_count": 300
   }
 ]
