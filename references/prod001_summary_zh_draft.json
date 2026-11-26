@@ -215,5 +215,20 @@
     ],
     "draft_note": "繁體中文導讀；活動資訊依官方影片說明欄與官方活動頁。語錄（SN-2026-002-Q01…Q06）文字取自 YouTube 官方頁字幕記錄面板的平台自動字幕（kind: asr），由專案經理肉眼抄錄並拍面板截圖對照；未下載字幕、未請求 timedtext、未用第三方轉寫站。時間碼為字幕段起點（非逐詞對齊），未對影片全片校聽，非 fully verified。",
     "char_count": 454
+  },
+  {
+    "speech_id": "RH-2026-001",
+    "summary_zh": "LinkedIn 共同創辦人、Greylock 合夥人 Reid Hoffman，在 Masters of Scale Summit 2026 現場接受 Aishwarya Srinivasan 訪談（主持人在官方 Substack 稱此節目為 podcast「Ctrl + Alt + AI」）。這場對談錄於該高峰會（官方頁寫 2026 年 10 月 20 至 22 日在舊金山 The Presidio Theatre 舉行，確切日期不明），影片於 2026 年 11 月 14 日發布，片長約 30 分 44 秒；2026-11-14 是發布日而非錄製日。兩人談過去約 18 個月 AI 能力的加速、代理式工作流程的現實，以及人如何與越來越自主的系統共事：從把「能動性」當成心態，到以「human on the loop」讓人從旁監督 AI 的工作；也談人獨有的情境覺察與後設認知、為何要聘用 AI 原生世代，以及「未來會比你以為的更快、也更陌生」。本場收 6 則只屬 Reid Hoffman 的已核實語錄（RH-2026-001-Q01…Q06）。",
+    "based_on": [
+      "platform_auto_captions",
+      "official_video_description",
+      "official_event_page"
+    ],
+    "source_urls": [
+      "https://www.youtube.com/watch?v=US3zcEQ3hCc",
+      "https://www.summit.mastersofscale.com/info"
+    ],
+    "draft_note": "繁體中文導讀；活動資訊依官方活動頁與官方影片說明欄／章節，發布時間與片長依觀看頁中繼資料。語錄（RH-2026-001-Q01…Q06）文字取自 YouTube 官方頁字幕記錄面板的平台自動字幕（kind: asr，面板可見 Reed 等辨識誤差），由專案經理肉眼抄錄並拍面板截圖對照；未下載影片、音訊或字幕檔，未請求 timedtext，未用第三方轉寫站。本場無官方逐字稿；官方章節與 Substack 筆記只作場次結構，語錄句子時間碼取自字幕段起點（非逐詞對齊），未對影片全片校聽，非 fully verified。",
+    "char_count": 360
   }
 ]

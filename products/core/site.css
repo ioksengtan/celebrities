@@ -19,6 +19,7 @@
   --jb: #9A7B12;
   --es: #9E3B3B;
   --yl: #5A5F66;
+  --rh: #1F5F7A;
   color-scheme: light dark;
 }
 
@@ -44,6 +45,7 @@
     --jb: #E6C35C;
     --es: #EE8A80;
     --yl: #B4BAC2;
+    --rh: #6FB7CC;
   }
 }
 
@@ -485,6 +487,7 @@ details.why p { margin: 8px 0 0; }
 .quote-card[data-speaker="jb"] { border-left-color: var(--jb); }
 .quote-card[data-speaker="es"] { border-left-color: var(--es); }
 .quote-card[data-speaker="yl"] { border-left-color: var(--yl); }
+.quote-card[data-speaker="rh"] { border-left-color: var(--rh); }
 
 .quote-en,
 .quote-original {

@@ -4,6 +4,20 @@
 
 ---
 
+## 2026-11-27（Reid Hoffman「AI-Native」對談場次 RH-2026-001 入庫）
+
+- 新增講者 `reid_hoffman`（本庫新講者；代碼 `rh`，色票淺 `#1F5F7A`／深 `#6FB7CC`）的場次 `RH-2026-001`：由 Aishwarya Srinivasan 自己發布的訪談，她在官方 Substack 稱此節目為 podcast「Ctrl + Alt + AI」，官方標題〈How to Future-Proof Your Career and Become AI-Native | Reid Hoffman〉。錄製場合為 Masters of Scale Summit 2026 現場，Reid Hoffman（LinkedIn 共同創辦人、Greylock 合夥人）受訪。
+- **日期寫法（專案經理已同意）**：錄於 Masters of Scale Summit 2026（2026-10-20 至 10-22，確切日期不明），2026-11-14 發布。官方活動頁 https://www.summit.mastersofscale.com/info 寫活動日期 2026-10-20 至 2026-10-22、地點舊金山 The Presidio Theatre、邀請與申請制，但三天中確切哪一天錄製查不到。本片 YouTube 觀看頁 `publishDate`／`uploadDate` 為 2026-11-13T23:01:33-08:00（台北時間 2026-11-14 15:01:33），片長 1844 秒（30 分 44 秒，進位 31 分鐘）。機器欄位 `date` 採**已核實的發布日 2026-11-14（非錄製日）**，並新增 `date_kind: "publish"` 讓頁面把此日期顯示成「2026年11月14日發布」（單場列表卡、單場詳情 meta 行、語錄牆／單場語錄卡皆標示；`formatDate` 全局行為不變，其他活動日場次如 `SN-2026-002` 仍顯示純日期）。
+- 對談者 Aishwarya Srinivasan 以 `interlocutor`／`interlocutor_title` 記錄，顯示於 `event` 標題與單場頁 meta 行；沒有新增 Aishwarya 為講者，語錄也只收 Reid Hoffman。
+- **出處追查結論（親自查證，並與白話科技同片研究一致）**：本場未找到官方逐字稿；有官方說明欄／播放器官方章節與官方 Substack 節目筆記時間點，但官方章節只作場次結構（章節起始與標題），不把章節起始秒數當語錄句子時間點。本片觀看頁字幕軌僅一條 English (auto-generated)（`kind: asr`）平台自動字幕。
+- **時間碼採官方頁「字幕記錄」自動字幕面板各句所在字幕段的段起點＋面板截圖對照**：未下載影片、音訊或字幕檔，未請求 YouTube timedtext，未使用第三方轉寫站。據此收錄 **6 則只屬 Reid Hoffman 的語錄**（`RH-2026-001-Q01`…`Q06`），文字為該平台自動字幕的逐字子字串，牆／卡片引文僅去除 uh、you know、um、right? 等贅字並以「…」標省略，未改字；每則時間碼為字幕段起點（Q01=02:17＝137s、Q02=07:39＝459s、Q03=22:45＝1365s、Q04=23:25＝1405s、Q05=25:16＝1516s、Q06=28:56＝1736s）。片頭 0:00–1:04 為剪輯預告，主持人所說不收；Q04 同句雖在預告約 0:54 出現，仍採正片 23:25。
+- `source_type` 誠實標 `platform_auto_captions`（唯一存在的字幕來源），不標 `official_transcript`。`verification_status` 為 `transcript_text_verified`，各語錄 `status` 為 `verified`：已對官方頁面板自動字幕逐字核對為子字串，但時間碼僅到字幕段起點、且未對影片全片校聽，非 fully verified；可標 verified 的依據為本庫既有 `JB-2015-001-Q01`（`platform_auto_captions`＋`verified`）同類先例。
+- 詞彙卡：金句（Keynote Lexicon）新增 id 78–80（排程 2026-11-28），名人詞彙（Executive English）新增 id 202–206（排程 2026-11-29）。新卡自既有排程之後接續，**不改動已排的 2026-11-27、2026-11-28 行程**；`executive-english.html` 與 `keynote-lexicon.html` 補 `rh` 講者色。
+- 主資料庫總數 49→50，`updated_date` 2026-11-27；`speeches_indexes.json` 的時間、類型、產品標籤、長度、講者摘要、主題索引已更新。時間戳記索引 `references/transcripts/RH-2026-001.txt`（含語錄編號、時間碼、官方影片定位連結，無逐字稿文字）、導讀 `references/editorials/RH-2026-001.md`、短摘要（`prod001_summary_zh_draft.json` 的 `RH-2026-001`）均引用這 6 則並標時間碼與來源限制。完整出處對照表另存於工作區草稿目錄，不提交進本庫。
+- 本次**只開拉取請求、不合併**（分支會推送到遠端以便開請求，但不合併進 main）；沒有手改首頁場次數（由演講庫自動計算）。
+
+---
+
 ## 2026-11-26（Satya Nadella × Young Sohn XTC AI:360 Summit 場次 SN-2026-002 入庫）
 
 - 新增既有講者 Satya Nadella 的場次 `SN-2026-002`：Extreme Tech Challenge（官方簡稱 XTC）2026 年 AI:360 Summit 的開場對談（virtual fireside chat），與 Walden Catalyst Ventures 創始管理合夥人、XTC 共同創辦人 Young Sohn 對談。官方活動頁寫 2026-11-19（星期四）、Palo Alto, California、邀請制，Nadella 標 Virtual（遠距）。`date` 採活動日 2026-11-19。紀錄影片由 Walden Catalyst 官方 YouTube 頻道發布（https://www.youtube.com/watch?v=K5OtollKubk ，上傳 2026-11-23 本地時間／台北時間 2026-11-24 03:54，片長 644 秒＝10 分 44 秒，進位 11 分鐘）。開拉取請求前已重查主線編號，`SN-2026-002` 未撞號。
