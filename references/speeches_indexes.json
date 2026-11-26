@@ -1,7 +1,7 @@
 {
   "metadata": {
     "created_date": "2026-09-06",
-    "total_speeches": 48,
+    "total_speeches": 49,
     "index_types": [
       "topic_index",
       "timeline_index",
@@ -11,7 +11,7 @@
       "quotes_index",
       "length_index"
     ],
-    "updated_date": "2026-11-19"
+    "updated_date": "2026-11-26"
   },
   "topic_index": [
     {
@@ -2124,6 +2124,84 @@
           "type": "interview"
         }
       ]
+    },
+    {
+      "topic": "applied intelligence",
+      "count": 1,
+      "speeches": [
+        {
+          "id": "SN-2026-002",
+          "speaker": "satya_nadella",
+          "event": "Satya Nadella and Young Sohn on What AI Makes Possible（XTC AI:360 Summit 開場對談）",
+          "date": "2026-11-19",
+          "type": "interview"
+        }
+      ]
+    },
+    {
+      "topic": "technology waves",
+      "count": 1,
+      "speeches": [
+        {
+          "id": "SN-2026-002",
+          "speaker": "satya_nadella",
+          "event": "Satya Nadella and Young Sohn on What AI Makes Possible（XTC AI:360 Summit 開場對談）",
+          "date": "2026-11-19",
+          "type": "interview"
+        }
+      ]
+    },
+    {
+      "topic": "ai possibilities",
+      "count": 1,
+      "speeches": [
+        {
+          "id": "SN-2026-002",
+          "speaker": "satya_nadella",
+          "event": "Satya Nadella and Young Sohn on What AI Makes Possible（XTC AI:360 Summit 開場對談）",
+          "date": "2026-11-19",
+          "type": "interview"
+        }
+      ]
+    },
+    {
+      "topic": "healthcare",
+      "count": 1,
+      "speeches": [
+        {
+          "id": "SN-2026-002",
+          "speaker": "satya_nadella",
+          "event": "Satya Nadella and Young Sohn on What AI Makes Possible（XTC AI:360 Summit 開場對談）",
+          "date": "2026-11-19",
+          "type": "interview"
+        }
+      ]
+    },
+    {
+      "topic": "education",
+      "count": 1,
+      "speeches": [
+        {
+          "id": "SN-2026-002",
+          "speaker": "satya_nadella",
+          "event": "Satya Nadella and Young Sohn on What AI Makes Possible（XTC AI:360 Summit 開場對談）",
+          "date": "2026-11-19",
+          "type": "interview"
+        }
+      ]
+    },
+    {
+      "topic": "energy",
+      "count": 1,
+      "speeches": [
+        {
+          "id": "SN-2026-002",
+          "speaker": "satya_nadella",
+          "event": "Satya Nadella and Young Sohn on What AI Makes Possible（XTC AI:360 Summit 開場對談）",
+          "date": "2026-11-19",
+          "type": "interview"
+        }
+      ]
     }
   ],
   "timeline_index": [
@@ -2561,12 +2639,18 @@
     },
     {
       "month": "2026-11",
-      "count": 1,
+      "count": 2,
       "speeches": [
         {
           "id": "SN-2026-001",
           "speaker": "satya_nadella",
           "event": "The Pragmatic Engineer（Gergely Orosz 主持）: Software engineering after code becomes cheap with Satya Nadella",
+          "type": "interview"
+        },
+        {
+          "id": "SN-2026-002",
+          "speaker": "satya_nadella",
+          "event": "Satya Nadella and Young Sohn on What AI Makes Possible（XTC AI:360 Summit 開場對談）",
           "type": "interview"
         }
       ]
@@ -2631,7 +2715,8 @@
         "SA-2026-007",
         "SA-2026-008",
         "SA-2026-009",
-        "SN-2026-001"
+        "SN-2026-001",
+        "SN-2026-002"
       ],
       "panel": [
         "EM-2026-002",
@@ -2645,7 +2730,7 @@
     },
     "counts": {
       "keynote": 10,
-      "interview": 33,
+      "interview": 34,
       "panel": 3,
       "town_hall": 2
     }
@@ -2727,7 +2812,8 @@
         "SA-2026-007",
         "SA-2026-008",
         "SA-2026-009",
-        "SN-2026-001"
+        "SN-2026-001",
+        "SN-2026-002"
       ],
       "enterprise": [
         "JH-2026-002",
@@ -2958,10 +3044,14 @@
         "SA-2026-007",
         "SA-2026-008",
         "SA-2026-009",
-        "SN-2026-001"
+        "SN-2026-001",
+        "SN-2026-002"
       ],
       "research": [
         "YL-2026-001"
+      ],
+      "applied intelligence": [
+        "SN-2026-002"
       ]
     },
     "counts": {
@@ -2975,7 +3065,7 @@
       "consumer": 1,
       "CES": 1,
       "product launch": 1,
-      "interview": 33,
+      "interview": 34,
       "enterprise": 2,
       "economics": 1,
       "GTC": 1,
@@ -3037,8 +3127,9 @@
       "career": 11,
       "life advice": 9,
       "town_hall": 1,
-      "AI": 7,
-      "research": 1
+      "AI": 8,
+      "research": 1,
+      "applied intelligence": 1
     }
   },
   "special_speeches": [
@@ -3108,11 +3199,18 @@
       "event": "The Economist Interview",
       "date": "2026-07-23",
       "quote": "Let's enjoy the ride"
+    },
+    {
+      "id": "SN-2026-002",
+      "speaker": "satya_nadella",
+      "event": "XTC AI:360 Summit 開場對談",
+      "date": "2026-11-19",
+      "quote": "It may be more like the industrial revolution and the birth of electricity."
     }
   ],
   "length_index": {
     "short": {
-      "count": 12,
+      "count": 13,
       "speeches": [
         {
           "id": "JH-2026-006",
@@ -3185,6 +3283,12 @@
           "speaker": "sam_altman",
           "event": "CNBC Halftime Report: Sam Altman at OpenAI DevDay 2026",
           "word_count": 1700
+        },
+        {
+          "id": "SN-2026-002",
+          "speaker": "satya_nadella",
+          "event": "Satya Nadella and Young Sohn on What AI Makes Possible（XTC AI:360 Summit 開場對談）",
+          "word_count": 1600
         }
       ]
     },
@@ -3544,9 +3648,10 @@
       ],
       "entries": [
         "SN-UNDATED-001",
-        "SN-2026-001"
+        "SN-2026-001",
+        "SN-2026-002"
       ],
-      "total_speeches": 2
+      "total_speeches": 3
     },
     "lip_bu_tan": {
       "name": "Lip-Bu Tan",

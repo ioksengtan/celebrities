@@ -1,15 +1,15 @@
 {
   "metadata": {
     "created_date": "2026-09-06",
-    "time_range": "2001-05 to 2026-10",
-    "total_entries": 48,
+    "time_range": "2001-05 to 2026-11",
+    "total_entries": 49,
     "categories": [
       "keynote",
       "interview",
       "panel",
       "town_hall"
     ],
-    "updated_date": "2026-11-19"
+    "updated_date": "2026-11-26"
   },
   "speakers": {
     "jensen_huang": {
@@ -130,7 +130,8 @@
       ],
       "entries": [
         "SN-UNDATED-001",
-        "SN-2026-001"
+        "SN-2026-001",
+        "SN-2026-002"
       ]
     },
     "lip_bu_tan": {
@@ -1525,6 +1526,48 @@
       "verification_status": "pending_human_check",
       "imported_date": "2026-11-19",
       "notes_zh": "原始場次：The Pragmatic Engineer 播客（Gergely Orosz 主持）訪問 Microsoft 執行長 Satya Nadella，官方標題〈Software engineering after code becomes cheap with Satya Nadella〉。官方節目頁 https://newsletter.pragmaticengineer.com/p/software-engineering-after-code-becomes 日期寫 Nov 16, 2026；官方頁註記錄製於 Redmond。官方頁寫可在 YouTube、Apple、Spotify 收聽與觀看，正文與封面確認 YouTube 代號為 0NE89Nzfk20（https://www.youtube.com/watch?v=0NE89Nzfk20）；次要連結為 Apple Podcasts 節目總頁 https://podcasts.apple.com/us/podcast/the-pragmatic-engineer/id1769051199 與 Spotify 節目總頁 https://open.spotify.com/show/2Bho9xCbOQMWMJ7UKmqCzD（皆為節目總頁，非單集網址）。官方片長約 3759.987 秒（約 62 分 40 秒），記為 63 分鐘。官方頁另附平台自動轉寫的 episode transcript，產生於上傳後數分鐘內，可見辨識誤差，故 source_type 用 publisher_auto_transcript，不用 official_transcript。本輪語錄牆只收 Q02、Q06 兩則，文字取自官方節目頁 takeaways 第 11、12 點中、主持人 Gergely Orosz 以引號整理呈現的句子（source_type：host_page_note，標示「據 The Pragmatic Engineer 節目頁筆記」），屬節目頁筆記而非講者逐字口語；status 為 pending_human_check。自願離職方案、初階招聘等章節未取語錄。本庫只存時間戳記索引，不存逐字稿文字。"
+    },
+    {
+      "id": "SN-2026-002",
+      "speaker": "satya_nadella",
+      "date": "2026-11-19",
+      "event": "Satya Nadella and Young Sohn on What AI Makes Possible（XTC AI:360 Summit 開場對談）",
+      "interlocutor": "Young Sohn",
+      "interlocutor_title": "Founding Managing Partner, Walden Catalyst Ventures；Extreme Tech Challenge 共同創辦人",
+      "location": "Palo Alto, California, USA",
+      "type": "interview",
+      "duration_minutes": 11,
+      "topics": [
+        "applied intelligence",
+        "technology waves",
+        "AI possibilities",
+        "healthcare",
+        "education",
+        "energy"
+      ],
+      "key_quotes": [
+        "SN-2026-002-Q01",
+        "SN-2026-002-Q02",
+        "SN-2026-002-Q03",
+        "SN-2026-002-Q04",
+        "SN-2026-002-Q05",
+        "SN-2026-002-Q06"
+      ],
+      "transcript_url": null,
+      "video_url": "https://www.youtube.com/watch?v=K5OtollKubk",
+      "language": "en",
+      "word_count_estimate": 1600,
+      "product_tags": [
+        "interview",
+        "AI",
+        "applied intelligence"
+      ],
+      "transcript_path": "references/transcripts/SN-2026-002.txt",
+      "editorial_path": "references/editorials/SN-2026-002.md",
+      "source_type": "platform_auto_captions",
+      "verification_status": "transcript_text_verified",
+      "imported_date": "2026-11-26",
+      "notes_zh": "原始場次：Extreme Tech Challenge（主辦單位官方簡稱 XTC）2026 年 AI:360 Summit 的開場對談（virtual fireside chat），由 Microsoft 董事長暨執行長 Satya Nadella 與 Walden Catalyst Ventures 創始管理合夥人 Young Sohn（XTC 共同創辦人）對談。對談者 Young Sohn 列於 interlocutor 欄位，非本庫新講者，語錄亦不收 Young Sohn。活動官方頁：https://extremetechchallenge.org/news/introducing-the-ai360-summit/ ，官方寫日期 Thursday, November 19, 2026、地點 Palo Alto, California、14:00–19:00、邀請制；官方講者名單在 Satya Nadella 後標 Virtual（遠距出席）。date 採活動日 2026-11-19。本紀錄影片由 Walden Catalyst 官方 YouTube 頻道（@waldencatalystventures，頻道識別碼 UC4jQJ-TYE_XEqR71eORW3fg）發布，非微軟官方頻道；觀看頁 publishDate／uploadDate 為 2026-11-23T11:54:10-08:00（台北時間 2026-11-24 03:54:10），片長 644 秒（10 分 44 秒，進位記為 11 分鐘）。官方說明欄為整支影片的主題概述，無章節時間戳記；YouTube 播放器無官方章節（無 chapteredPlayerBarRenderer／macroMarkersListRenderer）；字幕僅有一條 English (auto-generated)（kind: asr）的平台自動字幕，無主辦單位或頻道提供的官方逐字稿。微軟官方新聞／演講稿庫與 Walden Catalyst 官網查核當日均未見本場專文、逐字稿或官方節目筆記。因此沒有只來自官方來源（官方逐字稿／官方章節／說明欄章節）的可核實時間點。本場的時間碼改採「官方頁『字幕記錄』面板的肉眼抄錄＋面板截圖對照」：由 Celebrities 專案經理在瀏覽器內閱讀 YouTube 官方頁的自動字幕面板、抄下 10 段候選與時間點（panel-candidates.md），並拍下五張面板截圖（起始 1:18、2:29、4:05、7:44、10:03，檔名 transcript-panel/01-1m18.png、05-2m29.png、02-4m05.png、03-7m44.png、04-10m03.png）；未下載影片、音訊或字幕檔，未請求 timedtext，未使用第三方轉寫站。據此收錄 6 則只屬 Satya Nadella 的語錄 SN-2026-002-Q01…Q06（key_quotes），文字為該平台自動字幕的逐字子字串，卡片／牆引文僅去除 uh、you know 等贅字並以「…」標省略，未改字；每則時間碼為官方字幕面板該字幕段的「段起點」（Q01=01:52、Q02=02:53、Q03=03:00、Q04=08:17、Q05=09:45、Q06=10:19）；六則皆有面板截圖可逐字比對（Q01→01-1m18.png，Q02／Q03→05-2m29.png 涵蓋約 2:14–3:17，Q04→03-7m44.png，Q05／Q06→04-10m03.png）。Q03 原暫記 02:53，經 05-2m29.png 對照後更正為 03:00（面板「knowledge so it's a very different set of physics even uh of what a firm is」）；3:00 段後「it's incredible when you made that」與 10:19 段後「Satia, thank you very much」皆為對談者 Young Sohn，未收。source_type 誠實標為 platform_auto_captions（唯一存在的字幕來源），不標 official_transcript。verification_status 為 transcript_text_verified：6 則已對官方頁面板自動字幕逐字核對為子字串，但時間碼僅到字幕段起點、且未對影片全片校聽，非 fully verified。平台自動字幕可標 verified 的依據：本庫既有 JB-2015-001-Q01（source_type 同為 platform_auto_captions 且 status 為 verified）為同類先例；逐則牆／卡片引文、自動字幕原文、時間點、來源網址（含 &t=）與查核時間另見本場出處對照表（草稿目錄另存，不提交進本庫）。word_count_estimate 1600 為概估，非逐字計數。查核時間 2026-11-26（台北時間）。本庫只存時間戳記索引，不存逐字稿文字。"
     }
   ]
 }

@@ -1038,5 +1038,47 @@
     "speaker": "es",
     "event": "Inside Blackstone Podcast",
     "date": "2026-09-29"
+  },
+  {
+    "id": 75,
+    "cat": "ai",
+    "rarity": "legendary",
+    "term": "More Like the Industrial Revolution",
+    "zh": "更像工業革命，而不只是平台轉移",
+    "def_en": "Nadella’s answer when Young Sohn asks how big the AI wave is: rather than one more platform shift like PC, internet or cloud, it may be more like the industrial revolution and the birth of electricity.",
+    "def_zh": "Young Sohn 問這波 AI 浪潮有多大，Nadella 答：它可能更像是工業革命與電力的誕生，而不只是又一次像個人電腦、網路、雲端那樣的平台轉移。",
+    "quote": "It may be more like the industrial revolution and the birth of electricity.",
+    "context": "語錄 SN-2026-002-Q01（影片約 1:52）。來源為官方頁字幕記錄面板的平台自動字幕，時間碼為字幕段起點、未對影片全片校聽。",
+    "speaker": "sn",
+    "event": "XTC AI:360 Summit 開場對談",
+    "date": "2026-11-19"
+  },
+  {
+    "id": 76,
+    "cat": "ai",
+    "rarity": "rare",
+    "term": "Computing Disappears into the Background",
+    "zh": "運算隱入背景，智能無所不在",
+    "def_en": "Nadella, echoing Mark Weiser’s ubiquitous computing and ambient intelligence, pictures an era where computing itself fades into the background and intelligence is simply available in an ambient way.",
+    "def_zh": "Nadella 借 Mark Weiser 的「無所不在運算／環境智能」，描繪運算本身退居幕後、智能以環境方式隨處可得的時代。",
+    "quote": "Computing itself may disappear into the background because you will now have intelligence that is available in an ambient way.",
+    "context": "語錄 SN-2026-002-Q05（影片約 9:45）。來源為官方頁字幕記錄面板的平台自動字幕，時間碼為字幕段起點、未對影片全片校聽。",
+    "speaker": "sn",
+    "event": "XTC AI:360 Summit 開場對談",
+    "date": "2026-11-19"
+  },
+  {
+    "id": 77,
+    "cat": "quote",
+    "rarity": "rare",
+    "term": "The World Is Your Oyster",
+    "zh": "世界任你闖蕩",
+    "def_en": "Nadella’s closing encouragement to entrepreneurs: in a time when AI can speed up anything, the world is your oyster, so go be bold and ambitious about what you want to achieve.",
+    "def_zh": "Nadella 給創業者的收束鼓勵：在 AI 能加速一切的時代，世界任你闖蕩，該大膽而有野心地去實現想做的事。",
+    "quote": "As an entrepreneur, the world is your oyster. You can really go and be bold and ambitious on what you go achieve.",
+    "context": "語錄 SN-2026-002-Q06（影片約 10:19，第 6 章節「Advice for entrepreneurs」）。來源為官方頁字幕記錄面板的平台自動字幕，時間碼為字幕段起點、未對影片全片校聽。",
+    "speaker": "sn",
+    "event": "XTC AI:360 Summit 開場對談",
+    "date": "2026-11-19"
   }
 ]
