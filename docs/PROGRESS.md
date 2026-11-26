@@ -9,10 +9,12 @@
 - 新增既有講者 Satya Nadella 的場次 `SN-2026-002`：Extreme Tech Challenge（官方簡稱 XTC）2026 年 AI:360 Summit 的開場對談（virtual fireside chat），與 Walden Catalyst Ventures 創始管理合夥人、XTC 共同創辦人 Young Sohn 對談。官方活動頁寫 2026-11-19（星期四）、Palo Alto, California、邀請制，Nadella 標 Virtual（遠距）。`date` 採活動日 2026-11-19。紀錄影片由 Walden Catalyst 官方 YouTube 頻道發布（https://www.youtube.com/watch?v=K5OtollKubk ，上傳 2026-11-23 本地時間／台北時間 2026-11-24 03:54，片長 644 秒＝10 分 44 秒，進位 11 分鐘）。開拉取請求前已重查主線編號，`SN-2026-002` 未撞號。
 - 對談者 Young Sohn 以新增的 `interlocutor`／`interlocutor_title` 欄位記錄，並顯示在 `event` 標題與單場頁 meta 行（`products/core/speech.html` metaLine 新增「對談者：…」）。沒有新增 Young Sohn 為講者，語錄也不收 Young Sohn。
 - **出處追查結論（親自查證，並與白話科技同片研究一致）**：這支影片是 XTC AI:360 Summit 開場對談，由 Walden Catalyst 頻道發布，不是微軟官方頻道或新聞稿。**沒有官方逐字稿、沒有 YouTube 官方章節、說明欄亦無章節時間戳記**；字幕只有一條 English (auto-generated)（`kind: asr`）平台自動字幕。微軟官方新聞／演講稿庫與 Walden Catalyst 官網查核當日均無本場專文。
-- **有沒有只來自官方來源的可核實時間點（不下載字幕）：沒有。** 平台自動字幕的精確時間碼，在不下載字幕檔、不請求 YouTube timedtext、不使用第三方轉寫站（如 ceointerviews.ai、blumify.io）的前提下亦無法取得。依派工規範**不硬收語錄、不做詞彙卡**（金句與名人詞彙皆未新增），擬收而追不到出處的段落列於出處對照表。
-- `source_type` 誠實標 `platform_auto_captions`（唯一存在的字幕來源），不標 `official_transcript`。`verification_status` 為 `pending_human_check`（未對影片校聽）。`key_quotes` 為空，`quotes_index.json` 不新增列，語錄索引不變。
-- 主資料庫總數 48→49，`updated_date` 2026-11-26；`speeches_indexes.json` 的時間、類型（interview 33→34）、產品標籤、長度（short）、講者摘要、主題索引已更新。時間戳記索引 `references/transcripts/SN-2026-002.txt`（無時間碼列）、導讀 `references/editorials/SN-2026-002.md`、短摘要（`prod001_summary_zh_draft.json`）只依官方說明欄與官方活動頁整理，未引用講者原話。出處對照表另存於工作區草稿目錄，不提交進本庫。
-- 沒有新增講者、沒有改講者色、沒有做詞彙卡、沒有改每日排程，沒有手改首頁場次數（由演講庫自動計算）。
+- **有沒有只來自官方來源（官方逐字稿／官方章節／說明欄章節）的可核實時間點（不下載字幕）：沒有。** 這三種官方時間點來源本場都不存在。
+- **時間碼改採官方頁「字幕記錄」面板的肉眼抄錄＋面板截圖對照**：由 Celebrities 專案經理在瀏覽器內閱讀 YouTube 官方頁自動字幕面板、抄下 10 段候選與時間點（`panel-candidates.md`），並拍下五張面板截圖（`transcript-panel/01-1m18.png`、`05-2m29.png`、`02-4m05.png`、`03-7m44.png`、`04-10m03.png`）；未下載影片、音訊或字幕檔，未請求 YouTube timedtext，未使用第三方轉寫站（如 ceointerviews.ai、blumify.io）。據此收錄 **6 則只屬 Satya Nadella 的語錄**（`SN-2026-002-Q01`…`Q06`），文字為該平台自動字幕的逐字子字串，牆／卡片引文僅去除 uh、you know 等贅字並以「…」標省略，未改字；每則時間碼為該字幕段的「段起點」（Q01=01:52、Q02=02:53、Q03=03:00、Q04=08:17、Q05=09:45、Q06=10:19）。Q03 原暫記 02:53，經 `05-2m29.png` 對照後更正為 03:00；3:00 段後「it's incredible when you made that」與 10:19 段後「Satia, thank you very much」皆為對談者 Young Sohn，未收。
+- `source_type` 誠實標 `platform_auto_captions`（唯一存在的字幕來源），不標 `official_transcript`。`verification_status` 為 `transcript_text_verified`，各語錄 `status` 為 `verified`：已對官方頁面板自動字幕逐字核對為子字串，但時間碼僅到字幕段起點、且未對影片全片校聽，非 fully verified；可標 verified 的依據為本庫既有 `JB-2015-001-Q01`（`platform_auto_captions`＋`verified`）同類先例。`key_quotes` 收 6 則，`quotes_index.json` 新增 6 列，語錄／主題／講者索引已更新。
+- 詞彙卡：金句（Keynote Lexicon）新增 id 75–77（排程 2026-11-27），名人詞彙（Executive English）新增 id 196–201（196–200 排 2026-11-27、201 排 2026-11-28，當日不足 5 張以既有卡補齊）。新卡自 2026-11-27 起排，不插入既有日期；`executive-english.html` 與 `keynote-lexicon.html` 補 `sn` 講者色。
+- 主資料庫總數 48→49，`updated_date` 2026-11-26；`speeches_indexes.json` 的時間、類型（interview 33→34）、產品標籤、長度（short）、講者摘要、主題索引已更新。時間戳記索引 `references/transcripts/SN-2026-002.txt`（含語錄編號、時間碼、官方影片定位連結，無逐字稿文字）、導讀 `references/editorials/SN-2026-002.md`、短摘要（`prod001_summary_zh_draft.json`）均引用這 6 則並標時間碼與來源限制。完整出處對照表另存於工作區草稿目錄，不提交進本庫。
+- 沒有新增講者（Young Sohn 仍只記於 `interlocutor`），沒有手改首頁場次數（由演講庫自動計算）。
 
 ---
 

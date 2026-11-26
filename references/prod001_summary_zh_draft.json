@@ -203,16 +203,17 @@
   },
   {
     "speech_id": "SN-2026-002",
-    "summary_zh": "Microsoft 董事長暨執行長 Satya Nadella，在 Extreme Tech Challenge（XTC）2026 年 AI:360 Summit 以遠距方式與 Walden Catalyst Ventures 創始管理合夥人、XTC 共同創辦人 Young Sohn 進行開場對談。活動於 2026 年 11 月 19 日在加州 Palo Alto 舉行。依官方影片說明欄，兩人從個人電腦、網際網路到雲端運算的轉變談起，探討人工智慧的興起有哪些地方似曾相識、先前技術浪潮有哪些教訓值得重新思考，並談到人工智慧可能比預期更早協助解決的問題，以及有潛力的解方如何送到醫療、教育與能源領域真正需要的人手上。（本摘要只依官方影片說明欄與官方活動頁整理，未引用講者原話；本場無官方逐字稿、無官方章節，字幕僅平台自動產生，故不收語錄、無可核實時間點。）",
+    "summary_zh": "Microsoft 董事長暨執行長 Satya Nadella，在 Extreme Tech Challenge（XTC）2026 年 AI:360 Summit 以遠距方式與 Walden Catalyst Ventures 創始管理合夥人、XTC 共同創辦人 Young Sohn 進行開場對談。活動於 2026 年 11 月 19 日在加州 Palo Alto 舉行。Satya Nadella 回顧個人電腦、網際網路到雲端幾次浪潮後，說這波 AI「可能更像是工業革命與電力的誕生」，並重新定義公司是人力資本圍繞「智能」組織、用以創造新知識；談到真實影響時，他強調重點在能否比上一個工業時代更快、更好、更平等地「廣泛擴散」，並描繪運算退居幕後、智能以「環境方式」隨處可得的時代，最後鼓勵創業者「世界任你闖蕩」。（本摘要收錄 6 則只屬 Satya Nadella 的語錄，文字取自 YouTube 官方頁字幕記錄面板的平台自動字幕，時間碼為字幕段起點、未對影片全片校聽；本場無官方逐字稿、無官方章節。）",
     "based_on": [
       "official_video_description",
-      "official_event_page"
+      "official_event_page",
+      "platform_auto_captions_panel"
     ],
     "source_urls": [
       "https://www.youtube.com/watch?v=K5OtollKubk",
       "https://extremetechchallenge.org/news/introducing-the-ai360-summit/"
     ],
-    "draft_note": "繁體中文導讀；只依官方影片說明欄與官方活動頁，未引用講者逐字發言。本場無官方逐字稿、無官方章節、說明欄無時間戳記，字幕僅 English (auto-generated)（kind: asr）；在不下載字幕、不請求 timedtext、不用第三方轉寫站的前提下無法取得可核實時間點，故不收語錄。",
-    "char_count": 300
+    "draft_note": "繁體中文導讀；活動資訊依官方影片說明欄與官方活動頁。語錄（SN-2026-002-Q01…Q06）文字取自 YouTube 官方頁字幕記錄面板的平台自動字幕（kind: asr），由專案經理肉眼抄錄並拍面板截圖對照；未下載字幕、未請求 timedtext、未用第三方轉寫站。時間碼為字幕段起點（非逐詞對齊），未對影片全片校聽，非 fully verified。",
+    "char_count": 454
   }
 ]

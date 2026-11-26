@@ -3199,6 +3199,13 @@
       "event": "The Economist Interview",
       "date": "2026-07-23",
       "quote": "Let's enjoy the ride"
+    },
+    {
+      "id": "SN-2026-002",
+      "speaker": "satya_nadella",
+      "event": "XTC AI:360 Summit 開場對談",
+      "date": "2026-11-19",
+      "quote": "It may be more like the industrial revolution and the birth of electricity."
     }
   ],
   "length_index": {

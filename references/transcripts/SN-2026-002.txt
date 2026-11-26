@@ -6,8 +6,22 @@
 #
 # 本檔只存時間戳記索引；原話請到官方來源收看。
 #
-# 時間點狀態：無。本場沒有官方逐字稿、沒有 YouTube 官方章節、說明欄亦無章節時間戳記；
-# 字幕僅有 English (auto-generated)（kind: asr）平台自動字幕。在不下載字幕檔、
-# 不請求 YouTube timedtext、不使用第三方轉寫站的前提下，無法取得任何可追溯到秒的時間點，
-# 因此本場不收語錄（key_quotes 為空），本索引沒有任何時間碼列。
-# 擬收而追不到出處的段落，見出處對照表（另存於工作區草稿目錄，不提交進本庫）。
+# 時間點來源：官方頁「字幕記錄」面板的肉眼抄錄＋面板截圖對照（未下載影片、音訊或字幕檔，
+# 未請求 YouTube timedtext，未使用第三方轉寫站）。本場沒有官方逐字稿、沒有 YouTube 官方章節、
+# 說明欄亦無章節時間戳記；唯一字幕為 English (auto-generated)（kind: asr）平台自動字幕。
+# 下列時間碼為各語錄所在「自動字幕段的起點」（非逐詞對齊）。語錄原文與來源註記見 quotes_index.json。
+#
+# 語錄編號            時間碼    影片定位連結
+SN-2026-002-Q01      01:52    https://www.youtube.com/watch?v=K5OtollKubk&t=112s
+SN-2026-002-Q02      02:53    https://www.youtube.com/watch?v=K5OtollKubk&t=173s
+SN-2026-002-Q03      03:00    https://www.youtube.com/watch?v=K5OtollKubk&t=180s
+SN-2026-002-Q04      08:17    https://www.youtube.com/watch?v=K5OtollKubk&t=497s
+SN-2026-002-Q05      09:45    https://www.youtube.com/watch?v=K5OtollKubk&t=585s
+SN-2026-002-Q06      10:19    https://www.youtube.com/watch?v=K5OtollKubk&t=619s
+#
+# 說明：Q02 起於 02:53 段（句尾 knowledge 落在 03:00 段開頭，仍屬該句）；Q03 起於 03:00 段
+# （面板「knowledge so it's a very different set of physics even uh of what a firm is」），均有面板
+# 截圖 05-2m29.png（約 2:14–3:17）佐證。Q04 的句子起於 08:17 段（非派工標題的 8:09），
+# Q06 的句子起於 10:19 段（非 10:03）；3:00 段後「it's incredible when you made that」與 10:19 段後
+# 「Satia, thank you very much」皆為對談者 Young Sohn，不收。均已於 quotes_index.json 的
+# verification_note 註明。出處對照表另存於工作區草稿目錄，不提交進本庫。
