@@ -9,7 +9,8 @@
     lbt: { key: "lbt", db: "lip_bu_tan", name: "Lip-Bu Tan", short: "陳立武", company: "Intel" },
     jb: { key: "jb", db: "jeff_bezos", name: "Jeff Bezos", short: "貝佐斯", company: "Amazon" },
     es: { key: "es", db: "eric_schmidt", name: "Eric Schmidt", short: "施密特", company: "Relativity Space" },
-    yl: { key: "yl", db: "yann_lecun", name: "Yann LeCun", short: "楊立昆", company: "Advanced Machine Intelligence" }
+    yl: { key: "yl", db: "yann_lecun", name: "Yann LeCun", short: "楊立昆", company: "Advanced Machine Intelligence" },
+    rh: { key: "rh", db: "reid_hoffman", name: "Reid Hoffman", short: "霍夫曼", company: "LinkedIn / Greylock" }
   };
 
   const QUOTE_LANG_NAMES = {
@@ -94,6 +95,18 @@
     const parts = String(value).split("-");
     if (parts.length !== 3) return value;
     return parts[0] + "年" + Number(parts[1]) + "月" + Number(parts[2]) + "日";
+  }
+
+  // Displays an entry's date, flagging it when the stored date is a publish date
+  // (date_kind === "publish") rather than the event/recording date. Falls back to
+  // plain formatDate so other entries keep showing their activity date unchanged.
+  function formatEntryDate(entry) {
+    if (!entry || !entry.date) return "";
+    const base = formatDate(entry.date);
+    if (!base) return "";
+    if (entry.date_label_zh) return String(entry.date_label_zh);
+    if (entry.date_kind === "publish") return base + "發布";
+    return base;
   }
 
   function attributionLine(entry) {
@@ -298,7 +311,7 @@
         '<div class="quote-meta">' +
           '<span class="speaker-name">' + escapeHtml(meta.name) + "</span>" +
           (entry.event ? "<span>" + escapeHtml(entry.event) + "</span>" : "") +
-          (entry.date ? "<span>" + escapeHtml(formatDate(entry.date)) + "</span>" : "") +
+          (entry.date ? "<span>" + escapeHtml(formatEntryDate(entry)) + "</span>" : "") +
         "</div>" +
         (entry.source_label_zh
           ? "<p class=\"quote-source-note\">" + escapeHtml(entry.source_label_zh) + "</p>"
@@ -334,6 +347,7 @@
     speakerLabel,
     yearOf,
     formatDate,
+    formatEntryDate,
     attributionLine,
     copyPayload,
     flaggedSpeechIds,

@@ -1,7 +1,7 @@
 {
   "metadata": {
     "created_date": "2026-09-06",
-    "total_speeches": 49,
+    "total_speeches": 50,
     "index_types": [
       "topic_index",
       "timeline_index",
@@ -11,7 +11,7 @@
       "quotes_index",
       "length_index"
     ],
-    "updated_date": "2026-11-26"
+    "updated_date": "2026-11-27"
   },
   "topic_index": [
     {
@@ -2202,6 +2202,71 @@
           "type": "interview"
         }
       ]
+    },
+    {
+      "topic": "ai-native careers",
+      "count": 1,
+      "speeches": [
+        {
+          "id": "RH-2026-001",
+          "speaker": "reid_hoffman",
+          "event": "How to Future-Proof Your Career and Become AI-Native | Reid Hoffman（Masters of Scale Summit 2026 對談）",
+          "date": "2026-11-14",
+          "type": "interview"
+        }
+      ]
+    },
+    {
+      "topic": "agentic workflows",
+      "count": 1,
+      "speeches": [
+        {
+          "id": "RH-2026-001",
+          "speaker": "reid_hoffman",
+          "event": "How to Future-Proof Your Career and Become AI-Native | Reid Hoffman（Masters of Scale Summit 2026 對談）",
+          "date": "2026-11-14",
+          "type": "interview"
+        }
+      ]
+    },
+    {
+      "topic": "future of work",
+      "count": 1,
+      "speeches": [
+        {
+          "id": "RH-2026-001",
+          "speaker": "reid_hoffman",
+          "event": "How to Future-Proof Your Career and Become AI-Native | Reid Hoffman（Masters of Scale Summit 2026 對談）",
+          "date": "2026-11-14",
+          "type": "interview"
+        }
+      ]
+    },
+    {
+      "topic": "human-ai collaboration",
+      "count": 1,
+      "speeches": [
+        {
+          "id": "RH-2026-001",
+          "speaker": "reid_hoffman",
+          "event": "How to Future-Proof Your Career and Become AI-Native | Reid Hoffman（Masters of Scale Summit 2026 對談）",
+          "date": "2026-11-14",
+          "type": "interview"
+        }
+      ]
+    },
+    {
+      "topic": "lifelong learning",
+      "count": 1,
+      "speeches": [
+        {
+          "id": "RH-2026-001",
+          "speaker": "reid_hoffman",
+          "event": "How to Future-Proof Your Career and Become AI-Native | Reid Hoffman（Masters of Scale Summit 2026 對談）",
+          "date": "2026-11-14",
+          "type": "interview"
+        }
+      ]
     }
   ],
   "timeline_index": [
@@ -2639,7 +2704,7 @@
     },
     {
       "month": "2026-11",
-      "count": 2,
+      "count": 3,
       "speeches": [
         {
           "id": "SN-2026-001",
@@ -2651,6 +2716,12 @@
           "id": "SN-2026-002",
           "speaker": "satya_nadella",
           "event": "Satya Nadella and Young Sohn on What AI Makes Possible（XTC AI:360 Summit 開場對談）",
+          "type": "interview"
+        },
+        {
+          "id": "RH-2026-001",
+          "speaker": "reid_hoffman",
+          "event": "How to Future-Proof Your Career and Become AI-Native | Reid Hoffman（Masters of Scale Summit 2026 對談）",
           "type": "interview"
         }
       ]
@@ -2716,7 +2787,8 @@
         "SA-2026-008",
         "SA-2026-009",
         "SN-2026-001",
-        "SN-2026-002"
+        "SN-2026-002",
+        "RH-2026-001"
       ],
       "panel": [
         "EM-2026-002",
@@ -2730,7 +2802,7 @@
     },
     "counts": {
       "keynote": 10,
-      "interview": 34,
+      "interview": 35,
       "panel": 3,
       "town_hall": 2
     }
@@ -2813,7 +2885,8 @@
         "SA-2026-008",
         "SA-2026-009",
         "SN-2026-001",
-        "SN-2026-002"
+        "SN-2026-002",
+        "RH-2026-001"
       ],
       "enterprise": [
         "JH-2026-002",
@@ -3210,7 +3283,7 @@
   ],
   "length_index": {
     "short": {
-      "count": 13,
+      "count": 14,
       "speeches": [
         {
           "id": "JH-2026-006",
@@ -3289,6 +3362,12 @@
           "speaker": "satya_nadella",
           "event": "Satya Nadella and Young Sohn on What AI Makes Possible（XTC AI:360 Summit 開場對談）",
           "word_count": 1600
+        },
+        {
+          "id": "RH-2026-001",
+          "speaker": "reid_hoffman",
+          "event": "How to Future-Proof Your Career and Become AI-Native | Reid Hoffman（Masters of Scale Summit 2026 對談）",
+          "word_count": 4500
         }
       ]
     },
@@ -3723,6 +3802,22 @@
       "total_speeches": 1,
       "entries": [
         "YL-2026-001"
+      ]
+    },
+    "reid_hoffman": {
+      "name": "Reid Hoffman",
+      "title": "Co-founder of LinkedIn and Partner at Greylock",
+      "company": "LinkedIn / Greylock",
+      "topics": [
+        "ai-native careers",
+        "agentic workflows",
+        "future of work",
+        "human-ai collaboration",
+        "lifelong learning"
+      ],
+      "total_speeches": 1,
+      "entries": [
+        "RH-2026-001"
       ]
     }
   }

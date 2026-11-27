@@ -1080,5 +1080,47 @@
     "speaker": "sn",
     "event": "XTC AI:360 Summit 開場對談",
     "date": "2026-11-19"
+  },
+  {
+    "id": 78,
+    "cat": "quote",
+    "rarity": "legendary",
+    "term": "The Future Is Sooner and Stranger",
+    "zh": "未來更快到來，也更陌生",
+    "def_en": "Reid Hoffman’s often-repeated line: in the AI era, change arrives sooner—and stranger—than people expect, so we should be optimistic but prepared for a confusing journey.",
+    "def_zh": "Reid Hoffman 常說的一句話：AI 時代的變化會比你以為的更快到來，也更出乎意料，因此要同時保持樂觀與心理準備。",
+    "quote": "The future is sooner and stranger than you think.",
+    "context": "語錄 RH-2026-001-Q04（影片約 23:25）。來源為官方頁字幕記錄面板的平台自動字幕，時間碼為字幕段起點、未對影片全片校聽；片頭預告約 0:54 亦出現同句，本庫採正片 23:25。",
+    "speaker": "rh",
+    "event": "Masters of Scale Summit 2026 對談",
+    "date": "2026-11-14"
+  },
+  {
+    "id": 79,
+    "cat": "biz",
+    "rarity": "rare",
+    "term": "Hire the AI-Native Folks",
+    "zh": "聘用 AI 原生世代",
+    "def_en": "Reid Hoffman’s advice on entry-level hiring: deliberately hire the AI-native people who grew up with AI, because that is the only way an organization itself becomes AI-native.",
+    "def_zh": "Reid Hoffman 對初階招募的建議：主動聘用從小與 AI 一起長大的 AI 原生世代，因為那是組織本身變成 AI 原生的唯一途徑。",
+    "quote": "You want to be hiring the AI native folks, because that's the only way your organization is going to become AI native.",
+    "context": "語錄 RH-2026-001-Q05（影片約 25:16）。來源為官方頁字幕記錄面板的平台自動字幕，時間碼為字幕段起點、未對影片全片校聽。",
+    "speaker": "rh",
+    "event": "Masters of Scale Summit 2026 對談",
+    "date": "2026-11-14"
+  },
+  {
+    "id": 80,
+    "cat": "quote",
+    "rarity": "rare",
+    "term": "Life's a Team Sport",
+    "zh": "人生是團隊運動",
+    "def_en": "Reid Hoffman, echoing the core idea behind LinkedIn, says life is a team sport—we go through it with our allies, what he calls a network.",
+    "def_zh": "Reid Hoffman 呼應 LinkedIn 的核心理念：人生是一項團隊運動，我們是和夥伴（他稱之為 network）一起走過的。",
+    "quote": "Life's a team sport. We go through with our allies.",
+    "context": "語錄 RH-2026-001-Q06（影片約 28:56，官方章節 28:33「Rapid-Fire」內）。來源為官方頁字幕記錄面板的平台自動字幕，時間碼為字幕段起點、未對影片全片校聽。",
+    "speaker": "rh",
+    "event": "Masters of Scale Summit 2026 對談",
+    "date": "2026-11-14"
   }
 ]

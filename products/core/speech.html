@@ -56,7 +56,7 @@
           "<h2>" + CoreUI.escapeHtml(speech.event || speech.id) + "</h2>" +
           '<div class="speech-meta">' +
             "<span>" + CoreUI.escapeHtml(meta.name) + "</span>" +
-            (speech.date ? "<span>" + CoreUI.escapeHtml(CoreUI.formatDate(speech.date)) + "</span>" : "") +
+            (speech.date ? "<span>" + CoreUI.escapeHtml(CoreUI.formatEntryDate(speech)) + "</span>" : "") +
             "<span>" + quoteCount + " 則語錄</span>" +
           "</div>" +
         "</a>"
@@ -100,7 +100,7 @@
       const speakerName = CoreUI.speakerLabel(speech.speaker);
       const metaLine = [
         speakerName,
-        speech.date ? CoreUI.formatDate(speech.date) : "",
+        speech.date ? CoreUI.formatEntryDate(speech) : "",
         speech.type || "",
         speech.location || "",
         speech.interlocutor ? "對談者：" + speech.interlocutor : ""

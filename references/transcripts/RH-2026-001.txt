@@ -1,0 +1,43 @@
+# RH-2026-001 時間戳記索引（不含逐字稿文字）
+# 場次：How to Future-Proof Your Career and Become AI-Native | Reid Hoffman（Masters of Scale Summit 2026 對談）
+# 對談者：Aishwarya Srinivasan（Ctrl + Alt + AI 節目主持；官方 Substack「AI with Aish」作者）
+# 影片官方頁（Aishwarya Srinivasan 頻道）：https://www.youtube.com/watch?v=US3zcEQ3hCc
+# 活動官方頁（Masters of Scale Summit）：https://www.summit.mastersofscale.com/info
+#
+# 本檔只存時間戳記索引；原話請到官方來源收看。
+#
+# 日期：錄於 Masters of Scale Summit 2026（2026-10-20 至 10-22，確切日期不明），
+# 2026-11-14 發布（publishDate 2026-11-13T23:01:33-08:00；台北時間 2026-11-14 15:01:33）。片長 1844 秒（30:44）。
+#
+# 時間點來源：官方頁「字幕記錄」面板的肉眼抄錄＋面板截圖對照（未下載影片、音訊或字幕檔，
+# 未請求 YouTube timedtext，未使用第三方轉寫站）。本場沒有官方逐字稿；字幕僅 1 條
+# English (auto-generated)（kind: asr）平台自動字幕。下列語錄句子時間碼為各語錄所在
+# 「自動字幕段的起點」（非逐詞對齊）。語錄原文與來源註記見 quotes_index.json。
+#
+# 語錄句子時間點（來自自動字幕面板，非官方章節）
+# 語錄編號            時間碼    影片定位連結
+RH-2026-001-Q01      02:17    https://www.youtube.com/watch?v=US3zcEQ3hCc&t=137s
+RH-2026-001-Q02      07:39    https://www.youtube.com/watch?v=US3zcEQ3hCc&t=459s
+RH-2026-001-Q03      22:45    https://www.youtube.com/watch?v=US3zcEQ3hCc&t=1365s
+RH-2026-001-Q04      23:25    https://www.youtube.com/watch?v=US3zcEQ3hCc&t=1405s
+RH-2026-001-Q05      25:16    https://www.youtube.com/watch?v=US3zcEQ3hCc&t=1516s
+RH-2026-001-Q06      28:56    https://www.youtube.com/watch?v=US3zcEQ3hCc&t=1736s
+#
+# 官方章節（YouTube 說明欄／播放器，僅作場次結構；章節起始秒數不等於上列語錄句子時間點）
+# 00:00  Introduction: Catching Up with Reid Hoffman
+# 01:02  Capability Explosions, Math Proofs, and Recursive Self-Improvement
+# 03:10  Coding Acceleration, PR Reviews, and the "Human in the Loop" Bottleneck
+# 05:03  Human in the Loop vs. Human on the Loop Architectures
+# 08:03  AI-Native Hiring: How Startup Interviews Have Completely Changed
+# 09:24  Societal Perceptions, Anxiety, and the Dual Mandate for AI
+# 12:03  Democratizing Knowledge and Using AI for Personalized Learning
+# 13:00  What Is Great Writing vs. AI-Generated Text?
+# 17:48  AI as an Exploration Tool and the Limits of Frontier Models
+# 22:18  The Economic Gap, Entry-Level Hiring Challenges, and Advice for Graduates
+# 26:16  Maintaining Curiosity and the Secret to Lifelong Learning
+# 28:33  Rapid-Fire: The One Sacred Thing Reid Won't Delegate to AI
+#
+# 官方 Substack 節目筆記另寫明三處時間點：5:12、17:03、20:41（場次結構參考，非本庫語錄句子時間點）。
+# 說明：Q03 落在章節 22:18 內、Q06 落在章節 28:33 內，語錄時間點仍採自動字幕段起點（22:45、28:56），
+# 不改成章節起始。Q04 同句在片頭 0:00–1:04 預告（約 0:54）也出現，本庫採正片 23:25，不採預告。
+# 出處對照表另存於工作區草稿目錄，不提交進本庫。
