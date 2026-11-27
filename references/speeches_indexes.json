@@ -1,7 +1,7 @@
 {
   "metadata": {
     "created_date": "2026-09-06",
-    "total_speeches": 49,
+    "total_speeches": 50,
     "index_types": [
       "topic_index",
       "timeline_index",
@@ -11,7 +11,7 @@
       "quotes_index",
       "length_index"
     ],
-    "updated_date": "2026-11-26"
+    "updated_date": "2026-11-27"
   },
   "topic_index": [
     {
@@ -3283,7 +3283,7 @@
   ],
   "length_index": {
     "short": {
-      "count": 13,
+      "count": 14,
       "speeches": [
         {
           "id": "JH-2026-006",
@@ -3362,6 +3362,12 @@
           "speaker": "satya_nadella",
           "event": "Satya Nadella and Young Sohn on What AI Makes Possible（XTC AI:360 Summit 開場對談）",
           "word_count": 1600
+        },
+        {
+          "id": "RH-2026-001",
+          "speaker": "reid_hoffman",
+          "event": "How to Future-Proof Your Career and Become AI-Native | Reid Hoffman（Masters of Scale Summit 2026 對談）",
+          "word_count": 4500
         }
       ]
     },
@@ -3796,6 +3802,22 @@
       "total_speeches": 1,
       "entries": [
         "YL-2026-001"
+      ]
+    },
+    "reid_hoffman": {
+      "name": "Reid Hoffman",
+      "title": "Co-founder of LinkedIn and Partner at Greylock",
+      "company": "LinkedIn / Greylock",
+      "topics": [
+        "ai-native careers",
+        "agentic workflows",
+        "future of work",
+        "human-ai collaboration",
+        "lifelong learning"
+      ],
+      "total_speeches": 1,
+      "entries": [
+        "RH-2026-001"
       ]
     }
   }
