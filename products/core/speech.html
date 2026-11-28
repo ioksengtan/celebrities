@@ -101,6 +101,7 @@
       const metaLine = [
         speakerName,
         speech.date ? CoreUI.formatEntryDate(speech) : "",
+        speech.date_note_zh || "",
         speech.type || "",
         speech.location || "",
         speech.interlocutor ? "對談者：" + speech.interlocutor : ""

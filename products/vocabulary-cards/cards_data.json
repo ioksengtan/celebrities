@@ -1122,5 +1122,47 @@
     "speaker": "rh",
     "event": "Masters of Scale Summit 2026 對談",
     "date": "2026-11-14"
+  },
+  {
+    "id": 81,
+    "cat": "quote",
+    "rarity": "legendary",
+    "term": "Steve Understands Desire",
+    "zh": "賈伯斯懂得人的慾望",
+    "def_en": "Alan Kay’s one-sentence description of Steve Jobs, first given to Fortune magazine: Jobs grasped what people truly want, and built products around that desire.",
+    "def_zh": "Alan Kay 曾給《財星》雜誌的一句話評語：賈伯斯真正懂得人想要什麼，並以這份慾望為核心打造產品。",
+    "quote": "Steve understands desire.",
+    "context": "語錄 AK-2026-001-Q01（影片約 33:42）。Alan Kay 在訪談中轉述自己曾對《財星》說的話；Fortune 2008-03-05 Peter Elkind〈The trouble with Steve Jobs〉亦引此句。來源為官方頁字幕記錄面板的平台自動字幕，時間碼為字幕段起點、未對影片全片校聽。",
+    "speaker": "ak",
+    "event": "The Peterman Pod 訪談",
+    "date": "2026-11-23"
+  },
+  {
+    "id": 82,
+    "cat": "biz",
+    "rarity": "rare",
+    "term": "He Was Not Timid",
+    "zh": "他從不膽怯",
+    "def_en": "Alan Kay contrasts Steve Jobs with the many people who are timid in the business world: Jobs was never afraid to push hard for what he wanted.",
+    "def_zh": "Alan Kay 把賈伯斯和商場上許多畏首畏尾的人對比：賈伯斯從不膽怯，想要的東西就全力推進。",
+    "quote": "Many people are timid out in the business world. And he was not timid.",
+    "context": "語錄 AK-2026-001-Q01（影片約 33:42，本句在 33:55 字幕段內）。來源為官方頁字幕記錄面板的平台自動字幕，時間碼為字幕段起點、未對影片全片校聽。",
+    "speaker": "ak",
+    "event": "The Peterman Pod 訪談",
+    "date": "2026-11-23"
+  },
+  {
+    "id": 83,
+    "cat": "quote",
+    "rarity": "rare",
+    "term": "Clever Is Not Intelligence",
+    "zh": "精明不等於智慧",
+    "def_en": "Alan Kay warns that in America getting rich is equated with being smart, yet wealth can come from mere cleverness—which is not the same as intelligence and knowledge.",
+    "def_zh": "Alan Kay 提醒：在美國，有錢常被等同於聰明，但致富可能只靠精明，而精明和智慧、知識不是同一回事。",
+    "quote": "You can get rich by just being clever. It's not the same thing as intelligence and knowledge.",
+    "context": "語錄 AK-2026-001-Q02（影片約 33:22，本句在 33:30、33:33 字幕段）。來源為官方頁字幕記錄面板的平台自動字幕，時間碼為字幕段起點、未對影片全片校聽。",
+    "speaker": "ak",
+    "event": "The Peterman Pod 訪談",
+    "date": "2026-11-23"
   }
 ]

@@ -2618,5 +2618,41 @@
     "source_type": "platform_auto_captions",
     "status": "verified",
     "verification_note": "來源為本場唯一存在的字幕：YouTube 平台自動產生字幕（kind: asr），本場無官方逐字稿。本句為該自動字幕的逐字子字串（卡片去除 you know 等贅字、把重複的 We we 取一個 We，未改字）。時間碼取自官方頁「字幕記錄」面板該字幕段的起點 28:56（=1736 秒；影片定位 https://www.youtube.com/watch?v=US3zcEQ3hCc&t=1736s），面板 28:56 段原文為「it with because I these magical people and it's and it's not, you know, it's like part of the LinkedIn thing is life's a team sport, right? We we go」，續 29:03 段「through with our allies and you can call it network. It seems like a little bit of a dry term, but like people we go through life together and the folks I go」；前半 28:40 行為主持人提問，不當本則時間點。本句落在官方章節 28:33「Rapid-Fire: The One Sacred Thing Reid Won't Delegate to AI」內，語錄時間點仍採字幕段起點 28:56。與面板截圖 transcript-panel/11-2840.png 一致。平台自動字幕可標 verified 的依據：本檔既有 JB-2015-001-Q01（platform_auto_captions＋verified）為同類先例。逐則引文、自動字幕原文、時間點、來源網址（含 &t=）、status 與查核時間，詳見本場出處對照表（草稿目錄另存，不提交進本庫）。對照的是官方頁面板自動字幕、未對影片全片校聽；時間碼為字幕段起點（timestamp_precision=caption_segment_start）。"
+  },
+  {
+    "quote_id": "AK-2026-001-Q01",
+    "speech_id": "AK-2026-001",
+    "speaker": "ak",
+    "event": "Alan Kay (Turing Award Winner): Xerox PARC, Steve Jobs, Dijkstra（The Peterman Pod 第 E076 集）",
+    "date": "2026-11-23",
+    "date_kind": "publish",
+    "quote": "When Fortune magazine asked me to give them a sentence about Steve, I said, \"Steve understands desire.\" And the other thing is he was indomitable. When he wanted something to happen, he would shoot anybody in the knees to get there. And many people are timid out in the business world. And he was not timid.",
+    "quote_lang": "en",
+    "quote_zh": "《財星》雜誌請我用一句話形容賈伯斯時，我說：「Steve 懂得人的慾望。」另一點是他百折不撓。只要他想讓某件事發生，他不惜朝任何人的膝蓋開槍也要達成（比喻不擇手段）。商場上很多人畏首畏尾，而他從不膽怯。",
+    "why_notable_zh": "主持人問：如果 Steve Jobs 懂技術，Apple 會不會更好？Alan Kay 先答「當然」，接著用兩個特質形容賈伯斯：懂得人的慾望，以及百折不撓、從不膽怯。「Steve understands desire」一句也見於 Fortune 2008 年 Peter Elkind 的報導〈The trouble with Steve Jobs〉。",
+    "source_url": "https://www.youtube.com/watch?v=GR9i8o4FwGw&t=2022s",
+    "timestamp": "33:42",
+    "timestamp_precision": "caption_segment_start",
+    "source_type": "platform_auto_captions",
+    "status": "verified",
+    "verification_note": "來源為本場唯一使用的字幕：YouTube 平台自動產生字幕，本場未找到官方逐字稿。本句為該自動字幕的逐字子字串，與字幕唯一差異是把重複的「When he when he」縮成一次「When he」，未改字、未加字。時間碼取自官方頁「字幕記錄」面板該字幕段的起點 33:42（=2022 秒；影片定位 https://www.youtube.com/watch?v=GR9i8o4FwGw&t=2022s），面板 33:42 段原文為「Yes, absolutely. When Fortune magazine asked me to give them a sentence about Steve,」，續 33:48 段「I said, \"Steve understands desire.\" And the other thing is he was indomitable.」與 33:55 段「When he when he wanted something to happen, he would shoot anybody in the knees to get there. And many people are timid out in the business world. And he was not timid.」；引文不含開頭的「Yes, absolutely.」。脈絡：33:36 段為主持人提問「Do you think that Apple would have benefited if Steve Jobs was technical?」。平台自動字幕可標 verified 的依據：本檔既有 JB-2015-001-Q01（source_type 同為 platform_auto_captions 且 status 為 verified）為同類先例。由專案經理在瀏覽器內肉眼抄錄並對照面板截圖（33:41 一帶，涵蓋 33:16–33:55 各段；截圖存於倉庫外，不提交）；未下載影片、音訊或字幕檔，未請求 timedtext，未使用第三方轉寫站。對照的是官方頁面板自動字幕、未對影片全片校聽；時間碼為字幕段起點，非逐詞對齊（timestamp_precision=caption_segment_start）。"
+  },
+  {
+    "quote_id": "AK-2026-001-Q02",
+    "speech_id": "AK-2026-001",
+    "speaker": "ak",
+    "event": "Alan Kay (Turing Award Winner): Xerox PARC, Steve Jobs, Dijkstra（The Peterman Pod 第 E076 集）",
+    "date": "2026-11-23",
+    "date_kind": "publish",
+    "quote": "In America, if you get rich, it's equated with being smart, but you can get rich by just being clever. It's not the same thing as intelligence and knowledge.",
+    "quote_lang": "en",
+    "quote_zh": "在美國，你有錢了，就會被等同於聰明；但光靠精明也能致富。那和智慧與知識不是同一回事。",
+    "why_notable_zh": "在講述賈伯斯參訪 Xerox PARC 的段落尾聲，Alan Kay 區分「clever（精明）」與「intelligence and knowledge（智慧與知識）」：財富不等於智慧，提醒不要把商業成就直接當成聰明的證明。",
+    "source_url": "https://www.youtube.com/watch?v=GR9i8o4FwGw&t=2002s",
+    "timestamp": "33:22",
+    "timestamp_precision": "caption_segment_start",
+    "source_type": "platform_auto_captions",
+    "status": "verified",
+    "verification_note": "來源為本場唯一使用的字幕：YouTube 平台自動產生字幕，本場未找到官方逐字稿。本句為該自動字幕的逐字子字串，只去掉句首填充詞 um 與重複的 it（字幕為「it it's」），未改字。時間碼取自官方頁「字幕記錄」面板該字幕段的起點 33:22（=2002 秒；影片定位 https://www.youtube.com/watch?v=GR9i8o4FwGw&t=2002s），面板 33:22 段原文為「um, in America, if you get rich, it it's equated with being smart,」，續 33:30 段「but you can get rich by just being clever.」與 33:33 段「It's not the same thing as intelligence and knowledge.」；前一段 33:16 為「was just another demo as far as we were concerned. You know, Steve,」，不收入引文。平台自動字幕可標 verified 的依據：本檔既有 JB-2015-001-Q01（source_type 同為 platform_auto_captions 且 status 為 verified）為同類先例。由專案經理在瀏覽器內肉眼抄錄並對照面板截圖（33:41 一帶，涵蓋 33:16–33:55 各段；截圖存於倉庫外，不提交）；未下載影片、音訊或字幕檔，未請求 timedtext，未使用第三方轉寫站。對照的是官方頁面板自動字幕、未對影片全片校聽；時間碼為字幕段起點，非逐詞對齊（timestamp_precision=caption_segment_start）。"
   }
 ]

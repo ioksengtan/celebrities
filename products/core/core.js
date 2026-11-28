@@ -10,7 +10,8 @@
     jb: { key: "jb", db: "jeff_bezos", name: "Jeff Bezos", short: "貝佐斯", company: "Amazon" },
     es: { key: "es", db: "eric_schmidt", name: "Eric Schmidt", short: "施密特", company: "Relativity Space" },
     yl: { key: "yl", db: "yann_lecun", name: "Yann LeCun", short: "楊立昆", company: "Advanced Machine Intelligence" },
-    rh: { key: "rh", db: "reid_hoffman", name: "Reid Hoffman", short: "霍夫曼", company: "LinkedIn / Greylock" }
+    rh: { key: "rh", db: "reid_hoffman", name: "Reid Hoffman", short: "霍夫曼", company: "LinkedIn / Greylock" },
+    ak: { key: "ak", db: "alan_kay", name: "Alan Kay", short: "艾倫·凱", company: "Xerox PARC" }
   };
 
   const QUOTE_LANG_NAMES = {

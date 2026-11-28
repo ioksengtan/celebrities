@@ -1,0 +1,25 @@
+# AK-2026-001 時間戳記索引（不含逐字稿文字）
+# 場次：Alan Kay (Turing Award Winner): Xerox PARC, Steve Jobs, Dijkstra（The Peterman Pod 第 E076 集）
+# 替代標題（集數頁與 Apple Podcasts）：Alan Kay: Steve Jobs, Xerox PARC, Marijuana
+# 對談者：Ryan Peterman（The Peterman Pod 主持人）
+# 影片官方頁（Ryan Peterman 頻道）：https://www.youtube.com/watch?v=GR9i8o4FwGw
+# 集數頁：https://www.developing.dev/p/e076-alan-kay
+#
+# 本檔只存時間戳記索引；原話請到官方來源收看。
+#
+# 日期：2026-11-23 發布；錄製日期不明，錄製地點不明。片長 3940 秒（播放器顯示 1:05:39）。
+#
+# 時間點來源：官方頁「字幕記錄」面板的肉眼抄錄＋面板截圖對照（未下載影片、音訊或字幕檔，
+# 未請求 YouTube timedtext，未使用第三方轉寫站）。本場未找到官方逐字稿；字幕採
+# YouTube 平台自動字幕。下列語錄句子時間碼為各語錄所在「自動字幕段的起點」（非逐詞對齊）。
+# 語錄原文與來源註記見 quotes_index.json。
+#
+# 語錄句子時間點（來自自動字幕面板）
+# 語錄編號            時間碼    影片定位連結
+AK-2026-001-Q01      33:42    https://www.youtube.com/watch?v=GR9i8o4FwGw&t=2022s
+AK-2026-001-Q02      33:22    https://www.youtube.com/watch?v=GR9i8o4FwGw&t=2002s
+#
+# 說明：Q02（33:22）在影片中早於 Q01（33:42）；編號依收錄順序，不依時間先後。
+# 33:36 為主持人提問（Apple 若賈伯斯懂技術是否會更好），Q01 為其回答，引文不含開頭的「Yes, absolutely.」。
+# Q01 涵蓋 33:42、33:48、33:55 三段字幕；Q02 涵蓋 33:22、33:30、33:33 三段字幕。
+# 出處對照與面板截圖另存於工作區，不提交進本庫。

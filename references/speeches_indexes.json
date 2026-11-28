@@ -1,7 +1,7 @@
 {
   "metadata": {
     "created_date": "2026-09-06",
-    "total_speeches": 50,
+    "total_speeches": 51,
     "index_types": [
       "topic_index",
       "timeline_index",
@@ -11,7 +11,7 @@
       "quotes_index",
       "length_index"
     ],
-    "updated_date": "2026-11-27"
+    "updated_date": "2026-11-28"
   },
   "topic_index": [
     {
@@ -1335,7 +1335,7 @@
     },
     {
       "topic": "leadership",
-      "count": 2,
+      "count": 3,
       "speeches": [
         {
           "id": "LBT-2026-001",
@@ -1349,6 +1349,13 @@
           "speaker": "jeff_bezos",
           "event": "Forum on Leadership 2018: A Conversation with Jeff Bezos",
           "date": "2018-04-20",
+          "type": "interview"
+        },
+        {
+          "id": "AK-2026-001",
+          "speaker": "alan_kay",
+          "event": "Alan Kay (Turing Award Winner): Xerox PARC, Steve Jobs, Dijkstra（The Peterman Pod 第 E076 集）",
+          "date": "2026-11-23",
           "type": "interview"
         }
       ]
@@ -2267,6 +2274,58 @@
           "type": "interview"
         }
       ]
+    },
+    {
+      "topic": "personal computing history",
+      "count": 1,
+      "speeches": [
+        {
+          "id": "AK-2026-001",
+          "speaker": "alan_kay",
+          "event": "Alan Kay (Turing Award Winner): Xerox PARC, Steve Jobs, Dijkstra（The Peterman Pod 第 E076 集）",
+          "date": "2026-11-23",
+          "type": "interview"
+        }
+      ]
+    },
+    {
+      "topic": "xerox parc",
+      "count": 1,
+      "speeches": [
+        {
+          "id": "AK-2026-001",
+          "speaker": "alan_kay",
+          "event": "Alan Kay (Turing Award Winner): Xerox PARC, Steve Jobs, Dijkstra（The Peterman Pod 第 E076 集）",
+          "date": "2026-11-23",
+          "type": "interview"
+        }
+      ]
+    },
+    {
+      "topic": "steve jobs",
+      "count": 1,
+      "speeches": [
+        {
+          "id": "AK-2026-001",
+          "speaker": "alan_kay",
+          "event": "Alan Kay (Turing Award Winner): Xerox PARC, Steve Jobs, Dijkstra（The Peterman Pod 第 E076 集）",
+          "date": "2026-11-23",
+          "type": "interview"
+        }
+      ]
+    },
+    {
+      "topic": "intelligence vs. cleverness",
+      "count": 1,
+      "speeches": [
+        {
+          "id": "AK-2026-001",
+          "speaker": "alan_kay",
+          "event": "Alan Kay (Turing Award Winner): Xerox PARC, Steve Jobs, Dijkstra（The Peterman Pod 第 E076 集）",
+          "date": "2026-11-23",
+          "type": "interview"
+        }
+      ]
     }
   ],
   "timeline_index": [
@@ -2704,7 +2763,7 @@
     },
     {
       "month": "2026-11",
-      "count": 3,
+      "count": 4,
       "speeches": [
         {
           "id": "SN-2026-001",
@@ -2722,6 +2781,12 @@
           "id": "RH-2026-001",
           "speaker": "reid_hoffman",
           "event": "How to Future-Proof Your Career and Become AI-Native | Reid Hoffman（Masters of Scale Summit 2026 對談）",
+          "type": "interview"
+        },
+        {
+          "id": "AK-2026-001",
+          "speaker": "alan_kay",
+          "event": "Alan Kay (Turing Award Winner): Xerox PARC, Steve Jobs, Dijkstra（The Peterman Pod 第 E076 集）",
           "type": "interview"
         }
       ]
@@ -2788,7 +2853,8 @@
         "SA-2026-009",
         "SN-2026-001",
         "SN-2026-002",
-        "RH-2026-001"
+        "RH-2026-001",
+        "AK-2026-001"
       ],
       "panel": [
         "EM-2026-002",
@@ -2802,7 +2868,7 @@
     },
     "counts": {
       "keynote": 10,
-      "interview": 35,
+      "interview": 36,
       "panel": 3,
       "town_hall": 2
     }
@@ -2886,7 +2952,8 @@
         "SA-2026-009",
         "SN-2026-001",
         "SN-2026-002",
-        "RH-2026-001"
+        "RH-2026-001",
+        "AK-2026-001"
       ],
       "enterprise": [
         "JH-2026-002",
@@ -2937,7 +3004,8 @@
         "EM-2026-007"
       ],
       "podcast": [
-        "EM-2025-001"
+        "EM-2025-001",
+        "AK-2026-001"
       ],
       "politics": [
         "EM-2025-001"
@@ -3078,7 +3146,8 @@
         "MZ-2026-001",
         "SA-2026-007",
         "SA-2026-009",
-        "SN-2026-001"
+        "SN-2026-001",
+        "AK-2026-001"
       ],
       "semiconductors": [
         "LBT-2026-001"
@@ -3138,7 +3207,7 @@
       "consumer": 1,
       "CES": 1,
       "product launch": 1,
-      "interview": 34,
+      "interview": 35,
       "enterprise": 2,
       "economics": 1,
       "GTC": 1,
@@ -3152,7 +3221,7 @@
       "demand": 1,
       "strategy": 3,
       "geopolitics": 2,
-      "podcast": 1,
+      "podcast": 2,
       "politics": 1,
       "robots": 2,
       "AGI": 1,
@@ -3195,7 +3264,7 @@
       "VR/AR": 1,
       "spending": 1,
       "AI safety": 1,
-      "leadership": 5,
+      "leadership": 6,
       "semiconductors": 1,
       "career": 11,
       "life advice": 9,
@@ -3372,7 +3441,7 @@
       ]
     },
     "medium": {
-      "count": 20,
+      "count": 21,
       "speeches": [
         {
           "id": "JH-2026-001",
@@ -3493,6 +3562,12 @@
           "speaker": "sam_altman",
           "event": "Vanity Fair Fair Game: Sam Altman Sees the Future. Are We In It? (Part 1 of 2)",
           "word_count": 8300
+        },
+        {
+          "id": "AK-2026-001",
+          "speaker": "alan_kay",
+          "event": "Alan Kay (Turing Award Winner): Xerox PARC, Steve Jobs, Dijkstra（The Peterman Pod 第 E076 集）",
+          "word_count": 9500
         }
       ]
     },
@@ -3818,6 +3893,22 @@
       "total_speeches": 1,
       "entries": [
         "RH-2026-001"
+      ]
+    },
+    "alan_kay": {
+      "name": "Alan Kay",
+      "title": "Turing Award winner; pioneered personal computing at Xerox PARC",
+      "company": "Xerox PARC",
+      "topics": [
+        "personal computing history",
+        "xerox parc",
+        "steve jobs",
+        "leadership",
+        "intelligence vs. cleverness"
+      ],
+      "total_speeches": 1,
+      "entries": [
+        "AK-2026-001"
       ]
     }
   }
