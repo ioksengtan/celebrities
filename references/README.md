@@ -109,3 +109,13 @@ Hold this round (never verified on the wall): `EM-2026-005`, `SA-2026-001`.
 - 時間戳記索引（只存語錄編號、時間碼、官方影片定位連結，無逐字稿文字）：`transcripts/RH-2026-001.txt`；繁體中文導讀：`editorials/RH-2026-001.md`（引用這 6 則並標時間碼與來源限制）；短摘要：`prod001_summary_zh_draft.json` 的 `RH-2026-001`。
 - 詞彙卡排程：金句 id 78–80 排 2026-11-28，名人詞彙 id 202–206 排 2026-11-29，接續既有排程、不改動已排的 2026-11-27／2026-11-28。
 - 單場頁：`products/core/speech.html?id=RH-2026-001`（顯示 6 則語錄與時間碼）。逐則牆／卡片引文、自動字幕原文、時間點、來源網址（含 `&t=`）與查核時間的完整出處對照表另存於工作區草稿目錄，不提交進本庫。本次只開拉取請求、不合併。
+
+## Alan Kay《The Peterman Pod》訪談入庫（2026-11-28）
+
+- `AK-2026-001`：Ryan Peterman 的節目 The Peterman Pod 第 E076 集，受訪者為圖靈獎得主 Alan Kay。YouTube 頁面標題〈Alan Kay (Turing Award Winner): Xerox PARC, Steve Jobs, Dijkstra〉；集數頁 https://www.developing.dev/p/e076-alan-kay 與 Apple Podcasts 另用〈Alan Kay: Steve Jobs, Xerox PARC, Marijuana〉，記於 `alternate_title`。**日期寫法：2026-11-23 發布，錄製日期不明（錄製地點亦不明）。** `date` 採已核實的發布日 2026-11-23（非錄製日），`date_kind: "publish"`，頁面顯示「2026年11月23日發布」；另以 `date_note_zh: "錄製日期不明"` 顯示於單場頁 meta 行（`speech.html` 新增讀取此欄，未設此欄的場次不受影響）。片長 3940 秒（播放器顯示 1:05:39），記 66 分鐘。入庫前已重查主線編號，`AK-2026-001` 未撞號。
+- 新增講者 `alan_kay`（本庫新講者）：代碼 `ak`，色票淺 `#7B3F96`／深 `#E0A6F0`（原擬 `#5B4A8C`／`#A99BD6` 與 Sundar Pichai 的 `sp`（`#6B5B95`／`#A996D8`）過近，改用鄰近的紫羅蘭色）；`executive-english.html` 與 `keynote-lexicon.html` 補 `ak` 講者色。對談者 Ryan Peterman 以 `interlocutor`／`interlocutor_title` 記錄，未新增為講者，語錄只收 Alan Kay。
+- **本場收 2 則只屬 Alan Kay 的語錄**：`AK-2026-001-Q01`（33:42＝2022s）、`AK-2026-001-Q02`（33:22＝2002s）。本場未找到官方逐字稿；時間碼採官方頁「字幕記錄」自動字幕面板各句所在字幕段的段起點＋面板截圖對照（未下載影片、音訊或字幕檔，未請求 YouTube timedtext，未使用第三方轉寫站）。Q01 只把重複的「when he」縮成一次、不含開頭「Yes, absolutely.」；Q02 只去掉 um 與重複的 it。`source_type` 為 `platform_auto_captions`，`verification_status` 為 `transcript_text_verified`（時間碼僅到字幕段起點、未對影片全片校聽，非 fully verified；同類先例 `JB-2015-001-Q01`）。
+- 背景：Q01 提到的《財星》評語見 Fortune 2008-03-05 Peter Elkind〈The trouble with Steve Jobs〉，該文只有「Steve understands desire」一句；只寫進導讀作背景出處，不另建條目。
+- 時間戳記索引（只存語錄編號、時間碼、官方影片定位連結，無逐字稿文字）：`transcripts/AK-2026-001.txt`；繁體中文導讀：`editorials/AK-2026-001.md`；短摘要：`prod001_summary_zh_draft.json` 的 `AK-2026-001`。
+- 詞彙卡排程：金句 id 81–83 排 2026-11-29，名人詞彙 id 207–211 排 2026-11-30，接續既有排程、不改動已排的 2026-11-28／2026-11-29。
+- 單場頁：`products/core/speech.html?id=AK-2026-001`（顯示 2 則語錄與時間碼）。

@@ -4,6 +4,19 @@
 
 ---
 
+## 2026-11-28（Alan Kay《The Peterman Pod》訪談場次 AK-2026-001 入庫）
+
+- 新增講者 `alan_kay`（本庫新講者；代碼 `ak`，色票淺 `#7B3F96`／深 `#E0A6F0`）的場次 `AK-2026-001`：Ryan Peterman 的節目 The Peterman Pod 第 E076 集，官方影片 https://www.youtube.com/watch?v=GR9i8o4FwGw ，頁面標題〈Alan Kay (Turing Award Winner): Xerox PARC, Steve Jobs, Dijkstra〉；集數頁 https://www.developing.dev/p/e076-alan-kay 與 Apple Podcasts 另用〈Alan Kay: Steve Jobs, Xerox PARC, Marijuana〉，記為 `alternate_title`。
+- **色票調整**：派工原擬 `#5B4A8C`／`#A99BD6`，但與 Sundar Pichai 的 `sp`（`#6B5B95`／`#A996D8`）過近（深色幾乎同色），改用鄰近的紫羅蘭色 `#7B3F96`／`#E0A6F0`；在淺、深底色上的對比度皆 > 6:1。
+- **日期寫法**：2026-11-23 發布，錄製日期與地點不明。`date` 採發布日 2026-11-23、`date_kind: "publish"`（頁面顯示「2026年11月23日發布」）；新增選填欄位 `date_note_zh: "錄製日期不明"`，`speech.html` 單場詳情 meta 行會顯示它，其他場次不受影響。片長 3940 秒（播放器顯示 1:05:39），記 66 分鐘。
+- 對談者 Ryan Peterman 以 `interlocutor`／`interlocutor_title` 記錄，未新增為講者，語錄只收 Alan Kay。
+- **收 2 則語錄**：`AK-2026-001-Q01`（33:42＝2022s，《財星》一句話評語「Steve understands desire」與 indomitable、not timid）、`AK-2026-001-Q02`（33:22＝2002s，有錢被等同於聰明，但精明不等於智慧與知識）。文字為官方頁字幕記錄面板平台自動字幕的逐字子字串，Q01 只把重複的「when he」縮成一次，Q02 只去掉 um 與重複的 it；時間碼為字幕段起點，對照面板截圖，未下載影片、音訊或字幕檔。`source_type` 為 `platform_auto_captions`，`verification_status` 為 `transcript_text_verified`。
+- 背景：Fortune 2008-03-05 Peter Elkind〈The trouble with Steve Jobs〉只有「Steve understands desire」一句，寫進導讀並註明出處，不另建條目。
+- 詞彙卡：金句（Keynote Lexicon）新增 id 81–83（排程 2026-11-29，該日原本沒有金句項目，屬新增）；名人詞彙（Executive English）新增 id 207–211：indomitable、timid、be equated with、clever（與 intelligent 對比）、desire（排程 2026-11-30）。**不改動已排的 2026-11-28、2026-11-29 行程**；`executive-english.html` 與 `keynote-lexicon.html` 補 `ak` 講者色。
+- 主資料庫總數 50→51，`updated_date` 2026-11-28；`speeches_indexes.json` 的主題、時間、類型、產品標籤、長度（medium）、講者摘要已更新。時間戳記索引 `references/transcripts/AK-2026-001.txt`（無逐字稿文字）、導讀 `references/editorials/AK-2026-001.md`、短摘要（`prod001_summary_zh_draft.json` 的 `AK-2026-001`）均已新增。
+
+---
+
 ## 2026-11-27（Reid Hoffman「AI-Native」對談場次 RH-2026-001 入庫）
 
 - 新增講者 `reid_hoffman`（本庫新講者；代碼 `rh`，色票淺 `#1F5F7A`／深 `#6FB7CC`）的場次 `RH-2026-001`：由 Aishwarya Srinivasan 自己發布的訪談，她在官方 Substack 稱此節目為 podcast「Ctrl + Alt + AI」，官方標題〈How to Future-Proof Your Career and Become AI-Native | Reid Hoffman〉。錄製場合為 Masters of Scale Summit 2026 現場，Reid Hoffman（LinkedIn 共同創辦人、Greylock 合夥人）受訪。

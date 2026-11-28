@@ -230,5 +230,21 @@
     ],
     "draft_note": "繁體中文導讀；活動資訊依官方活動頁與官方影片說明欄／章節，發布時間與片長依觀看頁中繼資料。語錄（RH-2026-001-Q01…Q06）文字取自 YouTube 官方頁字幕記錄面板的平台自動字幕（kind: asr，面板可見 Reed 等辨識誤差），由專案經理肉眼抄錄並拍面板截圖對照；未下載影片、音訊或字幕檔，未請求 timedtext，未用第三方轉寫站。本場無官方逐字稿；官方章節與 Substack 筆記只作場次結構，語錄句子時間碼取自字幕段起點（非逐詞對齊），未對影片全片校聽，非 fully verified。",
     "char_count": 360
+  },
+  {
+    "speech_id": "AK-2026-001",
+    "summary_zh": "圖靈獎得主、在 Xerox PARC 開創個人電腦的 Alan Kay，接受 Ryan Peterman 的節目 The Peterman Pod（第 E076 集）訪問。影片於 2026 年 11 月 23 日發布，片長約 65 分 40 秒；錄製日期與地點不明，2026-11-23 是發布日而非錄製日。兩人談 Xerox PARC 的研究環境、Dijkstra、為何中式料理是「計算機界的食物」，以及 Alan Kay 親身經歷的賈伯斯參訪 PARC 故事。在這段故事尾聲，他區分精明與智慧——在美國有錢常被等同於聰明，但光靠精明也能致富；被問到賈伯斯若懂技術 Apple 會不會更好時，他說自己曾對《財星》用一句話形容賈伯斯：「Steve understands desire」，並說他百折不撓、從不膽怯。本場收 2 則只屬 Alan Kay 的已核實語錄（AK-2026-001-Q01、Q02）。",
+    "based_on": [
+      "platform_auto_captions",
+      "official_video_description",
+      "official_episode_page"
+    ],
+    "source_urls": [
+      "https://www.youtube.com/watch?v=GR9i8o4FwGw",
+      "https://www.developing.dev/p/e076-alan-kay",
+      "https://fortune.com/2008/03/05/the-trouble-with-steve-jobs/"
+    ],
+    "draft_note": "繁體中文導讀；節目資訊依官方影片說明欄與集數頁，發布日與片長依觀看頁。語錄（AK-2026-001-Q01、Q02）文字取自 YouTube 官方頁字幕記錄面板的平台自動字幕，由專案經理肉眼抄錄並拍面板截圖對照；未下載影片、音訊或字幕檔，未請求 timedtext，未用第三方轉寫站。本場無官方逐字稿；時間碼為字幕段起點（非逐詞對齊），未對影片全片校聽，非 fully verified。《財星》背景出自 Fortune 2008-03-05 Peter Elkind 報導，該文只有「Steve understands desire」一句。",
+    "char_count": 404
   }
 ]

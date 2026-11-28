@@ -2,14 +2,14 @@
   "metadata": {
     "created_date": "2026-09-06",
     "time_range": "2001-05 to 2026-11",
-    "total_entries": 50,
+    "total_entries": 51,
     "categories": [
       "keynote",
       "interview",
       "panel",
       "town_hall"
     ],
-    "updated_date": "2026-11-27"
+    "updated_date": "2026-11-28"
   },
   "speakers": {
     "jensen_huang": {
@@ -215,6 +215,21 @@
       ],
       "entries": [
         "RH-2026-001"
+      ]
+    },
+    "alan_kay": {
+      "name": "Alan Kay",
+      "title": "Turing Award winner; pioneered personal computing at Xerox PARC",
+      "company": "Xerox PARC",
+      "topics": [
+        "personal computing history",
+        "xerox parc",
+        "steve jobs",
+        "leadership",
+        "intelligence vs. cleverness"
+      ],
+      "entries": [
+        "AK-2026-001"
       ]
     }
   },
@@ -1625,6 +1640,47 @@
       "verification_status": "transcript_text_verified",
       "imported_date": "2026-11-27",
       "notes_zh": "原始場次：由 Aishwarya Srinivasan 自己發布的訪談（非轉載合輯），她在官方 Substack 稱之為 podcast「Ctrl + Alt + AI」。錄製場合為 Masters of Scale Summit 2026 現場；官方活動頁（https://www.summit.mastersofscale.com/info ）寫活動日期 2026-10-20 至 2026-10-22、地點美國舊金山 The Presidio Theatre，採邀請與申請制。綜合寫法：錄於 Masters of Scale Summit 2026（2026-10-20 至 10-22，確切日期不明），2026-11-14 發布。本片 YouTube 觀看頁 publishDate／uploadDate 為 2026-11-13T23:01:33-08:00（台北時間 2026-11-14 15:01:33），片長 1844 秒（30 分 44 秒，進位記 31 分鐘）；機器欄位 date 採已核實的發布日 2026-11-14（非錄製日）。對談者 Aishwarya Srinivasan 列於 interlocutor 欄位，非本庫新講者，語錄亦只收 Reid Hoffman。Reid Hoffman 職稱各官方頁用字不同，未自行合併：本片 YouTube 說明欄「Co-founder of LinkedIn and Partner at Greylock」（SPEAKERS 的 title／company 即採此官方來源）；aishwarya.ai「Co-founder, LinkedIn」；官方 Substack 標題「co-founder- LinkedIn, Manas AI」；Masters of Scale 官方頁「co-founder of LinkedIn and investor at Greylock」；Greylock 官方個人頁職稱「Partner」；reidhoffman.org「Co-Founder, LinkedIn, Inflection, and Manas AI, and a Partner at Greylock」。本場未找到官方逐字稿；但有官方說明欄／播放器官方章節（12 則，起始 00:00、01:02、03:10、05:03、08:03、09:24、12:03、13:00、17:48、22:18、26:16、28:33），以及官方 Substack 節目筆記的 5:12、17:03、20:41。官方章節僅作場次結構（章節起始與標題），不把章節起始秒數當語錄句子時間點。本片觀看頁字幕軌僅 1 條 English（auto-generated、kind: asr）平台自動字幕（面板可見 Reed 等辨識誤差），source_type 誠實標 platform_auto_captions，不標 official_transcript。同頻道較早的「Ctrl + Alt + AI - Ep 3」（Zmwiz5FhOlY，2025-02-04 發布、約 22 分 53 秒）主題與章節不同，非本片的原始完整版；主持人官方 Substack 把本片呈現為這場對談的完整版（Watch our full conversation here，嵌入本片識別碼 US3zcEQ3hCc）。據此收錄 6 則只屬 Reid Hoffman 的語錄 RH-2026-001-Q01…Q06：語錄句子時間點取自官方頁「字幕記錄」自動字幕面板各句所在字幕段的起點（Q01=02:17、Q02=07:39、Q03=22:45、Q04=23:25、Q05=25:16、Q06=28:56），文字為平台自動字幕的逐字子字串，卡片／牆引文僅去除 uh、you know、um、right? 等贅字並以「…」省略，未改字；六則皆有面板截圖可逐字比對（Q01→01-0217.png、Q02→03-0739.png、Q03→07-2222.png、Q04→08-2316.png、Q05→09-2516.png、Q06→11-2840.png）；未下載影片、音訊或字幕檔，未請求 timedtext，未使用第三方轉寫站。片頭 0:00–1:04 為剪輯預告：0:20、0:44 為主持人所說，不收；Q04 同句雖在預告約 0:54 出現，仍採正片 23:25。Q03 落在章節 22:18 內、Q06 落在章節 28:33 內，時間點仍採字幕段起點。verification_status 為 transcript_text_verified：6 則已對官方頁面板自動字幕逐字核對為子字串，但時間碼僅到字幕段起點、且未對影片全片校聽，非 fully verified。平台自動字幕可標 verified 的依據：本庫既有 JB-2015-001-Q01（source_type 同為 platform_auto_captions 且 status 為 verified）為同類先例；逐則牆／卡片引文、自動字幕原文、時間點、來源網址（含 &t=）與查核時間另見本場出處對照表（草稿目錄另存，不提交進本庫）。word_count_estimate 4500 為概估，非逐字計數。研究查核時間 2026-11-26、入庫 2026-11-27（台北時間）。本庫只存時間戳記索引，不存逐字稿文字。"
+    },
+    {
+      "id": "AK-2026-001",
+      "speaker": "alan_kay",
+      "date": "2026-11-23",
+      "date_kind": "publish",
+      "date_note_zh": "錄製日期不明",
+      "event": "Alan Kay (Turing Award Winner): Xerox PARC, Steve Jobs, Dijkstra（The Peterman Pod 第 E076 集）",
+      "alternate_title": "Alan Kay: Steve Jobs, Xerox PARC, Marijuana",
+      "interlocutor": "Ryan Peterman",
+      "interlocutor_title": "The Peterman Pod 主持人",
+      "location": "",
+      "type": "interview",
+      "duration_minutes": 66,
+      "topics": [
+        "personal computing history",
+        "xerox parc",
+        "steve jobs",
+        "leadership",
+        "intelligence vs. cleverness"
+      ],
+      "key_quotes": [
+        "AK-2026-001-Q01",
+        "AK-2026-001-Q02"
+      ],
+      "transcript_url": null,
+      "video_url": "https://www.youtube.com/watch?v=GR9i8o4FwGw",
+      "episode_url": "https://www.developing.dev/p/e076-alan-kay",
+      "language": "en",
+      "word_count_estimate": 9500,
+      "product_tags": [
+        "interview",
+        "podcast",
+        "leadership"
+      ],
+      "transcript_path": "references/transcripts/AK-2026-001.txt",
+      "editorial_path": "references/editorials/AK-2026-001.md",
+      "source_type": "platform_auto_captions",
+      "verification_status": "transcript_text_verified",
+      "imported_date": "2026-11-28",
+      "notes_zh": "原始場次：Ryan Peterman 的節目 The Peterman Pod 第 E076 集，訪問圖靈獎得主 Alan Kay（官方說明欄稱他在 Xerox PARC 開創個人電腦；SPEAKERS 的 title／company 即採此官方說法）。YouTube 觀看頁標題〈Alan Kay (Turing Award Winner): Xerox PARC, Steve Jobs, Dijkstra〉；集數頁 https://www.developing.dev/p/e076-alan-kay 與 Apple Podcasts 另用標題〈Alan Kay: Steve Jobs, Xerox PARC, Marijuana〉，記為 alternate_title，兩者為同一集。日期：本片於 2026-11-23 發布（觀看頁顯示 2026年11月23日）；錄製日期與錄製地點皆不明，location 留空，date_note_zh 記「錄製日期不明」並顯示於單場頁 meta 行。機器欄位 date 採已核實的發布日 2026-11-23（非錄製日），date_kind 為 publish，頁面顯示「2026年11月23日發布」。片長 3940 秒（播放器顯示 1:05:39），進位記 66 分鐘。對談者 Ryan Peterman 列於 interlocutor 欄位，非本庫講者，語錄只收 Alan Kay。本場未找到官方逐字稿；字幕採 YouTube 官方頁「字幕記錄」面板的平台自動字幕，source_type 誠實標 platform_auto_captions，不標 official_transcript。據此收錄 2 則只屬 Alan Kay 的語錄：AK-2026-001-Q01（33:42＝2022s，談 Steve Jobs：《財星》一句話評語、indomitable、not timid）與 AK-2026-001-Q02（33:22＝2002s，談在美國有錢常被等同聰明，但精明不等於智慧與知識）。兩則皆接續 Alan Kay 講述 Steve Jobs 參訪 Xerox PARC 的段落；33:36 主持人問 Apple 若 Steve Jobs 懂技術是否會更好，Q01 的回答以「Yes, absolutely.」開頭（引文不含此句）。語錄文字為該平台自動字幕的逐字子字串：Q01 只把重複的「when he when he」縮成一次；Q02 只去掉句首 um 與重複的 it（「it it's」）。時間碼為各語錄所在字幕段的段起點（非逐詞對齊），由專案經理在瀏覽器內肉眼抄錄、並對照面板截圖（33:41 一帶，涵蓋 33:16–33:55 各段）；未下載影片、音訊或字幕檔，未請求 YouTube timedtext，未使用第三方轉寫站。背景：Alan Kay 在 Q01 提到的《財星》評語，見 Fortune 2008-03-05 Peter Elkind〈The trouble with Steve Jobs〉（https://fortune.com/2008/03/05/the-trouble-with-steve-jobs/ ），該文只引用「Steve understands desire」一句；本庫只把它當編輯解說的背景出處，不另建場次或語錄。verification_status 為 transcript_text_verified：2 則已對官方頁面板自動字幕逐字核對為子字串，但時間碼僅到字幕段起點、且未對影片全片校聽，非 fully verified。平台自動字幕可標 verified 的依據：本庫既有 JB-2015-001-Q01（source_type 同為 platform_auto_captions 且 status 為 verified）為同類先例。word_count_estimate 9500 為依片長概估，非逐字計數。入庫 2026-11-28（台北時間）。本庫只存時間戳記索引，不存逐字稿文字。"
     }
   ]
 }
